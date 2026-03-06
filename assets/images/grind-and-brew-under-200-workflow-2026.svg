@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Grind and brew under 200 workflow timeline</title>
+  <desc id="desc">Timeline showing bean load, grind noise window, brew completion, and cleanup cadence for grind and brew machines under two hundred dollars.</desc>
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <text x="70" y="92" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700">Morning Workflow Reality (Under $200)</text>
+  <text x="70" y="130" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="26">Grind-and-brew timing, noise, and cleanup cadence</text>
+
+  <line x1="120" y1="320" x2="1080" y2="320" stroke="#334155" stroke-width="10" stroke-linecap="round"/>
+
+  <circle cx="180" cy="320" r="26" fill="#22c55e"/>
+  <text x="150" y="382" fill="#dcfce7" font-family="Arial, Helvetica, sans-serif" font-size="20">0:00</text>
+  <text x="95" y="418" fill="#bbf7d0" font-family="Arial, Helvetica, sans-serif" font-size="20">Load beans + water</text>
+
+  <circle cx="380" cy="320" r="26" fill="#f59e0b"/>
+  <text x="350" y="382" fill="#fef3c7" font-family="Arial, Helvetica, sans-serif" font-size="20">0:20</text>
+  <text x="314" y="418" fill="#fde68a" font-family="Arial, Helvetica, sans-serif" font-size="20">Grind noise peak</text>
+
+  <circle cx="640" cy="320" r="26" fill="#60a5fa"/>
+  <text x="608" y="382" fill="#dbeafe" font-family="Arial, Helvetica, sans-serif" font-size="20">3:30-6:00</text>
+  <text x="566" y="418" fill="#bfdbfe" font-family="Arial, Helvetica, sans-serif" font-size="20">First cup ready</text>
+
+  <circle cx="900" cy="320" r="26" fill="#a78bfa"/>
+  <text x="872" y="382" fill="#ede9fe" font-family="Arial, Helvetica, sans-serif" font-size="20">9:00-13:00</text>
+  <text x="838" y="418" fill="#ddd6fe" font-family="Arial, Helvetica, sans-serif" font-size="20">Full batch done</text>
+
+  <rect x="120" y="490" width="960" height="118" rx="14" fill="#1e293b" stroke="#334155"/>
+  <text x="150" y="538" fill="#e2e8f0" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">Cleanup cadence:</text>
+  <text x="340" y="538" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="24">Daily rinse • Brush chute every 2-3 brews • Descale every 3-5 weeks</text>
+
+  <text x="70" y="640" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="18">Coffee Gear Lab • Workflow realism beats spec-sheet hype</text>
+</svg>
