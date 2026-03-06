@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Best Drip Coffee Maker Under 100 Dollars Tested 2026</title>
+  <desc id="desc">Editorial hero graphic showing top budget drip coffee maker categories and scoring pillars.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <rect x="70" y="68" width="1060" height="539" rx="24" fill="#0b1220" stroke="#334155" stroke-width="2" />
+  <text x="110" y="145" fill="#f8fafc" font-size="54" font-family="Arial, Helvetica, sans-serif" font-weight="700">Best Drip Coffee Maker Under $100</text>
+  <text x="110" y="193" fill="#cbd5e1" font-size="30" font-family="Arial, Helvetica, sans-serif">2026 Budget Picks Tested</text>
+
+  <rect x="110" y="235" width="980" height="86" rx="14" fill="url(#panel)" />
+  <text x="138" y="287" fill="#052e16" font-size="33" font-family="Arial, Helvetica, sans-serif" font-weight="700">Ranked by brew consistency • timer reliability • cleanup burden • yearly ownership cost</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#e2e8f0" font-size="29" font-weight="600">
+    <rect x="110" y="357" width="470" height="186" rx="16" fill="#111827" stroke="#334155" />
+    <text x="140" y="408">Best overall: Ninja CE251</text>
+    <text x="140" y="450">Best programmable: Cuisinart DCC-3200P1</text>
+    <text x="140" y="492">Best compact: BLACK+DECKER CM1160B</text>
+
+    <rect x="620" y="357" width="470" height="186" rx="16" fill="#111827" stroke="#334155" />
+    <text x="650" y="408">Best thermal value: CM2035B</text>
+    <text x="650" y="450">Focus: drip-only machine picks</text>
+    <text x="650" y="492">No accessories or pod contamination</text>
+  </g>
+
+  <text x="110" y="584" fill="#94a3b8" font-size="24" font-family="Arial, Helvetica, sans-serif">Coffee Gear Lab • Prices checked March 2026</text>
+</svg>

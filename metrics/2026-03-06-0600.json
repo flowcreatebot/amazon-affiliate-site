@@ -1,0 +1,51 @@
+{
+  "snapshot_at": "2026-03-06T06:11:00+07:00",
+  "window": {
+    "type": "6h",
+    "since": "2026-03-06T00:11:00+07:00",
+    "previous_snapshot": "metrics/2026-03-06-0000.json"
+  },
+  "kpis": {
+    "total_published_pages": 17,
+    "new_pages_since_last_snapshot": 8,
+    "money_pages": 11,
+    "supporting_pages": 4,
+    "internal_links_added_or_updated_estimate": 357,
+    "deployment": {
+      "render_live_url": null,
+      "render_live_url_reachable": false,
+      "public_domain": "https://www.coffeegearlab.co/",
+      "public_domain_reachable": false,
+      "check_error": "Could not resolve host: www.coffeegearlab.co"
+    },
+    "top_3_next_pages_queued": [
+      {
+        "title": "How to Dial In Espresso at Home (supporting workflow)",
+        "status": "queued_inferred",
+        "evidence": "TASKS.md shipping-balance requires one espresso workflow supporting page outside grinder-maintenance topics."
+      },
+      {
+        "title": "Moka Pot vs French Press (supporting brewer comparison)",
+        "status": "queued_inferred",
+        "evidence": "TASKS.md shipping-balance requires one brewer-comparison supporting page with contextual internal links from money pages."
+      },
+      {
+        "title": "Best Pour Over Coffee Maker (money page)",
+        "status": "queued_inferred",
+        "evidence": "Existing pour-over support cluster (kettle + grinder + ratio + scale) indicates a missing commercial money-page target."
+      }
+    ]
+  },
+  "evidence": {
+    "sitemap_urls_count": 17,
+    "post_html_files_count": 16,
+    "money_page_slug_prefix": "best-*",
+    "supporting_definition": "non-best-* post pages; excludes /posts/ hub from money/support split",
+    "internal_link_estimation_method": "git log -p since previous snapshot over *.html; counted added lines with href to local pages (non-http) as internal-link additions/updates",
+    "notes": [
+      "Counts are computed from repository artifacts (sitemap + post files + git diffs); no GA/GSC data used.",
+      "Render service URL/name is still not documented in-repo, so Render-specific reachability cannot be verified yet.",
+      "Public domain DNS lookup fails from this environment at snapshot time."
+    ]
+  }
+}

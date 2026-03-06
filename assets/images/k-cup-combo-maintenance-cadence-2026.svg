@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Hybrid Coffee Maker Maintenance Cadence</title>
+  <desc id="desc">Checklist visual for daily, weekly, and monthly maintenance of coffee makers with grinder and K-Cup compatibility.</desc>
+  <rect width="1200" height="675" fill="#111827"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#f9fafb">
+    <text x="70" y="92" font-size="34" font-weight="700">Beans + K-Cup Combo Maintenance Cadence</text>
+    <text x="70" y="130" font-size="22" opacity="0.88">Keep flavor stable and avoid grinder/pod path clogs</text>
+
+    <rect x="70" y="180" width="330" height="430" rx="16" fill="#1f2937"/>
+    <text x="100" y="235" font-size="28" font-weight="700">Daily</text>
+    <text x="100" y="285" font-size="20">• Rinse brew basket</text>
+    <text x="100" y="320" font-size="20">• Empty pod bin / drip tray</text>
+    <text x="100" y="355" font-size="20">• Wipe grinder chute lid</text>
+
+    <rect x="435" y="180" width="330" height="430" rx="16" fill="#1f2937"/>
+    <text x="465" y="235" font-size="28" font-weight="700">Weekly</text>
+    <text x="465" y="285" font-size="20">• Brush burr/chute path</text>
+    <text x="465" y="320" font-size="20">• Flush pod needle area</text>
+    <text x="465" y="355" font-size="20">• Wash reservoir + lid</text>
+
+    <rect x="800" y="180" width="330" height="430" rx="16" fill="#1f2937"/>
+    <text x="830" y="235" font-size="28" font-weight="700">Monthly</text>
+    <text x="830" y="285" font-size="20">• Descale full brew path</text>
+    <text x="830" y="320" font-size="20">• Deep-clean hopper seals</text>
+    <text x="830" y="355" font-size="20">• Check for stale bean oils</text>
+
+    <text x="70" y="645" font-size="18" opacity="0.78">Coffee Gear Lab editorial checklist · March 2026</text>
+  </g>
+</svg>

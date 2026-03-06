@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Drip coffee maker vs single-serve coffee maker comparison chart</title>
+  <desc id="desc">Editorial chart comparing drip and single-serve machines on cup cost, brew speed, cleanup burden, and household fit.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <style>
+      .h1{font:700 48px 'Inter',Arial,sans-serif;fill:#f8fafc}
+      .sub{font:400 24px 'Inter',Arial,sans-serif;fill:#cbd5e1}
+      .head{font:700 30px 'Inter',Arial,sans-serif;fill:#f8fafc}
+      .rowh{font:700 22px 'Inter',Arial,sans-serif;fill:#e2e8f0}
+      .txt{font:500 20px 'Inter',Arial,sans-serif;fill:#cbd5e1}
+      .chip{font:700 16px 'Inter',Arial,sans-serif;fill:#0f172a}
+    </style>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <text x="60" y="90" class="h1">Drip vs Single-Serve Coffee Maker (2026)</text>
+  <text x="60" y="130" class="sub">Fast buyer view: speed, cup cost, cleanup, and best household fit</text>
+
+  <rect x="60" y="170" width="1080" height="430" rx="18" fill="url(#card)" stroke="#334155"/>
+
+  <rect x="80" y="200" width="320" height="46" rx="10" fill="#334155"/>
+  <rect x="420" y="200" width="340" height="46" rx="10" fill="#0ea5e9"/>
+  <rect x="780" y="200" width="340" height="46" rx="10" fill="#22c55e"/>
+  <text x="96" y="230" class="rowh">Decision factor</text>
+  <text x="535" y="230" class="chip">Drip machine</text>
+  <text x="895" y="230" class="chip">Single-serve</text>
+
+  <g transform="translate(0,0)">
+    <text x="96" y="285" class="rowh">Time to first cup</text>
+    <text x="435" y="285" class="txt">6-10 min (full pot focus)</text>
+    <text x="795" y="285" class="txt">3-5 min (one-cup speed)</text>
+
+    <text x="96" y="340" class="rowh">Typical cup cost</text>
+    <text x="435" y="340" class="txt">Lower with bulk ground beans</text>
+    <text x="795" y="340" class="txt">Higher with pods, stable dosing</text>
+
+    <text x="96" y="395" class="rowh">Cleanup burden</text>
+    <text x="435" y="395" class="txt">Low-Med (carafe + basket)</text>
+    <text x="795" y="395" class="txt">Low-Med (needle + drip tray)</text>
+
+    <text x="96" y="450" class="rowh">Best household fit</text>
+    <text x="435" y="450" class="txt">2-4 drinkers, batch mornings</text>
+    <text x="795" y="450" class="txt">Solo drinkers, variable schedules</text>
+
+    <text x="96" y="505" class="rowh">Flavor profile control</text>
+    <text x="435" y="505" class="txt">Strong if grind/ratio dialed</text>
+    <text x="795" y="505" class="txt">Consistent convenience-first</text>
+  </g>
+
+  <text x="60" y="640" class="sub">Coffee Gear Lab editorial comparison • coffeegearlab.co</text>
+</svg>

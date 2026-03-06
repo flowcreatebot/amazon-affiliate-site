@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Best Manual Coffee Grinder Under $100 (2026) Tested Picks</title>
+  <desc id="desc">Comparison illustration showing top manual coffee grinder picks by budget tier, espresso suitability, and workflow effort.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#1f3b57"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <text x="70" y="110" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700">Best Manual Coffee Grinder Under $100</text>
+  <text x="70" y="155" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="30">2026 Tested Picks • Budget Tiers • Workflow Reality</text>
+
+  <g transform="translate(70,210)">
+    <rect x="0" y="0" rx="18" ry="18" width="335" height="360" fill="url(#card)" stroke="#93c5fd" stroke-opacity="0.45"/>
+    <text x="24" y="48" fill="#bfdbfe" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">$0–$50 Winner</text>
+    <text x="24" y="92" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">Timemore C2</text>
+    <text x="24" y="138" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20">Best first serious upgrade</text>
+    <text x="24" y="182" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20">Espresso: Pressurized-only</text>
+    <text x="24" y="226" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20">18g grind time: ~35–50 sec</text>
+    <text x="24" y="270" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20">Cleanup: Low</text>
+  </g>
+
+  <g transform="translate(432,210)">
+    <rect x="0" y="0" rx="18" ry="18" width="335" height="360" fill="url(#card)" stroke="#86efac" stroke-opacity="0.45"/>
+    <text x="24" y="48" fill="#bbf7d0" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">$50–$80 Winner</text>
+    <text x="24" y="92" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">1Zpresso Q Air</text>
+    <text x="24" y="138" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20">Best espresso-at-budget pick</text>
+    <text x="24" y="182" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20">Espresso: Capable w/ compromise</text>
+    <text x="24" y="226" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20">18g grind time: ~30–40 sec</text>
+    <text x="24" y="270" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20">Cleanup: Low</text>
+  </g>
+
+  <g transform="translate(794,210)">
+    <rect x="0" y="0" rx="18" ry="18" width="335" height="360" fill="url(#card)" stroke="#fcd34d" stroke-opacity="0.55"/>
+    <text x="24" y="48" fill="#fde68a" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">$80–$100 Winner</text>
+    <text x="24" y="92" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">KINGrinder K6</text>
+    <text x="24" y="138" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20">Best overall under $100</text>
+    <text x="24" y="182" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20">Espresso: Capable w/ compromise</text>
+    <text x="24" y="226" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20">18g grind time: ~35–45 sec</text>
+    <text x="24" y="270" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20">Cleanup: Low</text>
+  </g>
+</svg>

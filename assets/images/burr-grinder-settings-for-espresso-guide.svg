@@ -1,0 +1,44 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Burr Grinder Settings for Espresso Guide</title>
+  <desc id="desc">Editorial illustration showing espresso dial-in workflow with burr grinder settings, dose, yield, and shot time targets.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F2937"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="130" y1="110" x2="1030" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" rx="24" fill="url(#bg)"/>
+  <rect x="58" y="58" width="1084" height="559" rx="20" stroke="#374151" stroke-width="2"/>
+
+  <text x="100" y="145" fill="#F9FAFB" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="700">Burr Grinder Settings for Espresso</text>
+  <text x="100" y="188" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="26">Practical baseline ranges, fast dial-in, and troubleshooting cues</text>
+
+  <rect x="100" y="236" width="1000" height="300" rx="16" fill="#0F172A" stroke="#334155"/>
+  <line x1="350" y1="236" x2="350" y2="536" stroke="#334155"/>
+  <line x1="650" y1="236" x2="650" y2="536" stroke="#334155"/>
+  <line x1="900" y1="236" x2="900" y2="536" stroke="#334155"/>
+
+  <text x="132" y="280" fill="#FCD34D" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Start Point</text>
+  <text x="132" y="320" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="20">18g in, 36g out</text>
+  <text x="132" y="355" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="20">25-32 second target</text>
+
+  <text x="382" y="280" fill="#FCD34D" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">If Shot Runs Fast</text>
+  <text x="382" y="320" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="20">Go 1-2 clicks finer</text>
+  <text x="382" y="355" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="20">Or increase dose +0.5g</text>
+
+  <text x="682" y="280" fill="#FCD34D" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">If Shot Chokes</text>
+  <text x="682" y="320" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="20">Go 1-2 clicks coarser</text>
+  <text x="682" y="355" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="20">Or reduce dose -0.5g</text>
+
+  <text x="932" y="280" fill="#FCD34D" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Flavor Fix</text>
+  <text x="932" y="320" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="20">Sour = finer/longer</text>
+  <text x="932" y="355" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="20">Bitter = coarser/shorter</text>
+
+  <path d="M130 578H1070" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+  <text x="100" y="610" fill="#9CA3AF" font-family="Inter, Arial, sans-serif" font-size="20">Coffee Gear Lab • Espresso workflow guide</text>
+</svg>

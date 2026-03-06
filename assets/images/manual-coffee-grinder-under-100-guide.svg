@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Best Manual Coffee Grinder Under 100 Dollars</title>
+  <desc id="desc">Editorial graphic showing three manual coffee grinder picks by budget tier under 100 dollars.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f9ff"/>
+      <stop offset="100%" stop-color="#eef3ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" fill="#111827">
+    <text x="70" y="90" font-size="42" font-weight="700">Best Manual Coffee Grinder Under $100</text>
+    <text x="70" y="132" font-size="24" fill="#334155">2026 quick picks for cleaner cups and better consistency</text>
+
+    <rect x="70" y="180" width="1060" height="430" rx="20" fill="#ffffff" stroke="#dbe3f1"/>
+
+    <rect x="110" y="230" width="980" height="95" rx="14" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="140" y="268" font-size="30" font-weight="700">Under $50</text>
+    <text x="360" y="268" font-size="30">TIMEMORE Chestnut C2</text>
+    <text x="360" y="302" font-size="22" fill="#475569">Most consistent grind quality at starter budget</text>
+
+    <rect x="110" y="345" width="980" height="95" rx="14" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="140" y="383" font-size="30" font-weight="700">$50–$80</text>
+    <text x="360" y="383" font-size="30">1Zpresso Q Air</text>
+    <text x="360" y="417" font-size="22" fill="#475569">Faster grind speed with tight adjustment clicks</text>
+
+    <rect x="110" y="460" width="980" height="95" rx="14" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="140" y="498" font-size="30" font-weight="700">$80–$100</text>
+    <text x="360" y="498" font-size="30">KINGrinder K6</text>
+    <text x="360" y="532" font-size="22" fill="#475569">Best value for high-clarity pour-over and AeroPress cups</text>
+  </g>
+</svg>

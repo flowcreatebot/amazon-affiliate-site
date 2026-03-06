@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Best Burr Coffee Grinders Under 200 Dollars</title>
+  <desc id="desc">Editorial comparison graphic showing six burr grinder picks under 200 dollars by use case and budget tier.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g fill="#ffffff" font-family="Arial, Helvetica, sans-serif">
+    <text x="72" y="122" font-size="54" font-weight="700">Best Burr Coffee Grinders Under $200</text>
+    <text x="72" y="172" font-size="32" opacity="0.92">2026 Tested Picks • Espresso Labels • Cleanup Burden</text>
+
+    <g transform="translate(72,230)">
+      <rect width="1056" height="360" rx="18" fill="rgba(255,255,255,0.1)"/>
+      <text x="36" y="58" font-size="30" font-weight="700">Top Slots</text>
+      <text x="36" y="108" font-size="24">• Best Overall: Baratza Encore ESP</text>
+      <text x="36" y="152" font-size="24">• Best Under $100: OXO Brew Conical Burr</text>
+      <text x="36" y="196" font-size="24">• Best $100–$149: Fellow Opus</text>
+      <text x="36" y="240" font-size="24">• Best $150–$200: Turin SK40</text>
+      <text x="36" y="284" font-size="24">• Best Quiet Grinder: Oxo + Fellow tier</text>
+      <text x="36" y="328" font-size="24">• Best Manual Alt: KINGrinder K6</text>
+    </g>
+  </g>
+</svg>

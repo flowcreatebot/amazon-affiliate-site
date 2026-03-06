@@ -1,0 +1,42 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Best Burr Grinder for Espresso 2026</title>
+  <desc id="desc">Editorial graphic showing espresso burr grinder winners by use case and workflow.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F2937"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#374151"/>
+      <stop offset="1" stop-color="#1F2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="24" fill="url(#bg)"/>
+
+  <text x="64" y="92" fill="#F9FAFB" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="800">Best Burr Grinder for Espresso (2026)</text>
+  <text x="64" y="132" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="24">Top picks tested for dial-in precision, retention, and workflow speed</text>
+
+  <rect x="64" y="176" width="1072" height="422" rx="18" fill="url(#card)" stroke="#4B5563"/>
+
+  <text x="96" y="230" fill="#93C5FD" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Overall</text>
+  <text x="96" y="262" fill="#F9FAFB" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">DF64 Gen 2</text>
+  <text x="96" y="292" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="18">Stepless flat-burr control with low retention</text>
+
+  <text x="96" y="348" fill="#FCA5A5" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Best Under $200</text>
+  <text x="96" y="380" fill="#F9FAFB" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Baratza Encore ESP</text>
+  <text x="96" y="410" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="18">Easiest reliable entry into true home espresso</text>
+
+  <text x="96" y="466" fill="#86EFAC" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Best Manual</text>
+  <text x="96" y="498" fill="#F9FAFB" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">1Zpresso J-Ultra</text>
+  <text x="96" y="528" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="18">High precision clicks with near-zero retention</text>
+
+  <rect x="708" y="224" width="392" height="320" rx="14" fill="#111827" stroke="#6B7280"/>
+  <text x="740" y="266" fill="#F9FAFB" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">What matters most</text>
+  <text x="740" y="306" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="18">• Adjustment precision</text>
+  <text x="740" y="338" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="18">• Retention + static mess</text>
+  <text x="740" y="370" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="18">• Single-dose vs hopper flow</text>
+  <text x="740" y="402" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="18">• Daily cleaning burden</text>
+  <text x="740" y="434" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="18">• True espresso capability</text>
+
+  <text x="64" y="638" fill="#9CA3AF" font-family="Inter, Arial, sans-serif" font-size="16">Coffee Gear Lab editorial graphic • March 2026</text>
+</svg>

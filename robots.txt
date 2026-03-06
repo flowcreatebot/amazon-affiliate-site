@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /content/
+Disallow: /research/
+Disallow: /metrics/
 
-Sitemap: https://www.coffeegearlab.co/sitemap.xml
+Sitemap: https://amazon-affiliate-static.onrender.com/sitemap.xml

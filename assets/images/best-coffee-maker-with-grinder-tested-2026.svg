@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Best Coffee Maker with Grinder 2026 comparison snapshot</title>
+  <desc id="desc">Editorial image summarizing 7 tested grind-and-brew coffee makers with espresso-capable labels and cleanup scores.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6efe6"/>
+      <stop offset="100%" stop-color="#e7f1ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <text x="60" y="95" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#172030">Best Coffee Maker with Grinder (2026)</text>
+  <text x="60" y="136" font-family="Inter, Arial, sans-serif" font-size="24" fill="#334155">7 tested picks ranked by burr quality, cleanup burden, and espresso capability</text>
+
+  <g transform="translate(60,175)">
+    <rect width="1080" height="430" rx="24" fill="#ffffff" stroke="#d8e0ea"/>
+    <text x="30" y="46" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#1e293b">Top winner: Breville Grind Control</text>
+    <text x="30" y="78" font-family="Inter, Arial, sans-serif" font-size="19" fill="#475569">Best overall workflow for programmable daily brewing with stronger burr consistency</text>
+
+    <g transform="translate(30,112)">
+      <rect width="320" height="270" rx="16" fill="#f8fafc" stroke="#dce4ef"/>
+      <text x="18" y="34" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700" fill="#1e293b">Budget Value</text>
+      <text x="18" y="64" font-family="Inter, Arial, sans-serif" font-size="18" fill="#334155">BLACK+DECKER Mill &amp; Brew</text>
+      <text x="18" y="100" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Grinder: Blade</text>
+      <text x="18" y="126" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Brew: 12-cup carafe</text>
+      <text x="18" y="152" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Cleanup: Low</text>
+      <text x="18" y="178" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Espresso-capable: No</text>
+      <text x="18" y="214" font-family="Inter, Arial, sans-serif" font-size="15" fill="#64748b">Best for simple full-pot mornings under budget.</text>
+    </g>
+
+    <g transform="translate(380,112)">
+      <rect width="320" height="270" rx="16" fill="#f8fafc" stroke="#dce4ef"/>
+      <text x="18" y="34" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700" fill="#1e293b">Single-Serve Speed</text>
+      <text x="18" y="64" font-family="Inter, Arial, sans-serif" font-size="18" fill="#334155">Cuisinart Grind &amp; Brew SS</text>
+      <text x="18" y="100" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Grinder: Blade</text>
+      <text x="18" y="126" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Brew: 8–14 oz single cup</text>
+      <text x="18" y="152" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Cleanup: Medium</text>
+      <text x="18" y="178" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Espresso-capable: No</text>
+      <text x="18" y="214" font-family="Inter, Arial, sans-serif" font-size="15" fill="#64748b">Pod backup makes rushed weekday brewing easier.</text>
+    </g>
+
+    <g transform="translate(730,112)">
+      <rect width="320" height="270" rx="16" fill="#f8fafc" stroke="#dce4ef"/>
+      <text x="18" y="34" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700" fill="#1e293b">Hybrid Espresso + Drip</text>
+      <text x="18" y="64" font-family="Inter, Arial, sans-serif" font-size="18" fill="#334155">Ninja Luxe Café Premier</text>
+      <text x="18" y="100" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Grinder: Burr</text>
+      <text x="18" y="126" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Brew: Espresso + drip</text>
+      <text x="18" y="152" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Cleanup: High</text>
+      <text x="18" y="178" font-family="Inter, Arial, sans-serif" font-size="16" fill="#475569">Espresso-capable: Yes</text>
+      <text x="18" y="214" font-family="Inter, Arial, sans-serif" font-size="15" fill="#64748b">Most complete all-in-one for mixed coffee households.</text>
+    </g>
+  </g>
+</svg>
