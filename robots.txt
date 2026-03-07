@@ -4,4 +4,4 @@ Disallow: /content/
 Disallow: /research/
 Disallow: /metrics/
 
-Sitemap: https://amazon-affiliate-static.onrender.com/sitemap.xml
+Sitemap: https://www.coffeegearpicks.com/sitemap.xml
