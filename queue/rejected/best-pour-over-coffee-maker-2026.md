@@ -3,12 +3,12 @@ slug: best-pour-over-coffee-maker
 page_type: money
 primary_keyword: "best pour over coffee maker"
 secondary_keywords: ["pour over dripper", "pour over coffee maker for beginners", "manual pour over brewer"]
-status: draft
+status: rejected
 created_by: strategist
 created_at: "2026-03-07T09:35:00+07:00"
 writer_completed_at: "2026-03-07T21:16:00+07:00"
-qa_result: null
-qa_rejection_reason: null
+qa_result: fail
+qa_rejection_reason: "FAIL:C06,C07,C08,D05"
 designer_completed_at: null
 deployed_url: null
 asins_verified: ["B000P4D5HG", "B0000YWF5E", "B000MIT2OK", "B0CK4J1G7V", "B000P4D5F8", "B002S01CKW"]

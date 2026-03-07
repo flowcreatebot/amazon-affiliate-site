@@ -321,16 +321,13 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 .table-wrap {
-  overflow-x: auto;
   border: 1px solid var(--brand-200);
   border-radius: var(--radius);
-  -webkit-overflow-scrolling: touch;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 560px;
 }
 th, td {
   text-align: left;
@@ -346,22 +343,55 @@ th {
 tbody tr:nth-child(even) { background: var(--brand-50); }
 tbody tr:hover { background: var(--surface-elevated); }
 
-/* Sticky first column on mobile */
+/* Mobile: rows become stacked cards */
 @media (max-width: 959px) {
-  .comparison-table td:first-child,
-  .comparison-table th:first-child {
-    position: sticky;
-    left: 0;
+  .comparison-table .table-wrap { border: none; border-radius: 0; }
+  .comparison-table table,
+  .comparison-table thead,
+  .comparison-table tbody,
+  .comparison-table tr,
+  .comparison-table th,
+  .comparison-table td { display: block; }
+  .comparison-table thead { display: none; }
+  .comparison-table tbody tr {
     background: var(--surface-white);
-    z-index: 1;
-    border-right: 2px solid var(--brand-200);
+    border: 1px solid var(--brand-200);
+    border-radius: var(--radius);
+    padding: var(--sp-4);
+    margin-bottom: var(--sp-3);
   }
-  .comparison-table th:first-child {
-    background: var(--surface-latte);
+  .comparison-table tbody tr:hover { background: var(--surface-white); }
+  .comparison-table td {
+    padding: var(--sp-1) 0;
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--sp-3);
   }
-  .comparison-table tbody tr:nth-child(even) td:first-child {
-    background: var(--brand-50);
+  .comparison-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--brand-800);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    min-width: 40%;
   }
+  .comparison-table td:first-child {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--brand-900);
+    padding-bottom: var(--sp-2);
+    border-bottom: 1px solid var(--brand-200);
+    margin-bottom: var(--sp-2);
+    display: block;
+  }
+  .comparison-table td:first-child::before { display: none; }
+  .comparison-table td:last-child {
+    padding-top: var(--sp-3);
+    display: block;
+  }
+  .comparison-table td:last-child::before { display: none; }
 }
 
 /* --- Pros & Cons --- */

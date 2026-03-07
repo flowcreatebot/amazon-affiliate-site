@@ -138,10 +138,10 @@ All pages must use `styles-v2.css`. This document defines every colour, typograp
       </thead>
       <tbody>
         <tr>
-          <td>Product Name</td>
-          <td><span class="best-for-badge --budget">Budget</span></td>
-          <td>$29.99</td>
-          <td>4.3</td>
+          <td data-label="Product">Product Name</td>
+          <td data-label="Best For"><span class="best-for-badge --budget">Budget</span></td>
+          <td data-label="Price">$29.99</td>
+          <td data-label="Rating">4.3</td>
           <td><a href="https://www.amazon.com/dp/ASIN/ref=nosim?tag=coffee-site-20" class="cta-button --primary --sm" rel="nofollow sponsored noopener" target="_blank">Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span></a></td>
         </tr>
       </tbody>
@@ -150,8 +150,10 @@ All pages must use `styles-v2.css`. This document defines every colour, typograp
 </div>
 ```
 
-- First column sticky on mobile (`position: sticky; left: 0`)
-- Zebra striping on `tbody tr:nth-child(even)`
+- **Desktop:** Standard table with zebra striping on `tbody tr:nth-child(even)`
+- **Mobile (<960px):** Each row becomes a stacked card — no horizontal scroll
+- **`data-label` required:** Every `<td>` (except first and last) must have a `data-label` attribute matching its column header — this becomes the label on mobile
+- First `<td>` displays as the card title (bold, larger); last `<td>` displays as a block (for the CTA button)
 - CTA button in last column per row
 - Timestamp header above table in `--brand-400` small text
 

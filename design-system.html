@@ -419,6 +419,7 @@
     <!-- ==================== 10. COMPARISON TABLE ==================== -->
     <section id="comparison-table">
       <h2>Comparison Table (<code>.comparison-table</code>)</h2>
+      <p>On desktop: standard table. On mobile (&lt;960px): each row becomes a stacked card. Add <code>data-label</code> to each <code>&lt;td&gt;</code> for mobile labels.</p>
       <div class="comparison-table">
         <p class="comparison-table__timestamp">Prices updated: March 7, 2026</p>
         <div class="table-wrap">
@@ -427,6 +428,8 @@
               <tr>
                 <th>Product</th>
                 <th>Best For</th>
+                <th>Type</th>
+                <th>Grind Settings</th>
                 <th>Price</th>
                 <th>Rating</th>
                 <th></th>
@@ -434,31 +437,39 @@
             </thead>
             <tbody>
               <tr>
-                <td>Baratza Encore ESP</td>
-                <td><span class="best-for-badge --overall">Best Overall</span></td>
-                <td>$169.99</td>
-                <td>4.7</td>
+                <td data-label="Product">Baratza Encore ESP</td>
+                <td data-label="Best For"><span class="best-for-badge --overall">Best Overall</span></td>
+                <td data-label="Type">Electric burr</td>
+                <td data-label="Grind Settings">40</td>
+                <td data-label="Price">$169.99</td>
+                <td data-label="Rating">4.7</td>
                 <td><a href="#" class="cta-button --primary --sm" onclick="return false;">Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span></a></td>
               </tr>
               <tr>
-                <td>Timemore C2 Max</td>
-                <td><span class="best-for-badge --budget">Budget Pick</span></td>
-                <td>$69.99</td>
-                <td>4.5</td>
+                <td data-label="Product">Timemore C2 Max</td>
+                <td data-label="Best For"><span class="best-for-badge --budget">Budget Pick</span></td>
+                <td data-label="Type">Manual burr</td>
+                <td data-label="Grind Settings">Stepless</td>
+                <td data-label="Price">$69.99</td>
+                <td data-label="Rating">4.5</td>
                 <td><a href="#" class="cta-button --primary --sm" onclick="return false;">Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span></a></td>
               </tr>
               <tr>
-                <td>1Zpresso JX-Pro S</td>
-                <td><span class="best-for-badge --espresso">Espresso</span></td>
-                <td>$89.99</td>
-                <td>4.6</td>
+                <td data-label="Product">1Zpresso JX-Pro S</td>
+                <td data-label="Best For"><span class="best-for-badge --espresso">Espresso</span></td>
+                <td data-label="Type">Manual burr</td>
+                <td data-label="Grind Settings">Stepless</td>
+                <td data-label="Price">$89.99</td>
+                <td data-label="Rating">4.6</td>
                 <td><a href="#" class="cta-button --primary --sm" onclick="return false;">Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span></a></td>
               </tr>
               <tr>
-                <td>Hario V60 Drip Scale</td>
-                <td><span class="best-for-badge --pourover">Pour Over</span></td>
-                <td>$54.99</td>
-                <td>4.4</td>
+                <td data-label="Product">Hario V60 Drip Scale</td>
+                <td data-label="Best For"><span class="best-for-badge --pourover">Pour Over</span></td>
+                <td data-label="Type">Scale</td>
+                <td data-label="Grind Settings">N/A</td>
+                <td data-label="Price">$54.99</td>
+                <td data-label="Rating">4.4</td>
                 <td><a href="#" class="cta-button --primary --sm" onclick="return false;">Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span></a></td>
               </tr>
             </tbody>
