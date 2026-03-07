@@ -16,9 +16,9 @@
   --brand-50: #FAF8F5;
 
   /* CTA / Action */
-  --cta: #D97706;
-  --cta-hover: #B45309;
-  --cta-light: #FEF3C7;
+  --cta: #059669;
+  --cta-hover: #047857;
+  --cta-light: #ECFDF5;
   --secondary: #0369A1;
   --secondary-hover: #075985;
 
@@ -266,7 +266,7 @@ a:hover { text-decoration-thickness: 2px; }
   font-weight: 600;
   line-height: 1.4;
 }
-.best-for-badge.--overall { color: #92400E; background: #FEF3C7; }
+.best-for-badge.--overall { color: #065F46; background: #ECFDF5; }
 .best-for-badge.--budget { color: #166534; background: #F0FDF4; }
 .best-for-badge.--espresso { color: #7C2D12; background: #FFF7ED; }
 .best-for-badge.--pourover { color: #1E40AF; background: #EFF6FF; }

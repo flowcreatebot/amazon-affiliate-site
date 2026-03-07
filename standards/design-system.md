@@ -21,9 +21,9 @@ All pages must use `styles-v2.css`. This document defines every colour, typograp
 ### CTA / Action
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--cta` | `#D97706` | Primary CTA buttons (Amazon) |
-| `--cta-hover` | `#B45309` | CTA hover state |
-| `--cta-light` | `#FEF3C7` | CTA background tint |
+| `--cta` | `#059669` | Primary CTA buttons (Amazon) |
+| `--cta-hover` | `#047857` | CTA hover state |
+| `--cta-light` | `#ECFDF5` | CTA background tint |
 | `--secondary` | `#0369A1` | Internal links, secondary buttons |
 | `--secondary-hover` | `#075985` | Secondary hover |
 
@@ -224,7 +224,7 @@ All pages must use `styles-v2.css`. This document defines every colour, typograp
 **Variants:**
 | Class | Colour | Background |
 |-------|--------|------------|
-| `--overall` | `#92400E` | `#FEF3C7` (gold) |
+| `--overall` | `#065F46` | `#ECFDF5` (green) |
 | `--budget` | `#166534` | `#F0FDF4` (green) |
 | `--espresso` | `#7C2D12` | `#FFF7ED` (terracotta) |
 | `--pourover` | `#1E40AF` | `#EFF6FF` (blue) |
