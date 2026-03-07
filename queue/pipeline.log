@@ -1,0 +1,8 @@
+2026-03-07T17:21:02+07:00 | writer | MOVED | best-gooseneck-kettle-for-pour-over | briefs/ → drafts/ | words:2095 asins:5
+2026-03-07T18:17:08+07:00 | qa | MOVED | best-gooseneck-kettle-for-pour-over | drafts/ → rejected/ | FAIL:C02,C08,D05,L02
+2026-03-07T18:49:17+07:00 | designer | MIGRATED | aeropress-vs-french-press | legacy→v2
+2026-03-07T19:15:00+07:00 | writer | MOVED | best-gooseneck-kettle-for-pour-over | rejected/ → drafts/ | words:2152 asins:5
+2026-03-07T20:18:20+07:00 | qa | MOVED | best-gooseneck-kettle-for-pour-over | drafts/ → qa-passed/ | PASS:34/34
+2026-03-07T21:16:00+07:00 | writer | MOVED | best-pour-over-coffee-maker | briefs/ → drafts/ | words:2090 asins:6
+2026-03-07T21:48:39+07:00 | designer | MOVED | best-gooseneck-kettle-for-pour-over | qa-passed/ → design-passed/ | changes:added-toc,aligned-header-classes,verified-v2-components,schema-present
+2026-03-07T21:51:02+07:00 | deployer | MOVED | best-gooseneck-kettle-for-pour-over | design-passed/ → published/ | deployed
