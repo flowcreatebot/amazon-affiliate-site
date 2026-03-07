@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Design System — Coffee Gear Lab (Internal)</title>
+  <link rel="stylesheet" href="/styles-v2.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q4RL7QGN4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3Q4RL7QGN4');
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <div class="container topbar">
+      <a class="brand" href="/">Coffee Gear Lab</a>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/posts/">All Guides</a>
+        <a href="/posts/design-system.html" style="color: var(--brand-900);">Design System</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+
+    <!-- ==================== 1. INTRODUCTION ==================== -->
+    <h1>Design System Reference</h1>
+    <p class="kicker">Internal page — not indexed by search engines</p>
+    <p class="lead">This page renders every component, colour token, and typographic element from <code>styles-v2.css</code>. It serves as the visual ground truth for all pipeline agents (writer, QA, designer) and for manual review.</p>
+
+    <!-- ==================== TOC ==================== -->
+    <nav class="toc" aria-label="Table of Contents">
+      <h4>Contents</h4>
+      <ol>
+        <li><a href="#colours">Colour Palette</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#spacing">Spacing Scale</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#badges">Badges</a></li>
+        <li><a href="#star-rating">Star Rating</a></li>
+        <li><a href="#product-card">Product Card</a></li>
+        <li><a href="#quick-picks">Quick Picks</a></li>
+        <li><a href="#comparison-table">Comparison Table</a></li>
+        <li><a href="#pros-cons">Pros &amp; Cons</a></li>
+        <li><a href="#buying-guide">Buying Guide Section</a></li>
+        <li><a href="#faq">FAQ Accordion</a></li>
+        <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+        <li><a href="#toc-example">Table of Contents</a></li>
+        <li><a href="#affiliate-disclosure">Affiliate Disclosure</a></li>
+        <li><a href="#card-grid">Cards &amp; Grid</a></li>
+        <li><a href="#utilities">Utility Classes</a></li>
+        <li><a href="#page-templates">Page Templates</a></li>
+      </ol>
+    </nav>
+
+    <!-- ==================== 2. COLOUR PALETTE ==================== -->
+    <section id="colours">
+      <h2>Colour Palette</h2>
+
+      <h3>Brand Scale</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-bottom:var(--sp-6);">
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--brand-900);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--brand-900</code><br>#2C1810</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--brand-800);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--brand-800</code><br>#3D261A</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--brand-700);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--brand-700</code><br>#5C3D2E</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--brand-600);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--brand-600</code><br>#7A5B4A</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--brand-400);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--brand-400</code><br>#B89B8A</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--brand-200);border-radius:var(--radius-sm);border:1px solid var(--brand-400);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--brand-200</code><br>#EFDFCE</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--brand-100);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--brand-100</code><br>#F5EDE4</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--brand-50);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--brand-50</code><br>#FAF8F5</small>
+        </div>
+      </div>
+
+      <h3>CTA / Action Colours</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-bottom:var(--sp-6);">
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--cta);border-radius:var(--radius-sm);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--cta</code><br>#D97706</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--cta-hover);border-radius:var(--radius-sm);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--cta-hover</code><br>#B45309</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--cta-light);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--cta-light</code><br>#FEF3C7</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--secondary);border-radius:var(--radius-sm);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--secondary</code><br>#0369A1</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--secondary-hover);border-radius:var(--radius-sm);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--secondary-hover</code><br>#075985</small>
+        </div>
+      </div>
+
+      <h3>Semantic Colours</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-bottom:var(--sp-6);">
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--success);border-radius:var(--radius-sm);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--success</code><br>#15803D</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--success-bg);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--success-bg</code><br>#F0FDF4</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--warning);border-radius:var(--radius-sm);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--warning</code><br>#D97706</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--warning-bg);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--warning-bg</code><br>#FFFBEB</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--error);border-radius:var(--radius-sm);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--error</code><br>#DC2626</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--error-bg);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--error-bg</code><br>#FEF2F2</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--info);border-radius:var(--radius-sm);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--info</code><br>#0369A1</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--info-bg);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--info-bg</code><br>#EFF6FF</small>
+        </div>
+      </div>
+
+      <h3>Surface Colours</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-bottom:var(--sp-6);">
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--surface-white);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--surface-white</code><br>#FFFFFF</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--surface-warm);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--surface-warm</code><br>#FAF8F5</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--surface-latte);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--surface-latte</code><br>#F5EDE4</small>
+        </div>
+        <div style="text-align:center;width:100px;">
+          <div style="width:100px;height:60px;background:var(--surface-elevated);border-radius:var(--radius-sm);border:1px solid var(--brand-200);"></div>
+          <small style="display:block;margin-top:var(--sp-1);"><code>--surface-elevated</code><br>#EFDFCE</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. TYPOGRAPHY ==================== -->
+    <section id="typography">
+      <h2>Typography</h2>
+
+      <p><strong>Font stack:</strong> <code>Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif</code></p>
+      <p><strong>Base size:</strong> 1rem (16px) · <strong>Body line-height:</strong> 1.65 · <strong>Heading line-height:</strong> 1.25</p>
+
+      <h3>Heading Scale</h3>
+      <div style="background:var(--surface-latte);padding:var(--sp-4);border-radius:var(--radius);margin-bottom:var(--sp-4);">
+        <h1 style="margin-top:0;">Heading 1 — clamp(1.75rem, 3vw, 2.5rem) · weight 800</h1>
+        <h2 style="margin-top:var(--sp-4);">Heading 2 — clamp(1.35rem, 2.5vw, 1.75rem) · weight 700</h2>
+        <h3 style="margin-top:var(--sp-4);">Heading 3 — 1.25rem · weight 700</h3>
+        <h4 style="margin-top:var(--sp-4);">Heading 4 — 1.1rem · weight 600</h4>
+      </div>
+
+      <h3>Body &amp; Lead Text</h3>
+      <p class="lead">This is <code>.lead</code> text — 1.1rem, colour <code>--brand-600</code>. Used for intro paragraphs below the H1.</p>
+      <p>This is standard body text at 1rem (16px) with a line-height of 1.65. Body text uses <code>--brand-700</code> for comfortable reading on warm backgrounds. Links look <a href="#">like this</a> and use <code>--secondary</code> colour.</p>
+      <p><small>This is small/caption text at 0.875rem — used for timestamps, fine print, and secondary labels.</small></p>
+    </section>
+
+    <!-- ==================== 4. SPACING SCALE ==================== -->
+    <section id="spacing">
+      <h2>Spacing Scale</h2>
+      <div style="display:flex;flex-direction:column;gap:var(--sp-2);margin-bottom:var(--sp-4);">
+        <div style="display:flex;align-items:center;gap:var(--sp-3);">
+          <div style="width:var(--sp-1);height:24px;background:var(--cta);border-radius:2px;flex-shrink:0;"></div>
+          <code style="min-width:60px;">--sp-1</code> <small>0.25rem (4px)</small>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-3);">
+          <div style="width:var(--sp-2);height:24px;background:var(--cta);border-radius:2px;flex-shrink:0;"></div>
+          <code style="min-width:60px;">--sp-2</code> <small>0.5rem (8px)</small>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-3);">
+          <div style="width:var(--sp-3);height:24px;background:var(--cta);border-radius:2px;flex-shrink:0;"></div>
+          <code style="min-width:60px;">--sp-3</code> <small>0.75rem (12px)</small>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-3);">
+          <div style="width:var(--sp-4);height:24px;background:var(--cta);border-radius:2px;flex-shrink:0;"></div>
+          <code style="min-width:60px;">--sp-4</code> <small>1rem (16px)</small>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-3);">
+          <div style="width:var(--sp-5);height:24px;background:var(--cta);border-radius:2px;flex-shrink:0;"></div>
+          <code style="min-width:60px;">--sp-5</code> <small>1.25rem (20px)</small>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-3);">
+          <div style="width:var(--sp-6);height:24px;background:var(--cta);border-radius:2px;flex-shrink:0;"></div>
+          <code style="min-width:60px;">--sp-6</code> <small>1.5rem (24px)</small>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-3);">
+          <div style="width:var(--sp-8);height:24px;background:var(--cta);border-radius:2px;flex-shrink:0;"></div>
+          <code style="min-width:60px;">--sp-8</code> <small>2rem (32px)</small>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-3);">
+          <div style="width:var(--sp-10);height:24px;background:var(--cta);border-radius:2px;flex-shrink:0;"></div>
+          <code style="min-width:60px;">--sp-10</code> <small>2.5rem (40px)</small>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-3);">
+          <div style="width:var(--sp-12);height:24px;background:var(--cta);border-radius:2px;flex-shrink:0;"></div>
+          <code style="min-width:60px;">--sp-12</code> <small>3rem (48px)</small>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--sp-3);">
+          <div style="width:var(--sp-16);height:24px;background:var(--cta);border-radius:2px;flex-shrink:0;"></div>
+          <code style="min-width:60px;">--sp-16</code> <small>4rem (64px)</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. BUTTONS ==================== -->
+    <section id="buttons">
+      <h2>Buttons (<code>.cta-button</code>)</h2>
+
+      <h3>Primary</h3>
+      <p>
+        <a href="#" class="cta-button --primary" onclick="return false;">
+          Check Price on Amazon <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </p>
+
+      <h3>Primary Small</h3>
+      <p>
+        <a href="#" class="cta-button --primary --sm" onclick="return false;">
+          Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </p>
+
+      <h3>Secondary</h3>
+      <p>
+        <a href="#" class="cta-button --secondary" onclick="return false;">
+          Read Full Review <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </p>
+
+      <h3>Secondary Small</h3>
+      <p>
+        <a href="#" class="cta-button --secondary --sm" onclick="return false;">
+          Compare <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </p>
+
+      <p><small>Arrow (<code>.cta-button__arrow</code>) animates 4px right on hover via <code>transform: translateX(4px)</code>.</small></p>
+    </section>
+
+    <!-- ==================== 6. BADGES ==================== -->
+    <section id="badges">
+      <h2>Badges (<code>.best-for-badge</code>)</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp-3);align-items:center;">
+        <span class="best-for-badge --overall">Best Overall</span>
+        <span class="best-for-badge --budget">Budget Pick</span>
+        <span class="best-for-badge --espresso">Best for Espresso</span>
+        <span class="best-for-badge --pourover">Best for Pour Over</span>
+        <span class="best-for-badge --beginners">Best for Beginners</span>
+        <span class="best-for-badge --upgrade">Best Upgrade</span>
+      </div>
+    </section>
+
+    <!-- ==================== 7. STAR RATING ==================== -->
+    <section id="star-rating">
+      <h2>Star Rating (<code>.star-rating</code>)</h2>
+      <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
+        <div class="star-rating" aria-label="5 out of 5 stars">
+          <span class="star-rating__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="star-rating__score">5.0</span>
+        </div>
+        <div class="star-rating" aria-label="4.5 out of 5 stars">
+          <span class="star-rating__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+          <span class="star-rating__score">4.5</span>
+        </div>
+        <div class="star-rating" aria-label="3 out of 5 stars">
+          <span class="star-rating__stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
+          <span class="star-rating__score">3.0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. PRODUCT CARD ==================== -->
+    <section id="product-card">
+      <h2>Product Card (<code>.product-card</code>)</h2>
+
+      <h3>Standard Card</h3>
+      <div style="max-width:300px;margin-bottom:var(--sp-6);">
+        <article class="product-card">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' fill='%23EFDFCE'%3E%3Crect width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%237A5B4A' font-family='sans-serif' font-size='14'%3E300 x 300 image%3C/text%3E%3C/svg%3E" alt="Placeholder product image" width="300" height="300" loading="lazy">
+          <div class="product-card__body">
+            <span class="best-for-badge --budget">Budget Pick</span>
+            <h3 class="product-card__title">Example Coffee Grinder</h3>
+            <div class="star-rating" aria-label="4.3 out of 5 stars">
+              <span class="star-rating__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+              <span class="star-rating__score">4.3</span>
+            </div>
+            <p class="product-card__price">$49.99</p>
+            <a href="#" class="cta-button --primary --sm" onclick="return false;">
+              Check Price on Amazon <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <h3>Featured Card (<code>.--featured</code>)</h3>
+      <div style="max-width:300px;">
+        <article class="product-card --featured">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' fill='%23EFDFCE'%3E%3Crect width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%237A5B4A' font-family='sans-serif' font-size='14'%3EFeatured product%3C/text%3E%3C/svg%3E" alt="Placeholder featured product" width="300" height="300" loading="lazy">
+          <div class="product-card__body">
+            <span class="best-for-badge --overall">Best Overall</span>
+            <h3 class="product-card__title">Premium Espresso Machine</h3>
+            <div class="star-rating" aria-label="4.8 out of 5 stars">
+              <span class="star-rating__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="star-rating__score">4.8</span>
+            </div>
+            <p class="product-card__price">$189.99</p>
+            <a href="#" class="cta-button --primary --sm" onclick="return false;">
+              Check Price on Amazon <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 9. QUICK PICKS ==================== -->
+    <section id="quick-picks">
+      <h2>Quick Picks (<code>.quick-picks</code>)</h2>
+      <div class="quick-picks">
+        <h2>Our Top Picks</h2>
+        <div class="quick-picks__grid">
+          <article class="product-card --featured">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' fill='%23EFDFCE'%3E%3Crect width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%237A5B4A' font-family='sans-serif' font-size='14'%3E%231 Featured%3C/text%3E%3C/svg%3E" alt="Featured product placeholder" width="300" height="300" loading="lazy">
+            <div class="product-card__body">
+              <span class="best-for-badge --overall">Best Overall</span>
+              <h3 class="product-card__title">Baratza Encore ESP</h3>
+              <div class="star-rating" aria-label="4.7 out of 5 stars">
+                <span class="star-rating__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="star-rating__score">4.7</span>
+              </div>
+              <p class="product-card__price">$169.99</p>
+              <a href="#" class="cta-button --primary --sm" onclick="return false;">
+                Check Price on Amazon <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+          <article class="product-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' fill='%23EFDFCE'%3E%3Crect width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%237A5B4A' font-family='sans-serif' font-size='14'%3E%232 Runner-up%3C/text%3E%3C/svg%3E" alt="Runner-up product placeholder" width="300" height="300" loading="lazy">
+            <div class="product-card__body">
+              <span class="best-for-badge --budget">Budget Pick</span>
+              <h3 class="product-card__title">Timemore C2 Max</h3>
+              <div class="star-rating" aria-label="4.5 out of 5 stars">
+                <span class="star-rating__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                <span class="star-rating__score">4.5</span>
+              </div>
+              <p class="product-card__price">$69.99</p>
+              <a href="#" class="cta-button --primary --sm" onclick="return false;">
+                Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+          <article class="product-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' fill='%23EFDFCE'%3E%3Crect width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%237A5B4A' font-family='sans-serif' font-size='14'%3E%233 Espresso%3C/text%3E%3C/svg%3E" alt="Third product placeholder" width="300" height="300" loading="lazy">
+            <div class="product-card__body">
+              <span class="best-for-badge --espresso">Best for Espresso</span>
+              <h3 class="product-card__title">1Zpresso JX-Pro S</h3>
+              <div class="star-rating" aria-label="4.6 out of 5 stars">
+                <span class="star-rating__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="star-rating__score">4.6</span>
+              </div>
+              <p class="product-card__price">$89.99</p>
+              <a href="#" class="cta-button --primary --sm" onclick="return false;">
+                Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 10. COMPARISON TABLE ==================== -->
+    <section id="comparison-table">
+      <h2>Comparison Table (<code>.comparison-table</code>)</h2>
+      <div class="comparison-table">
+        <p class="comparison-table__timestamp">Prices updated: March 7, 2026</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Best For</th>
+                <th>Price</th>
+                <th>Rating</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Baratza Encore ESP</td>
+                <td><span class="best-for-badge --overall">Best Overall</span></td>
+                <td>$169.99</td>
+                <td>4.7</td>
+                <td><a href="#" class="cta-button --primary --sm" onclick="return false;">Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span></a></td>
+              </tr>
+              <tr>
+                <td>Timemore C2 Max</td>
+                <td><span class="best-for-badge --budget">Budget Pick</span></td>
+                <td>$69.99</td>
+                <td>4.5</td>
+                <td><a href="#" class="cta-button --primary --sm" onclick="return false;">Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span></a></td>
+              </tr>
+              <tr>
+                <td>1Zpresso JX-Pro S</td>
+                <td><span class="best-for-badge --espresso">Espresso</span></td>
+                <td>$89.99</td>
+                <td>4.6</td>
+                <td><a href="#" class="cta-button --primary --sm" onclick="return false;">Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span></a></td>
+              </tr>
+              <tr>
+                <td>Hario V60 Drip Scale</td>
+                <td><span class="best-for-badge --pourover">Pour Over</span></td>
+                <td>$54.99</td>
+                <td>4.4</td>
+                <td><a href="#" class="cta-button --primary --sm" onclick="return false;">Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 11. PROS & CONS ==================== -->
+    <section id="pros-cons">
+      <h2>Pros &amp; Cons (<code>.pros-cons</code>)</h2>
+      <div class="pros-cons">
+        <div class="pros-cons__col --pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>&#10003; Consistent grind size across settings</li>
+            <li>&#10003; Quiet motor under 70 dB</li>
+            <li>&#10003; Easy to clean — removable burrs</li>
+          </ul>
+        </div>
+        <div class="pros-cons__col --cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>&#10007; No espresso-fine capability</li>
+            <li>&#10007; Hopper holds only 8 oz</li>
+            <li>&#10007; Plastic body feels cheap</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 12. BUYING GUIDE SECTION ==================== -->
+    <section id="buying-guide">
+      <h2>Buying Guide Section (<code>.buying-guide-section</code>)</h2>
+      <section class="buying-guide-section">
+        <h2>How to Choose the Right Coffee Grinder</h2>
+        <p>The single biggest upgrade for any home brewer is switching from pre-ground to freshly ground coffee. But not all grinders are equal — blade grinders produce inconsistent particle sizes that lead to uneven extraction.</p>
+        <p>Look for conical or flat burr grinders with at least 15 grind settings. For pour-over, prioritize grind consistency. For espresso, you need stepless (infinite) micro-adjustment.</p>
+      </section>
+    </section>
+
+    <!-- ==================== 13. FAQ ACCORDION ==================== -->
+    <section id="faq">
+      <h2>FAQ Accordion (<code>.faq-accordion</code>)</h2>
+      <div class="faq-accordion">
+        <details>
+          <summary>What grind size should I use for pour over?</summary>
+          <div class="faq-accordion__answer">
+            <p>Medium-fine, roughly the texture of table salt. For a V60, go slightly finer than for a Chemex. Adjust based on your total brew time — aim for 2:30 to 3:30.</p>
+          </div>
+        </details>
+        <details>
+          <summary>How often should I clean my burr grinder?</summary>
+          <div class="faq-accordion__answer">
+            <p>Brush out retained grounds after every use. Deep clean with grinder cleaning tablets every 2-4 weeks, depending on how oily your beans are. Dark roasts leave more residue.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Is a hand grinder worth it for espresso?</summary>
+          <div class="faq-accordion__answer">
+            <p>Yes, if you brew 1-2 cups daily and want precision without the cost of an electric espresso grinder. Models like the 1Zpresso JX-Pro and Timemore Chestnut X offer espresso-capable burr geometry under $150.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ==================== 14. BREADCRUMBS ==================== -->
+    <section id="breadcrumbs">
+      <h2>Breadcrumbs (<code>.breadcrumbs</code>)</h2>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts/">Coffee Guides</a></li>
+          <li aria-current="page">Best Coffee Grinder for Pour Over</li>
+        </ol>
+      </nav>
+    </section>
+
+    <!-- ==================== 15. TABLE OF CONTENTS ==================== -->
+    <section id="toc-example">
+      <h2>Table of Contents (<code>.toc</code>)</h2>
+      <nav class="toc" aria-label="Table of Contents" style="position:static;">
+        <h4>Contents</h4>
+        <ol>
+          <li><a href="#">Our Top Picks</a></li>
+          <li><a href="#">Comparison Table</a></li>
+          <li><a href="#">How We Evaluate</a></li>
+          <li><a href="#">Individual Reviews</a></li>
+          <li><a href="#">Buying Guide &amp; FAQ</a></li>
+        </ol>
+      </nav>
+    </section>
+
+    <!-- ==================== 16. AFFILIATE DISCLOSURE ==================== -->
+    <section id="affiliate-disclosure">
+      <h2>Affiliate Disclosure (<code>.affiliate-disclosure</code>)</h2>
+      <aside class="affiliate-disclosure">
+        <p><strong>Affiliate Disclosure:</strong> This page contains Amazon affiliate links. If you purchase through our links, we may earn a small commission at no extra cost to you. This helps us keep the site running.</p>
+      </aside>
+    </section>
+
+    <!-- ==================== 17. CARDS & GRID ==================== -->
+    <section id="card-grid">
+      <h2>Cards &amp; Grid (<code>.card-grid</code> + <code>.card</code>)</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3><a href="#">Best Espresso Machine Under $200</a></h3>
+          <p>7 tested budget picks ranked by workflow fit, milk quality, and long-term value.</p>
+        </article>
+        <article class="card">
+          <h3><a href="#">Best Coffee Grinder for Pour Over</a></h3>
+          <p>Which grinders actually improve clarity, sweetness, and consistency.</p>
+        </article>
+        <article class="card">
+          <h3><a href="#">Best Manual Grinder Under $100</a></h3>
+          <p>Hand grinder picks that outperform most cheap electric options for filter brewing.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 18. UTILITY CLASSES ==================== -->
+    <section id="utilities">
+      <h2>Utility Classes</h2>
+
+      <h3><code>.note</code> (Callout Box)</h3>
+      <div class="note">
+        <p><strong>Note:</strong> This is a callout box using the <code>.note</code> class. It uses <code>--warning-bg</code> background with a <code>--warning</code> left border. Useful for tips, warnings, and important asides.</p>
+      </div>
+
+      <h3><code>.pill</code> (Inline Tag)</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp-2);margin-bottom:var(--sp-4);">
+        <span class="pill">Espresso</span>
+        <span class="pill">Pour Over</span>
+        <span class="pill">French Press</span>
+        <span class="pill">Budget</span>
+      </div>
+
+      <h3><code>.category-row</code> (Flex Row of Pills)</h3>
+      <div class="category-row">
+        <a href="#" class="pill">Grinders</a>
+        <a href="#" class="pill">Espresso Machines</a>
+        <a href="#" class="pill">Kettles</a>
+        <a href="#" class="pill">Scales</a>
+        <a href="#" class="pill">Brew Guides</a>
+      </div>
+
+      <h3><code>.kicker</code> (Subtitle Text)</h3>
+      <p class="kicker">This is a kicker — muted subtitle text at 0.95rem in <code>--brand-600</code>.</p>
+
+      <h3><code>.hero-media</code> (Hero Image)</h3>
+      <figure class="hero-media">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='400' fill='%23EFDFCE'%3E%3Crect width='720' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%237A5B4A' font-family='sans-serif' font-size='18'%3E720 x 400 hero image%3C/text%3E%3C/svg%3E" alt="Example hero image placeholder" width="720" height="400" loading="lazy">
+        <figcaption>A hero media caption — uses <code>--brand-600</code> at 0.92rem with top margin.</figcaption>
+      </figure>
+
+      <h3><code>.lead</code> (Intro Paragraph)</h3>
+      <p class="lead">This is a lead paragraph. It uses 1.1rem font size with <code>--brand-600</code> colour, typically placed right after the H1.</p>
+
+      <h3><code>.skip-link</code> (Accessibility)</h3>
+      <p>The <code>.skip-link</code> is visually hidden by default and appears on keyboard focus (Tab). It sits at the top of every page: <code>&lt;a class="skip-link" href="#main-content"&gt;Skip to main content&lt;/a&gt;</code></p>
+    </section>
+
+    <!-- ==================== 19. PAGE TEMPLATES ==================== -->
+    <section id="page-templates">
+      <h2>Page Templates</h2>
+      <p>Each content page must match one of these types. Full specifications in <a href="/standards/page-types.md"><code>standards/page-types.md</code></a>.</p>
+
+      <h3>Money Page (Roundup)</h3>
+      <p>Min 2,000 words. Schema: BlogPosting + ItemList + FAQPage. Required: breadcrumbs, disclosure, H1 with keyword + year, quick picks, comparison table, methodology, individual reviews with pros/cons, buying guide, FAQ accordion, bottom disclosure.</p>
+
+      <h3>VS Comparison</h3>
+      <p>Min 1,500 words. Schema: BlogPosting + FAQPage. Required: breadcrumbs, disclosure, H1 with both names + year, quick verdict, side-by-side table, feature comparisons, buyer profiles, FAQ.</p>
+
+      <h3>Single Review</h3>
+      <p>Min 2,500 words. Schema: BlogPosting + Product + Review + FAQPage. Required: breadcrumbs, disclosure, H1 with product + "Review" + year, verdict card, specs table, pros/cons, buyer fit, performance deep-dive, alternatives, FAQ.</p>
+
+      <h3>How-To Guide</h3>
+      <p>Min 1,200 words. Schema: BlogPosting + HowTo + FAQPage. Required: breadcrumbs, disclosure (if affiliate links), H1 "How to...", quick answer, supplies list, numbered steps, common mistakes, FAQ.</p>
+
+      <h3>Hub / Category Page</h3>
+      <p>Min 500 words. Schema: CollectionPage. Required: breadcrumbs, H1, category intro, card grids linking to money pages, supporting guides section.</p>
+
+      <h3>Buying Guide</h3>
+      <p>Min 1,800 words. Schema: BlogPosting + FAQPage. Required: breadcrumbs, disclosure, H1 with "Guide" + year, TL;DR, types table, key factors, budget tiers, common mistakes, picks with CTAs, FAQ.</p>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">&copy; 2026 Coffee Gear Lab &middot; Built for fast, informed buying decisions.</div>
+  </footer>
+</body>
+</html>
