@@ -4,6 +4,20 @@ All pages must use `styles-v2.css`. This document defines every colour, typograp
 
 ---
 
+## Source of Truth
+
+- **Visual reference:** `/design-system.html` — the live rendered page using `styles-v2.css`. This is the canonical visual ground truth.
+- **Machine-readable spec:** This file (`standards/design-system.md`) — component markup, class names, and usage rules for pipeline agents.
+- **CSS implementation:** `/styles-v2.css` — the only stylesheet for content pages.
+
+### Rules for Agents
+1. ONLY use classes documented in this file and defined in `styles-v2.css`
+2. NEVER invent inline styles or ad-hoc classes
+3. If a page needs a component that doesn't exist yet: create it in `styles-v2.css`, document it here AND in `design-system.html`, then use it
+4. Every content page MUST link to `/styles-v2.css` — never `styles.css`
+
+---
+
 ## Colours (CSS Custom Properties)
 
 ### Brand Scale
@@ -422,7 +436,7 @@ All pages must use `styles-v2.css`. This document defines every colour, typograp
 
 ### Header / Footer / `.topbar` / `.brand`
 
-**Header:**
+**Header (canonical — must be identical on every page):**
 ```html
 <header>
   <div class="container topbar">
@@ -430,11 +444,14 @@ All pages must use `styles-v2.css`. This document defines every colour, typograp
     <nav aria-label="Primary">
       <a href="/">Home</a>
       <a href="/posts/">All Guides</a>
+      <a href="/posts/best-espresso-machine-under-200.html">Espresso</a>
+      <a href="/posts/best-coffee-grinder-for-pour-over.html">Grinders</a>
     </nav>
   </div>
 </header>
 ```
 
+- **IMPORTANT:** The nav must be exactly the same on every page. Do NOT customise nav links per page.
 - Sticky header: `position: sticky; top: 0; z-index: 100`
 - `--surface-white` background, `1px solid --brand-200` bottom border
 - `.topbar`: Flexbox row, `justify-content: space-between`, `align-items: center`, `--sp-4` gap, `0.9rem` vertical padding
