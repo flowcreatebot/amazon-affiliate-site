@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" fill="none">
+  <defs>
+    <style>
+      .word { font-family: Inter, Arial, sans-serif; font-weight: 800; font-size: 104px; letter-spacing: 0.5px; fill: #2C1810; }
+      .sub { font-family: Inter, Arial, sans-serif; font-weight: 600; font-size: 34px; fill: #7A5B4A; }
+    </style>
+  </defs>
+  <g transform="translate(34,44)">
+    <circle cx="116" cy="116" r="84" stroke="#2C1810" stroke-width="20"/>
+    <ellipse cx="116" cy="116" rx="30" ry="45" fill="#5C3D2E"/>
+    <path d="M106 116c0-16 9-28 20-36M106 116c0 16 9 28 20 36" stroke="#EFDFCE" stroke-width="6" stroke-linecap="round"/>
+    <line x1="170" y1="170" x2="256" y2="256" stroke="#2C1810" stroke-width="22" stroke-linecap="round"/>
+  </g>
+  <text x="330" y="150" class="word">Coffee Gear Lab</text>
+  <text x="334" y="205" class="sub">Practical gear picks, tested and compared</text>
+</svg>

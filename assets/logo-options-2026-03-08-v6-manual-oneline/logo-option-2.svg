@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" fill="none">
+  <defs>
+    <style>
+      .word { font-family: Inter, Arial, sans-serif; font-weight: 800; font-size: 98px; letter-spacing: 0.2px; fill: #2C1810; }
+      .sub { font-family: Inter, Arial, sans-serif; font-weight: 600; font-size: 34px; fill: #5C3D2E; }
+    </style>
+  </defs>
+  <g transform="translate(36,40)">
+    <circle cx="122" cy="122" r="96" fill="#EFDFCE"/>
+    <circle cx="122" cy="122" r="78" stroke="#5C3D2E" stroke-width="14"/>
+    <ellipse cx="122" cy="122" rx="28" ry="42" fill="#2C1810"/>
+    <path d="M113 122c0-14 8-25 18-32M113 122c0 14 8 25 18 32" stroke="#EFDFCE" stroke-width="6" stroke-linecap="round"/>
+    <line x1="178" y1="178" x2="252" y2="252" stroke="#5C3D2E" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <text x="334" y="146" class="word">Coffee Gear Lab</text>
+  <text x="338" y="202" class="sub">Smart buying guides for home brewers</text>
+</svg>
