@@ -342,6 +342,26 @@
         </article>
       </div>
 
+      <h3>No-Image Fallback (<code>.product-card--no-image</code>)</h3>
+      <div style="max-width:300px;margin-bottom:var(--sp-6);">
+        <article class="product-card product-card--no-image">
+          <img src="" alt="" width="300" height="300" loading="lazy">
+          <div class="product-card__body">
+            <span class="best-for-badge --budget">Budget Pick</span>
+            <h3 class="product-card__title">Product Without Image</h3>
+            <div class="star-rating" aria-label="4.0 out of 5 stars">
+              <span class="star-rating__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+              <span class="star-rating__score">4.0</span>
+            </div>
+            <p class="product-card__price">$39.99</p>
+            <a href="#" class="cta-button --primary --sm" onclick="return false;">
+              Check Price on Amazon <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </article>
+      </div>
+      <p><small>When a product image is unavailable, add <code>.product-card--no-image</code> to hide the <code>&lt;img&gt;</code> and add top padding to the body.</small></p>
+
       <h3>Featured Card (<code>.--featured</code>)</h3>
       <div style="max-width:300px;">
         <article class="product-card --featured">

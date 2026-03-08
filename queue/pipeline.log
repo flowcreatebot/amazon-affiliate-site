@@ -11,3 +11,9 @@
 2026-03-08T00:18:33+07:00 | qa | MOVED | best-pour-over-coffee-maker | drafts/ → qa-passed/ | PASS:34/34
 2026-03-08T00:50:13+07:00 | designer | MOVED | best-pour-over-coffee-maker | qa-passed/ → design-passed/ | changes:added-canonical-header-footer,normalized-skip-link-main-id,fixed-product-card-structure,added-comparison-table-data-labels
 2026-03-08T00:52:26+07:00 | deployer | MOVED | best-pour-over-coffee-maker | design-passed/ → published/ | deployed
+2026-03-08T09:30:00+07:00 | strategist | CREATED | best-coffee-maker-with-grinder | briefs/
+2026-03-08T11:15:00+07:00 | writer | MOVED | best-coffee-maker-with-grinder | briefs/ → drafts/ | words:2007 asins:7
+2026-03-08T12:20:43+07:00 | qa | MOVED | best-coffee-maker-with-grinder | drafts/ → rejected/ | FAIL:C01,C08
+2026-03-08T13:15:00+07:00 | writer | MOVED | best-coffee-maker-with-grinder | rejected/ → drafts/ | rework:fixed-2-issues
+2026-03-08T07:00:17Z | feeder | PROMOTED | best-espresso-machine-under-200 | backfill/ → briefs/
+2026-03-08T07:00:17Z | feeder | PROMOTED | best-burr-coffee-grinder-under-200 | backfill/ → briefs/

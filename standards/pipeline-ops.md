@@ -1,6 +1,6 @@
 # Pipeline Operations Reference
 
-Canonical reference for queue file format, movement rules, logging, and station responsibilities. Every pipeline agent should read this alongside its station-specific standards docs.
+Project-specific pipeline operations for Coffee Gear Lab. For the generic queue mechanism (structure, movement rules, log format, priority, backpressure), see `standards/queue-ops.md` at workspace root. This file defines the project-specific stages, frontmatter fields, and station responsibilities.
 
 ---
 
@@ -26,6 +26,8 @@ designer_completed_at: null              # Set by Designer when done
 deployed_url: null                       # Set by Deployer: https://coffeegearpicks.com/posts/{slug}.html
 asins_verified: []                       # List of ASINs the Writer verified
 word_count: null                         # Actual word count set by Writer
+source: null                             # "backfill" or "new" — distinguishes refresh from net-new
+priority_rank: null                      # 1 = highest priority, used for ordering backfill briefs
 ---
 ```
 
@@ -54,6 +56,7 @@ All under `queue/` relative to the project root:
 | `design-passed/` | Design-polished pages | Designer | Deployer |
 | `published/` | Archive of deployed pages | Deployer | PM (audit) |
 | `rejected/` | QA failures pending rework | QA | Writer (priority!) |
+| `backfill/` | Pre-generated refresh briefs for legacy pages | Manual (one-time batch) | Backfill feeder cron job |
 
 ### Movement Rules
 
@@ -66,7 +69,7 @@ All under `queue/` relative to the project root:
 
 - **Writer:** Check `rejected/` FIRST. If files exist, pick the oldest and fix it. Only check `briefs/` if rejected is empty.
 - **All stations:** Pick the OLDEST file when multiple are available (by `created_at` or file modification time).
-- **Strategist guardrail:** If `briefs/` has 3+ files, reply `NO_REPLY` (pipeline is backed up).
+- **Strategist guardrail:** If `briefs/` has 5+ files, reply `NO_REPLY` (pipeline is backed up).
 - **Empty queue:** If a station's input queue is empty, reply `NO_REPLY`.
 
 ---
@@ -92,6 +95,7 @@ All under `queue/` relative to the project root:
 | QA | `MOVED` | `drafts/ → rejected/ \| FAIL:{check IDs}` |
 | Designer | `MOVED` | `qa-passed/ → design-passed/ \| changes:{brief list}` |
 | Designer | `MIGRATED` | `legacy→v2` (for existing page migrations) |
+| Feeder | `PROMOTED` | `backfill/ → briefs/` |
 | Deployer | `MOVED` | `design-passed/ → published/ \| deployed` |
 
 ### Example Log
@@ -129,12 +133,11 @@ All under `queue/` relative to the project root:
 - **Input:** Queue file from `qa-passed/`, standards/design-system.md, styles-v2.css
 - **Output:** Polished HTML, queue file moved to `design-passed/`
 - **Guardrails:** Don't change content/copy. Don't add new CSS classes. Don't sync/deploy.
-- **Bonus task:** When queue is empty, migrate one legacy page to v2 CSS.
 
 ### Deployer
-- **Input:** ALL files from `design-passed/`, PROJECT_CONTEXT.md
+- **Input:** ALL files from `design-passed/`, BRIEF.md
 - **Output:** Updated sitemap/index, queue files moved to `published/`
-- **Actions:** Run `sync-to-deploy.sh`, update PROJECT_CONTEXT.md
+- **Actions:** Run `sync-to-deploy.sh`, update BRIEF.md (published pages list)
 - **Guardrail:** Only deploy pipeline-completed pages. Verify sync exit code.
 
 ---

@@ -134,6 +134,13 @@ All pages must use `styles-v2.css`. This document defines every colour, typograp
 - Image fills top, 1:1 aspect ratio on mobile, natural on desktop
 - Body has `--sp-4` padding
 
+#### Product Images in Cards
+- Source: Amazon CDN URLs (see standards/image-sourcing.md)
+- Size: 500x500px (_AC_SL500_ variant)
+- Attributes: width="500" height="500" alt="{Product Name}" loading="lazy"
+- The `<img>` tag goes as the first child inside `.product-card`, before `.product-card__body`
+- Fallback: `.product-card--no-image` modifier hides img and shows brand-100 background
+
 ### `.comparison-table`
 
 ```html

@@ -58,7 +58,7 @@ Run every check against the HTML file at `posts/{slug}.html`.
 | D02 | YES | Tables wrapped in `.table-wrap` | Every `<table>` must be inside a `<div class="table-wrap">` or `<div class="comparison-table">`. |
 | D03 | YES | Images have required attributes | Every `<img>` must have `width`, `height`, `alt`, `loading="lazy"`. |
 | D04 | YES | CTA buttons use correct classes | Amazon CTAs: `.cta-button.--primary`. Internal CTAs: `.cta-button.--secondary`. |
-| D05 | YES | Skip link present | `<a class="skip-link" href="#main">Skip to content</a>` as first body child. |
+| D05 | YES | Skip link present | `<a class="skip-link" href="#main-content">Skip to main content</a>` as first body child. |
 | D06 | YES | Semantic breadcrumbs | `<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>...</ol></nav>` present. |
 | D07 | NO | Star ratings have aria-label | `.star-rating` elements should have `aria-label` describing the rating. |
 | D08 | NO | Responsive table structure | Tables should not exceed viewport on mobile (`.table-wrap` with `overflow-x: auto`). |
@@ -74,11 +74,20 @@ Run every check against the HTML file at `posts/{slug}.html`.
 
 ---
 
+## Image Checks
+
+| ID | Critical | Check | How to Verify |
+|----|----------|-------|---------------|
+| I01 | NO | Product card images are unique | Each .product-card `<img>` src is different (not the same SVG for all products) |
+| I02 | NO | Product images use Amazon CDN | img src matches `m.media-amazon.com` or `images-na.ssl-images-amazon.com` pattern |
+
+---
+
 ## Summary
 
-**Total critical checks:** 35
-**Total non-critical checks:** 7
-**Total checks:** 42
+**Total critical checks:** 34
+**Total non-critical checks:** 9
+**Total checks:** 43
 
 ### Pass/Fail Rules
 - **PASS:** All 34 critical checks pass. Non-critical warnings are noted but don't block.

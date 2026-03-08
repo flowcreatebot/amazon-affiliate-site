@@ -580,6 +580,10 @@ tbody tr:hover { background: var(--surface-elevated); }
   margin-top: var(--sp-2);
 }
 
+/* --- Product Card: No-Image Fallback --- */
+.product-card--no-image img { display: none; }
+.product-card--no-image .product-card__body { padding-top: var(--sp-6); }
+
 /* --- Footer --- */
 footer {
   border-top: 1px solid var(--brand-200);
