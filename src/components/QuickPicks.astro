@@ -1,0 +1,12 @@
+---
+interface Props {
+  title?: string;
+}
+const { title = 'Our Top Picks' } = Astro.props;
+---
+<section class="quick-picks">
+  <h2>{title}</h2>
+  <div class="quick-picks__grid">
+    <slot />
+  </div>
+</section>

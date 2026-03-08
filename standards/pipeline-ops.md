@@ -63,7 +63,7 @@ All under `queue/` relative to the project root:
 - Use `mv` to move files between directories (not copy)
 - Always update the `status` field in frontmatter BEFORE moving
 - Always append to `pipeline.log` AFTER moving
-- The HTML file stays at `posts/{slug}.html` — only the queue tracking file moves
+- The Astro source file stays at `src/pages/posts/{slug}.astro` — only the queue tracking file moves
 
 ### Priority Rules
 
@@ -121,24 +121,41 @@ All under `queue/` relative to the project root:
 
 ### Writer
 - **Input:** Queue file from `rejected/` (priority) or `briefs/`, standards/design-system.md, standards/page-types.md
-- **Output:** Full HTML at `posts/{slug}.html`, updated queue file moved to `drafts/`
+- **Output:** Astro page at `src/pages/posts/{slug}.astro` using `PostLayout` and components from `src/components/`, updated queue file moved to `drafts/`
+- **Key rules:**
+  - Import components explicitly in frontmatter (`import ProductCard from '../../components/ProductCard.astro'`)
+  - Use `PostLayout` with `breadcrumbs`, `title`, `description`, `canonical` props
+  - Use `<JsonLd>` in `<Fragment slot="head">` for schema markup
+  - Use `<CtaButton external>` for Amazon links, `<ProsCons>` for pros/cons, `<FaqAccordion>`/`<FaqItem>` for FAQs
+  - Import shared constants from `../../data/site` (`SITE`, `blogPosting`, `publisher`)
+  - See standards/page-types.md for template examples per page type
 - **Guardrails:** Verify ASINs via Brave Search. No fabricated data. No sync/deploy.
 
 ### QA
 - **Input:** Queue file from `drafts/`, standards/qa-checklist.md
 - **Output:** Queue file moved to `qa-passed/` or `rejected/`
+- **Key checks for Astro pages:**
+  - Page uses `PostLayout` (or `BaseLayout` for hubs) — not raw HTML
+  - All components imported and used correctly (no raw CSS class markup where a component exists)
+  - `<JsonLd>` present in `<Fragment slot="head">`
+  - `data-label` on all `<td>` elements in comparison tables
+  - Amazon links use `<CtaButton external>` or have `rel="nofollow sponsored noopener" target="_blank"`
 - **Guardrails:** Don't fix issues — reject only. Spot-check 2 ASINs via Brave Search.
 
 ### Designer
-- **Input:** Queue file from `qa-passed/`, standards/design-system.md, styles-v2.css
-- **Output:** Polished HTML, queue file moved to `design-passed/`
+- **Input:** Queue file from `qa-passed/`, standards/design-system.md, src/styles/global.css
+- **Output:** Polished Astro page, queue file moved to `design-passed/`
+- **Key responsibilities:**
+  - Review component prop usage (correct badge variants, rating scores, image dimensions)
+  - Verify visual consistency with the design system
+  - Ensure proper component composition (not mixing raw HTML classes with Astro components)
 - **Guardrails:** Don't change content/copy. Don't add new CSS classes. Don't sync/deploy.
 
 ### Deployer
 - **Input:** ALL files from `design-passed/`, BRIEF.md
 - **Output:** Updated sitemap/index, queue files moved to `published/`
-- **Actions:** Run `sync-to-deploy.sh`, update BRIEF.md (published pages list)
-- **Guardrail:** Only deploy pipeline-completed pages. Verify sync exit code.
+- **Actions:** Run `npm run build` to generate static HTML in `dist/`, then run `sync-to-deploy.sh` to sync `dist/` to the live server, update BRIEF.md (published pages list)
+- **Guardrail:** Only deploy pipeline-completed pages. Verify build exit code before sync.
 
 ---
 

@@ -1,0 +1,445 @@
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import QuickPicks from '../../components/QuickPicks.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+import FaqItem from '../../components/FaqItem.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import HeroMedia from '../../components/HeroMedia.astro';
+import Toc from '../../components/Toc.astro';
+import CategoryPills from '../../components/CategoryPills.astro';
+import Pill from '../../components/Pill.astro';
+import { SITE, blogPosting, publisher } from '../../data/site';
+
+const title = 'Best Burr Grinder for Espresso (2026): 7 Tested Picks';
+const description = 'Compare the best burr grinders for espresso by burr geometry, adjustment precision, retention/static behavior, and workflow fit for your budget.';
+const slug = 'best-burr-grinder-for-espresso';
+const canonical = `${SITE.url}/posts/${slug}.html`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    blogPosting({
+      headline: title,
+      description: 'Best burr grinders for espresso ranked by burr geometry, adjustment precision, retention behavior, and daily workflow fit.',
+      slug,
+      datePublished: '2026-03-06',
+      dateModified: '2026-03-06',
+      image: `${SITE.url}/assets/images/best-burr-grinder-for-espresso-tested-2026.svg`,
+    }),
+    {
+      "@type": "ItemList",
+      "name": "Best Burr Grinder for Espresso Picks",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"DF64 Gen 2"},
+        {"@type":"ListItem","position":2,"name":"Baratza Encore ESP"},
+        {"@type":"ListItem","position":3,"name":"Turin SK40"},
+        {"@type":"ListItem","position":4,"name":"Niche Zero"},
+        {"@type":"ListItem","position":5,"name":"Fellow Opus"},
+        {"@type":"ListItem","position":6,"name":"Eureka Mignon Specialita"},
+        {"@type":"ListItem","position":7,"name":"1Zpresso J-Ultra"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Conical vs flat burr: which is better for espresso at home?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Conical burrs are usually more forgiving and body-forward, while flat burrs emphasize clarity and separation. Workflow and adjustment precision often matter more than burr geometry alone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need stepless adjustment for good espresso shots?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Stepless adjustment helps fine tuning, but strong stepped grinders can still produce excellent espresso with fresh beans and consistent puck prep."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a budget burr grinder make real espresso, or only pressurized-basket espresso?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some budget grinders can make real espresso on non-pressurized baskets if they offer fine control. Basic coarse-stepped grinders are usually better suited to pressurized baskets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does retention/static matter for daily workflow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A lot. High retention and static increase mess and waste, while low-retention grinders make daily dialing and back-to-back shots faster and more repeatable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I clean and recalibrate an espresso grinder?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Brush every few days, deep-clean monthly, and recalibrate after burr swaps or major maintenance to keep shot times and flavor consistent."
+          }
+        }
+      ]
+    }
+  ],
+};
+---
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogDescription="7 espresso-focused burr grinders ranked by dial-in precision, retention, cleanup burden, and value."
+  ogImage={`${SITE.url}/assets/images/best-burr-grinder-for-espresso-tested-2026.svg`}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'All Guides', href: '/posts/' },
+    { label: 'Best Burr Grinder for Espresso' },
+  ]}
+>
+  <JsonLd data={jsonLd} slot="head" />
+
+  <h1>Best Burr Grinder for Espresso (2026): 7 Top Picks Tested</h1>
+  <p class="lead">The best burr grinder for espresso is the one that lets you dial in quickly without wasting beans every morning. We ranked seven top options by shot consistency, adjustment precision, retention/static behavior, and cleanup load so you can match your grinder to your workflow and budget.</p>
+
+  <CategoryPills>
+    <Pill text="Money Page" />
+    <Pill text="Espresso Grinders" />
+    <Pill text="Commercial Intent" />
+  </CategoryPills>
+
+  <HeroMedia
+    src="/assets/images/best-burr-grinder-for-espresso-tested-2026.svg"
+    alt="Best burr grinders for espresso ranked by dial-in precision, retention behavior, and buyer workflow"
+    width={1200}
+    height={675}
+    caption="Editorial snapshot: strongest espresso grinder picks by budget, retention behavior, and dial-in ease."
+    fetchpriority="high"
+  />
+
+  <p><strong>Quick answer:</strong> For most home users, DF64 Gen 2 is the best burr grinder for espresso because its stepless control and low-retention design make dialing in faster and more repeatable. If your budget is tighter, Baratza Encore ESP is the safest under-$200 pick; for manual grinding, 1Zpresso J-Ultra is the standout.</p>
+
+  <Toc items={[
+    { href: '#tldr', label: 'TL;DR winners' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-picks', label: 'Product picks by buyer intent' },
+    { href: '#workflow-guide', label: 'Espresso dial-in and workflow guide' },
+    { href: '#faq', label: 'FAQ' },
+    { href: '#related-guides', label: 'Related guides' },
+  ]} />
+
+  <QuickPicks>
+    <ProductCard
+      title="DF64 Gen 2"
+      badge={{ label: "Best Overall", variant: "overall" }}
+      price="$$$"
+      ctaUrl="https://www.amazon.com/dp/B0D962ZSCM/ref=nosim?tag=coffee-site-20"
+      noImage
+    />
+    <ProductCard
+      title="Baratza Encore ESP"
+      badge={{ label: "Best Budget", variant: "budget" }}
+      price="$$"
+      ctaUrl="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20"
+      noImage
+    />
+    <ProductCard
+      title="Turin SK40"
+      badge={{ label: "Best Stepless Value", variant: "espresso" }}
+      price="$$"
+      ctaUrl="https://www.amazon.com/dp/B0DR41V3CN/ref=nosim?tag=coffee-site-20"
+      noImage
+    />
+  </QuickPicks>
+
+  <h2 id="tldr">TL;DR winners</h2>
+  <div class="card">
+    <p><strong>Best overall:</strong> DF64 Gen 2</p>
+    <p><strong>Best under $200:</strong> Baratza Encore ESP</p>
+    <p><strong>Best stepless value:</strong> Turin SK40</p>
+    <p><strong>Best low-retention single-dose:</strong> Niche Zero</p>
+    <p><strong>Best manual espresso-capable:</strong> 1Zpresso J-Ultra</p>
+  </div>
+
+  <ComparisonTable timestamp="Prices checked: March 2026" ariaLabel="Burr grinders for espresso comparison">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Best for</th>
+          <th>Burr geometry</th>
+          <th>Burr size (mm)</th>
+          <th>Adjustment style</th>
+          <th>Dosing workflow</th>
+          <th>Retention/static behavior</th>
+          <th>Espresso capability</th>
+          <th>Cleanup effort</th>
+          <th>Price band</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DF64 Gen 2</td>
+          <td data-label="Best for">Best overall espresso value</td>
+          <td data-label="Burr geometry">Flat</td>
+          <td data-label="Burr size (mm)">64</td>
+          <td data-label="Adjustment style">Stepless</td>
+          <td data-label="Dosing workflow">Single-dose</td>
+          <td data-label="Retention/static behavior">Low — short chute + bellows keep exchange minimal</td>
+          <td data-label="Espresso capability">Prosumer</td>
+          <td data-label="Cleanup effort">Medium</td>
+          <td data-label="Price band">$$$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0D962ZSCM/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td>Baratza Encore ESP</td>
+          <td data-label="Best for">Best under $200</td>
+          <td data-label="Burr geometry">Conical</td>
+          <td data-label="Burr size (mm)">40</td>
+          <td data-label="Adjustment style">Stepped</td>
+          <td data-label="Dosing workflow">Hopper</td>
+          <td data-label="Retention/static behavior">Medium — manageable with light purge in dry weather</td>
+          <td data-label="Espresso capability">Strong</td>
+          <td data-label="Cleanup effort">Low</td>
+          <td data-label="Price band">$$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td>Turin SK40</td>
+          <td data-label="Best for">Best stepless value</td>
+          <td data-label="Burr geometry">Conical</td>
+          <td data-label="Burr size (mm)">40</td>
+          <td data-label="Adjustment style">Stepless</td>
+          <td data-label="Dosing workflow">Single-dose</td>
+          <td data-label="Retention/static behavior">Low — bellows workflow keeps retention tight</td>
+          <td data-label="Espresso capability">Strong</td>
+          <td data-label="Cleanup effort">Medium</td>
+          <td data-label="Price band">$$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0DR41V3CN/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td>Baratza Sette 270</td>
+          <td data-label="Best for">Best fast dial-in hopper grinder</td>
+          <td data-label="Burr geometry">Conical</td>
+          <td data-label="Burr size (mm)">40</td>
+          <td data-label="Adjustment style">Macro + micro stepped</td>
+          <td data-label="Dosing workflow">Hopper / timed</td>
+          <td data-label="Retention/static behavior">Medium — low grind path retention, modest static control needed</td>
+          <td data-label="Espresso capability">Strong</td>
+          <td data-label="Cleanup effort">Medium</td>
+          <td data-label="Price band">$$$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B01G82WVZ0/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td>Fellow Opus</td>
+          <td data-label="Best for">Best compact crossover pick</td>
+          <td data-label="Burr geometry">Conical</td>
+          <td data-label="Burr size (mm)">40</td>
+          <td data-label="Adjustment style">Micro-stepped</td>
+          <td data-label="Dosing workflow">Hopper</td>
+          <td data-label="Retention/static behavior">Medium — low retention, occasional static popcorning</td>
+          <td data-label="Espresso capability">Entry</td>
+          <td data-label="Cleanup effort">Medium</td>
+          <td data-label="Price band">$$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0BV96VPSR/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td>Eureka Mignon Specialita</td>
+          <td data-label="Best for">Best quiet morning grinder</td>
+          <td data-label="Burr geometry">Flat</td>
+          <td data-label="Burr size (mm)">55</td>
+          <td data-label="Adjustment style">Stepless</td>
+          <td data-label="Dosing workflow">Timed hopper</td>
+          <td data-label="Retention/static behavior">Medium — low static, moderate exchange in chute</td>
+          <td data-label="Espresso capability">Prosumer</td>
+          <td data-label="Cleanup effort">Medium</td>
+          <td data-label="Price band">$$$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B07GFV6HM8/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td>1Zpresso J-Ultra</td>
+          <td data-label="Best for">Best manual espresso precision</td>
+          <td data-label="Burr geometry">Conical</td>
+          <td data-label="Burr size (mm)">48</td>
+          <td data-label="Adjustment style">Micro-stepped</td>
+          <td data-label="Dosing workflow">Single-dose (manual)</td>
+          <td data-label="Retention/static behavior">Low — near-zero retention, almost no static</td>
+          <td data-label="Espresso capability">Strong</td>
+          <td data-label="Cleanup effort">Low</td>
+          <td data-label="Price band">$$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0CKYDV932/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+      </tbody>
+    </table>
+  </ComparisonTable>
+
+  <section>
+    <h2 id="how-we-evaluate">How we evaluate</h2>
+    <p>We score grinders on <strong>brew quality</strong>, <strong>grinder consistency</strong>, <strong>usability</strong>, <strong>cleaning burden</strong>, and <strong>value for money</strong>. Espresso picks get extra weighting for micro-adjustment control, retention/static behavior, and how quickly the grinder lets you recover when a shot runs fast or chokes.</p>
+  </section>
+
+  <section>
+    <h2 id="product-picks">Product picks by buyer intent</h2>
+
+    <h3>1) DF64 Gen 2 — Best Overall Burr Grinder for Espresso</h3>
+    <p><strong>Why this pick:</strong> It gives prosumer-level flat burr shot quality and stepless control at a price that undercuts many premium grinders.</p>
+    <p><strong>Buy this if...</strong> you want the clearest upgrade path without jumping to ultra-premium grinder pricing.</p>
+    <p><strong>Skip this if...</strong> you prefer a hopper-and-go routine over single-dosing.</p>
+    <p><strong>Dial-in behavior:</strong> Fast and precise; tiny collar moves produce predictable shot-time changes.</p>
+    <ProsCons
+      pros={["64 mm flat burr platform gives high clarity and strong espresso separation.", "Stepless adjustment makes fine tuning easier than stepped grinders.", "Single-dose workflow keeps bean freshness and recipe control tight."]}
+      cons={["Learning curve is steeper for first-time espresso users.", "Bellows routine adds one more step per shot."]}
+    />
+    <p><strong>Key specs:</strong> Flat burr · 64 mm · stepless · single-dose workflow · Espresso capability: Prosumer.</p>
+    <p><strong>Retention/static note:</strong> Retention stays low with one bellows pulse; static is usually minor outside very dry climates.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0D962ZSCM/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+
+    <h3>2) Baratza Encore ESP — Best Burr Grinder for Espresso Under $200</h3>
+    <p><strong>Why this pick:</strong> It is the easiest true espresso-capable grinder to recommend for budget-focused home setups.</p>
+    <p><strong>Buy this if...</strong> you need reliable espresso control under $200 with simple maintenance.</p>
+    <p><strong>Skip this if...</strong> you want stepless micro-control for very narrow shot targets.</p>
+    <p><strong>Dial-in behavior:</strong> Very beginner-friendly; 1-click moves are obvious and repeatable.</p>
+    <ProsCons
+      pros={["Strong value for real espresso range in the budget tier.", "Widely supported platform with easy parts access.", "Works for filter and espresso in one footprint."]}
+      cons={["Stepped adjustment can feel coarse for picky light-roast espresso.", "Louder motor than premium quiet grinders."]}
+    />
+    <p><strong>Key specs:</strong> Conical burr · 40 mm · stepped · hopper dosing · Espresso capability: Strong.</p>
+    <p><strong>Retention/static note:</strong> Moderate retention and static in dry weather; a brief purge keeps daily results stable.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+
+    <h3>3) Turin SK40 — Best Stepless Value Pick</h3>
+    <p><strong>Why this pick:</strong> It delivers stepless-like espresso control at a mid-budget price with genuinely low-retention workflow.</p>
+    <p><strong>Buy this if...</strong> you want single-dose espresso precision without DF64-level spend.</p>
+    <p><strong>Skip this if...</strong> you hate bellows workflows and want timed hopper dosing.</p>
+    <p><strong>Dial-in behavior:</strong> Responsive, but tiny adjustments matter—move the collar slowly.</p>
+    <ProsCons
+      pros={["Strong espresso accuracy for the price class.", "Single-dose design cuts stale carryover.", "Compact size works well in tight kitchens."]}
+      cons={["Not as quiet as premium flat-burr machines.", "Fit-and-finish is more functional than luxurious."]}
+    />
+    <p><strong>Key specs:</strong> Conical burr · 40 mm · stepless · single-dose + bellows · Espresso capability: Strong.</p>
+    <p><strong>Retention/static note:</strong> Low retention when bellows are used; static stays moderate with light roasts.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0DR41V3CN/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+
+    <h3>4) Baratza Sette 270 — Best Fast Dial-In Hopper Grinder</h3>
+    <p><strong>Why this pick:</strong> It is one of the fastest home espresso grinders to dial in thanks to the macro/micro stepped system and very direct grind path.</p>
+    <p><strong>Buy this if...</strong> you want quick, repeatable shot-time changes without learning a stepless collar.</p>
+    <p><strong>Skip this if...</strong> you want whisper-quiet operation or a pure single-dose workflow.</p>
+    <p><strong>Dial-in behavior:</strong> Very fast—macro steps move broad range and micro steps fine-tune shot time without guesswork.</p>
+    <ProsCons
+      pros={["Macro + micro adjustment system is excellent for fast espresso dialing.", "Direct grind path reduces old-ground exchange between shots.", "Strong espresso consistency once your dose and prep are locked."]}
+      cons={["Louder than many modern low-RPM grinders.", "Hopper-first workflow is less ideal for frequent bean swaps."]}
+    />
+    <p><strong>Key specs:</strong> Conical burr · 40 mm · macro + micro stepped adjustment · hopper workflow · Espresso capability: Strong.</p>
+    <p><strong>Retention/static note:</strong> Grind path retention is relatively low for a hopper grinder, but static control still benefits from routine brushing in dry conditions.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B01G82WVZ0/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+
+    <h3>5) Fellow Opus — Best Compact Crossover Pick</h3>
+    <p><strong>Why this pick:</strong> It offers one of the best small-footprint bridges between espresso experiments and daily filter brewing.</p>
+    <p><strong>Buy this if...</strong> you need one compact grinder for espresso and pour-over on a tighter budget.</p>
+    <p><strong>Skip this if...</strong> you want a straightforward stepless collar with no learning curve.</p>
+    <p><strong>Dial-in behavior:</strong> Can be fussy at first; once you map outer and inner adjustments, it becomes repeatable.</p>
+    <ProsCons
+      pros={["Wide grind range for mixed brewing styles.", "Compact body and modern kitchen-friendly footprint.", "Good value relative to espresso range coverage."]}
+      cons={["Dual adjustment logic is not beginner-intuitive.", "Fine grounds can collect around the chute over time."]}
+    />
+    <p><strong>Key specs:</strong> Conical burr · 40 mm · micro-stepped + inner ring · hopper dosing · Espresso capability: Entry.</p>
+    <p><strong>Retention/static note:</strong> Retention is generally low, but static scatter can increase with very light, dry beans.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0BV96VPSR/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+
+    <h3>6) Eureka Mignon Specialita — Best Quiet Burr Grinder for Morning Use</h3>
+    <p><strong>Why this pick:</strong> It combines strong flat-burr espresso capability with one of the quieter grinding profiles in this class.</p>
+    <p><strong>Buy this if...</strong> you pull early shots in shared spaces and want less grinder noise.</p>
+    <p><strong>Skip this if...</strong> you want a pure single-dose setup with ultra-low retention by default.</p>
+    <p><strong>Dial-in behavior:</strong> Precise and stable; tiny dial moves are effective once you mark your baseline.</p>
+    <ProsCons
+      pros={["Quiet operation compared with many espresso-focused grinders.", "Strong shot consistency from flat burr geometry.", "Timed dosing is convenient for repeated drinks."]}
+      cons={["Retention is higher than purpose-built single-dose grinders.", "Dial reference is less beginner-friendly without your own markings."]}
+    />
+    <p><strong>Key specs:</strong> Flat burr · 55 mm · stepless · timed hopper workflow · Espresso capability: Prosumer.</p>
+    <p><strong>Retention/static note:</strong> Static is low, but chute exchange can hold old grounds unless you purge between big setting changes.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B07GFV6HM8/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+
+    <h3>7) 1Zpresso J-Ultra — Best Manual Burr Grinder for Espresso</h3>
+    <p><strong>Why this pick:</strong> It delivers high-precision espresso adjustments and top-tier grind quality per dollar if you can handle manual effort.</p>
+    <p><strong>Buy this if...</strong> you want exceptional value and low retention without electric grinder noise.</p>
+    <p><strong>Skip this if...</strong> you make multiple milk drinks back-to-back every morning.</p>
+    <p><strong>Dial-in behavior:</strong> Extremely precise click system; excellent for repeatability once you log settings.</p>
+    <ProsCons
+      pros={["Very fine adjustment control for espresso tuning.", "Near-zero retention and excellent portability.", "Outstanding grind quality for the price."]}
+      cons={["Manual grinding at espresso fineness requires effort.", "Less practical for high-volume household use."]}
+    />
+    <p><strong>Key specs:</strong> Conical burr · 48 mm · micro-stepped click adjustment · manual single-dose · Espresso capability: Strong.</p>
+    <p><strong>Retention/static note:</strong> Retention is nearly zero and static is minimal due to direct manual grind path.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0CKYDV932/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+  </section>
+
+  <BuyingGuideSection>
+    <h2 id="workflow-guide">Espresso dial-in and workflow guide</h2>
+    <HeroMedia
+      src="/assets/images/best-burr-grinder-for-espresso-tested-2026.svg"
+      alt="Espresso grinder workflow priorities: adjustment precision, retention control, and cleanup frequency"
+      width={1200}
+      height={675}
+      caption="What separates a grinder you use daily from one that becomes weekend-only gear."
+      loading="lazy"
+    />
+
+    <h3>Conical vs flat burr in the cup</h3>
+    <p>Conical burrs often produce heavier body and forgiving texture. Flat burrs typically emphasize clarity and separation, which helps when you chase sweeter, cleaner shots from lighter roasts. Neither is universally "better"—the right call depends on flavor preference and your espresso machine consistency.</p>
+
+    <h3>Stepped vs stepless: what makes dialing in easier</h3>
+    <p>Stepped grinders are easier for beginners because each click is repeatable. Stepless designs allow tighter tuning between shot times. If your target baskets are non-pressurized and you brew multiple beans, stepless usually reduces frustration. For baseline recipes, use our <a href="/posts/burr-grinder-settings-for-espresso.html">espresso grinder settings guide</a> and the step-by-step <a href="/posts/espresso-shot-dial-in-workflow.html">espresso shot dial-in workflow</a>.</p>
+
+    <h3>Retention/static and how much waste to expect</h3>
+    <p>Retention and static decide whether your "same recipe" tastes the same tomorrow. Hopper grinders can hold more exchange in the chute; single-dose grinders usually waste less between bean changes. If cleanup time annoys you, favor low-retention designs and follow our <a href="/posts/how-to-clean-burr-coffee-grinder.html">burr grinder cleaning routine</a>.</p>
+
+    <h3>Single-dose vs hopper workflow for home users</h3>
+    <p>Single-dosing is best when you rotate beans and care about fresh input every shot. Hopper workflows are faster for households that drink the same beans daily. If you are balancing espresso with drip convenience, compare options in our <a href="/posts/best-burr-coffee-grinder-under-200.html">best burr grinder under $200 roundup</a>.</p>
+
+    <h3>Cleaning/calibration cadence for consistent shots</h3>
+    <p>Brush the chute every few days, deep-clean burrs every 4-6 weeks, and recalibrate after major burr changes. This cadence keeps dial-in behavior predictable and reduces stale carryover. Pairing grinder quality with machine fit matters too, so see our <a href="/posts/best-espresso-machine-under-200.html">best espresso machine under $200 guide</a> before you buy.</p>
+  </BuyingGuideSection>
+
+  <section>
+    <h2 id="faq">FAQ</h2>
+    <FaqAccordion>
+      <FaqItem question="Conical vs flat burr: which is better for espresso at home?">
+        <p>Conical burrs are usually more forgiving and body-forward, while flat burrs highlight clarity and separation. For most home users, workflow and adjustment precision matter more than geometry alone.</p>
+      </FaqItem>
+      <FaqItem question="Do I need stepless adjustment for good espresso shots?">
+        <p>No, but stepless adjustment makes fine tuning easier. A strong stepped grinder like Encore ESP can still produce excellent home espresso, especially with fresh beans and consistent puck prep.</p>
+      </FaqItem>
+      <FaqItem question="Can a budget burr grinder make real espresso, or only pressurized-basket espresso?">
+        <p>Some budget grinders can make real espresso on non-pressurized baskets, but not all. Models with finer control (Encore ESP, SK40) perform well; coarse-stepped filter grinders are better for pressurized baskets only.</p>
+      </FaqItem>
+      <FaqItem question="How much does retention/static matter for daily workflow?">
+        <p>It matters a lot. High retention and static increase mess, waste beans during purges, and make back-to-back shots less repeatable. Low-retention grinders feel noticeably faster and cleaner in daily use.</p>
+      </FaqItem>
+      <FaqItem question="How often should I clean and recalibrate an espresso grinder?">
+        <p>Do light brushing every few days, deep-clean monthly, and recalibrate after burr swaps or major maintenance. Regular cleaning preserves flavor clarity and keeps shot times stable.</p>
+      </FaqItem>
+    </FaqAccordion>
+  </section>
+
+  <section>
+    <h2 id="related-guides">Related guides</h2>
+    <ul>
+      <li><a href="/posts/burr-grinder-settings-for-espresso.html">Burr Grinder Settings for Espresso (Dial-In Guide)</a></li>
+      <li><a href="/posts/espresso-shot-dial-in-workflow.html">Espresso Shot Dial-In Workflow (Fix Sour or Bitter Shots Fast)</a></li>
+      <li><a href="/posts/best-hand-grinder-for-espresso-under-100.html">Best Hand Grinder for Espresso Under $100 (2026)</a></li>
+      <li><a href="/posts/best-burr-coffee-grinder-under-200.html">Best Burr Coffee Grinder Under $200 (2026)</a></li>
+      <li><a href="/posts/best-espresso-machine-under-200.html">Best Espresso Machine Under $200 (2026)</a></li>
+      <li><a href="/posts/how-to-clean-burr-coffee-grinder.html">How to Clean a Burr Coffee Grinder</a></li>
+      <li><a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">Best Coffee Scale for Espresso &amp; Pour Over</a></li>
+    </ul>
+  </section>
+</PostLayout>

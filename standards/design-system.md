@@ -1,20 +1,22 @@
 # Coffee Gear Lab Design System
 
-All pages must use `styles-v2.css`. This document defines every colour, typographic rule, and component available. Agents must use ONLY these classes — never invent new ones.
+All pages are built with Astro components and `global.css`. This document defines every colour, typographic rule, and component available. Agents must use ONLY the documented components and CSS classes — never invent new ones.
 
 ---
 
 ## Source of Truth
 
-- **Visual reference:** `/design-system.html` — the live rendered page using `styles-v2.css`. This is the canonical visual ground truth.
-- **Machine-readable spec:** This file (`standards/design-system.md`) — component markup, class names, and usage rules for pipeline agents.
-- **CSS implementation:** `/styles-v2.css` — the only stylesheet for content pages.
+- **Visual reference:** `/design-system` — the live rendered page (noindex). This is the canonical visual ground truth.
+- **Machine-readable spec:** This file (`standards/design-system.md`) — component props, slot patterns, and usage rules for pipeline agents.
+- **CSS implementation:** `src/styles/global.css` — the sole stylesheet, imported by `BaseLayout.astro`.
+- **Components:** `src/components/*.astro` — reusable Astro components.
 
 ### Rules for Agents
-1. ONLY use classes documented in this file and defined in `styles-v2.css`
-2. NEVER invent inline styles or ad-hoc classes
-3. If a page needs a component that doesn't exist yet: create it in `styles-v2.css`, document it here AND in `design-system.html`, then use it
-4. Every content page MUST link to `/styles-v2.css` — never `styles.css`
+1. ONLY use components documented in this file and defined in `src/components/`
+2. NEVER invent inline styles or ad-hoc CSS classes
+3. If a page needs a component that doesn't exist yet: create it in `src/components/`, add its styles to `src/styles/global.css`, document it here AND in `design-system.astro`, then use it
+4. Every content page MUST use `PostLayout` or `BaseLayout` — never raw HTML files
+5. Import components explicitly at the top of the frontmatter block
 
 ---
 
@@ -110,257 +112,271 @@ All pages must use `styles-v2.css`. This document defines every colour, typograp
 
 ## Components
 
-### `.product-card`
+Components are Astro files in `src/components/`. Import them in frontmatter and use them as tags. The underlying CSS classes in `global.css` are the same — the components just provide a structured interface.
 
-```html
-<article class="product-card">
-  <img src="image.jpg" alt="Product Name" width="300" height="300" loading="lazy">
-  <div class="product-card__body">
-    <span class="best-for-badge --overall">Best Overall</span>
-    <h3 class="product-card__title">Product Name</h3>
-    <div class="star-rating" aria-label="4.5 out of 5 stars">
-      <span class="star-rating__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-      <span class="star-rating__score">4.5</span>
-    </div>
-    <p class="product-card__price">$49.99</p>
-    <a href="https://www.amazon.com/dp/ASIN/ref=nosim?tag=coffee-site-20" class="cta-button --primary --sm" rel="nofollow sponsored noopener" target="_blank">
-      Check Price on Amazon <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
-    </a>
-  </div>
-</article>
+### `<ProductCard>`
+
+```astro
+---
+import ProductCard from '../components/ProductCard.astro';
+---
+<ProductCard
+  title="Product Name"
+  image={{ src: "https://m.media-amazon.com/images/I/ASIN._AC_SL500_.jpg", alt: "Product Name", width: 500, height: 500 }}
+  badge={{ label: "Best Overall", variant: "overall" }}
+  rating={{ score: 4.5 }}
+  price="$49.99"
+  ctaUrl="https://www.amazon.com/dp/ASIN/ref=nosim?tag=coffee-site-20"
+  ctaText="Check Price on Amazon"
+  featured={true}
+/>
 ```
+
+**Props:**
+| Prop | Type | Required | Default |
+|------|------|----------|---------|
+| `title` | `string` | yes | — |
+| `image` | `{ src, alt, width?, height? }` | no | — |
+| `badge` | `{ label, variant }` | no | — |
+| `rating` | `{ score, outOf? }` | no | — |
+| `price` | `string` | no | — |
+| `ctaUrl` | `string` | no | — |
+| `ctaText` | `string` | no | `"Check Price on Amazon"` |
+| `featured` | `boolean` | no | `false` |
+| `noImage` | `boolean` | no | `false` |
+
+Badge variants: `overall`, `budget`, `espresso`, `pourover`, `beginners`, `upgrade`
 
 - Card has warm border-radius `12px`, `--surface-latte` background
 - Image fills top, 1:1 aspect ratio on mobile, natural on desktop
 - Body has `--sp-4` padding
+- `featured`: `2px solid var(--cta)` border + box shadow
 
-#### Product Images in Cards
-- Source: Amazon CDN URLs (see standards/image-sourcing.md)
-- Size: 500x500px (_AC_SL500_ variant)
-- Attributes: width="500" height="500" alt="{Product Name}" loading="lazy"
-- The `<img>` tag goes as the first child inside `.product-card`, before `.product-card__body`
-- Fallback: `.product-card--no-image` modifier hides img and shows brand-100 background
+### `<ComparisonTable>`
 
-### `.comparison-table`
-
-```html
-<div class="comparison-table">
-  <p class="comparison-table__timestamp">Prices updated: March 7, 2026</p>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Best For</th>
-          <th>Price</th>
-          <th>Rating</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Product">Product Name</td>
-          <td data-label="Best For"><span class="best-for-badge --budget">Budget</span></td>
-          <td data-label="Price">$29.99</td>
-          <td data-label="Rating">4.3</td>
-          <td><a href="https://www.amazon.com/dp/ASIN/ref=nosim?tag=coffee-site-20" class="cta-button --primary --sm" rel="nofollow sponsored noopener" target="_blank">Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span></a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+```astro
+---
+import ComparisonTable from '../components/ComparisonTable.astro';
+---
+<ComparisonTable timestamp="March 7, 2026" headers={["Product", "Best For", "Price", "Rating", ""]} ariaLabel="Coffee maker comparison">
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th><th>Best For</th><th>Price</th><th>Rating</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Product">Product Name</td>
+        <td data-label="Best For"><span class="best-for-badge --budget">Budget</span></td>
+        <td data-label="Price">$29.99</td>
+        <td data-label="Rating">4.3</td>
+        <td><a href="..." class="cta-button --primary --sm" rel="nofollow sponsored noopener" target="_blank">Check Price <span class="cta-button__arrow" aria-hidden="true">&rarr;</span></a></td>
+      </tr>
+    </tbody>
+  </table>
+</ComparisonTable>
 ```
 
-- **Desktop:** Standard table with zebra striping on `tbody tr:nth-child(even)`
-- **Mobile (<960px):** Each row becomes a stacked card — no horizontal scroll
-- **`data-label` required:** Every `<td>` (except first and last) must have a `data-label` attribute matching its column header — this becomes the label on mobile
-- First `<td>` displays as the card title (bold, larger); last `<td>` displays as a block (for the CTA button)
-- CTA button in last column per row
-- Timestamp header above table in `--brand-400` small text
+**Props:**
+| Prop | Type | Required |
+|------|------|----------|
+| `timestamp` | `string` | no |
+| `headers` | `string[]` | no |
+| `ariaLabel` | `string` | no |
 
-### `.cta-button`
+- **`data-label` required:** Every `<td>` (except first and last) must have a `data-label` matching its column header
+- Desktop: standard table with zebra striping. Mobile (<960px): stacked cards
+- The `<table>` goes in the default slot
 
-```html
-<a href="..." class="cta-button --primary" rel="nofollow sponsored noopener" target="_blank">
-  Check Price on Amazon <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
-</a>
+### `<ProsCons>`
+
+```astro
+---
+import ProsCons from '../components/ProsCons.astro';
+---
+<ProsCons
+  pros={["Great value", "Durable build"]}
+  cons={["Noisy motor", "Large footprint"]}
+/>
 ```
 
-**Variants:**
-- `--primary`: `--cta` background, white text (Amazon links)
-- `--secondary`: `--secondary` border + text, transparent bg (internal links)
-- `--sm`: Smaller padding for use in tables
+**Props:**
+| Prop | Type | Required |
+|------|------|----------|
+| `pros` | `string[]` | yes |
+| `cons` | `string[]` | yes |
 
-**Arrow animation:** Arrow moves 4px right on hover via `transform: translateX(4px)` with `0.2s ease` transition.
+- Two-column grid (stacks on mobile <640px)
+- Check/X marks added automatically
 
-### `.pros-cons`
+### `<QuickPicks>`
 
-```html
-<div class="pros-cons">
-  <div class="pros-cons__col --pros">
-    <h4>Pros</h4>
-    <ul>
-      <li>&#10003; Great value</li>
-      <li>&#10003; Durable build</li>
-    </ul>
-  </div>
-  <div class="pros-cons__col --cons">
-    <h4>Cons</h4>
-    <ul>
-      <li>&#10007; Noisy motor</li>
-      <li>&#10007; Large footprint</li>
-    </ul>
-  </div>
-</div>
+```astro
+---
+import QuickPicks from '../components/QuickPicks.astro';
+---
+<QuickPicks>
+  <ProductCard featured={true} ... />
+  <ProductCard ... />
+  <ProductCard ... />
+</QuickPicks>
 ```
 
-- Two-column grid (stack on mobile <640px)
-- `--pros`: green `--success` left border (4px)
-- `--cons`: red `--error` left border (4px)
-- Check/X marks in list items (unicode, not icons)
-
-### `.quick-picks`
-
-```html
-<div class="quick-picks">
-  <h2>Our Top Picks</h2>
-  <div class="quick-picks__grid">
-    <article class="product-card --featured">
-      <!-- featured item: amber border + shadow -->
-    </article>
-    <article class="product-card"><!-- #2 --></article>
-    <article class="product-card"><!-- #3 --></article>
-  </div>
-</div>
-```
-
+- Slot accepts `<ProductCard>` components
 - Hero box with `--surface-latte` background, `--sp-8` padding
-- Featured item (`.--featured`): `2px solid var(--cta)` border + `0 4px 16px rgba(44,24,16,0.1)` shadow
-- Grid: featured takes full width on mobile, 1/3 each on desktop
+- First card should have `featured={true}`
 
-### `.best-for-badge`
+### `<BestForBadge>`
 
-```html
-<span class="best-for-badge --overall">Best Overall</span>
+```astro
+<BestForBadge variant="overall" label="Best Overall" />
 ```
 
 **Variants:**
-| Class | Colour | Background |
-|-------|--------|------------|
-| `--overall` | `#065F46` | `#ECFDF5` (green) |
-| `--budget` | `#166534` | `#F0FDF4` (green) |
-| `--espresso` | `#7C2D12` | `#FFF7ED` (terracotta) |
-| `--pourover` | `#1E40AF` | `#EFF6FF` (blue) |
-| `--beginners` | `#6B21A8` | `#FAF5FF` (purple) |
-| `--upgrade` | `#9D174D` | `#FDF2F8` (pink) |
+| Variant | Colour | Background |
+|---------|--------|------------|
+| `overall` | `#065F46` | `#ECFDF5` (green) |
+| `budget` | `#166534` | `#F0FDF4` (green) |
+| `espresso` | `#7C2D12` | `#FFF7ED` (terracotta) |
+| `pourover` | `#1E40AF` | `#EFF6FF` (blue) |
+| `beginners` | `#6B21A8` | `#FAF5FF` (purple) |
+| `upgrade` | `#9D174D` | `#FDF2F8` (pink) |
 
-- Inline pill: `border-radius: 999px`, `padding: 0.15rem 0.6rem`, `font-size: 0.8rem`, `font-weight: 600`
+### `<StarRating>`
 
-### `.star-rating`
-
-```html
-<div class="star-rating" aria-label="4.5 out of 5 stars">
-  <span class="star-rating__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-  <span class="star-rating__score">4.5</span>
-</div>
+```astro
+<StarRating score={4.5} outOf={5} />
 ```
 
-- Filled stars: `--cta` colour, empty stars: `--brand-400`
-- Score in `--brand-700`, `font-weight: 600`
+### `<CtaButton>`
 
-### `.buying-guide-section`
+```astro
+<CtaButton href="https://www.amazon.com/dp/ASIN/ref=nosim?tag=coffee-site-20" variant="primary" external>
+  Check Price on Amazon
+</CtaButton>
+```
 
-```html
-<section class="buying-guide-section">
+**Props:**
+| Prop | Type | Default |
+|------|------|---------|
+| `href` | `string` | — (required) |
+| `variant` | `"primary" \| "secondary"` | `"primary"` |
+| `size` | `"sm" \| "default"` | `"default"` |
+| `external` | `boolean` | `false` |
+
+- `external={true}` adds `rel="nofollow sponsored noopener" target="_blank"` — use for ALL Amazon links
+- Arrow animation on hover (4px right)
+
+### `<BuyingGuideSection>`
+
+```astro
+<BuyingGuideSection>
   <h2>Buying Guide</h2>
   <p>Content here...</p>
-</section>
+</BuyingGuideSection>
 ```
 
-- `--surface-latte` background, `--brand-800` left border (4px), `--sp-6` padding
-- `border-radius: 12px`
+- `--surface-latte` background, `--brand-800` left border, `--sp-6` padding
 
-### `.faq-accordion`
+### `<FaqAccordion>` + `<FaqItem>`
 
-```html
-<div class="faq-accordion">
-  <details>
-    <summary>Question here?</summary>
-    <div class="faq-accordion__answer">
-      <p>Answer here.</p>
-    </div>
-  </details>
-</div>
+```astro
+---
+import FaqAccordion from '../components/FaqAccordion.astro';
+import FaqItem from '../components/FaqItem.astro';
+---
+<FaqAccordion>
+  <FaqItem question="Question here?">
+    <p>Answer here.</p>
+  </FaqItem>
+</FaqAccordion>
 ```
 
 - Pure CSS, no JavaScript
-- `<summary>` has `cursor: pointer`, `font-weight: 600`, `padding: --sp-3 0`
-- Bottom border between items
-- `[open] summary` gets `--brand-900` colour
-- Answer area has `--sp-4` padding-bottom
+- `<FaqItem>` accepts a `question` prop and answer content in the slot
 
-### `.affiliate-disclosure`
+### `<AffiliateDisclosure>`
 
-```html
-<aside class="affiliate-disclosure">
-  <p><strong>Affiliate Disclosure:</strong> This page contains Amazon affiliate links. If you purchase through our links, we may earn a small commission at no extra cost to you. This helps us keep the site running.</p>
-</aside>
+Handled automatically by `PostLayout` — appears above fold and at page bottom. Custom text can be passed via the `disclosureText` prop on PostLayout.
+
+### `<Breadcrumbs>`
+
+Handled automatically by `PostLayout`. Pass breadcrumb items as a prop:
+
+```astro
+<PostLayout
+  breadcrumbs={[
+    { label: "Home", href: "/" },
+    { label: "All Guides", href: "/posts/" },
+    { label: "Page Title" }
+  ]}
+  ...
+>
 ```
 
-- `--warning-bg` background, `--warning` left border (4px)
-- `border-radius: 8px`, `--sp-4` padding
-- Must appear: once above the fold, once at page bottom
-
-### `.breadcrumbs`
-
-```html
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-  <ol>
-    <li><a href="/">Home</a></li>
-    <li><a href="/posts/category.html">Category</a></li>
-    <li aria-current="page">Page Title</li>
-  </ol>
-</nav>
-```
-
+- Last item (no `href`) gets `aria-current="page"`
 - Semantic `<nav><ol>` with `aria-label="Breadcrumb"`
-- Inline `<li>` separated by CSS `::before` content `" / "`
-- `font-size: 0.875rem`, `--brand-600` colour
-- Links use `--secondary` colour
 
-### `.toc`
+### `<HeroMedia>`
 
-```html
-<nav class="toc" aria-label="Table of Contents">
-  <h4>Contents</h4>
-  <ol>
-    <li><a href="#section">Section Title</a></li>
-  </ol>
-</nav>
+```astro
+<HeroMedia
+  src="/assets/images/hero.svg"
+  alt="Descriptive alt text"
+  width={720}
+  height={400}
+  caption="Image caption text"
+/>
 ```
 
-- On desktop (960px+): `position: sticky; top: 5rem` in a sidebar
-- On mobile: inline block with `--surface-latte` background
-- Scrollable if content overflows (`max-height: calc(100vh - 8rem)`)
-- `border-radius: 12px`, `--sp-4` padding
+### `<Toc>`
 
-### `.card-grid` + `.card`
-
-```html
-<div class="card-grid">
-  <article class="card">
-    <h3><a href="/posts/page.html">Guide Title</a></h3>
-    <p>Short description of the guide content.</p>
-  </article>
-</div>
+```astro
+<Toc items={[
+  { href: "#section-1", label: "Section One" },
+  { href: "#section-2", label: "Section Two" },
+]} />
 ```
 
-- `.card-grid`: CSS Grid with `repeat(auto-fit, minmax(240px, 1fr))`, `--sp-4` gap
-- `.card`: `--surface-latte` background, `1px solid --brand-200` border, `--radius` corners, `--sp-4` padding
-- Used on hub/category pages and the homepage to link to content pages
-- `h3` inside `.card` has `margin-top: 0`; `p` has `margin-bottom: 0`
+### `<CardGrid>` + `<Card>`
 
-### `.note`
+```astro
+<CardGrid>
+  <Card href="/posts/page.html" title="Guide Title" description="Short description." />
+</CardGrid>
+```
+
+- Used on hub/category pages
+
+### `<CategoryPills>` + `<Pill>`
+
+```astro
+<CategoryPills>
+  <Pill href="/posts/category.html">Grinders</Pill>
+  <Pill href="/posts/category.html">Espresso Machines</Pill>
+</CategoryPills>
+```
+
+### `<JsonLd>`
+
+```astro
+---
+import JsonLd from '../components/JsonLd.astro';
+---
+<Fragment slot="head">
+  <JsonLd data={{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    ...
+  }} />
+</Fragment>
+```
+
+- Renders `<script type="application/ld+json">` in `<head>` via the named `head` slot
+- Pass a plain JS object — it gets JSON-stringified
+
+### Notes / Callouts
 
 ```html
 <div class="note">
@@ -368,35 +384,17 @@ All pages must use `styles-v2.css`. This document defines every colour, typograp
 </div>
 ```
 
-- Callout/tip box with `--warning-bg` background, `--warning` left border (4px)
-- `border-radius: 8px`, horizontal padding `--sp-4`, vertical padding `0.8rem`
-- Use for tips, warnings, or important asides within content
+- No component wrapper — use the raw CSS class `.note`
+- `--warning-bg` background, `--warning` left border
 
-### `.pill`
-
-```html
-<span class="pill">Category Name</span>
-<a href="/posts/category.html" class="pill">Linked Category</a>
-```
-
-- Inline tag/chip: `--surface-latte` background, `1px solid --brand-200` border
-- `border-radius: 999px`, padding `0.2rem 0.7rem`, `font-size: 0.88rem`
-- Text colour `--brand-700`, no text decoration when used as link
-- Used inside `.category-row` or standalone
-
-### `.category-row`
+### `.lead`
 
 ```html
-<div class="category-row">
-  <a href="#" class="pill">Grinders</a>
-  <a href="#" class="pill">Espresso Machines</a>
-  <a href="#" class="pill">Kettles</a>
-</div>
+<p class="lead">Intro paragraph text.</p>
 ```
 
-- Flexbox row with `flex-wrap: wrap`, `--sp-2` gap
-- Vertical margin: `--sp-3` top, `--sp-5` bottom
-- Contains `.pill` elements as navigation tags
+- `1.1rem` font size, `--brand-600` colour
+- Used immediately after H1
 
 ### `.kicker`
 
@@ -404,75 +402,12 @@ All pages must use `styles-v2.css`. This document defines every colour, typograp
 <p class="kicker">Subtitle or category label</p>
 ```
 
-- Muted subtitle text: `--brand-600` colour, `0.95rem` size
-- `margin-top: 0` — sits flush below the element above it
-- Used below H1 or as a category label above content sections
+- Muted subtitle text below H1
 
-### `.hero-media`
+---
 
-```html
-<figure class="hero-media">
-  <img src="image.jpg" alt="Descriptive alt text" width="720" height="400" loading="lazy">
-  <figcaption>Image caption text</figcaption>
-</figure>
-```
+## Header / Footer
 
-- Hero image container: `--sp-5` top margin, `--sp-6` bottom margin
-- Image: 100% width, `1px solid --brand-200` border, `--radius` corners, `--surface-latte` background (shows while loading)
-- Figcaption: `--brand-600` colour, `0.92rem` size, `--sp-2` top margin
+Handled automatically by `BaseLayout`. The header and footer are shared components (`src/components/Header.astro`, `src/components/Footer.astro`) — agents never need to write header/footer markup.
 
-### `.lead`
-
-```html
-<p class="lead">Intro paragraph text that summarises the page.</p>
-```
-
-- `1.1rem` font size, `--brand-600` colour
-- Used immediately after H1 as the page introduction/summary paragraph
-
-### `.skip-link`
-
-```html
-<a class="skip-link" href="#main-content">Skip to main content</a>
-```
-
-- Accessibility skip link: visually hidden off-screen (`left: -9999px`)
-- Appears on keyboard focus at `left: --sp-3`
-- `--brand-900` background, white text, `--radius-sm` corners
-- Must be the first element inside `<body>` on every page
-
-### Header / Footer / `.topbar` / `.brand`
-
-**Header (canonical — must be identical on every page):**
-```html
-<header>
-  <div class="container topbar">
-    <a class="brand" href="/">Coffee Gear Lab</a>
-    <nav aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/posts/">All Guides</a>
-      <a href="/posts/best-espresso-machine-under-200.html">Espresso</a>
-      <a href="/posts/best-coffee-grinder-for-pour-over.html">Grinders</a>
-    </nav>
-  </div>
-</header>
-```
-
-- **IMPORTANT:** The nav must be exactly the same on every page. Do NOT customise nav links per page.
-- Sticky header: `position: sticky; top: 0; z-index: 100`
-- `--surface-white` background, `1px solid --brand-200` bottom border
-- `.topbar`: Flexbox row, `justify-content: space-between`, `align-items: center`, `--sp-4` gap, `0.9rem` vertical padding
-- `.brand`: `font-weight: 700`, `--brand-900` colour, no text decoration
-- `nav a`: `--brand-600` colour, `font-weight: 600`, `--sp-4` left margin; hover → `--brand-900`
-- On mobile (<640px): `.topbar` wraps, nav link margins shrink to `0.65rem`
-
-**Footer:**
-```html
-<footer>
-  <div class="container">&copy; 2026 Coffee Gear Lab</div>
-</footer>
-```
-
-- `1px solid --brand-200` top border
-- `--brand-600` text colour, `0.95rem` font size
-- Padding: `--sp-6` top, `--sp-8` bottom
+Nav links are defined in `src/data/site.ts` and are identical on every page.

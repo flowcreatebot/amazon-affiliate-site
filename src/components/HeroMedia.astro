@@ -1,0 +1,16 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  caption?: string;
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
+}
+const { src, alt, width = 1200, height = 675, caption, loading = 'lazy', fetchpriority } = Astro.props;
+---
+<figure class="hero-media">
+  <img src={src} alt={alt} width={width} height={height} loading={loading} fetchpriority={fetchpriority} decoding="async" />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

@@ -1,0 +1,14 @@
+---
+interface Props {
+  score: number;
+  outOf?: number;
+}
+const { score, outOf = 5 } = Astro.props;
+const filled = Math.round(score);
+const empty = outOf - filled;
+const stars = '\u2605'.repeat(filled) + '\u2606'.repeat(empty);
+---
+<div class="star-rating" aria-label={`${score} out of ${outOf} stars`}>
+  <span class="star-rating__stars">{stars}</span>
+  <span class="star-rating__score">{score}</span>
+</div>

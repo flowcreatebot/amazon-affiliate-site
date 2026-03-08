@@ -1,0 +1,29 @@
+---
+import BestForBadge from './BestForBadge.astro';
+import StarRating from './StarRating.astro';
+import CtaButton from './CtaButton.astro';
+
+interface Props {
+  title: string;
+  image?: { src: string; alt: string; width?: number; height?: number };
+  badge?: { label: string; variant: 'overall' | 'budget' | 'espresso' | 'pourover' | 'beginners' | 'upgrade' };
+  rating?: { score: number; outOf?: number };
+  price?: string;
+  ctaUrl?: string;
+  ctaText?: string;
+  featured?: boolean;
+  noImage?: boolean;
+}
+const { title, image, badge, rating, price, ctaUrl, ctaText = 'Check Price on Amazon', featured = false, noImage = false } = Astro.props;
+const cardClasses = `product-card${featured ? ' --featured' : ''}${noImage ? ' product-card--no-image' : ''}`;
+---
+<article class={cardClasses}>
+  {image && <img src={image.src} alt={image.alt} width={image.width ?? 500} height={image.height ?? 500} loading="lazy" />}
+  <div class="product-card__body">
+    {badge && <BestForBadge label={badge.label} variant={badge.variant} />}
+    <h3 class="product-card__title">{title}</h3>
+    {rating && <StarRating score={rating.score} outOf={rating.outOf} />}
+    {price && <p class="product-card__price">{price}</p>}
+    {ctaUrl && <CtaButton href={ctaUrl} variant="primary" size="sm" external>{ctaText}</CtaButton>}
+  </div>
+</article>

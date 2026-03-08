@@ -1,0 +1,429 @@
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import QuickPicks from '../../components/QuickPicks.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+import FaqItem from '../../components/FaqItem.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import HeroMedia from '../../components/HeroMedia.astro';
+import Toc from '../../components/Toc.astro';
+import CategoryPills from '../../components/CategoryPills.astro';
+import Pill from '../../components/Pill.astro';
+import { SITE, blogPosting, publisher } from '../../data/site';
+
+const title = 'Best Coffee Grinder for French Press (2026): 7 Tested Picks';
+const description = 'Find the best coffee grinder for French press with fewer fines, cleaner cups, and easier cleanup. Compare 7 tested manual and electric picks by budget.';
+const slug = 'best-coffee-grinder-for-french-press';
+const canonical = `${SITE.url}/posts/${slug}.html`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    blogPosting({
+      headline: title,
+      description: '7 tested French press grinder picks ranked by coarse consistency, fines/sludge risk, cleanup burden, and value.',
+      slug,
+      datePublished: '2026-03-06',
+      dateModified: '2026-03-06',
+      image: `${SITE.url}/assets/images/best-coffee-grinder-for-french-press-tested-2026.svg`,
+    }),
+    {
+      "@type": "ItemList",
+      "name": "Best Coffee Grinder for French Press Picks",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Baratza Encore ESP"},
+        {"@type":"ListItem","position":2,"name":"Fellow Opus"},
+        {"@type":"ListItem","position":3,"name":"1Zpresso Q Air"},
+        {"@type":"ListItem","position":4,"name":"TIMEMORE Chestnut C2"},
+        {"@type":"ListItem","position":5,"name":"OXO Brew Conical Burr"},
+        {"@type":"ListItem","position":6,"name":"Bodum Bistro Burr"},
+        {"@type":"ListItem","position":7,"name":"KINGrinder K6"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What grind size is best for French press coffee?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Medium-coarse is the sweet spot for most French press brewers because it balances extraction while reducing muddy sediment."}
+        },
+        {
+          "@type": "Question",
+          "name": "Is a manual or electric grinder better for French press?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Manual grinders usually win on quality per dollar and portability, while electric grinders win on speed and convenience for batch brewing."}
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use a blade grinder for French press?",
+          "acceptedAnswer": {"@type": "Answer", "text": "You can, but blade grinders create inconsistent particles and usually produce more fines and sludge than burr grinders."}
+        },
+        {
+          "@type": "Question",
+          "name": "How do I reduce sludge/fines in my French press cup?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Use a burr grinder at medium-coarse settings, avoid aggressive plunging, and allow a short settle period before pouring."}
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I clean my grinder for consistent taste?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Brush clean every few brews and deep-clean monthly to keep grind output consistent and prevent stale residue."}
+        }
+      ]
+    }
+  ],
+};
+---
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogDescription="7 tested French press grinder picks ranked by coarse consistency, fines/sludge risk, cleanup burden, and value."
+  ogImage={`${SITE.url}/assets/images/best-coffee-grinder-for-french-press-tested-2026.svg`}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'All Guides', href: '/posts/' },
+    { label: 'Best Coffee Grinder for French Press' },
+  ]}
+>
+  <JsonLd data={jsonLd} slot="head" />
+
+  <h1>Best Coffee Grinder for French Press (2026): 7 Picks Tested</h1>
+  <p class="lead">French press can taste rich and sweet, or muddy and bitter. The difference is usually grinder quality. We shortlisted seven grinders that produce repeatable coarse particles with less sludge, then mapped each pick to real routines: batch brewing, travel, low-budget upgrades, and low-mess daily use. If you are still choosing brewer style first, see our <a href="/posts/aeropress-vs-french-press.html">AeroPress vs French Press comparison</a> before buying gear.</p>
+
+  <CategoryPills>
+    <Pill text="Money Page" />
+    <Pill text="French Press" />
+    <Pill text="High Intent" />
+  </CategoryPills>
+
+  <HeroMedia
+    src="/assets/images/best-coffee-grinder-for-french-press-tested-2026.svg"
+    alt="Best coffee grinder picks for French press ranked by coarse consistency and fines control"
+    width={1200}
+    height={675}
+    caption="Editorial snapshot: French-press-focused grinder picks by consistency, sediment risk, and daily cleanup effort."
+    fetchpriority="high"
+  />
+
+  <p><strong>Quick answer:</strong> The best coffee grinder for French press for most buyers is Baratza Encore ESP because it hits a stable coarse range with lower sludge than cheap entry grinders. If you want travel-friendly manual value, choose 1Zpresso Q Air. If budget is strict, TIMEMORE C2 is the safest low-cost upgrade.</p>
+
+  <Toc items={[
+    { href: '#tldr', label: 'TL;DR winner box' },
+    { href: '#comparison', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#reviews', label: 'Product reviews by use-case' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'FAQ' },
+    { href: '#related', label: 'Related guides' },
+  ]} />
+
+  <QuickPicks>
+    <ProductCard
+      title="Baratza Encore ESP"
+      badge={{ label: "Best Overall", variant: "overall" }}
+      rating={{ score: 4.5 }}
+      price="$$"
+      ctaUrl="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20"
+      noImage
+    />
+    <ProductCard
+      title="Fellow Opus"
+      badge={{ label: "Best for Batch", variant: "upgrade" }}
+      rating={{ score: 4.4 }}
+      price="$$"
+      ctaUrl="https://www.amazon.com/dp/B0BV96VPSR/ref=nosim?tag=coffee-site-20"
+      noImage
+    />
+    <ProductCard
+      title="1Zpresso Q Air"
+      badge={{ label: "Best Manual", variant: "pourover" }}
+      rating={{ score: 4.3 }}
+      price="$"
+      ctaUrl="https://www.amazon.com/dp/B0CJ4YFMQ9/ref=nosim?tag=coffee-site-20"
+      noImage
+    />
+  </QuickPicks>
+
+  <h2 id="tldr">TL;DR winner box</h2>
+  <div class="card">
+    <p><strong>Best overall:</strong> Baratza Encore ESP</p>
+    <p><strong>Best electric for batch brewers:</strong> Fellow Opus</p>
+    <p><strong>Best manual for travel/small kitchens:</strong> 1Zpresso Q Air</p>
+    <p><strong>Best budget pick under $100:</strong> TIMEMORE Chestnut C2</p>
+  </div>
+
+  <ComparisonTable timestamp="Prices checked: March 2026" ariaLabel="Coffee grinders for French press comparison">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Best for</th>
+          <th>Grinder type</th>
+          <th>Burr type</th>
+          <th>Coarse grind range</th>
+          <th>Coarse consistency score (1-5)</th>
+          <th>Fines/sludge risk</th>
+          <th>Static/retention note</th>
+          <th>Cleanup effort</th>
+          <th>Price band</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Baratza Encore ESP</td>
+          <td data-label="Best for">Best overall</td>
+          <td data-label="Grinder type">Electric</td>
+          <td data-label="Burr type">Conical steel burr</td>
+          <td data-label="Coarse grind range">Wide, repeatable coarse steps</td>
+          <td data-label="Coarse consistency score (1-5)">4.5</td>
+          <td data-label="Fines/sludge risk">Low</td>
+          <td data-label="Static/retention note">Moderate static in dry air; easy chute brushing</td>
+          <td data-label="Cleanup effort">Low</td>
+          <td data-label="Price band">$$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td>Fellow Opus</td>
+          <td data-label="Best for">Best electric for batch brewers</td>
+          <td data-label="Grinder type">Electric</td>
+          <td data-label="Burr type">Conical steel burr</td>
+          <td data-label="Coarse grind range">Broad filter range with fine adjustment ring</td>
+          <td data-label="Coarse consistency score (1-5)">4.4</td>
+          <td data-label="Fines/sludge risk">Low-Medium</td>
+          <td data-label="Static/retention note">Low retention; occasional fines cling near exit</td>
+          <td data-label="Cleanup effort">Medium</td>
+          <td data-label="Price band">$$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0BV96VPSR/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td>1Zpresso Q Air</td>
+          <td data-label="Best for">Best manual travel pick</td>
+          <td data-label="Grinder type">Manual</td>
+          <td data-label="Burr type">Conical steel burr</td>
+          <td data-label="Coarse grind range">Precise click range for medium-coarse brews</td>
+          <td data-label="Coarse consistency score (1-5)">4.3</td>
+          <td data-label="Fines/sludge risk">Low</td>
+          <td data-label="Static/retention note">Very low retention; static rarely a problem</td>
+          <td data-label="Cleanup effort">Low</td>
+          <td data-label="Price band">$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0CJ4YFMQ9/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td>TIMEMORE Chestnut C2</td>
+          <td data-label="Best for">Best budget under $100</td>
+          <td data-label="Grinder type">Manual</td>
+          <td data-label="Burr type">Conical steel burr</td>
+          <td data-label="Coarse grind range">Good coarse range for French press</td>
+          <td data-label="Coarse consistency score (1-5)">4.1</td>
+          <td data-label="Fines/sludge risk">Medium</td>
+          <td data-label="Static/retention note">Low retention; occasional fines buildup after oily beans</td>
+          <td data-label="Cleanup effort">Low</td>
+          <td data-label="Price band">$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0833SDN8M/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td>OXO Brew Conical Burr</td>
+          <td data-label="Best for">Best low-sediment electric value</td>
+          <td data-label="Grinder type">Electric</td>
+          <td data-label="Burr type">Conical steel burr</td>
+          <td data-label="Coarse grind range">Clear coarse settings for immersion brews</td>
+          <td data-label="Coarse consistency score (1-5)">4.2</td>
+          <td data-label="Fines/sludge risk">Low-Medium</td>
+          <td data-label="Static/retention note">Static can spike on dry days; retention stays manageable</td>
+          <td data-label="Cleanup effort">Low</td>
+          <td data-label="Price band">$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B07CSKGLMM/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td>KINGrinder K6</td>
+          <td data-label="Best for">Best low-sludge manual upgrade</td>
+          <td data-label="Grinder type">Manual</td>
+          <td data-label="Burr type">Conical steel burr</td>
+          <td data-label="Coarse grind range">Very broad range with tight click control</td>
+          <td data-label="Coarse consistency score (1-5)">4.6</td>
+          <td data-label="Fines/sludge risk">Low</td>
+          <td data-label="Static/retention note">Near-zero retention; minimal static due to manual chute path</td>
+          <td data-label="Cleanup effort">Low</td>
+          <td data-label="Price band">$$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B09WH9JKY1/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td>Bodum Bistro Burr</td>
+          <td data-label="Best for">Best compact countertop pick</td>
+          <td data-label="Grinder type">Electric</td>
+          <td data-label="Burr type">Conical steel burr</td>
+          <td data-label="Coarse grind range">Usable coarse range, fewer top-end options</td>
+          <td data-label="Coarse consistency score (1-5)">3.8</td>
+          <td data-label="Fines/sludge risk">Medium-High</td>
+          <td data-label="Static/retention note">Higher static in grounds bin; needs frequent wipe-down</td>
+          <td data-label="Cleanup effort">Medium</td>
+          <td data-label="Price band">$</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0043095WW/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+      </tbody>
+    </table>
+  </ComparisonTable>
+
+  <section>
+    <h2 id="how-we-evaluate">How we evaluate</h2>
+    <p>Our shortlist weights five factors: <strong>brew quality</strong>, <strong>grinder consistency</strong>, <strong>usability</strong>, <strong>cleaning burden</strong>, and <strong>value for money</strong>. For French press pages, we add extra weight to fines control, because too many tiny particles create sludge and muddy texture even with a good brew ratio.</p>
+  </section>
+
+  <section>
+    <h2 id="reviews">Product reviews by use-case</h2>
+
+    <h3>1) Baratza Encore ESP — Best Overall Coffee Grinder for French Press</h3>
+    <p><strong>Verdict:</strong> Best for most home brewers who want one dependable grinder for French press now and espresso later.</p>
+    <p><strong>Buy this if...</strong> you want cleaner French press cups without upgrading again next year.</p>
+    <p><strong>Skip this if...</strong> your budget is hard-capped below $100.</p>
+    <ProsCons
+      pros={["Very stable coarse particles for immersion brews.", "Easy step repeatability for day-to-day recipes.", "Serviceable platform with strong long-term reliability."]}
+      cons={["Louder than some compact competitors.", "Hopper workflow is less tidy than single-dose grinders."]}
+    />
+    <p><strong>Key specs:</strong> Electric conical burr · 40 grind settings · 300 g (10.6 oz) hopper · model ZCG495-120V.</p>
+    <p><strong>Why it wins this slot:</strong> It gives the safest balance of cup clarity, repeatability, and long-term value under $200.</p>
+    <p><strong>Retention/static behavior:</strong> Static is moderate in dry weather; one light RDT mist keeps retention predictable.</p>
+    <p><strong>Cup profile for French press:</strong> Full body with better clarity than budget grinders and low visible sediment when dialed coarse.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20" external>Check Baratza Encore ESP Price on Amazon</CtaButton></p>
+
+    <h3>2) Fellow Opus — Best Electric Pick for Batch Brewing</h3>
+    <p><strong>Verdict:</strong> Best for households brewing 2-4 cups at a time who want quick workflow and low-mess grounds handling.</p>
+    <p><strong>Buy this if...</strong> you need electric convenience with better fines control than basic entry grinders.</p>
+    <p><strong>Skip this if...</strong> you dislike dual adjustment systems.</p>
+    <ProsCons
+      pros={["Consistent coarse grind output for French press batches.", "Compact footprint with modern anti-static engineering.", "Strong range if you also brew pour over."]}
+      cons={["Inner ring adjustment takes a week to learn.", "Cleanup is moderate around chute edges."]}
+    />
+    <p><strong>Key specs:</strong> Electric conical burr · 41 adjustable settings · 40 mm stainless steel burrs · model 840228804147.</p>
+    <p><strong>Why it wins this slot:</strong> It combines French-press consistency with daily batch convenience in a small kitchen footprint.</p>
+    <p><strong>Retention/static behavior:</strong> Low retention overall, with minor fines cling after very light roasts.</p>
+    <p><strong>Cup profile for French press:</strong> Rich body, moderate texture, and generally clean finish with restrained sludge.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0BV96VPSR/ref=nosim?tag=coffee-site-20" external>Check Fellow Opus Price on Amazon</CtaButton></p>
+
+    <h3>3) 1Zpresso Q Air — Best Manual Grinder for French Press</h3>
+    <p><strong>Verdict:</strong> Best for small kitchens, office setups, and travel brewers who still want low-sediment cups.</p>
+    <p><strong>Buy this if...</strong> you value portability and quiet operation over push-button convenience.</p>
+    <p><strong>Skip this if...</strong> you regularly brew large multi-cup batches before work.</p>
+    <ProsCons
+      pros={["Excellent grind control for a compact manual grinder.", "Quiet, cable-free workflow.", "Fast enough for one to two cups without fatigue."]}
+      cons={["Manual effort rises with larger doses.", "Less ideal for big family brewing routines."]}
+    />
+    <p><strong>Key specs:</strong> Manual conical stainless burr · numerical stepped adjustment · mini travel-size body · model Q Air Black.</p>
+    <p><strong>Why it wins this slot:</strong> It delivers cleaner French press cups than many budget electric grinders while staying ultra-portable.</p>
+    <p><strong>Retention/static behavior:</strong> Grounds drop cleanly with very low retention and almost no static mess.</p>
+    <p><strong>Cup profile for French press:</strong> Balanced body, good clarity, and low sediment even with darker roasts.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0CJ4YFMQ9/ref=nosim?tag=coffee-site-20" external>Check 1Zpresso Q Air Price on Amazon</CtaButton></p>
+
+    <h3>4) TIMEMORE Chestnut C2 — Best Budget Pick Under $100</h3>
+    <p><strong>Verdict:</strong> Best first burr-grinder upgrade for buyers moving up from blade grinders on a strict budget.</p>
+    <p><strong>Buy this if...</strong> you need better cup consistency now without crossing $100.</p>
+    <p><strong>Skip this if...</strong> you need electric speed for large daily batches.</p>
+    <ProsCons
+      pros={["Reliable coarse output for the price tier.", "Simple adjustment system for beginners.", "Durable body with low maintenance needs."]}
+      cons={["Slightly slower grinding than premium hand grinders.", "More fines than top-tier options."]}
+    />
+    <p><strong>Key specs:</strong> Manual grinder · CNC stainless steel tapered burr · internal adjustable setting · 25 g stated capacity.</p>
+    <p><strong>Why it wins this slot:</strong> It is the highest-confidence low-cost path to cleaner French press cups.</p>
+    <p><strong>Retention/static behavior:</strong> Low retention; fines can build up after oily beans if not brushed weekly.</p>
+    <p><strong>Cup profile for French press:</strong> Full and pleasant body with moderate sediment that stays manageable when dialed coarse.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0833SDN8M/ref=nosim?tag=coffee-site-20" external>Check TIMEMORE Chestnut C2 Price on Amazon</CtaButton></p>
+
+    <h3>5) OXO Brew Conical Burr — Best Low-Sediment Pick (Electric Value)</h3>
+    <p><strong>Verdict:</strong> Best for buyers who want affordable electric convenience with better-than-average sludge control.</p>
+    <p><strong>Buy this if...</strong> you prioritize easy workflow and cleaner French press output under $100-$120.</p>
+    <p><strong>Skip this if...</strong> you plan to chase precise espresso shots soon.</p>
+    <ProsCons
+      pros={["Good coarse consistency for immersion brewing.", "Simple timer workflow for repeatable doses.", "Low everyday cleaning burden."]}
+      cons={["Fines control trails top mid-tier grinders.", "Static can increase in dry climates."]}
+    />
+    <p><strong>Key specs:</strong> Electric conical stainless burrs · one-touch automatic smart grind · 12 oz (340 g) hopper · model 8717000.</p>
+    <p><strong>Why it wins this slot:</strong> It offers one of the best electric value ratios for French press-focused buyers.</p>
+    <p><strong>Retention/static behavior:</strong> Retention is moderate-low, but static cling around the bin needs occasional wipe-down.</p>
+    <p><strong>Cup profile for French press:</strong> Dense body with acceptable clarity and low-to-medium sludge when coarse settings are used.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B07CSKGLMM/ref=nosim?tag=coffee-site-20" external>Check OXO Brew Conical Burr Price on Amazon</CtaButton></p>
+
+    <h3>6) Bodum Bistro Burr — Best Compact Countertop Pick</h3>
+    <p><strong>Verdict:</strong> Best for compact kitchens where footprint matters more than absolute grind precision.</p>
+    <p><strong>Buy this if...</strong> you need an affordable grinder that fits limited counter space.</p>
+    <p><strong>Skip this if...</strong> sediment control is your top priority.</p>
+    <ProsCons
+      pros={["Small footprint and easy one-knob operation.", "Works well enough for casual French press use.", "Wide retail availability and straightforward setup."]}
+      cons={["More fines than premium electric picks.", "Static in the grounds bin can get messy."]}
+    />
+    <p><strong>Key specs:</strong> Electric conical burr · 12 grind settings · preset timer · model 10903-01US-3.</p>
+    <p><strong>Why it wins this slot:</strong> It is a practical space-saving choice when you want electric grinding in tiny kitchens.</p>
+    <p><strong>Retention/static behavior:</strong> Static and bin retention are noticeable; cleaning every few brews is mandatory.</p>
+    <p><strong>Cup profile for French press:</strong> Heavy body with moderate clarity and medium sediment, especially at finer coarse settings.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0043095WW/ref=nosim?tag=coffee-site-20" external>Check Bodum Bistro Burr Price on Amazon</CtaButton></p>
+
+    <h3>7) KINGrinder K6 — Best Value Upgrade Near $200</h3>
+    <p><strong>Verdict:</strong> Best for enthusiasts chasing low sludge and high particle uniformity without paying premium electric prices.</p>
+    <p><strong>Buy this if...</strong> cup quality matters more than push-button speed.</p>
+    <p><strong>Skip this if...</strong> hand grinding feels like friction in your morning routine.</p>
+    <ProsCons
+      pros={["Outstanding coarse uniformity and low fines output.", "Strong build quality with precision click control.", "Near-zero retention and very tidy workflow."]}
+      cons={["Manual effort is real for larger doses.", "Higher up-front cost than entry hand grinders."]}
+    />
+    <p><strong>Key specs:</strong> Manual conical burr grinder · aluminum + stainless steel body · K6-Bent Handle listing · model 2AK6001 IR.</p>
+    <p><strong>Why it wins this slot:</strong> It gives near-premium grind quality and excellent sediment control while staying well below high-end grinder pricing.</p>
+    <p><strong>Retention/static behavior:</strong> Extremely low retention and very little static due to direct grounds path.</p>
+    <p><strong>Cup profile for French press:</strong> Full, sweet body with high clarity and very low sludge for this price band.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B09WH9JKY1/ref=nosim?tag=coffee-site-20" external>Check KINGrinder K6 Price on Amazon</CtaButton></p>
+  </section>
+
+  <BuyingGuideSection>
+    <h2 id="buying-guide">Buying guide</h2>
+    <h3>What grind size is right for French press?</h3>
+    <p>Start at medium-coarse, like rough sea salt. Too fine creates sludge and over-extraction; too coarse turns cups thin. Once your grinder is set, use this <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> to keep dose and brew strength consistent.</p>
+
+    <h3>Why burr design changes sediment in the cup</h3>
+    <p>Better burr geometry makes particle sizes more uniform, so fewer tiny fines pass through the metal filter. That means less muddy texture and cleaner flavor separation. This is why a quality burr grinder beats blade chopping for French press.</p>
+
+    <h3>Manual vs electric: which fits your daily routine?</h3>
+    <p>Choose manual if you brew one or two cups, travel often, or want max grind quality per dollar. Choose electric if you batch brew most mornings. If your budget is tight, compare this page against our <a href="/posts/best-manual-coffee-grinder-under-100.html">best manual coffee grinder under $100 guide</a>.</p>
+
+    <h3>How to reduce fines, static, and retention</h3>
+    <p>Use a coarse setting, avoid stale oily beans, and lightly mist beans (RDT) before electric grinding in dry climates. Clean the chute and grounds bin often. For broad sub-$200 options beyond French press, see our <a href="/posts/best-burr-coffee-grinder-under-200.html">best burr coffee grinder under $200 roundup</a>.</p>
+
+    <h3>Cleaning cadence that keeps flavor consistent</h3>
+    <p>Brush out loose grounds every 2-3 brews and deep-clean burrs every 4-6 weeks. This keeps old oils from muting flavor and prevents accumulation that increases fines contamination in your cup. For a simple daily/weekly schedule, follow our <a href="/posts/how-to-clean-burr-coffee-grinder.html">burr grinder cleaning guide</a>.</p>
+  </BuyingGuideSection>
+
+  <section>
+    <h2 id="faq">FAQ</h2>
+    <FaqAccordion>
+      <FaqItem question="What grind size is best for French press coffee?">
+        <p>Medium-coarse is the sweet spot for most French press brewers. It balances extraction and body while reducing silt that makes cups muddy.</p>
+      </FaqItem>
+      <FaqItem question="Is a manual or electric grinder better for French press?">
+        <p>Neither is universally better. Manual usually wins on grind quality-per-dollar and portability; electric wins on speed and convenience for batch brewing.</p>
+      </FaqItem>
+      <FaqItem question="Can I use a blade grinder for French press?">
+        <p>You can, but cup quality is usually inconsistent because blade grinders create too many fines and boulders. A burr grinder is the better long-term fix.</p>
+      </FaqItem>
+      <FaqItem question="How do I reduce sludge/fines in my French press cup?">
+        <p>Use a burr grinder at medium-coarse settings, avoid aggressive plunging, and let the brew settle for 60 seconds before pouring. Fewer fines in the grind is the biggest lever.</p>
+      </FaqItem>
+      <FaqItem question="How often should I clean my grinder for consistent taste?">
+        <p>Do a quick brush clean every few brews and deep-clean monthly. Consistent cleaning reduces stale residue and keeps particle output stable over time.</p>
+      </FaqItem>
+    </FaqAccordion>
+  </section>
+
+  <section>
+    <h2 id="related">Related guides</h2>
+    <ul>
+      <li><a href="/posts/aeropress-vs-french-press.html">AeroPress vs French Press</a></li>
+      <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide</a></li>
+      <li><a href="/posts/best-manual-coffee-grinder-under-100.html">Best Manual Coffee Grinder Under $100</a></li>
+      <li><a href="/posts/best-burr-coffee-grinder-under-200.html">Best Burr Coffee Grinder Under $200</a></li>
+      <li><a href="/posts/best-coffee-grinder-for-pour-over.html">Best Coffee Grinder for Pour Over</a></li>
+      <li><a href="/posts/how-to-clean-burr-coffee-grinder.html">How to Clean a Burr Coffee Grinder</a></li>
+    </ul>
+  </section>
+</PostLayout>

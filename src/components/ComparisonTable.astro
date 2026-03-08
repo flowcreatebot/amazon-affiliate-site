@@ -1,0 +1,13 @@
+---
+interface Props {
+  timestamp?: string;
+  ariaLabel?: string;
+}
+const { timestamp, ariaLabel } = Astro.props;
+---
+<section class="comparison-table" aria-label={ariaLabel}>
+  {timestamp && <p class="comparison-table__timestamp">{timestamp}</p>}
+  <div class="table-wrap">
+    <slot />
+  </div>
+</section>

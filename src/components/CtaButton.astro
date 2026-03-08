@@ -1,0 +1,15 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary';
+  size?: 'sm' | 'default';
+  external?: boolean;
+  text?: string;
+}
+const { href, variant = 'primary', size = 'default', external = false, text } = Astro.props;
+const classes = `cta-button --${variant}${size === 'sm' ? ' --sm' : ''}`;
+const externalAttrs = external ? { rel: 'nofollow sponsored noopener', target: '_blank' } : {};
+---
+<a href={href} class={classes} {...externalAttrs}>
+  {text ? text : <slot />} <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
+</a>

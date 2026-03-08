@@ -1,0 +1,17 @@
+---
+interface Props {
+  items: Array<{ href: string; label: string }>;
+  title?: string;
+  ordered?: boolean;
+}
+const { items, title = 'On this page', ordered = true } = Astro.props;
+const Tag = ordered ? 'ol' : 'ul';
+---
+<nav class="toc" aria-label="Table of contents">
+  <h4>{title}</h4>
+  <Tag>
+    {items.map(item => (
+      <li><a href={item.href}>{item.label}</a></li>
+    ))}
+  </Tag>
+</nav>

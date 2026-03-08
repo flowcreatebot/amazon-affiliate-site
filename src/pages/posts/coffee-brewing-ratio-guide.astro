@@ -1,0 +1,84 @@
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import Toc from '../../components/Toc.astro';
+import { SITE, blogPosting, publisher } from '../../data/site';
+
+const title = 'Coffee Brewing Ratio Guide (Pour Over, French Press, AeroPress)';
+const description = 'Simple coffee-to-water ratio cheat sheet for pour over, French press, and AeroPress. Includes quick adjustments for stronger or lighter cups.';
+const slug = 'coffee-brewing-ratio-guide';
+const canonical = `${SITE.url}/posts/${slug}.html`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    blogPosting({
+      headline: title,
+      description: 'Simple coffee-to-water ratio cheat sheet for pour over, French press, and AeroPress.',
+      slug,
+      datePublished: '2026-03-05',
+      dateModified: '2026-03-06',
+    }),
+  ],
+};
+---
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'All Guides', href: '/posts/' },
+    { label: 'Coffee Brewing Ratio Guide' },
+  ]}
+  showDisclosure={false}
+>
+  <JsonLd data={jsonLd} slot="head" />
+
+  <h1>Coffee Brewing Ratio Guide (No Guesswork)</h1>
+  <p class="lead">Use this quick chart to dial better cups faster. Start here, then adjust one variable at a time.</p>
+
+  <Toc items={[
+    { href: '#ratio-chart', label: 'Quick ratio chart' },
+    { href: '#example-calculation', label: 'Example calculation' },
+    { href: '#troubleshooting', label: 'Fast troubleshooting' },
+  ]} />
+
+  <h2 id="ratio-chart">Quick ratio chart</h2>
+  <ComparisonTable>
+    <table>
+      <thead><tr><th>Method</th><th>Starting ratio</th><th>For stronger cup</th><th>For lighter cup</th></tr></thead>
+      <tbody>
+        <tr><td>Pour over</td><td data-label="Starting ratio">1:16</td><td data-label="For stronger cup">1:15</td><td data-label="For lighter cup">1:17</td></tr>
+        <tr><td>French press</td><td data-label="Starting ratio">1:15</td><td data-label="For stronger cup">1:14</td><td data-label="For lighter cup">1:16</td></tr>
+        <tr><td>AeroPress</td><td data-label="Starting ratio">1:14</td><td data-label="For stronger cup">1:13</td><td data-label="For lighter cup">1:15</td></tr>
+      </tbody>
+    </table>
+  </ComparisonTable>
+
+  <h2 id="example-calculation">Example calculation</h2>
+  <p>For a 300 ml pour over at 1:16, use about <strong>19 g coffee</strong> (300 ÷ 16 = 18.75).</p>
+
+  <h2 id="troubleshooting">Fast troubleshooting</h2>
+  <ul>
+    <li><strong>Sour and thin:</strong> grind finer or increase brew time slightly.</li>
+    <li><strong>Bitter and harsh:</strong> grind coarser or reduce brew time.</li>
+    <li><strong>Flat flavor:</strong> use fresher beans and a better grinder.</li>
+  </ul>
+
+  <section>
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="/posts/best-single-serve-coffee-maker-with-grinder.html">Best Single-Serve Coffee Maker with Grinder</a></li>
+      <li><a href="/posts/best-coffee-maker-with-grinder.html">Best Coffee Maker with Grinder</a></li>
+      <li><a href="/posts/best-coffee-grinder-for-pour-over.html">Best Coffee Grinder for Pour Over</a></li>
+      <li><a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">Best Coffee Scale for Espresso &amp; Pour Over</a></li>
+      <li><a href="/posts/best-gooseneck-kettle-for-pour-over.html">Best Gooseneck Kettle for Pour Over</a></li>
+      <li><a href="/posts/best-pour-over-coffee-maker.html">Best Pour Over Coffee Maker (2026)</a></li>
+      <li><a href="/posts/aeropress-vs-french-press.html">AeroPress vs French Press</a></li>
+      <li><a href="/posts/best-espresso-machine-under-200.html">Best Espresso Machine Under $200</a></li>
+      <li><a href="/posts/best-manual-coffee-grinder-under-100.html">Best Manual Coffee Grinder Under $100</a></li>
+    </ul>
+  </section>
+</PostLayout>

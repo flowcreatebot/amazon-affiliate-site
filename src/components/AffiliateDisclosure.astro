@@ -1,0 +1,9 @@
+---
+interface Props {
+  text?: string;
+}
+const { text = 'This page contains Amazon affiliate links. If you purchase through our links, we may earn a small commission at no extra cost to you.' } = Astro.props;
+---
+<aside class="affiliate-disclosure">
+  <p><strong>Affiliate Disclosure:</strong> {text}</p>
+</aside>

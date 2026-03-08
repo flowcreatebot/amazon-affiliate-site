@@ -1,0 +1,8 @@
+---
+interface Props {
+  label: string;
+  variant: 'overall' | 'budget' | 'espresso' | 'pourover' | 'beginners' | 'upgrade';
+}
+const { label, variant } = Astro.props;
+---
+<span class={`best-for-badge --${variant}`}>{label}</span>

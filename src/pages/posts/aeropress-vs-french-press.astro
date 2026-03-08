@@ -1,0 +1,146 @@
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+import FaqItem from '../../components/FaqItem.astro';
+import HeroMedia from '../../components/HeroMedia.astro';
+import Toc from '../../components/Toc.astro';
+import Pill from '../../components/Pill.astro';
+import CategoryPills from '../../components/CategoryPills.astro';
+import { SITE, blogPosting, publisher } from '../../data/site';
+
+const title = 'AeroPress vs French Press (2026): Which Brewer Should You Buy?';
+const description = 'AeroPress vs French Press compared on taste, cleanup, brew speed, and travel fit so you can buy the right brewer for your daily coffee routine.';
+const slug = 'aeropress-vs-french-press';
+const canonical = `${SITE.url}/posts/${slug}.html`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    blogPosting({
+      headline: title,
+      description: 'AeroPress vs French Press compared on taste, cleanup, brew speed, and travel fit so buyers can choose the right brewer faster.',
+      slug,
+      datePublished: '2026-03-06',
+      dateModified: '2026-03-06',
+      image: `${SITE.url}/assets/images/aeropress-vs-french-press-2026.svg`,
+    }),
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Which is better for beginners: AeroPress or French Press?","acceptedAnswer":{"@type":"Answer","text":"AeroPress is usually easier for beginners because cleanup is faster and recipes are forgiving. French Press is beginner-friendly too but more sensitive to grind consistency and cleanup."}},
+        {"@type":"Question","name":"Does French Press always taste stronger than AeroPress?","acceptedAnswer":{"@type":"Answer","text":"French Press often tastes stronger because of heavier body and more fines, while AeroPress usually tastes cleaner and lighter in texture."}},
+        {"@type":"Question","name":"Which brewer is better for travel?","acceptedAnswer":{"@type":"Answer","text":"AeroPress is generally better for travel due to compact size, durability, and quick cleanup."}},
+        {"@type":"Question","name":"Do I need a burr grinder for both methods?","acceptedAnswer":{"@type":"Answer","text":"A burr grinder is not mandatory, but it improves both methods. The gain is especially large for French Press because it reduces fines and sludge."}},
+        {"@type":"Question","name":"Can one ratio work for both AeroPress and French Press?","acceptedAnswer":{"@type":"Answer","text":"Use a shared baseline like 1:15, then adjust for each brewer. AeroPress often works better slightly stronger, while French Press benefits from coarser grind and longer steeping."}}
+      ],
+    },
+  ],
+};
+---
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogDescription="Side-by-side brewer comparison: cup profile, cleanup burden, workflow speed, and who each brewer is best for."
+  ogImage={`${SITE.url}/assets/images/aeropress-vs-french-press-2026.svg`}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'All Guides', href: '/posts/' },
+    { label: 'AeroPress vs French Press' },
+  ]}
+>
+  <JsonLd data={jsonLd} slot="head" />
+
+  <h1>AeroPress vs French Press (2026): Fast Buyer Decision Guide</h1>
+  <p class="lead">Both brewers are affordable and beginner-friendly, but they produce very different cups and workflows. If you care about low-mess mornings and cleaner flavor, one wins quickly. If you want heavier body and multi-cup volume, the other is usually the better buy.</p>
+
+  <CategoryPills>
+    <Pill text="Supporting Page" />
+    <Pill text="Brewer Comparison" />
+    <Pill text="Commercial Intent Assist" />
+  </CategoryPills>
+
+  <HeroMedia src="../assets/images/aeropress-vs-french-press-2026.svg" alt="AeroPress vs French Press comparison chart for taste, cleanup, brew speed, portability, and batch size" width={1200} height={675} loading="eager" fetchpriority="high" caption="Editorial comparison: the fastest path to choosing between AeroPress and French Press." />
+
+  <p><strong>Quick answer:</strong> Buy <strong>AeroPress</strong> if you want cleaner cups, faster cleanup, and portability. Buy <strong>French Press</strong> if you want a fuller body and usually brew 2-3 cups at once. Most single-cup weekday drinkers prefer AeroPress; slower weekend or shared brews usually favor French Press.</p>
+
+  <Toc items={[
+    { href: '#comparison', label: 'Side-by-side comparison' },
+    { href: '#cup-profile', label: 'Taste and cup profile differences' },
+    { href: '#workflow', label: 'Workflow speed and cleanup burden' },
+    { href: '#buy-fit', label: 'Buy this if... / skip this if...' },
+    { href: '#gear', label: 'Best supporting gear picks' },
+    { href: '#faq', label: 'FAQ' },
+  ]} ordered />
+
+  <h2 id="comparison">Side-by-side comparison</h2>
+  <ComparisonTable>
+    <table>
+      <thead>
+        <tr><th>Category</th><th>AeroPress</th><th>French Press</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Taste profile</td><td>Cleaner cup, lower sediment, brighter clarity</td><td>Heavier body, richer mouthfeel, more sediment</td></tr>
+        <tr><td>Brew speed</td><td>~2 minutes active brew</td><td>~4 minutes steep + plunge</td></tr>
+        <tr><td>Cleanup effort</td><td>Very low (puck eject + rinse)</td><td>Medium-high (wet grounds disposal + mesh rinse)</td></tr>
+        <tr><td>Portability</td><td>Excellent for travel and office kits</td><td>Lower portability, especially glass models</td></tr>
+        <tr><td>Batch size fit</td><td>Best for single-cup brewing</td><td>Better for 2-3 cups per brew</td></tr>
+        <tr><td>Beginner forgiveness</td><td>High with standard recipes</td><td>High, but grind quality matters more</td></tr>
+        <tr><td>Grinder dependency</td><td>Moderate</td><td>High for reducing sludge and over-extraction</td></tr>
+      </tbody>
+    </table>
+  </ComparisonTable>
+
+  <h2 id="cup-profile">Taste and cup profile differences</h2>
+  <p><strong>AeroPress cups</strong> are usually cleaner and more focused because paper filtration removes more fines and oils. You get better flavor separation, especially with lighter roasts.</p>
+  <p><strong>French Press cups</strong> emphasize body and texture because metal mesh lets more oils and micro-fines through. If you prefer heavier mouthfeel over clarity, French Press is often more satisfying.</p>
+  <p>For better grind match by brew method, use our <a href="/posts/best-coffee-grinder-for-french-press.html">best coffee grinder for French Press</a> and <a href="/posts/best-coffee-grinder-for-pour-over.html">best coffee grinder for pour over</a> guides.</p>
+
+  <h2 id="workflow">Workflow speed and cleanup burden</h2>
+  <p>AeroPress is faster in real life: short brew, instant puck eject, quick rinse. French Press takes longer to clean because wet grounds stick to glass and mesh screens. If weekday friction matters, AeroPress usually wins.</p>
+  <p>Whichever brewer you choose, repeatability improves when your ratio is fixed. Start with the baselines in our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> and keep grind quality stable with this <a href="/posts/how-to-clean-burr-coffee-grinder.html">burr grinder cleaning routine</a>.</p>
+
+  <HeroMedia src="../assets/images/aeropress-vs-french-press-2026.svg" alt="AeroPress and French Press workflow comparison for cleanup time and daily effort" width={1200} height={675} caption="Daily-use reality: cleanup friction is often the deciding factor after week one." />
+
+  <h2 id="buy-fit">Buy this if... / Skip this if...</h2>
+  <h3>AeroPress</h3>
+  <p><strong>Buy this if...</strong> you brew one cup at a time, want cleaner flavor, and value easy cleanup plus portability.</p>
+  <p><strong>Skip this if...</strong> you frequently brew for 2-3 people and want heavy-bodied cups without paper filters.</p>
+
+  <h3>French Press</h3>
+  <p><strong>Buy this if...</strong> you prefer fuller body, often brew multiple cups, and do not mind a slower cleanup routine.</p>
+  <p><strong>Skip this if...</strong> you dislike sediment or need a low-mess, travel-friendly morning workflow.</p>
+
+  <h2 id="gear">Best supporting gear picks</h2>
+  <ul>
+    <li><a href="/posts/best-coffee-grinder-for-french-press.html">Best Coffee Grinder for French Press</a> — if you want cleaner press cups with less sludge.</li>
+    <li><a href="/posts/best-manual-coffee-grinder-under-100.html">Best Manual Coffee Grinder Under $100</a> — best value for travel/manual brewing kits.</li>
+    <li><a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">Best Coffee Scale for Espresso &amp; Pour Over</a> — improves repeatability for both brewers.</li>
+    <li><a href="/posts/best-gooseneck-kettle-for-pour-over.html">Best Gooseneck Kettle for Pour Over</a> — useful if you also brew AeroPress with controlled pouring.</li>
+    <li><a href="/posts/best-coffee-maker-with-grinder.html">Best Coffee Maker with Grinder</a> — if you want convenience automation over manual brewing.</li>
+    <li><a href="/posts/best-single-serve-coffee-maker-with-grinder.html">Best Single-Serve Coffee Maker with Grinder</a> — if one-cup speed matters more than manual ritual.</li>
+  </ul>
+
+  <section>
+    <h2 id="faq">FAQ</h2>
+    <FaqAccordion>
+      <FaqItem question="Which is better for beginners: AeroPress or French Press?">
+        <p>AeroPress is usually easier for beginners because cleanup is faster and recipes are forgiving. French Press is also beginner-friendly but is more sensitive to grind consistency and grounds cleanup.</p>
+      </FaqItem>
+      <FaqItem question="Does French Press always taste stronger than AeroPress?">
+        <p>French Press often tastes stronger due to heavier body and more suspended fines. AeroPress can still brew strong coffee, but the cup typically tastes cleaner and less dense.</p>
+      </FaqItem>
+      <FaqItem question="Which brewer is better for travel?">
+        <p>AeroPress is better for travel. It is compact, durable, and fast to clean in limited sink conditions.</p>
+      </FaqItem>
+      <FaqItem question="Do I need a burr grinder for both methods?">
+        <p>You can brew without one, but a burr grinder improves both methods. The improvement is bigger for French Press because poor grind consistency increases sludge and bitterness.</p>
+      </FaqItem>
+      <FaqItem question="Can one ratio work for both AeroPress and French Press?">
+        <p>Not perfectly. You can start from 1:15, then tweak by brewer. AeroPress often tastes better a touch stronger, while French Press usually benefits from slightly coarser grind and longer steeping.</p>
+      </FaqItem>
+    </FaqAccordion>
+  </section>
+</PostLayout>
