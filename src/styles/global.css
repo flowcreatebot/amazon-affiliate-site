@@ -506,8 +506,6 @@ tbody tr:hover { background: var(--surface-elevated); }
 
 @media (min-width: 960px) {
   .toc {
-    position: sticky;
-    top: 5rem;
     max-height: calc(100vh - 8rem);
     overflow-y: auto;
   }
