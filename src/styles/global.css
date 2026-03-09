@@ -112,7 +112,8 @@ header {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
+  font-weight: 700;
   text-decoration: none;
   color: var(--brand-900);
 }
@@ -122,24 +123,6 @@ header {
   height: 32px;
   border-radius: 6px;
   flex-shrink: 0;
-}
-
-.brand__text {
-  display: inline-flex;
-  flex-direction: column;
-  line-height: 1.05;
-}
-
-.brand__name {
-  font-weight: 800;
-  font-size: 1rem;
-  letter-spacing: 0.1px;
-}
-
-.brand__sub {
-  font-size: 0.74rem;
-  color: var(--brand-600);
-  margin-top: 0.12rem;
 }
 
 nav a {
