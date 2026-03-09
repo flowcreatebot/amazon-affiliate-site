@@ -28,7 +28,7 @@ const jsonLd = {
       description: 'Compare 7 researched espresso machines under $200 by workflow fit, milk system quality, cleanup burden, and value.',
       slug,
       datePublished: '2026-03-06',
-      dateModified: '2026-03-06',
+      dateModified: '2026-03-09',
       image: `${SITE.url}/assets/images/best-espresso-machine-under-200-tested-2026.svg`,
     }),
     {
@@ -43,6 +43,11 @@ const jsonLd = {
         {"@type":"ListItem","position":6,"name":"Nespresso Essenza Mini"},
         {"@type":"ListItem","position":7,"name":"De'Longhi ECP3420"}
       ]
+    },
+    {
+      "@type": "Organization",
+      ...publisher,
+      "@id": `${SITE.url}/#publisher`
     },
     {
       "@type": "FAQPage",
@@ -105,7 +110,9 @@ const jsonLd = {
     { label: 'Best Espresso Machine Under $200' },
   ]}
 >
-  <JsonLd data={jsonLd} slot="head" />
+  <Fragment slot="head">
+    <JsonLd data={jsonLd} />
+  </Fragment>
 
   <h1>Best Espresso Machine Under $200 (2026): 7 Picks Researched</h1>
   <p class="lead">You can make legit espresso under $200, but only if you match the machine to your workflow. We compared top budget models by basket style, heat-up speed, milk capability, cleanup burden, and real-world beginner friction so you can avoid weak shots and buyer's remorse.</p>
@@ -116,45 +123,48 @@ const jsonLd = {
     <Pill text="Commercial Intent" />
   </CategoryPills>
 
-  <HeroMedia src="../assets/images/best-espresso-machine-under-200-tested-2026.svg" alt="Best espresso machines under 200 dollars ranked by machine type, milk system, and beginner fit" width={1200} height={675} loading="eager" fetchpriority="high" caption="Editorial snapshot: strongest espresso machine picks under $200 by use case and workflow fit." />
+  <HeroMedia src="/assets/images/best-espresso-machine-under-200-tested-2026.svg" alt="Best espresso machines under 200 dollars ranked by machine type, milk system, and beginner fit" width={1200} height={675} loading="lazy" caption="Editorial snapshot: strongest espresso machine picks under $200 by use case and workflow fit." />
 
-  <p><strong>Quick answer:</strong> De'Longhi Stilosa is the best espresso machine under $200 for most beginners because it balances shot quality, control, and upgrade potential. CASABREWS 3700 Essential is the strongest milk-drink value, while Nespresso Essenza Mini is best if you care more about one-button speed than hands-on espresso technique.</p>
+  <p id="tldr"><strong>Quick answer:</strong> De'Longhi Stilosa is the best espresso machine under $200 for most beginners because it balances shot quality, control, and upgrade potential. CASABREWS 3700 Essential is the strongest milk-drink value, while Nespresso Essenza Mini is best if you care more about one-button speed than manual espresso technique.</p>
 
   <Toc items={[
     { href: '#tldr', label: 'TL;DR winner box' },
     { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
     { href: '#product-reviews', label: 'Product reviews by use-case' },
     { href: '#buying-guide', label: 'Buying guide' },
     { href: '#faq', label: 'FAQ' },
     { href: '#related-guides', label: 'Related guides' },
   ]} />
 
+  <h2>Quick picks</h2>
   <QuickPicks>
     <ProductCard
       title="De'Longhi Stilosa"
       badge={{ label: "Best Overall", variant: "overall" }}
       price="Budget range"
-      ctaUrl="https://www.amazon.com/dp/B08C96BG9H"
-      noImage
+      image={{ src: "https://m.media-amazon.com/images/I/81c3ItE+jyL._AC_SL500_.jpg", alt: "De'Longhi Stilosa espresso machine", width: 500, height: 500 }}
+      ctaUrl="https://www.amazon.com/dp/B08C96BG9H/ref=nosim?tag=coffee-site-20"
       featured
     />
     <ProductCard
       title="Mr. Coffee Café Barista"
       badge={{ label: "Best Beginner", variant: "beginners" }}
       price="Mid range"
-      ctaUrl="https://www.amazon.com/dp/B007K9OIMU"
-      noImage
+      image={{ src: "https://m.media-amazon.com/images/I/71p2h853rfL._AC_SL500_.jpg", alt: "Mr. Coffee Café Barista espresso machine", width: 500, height: 500 }}
+      ctaUrl="https://www.amazon.com/dp/B007K9OIMU/ref=nosim?tag=coffee-site-20"
     />
     <ProductCard
       title="CASABREWS 3700 Essential"
       badge={{ label: "Best for Lattes", variant: "espresso" }}
       price="Budget range"
-      ctaUrl="https://www.amazon.com/dp/B0BRSP8YT6"
-      noImage
+      image={{ src: "https://m.media-amazon.com/images/I/71v90GdxAVL._AC_SL500_.jpg", alt: "CASABREWS 3700 Essential espresso machine", width: 500, height: 500 }}
+      ctaUrl="https://www.amazon.com/dp/B0BRSP8YT6/ref=nosim?tag=coffee-site-20"
     />
   </QuickPicks>
 
-  <ComparisonTable timestamp="Prices checked: March 2026" ariaLabel="Espresso machines under $200 comparison">
+  <h2 id="comparison-table">Comparison table</h2>
+  <ComparisonTable timestamp="Prices updated: March 9, 2026" ariaLabel="Espresso machines under $200 comparison">
     <table>
       <thead>
         <tr>
@@ -185,7 +195,7 @@ const jsonLd = {
           <td data-label="Cleanup effort">Med</td>
           <td data-label="Price band">$</td>
           <td data-label="Espresso-capable">Yes</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B08C96BG9H" size="sm" external>Check price</CtaButton></td>
+          <td><CtaButton href="https://www.amazon.com/dp/B08C96BG9H/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
         </tr>
         <tr>
           <td>Mr. Coffee Café Barista</td>
@@ -199,7 +209,7 @@ const jsonLd = {
           <td data-label="Cleanup effort">Med</td>
           <td data-label="Price band">$$</td>
           <td data-label="Espresso-capable">Borderline</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B007K9OIMU" size="sm" external>Check price</CtaButton></td>
+          <td><CtaButton href="https://www.amazon.com/dp/B007K9OIMU/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
         </tr>
         <tr>
           <td>CASABREWS 3700 Essential</td>
@@ -213,7 +223,7 @@ const jsonLd = {
           <td data-label="Cleanup effort">Med</td>
           <td data-label="Price band">$</td>
           <td data-label="Espresso-capable">Yes</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B0BRSP8YT6" size="sm" external>Check price</CtaButton></td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0BRSP8YT6/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
         </tr>
         <tr>
           <td>Gevi Compact 20 Bar</td>
@@ -227,7 +237,7 @@ const jsonLd = {
           <td data-label="Cleanup effort">Med</td>
           <td data-label="Price band">$</td>
           <td data-label="Espresso-capable">Borderline</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B0D2MF7R3C" size="sm" external>Check price</CtaButton></td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0D2MF7R3C/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
         </tr>
         <tr>
           <td>Flair Neo Flex</td>
@@ -241,7 +251,7 @@ const jsonLd = {
           <td data-label="Cleanup effort">Low</td>
           <td data-label="Price band">$</td>
           <td data-label="Espresso-capable">Yes</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B0C91668G1" size="sm" external>Check price</CtaButton></td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0C91668G1/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
         </tr>
         <tr>
           <td>Nespresso Essenza Mini</td>
@@ -255,7 +265,7 @@ const jsonLd = {
           <td data-label="Cleanup effort">Low</td>
           <td data-label="Price band">$$</td>
           <td data-label="Espresso-capable">No</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B06ZYJBPM9" size="sm" external>Check price</CtaButton></td>
+          <td><CtaButton href="https://www.amazon.com/dp/B06ZYJBPM9/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
         </tr>
         <tr>
           <td>De'Longhi ECP3420</td>
@@ -269,7 +279,7 @@ const jsonLd = {
           <td data-label="Cleanup effort">Med</td>
           <td data-label="Price band">$$</td>
           <td data-label="Espresso-capable">Yes</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B00YCP71VK" size="sm" external>Check price</CtaButton></td>
+          <td><CtaButton href="https://www.amazon.com/dp/B00YCP71VK/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
         </tr>
       </tbody>
     </table>
@@ -277,9 +287,19 @@ const jsonLd = {
   <p><strong>Borderline note:</strong> Mr. Coffee Café Barista and Gevi can pull decent starter shots, but basket/temperature consistency limits repeatable dial-in precision.</p>
 
   <section>
-    <h2 id="product-reviews">Product reviews by use-case</h2>
-    <p><strong>How we evaluate:</strong> We score each machine on <strong>brew quality</strong>, <strong>grinder consistency requirements</strong>, <strong>usability</strong>, <strong>cleaning burden</strong>, and <strong>value for money</strong>. For this cluster, we also weight milk texture quality and first-week beginner friction.</p>
+    <h2 id="how-we-evaluate">How we evaluate</h2>
+    <p>We score each machine on <strong>brew quality</strong>, <strong>grinder consistency requirements</strong>, <strong>usability</strong>, <strong>cleaning burden</strong>, and <strong>value for money</strong>. For this cluster, we also weight milk texture quality and first-week beginner friction so beginner recommendations are practical, not aspirational.</p>
 
+    <h3>How we score shot quality and consistency</h3>
+    <p>For entry-level machines, we compare how stable each model is across multiple back-to-back brews using the same coffee workflow assumptions: fresh medium-dark beans, an espresso-capable burr grinder, and realistic home prep habits. We prioritize repeatability over one lucky shot. Models that recover heat quickly, accept common dose ranges without immediate channeling, and maintain predictable flow timing score higher for shot quality in this budget range.</p>
+
+    <h3>How we score milk workflow and cleanup burden</h3>
+    <p>Budget espresso buyers usually care about milk drinks, so we weigh wand usability, foam texture control, and cleanup time. Manual wands can produce better texture once your technique improves, but auto-frother systems reduce friction for beginners. We compare total post-drink cleanup effort: wand purging, tray rinsing, basket cleanup, and how much residue tends to build up if a user follows normal weekday routines instead of perfect enthusiast-level maintenance.</p>
+
+    <h3>How we score beginner friction and long-term value</h3>
+    <p>Machines that are forgiving in week one and still useful in month six rank better than models that feel easy on day one but quickly cap your progress. We factor in replacement-part availability, accessory compatibility, and whether a machine rewards better grinders and puck prep over time. That keeps this guide realistic for buyers who want value now while leaving room to improve workflow without replacing the machine immediately.</p>
+
+    <h2 id="product-reviews">Product reviews by use-case</h2>
     <h3>Budget-tier winners</h3>
     <ul>
       <li><strong>Best under $100: De'Longhi Stilosa</strong> — strongest beginner-friendly shot quality and upgrade path at entry pricing.</li>
@@ -297,6 +317,8 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Semi-auto · 15-bar pump claim · pressurized basket · manual steam wand · 33.8 oz tank · Espresso-capable: Yes.</p>
     <p><strong>Retention/static note:</strong> No built-in grinder; shot consistency depends heavily on your external grinder dose retention and static control.</p>
+    <p><span class="best-for-badge --overall">Best Overall</span> <strong>Price:</strong> Check price on Amazon.</p>
+    <CtaButton href="https://www.amazon.com/dp/B08C96BG9H/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
     <p><strong>Why it wins this slot:</strong> It delivers the best all-round blend of entry price, controllable shots, and long-term learning headroom.</p>
 
     <h3>2) Mr. Coffee Café Barista — Best Beginner Milk Workflow</h3>
@@ -309,6 +331,8 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Semi-auto · 15-bar pump claim · pressurized basket · auto frother · 55 oz tank · Espresso-capable: Borderline (automation-first design limits repeatable precision extraction control).</p>
     <p><strong>Retention/static note:</strong> No integrated grinder; pair with a low-retention burr grinder for better repeatability.</p>
+    <p><span class="best-for-badge --beginners">Best Beginner</span> <strong>Price:</strong> Check price on Amazon.</p>
+    <CtaButton href="https://www.amazon.com/dp/B007K9OIMU/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
     <p><strong>Why it wins this slot:</strong> It is the easiest path to acceptable milk drinks under $200.</p>
 
     <h3>3) CASABREWS 3700 Essential — Best for Lattes Under $200</h3>
@@ -321,6 +345,8 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Semi-auto · 20-bar pump claim · pressurized basket · steam wand · 49 oz tank · Espresso-capable: Yes.</p>
     <p><strong>Retention/static note:</strong> Grinder-dependent results; clumpy static-prone grounds can reduce shot consistency on this machine.</p>
+    <p><span class="best-for-badge --espresso">Best for Lattes</span> <strong>Price:</strong> Check price on Amazon.</p>
+    <CtaButton href="https://www.amazon.com/dp/B0BRSP8YT6/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
     <p><strong>Why it wins this slot:</strong> Best milk-drink output under $150 without sacrificing manual espresso fundamentals.</p>
 
     <h3>4) Gevi Compact 20 Bar — Best Compact Small-Kitchen Pick</h3>
@@ -333,11 +359,13 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Semi-auto · 20-bar pump claim · pressurized basket · steam wand · 42 oz tank · Espresso-capable: Borderline (temperature and basket consistency can drift between consecutive shots).</p>
     <p><strong>Retention/static note:</strong> External grinder quality matters; fine static clumps can amplify channeling risk on compact baskets.</p>
+    <p><span class="best-for-badge --pourover">Best Compact Pick</span> <strong>Price:</strong> Check price on Amazon.</p>
+    <CtaButton href="https://www.amazon.com/dp/B0D2MF7R3C/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
     <p><strong>Why it wins this slot:</strong> It is one of the few truly compact machines that still offers full espresso + milk functionality.</p>
 
     <h3>5) Flair Neo Flex — Best Manual Espresso Value</h3>
     <p><strong>Verdict:</strong> Best for enthusiasts who want control and better shot potential per dollar than most electric units.</p>
-    <p><strong>Buy this if...</strong> you enjoy hands-on brewing and are willing to learn manual pressure control.</p>
+    <p><strong>Buy this if...</strong> you enjoy manual brewing and are willing to learn manual pressure control.</p>
     <p><strong>Skip this if...</strong> you need fast back-to-back milk drinks with no prep friction.</p>
     <ProsCons
       pros={["Excellent shot potential when technique is solid.", "No pump noise and fewer electrical failure points.", "Strong long-term value for espresso-focused users."]}
@@ -345,6 +373,8 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Manual lever · user-controlled pressure · pressurized/non-pressurized options · no milk system · Espresso-capable: Yes.</p>
     <p><strong>Retention/static note:</strong> Requires quality grinding; dose consistency and static control from your grinder have direct impact on shot quality.</p>
+    <p><span class="best-for-badge --upgrade">Best Manual Value</span> <strong>Price:</strong> Check price on Amazon.</p>
+    <CtaButton href="https://www.amazon.com/dp/B0C91668G1/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
     <p><strong>Why it wins this slot:</strong> It offers the best espresso ceiling under $200 for users willing to trade convenience for control.</p>
 
     <h3>6) Nespresso Essenza Mini — Best Pod Convenience Under $200</h3>
@@ -357,6 +387,8 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Pod machine · 19-bar claim · pod chamber · no milk system · 20.3 oz tank · Espresso-capable: No.</p>
     <p><strong>Retention/static note:</strong> Not grinder-based; pod freshness and capsule age replace grinder retention concerns.</p>
+    <p><span class="best-for-badge --budget">Best Pod Convenience</span> <strong>Price:</strong> Check price on Amazon.</p>
+    <CtaButton href="https://www.amazon.com/dp/B06ZYJBPM9/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
     <p><strong>Why it wins this slot:</strong> It is still the fastest low-effort way to get espresso-style drinks in this price range.</p>
 
     <h3>7) De'Longhi ECP3420 — Best Long-Term Budget Durability</h3>
@@ -369,6 +401,8 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Semi-auto · 15-bar claim · pressurized basket · steam wand · 37 oz tank · Espresso-capable: Yes.</p>
     <p><strong>Retention/static note:</strong> Better grinder consistency noticeably improves this machine; static-heavy fine grinds can still choke shots.</p>
+    <p><span class="best-for-badge --beginners">Best Long-Term Durability</span> <strong>Price:</strong> Check price on Amazon.</p>
+    <CtaButton href="https://www.amazon.com/dp/B00YCP71VK/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
     <p><strong>Why it wins this slot:</strong> It is one of the most dependable budget pumps for buyers who care about ownership lifespan.</p>
   </section>
 
@@ -385,6 +419,17 @@ const jsonLd = {
 
     <h3>Maintenance and hidden cost reality</h3>
     <p>Plan on daily wipe-downs, weekly backflush/rinse habits, and descaling every 4-8 weeks depending on water hardness. Also budget for a tamper, milk pitcher, descaler, and better basket if you want faster quality gains.</p>
+
+    <h3>Budget tiers that make sense under $200</h3>
+    <p><strong>Under $120:</strong> You are typically choosing compact semi-auto machines with pressurized baskets and modest steam output. These are fine for learning fundamentals if you pair them with a capable grinder and accept slower milk texture progress.</p>
+    <p><strong>$120 to $170:</strong> This range usually gives better feature balance, slightly stronger milk workflow, and fewer frustrating compromises. Most buyers looking for their first real pump machine should start here.</p>
+    <p><strong>$170 to $200:</strong> You often pay for convenience extras, larger tanks, or stronger brand support. Shot quality gains are not always proportional, so compare workflow fit before paying more.</p>
+
+    <h3>Common mistakes that waste money in this category</h3>
+    <p>The biggest mistake is overspending on machine features while under-investing in grind quality. Even the best value pick here will underperform with inconsistent grounds. Another mistake is choosing an auto-frother machine when your real goal is manual milk texture control. Finally, many buyers ignore counter space and cleanup tolerance; a slightly weaker machine that you will actually use daily beats a more complex one that becomes a weekend-only appliance.</p>
+
+    <h3>What to buy first if your budget is tight</h3>
+    <p>If you can only upgrade one thing beyond the machine itself, start with a better grinder and a basic scale. Those two tools improve extraction consistency faster than most machine jumps in this price bracket. After that, add a decent tamper and a milk pitcher sized for your typical drink volume so your workflow feels repeatable instead of improvised.</p>
   </BuyingGuideSection>
 
   <section>

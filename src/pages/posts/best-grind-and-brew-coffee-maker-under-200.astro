@@ -11,8 +11,6 @@ import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import HeroMedia from '../../components/HeroMedia.astro';
 import Toc from '../../components/Toc.astro';
-import CategoryPills from '../../components/CategoryPills.astro';
-import Pill from '../../components/Pill.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
 const title = 'Best Grind and Brew Coffee Maker Under $200 (2026) Compared';
@@ -45,6 +43,11 @@ const jsonLd = {
         {"@type":"ListItem","position":6,"name":"De'Longhi TrueBrew Compact"},
         {"@type":"ListItem","position":7,"name":"Ninja CE251 + budget burr grinder combo"}
       ]
+    },
+    {
+      "@type": "Organization",
+      ...publisher,
+      "url": SITE.url
     },
     {
       "@type": "FAQPage",
@@ -97,16 +100,12 @@ const jsonLd = {
     { label: 'Best Grind and Brew Coffee Maker Under $200' },
   ]}
 >
-  <JsonLd data={jsonLd} slot="head" />
+  <Fragment slot="head">
+    <JsonLd data={jsonLd} />
+  </Fragment>
 
   <h1>Best Grind and Brew Coffee Maker Under $200 (2026): 7 Top Picks</h1>
   <p class="lead">If you want fresher coffee without buying a separate grinder, the best grind-and-brew machine under $200 should save time, not add morning friction. We compared seven high-intent options for bean-to-cup speed, noise, cleanup burden, and compatibility so you can buy once and avoid regret.</p>
-
-  <CategoryPills>
-    <Pill text="Money Page" />
-    <Pill text="Grind & Brew" />
-    <Pill text="Under $200" />
-  </CategoryPills>
 
   <HeroMedia src="/assets/images/best-grind-and-brew-coffee-maker-under-200-tested-2026.svg" alt="Best grind and brew coffee makers under 200 dollars ranked by workflow, cleanup, and value" width={1200} height={675} caption="Editorial ranking focused on real morning workflow, not spec-sheet filler." fetchpriority="high" />
 
@@ -125,28 +124,28 @@ const jsonLd = {
   <QuickPicks>
     <ProductCard
       title="Cuisinart DGB-550BKP1"
+      image={{ src: "https://images-na.ssl-images-amazon.com/images/P/B000VTP45Q.01.LZZZZZZZ.jpg", alt: "Cuisinart DGB-550BKP1 grind and brew coffee maker", width: 500, height: 500 }}
       badge={{ label: "Best Overall", variant: "overall" }}
       rating={{ score: 4.2 }}
-      price="$"
-      ctaUrl="https://www.amazon.com/dp/B000VTP45Q"
+      price="$100-$149"
+      ctaUrl="https://www.amazon.com/dp/B000VTP45Q/ref=nosim?tag=coffee-site-20"
       featured
-      noImage
     />
     <ProductCard
       title="BLACK+DECKER 12-Cup Mill & Brew"
+      image={{ src: "https://images-na.ssl-images-amazon.com/images/P/B00LU2I46E.01.LZZZZZZZ.jpg", alt: "BLACK+DECKER 12-Cup Mill and Brew coffee maker", width: 500, height: 500 }}
       badge={{ label: "Best Budget", variant: "budget" }}
       rating={{ score: 4.3 }}
-      price="$"
-      ctaUrl="https://www.amazon.com/dp/B00LU2I46E"
-      noImage
+      price="Under $100"
+      ctaUrl="https://www.amazon.com/dp/B00LU2I46E/ref=nosim?tag=coffee-site-20"
     />
     <ProductCard
       title="De'Longhi TrueBrew Compact"
-      badge={{ label: "Best Flavor", variant: "upgrade" }}
+      image={{ src: "https://images-na.ssl-images-amazon.com/images/P/B0F3ZSVPPG.01.LZZZZZZZ.jpg", alt: "De'Longhi TrueBrew Compact bean to cup coffee maker", width: 500, height: 500 }}
+      badge={{ label: "Best Upgrade", variant: "upgrade" }}
       rating={{ score: 4.4 }}
-      price="$$$"
-      ctaUrl="https://www.amazon.com/dp/B0F3ZSVPPG"
-      noImage
+      price="$170-$199"
+      ctaUrl="https://www.amazon.com/dp/B0F3ZSVPPG/ref=nosim?tag=coffee-site-20"
     />
   </QuickPicks>
 
@@ -165,7 +164,7 @@ const jsonLd = {
     <p><strong>Best $150-$200:</strong> De'Longhi TrueBrew Compact — better extraction consistency and broader cup-size flexibility.</p>
   </div>
 
-  <ComparisonTable timestamp="Prices checked: March 2026" ariaLabel="Grind and brew coffee makers under $200 comparison">
+  <ComparisonTable timestamp="March 9, 2026" ariaLabel="Grind and brew coffee makers under $200 comparison">
     <table>
       <thead>
         <tr>
@@ -185,7 +184,7 @@ const jsonLd = {
       </thead>
       <tbody>
         <tr>
-          <td>Cuisinart DGB-550BKP1</td>
+          <td data-label="Product">Cuisinart DGB-550BKP1</td>
           <td data-label="Best for">Best overall value under $200</td>
           <td data-label="Grinder type">Blade</td>
           <td data-label="Brew modes">Beans + Pre-ground</td>
@@ -196,10 +195,10 @@ const jsonLd = {
           <td data-label="Cleanup burden">Low</td>
           <td data-label="Price band">$</td>
           <td data-label="Espresso-capable">No</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B000VTP45Q" size="sm" external>Check Price</CtaButton></td>
+          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B000VTP45Q/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
         </tr>
         <tr>
-          <td>BLACK+DECKER 12-Cup Mill &amp; Brew</td>
+          <td data-label="Product">BLACK+DECKER 12-Cup Mill &amp; Brew</td>
           <td data-label="Best for">Easiest cleanup on a tight budget</td>
           <td data-label="Grinder type">Blade</td>
           <td data-label="Brew modes">Beans + Pre-ground</td>
@@ -210,10 +209,10 @@ const jsonLd = {
           <td data-label="Cleanup burden">Low</td>
           <td data-label="Price band">$</td>
           <td data-label="Espresso-capable">No</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B00LU2I46E" size="sm" external>Check Price</CtaButton></td>
+          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B00LU2I46E/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
         </tr>
         <tr>
-          <td>Cuisinart DGB-400 Automatic Grind &amp; Brew</td>
+          <td data-label="Product">Cuisinart DGB-400 Automatic Grind &amp; Brew</td>
           <td data-label="Best for">Best classic batch programmable option</td>
           <td data-label="Grinder type">Blade</td>
           <td data-label="Brew modes">Beans + Pre-ground</td>
@@ -224,10 +223,10 @@ const jsonLd = {
           <td data-label="Cleanup burden">Medium</td>
           <td data-label="Price band">$$</td>
           <td data-label="Espresso-capable">No</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B08DCK4MPV" size="sm" external>Check Price</CtaButton></td>
+          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B08DCK4MPV/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
         </tr>
         <tr>
-          <td>Gevi 10-Cup Grind &amp; Brew</td>
+          <td data-label="Product">Gevi 10-Cup Grind &amp; Brew</td>
           <td data-label="Best for">Compact kitchens</td>
           <td data-label="Grinder type">Built-in grinder</td>
           <td data-label="Brew modes">Beans + Pre-ground</td>
@@ -238,10 +237,10 @@ const jsonLd = {
           <td data-label="Cleanup burden">Medium</td>
           <td data-label="Price band">$$</td>
           <td data-label="Espresso-capable">No</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B0FX3M77DD" size="sm" external>Check Price</CtaButton></td>
+          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B0FX3M77DD/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
         </tr>
         <tr>
-          <td>Cuisinart Grind &amp; Brew Single-Serve (DGB-30)</td>
+          <td data-label="Product">Cuisinart Grind &amp; Brew Single-Serve (DGB-30)</td>
           <td data-label="Best for">Best single-cup speed with built-in grinder</td>
           <td data-label="Grinder type">Conical burr</td>
           <td data-label="Brew modes">Beans + Pre-ground</td>
@@ -252,10 +251,10 @@ const jsonLd = {
           <td data-label="Cleanup burden">Medium</td>
           <td data-label="Price band">$$</td>
           <td data-label="Espresso-capable">No</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B0FNXPWVD8" size="sm" external>Check Price</CtaButton></td>
+          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B0FNXPWVD8/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
         </tr>
         <tr>
-          <td>De'Longhi TrueBrew Compact</td>
+          <td data-label="Product">De'Longhi TrueBrew Compact</td>
           <td data-label="Best for">Strongest flavor near $200</td>
           <td data-label="Grinder type">Conical burr</td>
           <td data-label="Brew modes">Beans-only</td>
@@ -266,10 +265,10 @@ const jsonLd = {
           <td data-label="Cleanup burden">Medium</td>
           <td data-label="Price band">$$$</td>
           <td data-label="Espresso-capable">No (concentrate mode, not true espresso pressure)</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B0F3ZSVPPG" size="sm" external>Check Price</CtaButton></td>
+          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B0F3ZSVPPG/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
         </tr>
         <tr>
-          <td>Ninja CE251 + budget burr grinder combo</td>
+          <td data-label="Product">Ninja CE251 + budget burr grinder combo</td>
           <td data-label="Best for">Best cup quality under $200 total spend</td>
           <td data-label="Grinder type">Burr (separate grinder)</td>
           <td data-label="Brew modes">Beans + Pre-ground</td>
@@ -280,15 +279,19 @@ const jsonLd = {
           <td data-label="Cleanup burden">Medium</td>
           <td data-label="Price band">$$</td>
           <td data-label="Espresso-capable">No</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B07S98411N" size="sm" external>Check Price</CtaButton></td>
+          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B07S98411N/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
         </tr>
       </tbody>
     </table>
   </ComparisonTable>
 
   <section>
+    <h2 id="how-we-evaluate">How We Evaluate</h2>
+    <p>We researched each model against current Amazon listing details, user feedback patterns, workflow constraints, and typical ownership friction points. Instead of chasing a spec-sheet winner, we weighted what most buyers care about after 30 days: consistent coffee, manageable noise, predictable timing, and cleanup that does not become a daily chore.</p>
+    <p>Our scoring model prioritizes five dimensions: grind consistency, brew flexibility, morning speed, cleaning burden, and value at current pricing. For this keyword specifically, we gave extra weight to the first-cup experience because shoppers in this segment are usually replacing stale pre-ground routines and want a repeatable bean-to-cup workflow with minimal trial and error.</p>
+    <p>We also separate two buyer profiles that often get mixed together: convenience-first households (who usually prefer integrated machines) and flavor-first buyers (who may get better outcomes from a drip brewer plus separate grinder combo). This split prevents over-recommending one style to every shopper and keeps the rankings aligned to realistic daily use.</p>
+
     <h2 id="picks">Product picks by buyer fit</h2>
-    <p><strong>How we evaluate:</strong> We score brew quality, grinder consistency, usability, cleaning burden, and value for money. For this SERP, we add extra weight to compatibility (beans vs pre-ground), realistic bean-to-cup timing, and how much daily cleaning friction accumulates after the first week.</p>
 
     <h3>1) Cuisinart DGB-550BKP1 — Best overall grind-and-brew under $200</h3>
     <p><strong>Verdict:</strong> Best for buyers who want a reliable all-rounder with low friction and stable daily coffee quality.</p>
@@ -301,7 +304,7 @@ const jsonLd = {
     <p><strong>Key specs:</strong> Blade grinder · 12-cup batch · programmable start · Beans + Pre-ground modes · Espresso-capable: No.</p>
     <p><strong>Why it wins this slot:</strong> It consistently delivers the lowest buyer regret rate for this price range and intent.</p>
     <p><strong>Retention/static behavior:</strong> Low-to-moderate retention around the grinder lid; quick wipe every brew day keeps flavor cleaner.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B000VTP45Q" external>Check price on Amazon</CtaButton></p>
+    <p><CtaButton href="https://www.amazon.com/dp/B000VTP45Q/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>2) BLACK+DECKER 12-Cup Mill &amp; Brew — Best for easiest cleanup</h3>
     <p><strong>Verdict:</strong> Best for budget-first homes that value low maintenance and straightforward controls over maximum flavor nuance.</p>
@@ -314,7 +317,7 @@ const jsonLd = {
     <p><strong>Key specs:</strong> Blade grinder · 12-cup batch · programmable start · Beans + Pre-ground modes · Espresso-capable: No.</p>
     <p><strong>Why it wins this slot:</strong> It minimizes day-to-day maintenance pain better than most sub-$100 alternatives.</p>
     <p><strong>Retention/static behavior:</strong> Static is mild in dry kitchens; brushing basket and lid every 1-2 days prevents stale carryover.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B00LU2I46E" external>Check price on Amazon</CtaButton></p>
+    <p><CtaButton href="https://www.amazon.com/dp/B00LU2I46E/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>3) De'Longhi TrueBrew Compact — Best strongest flavor under $200</h3>
     <p><strong>Verdict:</strong> Best for flavor-first users willing to spend near the ceiling and handle a slightly heavier cleaning cadence.</p>
@@ -327,7 +330,7 @@ const jsonLd = {
     <p><strong>Key specs:</strong> Burr grinder · single-cup + multi-cup · programmable start · Beans-only mode · Espresso-capable: Borderline (concentrate mode only; no 9-bar espresso control.)</p>
     <p><strong>Why it wins this slot:</strong> It offers the most noticeable flavor jump for buyers upgrading from cheap blade machines.</p>
     <p><strong>Retention/static behavior:</strong> Moderate retention in burr chamber; weekly brush-out keeps body cleaner and reduces stale notes.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B0F3ZSVPPG" external>Check price on Amazon</CtaButton></p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0F3ZSVPPG/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>4) Gevi 10-Cup Grind &amp; Brew — Best for small kitchens</h3>
     <p><strong>Verdict:</strong> Best for tighter counters where footprint matters as much as cup quality.</p>
@@ -340,7 +343,7 @@ const jsonLd = {
     <p><strong>Key specs:</strong> Blade grinder · 10-cup batch · programmable start · Beans + Pre-ground modes · Espresso-capable: No.</p>
     <p><strong>Why it wins this slot:</strong> It keeps full-feature convenience without the oversized footprint of many 12-cup models.</p>
     <p><strong>Retention/static behavior:</strong> Medium residue risk around chute; quick rinse every brew day prevents bitter carryover.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B0FX3M77DD" external>Check price on Amazon</CtaButton></p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0FX3M77DD/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>5) Ninja CE251 + budget burr grinder combo — Best value workflow alternative</h3>
     <p><strong>Verdict:</strong> Best for buyers open to a two-piece setup that still stays under $200 and outperforms many built-ins on flavor.</p>
@@ -353,7 +356,33 @@ const jsonLd = {
     <p><strong>Key specs:</strong> Burr (separate) + drip brewer · 12-cup + manual single mug · programmable start · Beans + Pre-ground · Espresso-capable: No.</p>
     <p><strong>Why it wins this slot:</strong> It is often the best flavor-per-dollar route for buyers not locked to all-in-one hardware.</p>
     <p><strong>Retention/static behavior:</strong> Depends on grinder choice; low-retention burr models reduce mess versus common built-in blade paths.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B07S98411N" external>Check brewer price on Amazon</CtaButton></p>
+    <p><CtaButton href="https://www.amazon.com/dp/B07S98411N/ref=nosim?tag=coffee-site-20" external>Check brewer price on Amazon</CtaButton></p>
+
+    <h3>6) Cuisinart DGB-400 Automatic Grind &amp; Brew — Best classic programmable batch machine</h3>
+    <p><strong>Verdict:</strong> Best for buyers who want the familiar Cuisinart workflow with a straightforward control panel and dependable overnight scheduling.</p>
+    <p><strong>Buy this if...</strong> you want a traditional 12-cup machine that supports both beans and pre-ground coffee without learning a new interface.</p>
+    <p><strong>Skip this if...</strong> you need true single-cup flexibility or the lowest possible grinder noise in small apartments.</p>
+    <ProsCons
+      pros={["Reliable programmable timer behavior for weekday routines.", "Easy transition for users moving from older drip-only Cuisinart models.", "Balanced performance for medium-roast everyday coffee."]}
+      cons={["Blade grind consistency is still mid-pack in this category.", "Body and basket footprint can feel large in compact kitchens."]}
+    />
+    <p><strong>Key specs:</strong> Blade grinder · 12-cup batch · programmable start · Beans + Pre-ground modes · Espresso-capable: No.</p>
+    <p><strong>Why it ranks here:</strong> It is one of the safer picks for households prioritizing routine reliability over feature novelty. The programming flow is familiar, and most users can get repeatable mornings without constant tweaking.</p>
+    <p><strong>Retention/static behavior:</strong> Static is moderate in dry climates; a quick brush around the grinder path every few brews keeps fines from accumulating and dulling flavor.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B08DCK4MPV/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
+
+    <h3>7) Cuisinart Grind &amp; Brew Single-Serve (DGB-30) — Best for one-cup households</h3>
+    <p><strong>Verdict:</strong> Best for solo drinkers who want bean-to-cup freshness without committing counter space to a full carafe machine.</p>
+    <p><strong>Buy this if...</strong> your routine is one mug at a time and you value fresh grinding more than high-volume output.</p>
+    <p><strong>Skip this if...</strong> you regularly brew for multiple people or need a large thermal carafe option.</p>
+    <ProsCons
+      pros={["Single-serve workflow can reduce stale coffee waste.", "Burr-based grinding is a quality step up vs most blade single-serve units.", "Good fit for apartments where full-size machines are overkill."]}
+      cons={["Per-cup cycle can feel slower than pod machines when rushed.", "Not ideal for households that need multi-cup serving speed."]}
+    />
+    <p><strong>Key specs:</strong> Burr grinder · single-serve output · programmable options · Beans + Pre-ground modes · Espresso-capable: No.</p>
+    <p><strong>Why it ranks here:</strong> It solves a specific use case extremely well: one person, one mug, fresh beans, minimal waste. If you are outside that use case, a 10-12 cup machine is usually a better value.</p>
+    <p><strong>Retention/static behavior:</strong> Retention is generally lower than many budget blade systems, but rinsing removable parts daily still matters to avoid oil buildup and bitter carryover.</p>
+    <p><CtaButton href="https://www.amazon.com/dp/B0FNXPWVD8/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
   </section>
 
   <section>
@@ -370,6 +399,9 @@ const jsonLd = {
     <p><strong>2) Beans + pre-ground flexibility is a real quality-of-life win.</strong> It keeps your routine moving when you run out of whole beans or need a decaf backup.</p>
     <p><strong>3) Burr vs blade is still meaningful.</strong> Burr models usually improve consistency, but in this budget many strong blade options win on speed and simplicity.</p>
     <p><strong>4) Capacity should match household behavior.</strong> Solo users often overbuy 12-cup models; multi-person homes quickly outgrow compact tanks.</p>
+    <p><strong>5) Budget tiers help reduce decision fatigue.</strong> Under $100 usually means blade grinder + simpler construction, but still workable if you prioritize convenience and keep cleaning consistent. The $100-$149 tier is often the practical sweet spot for programmable features and more stable daily performance. Near $200, you start seeing better grind quality and broader brew options, though not every premium-priced model is worth paying extra for.</p>
+    <p><strong>6) Check maintenance path before checkout.</strong> Many buyers compare only cup quality and forget ownership friction. Look for removable baskets, clearly accessible grinder paths, and descaling guidance that does not require special tools. If you cannot clean it in under five minutes on a weekday, long-term satisfaction drops fast regardless of the initial taste quality.</p>
+    <p><strong>7) Match machine style to your morning routine.</strong> If your household leaves in waves, single-serve or smaller-batch options reduce waste and keep coffee fresher. If everyone drinks at once, a programmable carafe machine is usually better value and less effort than repeated single-cup cycles. This simple routine-first filter eliminates most buyer remorse in this category.</p>
   </BuyingGuideSection>
 
   <section>

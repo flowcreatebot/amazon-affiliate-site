@@ -333,6 +333,8 @@ a:hover { text-decoration-thickness: 2px; }
 .table-wrap {
   border: 1px solid var(--brand-200);
   border-radius: var(--radius);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 table {
