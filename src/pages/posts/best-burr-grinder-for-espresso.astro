@@ -259,7 +259,7 @@ const jsonLd = {
         {products.map((p) => (
           <tr>
             <td data-label="Product">{p.name}</td>
-            <td data-label="Best for"><span class="best-for-badge --overall">{p.bestFor}</span></td>
+            <td data-label="Best for"><span class={`best-for-badge --${p.badgeVariant}`}>{p.bestFor}</span></td>
             <td data-label="Burr set">{p.burr}</td>
             <td data-label="Adjustment">{p.adjustment}</td>
             <td data-label="Retention/static">{p.retention}</td>
