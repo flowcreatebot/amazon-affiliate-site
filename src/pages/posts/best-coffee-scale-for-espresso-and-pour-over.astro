@@ -204,7 +204,7 @@ const jsonLd = {
             <td data-label="Price Range">{product.price}</td>
             <td data-label="Rating">{product.rating.toFixed(1)}/5</td>
             <td data-label="Link">
-              <a href={product.href} rel="nofollow sponsored noopener" target="_blank">Check price</a>
+              <CtaButton href={product.href} variant="primary" size="sm" external>Check Price</CtaButton>
             </td>
           </tr>
         ))}
