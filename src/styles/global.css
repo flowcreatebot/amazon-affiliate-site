@@ -323,7 +323,11 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 /* --- Comparison Table --- */
-.comparison-table { margin: var(--sp-8) 0; }
+.comparison-table {
+  --_table-w: min(var(--max-page), calc(100% - 2rem));
+  width: var(--_table-w);
+  margin: var(--sp-8) calc(50% - var(--_table-w) / 2);
+}
 .comparison-table__timestamp {
   font-size: 0.8rem;
   color: var(--brand-400);
