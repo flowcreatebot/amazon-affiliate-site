@@ -7,8 +7,9 @@ export const SITE = {
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'All Guides', href: '/posts/' },
-  { label: 'Espresso', href: '/posts/best-espresso-machine-under-200.html' },
-  { label: 'Grinders', href: '/posts/best-coffee-grinder-for-pour-over.html' },
+  { label: 'Espresso', href: '/espresso/' },
+  { label: 'Grinders', href: '/grinders/' },
+  { label: 'Brewers', href: '/brewers/' },
 ];
 
 export const publisher = {

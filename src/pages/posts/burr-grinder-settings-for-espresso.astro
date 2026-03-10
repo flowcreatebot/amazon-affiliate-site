@@ -3,7 +3,6 @@ import PostLayout from '../../layouts/PostLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
-import BestForBadge from '../../components/BestForBadge.astro';
 import ProsCons from '../../components/ProsCons.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
@@ -244,7 +243,7 @@ const jsonLd = {
         {tools.map((tool) => (
           <tr>
             <td data-label="Grinder">{tool.name}</td>
-            <td data-label="Best for"><BestForBadge label={tool.badge.label} variant={tool.badge.variant} /></td>
+            <td data-label="Best for">{tool.bestFor}</td>
             <td data-label="Adjustment style">{tool.range}</td>
             <td data-label="Dial-in note">{tool.note}</td>
             <td data-label="Link">

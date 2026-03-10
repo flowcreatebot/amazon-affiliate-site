@@ -11,116 +11,7 @@ import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import HeroMedia from '../../components/HeroMedia.astro';
 import Toc from '../../components/Toc.astro';
-import BestForBadge from '../../components/BestForBadge.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
-
-const amazonUrl = (asin: string) =>
-  `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
-
-const products = [
-  {
-    title: 'Baratza Encore ESP',
-    asin: 'B0BW272XCV',
-    image: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg',
-    imageAlt: 'Baratza Encore ESP burr coffee grinder',
-    badge: { label: 'Best Overall', variant: 'overall' as const },
-    rating: 4.5,
-    price: '$$',
-    featured: true,
-    burrType: 'Conical burr',
-    brewRange: 'Pour over to espresso',
-    capacity: '8 oz hopper',
-    adjustmentStyle: 'Stepped with espresso zone',
-    cleanup: 'Low',
-    priceBand: '$$',
-    espressoCapable: 'Yes',
-  },
-  {
-    title: 'OXO Brew Conical Burr Grinder',
-    asin: 'B07CSKGLMM',
-    image: 'https://m.media-amazon.com/images/I/71DeUg8G7kS._AC_SL500_.jpg',
-    imageAlt: 'OXO Brew Conical Burr coffee grinder',
-    badge: { label: 'Best Budget', variant: 'budget' as const },
-    rating: 4.2,
-    price: '$',
-    featured: true,
-    burrType: 'Conical burr',
-    brewRange: 'Drip, pour over, French press',
-    capacity: '12 oz hopper',
-    adjustmentStyle: 'Stepped + micro positions',
-    cleanup: 'Low',
-    priceBand: '$',
-    espressoCapable: 'Borderline',
-  },
-  {
-    title: 'Fellow Opus',
-    asin: 'B0BV96VPSR',
-    image: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg',
-    imageAlt: 'Fellow Opus conical burr coffee grinder',
-    badge: { label: 'Best Mid-Range', variant: 'upgrade' as const },
-    rating: 4.4,
-    price: '$$',
-    featured: true,
-    burrType: 'Conical burr',
-    brewRange: 'Filter to espresso',
-    capacity: '3.5 oz dosing lid',
-    adjustmentStyle: 'Stepped + inner micro adjust',
-    cleanup: 'Medium',
-    priceBand: '$$',
-    espressoCapable: 'Yes',
-  },
-  {
-    title: 'Turin SK40',
-    asin: 'B0DR41V3CN',
-    image: undefined,
-    imageAlt: undefined,
-    badge: { label: 'Best for Espresso', variant: 'espresso' as const },
-    rating: 4.5,
-    price: '$$$',
-    featured: false,
-    burrType: 'Conical burr',
-    brewRange: 'Espresso-focused',
-    capacity: 'Single-dose workflow',
-    adjustmentStyle: 'Stepless collar',
-    cleanup: 'Medium',
-    priceBand: '$$$',
-    espressoCapable: 'Yes',
-  },
-  {
-    title: 'Capresso Infinity Plus',
-    asin: 'B07N4KTW38',
-    image: undefined,
-    imageAlt: undefined,
-    badge: { label: 'Best for Beginners', variant: 'beginners' as const },
-    rating: 4.1,
-    price: '$',
-    featured: false,
-    burrType: 'Conical burr',
-    brewRange: 'Drip and batch coffee',
-    capacity: '8.8 oz hopper',
-    adjustmentStyle: 'Stepped dial + timer',
-    cleanup: 'Low',
-    priceBand: '$',
-    espressoCapable: 'No',
-  },
-  {
-    title: 'KINGrinder K6',
-    asin: 'B09WH9JKY1',
-    image: undefined,
-    imageAlt: undefined,
-    badge: { label: 'Best Manual Pick', variant: 'pourover' as const },
-    rating: 4.6,
-    price: '$',
-    featured: false,
-    burrType: 'Manual conical burr',
-    brewRange: 'Pour over to espresso',
-    capacity: '30-35 g dose',
-    adjustmentStyle: 'External click dial',
-    cleanup: 'Low',
-    priceBand: '$',
-    espressoCapable: 'Yes',
-  },
-];
 
 const title = 'Best Burr Coffee Grinders Under $200 (2026): 6 Top Picks';
 const description = 'Find the best burr coffee grinder under 200 for filter or espresso use, with top picks by budget tier, workflow style, and cleanup effort.';
@@ -239,17 +130,31 @@ const jsonLd = {
 
   <h2 id="quick-picks">Quick picks</h2>
   <QuickPicks>
-    {products.filter(p => p.featured).map(p => (
-      <ProductCard
-        title={p.title}
-        image={p.image ? { src: p.image, alt: p.imageAlt!, width: 500, height: 500 } : undefined}
-        badge={p.badge}
-        rating={{ score: p.rating }}
-        price={p.price}
-        ctaUrl={amazonUrl(p.asin)}
-        featured={p.featured}
-      />
-    ))}
+    <ProductCard
+      title="Baratza Encore ESP"
+      image={{ src: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg', alt: 'Baratza Encore ESP burr coffee grinder', width: 500, height: 500 }}
+      badge={{ label: 'Best Overall', variant: 'overall' }}
+      rating={{ score: 4.5 }}
+      price="$$"
+      ctaUrl="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20"
+      featured={true}
+    />
+    <ProductCard
+      title="OXO Brew Conical Burr Grinder"
+      image={{ src: 'https://m.media-amazon.com/images/I/71DeUg8G7kS._AC_SL500_.jpg', alt: 'OXO Brew Conical Burr coffee grinder', width: 500, height: 500 }}
+      badge={{ label: 'Best Budget', variant: 'budget' }}
+      rating={{ score: 4.2 }}
+      price="$"
+      ctaUrl="https://www.amazon.com/dp/B07CSKGLMM/ref=nosim?tag=coffee-site-20"
+    />
+    <ProductCard
+      title="Fellow Opus"
+      image={{ src: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg', alt: 'Fellow Opus conical burr coffee grinder', width: 500, height: 500 }}
+      badge={{ label: 'Best Mid-Range', variant: 'upgrade' }}
+      rating={{ score: 4.4 }}
+      price="$$"
+      ctaUrl="https://www.amazon.com/dp/B0BV96VPSR/ref=nosim?tag=coffee-site-20"
+    />
   </QuickPicks>
 
   <h2 id="comparison-table">Comparison table</h2>
@@ -270,20 +175,78 @@ const jsonLd = {
         </tr>
       </thead>
       <tbody>
-        {products.map(p => (
-          <tr>
-            <td data-label="Product">{p.title}</td>
-            <td data-label="Best for"><BestForBadge label={p.badge.label} variant={p.badge.variant} /></td>
-            <td data-label="Burr type">{p.burrType}</td>
-            <td data-label="Best brew range">{p.brewRange}</td>
-            <td data-label="Capacity">{p.capacity}</td>
-            <td data-label="Adjustment style">{p.adjustmentStyle}</td>
-            <td data-label="Cleanup effort">{p.cleanup}</td>
-            <td data-label="Price band">{p.priceBand}</td>
-            <td data-label="Espresso-capable">{p.espressoCapable}</td>
-            <td><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
-          </tr>
-        ))}
+        <tr>
+          <td data-label="Product">Baratza Encore ESP</td>
+          <td data-label="Best for"><span class="best-for-badge --overall">Best Overall</span></td>
+          <td data-label="Burr type">Conical burr</td>
+          <td data-label="Best brew range">Pour over to espresso</td>
+          <td data-label="Capacity">8 oz hopper</td>
+          <td data-label="Adjustment style">Stepped with espresso zone</td>
+          <td data-label="Cleanup effort">Low</td>
+          <td data-label="Price band">$$</td>
+          <td data-label="Espresso-capable">Yes</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td data-label="Product">OXO Brew Conical Burr Grinder</td>
+          <td data-label="Best for"><span class="best-for-badge --budget">Best Budget</span></td>
+          <td data-label="Burr type">Conical burr</td>
+          <td data-label="Best brew range">Drip, pour over, French press</td>
+          <td data-label="Capacity">12 oz hopper</td>
+          <td data-label="Adjustment style">Stepped + micro positions</td>
+          <td data-label="Cleanup effort">Low</td>
+          <td data-label="Price band">$</td>
+          <td data-label="Espresso-capable">Borderline</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B07CSKGLMM/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td data-label="Product">Fellow Opus</td>
+          <td data-label="Best for"><span class="best-for-badge --upgrade">Best Mid-Range</span></td>
+          <td data-label="Burr type">Conical burr</td>
+          <td data-label="Best brew range">Filter to espresso</td>
+          <td data-label="Capacity">3.5 oz dosing lid</td>
+          <td data-label="Adjustment style">Stepped + inner micro adjust</td>
+          <td data-label="Cleanup effort">Medium</td>
+          <td data-label="Price band">$$</td>
+          <td data-label="Espresso-capable">Yes</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0BV96VPSR/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td data-label="Product">Turin SK40</td>
+          <td data-label="Best for"><span class="best-for-badge --espresso">Best for Espresso</span></td>
+          <td data-label="Burr type">Conical burr</td>
+          <td data-label="Best brew range">Espresso-focused</td>
+          <td data-label="Capacity">Single-dose workflow</td>
+          <td data-label="Adjustment style">Stepless collar</td>
+          <td data-label="Cleanup effort">Medium</td>
+          <td data-label="Price band">$$$</td>
+          <td data-label="Espresso-capable">Yes</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B0DR41V3CN/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td data-label="Product">Capresso Infinity Plus</td>
+          <td data-label="Best for"><span class="best-for-badge --beginners">Best for Beginners</span></td>
+          <td data-label="Burr type">Conical burr</td>
+          <td data-label="Best brew range">Drip and batch coffee</td>
+          <td data-label="Capacity">8.8 oz hopper</td>
+          <td data-label="Adjustment style">Stepped dial + timer</td>
+          <td data-label="Cleanup effort">Low</td>
+          <td data-label="Price band">$</td>
+          <td data-label="Espresso-capable">No</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B07N4KTW38/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
+        <tr>
+          <td data-label="Product">KINGrinder K6</td>
+          <td data-label="Best for"><span class="best-for-badge --pourover">Best Manual Pick</span></td>
+          <td data-label="Burr type">Manual conical burr</td>
+          <td data-label="Best brew range">Pour over to espresso</td>
+          <td data-label="Capacity">30-35 g dose</td>
+          <td data-label="Adjustment style">External click dial</td>
+          <td data-label="Cleanup effort">Low</td>
+          <td data-label="Price band">$</td>
+          <td data-label="Espresso-capable">Yes</td>
+          <td><CtaButton href="https://www.amazon.com/dp/B09WH9JKY1/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+        </tr>
       </tbody>
     </table>
   </ComparisonTable>

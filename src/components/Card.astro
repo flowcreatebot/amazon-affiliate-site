@@ -2,10 +2,12 @@
 interface Props {
   title: string;
   href: string;
+  kicker?: string;
 }
-const { title, href } = Astro.props;
+const { title, href, kicker } = Astro.props;
 ---
 <article class="card">
+  {kicker && <p class="kicker">{kicker}</p>}
   <h3><a href={href}>{title}</a></h3>
   <slot />
 </article>
