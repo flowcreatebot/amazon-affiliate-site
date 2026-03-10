@@ -324,9 +324,10 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* --- Comparison Table --- */
 .comparison-table {
-  --_table-w: min(var(--max-page), calc(100% - 2rem));
-  width: var(--_table-w);
-  margin: var(--sp-8) calc(50% - var(--_table-w) / 2);
+  width: min(var(--max-page), calc(100vw - 2rem));
+  margin-left: calc(50% - min(var(--max-page), calc(100vw - 2rem)) / 2);
+  margin-top: var(--sp-8);
+  margin-bottom: var(--sp-8);
 }
 .comparison-table__timestamp {
   font-size: 0.8rem;
