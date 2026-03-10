@@ -348,7 +348,7 @@ a:hover { text-decoration-thickness: 2px; }
   border: 1px solid var(--brand-200);
   border-radius: var(--radius);
   overflow-x: auto;
-  overscroll-behavior-x: contain;
+  overscroll-behavior-x: none;
 }
 
 /* Scroll hint gradients */
