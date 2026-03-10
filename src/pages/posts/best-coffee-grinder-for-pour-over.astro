@@ -3,6 +3,7 @@ import PostLayout from '../../layouts/PostLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
+import BestForBadge from '../../components/BestForBadge.astro';
 import ProsCons from '../../components/ProsCons.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
@@ -259,7 +260,7 @@ const jsonLd = {
         {products.map((product) => (
           <tr>
             <td data-label="Product">{product.name}</td>
-            <td data-label="Best For">{product.bestFor}</td>
+            <td data-label="Best For"><BestForBadge label={product.bestFor} variant={product.badge} /></td>
             <td data-label="Burr Type">{product.name.includes('Ode') ? 'Flat burr' : 'Conical burr'}</td>
             <td data-label="Workflow">{product.name.includes('1Zpresso') || product.name.includes('TIMEMORE') || product.name.includes('KINGrinder') ? 'Manual grinding' : 'Electric grinding'}</td>
             <td data-label="Price Band">{product.priceBand}</td>
