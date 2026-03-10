@@ -7,7 +7,26 @@ const { timestamp, ariaLabel } = Astro.props;
 ---
 <section class="comparison-table" aria-label={ariaLabel}>
   {timestamp && <p class="comparison-table__timestamp">{timestamp}</p>}
-  <div class="table-wrap">
+  <div class="table-wrap" data-scroll-table>
     <slot />
+    <div class="scroll-hint scroll-hint--right" aria-hidden="true"></div>
+    <div class="scroll-hint scroll-hint--left" aria-hidden="true"></div>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll('[data-scroll-table]').forEach((wrap) => {
+    const hintR = wrap.querySelector('.scroll-hint--right');
+    const hintL = wrap.querySelector('.scroll-hint--left');
+    function update() {
+      const sl = wrap.scrollLeft;
+      const max = wrap.scrollWidth - wrap.clientWidth;
+      if (hintR) hintR.classList.toggle('visible', max > 4 && sl < max - 4);
+      if (hintL) hintL.classList.toggle('visible', sl > 4);
+    }
+    wrap.addEventListener('scroll', update, { passive: true });
+    // Check on load and resize
+    update();
+    new ResizeObserver(update).observe(wrap);
+  });
+</script>
