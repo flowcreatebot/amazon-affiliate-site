@@ -3,6 +3,7 @@ import PostLayout from '../../layouts/PostLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
+import BestForBadge from '../../components/BestForBadge.astro';
 import ProsCons from '../../components/ProsCons.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
@@ -199,7 +200,7 @@ const jsonLd = {
         {products.map((product) => (
           <tr>
             <td data-label="Product">{product.name}</td>
-            <td data-label="Best For">{product.bestFor}</td>
+            <td data-label="Best For"><BestForBadge label={product.badge.label} variant={product.badge.variant} /></td>
             <td data-label="Price Range">{product.price}</td>
             <td data-label="Rating">{product.rating.toFixed(1)}/5</td>
             <td data-label="Link">

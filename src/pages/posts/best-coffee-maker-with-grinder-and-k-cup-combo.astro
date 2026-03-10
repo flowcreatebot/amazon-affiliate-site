@@ -11,9 +11,133 @@ import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import HeroMedia from '../../components/HeroMedia.astro';
 import Toc from '../../components/Toc.astro';
-import CategoryPills from '../../components/CategoryPills.astro';
-import Pill from '../../components/Pill.astro';
+import BestForBadge from '../../components/BestForBadge.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+
+const amazonUrl = (asin: string) =>
+  `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
+
+const products = [
+  {
+    title: 'Cuisinart SS-GB1',
+    asin: 'B08MGYR9SX',
+    badge: { label: 'Best Overall', variant: 'overall' },
+    rating: 4.3,
+    price: '$$',
+    featured: true,
+    noImage: true,
+    grinderType: 'Built-in grinder',
+    compatMode: 'Beans + K-Cup',
+    cupSizes: '8/10/12 oz',
+    timeToFirst: '~4-5 min',
+    waterRes: '40 oz',
+    noise: 'Moderate',
+    maintenance: 'Medium',
+    priceBand: '$$',
+  },
+  {
+    title: 'Cuisinart Grind & Brew Single-Serve',
+    asin: 'B09HDFLF2X',
+    badge: { label: 'Fastest Mornings', variant: 'beginners' },
+    rating: 4.3,
+    price: '$$',
+    featured: true,
+    noImage: true,
+    grinderType: 'Conical burr',
+    compatMode: 'Beans + K-Cup',
+    cupSizes: '8/10/12 oz',
+    timeToFirst: '~4-6 min',
+    waterRes: '48 oz',
+    noise: 'Moderate',
+    maintenance: 'Medium',
+    priceBand: '$$',
+  },
+  {
+    title: 'Gevi 4-in-1 Grind & Brew',
+    asin: 'B0GM41GYZH',
+    badge: { label: 'Easiest Cleanup', variant: 'budget' },
+    rating: 4.2,
+    price: '$$',
+    featured: true,
+    noImage: true,
+    grinderType: 'No grinder',
+    compatMode: 'Ground + K-Cup',
+    cupSizes: '6-14 oz',
+    timeToFirst: '~3-5 min',
+    waterRes: '40 oz',
+    noise: 'Moderate',
+    maintenance: 'Low',
+    priceBand: '$$',
+  },
+  {
+    title: 'BLACK+DECKER Mill & Brew',
+    asin: 'B00LU2I46E',
+    badge: { label: 'Best Budget', variant: 'budget' },
+    rating: 4.1,
+    price: '$',
+    featured: false,
+    noImage: true,
+    grinderType: 'Blade',
+    compatMode: 'Beans + Ground (K-Cup via reusable pod workaround)',
+    cupSizes: '12-cup carafe',
+    timeToFirst: '~8-10 min',
+    waterRes: '64 oz',
+    noise: 'Loud',
+    maintenance: 'Low',
+    priceBand: '$',
+  },
+  {
+    title: 'Chefman InstaCoffee Max+',
+    asin: 'B09NRYX5K7',
+    badge: { label: 'Best Compact', variant: 'pourover' },
+    rating: 4.0,
+    price: '$$',
+    featured: false,
+    noImage: true,
+    grinderType: 'No grinder',
+    compatMode: 'Ground + K-Cup',
+    cupSizes: 'Up to 14 oz',
+    timeToFirst: '~1-2 min',
+    waterRes: '14 oz fill-per-cup',
+    noise: 'Moderate',
+    maintenance: 'Medium',
+    priceBand: '$$',
+  },
+  {
+    title: 'Breville Grind Control',
+    asin: 'B00VGGVQCI',
+    badge: { label: 'Best Flavor Upgrade', variant: 'upgrade' },
+    rating: 4.5,
+    price: '$$$',
+    featured: false,
+    noImage: true,
+    grinderType: 'Burr',
+    compatMode: 'Beans + Ground',
+    cupSizes: '8 oz to 12-cup',
+    timeToFirst: '~6-9 min',
+    waterRes: '60 oz',
+    noise: 'Moderate',
+    maintenance: 'Medium',
+    priceBand: '$$$',
+  },
+  {
+    title: "De'Longhi TrueBrew",
+    asin: 'B0F3ZSVPPG',
+    badge: { label: 'Best Premium', variant: 'espresso' },
+    rating: 4.4,
+    price: '$$$',
+    featured: false,
+    noImage: true,
+    grinderType: 'Burr',
+    compatMode: 'Beans + Ground',
+    cupSizes: '8-24 oz (plus 3 oz espresso-style)',
+    timeToFirst: '~5-8 min',
+    waterRes: '60 oz',
+    noise: 'Quiet',
+    maintenance: 'Medium',
+    priceBand: '$$$',
+  },
+];
 
 const title = 'Best Coffee Maker with Grinder and K-Cup Combo (2026)';
 const description = 'Compare the best bean-and-pod coffee makers by flavor, speed, cleanup effort, and K-Cup compatibility to choose the right hybrid machine.';
@@ -112,12 +236,6 @@ const jsonLd = {
   <h1>Best Coffee Maker with Grinder and K-Cup Combo (2026): 7 Researched Picks</h1>
   <p class="lead">If you want fresh-bean flavor on weekdays but still need pod backup for speed, a hybrid grinder + K-Cup machine can be the right buy. We compared seven strong options by cup quality, morning workflow friction, and real maintenance burden so you can pick once and avoid buyer regret.</p>
 
-  <CategoryPills>
-    <Pill text="Money Page" />
-    <Pill text="Hybrid Bean + Pod" />
-    <Pill text="Commercial Intent" />
-  </CategoryPills>
-
   <HeroMedia src="/assets/images/best-coffee-maker-with-grinder-and-k-cup-combo-tested-2026.svg" alt="Best coffee maker with grinder and K-Cup combo machines ranked by speed, cleanup burden, and value" width={1200} height={675} caption="Editorial snapshot: top hybrid bean + K-Cup combo picks by workflow fit and budget." fetchpriority="high" />
 
   <p><strong>Direct answer:</strong> The best coffee maker with grinder and K-Cup combo for most buyers is Cuisinart SS-GB1 because it handles beans and pods with less daily friction than most hybrids. If you are flavor-first and can skip pods, Breville Grind Control performs better. If you only care about pod speed, buy a pod-only machine instead.</p>
@@ -133,31 +251,17 @@ const jsonLd = {
   ]} />
 
   <QuickPicks>
-    <ProductCard
-      title="Cuisinart SS-GB1"
-      badge={{ label: "Best Overall", variant: "overall" }}
-      rating={{ score: 4.3 }}
-      price="$$"
-      ctaUrl="https://www.amazon.com/dp/B08MGYR9SX"
-      featured
-      noImage
-    />
-    <ProductCard
-      title="Cuisinart Grind & Brew Single-Serve"
-      badge={{ label: "Fastest Mornings", variant: "beginners" }}
-      rating={{ score: 4.3 }}
-      price="$$"
-      ctaUrl="https://www.amazon.com/dp/B09HDFLF2X"
-      noImage
-    />
-    <ProductCard
-      title="Gevi 4-in-1 Grind & Brew"
-      badge={{ label: "Easiest Cleanup", variant: "budget" }}
-      rating={{ score: 4.2 }}
-      price="$$"
-      ctaUrl="https://www.amazon.com/dp/B0GM41GYZH"
-      noImage
-    />
+    {products.filter(p => p.featured).map(p => (
+      <ProductCard
+        title={p.title}
+        badge={p.badge}
+        rating={{ score: p.rating }}
+        price={p.price}
+        ctaUrl={amazonUrl(p.asin)}
+        featured={p.featured}
+        noImage
+      />
+    ))}
   </QuickPicks>
 
   <h2 id="tldr">TL;DR winners</h2>
@@ -187,97 +291,21 @@ const jsonLd = {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Cuisinart SS-GB1</td>
-          <td data-label="Best for">Best overall beans + K-Cup combo</td>
-          <td data-label="Grinder type">Built-in grinder</td>
-          <td data-label="Compatibility mode">Beans + K-Cup</td>
-          <td data-label="Cup sizes">8/10/12 oz</td>
-          <td data-label="Time to first cup">~4-5 min</td>
-          <td data-label="Water reservoir">40 oz</td>
-          <td data-label="Noise level">Moderate</td>
-          <td data-label="Maintenance burden">Medium</td>
-          <td data-label="Price band">$$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B08MGYR9SX" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>Cuisinart Grind &amp; Brew Single-Serve</td>
-          <td data-label="Best for">Fast one-cup mornings</td>
-          <td data-label="Grinder type">Conical burr</td>
-          <td data-label="Compatibility mode">Beans + K-Cup</td>
-          <td data-label="Cup sizes">8/10/12 oz</td>
-          <td data-label="Time to first cup">~4-6 min</td>
-          <td data-label="Water reservoir">48 oz</td>
-          <td data-label="Noise level">Moderate</td>
-          <td data-label="Maintenance burden">Medium</td>
-          <td data-label="Price band">$$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B09HDFLF2X" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>Gevi 4-in-1 Grind &amp; Brew</td>
-          <td data-label="Best for">Lowest weekly cleanup friction</td>
-          <td data-label="Grinder type">No grinder</td>
-          <td data-label="Compatibility mode">Ground + K-Cup</td>
-          <td data-label="Cup sizes">6-14 oz</td>
-          <td data-label="Time to first cup">~3-5 min</td>
-          <td data-label="Water reservoir">40 oz</td>
-          <td data-label="Noise level">Moderate</td>
-          <td data-label="Maintenance burden">Low</td>
-          <td data-label="Price band">$$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B0GM41GYZH" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>BLACK+DECKER Mill &amp; Brew</td>
-          <td data-label="Best for">Best value for bean + ground users</td>
-          <td data-label="Grinder type">Blade</td>
-          <td data-label="Compatibility mode">Beans + Ground (K-Cup via reusable pod workaround)</td>
-          <td data-label="Cup sizes">12-cup carafe</td>
-          <td data-label="Time to first cup">~8-10 min</td>
-          <td data-label="Water reservoir">64 oz</td>
-          <td data-label="Noise level">Loud</td>
-          <td data-label="Maintenance burden">Low</td>
-          <td data-label="Price band">$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B00LU2I46E" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>Chefman InstaCoffee Max+</td>
-          <td data-label="Best for">Best compact hybrid for small kitchens</td>
-          <td data-label="Grinder type">No grinder</td>
-          <td data-label="Compatibility mode">Ground + K-Cup</td>
-          <td data-label="Cup sizes">Up to 14 oz</td>
-          <td data-label="Time to first cup">~1-2 min</td>
-          <td data-label="Water reservoir">14 oz fill-per-cup</td>
-          <td data-label="Noise level">Moderate</td>
-          <td data-label="Maintenance burden">Medium</td>
-          <td data-label="Price band">$$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B09NRYX5K7" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>Breville Grind Control</td>
-          <td data-label="Best for">Best flavor-first burr upgrade</td>
-          <td data-label="Grinder type">Burr</td>
-          <td data-label="Compatibility mode">Beans + Ground</td>
-          <td data-label="Cup sizes">8 oz to 12-cup</td>
-          <td data-label="Time to first cup">~6-9 min</td>
-          <td data-label="Water reservoir">60 oz</td>
-          <td data-label="Noise level">Moderate</td>
-          <td data-label="Maintenance burden">Medium</td>
-          <td data-label="Price band">$$$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B00VGGVQCI" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>De'Longhi TrueBrew</td>
-          <td data-label="Best for">Best premium one-cup + carafe flexibility</td>
-          <td data-label="Grinder type">Burr</td>
-          <td data-label="Compatibility mode">Beans + Ground</td>
-          <td data-label="Cup sizes">8-24 oz (plus 3 oz espresso-style)</td>
-          <td data-label="Time to first cup">~5-8 min</td>
-          <td data-label="Water reservoir">60 oz</td>
-          <td data-label="Noise level">Quiet</td>
-          <td data-label="Maintenance burden">Medium</td>
-          <td data-label="Price band">$$$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B0F3ZSVPPG" size="sm" external>Check Price</CtaButton></td>
-        </tr>
+        {products.map(p => (
+          <tr>
+            <td data-label="Product">{p.title}</td>
+            <td data-label="Best for"><BestForBadge label={p.badge.label} variant={p.badge.variant} /></td>
+            <td data-label="Grinder type">{p.grinderType}</td>
+            <td data-label="Compatibility mode">{p.compatMode}</td>
+            <td data-label="Cup sizes">{p.cupSizes}</td>
+            <td data-label="Time to first cup">{p.timeToFirst}</td>
+            <td data-label="Water reservoir">{p.waterRes}</td>
+            <td data-label="Noise level">{p.noise}</td>
+            <td data-label="Maintenance burden">{p.maintenance}</td>
+            <td data-label="Price band">{p.priceBand}</td>
+            <td><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+        ))}
       </tbody>
     </table>
   </ComparisonTable>

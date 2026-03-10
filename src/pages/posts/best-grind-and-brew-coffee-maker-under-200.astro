@@ -9,9 +9,148 @@ import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
+import BestForBadge from '../../components/BestForBadge.astro';
 import HeroMedia from '../../components/HeroMedia.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+
+const products = [
+  {
+    name: 'Cuisinart DGB-550BKP1',
+    asin: 'B000VTP45Q',
+    image: 'https://images-na.ssl-images-amazon.com/images/P/B000VTP45Q.01.LZZZZZZZ.jpg',
+    imageAlt: 'Cuisinart DGB-550BKP1 grind and brew coffee maker',
+    badge: { label: 'Best Overall', variant: 'overall' as const },
+    rating: 4.2,
+    price: '$100-$149',
+    featured: true,
+    grinderType: 'Blade',
+    brewModes: 'Beans + Pre-ground',
+    batchSize: '12-cup batch, no true single-cup',
+    programmable: 'Yes',
+    beanToCup: '~4.5-6 min (small batch)',
+    noise: 'Moderate',
+    cleanup: 'Low',
+    priceBand: '$',
+    espressoCapable: 'No',
+  },
+  {
+    name: 'BLACK+DECKER 12-Cup Mill & Brew',
+    asin: 'B00LU2I46E',
+    image: 'https://images-na.ssl-images-amazon.com/images/P/B00LU2I46E.01.LZZZZZZZ.jpg',
+    imageAlt: 'BLACK+DECKER 12-Cup Mill and Brew coffee maker',
+    badge: { label: 'Best Budget', variant: 'budget' as const },
+    rating: 4.3,
+    price: 'Under $100',
+    featured: true,
+    grinderType: 'Blade',
+    brewModes: 'Beans + Pre-ground',
+    batchSize: '12-cup batch, no true single-cup',
+    programmable: 'Yes',
+    beanToCup: '~5-6 min (small batch)',
+    noise: 'Moderate-Loud',
+    cleanup: 'Low',
+    priceBand: '$',
+    espressoCapable: 'No',
+  },
+  {
+    name: 'Cuisinart DGB-400 Automatic Grind & Brew',
+    asin: 'B08DCK4MPV',
+    image: '',
+    imageAlt: 'Cuisinart DGB-400 Automatic Grind and Brew coffee maker',
+    badge: { label: 'Best Classic Programmable', variant: 'beginners' as const },
+    rating: 4.1,
+    price: '$$',
+    featured: false,
+    grinderType: 'Blade',
+    brewModes: 'Beans + Pre-ground',
+    batchSize: '12-cup batch, no true single-cup',
+    programmable: 'Yes',
+    beanToCup: '~5-6 min (small batch)',
+    noise: 'Moderate',
+    cleanup: 'Medium',
+    priceBand: '$$',
+    espressoCapable: 'No',
+  },
+  {
+    name: 'Gevi 10-Cup Grind & Brew',
+    asin: 'B0FX3M77DD',
+    image: '',
+    imageAlt: 'Gevi 10-Cup Grind and Brew coffee maker',
+    badge: { label: 'Best Compact', variant: 'pourover' as const },
+    rating: 4.0,
+    price: '$$',
+    featured: false,
+    grinderType: 'Built-in grinder',
+    brewModes: 'Beans + Pre-ground',
+    batchSize: '10-cup batch, no true single-cup',
+    programmable: 'Yes',
+    beanToCup: '~4.5-6 min (small batch)',
+    noise: 'Moderate',
+    cleanup: 'Medium',
+    priceBand: '$$',
+    espressoCapable: 'No',
+  },
+  {
+    name: 'Cuisinart Grind & Brew Single-Serve (DGB-30)',
+    asin: 'B0FNXPWVD8',
+    image: '',
+    imageAlt: 'Cuisinart Grind and Brew Single-Serve DGB-30 coffee maker',
+    badge: { label: 'Best Single-Cup', variant: 'espresso' as const },
+    rating: 4.3,
+    price: '$$',
+    featured: false,
+    grinderType: 'Conical burr',
+    brewModes: 'Beans + Pre-ground',
+    batchSize: 'Single-serve only (multi cup sizes)',
+    programmable: 'Yes',
+    beanToCup: '~4-5 min per cup',
+    noise: 'Moderate',
+    cleanup: 'Medium',
+    priceBand: '$$',
+    espressoCapable: 'No',
+  },
+  {
+    name: "De'Longhi TrueBrew Compact",
+    asin: 'B0F3ZSVPPG',
+    image: 'https://images-na.ssl-images-amazon.com/images/P/B0F3ZSVPPG.01.LZZZZZZZ.jpg',
+    imageAlt: "De'Longhi TrueBrew Compact bean to cup coffee maker",
+    badge: { label: 'Best Upgrade', variant: 'upgrade' as const },
+    rating: 4.4,
+    price: '$170-$199',
+    featured: true,
+    grinderType: 'Conical burr',
+    brewModes: 'Beans-only',
+    batchSize: 'Single cup + multi-cup',
+    programmable: 'Yes',
+    beanToCup: '~4-6 min',
+    noise: 'Moderate',
+    cleanup: 'Medium',
+    priceBand: '$$$',
+    espressoCapable: 'No (concentrate mode, not true espresso pressure)',
+  },
+  {
+    name: 'Ninja CE251 + budget burr grinder combo',
+    asin: 'B07S98411N',
+    image: '',
+    imageAlt: 'Ninja CE251 drip brewer with budget burr grinder combo',
+    badge: { label: 'Best Value Combo', variant: 'budget' as const },
+    rating: 4.3,
+    price: '$$',
+    featured: false,
+    grinderType: 'Burr (separate grinder)',
+    brewModes: 'Beans + Pre-ground',
+    batchSize: '12-cup batch + manual single mug',
+    programmable: 'Yes',
+    beanToCup: '~4-6 min including grinding',
+    noise: 'Moderate',
+    cleanup: 'Medium',
+    priceBand: '$$',
+    espressoCapable: 'No',
+  },
+];
+
+const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
 
 const title = 'Best Grind and Brew Coffee Maker Under $200 (2026) Compared';
 const description = 'Compare 7 researched grind-and-brew coffee makers under $200 by workflow speed, cleanup effort, brew flexibility, and practical day-to-day value.';
@@ -122,31 +261,17 @@ const jsonLd = {
   ]} />
 
   <QuickPicks>
-    <ProductCard
-      title="Cuisinart DGB-550BKP1"
-      image={{ src: "https://images-na.ssl-images-amazon.com/images/P/B000VTP45Q.01.LZZZZZZZ.jpg", alt: "Cuisinart DGB-550BKP1 grind and brew coffee maker", width: 500, height: 500 }}
-      badge={{ label: "Best Overall", variant: "overall" }}
-      rating={{ score: 4.2 }}
-      price="$100-$149"
-      ctaUrl="https://www.amazon.com/dp/B000VTP45Q/ref=nosim?tag=coffee-site-20"
-      featured
-    />
-    <ProductCard
-      title="BLACK+DECKER 12-Cup Mill & Brew"
-      image={{ src: "https://images-na.ssl-images-amazon.com/images/P/B00LU2I46E.01.LZZZZZZZ.jpg", alt: "BLACK+DECKER 12-Cup Mill and Brew coffee maker", width: 500, height: 500 }}
-      badge={{ label: "Best Budget", variant: "budget" }}
-      rating={{ score: 4.3 }}
-      price="Under $100"
-      ctaUrl="https://www.amazon.com/dp/B00LU2I46E/ref=nosim?tag=coffee-site-20"
-    />
-    <ProductCard
-      title="De'Longhi TrueBrew Compact"
-      image={{ src: "https://images-na.ssl-images-amazon.com/images/P/B0F3ZSVPPG.01.LZZZZZZZ.jpg", alt: "De'Longhi TrueBrew Compact bean to cup coffee maker", width: 500, height: 500 }}
-      badge={{ label: "Best Upgrade", variant: "upgrade" }}
-      rating={{ score: 4.4 }}
-      price="$170-$199"
-      ctaUrl="https://www.amazon.com/dp/B0F3ZSVPPG/ref=nosim?tag=coffee-site-20"
-    />
+    {products.filter(p => p.featured).map((p, idx) => (
+      <ProductCard
+        title={p.name}
+        image={p.image ? { src: p.image, alt: p.imageAlt, width: 500, height: 500 } : undefined}
+        badge={p.badge}
+        rating={{ score: p.rating }}
+        price={p.price}
+        ctaUrl={amazonUrl(p.asin)}
+        featured={idx === 0}
+      />
+    ))}
   </QuickPicks>
 
   <h2 id="tldr">TL;DR winners</h2>
@@ -183,104 +308,22 @@ const jsonLd = {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td data-label="Product">Cuisinart DGB-550BKP1</td>
-          <td data-label="Best for">Best overall value under $200</td>
-          <td data-label="Grinder type">Blade</td>
-          <td data-label="Brew modes">Beans + Pre-ground</td>
-          <td data-label="Batch size">12-cup batch, no true single-cup</td>
-          <td data-label="Programmable">Yes</td>
-          <td data-label="Bean-to-cup time">~4.5-6 min (small batch)</td>
-          <td data-label="Noise level">Moderate</td>
-          <td data-label="Cleanup burden">Low</td>
-          <td data-label="Price band">$</td>
-          <td data-label="Espresso-capable">No</td>
-          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B000VTP45Q/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td data-label="Product">BLACK+DECKER 12-Cup Mill &amp; Brew</td>
-          <td data-label="Best for">Easiest cleanup on a tight budget</td>
-          <td data-label="Grinder type">Blade</td>
-          <td data-label="Brew modes">Beans + Pre-ground</td>
-          <td data-label="Batch size">12-cup batch, no true single-cup</td>
-          <td data-label="Programmable">Yes</td>
-          <td data-label="Bean-to-cup time">~5-6 min (small batch)</td>
-          <td data-label="Noise level">Moderate-Loud</td>
-          <td data-label="Cleanup burden">Low</td>
-          <td data-label="Price band">$</td>
-          <td data-label="Espresso-capable">No</td>
-          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B00LU2I46E/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td data-label="Product">Cuisinart DGB-400 Automatic Grind &amp; Brew</td>
-          <td data-label="Best for">Best classic batch programmable option</td>
-          <td data-label="Grinder type">Blade</td>
-          <td data-label="Brew modes">Beans + Pre-ground</td>
-          <td data-label="Batch size">12-cup batch, no true single-cup</td>
-          <td data-label="Programmable">Yes</td>
-          <td data-label="Bean-to-cup time">~5-6 min (small batch)</td>
-          <td data-label="Noise level">Moderate</td>
-          <td data-label="Cleanup burden">Medium</td>
-          <td data-label="Price band">$$</td>
-          <td data-label="Espresso-capable">No</td>
-          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B08DCK4MPV/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td data-label="Product">Gevi 10-Cup Grind &amp; Brew</td>
-          <td data-label="Best for">Compact kitchens</td>
-          <td data-label="Grinder type">Built-in grinder</td>
-          <td data-label="Brew modes">Beans + Pre-ground</td>
-          <td data-label="Batch size">10-cup batch, no true single-cup</td>
-          <td data-label="Programmable">Yes</td>
-          <td data-label="Bean-to-cup time">~4.5-6 min (small batch)</td>
-          <td data-label="Noise level">Moderate</td>
-          <td data-label="Cleanup burden">Medium</td>
-          <td data-label="Price band">$$</td>
-          <td data-label="Espresso-capable">No</td>
-          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B0FX3M77DD/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td data-label="Product">Cuisinart Grind &amp; Brew Single-Serve (DGB-30)</td>
-          <td data-label="Best for">Best single-cup speed with built-in grinder</td>
-          <td data-label="Grinder type">Conical burr</td>
-          <td data-label="Brew modes">Beans + Pre-ground</td>
-          <td data-label="Batch size">Single-serve only (multi cup sizes)</td>
-          <td data-label="Programmable">Yes</td>
-          <td data-label="Bean-to-cup time">~4-5 min per cup</td>
-          <td data-label="Noise level">Moderate</td>
-          <td data-label="Cleanup burden">Medium</td>
-          <td data-label="Price band">$$</td>
-          <td data-label="Espresso-capable">No</td>
-          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B0FNXPWVD8/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td data-label="Product">De'Longhi TrueBrew Compact</td>
-          <td data-label="Best for">Strongest flavor near $200</td>
-          <td data-label="Grinder type">Conical burr</td>
-          <td data-label="Brew modes">Beans-only</td>
-          <td data-label="Batch size">Single cup + multi-cup</td>
-          <td data-label="Programmable">Yes</td>
-          <td data-label="Bean-to-cup time">~4-6 min</td>
-          <td data-label="Noise level">Moderate</td>
-          <td data-label="Cleanup burden">Medium</td>
-          <td data-label="Price band">$$$</td>
-          <td data-label="Espresso-capable">No (concentrate mode, not true espresso pressure)</td>
-          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B0F3ZSVPPG/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td data-label="Product">Ninja CE251 + budget burr grinder combo</td>
-          <td data-label="Best for">Best cup quality under $200 total spend</td>
-          <td data-label="Grinder type">Burr (separate grinder)</td>
-          <td data-label="Brew modes">Beans + Pre-ground</td>
-          <td data-label="Batch size">12-cup batch + manual single mug</td>
-          <td data-label="Programmable">Yes</td>
-          <td data-label="Bean-to-cup time">~4-6 min including grinding</td>
-          <td data-label="Noise level">Moderate</td>
-          <td data-label="Cleanup burden">Medium</td>
-          <td data-label="Price band">$$</td>
-          <td data-label="Espresso-capable">No</td>
-          <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B07S98411N/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
+        {products.map(p => (
+          <tr>
+            <td data-label="Product">{p.name}</td>
+            <td data-label="Best for"><BestForBadge label={p.badge.label} variant={p.badge.variant} /></td>
+            <td data-label="Grinder type">{p.grinderType}</td>
+            <td data-label="Brew modes">{p.brewModes}</td>
+            <td data-label="Batch size">{p.batchSize}</td>
+            <td data-label="Programmable">{p.programmable}</td>
+            <td data-label="Bean-to-cup time">{p.beanToCup}</td>
+            <td data-label="Noise level">{p.noise}</td>
+            <td data-label="Cleanup burden">{p.cleanup}</td>
+            <td data-label="Price band">{p.priceBand}</td>
+            <td data-label="Espresso-capable">{p.espressoCapable}</td>
+            <td data-label="Link"><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+        ))}
       </tbody>
     </table>
   </ComparisonTable>

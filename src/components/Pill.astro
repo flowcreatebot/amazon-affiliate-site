@@ -4,9 +4,20 @@ interface Props {
   href?: string;
 }
 const { text, href } = Astro.props;
+
+const PUBLIC_TAGS = new Set([
+  "Budget Espresso",
+  "Brewer Comparison",
+  "Espresso Workflow",
+  "Hybrid Bean + Pod",
+]);
+
+const isPublic = PUBLIC_TAGS.has(text);
 ---
-{href ? (
-  <a href={href} class="pill">{text}</a>
-) : (
-  <span class="pill">{text}</span>
+{isPublic && (
+  href ? (
+    <a href={href} class="pill">{text}</a>
+  ) : (
+    <span class="pill">{text}</span>
+  )
 )}
