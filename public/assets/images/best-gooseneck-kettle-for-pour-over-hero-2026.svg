@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Electric and stovetop gooseneck kettles for pour over brewing</title>
+  <desc id="desc">Editorial illustration with one electric and one stovetop gooseneck kettle, warm surfaces, tier labels for value, precision, and premium, and abstract pour arcs.</desc>
+
+  <rect width="1200" height="675" fill="#FAF8F5"/>
+  <rect x="56" y="56" width="1088" height="563" rx="12" fill="#F5EDE4"/>
+
+  <text x="88" y="128" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="46" font-weight="800">Gooseneck Kettle Picks for Pour Over</text>
+  <text x="88" y="166" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400">Flow control, temperature stability, and daily brew consistency</text>
+
+  <rect x="88" y="196" width="300" height="46" rx="12" fill="#ECFDF5" stroke="#059669"/>
+  <text x="108" y="226" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600">Value</text>
+  <rect x="402" y="196" width="300" height="46" rx="12" fill="#EFDFCE" stroke="#059669"/>
+  <text x="422" y="226" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600">Precision</text>
+  <rect x="716" y="196" width="300" height="46" rx="12" fill="#ECFDF5" stroke="#059669"/>
+  <text x="736" y="226" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600">Premium</text>
+
+  <rect x="120" y="290" width="450" height="280" rx="12" fill="#FAF8F5" stroke="#B89B8A"/>
+  <rect x="630" y="290" width="450" height="280" rx="12" fill="#FAF8F5" stroke="#B89B8A"/>
+
+  <text x="150" y="332" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600">Electric Kettle</text>
+  <text x="660" y="332" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600">Stovetop Kettle</text>
+
+  <rect x="175" y="370" width="230" height="120" rx="12" fill="#EFDFCE" stroke="#5C3D2E" stroke-width="3"/>
+  <rect x="420" y="402" width="70" height="28" rx="12" fill="#059669"/>
+  <text x="432" y="422" fill="#FAF8F5" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600">96°C</text>
+  <path d="M405 415 C470 360, 530 350, 560 385" fill="none" stroke="#5C3D2E" stroke-width="8" stroke-linecap="round"/>
+  <path d="M550 385 L588 378 L572 410" fill="#5C3D2E"/>
+
+  <ellipse cx="860" cy="460" rx="150" ry="80" fill="#EFDFCE" stroke="#5C3D2E" stroke-width="3"/>
+  <path d="M985 445 C1045 405, 1080 395, 1110 418" fill="none" stroke="#5C3D2E" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1100 418 L1132 414 L1118 440" fill="#5C3D2E"/>
+  <path d="M745 466 C800 440, 930 440, 980 466" fill="none" stroke="#5C3D2E" stroke-width="6"/>
+
+  <path d="M560 390 C640 320, 780 320, 845 388" fill="none" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 10"/>
+  <path d="M845 388 C800 420, 640 420, 590 392" fill="none" stroke="#059669" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 10"/>
+
+  <circle cx="300" cy="548" r="8" fill="#059669"/>
+  <text x="318" y="554" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400">Fast temperature control</text>
+  <circle cx="760" cy="548" r="8" fill="#059669"/>
+  <text x="778" y="554" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400">Steady manual pour feel</text>
+</svg>
