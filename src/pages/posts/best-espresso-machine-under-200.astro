@@ -11,9 +11,153 @@ import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import HeroMedia from '../../components/HeroMedia.astro';
 import Toc from '../../components/Toc.astro';
-import Pill from '../../components/Pill.astro';
-import CategoryPills from '../../components/CategoryPills.astro';
+import BestForBadge from '../../components/BestForBadge.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+
+const products = [
+  {
+    name: "De'Longhi Stilosa",
+    asin: 'B08C96BG9H',
+    image: 'https://m.media-amazon.com/images/I/81c3ItE+jyL._AC_SL500_.jpg',
+    imageAlt: "De'Longhi Stilosa espresso machine",
+    badge: { label: 'Best Overall', variant: 'overall' as const },
+    rating: 4.3,
+    price: 'Budget range',
+    featured: true,
+    bestFor: 'Best overall under $200',
+    machineType: 'Semi-auto',
+    pumpPressure: '15 bar',
+    basketStyle: 'Pressurized',
+    heatUp: '~45 sec',
+    milkSystem: 'Steam wand',
+    waterTank: '33.8 oz',
+    cleanup: 'Med',
+    priceBand: '$',
+    espressoCapable: 'Yes',
+  },
+  {
+    name: 'Mr. Coffee Café Barista',
+    asin: 'B007K9OIMU',
+    image: 'https://m.media-amazon.com/images/I/71p2h853rfL._AC_SL500_.jpg',
+    imageAlt: 'Mr. Coffee Café Barista espresso machine',
+    badge: { label: 'Best Beginner', variant: 'beginners' as const },
+    rating: 4.1,
+    price: 'Mid range',
+    featured: true,
+    bestFor: 'Best beginner milk workflow',
+    machineType: 'Semi-auto',
+    pumpPressure: '15 bar',
+    basketStyle: 'Pressurized',
+    heatUp: '~60 sec',
+    milkSystem: 'Auto frother',
+    waterTank: '55 oz',
+    cleanup: 'Med',
+    priceBand: '$$',
+    espressoCapable: 'Borderline',
+  },
+  {
+    name: 'CASABREWS 3700 Essential',
+    asin: 'B0BRSP8YT6',
+    image: 'https://m.media-amazon.com/images/I/71v90GdxAVL._AC_SL500_.jpg',
+    imageAlt: 'CASABREWS 3700 Essential espresso machine',
+    badge: { label: 'Best for Lattes', variant: 'espresso' as const },
+    rating: 4.2,
+    price: 'Budget range',
+    featured: true,
+    bestFor: 'Best for lattes under $200',
+    machineType: 'Semi-auto',
+    pumpPressure: '20 bar',
+    basketStyle: 'Pressurized',
+    heatUp: '~40 sec',
+    milkSystem: 'Steam wand',
+    waterTank: '49 oz',
+    cleanup: 'Med',
+    priceBand: '$',
+    espressoCapable: 'Yes',
+  },
+  {
+    name: 'Gevi Compact 20 Bar',
+    asin: 'B0D2MF7R3C',
+    image: 'https://m.media-amazon.com/images/I/71pmvUI3cZL._AC_SL500_.jpg',
+    imageAlt: 'Gevi Compact 20 Bar espresso machine',
+    badge: { label: 'Best Compact Pick', variant: 'pourover' as const },
+    rating: 4.0,
+    price: 'Budget range',
+    featured: false,
+    bestFor: 'Best compact small-kitchen pick',
+    machineType: 'Semi-auto',
+    pumpPressure: '20 bar',
+    basketStyle: 'Pressurized',
+    heatUp: '~35 sec',
+    milkSystem: 'Steam wand',
+    waterTank: '42 oz',
+    cleanup: 'Med',
+    priceBand: '$',
+    espressoCapable: 'Borderline',
+  },
+  {
+    name: 'Flair Neo Flex',
+    asin: 'B0C91668G1',
+    image: 'https://m.media-amazon.com/images/I/61MqQwolqRL._AC_SL500_.jpg',
+    imageAlt: 'Flair Neo Flex manual espresso maker',
+    badge: { label: 'Best Manual Value', variant: 'upgrade' as const },
+    rating: 4.5,
+    price: 'Budget range',
+    featured: false,
+    bestFor: 'Best manual espresso value',
+    machineType: 'Manual',
+    pumpPressure: 'Lever pressure (manual)',
+    basketStyle: 'Pressurized / non-pressurized capable',
+    heatUp: '~90 sec prep',
+    milkSystem: 'None',
+    waterTank: 'Manual brew chamber',
+    cleanup: 'Low',
+    priceBand: '$',
+    espressoCapable: 'Yes',
+  },
+  {
+    name: 'Nespresso Essenza Mini',
+    asin: 'B06ZYJBPM9',
+    image: 'https://m.media-amazon.com/images/I/51FV1qFeXeL._AC_SL500_.jpg',
+    imageAlt: 'Nespresso Essenza Mini pod espresso machine',
+    badge: { label: 'Best Pod Convenience', variant: 'budget' as const },
+    rating: 4.4,
+    price: 'Mid range',
+    featured: false,
+    bestFor: 'Best pod convenience',
+    machineType: 'Pod',
+    pumpPressure: '19 bar',
+    basketStyle: 'Pod',
+    heatUp: '~25 sec',
+    milkSystem: 'None',
+    waterTank: '20.3 oz',
+    cleanup: 'Low',
+    priceBand: '$$',
+    espressoCapable: 'No',
+  },
+  {
+    name: "De'Longhi ECP3420",
+    asin: 'B00YCP71VK',
+    image: 'https://m.media-amazon.com/images/I/71cMXnwKDpL._AC_SL500_.jpg',
+    imageAlt: "De'Longhi ECP3420 espresso machine",
+    badge: { label: 'Best Long-Term Durability', variant: 'beginners' as const },
+    rating: 4.2,
+    price: 'Mid range',
+    featured: false,
+    bestFor: 'Best long-term budget durability',
+    machineType: 'Semi-auto',
+    pumpPressure: '15 bar',
+    basketStyle: 'Pressurized',
+    heatUp: '~45 sec',
+    milkSystem: 'Steam wand',
+    waterTank: '37 oz',
+    cleanup: 'Med',
+    priceBand: '$$',
+    espressoCapable: 'Yes',
+  },
+];
+
+const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
 
 const title = 'Best Espresso Machine Under $200 (2026): 7 Picks Researched';
 const description = 'Compare 7 researched espresso machines under $200 by machine type, basket style, milk system, heat-up time, and cleanup effort to buy the right budget model.';
@@ -29,7 +173,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-06',
       dateModified: '2026-03-09',
-      image: `${SITE.url}/assets/images/best-espresso-machine-under-200-tested-2026.svg`,
+      image: `${SITE.url}/assets/images/best-espresso-machine-under-200-hero-2026.svg`,
     }),
     {
       "@type": "ItemList",
@@ -103,7 +247,7 @@ const jsonLd = {
   canonical={canonical}
   ogTitle="Best Espresso Machine Under $200 (2026): 7 Picks Researched"
   ogDescription="7 budget espresso picks ranked for beginners, milk drinks, compact kitchens, and pod convenience under $200."
-  ogImage={`${SITE.url}/assets/images/best-espresso-machine-under-200-tested-2026.svg`}
+  ogImage={`${SITE.url}/assets/images/best-espresso-machine-under-200-hero-2026.svg`}
   breadcrumbs={[
     { label: 'Home', href: '/' },
     { label: 'All Guides', href: '/posts/' },
@@ -116,14 +260,7 @@ const jsonLd = {
 
   <h1>Best Espresso Machine Under $200 (2026): 7 Picks Researched</h1>
   <p class="lead">You can make legit espresso under $200, but only if you match the machine to your workflow. We compared top budget models by basket style, heat-up speed, milk capability, cleanup burden, and real-world beginner friction so you can avoid weak shots and buyer's remorse.</p>
-
-  <CategoryPills>
-    <Pill text="Money Page" />
-    <Pill text="Budget Espresso" />
-    <Pill text="Commercial Intent" />
-  </CategoryPills>
-
-  <HeroMedia src="/assets/images/best-espresso-machine-under-200-tested-2026.svg" alt="Best espresso machines under 200 dollars ranked by machine type, milk system, and beginner fit" width={1200} height={675} loading="lazy" caption="Editorial snapshot: strongest espresso machine picks under $200 by use case and workflow fit." />
+  <HeroMedia src="/assets/images/best-espresso-machine-under-200-hero-2026.svg" alt="Best espresso machines under 200 dollars ranked by machine type, milk system, and beginner fit" width={1200} height={675} loading="lazy" caption="Editorial snapshot: strongest espresso machine picks under $200 by use case and workflow fit." />
 
   <p id="tldr"><strong>Quick answer:</strong> De'Longhi Stilosa is the best espresso machine under $200 for most beginners because it balances shot quality, control, and upgrade potential. CASABREWS 3700 Essential is the strongest milk-drink value, while Nespresso Essenza Mini is best if you care more about one-button speed than manual espresso technique.</p>
 
@@ -139,28 +276,16 @@ const jsonLd = {
 
   <h2>Quick picks</h2>
   <QuickPicks>
-    <ProductCard
-      title="De'Longhi Stilosa"
-      badge={{ label: "Best Overall", variant: "overall" }}
-      price="Budget range"
-      image={{ src: "https://m.media-amazon.com/images/I/81c3ItE+jyL._AC_SL500_.jpg", alt: "De'Longhi Stilosa espresso machine", width: 500, height: 500 }}
-      ctaUrl="https://www.amazon.com/dp/B08C96BG9H/ref=nosim?tag=coffee-site-20"
-      featured
-    />
-    <ProductCard
-      title="Mr. Coffee Café Barista"
-      badge={{ label: "Best Beginner", variant: "beginners" }}
-      price="Mid range"
-      image={{ src: "https://m.media-amazon.com/images/I/71p2h853rfL._AC_SL500_.jpg", alt: "Mr. Coffee Café Barista espresso machine", width: 500, height: 500 }}
-      ctaUrl="https://www.amazon.com/dp/B007K9OIMU/ref=nosim?tag=coffee-site-20"
-    />
-    <ProductCard
-      title="CASABREWS 3700 Essential"
-      badge={{ label: "Best for Lattes", variant: "espresso" }}
-      price="Budget range"
-      image={{ src: "https://m.media-amazon.com/images/I/71v90GdxAVL._AC_SL500_.jpg", alt: "CASABREWS 3700 Essential espresso machine", width: 500, height: 500 }}
-      ctaUrl="https://www.amazon.com/dp/B0BRSP8YT6/ref=nosim?tag=coffee-site-20"
-    />
+    {products.filter(p => p.featured).map((p, idx) => (
+      <ProductCard
+        title={p.name}
+        badge={p.badge}
+        price={p.price}
+        image={p.image ? { src: p.image, alt: p.imageAlt, width: 500, height: 500 } : undefined}
+        ctaUrl={amazonUrl(p.asin)}
+        featured={idx === 0}
+      />
+    ))}
   </QuickPicks>
 
   <h2 id="comparison-table">Comparison table</h2>
@@ -183,104 +308,22 @@ const jsonLd = {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>De'Longhi Stilosa</td>
-          <td data-label="Best for">Best overall under $200</td>
-          <td data-label="Machine type">Semi-auto</td>
-          <td data-label="Pump pressure claim">15 bar</td>
-          <td data-label="Basket style">Pressurized</td>
-          <td data-label="Heat-up time">~45 sec</td>
-          <td data-label="Milk system">Steam wand</td>
-          <td data-label="Water tank capacity">33.8 oz</td>
-          <td data-label="Cleanup effort">Med</td>
-          <td data-label="Price band">$</td>
-          <td data-label="Espresso-capable">Yes</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B08C96BG9H/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>Mr. Coffee Café Barista</td>
-          <td data-label="Best for">Best beginner milk workflow</td>
-          <td data-label="Machine type">Semi-auto</td>
-          <td data-label="Pump pressure claim">15 bar</td>
-          <td data-label="Basket style">Pressurized</td>
-          <td data-label="Heat-up time">~60 sec</td>
-          <td data-label="Milk system">Auto frother</td>
-          <td data-label="Water tank capacity">55 oz</td>
-          <td data-label="Cleanup effort">Med</td>
-          <td data-label="Price band">$$</td>
-          <td data-label="Espresso-capable">Borderline</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B007K9OIMU/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>CASABREWS 3700 Essential</td>
-          <td data-label="Best for">Best for lattes under $200</td>
-          <td data-label="Machine type">Semi-auto</td>
-          <td data-label="Pump pressure claim">20 bar</td>
-          <td data-label="Basket style">Pressurized</td>
-          <td data-label="Heat-up time">~40 sec</td>
-          <td data-label="Milk system">Steam wand</td>
-          <td data-label="Water tank capacity">49 oz</td>
-          <td data-label="Cleanup effort">Med</td>
-          <td data-label="Price band">$</td>
-          <td data-label="Espresso-capable">Yes</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B0BRSP8YT6/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>Gevi Compact 20 Bar</td>
-          <td data-label="Best for">Best compact small-kitchen pick</td>
-          <td data-label="Machine type">Semi-auto</td>
-          <td data-label="Pump pressure claim">20 bar</td>
-          <td data-label="Basket style">Pressurized</td>
-          <td data-label="Heat-up time">~35 sec</td>
-          <td data-label="Milk system">Steam wand</td>
-          <td data-label="Water tank capacity">42 oz</td>
-          <td data-label="Cleanup effort">Med</td>
-          <td data-label="Price band">$</td>
-          <td data-label="Espresso-capable">Borderline</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B0D2MF7R3C/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>Flair Neo Flex</td>
-          <td data-label="Best for">Best manual espresso value</td>
-          <td data-label="Machine type">Manual</td>
-          <td data-label="Pump pressure claim">Lever pressure (manual)</td>
-          <td data-label="Basket style">Pressurized / non-pressurized capable</td>
-          <td data-label="Heat-up time">~90 sec prep</td>
-          <td data-label="Milk system">None</td>
-          <td data-label="Water tank capacity">Manual brew chamber</td>
-          <td data-label="Cleanup effort">Low</td>
-          <td data-label="Price band">$</td>
-          <td data-label="Espresso-capable">Yes</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B0C91668G1/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>Nespresso Essenza Mini</td>
-          <td data-label="Best for">Best pod convenience</td>
-          <td data-label="Machine type">Pod</td>
-          <td data-label="Pump pressure claim">19 bar</td>
-          <td data-label="Basket style">Pod</td>
-          <td data-label="Heat-up time">~25 sec</td>
-          <td data-label="Milk system">None</td>
-          <td data-label="Water tank capacity">20.3 oz</td>
-          <td data-label="Cleanup effort">Low</td>
-          <td data-label="Price band">$$</td>
-          <td data-label="Espresso-capable">No</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B06ZYJBPM9/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>De'Longhi ECP3420</td>
-          <td data-label="Best for">Best long-term budget durability</td>
-          <td data-label="Machine type">Semi-auto</td>
-          <td data-label="Pump pressure claim">15 bar</td>
-          <td data-label="Basket style">Pressurized</td>
-          <td data-label="Heat-up time">~45 sec</td>
-          <td data-label="Milk system">Steam wand</td>
-          <td data-label="Water tank capacity">37 oz</td>
-          <td data-label="Cleanup effort">Med</td>
-          <td data-label="Price band">$$</td>
-          <td data-label="Espresso-capable">Yes</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B00YCP71VK/ref=nosim?tag=coffee-site-20" size="sm" external>Check price</CtaButton></td>
-        </tr>
+        {products.map(p => (
+          <tr>
+            <td>{p.name}</td>
+            <td data-label="Best for"><BestForBadge label={p.badge.label} variant={p.badge.variant} /></td>
+            <td data-label="Machine type">{p.machineType}</td>
+            <td data-label="Pump pressure claim">{p.pumpPressure}</td>
+            <td data-label="Basket style">{p.basketStyle}</td>
+            <td data-label="Heat-up time">{p.heatUp}</td>
+            <td data-label="Milk system">{p.milkSystem}</td>
+            <td data-label="Water tank capacity">{p.waterTank}</td>
+            <td data-label="Cleanup effort">{p.cleanup}</td>
+            <td data-label="Price band">{p.priceBand}</td>
+            <td data-label="Espresso-capable">{p.espressoCapable}</td>
+            <td><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check price</CtaButton></td>
+          </tr>
+        ))}
       </tbody>
     </table>
   </ComparisonTable>
@@ -430,6 +473,10 @@ const jsonLd = {
 
     <h3>What to buy first if your budget is tight</h3>
     <p>If you can only upgrade one thing beyond the machine itself, start with a better grinder and a basic scale. Those two tools improve extraction consistency faster than most machine jumps in this price bracket. After that, add a decent tamper and a milk pitcher sized for your typical drink volume so your workflow feels repeatable instead of improvised.</p>
+
+    <h3>How to match machine style to your weekday routine</h3>
+    <p>If you brew one drink before work, convenience matters more than ultimate shot ceiling. In that case, a forgiving semi-auto or pod workflow can be the right call even if espresso purists prefer manual control. If you usually brew two or three drinks in a row, prioritize machines with easier refill access, faster heat recovery, and drip trays that are simple to empty and rinse without disassembling half the setup.</p>
+    <p>For shared households, noise and cleanup friction are just as important as bar pressure claims. A machine that is quieter and easier to maintain often gets used more consistently, which means better value over six to twelve months. The best espresso machine under 200 is not the one with the longest feature list; it is the one that fits your daily pattern and keeps good coffee realistic on busy mornings.</p>
   </BuyingGuideSection>
 
   <section>

@@ -2,14 +2,22 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Toc from '../components/Toc.astro';
-import CardGrid from '../components/CardGrid.astro';
-import Card from '../components/Card.astro';
+import PostListing from '../components/PostListing.astro';
 import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 import { SITE } from '../data/site';
+import posts from '../data/posts.json';
 
 const title = 'Coffee Gear Lab: Honest Buyer Guides for Home Brewers';
 const description = 'High-intent coffee gear guides and comparisons for home brewers: best grinders, affordable espresso machines, and brew method matchups.';
 const canonical = `${SITE.url}/`;
+
+const moneyPosts = posts
+  .filter((p) => p.pageType === 'money')
+  .sort((a, b) => b.dateModified.localeCompare(a.dateModified));
+
+const supportPosts = posts
+  .filter((p) => p.pageType !== 'money')
+  .sort((a, b) => b.dateModified.localeCompare(a.dateModified));
 ---
 <BaseLayout
   title={title}
@@ -38,72 +46,15 @@ const canonical = `${SITE.url}/`;
 
   <section id="high-intent-guides">
     <h2>Start with high-intent guides</h2>
-    <CardGrid>
-      <Card title="Best Espresso Machine Under $200 (2026): 7 Top Picks" href="/posts/best-espresso-machine-under-200.html">
-        <p>7 researched budget picks ranked by workflow fit, milk quality, and long-term value.</p>
-      </Card>
-      <Card title="Best Coffee Grinder for Pour Over" href="/posts/best-coffee-grinder-for-pour-over.html">
-        <p>Which grinders actually improve clarity, sweetness, and consistency.</p>
-      </Card>
-      <Card title="Best Coffee Grinder for French Press (2026)" href="/posts/best-coffee-grinder-for-french-press.html">
-        <p>7 tested grinder picks focused on coarse consistency, lower sludge, and practical buyer fit.</p>
-      </Card>
-      <Card title="Best Coffee Scale for Espresso & Pour Over" href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">
-        <p>Faster shot timing and cleaner pour-over workflows with scale picks by budget.</p>
-      </Card>
-      <Card title="Best Gooseneck Kettle for Pour Over" href="/posts/best-gooseneck-kettle-for-pour-over.html">
-        <p>Dial smoother pours with top kettle picks across starter to premium budgets.</p>
-      </Card>
-      <Card title="Best Pour Over Coffee Maker (2026)" href="/posts/best-pour-over-coffee-maker.html">
-        <p>6 researched drippers ranked by brew consistency, forgiveness, and daily workflow fit.</p>
-      </Card>
-      <Card title="Best Manual Coffee Grinder Under $100" href="/posts/best-manual-coffee-grinder-under-100.html">
-        <p>Hand grinder picks that outperform most cheap electric options for filter brewing.</p>
-      </Card>
-      <Card title="Best Hand Grinder for Espresso Under $100 (2026)" href="/posts/best-hand-grinder-for-espresso-under-100.html">
-        <p>Budget manual espresso picks with honest guidance on dial-in friction and basket compatibility.</p>
-      </Card>
-      <Card title="Best Burr Coffee Grinders Under $200 (2026)" href="/posts/best-burr-coffee-grinder-under-200.html">
-        <p>6 researched burr grinders ranked by budget tier, espresso capability, and cleanup burden.</p>
-      </Card>
-      <Card title="Best Burr Grinder for Espresso (2026)" href="/posts/best-burr-grinder-for-espresso.html">
-        <p>7 tested espresso grinder picks ranked by dial-in precision, low-retention workflow, and value.</p>
-      </Card>
-      <Card title="Best Coffee Maker with Grinder (2026)" href="/posts/best-coffee-maker-with-grinder.html">
-        <p>7 researched grind-and-brew picks ranked by cup quality, cleanup burden, and budget.</p>
-      </Card>
-      <Card title="Best Grind and Brew Coffee Maker Under $200 (2026)" href="/posts/best-grind-and-brew-coffee-maker-under-200.html">
-        <p>7 tested under-$200 picks ranked by bean-to-cup speed, maintenance burden, and realistic morning workflow.</p>
-      </Card>
-      <Card title="Best Coffee Maker with Grinder and K-Cup Combo (2026)" href="/posts/best-coffee-maker-with-grinder-and-k-cup-combo.html">
-        <p>7 tested hybrid bean + pod picks ranked by speed, maintenance burden, and real daily fit.</p>
-      </Card>
-      <Card title="Best Single-Serve Coffee Maker with Grinder (2026)" href="/posts/best-single-serve-coffee-maker-with-grinder.html">
-        <p>7 compared single-cup picks by speed, flavor quality, maintenance effort, and pod flexibility.</p>
-      </Card>
-      <Card title="Best Drip Coffee Maker Under $100 (2026)" href="/posts/best-drip-coffee-maker-under-100.html">
-        <p>8 drip-only budget picks compared by timer reliability, brew time, cleanup burden, and annual upkeep cost.</p>
-      </Card>
-    </CardGrid>
+    <PostListing posts={moneyPosts} initialCount={8} />
   </section>
 
   <section id="supporting-education">
     <h2>Supporting brew education</h2>
-    <ul>
-      <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide (Easy Reference)</a></li>
-      <li><a href="/posts/aeropress-vs-french-press.html">AeroPress vs French Press</a></li>
-      <li><a href="/posts/drip-vs-single-serve-coffee-maker.html">Drip vs Single-Serve Coffee Maker</a></li>
-      <li><a href="/posts/best-coffee-grinder-for-french-press.html">Best Coffee Grinder for French Press</a></li>
-      <li><a href="/posts/best-manual-coffee-grinder-under-100.html">Best Manual Coffee Grinder Under $100</a></li>
-      <li><a href="/posts/best-hand-grinder-for-espresso-under-100.html">Best Hand Grinder for Espresso Under $100</a></li>
-      <li><a href="/posts/best-coffee-maker-with-grinder-and-k-cup-combo.html">Best Coffee Maker with Grinder and K-Cup Combo</a></li>
-      <li><a href="/posts/best-grind-and-brew-coffee-maker-under-200.html">Best Grind and Brew Coffee Maker Under $200</a></li>
-      <li><a href="/posts/burr-grinder-settings-for-espresso.html">Burr Grinder Settings for Espresso (Dial-In Guide)</a></li>
-      <li><a href="/posts/espresso-shot-dial-in-workflow.html">Espresso Shot Dial-In Workflow (Fix Sour or Bitter Shots Fast)</a></li>
-      <li><a href="/posts/how-to-clean-burr-coffee-grinder.html">How to Clean a Burr Coffee Grinder (Fast Routine)</a></li>
-    </ul>
-    <p><a href="/posts/">Browse all coffee guides →</a></p>
+    <PostListing posts={supportPosts} />
   </section>
+
+  <p><a href="/posts/">Browse all coffee guides &rarr;</a></p>
 
   <AffiliateDisclosure text="Some links may earn a commission at no extra cost to you. We only recommend gear that provides clear value for specific use cases." />
 </BaseLayout>

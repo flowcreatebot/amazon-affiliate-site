@@ -144,7 +144,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-09',
       dateModified: '2026-03-09',
-      image: `${SITE.url}/assets/images/best-burr-grinder-for-espresso-2026.svg`,
+      image: `${SITE.url}/assets/images/best-burr-grinder-for-espresso-hero-2026.svg`,
     }),
     {
       '@type': 'ItemList',
@@ -190,8 +190,8 @@ const jsonLd = {
   <p class="lead">The best burr grinder for espresso is the one you can dial in quickly, repeat tomorrow, and clean without hating your routine. We researched and compared seven strong options based on grind consistency, adjustment control, retention/static behavior, and daily workflow fit.</p>
 
   <HeroMedia
-    src="/assets/images/best-burr-grinder-for-espresso-2026.svg"
-    alt="Best burr grinder for espresso comparison in 2026"
+    src="/assets/images/best-burr-grinder-for-espresso-hero-2026.svg"
+    alt="Editorial comparison of seven espresso burr grinders across budget, workflow style, and precision needs"
     width={1200}
     height={675}
     caption="What matters most for home espresso: precise control, low retention, and a workflow you can repeat half-awake."
@@ -241,7 +241,7 @@ const jsonLd = {
   </QuickPicks>
 
   <h2 id="comparison-table">Comparison table</h2>
-  <ComparisonTable timestamp="Prices updated: March 9, 2026" ariaLabel="Best burr grinder for espresso comparison table">
+  <ComparisonTable timestamp="March 11, 2026" ariaLabel="Best burr grinder for espresso comparison table">
     <table>
       <thead>
         <tr>
@@ -259,7 +259,7 @@ const jsonLd = {
         {products.map((p) => (
           <tr>
             <td data-label="Product">{p.name}</td>
-            <td data-label="Best for"><span class="best-for-badge --overall">{p.bestFor}</span></td>
+            <td data-label="Best for"><span class={`best-for-badge --${p.badgeVariant}`}>{p.bestFor}</span></td>
             <td data-label="Burr set">{p.burr}</td>
             <td data-label="Adjustment">{p.adjustment}</td>
             <td data-label="Retention/static">{p.retention}</td>

@@ -1,52 +1,122 @@
 ---
 import PostLayout from '../../layouts/PostLayout.astro';
-import JsonLd from '../../components/JsonLd.astro';
-import QuickPicks from '../../components/QuickPicks.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
-import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import BestForBadge from '../../components/BestForBadge.astro';
+import ProsCons from '../../components/ProsCons.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
-import CtaButton from '../../components/CtaButton.astro';
+import QuickPicks from '../../components/QuickPicks.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import HeroMedia from '../../components/HeroMedia.astro';
 import Toc from '../../components/Toc.astro';
-import Pill from '../../components/Pill.astro';
-import CategoryPills from '../../components/CategoryPills.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
-const title = 'Best Coffee Scale for Espresso and Pour Over (2026)';
-const description = 'Best coffee scales for espresso and pour over by response speed, timer usability, and value. Pick the right scale for your brew workflow.';
 const slug = 'best-coffee-scale-for-espresso-and-pour-over';
+const title = 'Best Coffee Scale for Espresso and Pour Over (2026)';
+const description = 'The best coffee scale for espresso and pour over in 2026, compared by speed, timer workflow, footprint, and value so you can buy once and brew consistently.';
 const canonical = `${SITE.url}/posts/${slug}.html`;
 
+const lastUpdated = 'March 10, 2026';
+const pricesUpdated = `Prices updated: ${lastUpdated}`;
+
+const products = [
+  {
+    name: 'TIMEMORE Black Mirror Nano',
+    asin: 'B09KLG247F',
+    href: 'https://www.amazon.com/dp/B09KLG247F/ref=nosim?tag=coffee-site-20',
+    image: 'https://m.media-amazon.com/images/I/61zKmzN7rpL._AC_SL500_.jpg',
+    badge: { label: 'Best Overall', variant: 'overall' as const },
+    rating: 4.6,
+    price: '$59-$89',
+    bestFor: 'Espresso + pour over on one compact scale',
+  },
+  {
+    name: 'Hario V60 Drip Scale',
+    asin: 'B009GPJMOU',
+    href: 'https://www.amazon.com/dp/B009GPJMOU/ref=nosim?tag=coffee-site-20',
+    image: 'https://m.media-amazon.com/images/I/71hmVxb++0L._AC_SL500_.jpg',
+    badge: { label: 'Best for Pour Over', variant: 'pourover' as const },
+    rating: 4.5,
+    price: '$45-$67',
+    bestFor: 'Simple, proven drip workflow and recipe repeatability',
+  },
+  {
+    name: 'Greater Goods Digital Coffee Scale',
+    asin: 'B09B4CB7C1',
+    href: 'https://www.amazon.com/dp/B09B4CB7C1/ref=nosim?tag=coffee-site-20',
+    image: 'https://m.media-amazon.com/images/I/71-L+FLDJYL._AC_SL500_.jpg',
+    badge: { label: 'Best Budget', variant: 'budget' as const },
+    rating: 4.4,
+    price: '$19-$25',
+    bestFor: 'First dedicated scale without overspending',
+  },
+];
+
+const faq = [
+  {
+    q: 'Do I really need a coffee scale for espresso?',
+    a: 'Yes. Espresso has a narrow margin for error, and volume-based dosing drifts too much. A fast scale lets you repeat input dose and output yield, which is the core of consistent shot quality.',
+  },
+  {
+    q: 'Can one scale work for both espresso and pour over?',
+    a: 'Absolutely, as long as it has quick response, a stable timer, and a footprint that fits your drip tray. Compact models are best if you pull espresso daily and brew pour over occasionally.',
+  },
+  {
+    q: 'How much should I spend on a coffee scale?',
+    a: 'Most home brewers should target the $20-$70 range. Budget options handle basic accuracy, while mid-range models improve speed, controls, and long-term workflow comfort.',
+  },
+  {
+    q: 'What matters more: 0.1 g precision or response speed?',
+    a: 'Both matter, but response speed usually has a bigger impact in daily use. A laggy 0.1 g readout still makes dialing harder than a responsive scale with dependable stability.',
+  },
+  {
+    q: 'How do I keep my scale accurate over time?',
+    a: 'Keep it dry, avoid storing heavy items on the platform, replace batteries before they are nearly dead, and verify readings periodically with a known calibration weight.',
+  },
+];
+
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
+  '@context': 'https://schema.org',
+  '@graph': [
     blogPosting({
       headline: title,
-      description: 'Best coffee scales for espresso and pour over by response speed, timer usability, and value.',
+      description,
       slug,
-      datePublished: '2026-03-08',
-      dateModified: '2026-03-08',
+      datePublished: '2026-03-10',
+      dateModified: '2026-03-10',
+      image: products[0].image,
     }),
     {
-      "@type": "ItemList",
-      "name": "Best Coffee Scale Picks",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "TIMEMORE Black Mirror Nano", "url": "https://www.amazon.com/dp/B09KLG247F"},
-        {"@type": "ListItem", "position": 2, "name": "Hario V60 Drip Scale", "url": "https://www.amazon.com/dp/B009GPJMOU"},
-        {"@type": "ListItem", "position": 3, "name": "Greater Goods Digital Coffee Scale", "url": "https://www.amazon.com/dp/B09B4CB7C1"},
-      ],
+      '@type': 'ItemList',
+      name: 'Best Coffee Scale for Espresso and Pour Over Picks',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      numberOfItems: products.length,
+      author: publisher,
+      itemListElement: products.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: p.name,
+        url: p.href,
+      })),
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"Do you need a coffee scale for espresso?","acceptedAnswer":{"@type":"Answer","text":"Yes. Espresso quality depends on dose and yield consistency, and a scale is the fastest way to repeat good shots."}},
-        {"@type":"Question","name":"Can I use any kitchen scale for pour over?","acceptedAnswer":{"@type":"Answer","text":"You can, but many kitchen scales respond too slowly. A dedicated coffee scale with timer support makes recipes easier to repeat."}}
-      ]
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: f.a,
+        },
+      })),
     },
   ],
 };
 ---
+
 <PostLayout
   title={title}
   description={description}
@@ -54,150 +124,263 @@ const jsonLd = {
   breadcrumbs={[
     { label: 'Home', href: '/' },
     { label: 'All Guides', href: '/posts/' },
-    { label: 'Best Coffee Scale' },
+    { label: 'Best Coffee Scale for Espresso and Pour Over' },
   ]}
 >
-  <JsonLd data={jsonLd} slot="head" />
+  <Fragment slot="head">
+    <JsonLd data={jsonLd} />
+  </Fragment>
 
-  <h1>Best Coffee Scale for Espresso and Pour Over</h1>
-  <p class="lead">A good coffee scale fixes two expensive problems: inconsistent espresso shots and unstable pour over recipes. Prioritize fast response, reliable timer controls, and readable display.</p>
-  <p>If your cups still taste flat or muddy even with a good scale workflow, your grinder is likely the bottleneck—use our <a href="/posts/best-coffee-grinder-for-pour-over.html">best coffee grinder for pour over guide</a> to pick the right burr setup first.</p>
+  <h1>Best Coffee Scale for Espresso and Pour Over (2026)</h1>
+  <p class="lead">If you want more consistent espresso shots and cleaner pour over recipes, a dedicated scale is usually the highest-impact upgrade after your grinder. We compared the top options for response speed, timer usability, footprint, and day-to-day value so you can choose the right workflow fit, not just the loudest product page.</p>
 
-  <CategoryPills>
-    <Pill text="Buying Guide" />
-    <Pill text="Espresso" />
-    <Pill text="Pour Over" />
-  </CategoryPills>
+  <HeroMedia
+    src="https://m.media-amazon.com/images/I/61zKmzN7rpL._AC_SL500_.jpg"
+    alt="TIMEMORE Black Mirror Nano coffee scale"
+    width={500}
+    height={500}
+    caption={`${pricesUpdated}. Product availability and pricing can change.`}
+  />
 
   <Toc items={[
-    { href: '#quick-picks', label: 'Quick picks by budget' },
-    { href: '#what-matters', label: 'What matters in a coffee scale' },
-    { href: '#who-should-buy', label: 'Which one should you buy?' },
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Side-by-side comparison' },
+    { href: '#how-we-evaluate', label: 'How we evaluate scales' },
+    { href: '#reviews', label: 'Individual reviews' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'Frequently asked questions' },
   ]} />
 
+  <h2 id="quick-picks">Quick Picks</h2>
   <QuickPicks>
     <ProductCard
-      title="TIMEMORE Black Mirror Nano"
-      badge={{ label: "Best Overall", variant: "overall" }}
-      price="$60+"
-      ctaUrl="https://www.amazon.com/dp/B09KLG247F"
-      noImage
+      title={products[0].name}
+      image={{ src: products[0].image, alt: 'TIMEMORE Black Mirror Nano coffee scale', width: 500, height: 500 }}
+      badge={products[0].badge}
+      rating={{ score: products[0].rating }}
+      price={products[0].price}
+      ctaUrl={products[0].href}
+      featured={true}
     />
     <ProductCard
-      title="Hario V60 Drip Scale"
-      badge={{ label: "Best Pour Over", variant: "pourover" }}
-      price="$25–$60"
-      ctaUrl="https://www.amazon.com/dp/B009GPJMOU"
-      noImage
+      title={products[1].name}
+      image={{ src: products[1].image, alt: 'Hario V60 Drip Scale coffee scale', width: 500, height: 500 }}
+      badge={products[1].badge}
+      rating={{ score: products[1].rating }}
+      price={products[1].price}
+      ctaUrl={products[1].href}
     />
     <ProductCard
-      title="Greater Goods Digital Coffee Scale"
-      badge={{ label: "Best Budget", variant: "budget" }}
-      price="Under $25"
-      ctaUrl="https://www.amazon.com/dp/B09B4CB7C1"
-      noImage
+      title={products[2].name}
+      image={{ src: products[2].image, alt: 'Greater Goods Digital Coffee Scale', width: 500, height: 500 }}
+      badge={products[2].badge}
+      rating={{ score: products[2].rating }}
+      price={products[2].price}
+      ctaUrl={products[2].href}
     />
   </QuickPicks>
 
-  <ComparisonTable timestamp="Prices checked: March 2026" ariaLabel="Coffee scales comparison">
+  <h2 id="comparison-table">Comparison Table</h2>
+  <ComparisonTable
+    timestamp="2026-03-10"
+    headers={['Product', 'Best For', 'Price Range', 'Rating', 'Link']}
+    ariaLabel="Best coffee scale for espresso and pour over comparison"
+  >
     <table>
       <thead>
         <tr>
-          <th>Budget</th>
-          <th>Pick</th>
-          <th>Why it wins</th>
-          <th>Best for</th>
+          <th>Product</th>
+          <th>Best For</th>
+          <th>Price Range</th>
+          <th>Rating</th>
+          <th>Link</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Under $25</td>
-          <td data-label="Pick"><CtaButton href="https://www.amazon.com/dp/B09B4CB7C1" size="sm" external>Greater Goods Digital Coffee Scale</CtaButton></td>
-          <td data-label="Why it wins">Large display, simple timer, dependable basic accuracy</td>
-          <td data-label="Best for">Beginner pour over users</td>
-        </tr>
-        <tr>
-          <td>$25–$60</td>
-          <td data-label="Pick"><CtaButton href="https://www.amazon.com/dp/B009GPJMOU" size="sm" external>Hario V60 Drip Scale</CtaButton></td>
-          <td data-label="Why it wins">Trusted brew timer workflow, easy for pour over consistency</td>
-          <td data-label="Best for">Daily V60/Chemex brewers</td>
-        </tr>
-        <tr>
-          <td>$60+</td>
-          <td data-label="Pick"><CtaButton href="https://www.amazon.com/dp/B09KLG247F" size="sm" external>TIMEMORE Black Mirror Nano</CtaButton></td>
-          <td data-label="Why it wins">Faster response, compact body, espresso + pour over modes</td>
-          <td data-label="Best for">Mixed espresso and filter workflow</td>
-        </tr>
+        {products.map((product) => (
+          <tr>
+            <td data-label="Product">{product.name}</td>
+            <td data-label="Best For"><BestForBadge label={product.badge.label} variant={product.badge.variant} /></td>
+            <td data-label="Price Range">{product.price}</td>
+            <td data-label="Rating">{product.rating.toFixed(1)}/5</td>
+            <td data-label="Link">
+              <CtaButton href={product.href} variant="primary" size="sm" external>Check Price</CtaButton>
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
   </ComparisonTable>
 
-  <section>
-    <h2 id="what-matters">What matters in a coffee scale</h2>
-    <ul>
-      <li><strong>Response speed:</strong> Slow lag makes espresso yield targets painful and hurts pour control.</li>
-      <li><strong>Button layout:</strong> Physical buttons are often easier than touch controls around steam and splashes.</li>
-      <li><strong>Stability:</strong> If weight drifts while brewing, recipes become impossible to repeat.</li>
-      <li><strong>Size:</strong> Espresso trays need compact scales; pour over setups can use larger platforms.</li>
-    </ul>
-  </section>
+  <h2 id="how-we-evaluate">How We Evaluate Coffee Scales</h2>
+  <p>We researched listing details, verified ASIN availability, compared user-reported workflow strengths and weaknesses, and evaluated each scale against the same practical criteria: response speed, display readability, timer reliability, footprint, and overall value at current pricing. We focus on what changes your daily brew consistency, not spec sheet noise.</p>
+  <p>For espresso, latency and physical footprint are decisive. If the readout lags when your yield moves quickly, you will overrun your target by the time you stop the shot. If the scale is too large to fit your tray or cup clearance, it becomes frustrating to use and quickly gets abandoned. For pour over, visibility and timer ergonomics become more important because your attention shifts between kettle control, bloom timing, and total beverage weight.</p>
+  <p>We also weight ownership friction. A scale can look ideal on paper and still be annoying in real use if controls are overly sensitive, the display washes out in bright kitchens, or battery management is unreliable. The best product is the one that makes your workflow easier every single morning, not the one with the longest feature list.</p>
+  <p>If your extraction remains inconsistent after improving dose and yield tracking, the next likely bottleneck is grind quality. Pair this guide with our <a href="/posts/best-coffee-grinder-for-pour-over.html">best coffee grinder for pour over picks</a>, the <a href="/posts/espresso-shot-dial-in-workflow.html">espresso shot dial-in workflow</a>, and our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> to tighten your full process.</p>
 
-  <section>
-    <h2 id="who-should-buy">Which scale should you buy?</h2>
-    <p>For mostly pour over, the <strong>Hario V60 Drip Scale</strong> remains a reliable default. For espresso plus occasional filter coffee, the <strong>TIMEMORE Black Mirror Nano</strong> gives a faster, more flexible workflow. If you're just starting and need value, the <strong>Greater Goods</strong> option is enough to begin tracking dose and yield properly.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B009GPJMOU" external>Check Hario V60 Drip Scale on Amazon</CtaButton></p>
-    <p><CtaButton href="https://www.amazon.com/dp/B09KLG247F" external>Check TIMEMORE Black Mirror Nano on Amazon</CtaButton></p>
-    <p><CtaButton href="https://www.amazon.com/dp/B09B4CB7C1" external>Check Greater Goods on Amazon</CtaButton></p>
-  </section>
+  <h2 id="reviews">Individual Product Reviews</h2>
 
-  <section>
-    <h2>Verified listing specs (Amazon)</h2>
-    <h3>Greater Goods Coffee Scale with Timer (ASIN: B09B4CB7C1)</h3>
-    <ul>
-      <li>Capacity/precision in listing title: 3kg with 0.1g resolution</li>
-      <li>Product dimensions listed: 7.63 x 5.2 x 1.1 in</li>
-      <li>Power listed: 3 AAA batteries (included)</li>
-    </ul>
-    <p><CtaButton href="https://www.amazon.com/dp/B09B4CB7C1" external>Check price on Amazon</CtaButton></p>
+  <h3>TIMEMORE Black Mirror Nano (ASIN: B09KLG247F)</h3>
+  <ProductCard
+    title="TIMEMORE Black Mirror Nano"
+    image={{ src: 'https://m.media-amazon.com/images/I/61zKmzN7rpL._AC_SL500_.jpg', alt: 'TIMEMORE Black Mirror Nano espresso and pour over scale', width: 500, height: 500 }}
+    badge={{ label: 'Best Overall', variant: 'overall' }}
+    rating={{ score: 4.6 }}
+    price="$59-$89"
+    ctaUrl="https://www.amazon.com/dp/B09KLG247F/ref=nosim?tag=coffee-site-20"
+  />
+  <p>The Nano lands in the practical sweet spot for people running both espresso and pour over. It stays compact enough for tighter espresso setups while still offering a screen and timer workflow that works for manual brews. In day-to-day terms, this is the scale that feels like a workflow tool, not a compromise you have to fight.</p>
+  <p>Its main advantage is response behavior: weight changes register quickly enough for modern espresso ratios, where a one- to two-gram overshoot can flatten shot clarity. For pour over, that same responsiveness helps you hold pulse targets without guessing. If you brew multiple styles every week, this dual-use behavior is where the Nano earns its higher price.</p>
+  <ProsCons
+    pros={[
+      'Fast response that supports espresso shot stopping with less overshoot',
+      'Compact footprint fits more espresso tray layouts than full-size scales',
+      'Clear display and timer support work well for pour over pacing',
+      'Strong all-around option if you want one scale for two brew styles',
+    ]}
+    cons={[
+      'More expensive than entry-level coffee scales',
+      'Feature set can feel excessive if you only brew basic drip coffee',
+      'Compact body may feel cramped with very large pour over servers',
+    ]}
+  />
+  <p><CtaButton href="https://www.amazon.com/dp/B09KLG247F/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
 
-    <h3>Hario Drip Scale Timer (ASIN: B009GPJMOU)</h3>
-    <ul>
-      <li>Listing title: Hario Drip Scale Timer (V60 Drip Coffee Scale model)</li>
-      <li>Product dimensions listed: 17 x 14 x 11 in</li>
-      <li>Power listed: 2 AAA batteries required</li>
-    </ul>
-    <p><CtaButton href="https://www.amazon.com/dp/B009GPJMOU" external>Check price on Amazon</CtaButton></p>
+  <h3>Hario V60 Drip Scale (ASIN: B009GPJMOU)</h3>
+  <ProductCard
+    title="Hario V60 Drip Scale"
+    image={{ src: 'https://m.media-amazon.com/images/I/71hmVxb++0L._AC_SL500_.jpg', alt: 'Hario V60 Drip Scale for pour over coffee', width: 500, height: 500 }}
+    badge={{ label: 'Best for Pour Over', variant: 'pourover' }}
+    rating={{ score: 4.5 }}
+    price="$45-$67"
+    ctaUrl="https://www.amazon.com/dp/B009GPJMOU/ref=nosim?tag=coffee-site-20"
+  />
+  <p>The Hario V60 Drip Scale remains a very safe choice for pour over focused households because it keeps the process simple and readable. If your priority is repeatable V60, Kalita, or Chemex recipes instead of espresso timing precision, this is still one of the easiest models to live with long term.</p>
+  <p>Its strengths are predictability and familiarity. You can hand this scale to a newer brewer and they understand it fast. That reduces friction when your goal is skill building. The tradeoff is espresso responsiveness; while usable for occasional shots, it is not as snappy as compact espresso-oriented alternatives.</p>
+  <ProsCons
+    pros={[
+      'Excellent workflow fit for daily pour over brewing',
+      'Straightforward controls are easy for beginners',
+      'Well-known model with broad recipe community support',
+      'Good balance of price and long-term reliability',
+    ]}
+    cons={[
+      'Not the fastest option for espresso stop timing',
+      'Larger footprint can be awkward on small drip trays',
+      'Feature set is focused on core brewing, not extras',
+    ]}
+  />
+  <p><CtaButton href="https://www.amazon.com/dp/B009GPJMOU/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
 
-    <h3>TIMEMORE Black Mirror Nano (ASIN: B09KLG247F)</h3>
-    <ul>
-      <li>Listing title: Digital Espresso Scale by Timemore: Black Mirror Nano</li>
-      <li>Product dimensions listed: 4.53 x 3.94 x 0.79 in</li>
-      <li>Features listed: espresso mode, pour-over timing mode, flow-rate monitoring</li>
-    </ul>
-    <p><CtaButton href="https://www.amazon.com/dp/B09KLG247F" external>Check price on Amazon</CtaButton></p>
-  </section>
+  <h3>Greater Goods Digital Coffee Scale (ASIN: B09B4CB7C1)</h3>
+  <ProductCard
+    title="Greater Goods Digital Coffee Scale"
+    image={{ src: 'https://m.media-amazon.com/images/I/71-L+FLDJYL._AC_SL500_.jpg', alt: 'Greater Goods Digital Coffee Scale with timer', width: 500, height: 500 }}
+    badge={{ label: 'Best Budget', variant: 'budget' }}
+    rating={{ score: 4.4 }}
+    price="$19-$25"
+    ctaUrl="https://www.amazon.com/dp/B09B4CB7C1/ref=nosim?tag=coffee-site-20"
+  />
+  <p>If you are moving from scoop-based brewing and want immediate consistency gains without spending much, this is the strongest value pick. You get a dedicated coffee workflow with timer functionality at a price that makes it easier to build a complete setup around grinder, kettle, and filters.</p>
+  <p>The compromise is speed and refinement relative to higher-tier models. For most home pour over routines that tradeoff is manageable, and many buyers will not outgrow it quickly. For espresso-first users, it can work, but you should expect less margin at shot end compared with faster scales.</p>
+  <ProsCons
+    pros={[
+      'Low entry price makes consistency upgrades accessible',
+      'Built-in timer supports basic pour over recipes well',
+      'Clean interface and readable display for daily use',
+      'Strong value for first-time coffee scale buyers',
+    ]}
+    cons={[
+      'Response speed is more limited than premium options',
+      'Less ideal for espresso users chasing very tight ratios',
+      'Budget build means fewer advanced workflow features',
+    ]}
+  />
+  <p><CtaButton href="https://www.amazon.com/dp/B09B4CB7C1/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
 
-  <section>
-    <h2>Frequently Asked Questions</h2>
-    <FaqAccordion>
-      <FaqItem question="Do you need a coffee scale for espresso?">
-        <p>Yes. Espresso quality depends on dose and yield consistency. A scale is the fastest way to make shots repeatable.</p>
-      </FaqItem>
-      <FaqItem question="Can I use any kitchen scale for pour over?">
-        <p>You can, but many kitchen scales are too slow to respond. A coffee scale with a responsive readout and timer makes dialing recipes easier.</p>
-      </FaqItem>
-    </FaqAccordion>
-  </section>
+  <h2>Practical Workflow: Getting Better Results From Day One</h2>
+  <p>A scale only helps if you use it with a repeatable process. The good news is that you do not need complicated routines to see real improvement. Most home brewers get better cups in a week by standardizing dose, yield, and timing. The key is to remove hidden variability first, then tweak one variable at a time. That approach keeps your changes measurable and your learning curve short.</p>
+  <p>For espresso, start with one coffee, one basket size, and one target ratio. For example, if your machine works well around 1:2, use 18 grams in and target 36 grams out. Keep that target fixed for several shots while you adjust grind size. If the shot runs too fast and tastes sour, grind finer. If it drags and tastes bitter, grind coarser. Because the dose and yield stay locked, your taste feedback becomes clear instead of random.</p>
+  <p>For pour over, pick one brewer and one recipe structure before experimenting. A common baseline is 1:16 to 1:17 coffee-to-water ratio with controlled pulse pours. Start your timer at first pour, track bloom weight, and track final beverage weight. If the cup tastes hollow, increase extraction by grinding finer or extending contact time. If it tastes harsh or drying, reduce extraction with a coarser grind or faster flow. Your scale gives objective checkpoints so your sensory notes map to real process changes.</p>
+  <p>Another underrated benefit is consistency across different people in the same kitchen. If two people brew the same coffee but one uses scoops and the other uses grams, results diverge and troubleshooting gets messy. Shared scale-based recipes create a common language: everyone sees the same numbers, same targets, and same expected outcomes.</p>
 
-  <section>
-    <h2>Related guides</h2>
-    <ul>
-      <li><a href="/posts/best-espresso-machine-under-200.html">Best Espresso Machine Under $200</a></li>
-      <li><a href="/posts/best-coffee-grinder-for-pour-over.html">Best Coffee Grinder for Pour Over</a></li>
-      <li><a href="/posts/best-gooseneck-kettle-for-pour-over.html">Best Gooseneck Kettle for Pour Over</a></li>
-      <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide</a></li>
-      <li><a href="/posts/aeropress-vs-french-press.html">AeroPress vs French Press</a></li>
-      <li><a href="/posts/best-manual-coffee-grinder-under-100.html">Best Manual Coffee Grinder Under $100</a></li>
-    </ul>
-  </section>
+  <h3>Espresso Setup Checklist (3 Minutes)</h3>
+  <ul>
+    <li><strong>Tare with cup in place:</strong> Always zero the scale with your actual cup to avoid offset mistakes.</li>
+    <li><strong>Pre-set your target yield:</strong> Know your stop point before you start the shot.</li>
+    <li><strong>Watch first drip to 15 g:</strong> Early flow behavior tells you whether the grind is close.</li>
+    <li><strong>Stop slightly before target if lag exists:</strong> Some scales continue to climb for a moment.</li>
+    <li><strong>Log one sentence:</strong> Dose, yield, time, and taste note. Keep it short but consistent.</li>
+  </ul>
+
+  <h3>Pour Over Setup Checklist (5 Minutes)</h3>
+  <ul>
+    <li><strong>Rinse filter and tare:</strong> Remove paper taste and zero your starting point.</li>
+    <li><strong>Measure dry dose in grams:</strong> Avoid scoop variance from bean density differences.</li>
+    <li><strong>Track bloom water and total water:</strong> Keep both numbers stable across brews.</li>
+    <li><strong>Use timer checkpoints:</strong> Bloom end, midpoint, and drawdown finish help diagnose flow issues.</li>
+    <li><strong>Adjust one variable only:</strong> Change grind size or pour pattern, not both together.</li>
+  </ul>
+
+  <p>If you are currently troubleshooting both grinder and scale at the same time, simplify. Lock one variable first. In most kitchens, grinder inconsistency creates larger flavor swings than scale differences once you move beyond ultra-cheap options. That is why we keep recommending a system approach: stable grinder + stable scale + repeatable ratio. Each layer reduces noise and makes your next upgrade more meaningful.</p>
+  <p>Also pay attention to ergonomics. A technically accurate scale that is awkward on your machine creates bad habits over time. If you have to twist your neck to read the display, or if the controls are hard to press with wet hands, your workflow will drift. Comfort is not cosmetic. Comfort is compliance, and compliance is consistency.</p>
+
+  <h3>Who Each Pick Is Actually For</h3>
+  <p><strong>Choose TIMEMORE Black Mirror Nano</strong> if you split time between espresso and pour over and want one scale that handles both cleanly. This is the best fit for hobbyists who care about workflow speed and compact placement.</p>
+  <p><strong>Choose Hario V60 Drip Scale</strong> if your daily routine is manual brew and you value a clear, familiar interface over espresso-focused compactness. It is especially solid for people building foundational pour over skills.</p>
+  <p><strong>Choose Greater Goods Digital Coffee Scale</strong> if you are upgrading from a kitchen scale or scoops and want measurable consistency immediately at low cost. It is the easiest entry point with meaningful quality upside.</p>
+
+  <p>When you evaluate buyer reviews, focus on comments about drift, lag, and button behavior more than one-off complaints about delivery or packaging. Workflow stability issues repeat across use cases; shipping complaints do not. If dozens of long-term users mention the same timing quirk, assume you will notice it too.</p>
+  <p>Finally, set realistic expectations. A new scale will not magically fix stale beans, poor water, or grinder alignment problems. What it does do is remove one major source of inconsistency so your other improvements actually show up in the cup. That is why a scale is a high-leverage purchase even when it is not the most expensive tool in your setup.</p>
+
+  <BuyingGuideSection>
+    <h2 id="buying-guide">Buying Guide: How to Choose the Right Coffee Scale</h2>
+
+    <h3>1) Choose based on brew style first</h3>
+    <p>If you brew espresso most days, prioritize response speed and compact dimensions before anything else. Espresso targets move quickly, so delayed readouts cost you consistency. For pour over first households, readability and timer control usually matter more than ultra-fast micro-adjustment behavior. Hybrid brewers should pick the smallest scale that still offers good visibility for manual brews.</p>
+
+    <h3>2) Response speed beats feature overload</h3>
+    <p>Many buyers over-index on long feature lists and underweight the one thing they feel every brew: scale lag. A responsive scale with reliable core behavior is almost always better than a feature-heavy model that feels delayed. If your shot finish timing is inconsistent, your brew ratio becomes inconsistent even when your grinder and beans are unchanged.</p>
+
+    <h3>3) Make sure the footprint fits your machine</h3>
+    <p>Check platform dimensions against your espresso tray or stand before buying. This single step prevents a common regret cycle where a technically good scale is physically awkward to use. For pour over, make sure the platform handles your dripper plus vessel comfortably without clipping the display line of sight.</p>
+
+    <h3>4) Pick controls you can use half awake</h3>
+    <p>Morning workflow matters. If the controls are too sensitive or the timer sequence feels unintuitive, you will eventually bypass the scale and lose consistency. Simple controls are not a downgrade; they are often the reason a scale remains part of your routine six months later.</p>
+
+    <h3>5) Don’t ignore battery and maintenance behavior</h3>
+    <p>Weak battery behavior creates subtle drift and random shutdown frustration. Keep spare batteries nearby or stay consistent with charging cadence if your model supports it. Also keep moisture away from the platform seam and wipe spills quickly—especially near espresso machines where steam and splashes are frequent.</p>
+
+    <h3>6) Spend where it changes outcomes</h3>
+    <p>If your total budget is limited, put money into grinder quality first, then scale quality, then optional convenience extras. A reliable mid-priced scale plus a stronger grinder usually outperforms the inverse. The scale’s job is repeatability. Once it does that well, your next quality gains usually come from burr quality and bean freshness.</p>
+
+    <h3>7) Build a repeatable workflow template</h3>
+    <p>For espresso, lock in an input dose and target yield (for example, 18 g in and 36 g out), then adjust grind one step at a time. For pour over, track dose, total water, and key timer checkpoints. Keep notes for each bean so your future brews start from a known baseline instead of guesswork. If you want a practical template, pair this page with our <a href="/posts/espresso-shot-dial-in-workflow.html">espresso dial-in workflow</a> and <a href="/posts/coffee-brewing-ratio-guide.html">brew ratio guide</a>.</p>
+
+    <h3>8) Avoid common buying mistakes</h3>
+    <p>The most common mistake is buying too large for espresso trays. The second is choosing the cheapest option without checking response behavior. The third is assuming any kitchen scale is equivalent. Dedicated coffee scales are designed around brewing cadence, timer integration, and readability in ways generic cooking scales often are not.</p>
+
+    <h3>9) When to upgrade</h3>
+    <p>Upgrade when your current scale slows your process: noticeable lag, unstable readings, poor fit, or controls that interrupt workflow. If your current scale still feels reliable and easy to use, your money is better spent on beans, grinder improvements, or water quality tools. Upgrading for workflow comfort is valid, but upgrade with a clear bottleneck in mind.</p>
+
+    <h3>10) Building the full setup</h3>
+    <p>A scale by itself improves consistency, but your results compound when the full system is aligned. A practical path is: scale + grinder + kettle + repeatable ratio routine. For next steps, see our guides to the <a href="/posts/best-gooseneck-kettle-for-pour-over.html">best gooseneck kettle for pour over</a> and <a href="/posts/best-espresso-machine-under-200.html">best espresso machine under $200</a> if you are balancing capability and budget.</p>
+  </BuyingGuideSection>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+  <FaqAccordion>
+    <FaqItem question={faq[0].q}><p>{faq[0].a}</p></FaqItem>
+    <FaqItem question={faq[1].q}><p>{faq[1].a}</p></FaqItem>
+    <FaqItem question={faq[2].q}><p>{faq[2].a}</p></FaqItem>
+    <FaqItem question={faq[3].q}><p>{faq[3].a}</p></FaqItem>
+    <FaqItem question={faq[4].q}><p>{faq[4].a}</p></FaqItem>
+  </FaqAccordion>
+
+  <h2>Related Guides</h2>
+  <ul>
+    <li><a href="/posts/espresso-shot-dial-in-workflow.html">Espresso Shot Dial-In Workflow</a></li>
+    <li><a href="/posts/best-coffee-grinder-for-pour-over.html">Best Coffee Grinder for Pour Over</a></li>
+    <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide</a></li>
+    <li><a href="/posts/best-gooseneck-kettle-for-pour-over.html">Best Gooseneck Kettle for Pour Over</a></li>
+  </ul>
 </PostLayout>

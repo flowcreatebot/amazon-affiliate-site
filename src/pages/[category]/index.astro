@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PostListing from '../../components/PostListing.astro';
+import AffiliateDisclosure from '../../components/AffiliateDisclosure.astro';
+import { SITE } from '../../data/site';
+import posts from '../../data/posts.json';
+
+const categoryMeta: Record<string, { name: string; description: string; intro: string }> = {
+  espresso: {
+    name: 'Espresso Machines & Gear',
+    description: 'Espresso machine buying guides, dial-in workflows, and grinder settings for home baristas.',
+    intro: 'Budget espresso machines, shot dial-in technique, and grinder calibration guides to help you pull better shots at home.',
+  },
+  grinders: {
+    name: 'Coffee Grinders',
+    description: 'Coffee grinder buying guides for pour over, French press, espresso, and everyday brewing.',
+    intro: 'Hand grinders, electric burr grinders, and maintenance guides to help you find the right grinder for your brew method and budget.',
+  },
+  brewers: {
+    name: 'Coffee Makers & Brewers',
+    description: 'Coffee maker buying guides and brewer comparisons for drip, pour over, and grind-and-brew machines.',
+    intro: 'Drip coffee makers, grind-and-brew machines, pour over drippers, and head-to-head brewer comparisons to match your daily workflow.',
+  },
+  accessories: {
+    name: 'Brewing Accessories',
+    description: 'Coffee scale, kettle, and accessory guides for pour over and espresso brewing.',
+    intro: 'Scales, gooseneck kettles, and other accessories that improve consistency and control across brew methods.',
+  },
+  education: {
+    name: 'Brew Education',
+    description: 'Coffee brewing guides covering ratios, techniques, and practical tips for better cups at home.',
+    intro: 'Practical brewing knowledge — ratios, techniques, and reference guides to level up your daily cup.',
+  },
+};
+
+export function getStaticPaths() {
+  const categories = [...new Set(posts.map((p) => p.category))];
+  return categories.map((cat) => ({
+    params: { category: cat },
+    props: {
+      category: cat,
+      categoryPosts: posts
+        .filter((p) => p.category === cat)
+        .sort((a, b) => b.dateModified.localeCompare(a.dateModified)),
+    },
+  }));
+}
+
+const { category, categoryPosts } = Astro.props;
+const meta = categoryMeta[category] || { name: category, description: '', intro: '' };
+const title = `${meta.name} | Coffee Gear Lab`;
+const canonical = `${SITE.url}/${category}/`;
+---
+<BaseLayout
+  title={title}
+  description={meta.description}
+  canonical={canonical}
+  ogType="website"
+  ogUrl={canonical}
+>
+  <Breadcrumbs items={[
+    { label: 'Home', href: '/' },
+    { label: meta.name },
+  ]} />
+
+  <h1>{meta.name}</h1>
+  <p class="lead">{meta.intro}</p>
+
+  <PostListing posts={categoryPosts} initialCount={10} />
+
+  <AffiliateDisclosure text="Some links may earn a commission at no extra cost to you. We only recommend gear that provides clear value for specific use cases." />
+</BaseLayout>

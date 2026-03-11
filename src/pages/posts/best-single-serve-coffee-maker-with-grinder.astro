@@ -71,7 +71,16 @@ const products = [
 ];
 
 const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
-const imageUrl = (asin: string) => `https://images-na.ssl-images-amazon.com/images/P/${asin}.01.LZZZZZZZ.jpg`;
+const imageMap: Record<string, string> = {
+  B09HDFLF2X: 'https://m.media-amazon.com/images/P/B09HDFLF2X.01.LZZZZZZZ.jpg',
+  B08MGYR9SX: 'https://m.media-amazon.com/images/P/B08MGYR9SX.01.LZZZZZZZ.jpg',
+  B0GM41GYZH: 'https://m.media-amazon.com/images/P/B0GM41GYZH.01.LZZZZZZZ.jpg',
+  B00LU2I46E: 'https://m.media-amazon.com/images/P/B00LU2I46E.01.LZZZZZZZ.jpg',
+  B00VGGVQCI: 'https://m.media-amazon.com/images/P/B00VGGVQCI.01.LZZZZZZZ.jpg',
+  B0F3ZSVPPG: 'https://m.media-amazon.com/images/P/B0F3ZSVPPG.01.LZZZZZZZ.jpg',
+  B09NRYX5K7: 'https://m.media-amazon.com/images/P/B09NRYX5K7.01.LZZZZZZZ.jpg',
+};
+const imageUrl = (asin: string) => imageMap[asin] ?? 'https://m.media-amazon.com/images/I/61Rdl5C2AHL._AC_SL500_.jpg';
 
 const jsonLd = {
   '@context': 'https://schema.org',

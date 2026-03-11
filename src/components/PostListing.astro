@@ -1,0 +1,62 @@
+---
+import CardGrid from './CardGrid.astro';
+import Card from './Card.astro';
+
+interface Post {
+  slug: string;
+  title: string;
+  description: string;
+  pageType: string;
+  category: string;
+  datePublished: string;
+  dateModified: string;
+}
+
+interface Props {
+  posts: Post[];
+  initialCount?: number;
+  showCategory?: boolean;
+}
+
+const { posts, initialCount = 10, showCategory = false } = Astro.props;
+const hasMore = posts.length > initialCount;
+
+const categoryLabels: Record<string, string> = {
+  espresso: 'Espresso',
+  grinders: 'Grinders',
+  brewers: 'Brewers',
+  accessories: 'Accessories',
+  education: 'Education',
+};
+---
+<div class="post-listing">
+  <CardGrid>
+    {posts.map((post, i) => (
+      <div class={i >= initialCount ? 'listing-hidden' : ''} style={i >= initialCount ? 'display:none' : ''}>
+        <Card title={post.title} href={`/posts/${post.slug}.html`}>
+          {showCategory && <span class="listing-category">{categoryLabels[post.category] || post.category}</span>}
+          <p>{post.description}</p>
+        </Card>
+      </div>
+    ))}
+  </CardGrid>
+  {hasMore && (
+    <button class="show-more-btn" data-listing-toggle>
+      Show all {posts.length} guides
+    </button>
+  )}
+</div>
+
+<script>
+  document.querySelectorAll('[data-listing-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const listing = btn.closest('.post-listing');
+      if (!listing) return;
+      listing.querySelectorAll('.listing-hidden').forEach((el) => {
+        (el as HTMLElement).style.display = '';
+        el.classList.remove('listing-hidden');
+      });
+      btn.remove();
+    });
+  });
+</script>

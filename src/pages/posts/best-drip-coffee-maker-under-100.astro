@@ -4,7 +4,6 @@ import ProductCard from '../../components/ProductCard.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsCons from '../../components/ProsCons.astro';
-import BestForBadge from '../../components/BestForBadge.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
@@ -28,7 +27,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-06',
       dateModified: '2026-03-09',
-      image: `${SITE.url}/assets/images/best-drip-coffee-maker-under-100-tested-2026.svg`,
+      image: `${SITE.url}/assets/images/best-drip-coffee-maker-under-100-hero-2026.svg`,
     }),
     {
       '@type': 'ItemList',
@@ -91,7 +90,7 @@ const jsonLd = {
   description={description}
   canonical={canonical}
   ogDescription="Eight researched drip coffee makers under $100 compared by reliability, programmability, cleanup burden, and practical daily workflow fit."
-  ogImage={`${SITE.url}/assets/images/best-drip-coffee-maker-under-100-tested-2026.svg`}
+  ogImage={`${SITE.url}/assets/images/best-drip-coffee-maker-under-100-hero-2026.svg`}
   breadcrumbs={[
     { label: 'Home', href: '/' },
     { label: 'All Guides', href: '/posts/' },
@@ -105,8 +104,18 @@ const jsonLd = {
   <h1>Best Drip Coffee Maker Under $100 (2026): 8 Smart Picks</h1>
   <p class="lead">The best drip coffee maker under 100 for most people is the Ninja CE251 because it balances dependable programming, solid extraction consistency, and easy day-to-day cleanup. We researched and compared eight budget-friendly models so you can choose a brewer that actually fits your routine instead of just chasing the lowest sticker price.</p>
 
+  <!-- IMAGE_PLACEHOLDER
+  type: hero
+  slug: best-drip-coffee-maker-under-100
+  filename: best-drip-coffee-maker-under-100-hero-2026.svg
+  alt: "Editorial comparison of budget drip coffee makers under $100 with programmable and thermal options"
+  concept: "Warm-toned editorial lineup of abstract drip brewer silhouettes with callouts for budget, programmable, and thermal value tiers"
+  width: 1200
+  height: 675
+  -->
+
   <HeroMedia
-    src="/assets/images/best-drip-coffee-maker-under-100-tested-2026.svg"
+    src="/assets/images/best-drip-coffee-maker-under-100-hero-2026.svg"
     alt="Best drip coffee maker under 100 dollars shortlist for 2026"
     width={1200}
     height={675}
@@ -268,7 +277,7 @@ const jsonLd = {
     <h2 id="product-reviews">Individual product reviews</h2>
 
     <h3>1) Ninja CE251 Programmable Brewer — Best Overall</h3>
-    <p><BestForBadge variant="overall" label="Best Overall" /> Buyers who want the best drip coffee maker under 100 with low hassle and reliable daily scheduling.</p>
+    <p><strong>Best for:</strong> Buyers who want the best drip coffee maker under 100 with low hassle and reliable daily scheduling.</p>
     <p><strong>Price band:</strong> $$</p>
     <ProsCons
       pros={[
@@ -286,7 +295,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B07S98411N/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
 
     <h3>2) Cuisinart DCC-3200P1 Perfectemp — Best Programmable Feature Set</h3>
-    <p><BestForBadge variant="upgrade" label="Best Programmable" /> Homes that want stronger scheduling controls and larger capacity while staying close to the $100 ceiling.</p>
+    <p><strong>Best for:</strong> Homes that want stronger scheduling controls and larger capacity while staying close to the $100 ceiling.</p>
     <p><strong>Price band:</strong> $$</p>
     <ProsCons
       pros={[
@@ -304,7 +313,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B00MVWGQX0/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
 
     <h3>3) BLACK+DECKER CM1160B 12-Cup Digital — Best Budget Compact Pick</h3>
-    <p><BestForBadge variant="budget" label="Best Budget" /> Buyers who need low-cost programmability and a footprint that fits tighter kitchens.</p>
+    <p><strong>Best for:</strong> Buyers who need low-cost programmability and a footprint that fits tighter kitchens.</p>
     <p><strong>Price band:</strong> $</p>
     <ProsCons
       pros={[
@@ -322,7 +331,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B01GJOMWVA/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
 
     <h3>4) Hamilton Beach 2-Way 49980A — Best for Mixed Single-Cup + Carafe Homes</h3>
-    <p><BestForBadge variant="beginners" label="Best Dual-Use Routine" /> Families split between quick single cups and full-pot brewing.</p>
+    <p><strong>Best for:</strong> Families split between quick single cups and full-pot brewing.</p>
     <p><strong>Price band:</strong> $$</p>
     <ProsCons
       pros={[
@@ -340,7 +349,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B00EI7DPPI/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
 
     <h3>5) Mr. Coffee 12-Cup Programmable — Best for Strict Upfront Budgets</h3>
-    <p><BestForBadge variant="budget" label="Best Low-Cost Pick" /> Buyers who want automatic scheduling and the lowest practical entry cost.</p>
+    <p><strong>Best for:</strong> Buyers who want automatic scheduling and the lowest practical entry cost.</p>
     <p><strong>Price band:</strong> $</p>
     <ProsCons
       pros={[
@@ -358,7 +367,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B089DWFP9L/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
 
     <h3>6) BLACK+DECKER Thermal CM2035B — Best Thermal Carafe Value</h3>
-    <p><BestForBadge variant="upgrade" label="Best Thermal Value" /> Homes that drink coffee over a longer window and need better passive heat retention.</p>
+    <p><strong>Best for:</strong> Homes that drink coffee over a longer window and need better passive heat retention.</p>
     <p><strong>Price band:</strong> $$</p>
     <ProsCons
       pros={[
@@ -376,7 +385,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B00LU2I3V0/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
 
     <h3>7) Mueller 12-Cup Drip — Best No-Frills Simplicity</h3>
-    <p><BestForBadge variant="beginners" label="Best No-Frills Pick" /> Buyers who want straightforward operation and minimal feature complexity.</p>
+    <p><strong>Best for:</strong> Buyers who want straightforward operation and minimal feature complexity.</p>
     <p><strong>Price band:</strong> $</p>
     <ProsCons
       pros={[
@@ -394,7 +403,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B08TYTBX8X/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
 
     <h3>8) KRUPS Simply Brew 5-Cup — Best for Small-Batch Brewing</h3>
-    <p><BestForBadge variant="budget" label="Best Small-Batch Pick" /> Apartment dwellers, couples, or anyone brewing smaller daily volumes.</p>
+    <p><strong>Best for:</strong> Apartment dwellers, couples, or anyone brewing smaller daily volumes.</p>
     <p><strong>Price band:</strong> $</p>
     <ProsCons
       pros={[

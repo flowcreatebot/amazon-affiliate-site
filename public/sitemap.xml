@@ -8,7 +8,37 @@
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coffeegearpicks.com/espresso/</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coffeegearpicks.com/grinders/</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coffeegearpicks.com/brewers/</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coffeegearpicks.com/accessories/</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://coffeegearpicks.com/education/</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -20,19 +50,19 @@
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/best-burr-coffee-grinder-under-200.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/best-burr-grinder-for-espresso.html</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/best-coffee-grinder-for-french-press.html</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -44,7 +74,7 @@
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/best-coffee-maker-with-grinder.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -56,13 +86,13 @@
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/best-drip-coffee-maker-under-100.html</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/best-grind-and-brew-coffee-maker-under-200.html</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -74,31 +104,31 @@
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/best-espresso-machine-under-200.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/best-gooseneck-kettle-for-pour-over.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/best-hand-grinder-for-espresso-under-100.html</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/best-manual-coffee-grinder-under-100.html</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/best-single-serve-coffee-maker-with-grinder.html</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -134,7 +164,7 @@
   </url>
   <url>
     <loc>https://coffeegearpicks.com/posts/best-pour-over-coffee-maker.html</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -1,26 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
   <title id="title">Best Burr Coffee Grinders Under 200 Dollars</title>
-  <desc id="desc">Editorial comparison graphic showing six burr grinder picks under 200 dollars by use case and budget tier.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1f2937"/>
-      <stop offset="100%" stop-color="#0f766e"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="675" fill="url(#bg)"/>
-  <g fill="#ffffff" font-family="Arial, Helvetica, sans-serif">
-    <text x="72" y="122" font-size="54" font-weight="700">Best Burr Coffee Grinders Under $200</text>
-    <text x="72" y="172" font-size="32" opacity="0.92">2026 Tested Picks • Espresso Labels • Cleanup Burden</text>
+  <desc id="desc">Editorial illustration showing budget tiers and brew-style fit for burr coffee grinders with warm neutral colors and simple grinder silhouettes.</desc>
 
-    <g transform="translate(72,230)">
-      <rect width="1056" height="360" rx="18" fill="rgba(255,255,255,0.1)"/>
-      <text x="36" y="58" font-size="30" font-weight="700">Top Slots</text>
-      <text x="36" y="108" font-size="24">• Best Overall: Baratza Encore ESP</text>
-      <text x="36" y="152" font-size="24">• Best Under $100: OXO Brew Conical Burr</text>
-      <text x="36" y="196" font-size="24">• Best $100–$149: Fellow Opus</text>
-      <text x="36" y="240" font-size="24">• Best $150–$200: Turin SK40</text>
-      <text x="36" y="284" font-size="24">• Best Quiet Grinder: Oxo + Fellow tier</text>
-      <text x="36" y="328" font-size="24">• Best Manual Alt: KINGrinder K6</text>
-    </g>
+  <rect x="0" y="0" width="1200" height="675" fill="#FAF8F5"/>
+  <rect x="48" y="48" width="1104" height="579" rx="12" fill="#F5EDE4"/>
+
+  <text x="88" y="128" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="800">Best Burr Coffee Grinders Under $200</text>
+  <text x="88" y="172" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="400">Quick visual guide by price tier, grind control, and daily workflow fit</text>
+
+  <rect x="88" y="214" width="320" height="300" rx="12" fill="#EFDFCE"/>
+  <rect x="440" y="214" width="320" height="300" rx="12" fill="#EFDFCE"/>
+  <rect x="792" y="214" width="320" height="300" rx="12" fill="#EFDFCE"/>
+
+  <text x="112" y="258" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="600">Under $100</text>
+  <text x="464" y="258" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="600">$100–$149</text>
+  <text x="816" y="258" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="600">$150–$200</text>
+
+  <g transform="translate(154 292)">
+    <rect x="0" y="52" width="188" height="120" rx="12" fill="#FAF8F5" stroke="#5C3D2E" stroke-width="4"/>
+    <rect x="40" y="24" width="108" height="40" rx="10" fill="#FAF8F5" stroke="#5C3D2E" stroke-width="4"/>
+    <circle cx="56" cy="112" r="18" fill="none" stroke="#059669" stroke-width="4"/>
+    <circle cx="132" cy="112" r="18" fill="none" stroke="#059669" stroke-width="4"/>
   </g>
+
+  <g transform="translate(506 292)">
+    <rect x="0" y="52" width="188" height="120" rx="12" fill="#FAF8F5" stroke="#5C3D2E" stroke-width="4"/>
+    <rect x="40" y="24" width="108" height="40" rx="10" fill="#FAF8F5" stroke="#5C3D2E" stroke-width="4"/>
+    <circle cx="56" cy="112" r="18" fill="none" stroke="#059669" stroke-width="4"/>
+    <circle cx="132" cy="112" r="18" fill="none" stroke="#059669" stroke-width="4"/>
+  </g>
+
+  <g transform="translate(858 292)">
+    <rect x="0" y="52" width="188" height="120" rx="12" fill="#FAF8F5" stroke="#5C3D2E" stroke-width="4"/>
+    <rect x="40" y="24" width="108" height="40" rx="10" fill="#FAF8F5" stroke="#5C3D2E" stroke-width="4"/>
+    <circle cx="56" cy="112" r="18" fill="none" stroke="#059669" stroke-width="4"/>
+    <circle cx="132" cy="112" r="18" fill="none" stroke="#059669" stroke-width="4"/>
+  </g>
+
+  <text x="112" y="544" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="400">Filter-first value picks</text>
+  <text x="464" y="544" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="400">Balanced all-round options</text>
+  <text x="816" y="544" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="400">Espresso-focused control</text>
+
+  <line x1="94" y1="584" x2="1106" y2="584" stroke="#059669" stroke-width="6" stroke-linecap="round"/>
 </svg>
