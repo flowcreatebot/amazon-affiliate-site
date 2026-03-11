@@ -12,12 +12,12 @@ source: backfill
 priority_rank: 3
 created_by: manual
 created_at: "2026-03-08T12:00:00+07:00"
-writer_completed_at: "2026-03-11T11:17:23+07:00"
+writer_completed_at: "2026-03-11T15:37:58.675Z"
 qa_result: fail
-qa_rejection_reason: "FAIL:C04,C05"
-qa_rejection_details: |-
-  C04: Money-page review blocks are missing required <ProductCard> entries under "Individual product reviews" (section starts at src/pages/posts/best-drip-coffee-maker-under-100.astro:270; first review begins at line 272).
-  C05: Required review block order is incorrect per page-types template (expected h3 -> ProductCard -> prose -> ProsCons -> CTA). Current first review is h3 -> "Best for/Price" paragraphs -> ProsCons -> prose -> CTA (lines 272-288), and this pattern repeats for all 8 reviews.
+qa_rejection_reason: "FAIL:D04,I03"
+qa_rejection_details:
+  - "D04: HeroPicks Amazon CTAs render as <a class='hero-pick-card__cta'> instead of .cta-button.--primary (src/components/HeroPicks.astro:53; used in src/pages/posts/best-drip-coffee-maker-under-100.astro:107)."
+  - "I03: No hero IMAGE_PLACEHOLDER and no <HeroMedia> reference to the generated hero SVG; page only sets ogImage (src/pages/posts/best-drip-coffee-maker-under-100.astro:93)."
 designer_completed_at: "2026-03-10T00:47:00+07:00"
 image_agent_completed_at: "2026-03-11T09:06:11.531Z"
 images_created:

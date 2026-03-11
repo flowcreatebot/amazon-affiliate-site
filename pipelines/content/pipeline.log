@@ -237,3 +237,7 @@
 2026-03-11T15:09:48.533+00:00 | writer | PREQA_PASS | how-to-clean-burr-coffee-grinder | checks:C01,S02,C04,C05,C06,C07,C08,S07,L01,L02b,D03
 2026-03-11T15:09:48.536+00:00 | writer | MOVED | how-to-clean-burr-coffee-grinder | rejected/ → design/ | source:rejected
 2026-03-11T15:18:39.037+00:00 | qa | MOVED | best-drip-coffee-maker-under-100 | design/ → rejected/ | FAIL:C04,C05
+2026-03-11T15:37:58.673+00:00 | writer | PREQA_PASS | best-drip-coffee-maker-under-100 | checks:C01,S02,C04,C05,C06,C07,C08,S07,L01,L02b,D03
+2026-03-11T15:37:58.675+00:00 | writer | MOVED | best-drip-coffee-maker-under-100 | rejected/ → design/ | source:rejected
+2026-03-11T15:41:23.856+00:00 | qa | MOVED | best-drip-coffee-maker-under-100 | design/ → rejected/ | FAIL:D04,I03
+2026-03-11T15:50:56.984+00:00 | deployer | MOVED | best-coffee-maker-with-grinder | qa/ → published/ | source:qa

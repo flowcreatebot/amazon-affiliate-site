@@ -8,7 +8,7 @@ secondary_keywords:
 - automatic grind and brew coffee maker
 - single serve coffee maker with grinder
 - programmable grind and brew coffee maker
-status: qa
+status: published
 created_by: strategist
 created_at: '2026-03-08T09:30:00+07:00'
 writer_completed_at: "2026-03-11T14:18:52.171Z"
