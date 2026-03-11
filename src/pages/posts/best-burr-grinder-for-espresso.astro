@@ -10,6 +10,7 @@ import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -189,12 +190,16 @@ const jsonLd = {
   <h1>Best Burr Grinder for Espresso in 2026: 7 Top Picks Compared</h1>
   <p class="lead">The best burr grinder for espresso is the one you can dial in quickly, repeat tomorrow, and clean without hating your routine. We researched and compared seven strong options based on grind consistency, adjustment control, retention/static behavior, and daily workflow fit.</p>
 
-  <HeroMedia
-    src="/assets/images/best-burr-grinder-for-espresso-hero-2026.svg"
-    alt="Editorial comparison of seven espresso burr grinders across budget, workflow style, and precision needs"
-    width={960}
-    height={720}
-    caption="What matters most for home espresso: precise control, low retention, and a workflow you can repeat half-awake."
+  <HeroPicks
+    title="Best Burr Grinder for Espresso"
+    subtitle="7 picks compared by workflow fit — find the right grinder for how you brew"
+    picks={[
+      { category: 'Budget', tagline: 'Best value for new brewers', icon: 'dollar', color: '#059669', features: ['Stepped adjustment', 'Conical burrs', 'Simple workflow', 'Under $200'], topPick: 'Baratza Encore ESP', price: '$$', subtitle: 'Fast value dial-in', asin: 'B0BW272XCV' },
+      { category: 'Precision', tagline: 'Fine-tune every shot', icon: 'target', color: '#2C1810', features: ['Stepless adjustment', '64mm flat burrs', 'Low retention', 'Prosumer grade'], topPick: 'DF64 Gen 2', price: '$$$', subtitle: 'Fine control for shot tuning', asin: 'B0D962ZSCM' },
+      { category: 'Quiet', tagline: 'Low-noise mornings', icon: 'volume-x', color: '#7A5B4A', features: ['Noise-dampened motor', 'Conical burrs', 'Consistent grind', 'Early-riser friendly'], topPick: 'Eureka Mignon Specialita', price: '$$$', subtitle: 'Lower-noise routines', asin: 'B07GFV6HM8' },
+      { category: 'Manual', tagline: 'Portable precision', icon: 'hand', color: '#8B6F47', features: ['Hand-cranked', 'Travel-ready', 'Zero counter noise', 'Espresso-capable burrs'], topPick: '1Zpresso J-Ultra', price: '$$', subtitle: 'Portable precision', asin: 'B0CKYDV932' },
+    ]}
+    footer="coffeegearlab.com · 7 grinders tested · 2026 editorial picks"
   />
 
   <p><strong>Quick answer:</strong> DF64 Gen 2 is our best overall pick for most people. Baratza Encore ESP is the safest budget recommendation under $200. If you want stepless control without moving into premium pricing, Turin SK40 gives excellent value.</p>
