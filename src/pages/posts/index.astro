@@ -6,8 +6,8 @@ import AffiliateDisclosure from '../../components/AffiliateDisclosure.astro';
 import { SITE } from '../../data/site';
 import posts from '../../data/posts.json';
 
-const title = 'Coffee Buying Guides & Comparisons | Coffee Gear Lab';
-const description = 'Browse all Coffee Gear Lab buying guides: budget espresso machines, burr grinders, coffee scales, brewer comparisons, and brew education posts.';
+const title = `Coffee Buying Guides & Comparisons | ${SITE.name}`;
+const description = `Browse all ${SITE.name} buying guides: budget espresso machines, burr grinders, coffee scales, brewer comparisons, and brew education posts.`;
 const canonical = `${SITE.url}/posts/`;
 
 const allPosts = [...posts].sort((a, b) => b.dateModified.localeCompare(a.dateModified));

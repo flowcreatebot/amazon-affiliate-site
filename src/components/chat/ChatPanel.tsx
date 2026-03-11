@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'preact/hooks';
 import type { Message } from './types';
 import ChatMessage from './ChatMessage';
 import ChatInput from './ChatInput';
+import { SITE } from '../../data/site';
 
 interface Props {
   messages: Message[];
@@ -33,7 +34,7 @@ export default function ChatPanel({ messages, isStreaming, onSend, onClose }: Pr
       <div class="cgl-chat-header">
         <div class="cgl-chat-header-left">
           <div class="cgl-chat-header-dot" />
-          <span class="cgl-chat-header-title">Coffee Gear Lab</span>
+          <span class="cgl-chat-header-title">{SITE.name}</span>
         </div>
         <button class="cgl-chat-close" onClick={onClose} aria-label="Close chat">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

@@ -9,11 +9,26 @@ export const AMAZON_TAG = 'coffee-site-20';
 export const DISCLOSURE_TEXT = 'Coffee Gear Lab may earn a commission from qualifying purchases made through links on this page. This does not change the price you pay.';
 
 export const NAV_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'All Guides', href: '/posts/' },
-  { label: 'Espresso', href: '/espresso/' },
-  { label: 'Grinders', href: '/grinders/' },
-  { label: 'Brewers', href: '/brewers/' },
+  {
+    "label": "Home",
+    "href": "/"
+  },
+  {
+    "label": "All Guides",
+    "href": "/posts/"
+  },
+  {
+    "label": "Espresso",
+    "href": "/espresso/"
+  },
+  {
+    "label": "Grinders",
+    "href": "/grinders/"
+  },
+  {
+    "label": "Brewers",
+    "href": "/brewers/"
+  }
 ];
 
 export const publisher = {

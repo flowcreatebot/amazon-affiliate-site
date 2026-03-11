@@ -9,7 +9,7 @@ import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 import { SITE } from '../data/site';
 import posts from '../data/posts.json';
 
-const title = 'Coffee Gear Lab: Honest Buyer Guides for Home Brewers';
+const title = `${SITE.name}: Honest Buyer Guides for Home Brewers`;
 const description = 'Research-backed coffee gear guides and comparisons for home brewers. Find the best grinders, espresso machines, brewers, and accessories.';
 const canonical = `${SITE.url}/`;
 
@@ -65,7 +65,7 @@ const trustItems = [
   title={title}
   description={description}
   canonical={canonical}
-  ogTitle="Coffee Gear Lab"
+  ogTitle={SITE.name}
   ogDescription="Research-backed coffee gear buying guides for beginners and enthusiasts."
   ogType="website"
   ogUrl={canonical}
