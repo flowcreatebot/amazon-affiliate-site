@@ -4,7 +4,7 @@ import JsonLd from '../../components/JsonLd.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroVersus from '../../components/HeroVersus.astro';
 import Toc from '../../components/Toc.astro';
 import Pill from '../../components/Pill.astro';
 import CategoryPills from '../../components/CategoryPills.astro';
@@ -62,7 +62,22 @@ const jsonLd = {
     <Pill text="Commercial Intent Assist" />
   </CategoryPills>
 
-  <HeroMedia src="../assets/images/drip-vs-single-serve-coffee-maker-2026.svg" alt="Drip vs single-serve coffee maker comparison chart for speed, cup cost, cleanup burden, and household fit" width={1200} height={675} loading="eager" fetchpriority="high" caption="Editorial comparison: which brewer style matches your daily schedule and budget." />
+  <HeroVersus
+    title="Drip vs Single-Serve Coffee Maker"
+    subtitle="Two machine types, different daily trade-offs — here's how they compare"
+    left={{ name: 'Drip', icon: 'coffee', color: '#5C3D2E', bestFor: 'Batch brewing, lower cup cost, multi-person households' }}
+    right={{ name: 'Single-Serve', icon: 'zap', color: '#0369A1', bestFor: 'One-cup speed, low decision friction, varied schedules' }}
+    stats={[
+      { label: 'Time to first cup', value: '~6–10 min (full pot) | ~3–5 min (single cup)', winner: 'right' },
+      { label: 'Cost per cup', value: 'Lower with ground beans | Higher with pods', winner: 'left' },
+      { label: 'Flavor ceiling', value: 'Higher when dialed in | Consistent, less tweakable', winner: 'left' },
+      { label: 'Cleanup', value: 'Basket + carafe + descale | Needle path + drip tray', winner: 'tie' },
+      { label: 'Batch size', value: '4–12 cups per brew | 1 cup at a time', winner: 'left' },
+      { label: 'Counter footprint', value: 'Medium-Large | Small-Medium', winner: 'right' },
+    ]}
+    verdict="Drip for multi-cup households on a budget. Single-serve for fast solo mornings."
+    footer="coffeegearlab.com · 2026 brewer comparison"
+  />
 
   <p><strong>Quick answer:</strong> Buy a <strong>drip coffee maker</strong> if you usually brew 2+ cups per session and want lower running cost with bulk coffee. Buy a <strong>single-serve machine</strong> if you need faster one-cup convenience, cleaner weekday workflows, or flexible drink choices with minimal prep.</p>
 
@@ -96,8 +111,6 @@ const jsonLd = {
   <h2 id="workflow">Workflow realism: speed, refill cadence, cleanup</h2>
   <p>Drip machines feel slower at first cup, but they are efficient when your household drinks multiple cups in a short window. Single-serve machines win for irregular schedules and quick solo brews, especially when different people want different cup sizes or roast styles.</p>
   <p>If you are choosing between fresh-ground and pod-heavy workflows, compare our <a href="/posts/best-single-serve-coffee-maker-with-grinder.html">best single-serve coffee maker with grinder picks</a> and <a href="/posts/best-coffee-maker-with-grinder-and-k-cup-combo.html">best coffee maker with grinder + K-Cup combo roundup</a>.</p>
-
-  <HeroMedia src="../assets/images/drip-vs-single-serve-coffee-maker-2026.svg" alt="Daily workflow comparison between drip and single-serve coffee makers including cleanup cadence" width={1200} height={675} caption="Most buyers are happier when they choose by daily routine, not only by feature checklist." />
 
   <h2 id="cost">Cost per cup and long-term ownership reality</h2>
   <p><strong>Drip usually wins long-term cost</strong> when you brew regularly using ground coffee. <strong>Single-serve often wins convenience</strong> when waste reduction and decision speed matter more than pure cost-per-cup math.</p>
