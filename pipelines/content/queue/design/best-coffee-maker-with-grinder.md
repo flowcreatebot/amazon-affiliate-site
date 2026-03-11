@@ -8,12 +8,12 @@ secondary_keywords:
 - automatic grind and brew coffee maker
 - single serve coffee maker with grinder
 - programmable grind and brew coffee maker
-status: rejected
+status: design
 created_by: strategist
 created_at: '2026-03-08T09:30:00+07:00'
-writer_completed_at: '2026-03-08T21:15:00+07:00'
-qa_result: fail
-qa_rejection_reason: "FAIL:D03"
+writer_completed_at: "2026-03-11T12:20:59.191Z"
+qa_result: null
+qa_rejection_reason: null
 designer_completed_at: '2026-03-10T21:47:00+07:00'
 deployed_url: https://coffee-gear-lab-dev.onrender.com/posts/best-coffee-maker-with-grinder.html
 asins_verified:
@@ -25,8 +25,7 @@ asins_verified:
 - B0F3ZSVPPG
 - B0D45PK5V4
 word_count: 2128
-qa_rejection_details: "D03: dist/posts/best-coffee-maker-with-grinder.html line 113 header brand logo <img class='brand__icon'> is missing loading='lazy'." 
-rejection_stages: [drafts]
+qa_rejection_details: null
 rework_stages: null
 rework_reason: null
 rework_initiated_by: null

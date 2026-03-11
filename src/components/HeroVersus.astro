@@ -1,0 +1,274 @@
+---
+interface Stat {
+  label: string;
+  value: string;
+  winner?: 'left' | 'right' | 'tie';
+}
+interface Side {
+  name: string;
+  icon: string;
+  color: string;
+  bestFor: string;
+}
+interface Props {
+  title: string;
+  subtitle: string;
+  left: Side;
+  right: Side;
+  stats: Stat[];
+  verdict: string;
+  footer?: string;
+}
+const { title, subtitle, left, right, stats, verdict, footer } = Astro.props;
+
+const icons: Record<string, string> = {
+  zap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>',
+  coffee: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>',
+  target: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
+  dollar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+  droplets: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>',
+  layers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.84z"/><path d="m2 12 8.58 3.91a2 2 0 0 0 1.66 0L21 12"/><path d="m2 17 8.58 3.91a2 2 0 0 0 1.66 0L21 17"/></svg>',
+  timer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>',
+  wind: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>',
+};
+---
+
+<div class="hero-versus">
+  <div class="hero-versus__header">
+    <h2 class="hero-versus__title">{title}</h2>
+    <p class="hero-versus__subtitle">{subtitle}</p>
+  </div>
+
+  <div class="hero-versus__columns">
+    <div class="hero-versus__side" style={`--side-color: ${left.color}`}>
+      <div class="hero-versus__side-head">
+        <span class="hero-versus__side-icon" set:html={icons[left.icon]} />
+        <span class="hero-versus__side-name">{left.name}</span>
+      </div>
+      <p class="hero-versus__best-for">{left.bestFor}</p>
+    </div>
+
+    <div class="hero-versus__vs-badge">VS</div>
+
+    <div class="hero-versus__side" style={`--side-color: ${right.color}`}>
+      <div class="hero-versus__side-head">
+        <span class="hero-versus__side-icon" set:html={icons[right.icon]} />
+        <span class="hero-versus__side-name">{right.name}</span>
+      </div>
+      <p class="hero-versus__best-for">{right.bestFor}</p>
+    </div>
+  </div>
+
+  <div class="hero-versus__stats">
+    {stats.map((stat) => (
+      <div class="hero-versus__stat-row">
+        <span class="hero-versus__stat-label">{stat.label}</span>
+        <span class={`hero-versus__stat-value ${stat.winner === 'left' ? '--winner' : ''}`} style={`--side-color: ${left.color}`}>{stat.value.split('|')[0]?.trim()}</span>
+        <span class={`hero-versus__stat-value ${stat.winner === 'right' ? '--winner' : ''}`} style={`--side-color: ${right.color}`}>{stat.value.split('|')[1]?.trim()}</span>
+      </div>
+    ))}
+  </div>
+
+  <div class="hero-versus__verdict">
+    <span class="hero-versus__verdict-label">Verdict</span>
+    <p class="hero-versus__verdict-text">{verdict}</p>
+  </div>
+
+  {footer && <p class="hero-versus__footer">{footer}</p>}
+</div>
+
+<style>
+  .hero-versus {
+    background: var(--surface-latte);
+    border-radius: var(--radius);
+    padding: 2rem 1.5rem 1.5rem;
+    margin: var(--sp-5) 0 var(--sp-6);
+  }
+  @media (min-width: 960px) {
+    .hero-versus {
+      width: min(var(--max-page), calc(100vw - 2rem));
+      margin-left: 50%;
+      transform: translateX(-50%);
+      padding: 2.5rem 2rem 1.5rem;
+    }
+  }
+  .hero-versus__header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .hero-versus__title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--brand-900);
+    margin: 0 0 0.35rem;
+  }
+  .hero-versus__subtitle {
+    font-size: 1rem;
+    color: var(--brand-700);
+    margin: 0;
+  }
+
+  /* Two-column heads with VS badge */
+  .hero-versus__columns {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 1rem;
+  }
+  .hero-versus__side {
+    background: var(--surface-elevated);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .hero-versus__side-head {
+    background: var(--side-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .hero-versus__side-icon {
+    display: block;
+    width: 28px;
+    height: 28px;
+    color: #fff;
+  }
+  .hero-versus__side-icon :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+  .hero-versus__side-name {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .hero-versus__best-for {
+    font-size: 0.88rem;
+    color: var(--brand-700);
+    text-align: center;
+    padding: 0.75rem 0.75rem;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .hero-versus__vs-badge {
+    align-self: center;
+    background: var(--brand-900);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    flex-shrink: 0;
+  }
+
+  /* Stat rows */
+  .hero-versus__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .hero-versus__stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--brand-200);
+  }
+  .hero-versus__stat-row:last-child {
+    border-bottom: none;
+  }
+  .hero-versus__stat-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--brand-900);
+    display: flex;
+    align-items: center;
+  }
+  .hero-versus__stat-value {
+    font-size: 0.82rem;
+    color: var(--brand-700);
+    text-align: center;
+    padding: 0.25rem 0.4rem;
+    border-radius: var(--radius-sm);
+  }
+  .hero-versus__stat-value.--winner {
+    background: var(--surface-warm);
+    font-weight: 600;
+    color: var(--side-color);
+    border: 1.5px solid var(--side-color);
+  }
+
+  /* Verdict bar */
+  .hero-versus__verdict {
+    background: var(--surface-warm);
+    border: 1.5px solid var(--brand-400);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .hero-versus__verdict-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brand-600);
+    margin-bottom: 0.2rem;
+  }
+  .hero-versus__verdict-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--brand-900);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .hero-versus__footer {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--brand-400);
+    margin: 1.25rem 0 0;
+  }
+
+  /* Mobile: stack columns vertically */
+  @media (max-width: 599px) {
+    .hero-versus__columns {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+    .hero-versus__vs-badge {
+      margin: 0 auto;
+    }
+    .hero-versus__stat-row {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+      padding: 0.6rem 0;
+    }
+    .hero-versus__stat-label {
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+    .hero-versus__stat-value {
+      text-align: left;
+      padding-left: 0.75rem;
+    }
+    .hero-versus__stat-value::before {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--brand-400);
+      margin-right: 0.35rem;
+    }
+    .hero-versus__side:first-child ~ .hero-versus__stat-value:nth-child(2)::before {
+      content: '';
+    }
+  }
+</style>

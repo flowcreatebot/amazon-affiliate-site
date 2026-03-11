@@ -7,7 +7,7 @@ secondary_keywords:
   - "hand grinder espresso"
   - "manual grinder for espresso under $100"
   - "budget hand espresso grinder"
-status: images
+status: design
 source: backfill
 priority_rank: 9
 created_by: manual
@@ -16,7 +16,7 @@ writer_completed_at: "2026-03-11T06:33:12.104Z"
 qa_result: pass
 qa_rejection_reason: null
 qa_rejection_details: []
-designer_completed_at: null
+designer_completed_at: "2026-03-11T12:49:21.893Z"
 deployed_url: "https://coffee-gear-lab-dev.onrender.com/posts/best-hand-grinder-for-espresso-under-100.html"
 asins_verified:
   - B0CY1XFXB8

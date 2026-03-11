@@ -216,3 +216,6 @@
 2026-03-11T11:18:44.710+00:00 | qa | MOVED | best-pour-over-coffee-maker | design/ → qa/ | source:design
 2026-03-11T11:31:35.823+00:00 | image-agent | MOVED | best-hand-grinder-for-espresso-under-100 | rework/ → images/ | source:rework
 2026-03-11T11:50:53.535+00:00 | deployer | MOVED | best-pour-over-coffee-maker | qa/ → published/ | source:qa
+2026-03-11T12:20:59.189+00:00 | writer | PREQA_PASS | best-coffee-maker-with-grinder | checks:C01,S02,C04,C05,C06,C07,C08,S07,L01,L02b,D03
+2026-03-11T12:20:59.192+00:00 | writer | MOVED | best-coffee-maker-with-grinder | rejected/ → design/ | source:rejected
+2026-03-11T12:49:21.894+00:00 | designer | MOVED | best-hand-grinder-for-espresso-under-100 | images/ → design/ | source:images

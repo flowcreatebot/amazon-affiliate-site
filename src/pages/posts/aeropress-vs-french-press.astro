@@ -4,7 +4,7 @@ import JsonLd from '../../components/JsonLd.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroVersus from '../../components/HeroVersus.astro';
 import Toc from '../../components/Toc.astro';
 import Pill from '../../components/Pill.astro';
 import CategoryPills from '../../components/CategoryPills.astro';
@@ -62,7 +62,22 @@ const jsonLd = {
     <Pill text="Commercial Intent Assist" />
   </CategoryPills>
 
-  <HeroMedia src="../assets/images/aeropress-vs-french-press-2026.svg" alt="AeroPress vs French Press comparison chart for taste, cleanup, brew speed, portability, and batch size" width={1200} height={675} loading="eager" fetchpriority="high" caption="Editorial comparison: the fastest path to choosing between AeroPress and French Press." />
+  <HeroVersus
+    title="AeroPress vs French Press"
+    subtitle="Two popular brewers, very different cups — here's how they compare"
+    left={{ name: 'AeroPress', icon: 'zap', color: '#0369A1', bestFor: 'Clean flavor, fast cleanup, single cup, travel' }}
+    right={{ name: 'French Press', icon: 'coffee', color: '#7C2D12', bestFor: 'Full body, batch brewing, rich mouthfeel' }}
+    stats={[
+      { label: 'Taste', value: 'Clean, bright clarity | Heavy body, more sediment', winner: 'tie' },
+      { label: 'Brew time', value: '~2 minutes | ~4 minutes', winner: 'left' },
+      { label: 'Cleanup', value: 'Puck eject + rinse | Wet grounds + mesh scrub', winner: 'left' },
+      { label: 'Portability', value: 'Excellent (travel-ready) | Low (glass, bulky)', winner: 'left' },
+      { label: 'Batch size', value: '1 cup only | 2–3 cups per brew', winner: 'right' },
+      { label: 'Beginner friendly', value: 'High, forgiving recipes | High, but grind matters more', winner: 'tie' },
+    ]}
+    verdict="AeroPress for easy single-cup mornings. French Press for richer shared brews."
+    footer="coffeegearlab.com · 2026 brewer comparison"
+  />
 
   <p><strong>Quick answer:</strong> Buy <strong>AeroPress</strong> if you want cleaner cups, faster cleanup, and portability. Buy <strong>French Press</strong> if you want a fuller body and usually brew 2-3 cups at once. Most single-cup weekday drinkers prefer AeroPress; slower weekend or shared brews usually favor French Press.</p>
 
@@ -101,8 +116,6 @@ const jsonLd = {
   <h2 id="workflow">Workflow speed and cleanup burden</h2>
   <p>AeroPress is faster in real life: short brew, instant puck eject, quick rinse. French Press takes longer to clean because wet grounds stick to glass and mesh screens. If weekday friction matters, AeroPress usually wins.</p>
   <p>Whichever brewer you choose, repeatability improves when your ratio is fixed. Start with the baselines in our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> and keep grind quality stable with this <a href="/posts/how-to-clean-burr-coffee-grinder.html">burr grinder cleaning routine</a>.</p>
-
-  <HeroMedia src="../assets/images/aeropress-vs-french-press-2026.svg" alt="AeroPress and French Press workflow comparison for cleanup time and daily effort" width={1200} height={675} caption="Daily-use reality: cleanup friction is often the deciding factor after week one." />
 
   <h2 id="buy-fit">Buy this if... / Skip this if...</h2>
   <h3>AeroPress</h3>
