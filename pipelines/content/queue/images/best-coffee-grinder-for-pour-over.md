@@ -7,16 +7,15 @@ secondary_keywords:
 - grinder for V60
 - best grinder for pour over
 - coffee grinder pour over
-status: rejected
+status: images
 source: backfill
 priority_rank: 11
 created_by: manual
 created_at: '2026-03-08T12:00:00+07:00'
-writer_completed_at: '2026-03-10T15:17:03+07:00'
-qa_result: fail
-qa_rejection_reason: "FAIL:L02"
-qa_rejection_details: "L02: Brave Search ASIN spot-check blocked by PoW CAPTCHA/HTTP 429 for B0BLRMCM9Y and B07CSKGLMM, so ASIN-to-product match could not be verified."
-rejection_stages: [drafts]
+writer_completed_at: "2026-03-11T14:56:06.768Z"
+qa_result: null
+qa_rejection_reason: null
+qa_rejection_details: null
 designer_completed_at: null
 deployed_url: null
 asins_verified:

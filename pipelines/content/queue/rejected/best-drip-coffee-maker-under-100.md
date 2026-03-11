@@ -7,15 +7,17 @@ secondary_keywords:
   - "cheap drip coffee maker"
   - "drip coffee maker under $100"
   - "programmable coffee maker under $100"
-status: design
+status: rejected
 source: backfill
 priority_rank: 3
 created_by: manual
 created_at: "2026-03-08T12:00:00+07:00"
 writer_completed_at: "2026-03-11T11:17:23+07:00"
-qa_result: null
-qa_rejection_reason: null
-qa_rejection_details: null
+qa_result: fail
+qa_rejection_reason: "FAIL:C04,C05"
+qa_rejection_details: |-
+  C04: Money-page review blocks are missing required <ProductCard> entries under "Individual product reviews" (section starts at src/pages/posts/best-drip-coffee-maker-under-100.astro:270; first review begins at line 272).
+  C05: Required review block order is incorrect per page-types template (expected h3 -> ProductCard -> prose -> ProsCons -> CTA). Current first review is h3 -> "Best for/Price" paragraphs -> ProsCons -> prose -> CTA (lines 272-288), and this pattern repeats for all 8 reviews.
 designer_completed_at: "2026-03-10T00:47:00+07:00"
 image_agent_completed_at: "2026-03-11T09:06:11.531Z"
 images_created:
@@ -31,6 +33,7 @@ asins_verified:
   - "B08TYTBX8X"
   - "B07X43VXZV"
 word_count: 2027
+rejection_stages: [drafts]
 ---
 
 # Brief: Best Drip Coffee Maker Under $100 (Phase 1.5 Refresh)

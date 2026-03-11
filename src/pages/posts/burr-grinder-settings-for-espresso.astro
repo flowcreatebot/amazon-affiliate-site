@@ -3,20 +3,21 @@ import PostLayout from '../../layouts/PostLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
-import BestForBadge from '../../components/BestForBadge.astro';
 import ProsCons from '../../components/ProsCons.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
+import HeroMedia from '../../components/HeroMedia.astro';
 import HeroSteps from '../../components/HeroSteps.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
 const slug = 'burr-grinder-settings-for-espresso';
 const title = 'Burr Grinder Settings for Espresso (2026): Dial-In Guide';
-const description = 'Use this practical burr grinder settings for espresso guide to find a baseline, adjust by taste, fix shot issues quickly, and dial in repeatable results in 2026.';
+const description =
+  'Use this burr grinder settings for espresso guide to set a baseline, adjust by taste, fix shot issues fast, and dial in repeatable results in 2026.';
 const canonical = `${SITE.url}/posts/${slug}.html`;
 
 const tools = [
@@ -24,78 +25,85 @@ const tools = [
     name: 'Baratza Encore ESP',
     asin: 'B0BW272XCV',
     image: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg',
-    bestFor: 'Best starter espresso grinder',
-    range: 'Stepped espresso zone',
-    note: 'Easy to learn with clear click-to-click changes.',
+    bestFor: 'Beginner espresso workflows',
+    adjustment: 'Stepped espresso zone',
+    priceTier: '$$',
+    note: 'Clear click-to-click changes for repeatable dialing.',
     badge: { label: 'Best for Beginners', variant: 'beginners' as const },
     pros: [
-      'Predictable stepped adjustment for repeatable shots.',
-      'Strong value if you are dialing in your first non-pressurized basket.',
-      'Widely supported with replacement parts and setup tutorials.',
+      'Easy step-based adjustments for first-time dial-ins.',
+      'Good value for home espresso setups under premium budgets.',
+      'Large user base makes troubleshooting straightforward.',
     ],
     cons: [
-      'Step jumps can be too large for ultra-fine tuning.',
-      'Retention/static can rise in very dry rooms.',
+      'Step jumps can be wide for ultra-fine shot tuning.',
+      'Static can increase in very dry environments.',
     ],
   },
   {
     name: 'Fellow Opus',
     asin: 'B0BV96VPSR',
     image: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg',
-    bestFor: 'Compact kitchens with mixed brew methods',
-    range: 'Stepped + inner micro-adjust',
-    note: 'Good crossover option when you brew espresso and filter.',
-    badge: { label: 'Best Compact Option', variant: 'budget' as const },
+    bestFor: 'Small counters and mixed brew methods',
+    adjustment: 'Stepped + inner micro-adjust',
+    priceTier: '$$',
+    note: 'Compact form with enough espresso control once you learn the dial system.',
+    badge: { label: 'Best Compact Pick', variant: 'budget' as const },
     pros: [
-      'Compact footprint with enough control for home espresso.',
+      'Small footprint for limited kitchen space.',
       'Micro-adjust support helps tighten shot-time windows.',
-      'Works for both espresso and pour over when you log your settings.',
+      'Flexible enough for espresso and filter routines.',
     ],
     cons: [
-      'Adjustment system takes a few sessions to learn.',
-      'Can throw extra static with some lighter roasts.',
+      'Inner-ring adjustment takes practice at first.',
+      'Can produce extra static with some light roasts.',
     ],
   },
   {
     name: 'DF64 Gen 2',
     asin: 'B0D962ZSCM',
     image: 'https://m.media-amazon.com/images/I/61OMC9iCcOL._AC_SL500_.jpg',
-    bestFor: 'Stepless precision and low retention workflow',
-    range: 'Stepless espresso collar',
-    note: 'Excellent upgrade path when you want tighter control.',
-    badge: { label: 'Best Upgrade Pick', variant: 'upgrade' as const },
+    bestFor: 'Stepless precision and low retention',
+    adjustment: 'Stepless espresso collar',
+    priceTier: '$$$',
+    note: 'Strong upgrade path when you want tighter, tiny corrections.',
+    badge: { label: 'Best Upgrade', variant: 'upgrade' as const },
     pros: [
-      'Stepless control makes tiny corrections easier.',
-      'Low retention behavior helps when changing beans often.',
-      'Strong clarity potential for modern light-medium espresso.',
+      'Stepless collar supports very small grind corrections.',
+      'Low retention helps when switching beans often.',
+      'Strong clarity potential for modern espresso profiles.',
     ],
     cons: [
-      'Costs more than entry stepped grinders.',
-      'Single-dose routine adds one extra step each shot.',
+      'Higher upfront cost than entry options.',
+      'Single-dose workflow adds an extra prep step.',
     ],
   },
 ];
 
+function amazonUrl(asin: string) {
+  return `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
+}
+
 const faqItems = [
   {
-    question: 'What is a good starting recipe for espresso dial-in?',
+    question: 'What is a reliable espresso dial-in baseline?',
     answer:
-      'A practical baseline is 18 grams in, 36 grams out, and a target time around 25 to 32 seconds. Keep dose and yield fixed first, then move grind size in small steps.',
+      'Start with 18 grams in, 36 grams out, and a target shot time around 25 to 32 seconds. Keep dose and yield stable first, then adjust grind size in small steps.',
   },
   {
-    question: 'Should I change grind size or dose first?',
+    question: 'Should I change dose or grind size first?',
     answer:
-      'Change grind size first. If you adjust dose and grind at the same time, it becomes hard to isolate why flavor and flow changed.',
+      'Change grind size first. Adjusting dose and grind together makes it hard to know what caused the flavor or flow change.',
   },
   {
-    question: 'Why does my shot run slow even when beans are fresh?',
+    question: 'Why did my shot get faster after a few days?',
     answer:
-      'You are likely too fine, overdosed, or tamping inconsistently. Move slightly coarser, keep puck prep consistent, and retest one variable at a time.',
+      'Beans degas over time, and humidity can shift extraction behavior. A small move finer is normal as coffee ages.',
   },
   {
-    question: 'How often should I update my grinder setting?',
+    question: 'How often should I clean the grinder when brewing espresso daily?',
     answer:
-      'Small corrections every few days are normal as beans age and humidity shifts. Logging your successful settings helps you recover your target quickly.',
+      'A quick brush every few days and a deeper clean monthly keeps retention down and settings more consistent.',
   },
 ];
 
@@ -107,42 +115,39 @@ const jsonLd = {
       description,
       slug,
       datePublished: '2026-03-10',
-      dateModified: '2026-03-10',
-      image: `${SITE.url}/assets/images/${slug}-hero-2026.svg`,
+      dateModified: '2026-03-11',
+      image: `${SITE.url}/assets/images/${slug}-workflow-2026.svg`,
     }),
     {
       '@type': 'HowTo',
       name: 'How to set burr grinder settings for espresso',
       description:
-        'Step-by-step process for setting burr grinder settings for espresso using a stable dose, yield target, and small grind adjustments.',
+        'Step-by-step process to set burr grinder settings for espresso using a stable dose, yield target, and controlled grind adjustments.',
       supply: [
         { '@type': 'HowToSupply', name: 'Fresh espresso beans' },
         { '@type': 'HowToSupply', name: 'Digital coffee scale' },
       ],
-      tool: tools.map((tool) => ({
-        '@type': 'HowToTool',
-        name: tool.name,
-      })),
+      tool: tools.map((tool) => ({ '@type': 'HowToTool', name: tool.name })),
       step: [
         {
           '@type': 'HowToStep',
           name: 'Set a baseline recipe',
-          text: 'Start at 18g in, 36g out, and lock your water temperature and puck prep routine.',
+          text: 'Start at 18g in and 36g out, then lock puck prep and temperature before any grinder changes.',
         },
         {
           '@type': 'HowToStep',
-          name: 'Pull a test shot and read the result',
-          text: 'Track time and taste. Sour/fast means go finer. Bitter/slow means go coarser.',
+          name: 'Pull a reference shot',
+          text: 'Track shot time and taste. Sour and fast usually means finer; bitter and slow usually means coarser.',
         },
         {
           '@type': 'HowToStep',
-          name: 'Adjust one variable only',
-          text: 'Move 1 click or tiny stepless nudge, then retest with dose and yield unchanged.',
+          name: 'Adjust in small increments',
+          text: 'Move one click or a tiny stepless nudge and retest while keeping dose and yield unchanged.',
         },
         {
           '@type': 'HowToStep',
-          name: 'Save and maintain your dial-in',
-          text: 'Write down settings by bean and clean the grinder regularly to preserve consistency.',
+          name: 'Log and maintain',
+          text: 'Save successful settings by bean and keep a cleaning cadence so retention does not distort results.',
         },
       ],
     },
@@ -151,10 +156,7 @@ const jsonLd = {
       mainEntity: faqItems.map((item) => ({
         '@type': 'Question',
         name: item.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: item.answer,
-        },
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
       })),
     },
     publisher,
@@ -176,61 +178,64 @@ const jsonLd = {
     <JsonLd data={jsonLd} />
   </Fragment>
 
-  <h1>Burr Grinder Settings for Espresso in 2026: How to Dial In Consistent Shots</h1>
-  <p class="lead">Dialing in espresso gets much easier when you run the same sequence every time. This guide gives a practical baseline, a fast adjustment loop, and troubleshooting moves you can apply without guessing. We researched and compared common home grinder workflows so you can lock in repeatable results faster.</p>
+  <h1>Burr Grinder Settings for Espresso (2026): A Repeatable Dial-In Workflow</h1>
+  <p class="lead">Getting better espresso shots is mostly about running the same process every time. This guide walks through a practical baseline, fast correction loop, and maintenance rhythm so burr grinder settings for espresso become predictable instead of frustrating.</p>
 
   <HeroSteps
-    title="Dial In Espresso in 4 Steps"
-    subtitle="A repeatable grinder-to-shot loop you can run every morning"
+    title="Dial In Espresso in 4 Repeatable Steps"
+    subtitle="Keep variables controlled so each grinder adjustment gives clear feedback"
     steps={[
-      { label: "Set Baseline", icon: "target", actions: ["Choose 18g dose", "Set grind to mid-fine", "Target 36g output", "Time 25-32 seconds"], time: "2 min" },
-      { label: "Pull & Taste", icon: "coffee", actions: ["Lock portafilter", "Start timer at first drip", "Stop at target yield", "Taste and note flavor"], time: "30 sec" },
-      { label: "Adjust Grind", icon: "wrench", actions: ["Sour/fast: go finer", "Bitter/slow: go coarser", "Change one click only", "Keep dose fixed"], time: "1 min" },
-      { label: "Lock & Log", icon: "check", actions: ["Record winning setting", "Note bean and date", "Repeat for new bags", "Clean grinder weekly"], time: "Ongoing" },
+      { label: 'Set Baseline', icon: 'target', actions: ['Dose 18g coffee', 'Target 36g yield', 'Keep puck prep consistent', 'Use same water temp'], time: '~2 min' },
+      { label: 'Pull & Taste', icon: 'coffee', actions: ['Run one reference shot', 'Track shot time', 'Note sour/bitter balance', 'Ignore tiny noise'], time: '~1 min' },
+      { label: 'Adjust Grind', icon: 'wrench', actions: ['Sour/fast: go finer', 'Bitter/slow: go coarser', 'Change one click only', 'Retest immediately'], time: '~1 min' },
+      { label: 'Log & Maintain', icon: 'calendar', actions: ['Save bean + setting', 'Track drift over days', 'Brush burr area weekly', 'Deep clean monthly'], time: 'ongoing' },
     ]}
-    outcome="Repeatable espresso shots with less waste and clearer flavor feedback."
-    footer="coffeegearlab.com - practical dial-in guide - 2026"
+    outcome="More consistent extraction, less wasted coffee, and faster recovery when beans or weather change."
+    footer="coffeegearlab.com · espresso dial-in workflow · 2026"
   />
-
-  <p><strong>Quick answer:</strong> Start at 18g in and 36g out, then target roughly 25 to 32 seconds. If the shot runs fast and tastes sour, go slightly finer; if it runs slow and tastes bitter, go slightly coarser. Keep dose and yield fixed while dialing grind size so every change is clear.</p>
 
   <Toc
     items={[
-      { href: '#what-youll-need', label: "What you'll need" },
-      { href: '#steps', label: 'Step-by-step dial-in process' },
-      { href: '#common-mistakes', label: 'Common mistakes to avoid' },
+      { href: '#quick-answer', label: 'Quick answer' },
+      { href: '#what-you-need', label: "What you'll need" },
+      { href: '#step-by-step', label: 'Numbered dial-in steps' },
+      { href: '#common-mistakes', label: 'Common mistakes' },
       { href: '#faq', label: 'Frequently asked questions' },
     ]}
   />
 
-  <h2 id="what-youll-need">What you'll need</h2>
-  <p>Before you change settings, set up a stable process. You need fresh beans, a digital scale, a consistent puck prep routine, and a grinder that can hold a precise espresso range. If your grinder steps are too wide, you can still dial in good shots, but the process takes more back-and-forth. Precision matters most when coffee ages across the week and your recipe drifts.</p>
+  <h2 id="quick-answer">Quick answer</h2>
+  <p>Start around 18g in and 36g out, then target roughly 25 to 32 seconds as your timing window. If your shot runs fast and tastes sour, move slightly finer. If your shot runs slow and tastes bitter, move slightly coarser. Keep dose and yield fixed while dialing so each grind move is easy to interpret.</p>
+
+  <h2 id="what-you-need">What you'll need</h2>
+  <p>You need fresh beans, a scale that reads to 0.1g, a consistent puck prep routine, and a grinder with enough fine-range control for espresso. The more stable your routine, the easier it is to identify whether the grinder setting is truly wrong or if prep drift caused the issue.</p>
+  <p>For workflow context, compare our <a href="/posts/best-burr-grinder-for-espresso.html">best burr grinder for espresso</a> roundup and our <a href="/posts/best-hand-grinder-for-espresso-under-100.html">best hand grinder for espresso under $100</a> guide. If your machine is the limiting factor, check <a href="/posts/best-espresso-machine-under-200.html">best espresso machine under $200</a> as well.</p>
 
   <QuickPicks>
     {tools.map((tool, idx) => (
       <ProductCard
         title={tool.name}
-        image={{ src: tool.image, alt: `${tool.name} burr grinder`, width: 500, height: 500 }}
+        image={{ src: tool.image, alt: `${tool.name} espresso burr grinder`, width: 500, height: 500 }}
         badge={tool.badge}
         rating={{ score: idx === 0 ? 4.5 : idx === 1 ? 4.4 : 4.6 }}
-        price={idx === 2 ? '$$$' : '$$'}
-        ctaUrl={`https://www.amazon.com/dp/${tool.asin}/ref=nosim?tag=coffee-site-20`}
+        price={tool.priceTier}
+        ctaUrl={amazonUrl(tool.asin)}
         featured={idx === 0}
       />
     ))}
   </QuickPicks>
 
   <ComparisonTable
-    timestamp="Prices updated: March 10, 2026"
-    headers={['Grinder', 'Best for', 'Adjustment style', 'Dial-in note', '']}
-    ariaLabel="Espresso grinder settings quick comparison"
+    timestamp="Prices updated: March 11, 2026"
+    headers={['Grinder', 'Best for', 'Adjustment', 'Dial-in note', '']}
+    ariaLabel="Espresso grinder settings comparison"
   >
     <table>
       <thead>
         <tr>
           <th>Grinder</th>
           <th>Best for</th>
-          <th>Adjustment style</th>
+          <th>Adjustment</th>
           <th>Dial-in note</th>
           <th></th>
         </tr>
@@ -239,11 +244,11 @@ const jsonLd = {
         {tools.map((tool) => (
           <tr>
             <td data-label="Grinder">{tool.name}</td>
-            <td data-label="Best for"><BestForBadge label={tool.badge.label} variant={tool.badge.variant} /></td>
-            <td data-label="Adjustment style">{tool.range}</td>
+            <td data-label="Best for">{tool.bestFor}</td>
+            <td data-label="Adjustment">{tool.adjustment}</td>
             <td data-label="Dial-in note">{tool.note}</td>
             <td data-label="Link">
-              <CtaButton href={`https://www.amazon.com/dp/${tool.asin}/ref=nosim?tag=coffee-site-20`} size="sm" external>
+              <CtaButton href={amazonUrl(tool.asin)} size="sm" external>
                 Check Price
               </CtaButton>
             </td>
@@ -253,76 +258,128 @@ const jsonLd = {
     </table>
   </ComparisonTable>
 
-  <p>Need scale recommendations for repeatable input weight? Start with our <a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">best coffee scale for espresso and pour over guide</a>. If you are still choosing equipment, compare this workflow with our <a href="/posts/best-burr-grinder-for-espresso.html">best burr grinder for espresso roundup</a> and <a href="/posts/best-espresso-machine-under-200.html">best espresso machine under $200 picks</a>.</p>
+  <!-- IMAGE_PLACEHOLDER
+  type: workflow
+  slug: burr-grinder-settings-for-espresso
+  filename: burr-grinder-settings-for-espresso-workflow-2026.svg
+  alt: "Four-step espresso dial-in loop from baseline to maintenance"
+  concept: "Warm editorial diagram showing baseline, pull, adjust, and log steps in a circular flow with subtle grinder iconography"
+  width: 1200
+  height: 675
+  -->
+  <HeroMedia
+    src={`/assets/images/${slug}-workflow-2026.svg`}
+    alt="Four-step espresso dial-in loop from baseline to maintenance"
+    width={1200}
+    height={675}
+    caption="Use this loop each time you open a new bag to reduce trial-and-error shots."
+  />
 
-  <h2 id="steps">Numbered steps to dial in burr grinder settings for espresso</h2>
+  <h2 id="step-by-step">Numbered steps to dial in burr grinder settings for espresso</h2>
 
-  <h3>Step 1: Lock a baseline recipe before touching grind size</h3>
-  <p>Start with one baseline recipe and resist changing everything at once. A reliable launch point for most home espresso setups is 18 grams of ground coffee in and 36 grams of espresso out. Keep brew temperature and puck prep the same across test shots. This gives you clean cause-and-effect feedback when you move the grinder.</p>
-  <p>If you jump between dose, yield, and grind together, you create noise. You might still land a good shot, but you will not know why it worked. That makes repeatability harder tomorrow. The fastest path is controlled variables plus small, trackable grinder changes.</p>
+  <h3>Step 1: Lock one baseline recipe first</h3>
+  <p>Pick a single baseline recipe before touching grind: 18g in, 36g out is a strong starting point for most home espresso setups. Keep water temperature, puck prep, and tamp pressure consistent. When variables stay fixed, grinder changes become meaningful instead of random.</p>
 
-  <h3>Step 2: Pull one reference shot and classify the result</h3>
-  <p>Once your baseline is set, pull one reference shot and write down three things: time, taste, and texture. Think in simple buckets: sour/fast, balanced, or bitter/slow. This keeps your next adjustment obvious. A shot that runs in 20 seconds and tastes sharp usually needs a finer grind. A shot that drags past 35 seconds with a dry finish usually needs a coarser grind.</p>
-  <p>Do not chase tiny differences yet. You are trying to move into the right zone first. After one or two bigger corrections, then you can tighten with smaller clicks or stepless nudges.</p>
+  <h3>Step 2: Pull one reference shot and classify it</h3>
+  <p>Run one shot and write down time plus taste. Keep your language simple: sour/fast, balanced, or bitter/slow. That gives immediate direction. Sour and fast usually means finer. Bitter and slow usually means coarser. Resist over-correcting after one imperfect pull.</p>
 
-  <h3>Step 3: Adjust one variable only in small increments</h3>
-  <p>On stepped grinders, move one click at a time. On stepless grinders, make very small collar movements, then pull another shot with the same dose and yield. If you make aggressive jumps, you often overshoot and bounce between sour and bitter. Small moves save beans and reduce frustration.</p>
-  <p>When you get close to target, focus more on taste than raw seconds. A balanced shot at 24 seconds may beat a harsh shot at 29 seconds if your beans are more soluble. Use time as a guardrail, not a rigid law.</p>
+  <h3>Step 3: Make tiny adjustments and retest</h3>
+  <p>On stepped grinders, move one click at a time. On stepless collars, make very small nudges and retest. Big jumps often overshoot and waste beans. As you approach balance, prioritize flavor clarity and sweetness over forcing one exact shot time.</p>
 
-  <h3>Step 4: Save your setting and maintenance rhythm</h3>
-  <p>After you hit a good extraction window, log the setting with bean name and roast date. Keep separate notes for each coffee you use often. This short habit saves time whenever you open a new bag or rotate between blends and single origins.</p>
-  <p>Maintenance matters too. Retention and stale fines shift grinder behavior over time, which can make your old setting feel wrong. A quick brush routine and regular deep clean keep dial-in stable. If you need a deeper cleanup process, use our <a href="/posts/how-to-clean-burr-coffee-grinder.html">step-by-step burr grinder cleaning guide</a>.</p>
+  <h3>Step 4: Save your setting and maintenance cadence</h3>
+  <p>Once you land in a good zone, log the setting with bean name and date. Beans degas, humidity shifts, and retention buildup all push extraction around during the week. A short log plus regular cleaning makes your next dial-in faster and more accurate.</p>
 
-  <h3>Pros and cons of this dial-in method</h3>
   <ProsCons
     pros={[
-      'Works across stepped and stepless burr grinders.',
-      'Cuts wasted beans by isolating one variable at a time.',
-      'Makes your future dial-ins faster through simple notes.',
+      'Works with stepped and stepless espresso grinders.',
+      'Cuts bean waste by changing one variable at a time.',
+      'Builds a reusable dial-in record for future bags.',
     ]}
     cons={[
-      'Requires patience for the first few sessions.',
-      'Needs a scale and consistent puck prep to work well.',
-      'Bean changes can still force fresh adjustments mid-week.',
+      'Requires a little patience in early sessions.',
+      'Needs a reliable scale and consistent puck prep.',
+      'Roast changes still require fresh micro-adjustments.',
     ]}
   />
 
   <BuyingGuideSection>
-    <h2>How grinder style changes your settings workflow</h2>
-    <p>Stepped grinders are easier for most beginners because each move is explicit and repeatable. Stepless grinders offer finer control when you are chasing narrow extraction windows, but they ask for more deliberate workflow. Neither style is automatically better. The right option depends on how much time you want to spend tuning and how often you switch coffees.</p>
-    <p>If you rotate beans often, low-retention single-dose grinders usually feel more predictable because less old coffee stays in the burr path. If you brew the same bean every morning, a hopper-first grinder can be faster. Match your grinder to your routine, not to spec-sheet hype.</p>
+    <h2>How grinder type changes your espresso settings workflow</h2>
+    <p>Stepped grinders are easier for most beginners because each move is explicit and repeatable. Stepless grinders allow finer correction, which is useful when you are chasing narrow flavor windows. The right choice depends less on hype and more on your daily routine.</p>
+    <p>If you rotate coffees often, low-retention designs reduce carryover and usually make setting changes feel cleaner. If you run one house blend daily, a simpler hopper workflow can be faster. Match workflow to habits, then optimize from there.</p>
 
     {tools.map((tool) => (
       <section>
-        <h3>{tool.name}: workflow profile</h3>
-        <p>{tool.note} This model suits users who want {tool.bestFor.toLowerCase()} while still keeping a practical daily espresso routine.</p>
-        <p><CtaButton href={`https://www.amazon.com/dp/${tool.asin}/ref=nosim?tag=coffee-site-20`} external>Check {tool.name} on Amazon</CtaButton></p>
+        <h3>{tool.name}: practical dial-in profile</h3>
+        <ProductCard
+          title={tool.name}
+          image={{ src: tool.image, alt: `${tool.name} burr grinder for espresso`, width: 500, height: 500 }}
+          badge={tool.badge}
+          price={tool.priceTier}
+          ctaUrl={amazonUrl(tool.asin)}
+        />
+        <p>{tool.note} This is a strong fit for brewers prioritizing {tool.bestFor.toLowerCase()}.</p>
         <ProsCons pros={tool.pros} cons={tool.cons} />
+        <p>
+          <CtaButton href={amazonUrl(tool.asin)} external>
+            Check {tool.name} on Amazon
+          </CtaButton>
+        </p>
       </section>
     ))}
   </BuyingGuideSection>
 
-  <h2 id="common-mistakes">Common mistakes to avoid</h2>
-  <h3>Changing dose, yield, and grind all at once</h3>
-  <p>This is the fastest way to lose signal. Keep dose and yield fixed first, then move grind. Once flavor stabilizes, you can fine-tune other variables.</p>
+  <h2 id="common-mistakes">Common mistakes that make espresso dial-in harder</h2>
 
-  <h3>Ignoring bean age and environment shifts</h3>
-  <p>Beans degas and humidity moves extraction behavior. If your setting drifted after a few days, that is normal. Make a small correction and retest instead of resetting your entire recipe.</p>
+  <h3>Changing dose, yield, and grind at the same time</h3>
+  <p>When all three move together, you lose cause-and-effect clarity. Keep dose and yield fixed first so grind changes are readable.</p>
 
-  <h3>Skipping grinder maintenance</h3>
-  <p>Old fines and coffee oils build up quickly in espresso ranges. That buildup can make your shot times inconsistent even if your puck prep is solid. Clean lightly every few days and deep-clean monthly.</p>
+  <h3>Ignoring bean age drift</h3>
+  <p>As beans rest after opening, flow can speed up. That usually means a small move finer, not a full recipe reset.</p>
 
-  <h3>Assuming one setting works for all roasts</h3>
-  <p>Light roasts usually need finer settings than darker roasts for similar extraction. Keep separate notes by coffee so you can recover good ranges immediately.</p>
+  <h3>Skipping grinder cleaning</h3>
+  <p>Retention and oil buildup can mimic bad settings. A quick weekly brush and monthly deep clean often restores consistency.</p>
 
-  <h2>Example dial-in log you can copy</h2>
-  <p>A simple dial-in log beats memory every time. Keep one note per bag with date, dose, yield, shot time, and taste. Here is a practical structure: Day 1 starts at 18g in, 36g out, 22 seconds, sour finish, then one click finer. Day 2 lands at 26 seconds, balanced sweetness, and mild acidity. Day 4 drifts to 23 seconds because the coffee degassed, so you move one click finer again. This pattern is normal and helps you avoid full resets.</p>
-  <p>When you switch to a new coffee, copy your last stable recipe and adjust from there. Lighter coffees often need finer settings and slightly longer contact time to build sweetness. Darker coffees often run better a touch coarser to avoid bitter, hollow finish. Treat the log as a map, not a strict formula. The value is speed and consistency, not perfect numbers.</p>
-  <p>If you are sharing one grinder across multiple people, agree on named presets. For example: "Morning blend espresso" and "Weekend light roast." Put those labels near the grinder so settings do not drift without tracking. That one habit reduces accidental changes and saves both beans and time.</p>
+  <h3>Trying one universal setting for every roast</h3>
+  <p>Lighter roasts often need finer settings; darker roasts often like slightly coarser settings. Keep notes by bean so adjustments stay fast.</p>
 
-  <h2>Roast-level adjustment cheat sheet</h2>
-  <p>Roast level shifts your ideal grind zone even with the same machine and basket. As a quick rule, lighter roasts usually need finer grind and careful puck prep to avoid thin acidity. Medium roasts are usually the easiest baseline and often sit near the center of your espresso range. Dark roasts generally extract faster, so slightly coarser settings can improve clarity and prevent harsh bitterness.</p>
-  <p>Do not force every roast into the same timing target if taste says otherwise. A medium roast that tastes balanced at 24 seconds is better than a bitter 30-second shot you forced to match a rule. Use shot time as a structure, then make taste the final call. If your grinder has micro-adjust support, this is where it helps most: tiny changes to keep sweetness while preserving texture.</p>
+  <!-- IMAGE_PLACEHOLDER
+  type: diagram
+  slug: burr-grinder-settings-for-espresso
+  filename: burr-grinder-settings-for-espresso-roast-adjustments-2026.svg
+  alt: "Roast-level adjustment map for espresso grind settings"
+  concept: "Three-column warm-tone diagram showing light, medium, and dark roast adjustment tendencies with directional arrows"
+  width: 1200
+  height: 675
+  -->
+  <HeroMedia
+    src={`/assets/images/${slug}-roast-adjustments-2026.svg`}
+    alt="Roast-level adjustment map for espresso grind settings"
+    width={1200}
+    height={675}
+    caption="Use this roast-level map as a quick correction heuristic before micro-tuning by taste."
+  />
+
+  <p>If your adjustments still feel random, run through our <a href="/posts/how-to-clean-burr-coffee-grinder.html">burr grinder cleaning guide</a> first, then repeat the baseline process. Many inconsistencies come from retention or prep drift rather than the grinder itself.</p>
+
+  <h2>Shot-time troubleshooting matrix</h2>
+  <p>When espresso goes off target, treat grind size as the first correction lever and keep everything else locked. If your shot lands under about 24 seconds and tastes sharp or thin, you are usually too coarse for that coffee. Move slightly finer and repeat without changing dose. If your shot pushes beyond roughly 33 seconds and tastes bitter or astringent, you are usually too fine. Move slightly coarser and run the same recipe again.</p>
+  <p>Texture clues help too. A shot that blondes early with weak body often needs a finer setting or better puck prep consistency. A shot that drips slowly with dark, syrupy flow but hollow finish often points to over-extraction from an overly fine setting. Keep corrections small, because large jumps can skip past the sweet spot and force extra shots.</p>
+  <p>Distribution and tamp consistency still matter, but changing those every pull makes diagnosis harder. Keep your prep routine steady for at least three attempts while adjusting only grind size. Once flavor is close, then use micro-corrections to balance sweetness, acidity, and finish length.</p>
+
+  <h2>Daily, weekly, and monthly grinder routine</h2>
+  <p><strong>Daily:</strong> Brush the chute exit and wipe the hopper lip to reduce oil buildup. This takes less than two minutes and prevents stale residue from distorting flavor. If your grinder is single-dose, purge a tiny sacrificial amount when switching beans so old grounds do not contaminate the next shot.</p>
+  <p><strong>Weekly:</strong> Remove the hopper and dry-brush accessible burr surfaces. Check for compacted fines around the collar threads or chute corners. Those areas commonly cause inconsistent flow, especially if humidity changes through the week. Reassemble carefully and confirm your reference setting before the next shot.</p>
+  <p><strong>Monthly:</strong> Do a deeper clean with full burr access according to manufacturer guidance. Re-zero if your grinder supports it, then run one baseline recipe to re-anchor your notes. If your previous setting no longer behaves similarly after deep cleaning, that is normal; fresh burr chambers often need small readjustments.</p>
+
+  <h2>How roast level and freshness shift your setting</h2>
+  <p>Roast level changes extraction behavior even on the same machine and basket. Lighter roasts generally need finer settings to build sweetness and body. Medium roasts usually sit near your baseline window and are the easiest place to calibrate process. Darker roasts often need a slightly coarser approach to avoid dry bitterness and muddy texture.</p>
+  <p>Freshness matters as much as roast. Very fresh beans can produce excess gas and uneven early flow, then settle after several days. Older beans can run faster and flatter, requiring a move finer to regain intensity. None of this means your grinder is inconsistent; it means coffee is a moving ingredient and small corrections are part of normal workflow.</p>
+  <p>The best way to stay consistent is to log one stable setting per bean and update from that anchor rather than restarting from zero each bag. This keeps your dial-in time short and reduces waste when switching between weekday and weekend coffees.</p>
+
+  <h2>Example dial-in log format</h2>
+  <p>A simple log can be enough: date, bean name, roast date, grinder setting, dose, yield, shot time, and taste notes. For example: Day 1 at setting 9 gives 18g in / 36g out in 22 seconds with sour finish. Day 2 at setting 8 gives 26 seconds with better sweetness. Day 4 drifts to 23 seconds as beans degas, so you move to setting 7.5 and regain balance.</p>
+  <p>Use short tasting language so patterns are obvious. Terms like "sharp," "thin," "balanced," and "dry" are enough to guide the next adjustment. Long tasting prose is less useful than consistent, repeatable tags tied to shot time and setting changes. The goal is to speed up correction decisions, not build a complicated cupping notebook.</p>
+  <p>If multiple people use the same grinder, label saved ranges by coffee name near the grinder itself. Shared setups drift quickly when someone changes settings without logging. A one-line note card can prevent major jumps and keep everyone inside usable espresso ranges.</p>
 
   <h2 id="faq">Frequently asked questions</h2>
   <FaqAccordion>

@@ -8,11 +8,11 @@ secondary_keywords:
 - automatic grind and brew coffee maker
 - single serve coffee maker with grinder
 - programmable grind and brew coffee maker
-status: design
+status: qa
 created_by: strategist
 created_at: '2026-03-08T09:30:00+07:00'
 writer_completed_at: "2026-03-11T14:18:52.171Z"
-qa_result: null
+qa_result: pass
 qa_rejection_reason: null
 designer_completed_at: '2026-03-10T21:47:00+07:00'
 deployed_url: https://coffee-gear-lab-dev.onrender.com/posts/best-coffee-maker-with-grinder.html

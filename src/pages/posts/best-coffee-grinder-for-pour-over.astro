@@ -10,7 +10,7 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroPicks from '../../components/HeroPicks.astro';
+import HeroMedia from '../../components/HeroMedia.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -176,16 +176,21 @@ const jsonLd = {
   <h1>Best Coffee Grinder for Pour Over (2026): 7 Researched Picks</h1>
   <p class="lead">The best coffee grinder for pour over should make your morning cups cleaner, sweeter, and easier to repeat. We compared seven researched options based on grind consistency, fines control, retention, static behavior, and day-to-day workflow fit.</p>
 
-  <HeroPicks
-    title="4 Pour-Over Grinders Worth Your Money"
-    subtitle="Picked for cup clarity, fines control, and practical daily brewing workflow"
-    picks={[
-      { category: 'Budget', tagline: 'Best value entry point', icon: 'dollar', color: '#059669', features: ['Accessible price point', 'Beginner-friendly controls', 'Decent coarse-to-medium range', 'Low learning curve'], topPick: 'TIMEMORE Chestnut C2', price: '$', subtitle: 'Affordable starter grinder', asin: 'B0833SDN8M' },
-      { category: 'Clarity', tagline: 'Best cup separation and sweetness', icon: 'target', color: '#2C1810', features: ['Flat burr clarity', 'Low retention design', 'Single-dose workflow', 'Filter-optimized range'], topPick: 'Fellow Ode Gen 2', price: '$$$', subtitle: 'Pour-over clarity leader', asin: 'B0BLRMCM9Y' },
-      { category: 'Manual', tagline: 'Premium hand-ground pour over', icon: 'hand', color: '#7A5B4A', features: ['Excellent uniformity', 'Low retention path', 'Travel-friendly size', 'Quiet operation'], topPick: '1Zpresso K-Ultra', price: '$$$', subtitle: 'Top manual pick', asin: 'B0CC4LXF1Z' },
-      { category: 'Compact', tagline: 'Best for small kitchens', icon: 'volume-x', color: '#8B6F47', features: ['Small counter footprint', 'Broad brew range', 'Filter and espresso flex', 'Low retention for home use'], topPick: 'Fellow Opus', price: '$$', subtitle: 'Space-saving all-rounder', asin: 'B0BV96VPSR' },
-    ]}
-    footer="coffeegearlab.com - pour-over grinders - 2026"
+  <!-- IMAGE_PLACEHOLDER
+  type: hero
+  slug: best-coffee-grinder-for-pour-over
+  filename: best-coffee-grinder-for-pour-over-hero-2026.svg
+  alt: "Editorial comparison of seven pour-over coffee grinders by workflow and budget tier"
+  concept: "Warm-toned editorial composition showing abstract grinder silhouettes, brew dripper icons, and tiered labels for budget, value, and premium choices"
+  width: 1200
+  height: 675
+  -->
+  <HeroMedia
+    src="/assets/images/best-coffee-grinder-for-pour-over-hero-2026.svg"
+    alt="Editorial comparison of seven pour-over coffee grinders by workflow and budget tier"
+    width={1200}
+    height={675}
+    caption="Our 2026 researched picks across manual and electric pour-over grinder workflows."
   />
 
   <p><strong>Quick answer:</strong> If you want the best all-around pour-over result, choose Fellow Ode Gen 2. If you want better value and occasional espresso flexibility, Baratza Encore ESP is the practical buy. If you prefer hand grinding, 1Zpresso K-Ultra is the strongest manual option in this lineup.</p>
@@ -488,6 +493,7 @@ const jsonLd = {
   <h3>Final decision shortcut</h3>
   <p>If you are stuck between two models, choose the one that better matches your weekday routine, not your weekend hobby mood. The grinder you will actually use consistently is the grinder that will make better coffee over time. For most people in this roundup, that means Fellow Ode Gen 2 for best overall pour-over focus, Baratza Encore ESP for value and flexibility, or 1Zpresso K-Ultra for premium manual performance.</p>
   <p>Before you buy, also check practical ownership details: burr replacement cost, local warranty support, hopper or dosing workflow, and whether the grinder fits your real counter space. These details do not look exciting in comparison charts, but they determine whether a grinder stays enjoyable six months from now.</p>
+  <p>One more practical tip: buy fresh beans and a small notebook before you buy accessories. A $6 notebook that tracks dose, grind setting, and brew time often improves consistency faster than new gear. Better inputs and repeatable habits make every grinder in this guide perform closer to its potential, while random process changes can make even premium burr sets feel disappointing.</p>
 
   <BuyingGuideSection>
     <h2 id="buying-guide">Buying guide: how to choose the best grinder for your pour-over setup</h2>

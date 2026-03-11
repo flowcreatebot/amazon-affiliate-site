@@ -255,6 +255,9 @@ a:hover { text-decoration-thickness: 2px; }
 .product-card__body .cta-button {
   margin-top: auto;
 }
+.product-card__price + .cta-button {
+  margin-top: 0;
+}
 .product-card__title {
   font-size: 1.15rem;
   font-weight: 700;
@@ -266,6 +269,7 @@ a:hover { text-decoration-thickness: 2px; }
   font-weight: 600;
   color: var(--brand-800);
   margin: 0;
+  margin-top: auto;
 }
 .product-card.--featured {
   border: 2px solid var(--cta);

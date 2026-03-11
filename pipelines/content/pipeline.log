@@ -228,3 +228,12 @@
 2026-03-11T14:18:52.169+00:00 | writer | PREQA_PASS | best-coffee-maker-with-grinder | checks:C01,S02,C04,C05,C06,C07,C08,S07,L01,L02b,D03
 2026-03-11T14:18:52.172+00:00 | writer | MOVED | best-coffee-maker-with-grinder | rejected/ → design/ | source:rejected
 2026-03-11T14:31:45.474+00:00 | image-agent | MOVED | best-manual-coffee-grinder-under-100 | rework/ → design/ | source:rework
+2026-03-11T14:56:06.766+00:00 | writer | PREQA_PASS | best-coffee-grinder-for-pour-over | checks:C01,S02,C04,C05,C06,C07,C08,S07,L01,L02b,D03
+2026-03-11T14:56:06.769+00:00 | writer | MOVED | best-coffee-grinder-for-pour-over | rejected/ → images/ | source:rejected
+2026-03-11T15:00:47.636+00:00 | writer | PREQA_PASS | burr-grinder-settings-for-espresso | checks:C01,S02,C04,C05,C06,C07,C08,S07,L01,L02b,D03
+2026-03-11T15:00:47.639+00:00 | writer | MOVED | burr-grinder-settings-for-espresso | rejected/ → design/ | source:rejected
+2026-03-11T15:02:38.280+00:00 | image-agent | MOVED | best-single-serve-coffee-maker-with-grinder | rework/ → design/ | source:rework
+2026-03-11T15:07:36.284+00:00 | qa | MOVED | best-coffee-maker-with-grinder | design/ → qa/ | source:design
+2026-03-11T15:09:48.533+00:00 | writer | PREQA_PASS | how-to-clean-burr-coffee-grinder | checks:C01,S02,C04,C05,C06,C07,C08,S07,L01,L02b,D03
+2026-03-11T15:09:48.536+00:00 | writer | MOVED | how-to-clean-burr-coffee-grinder | rejected/ → design/ | source:rejected
+2026-03-11T15:18:39.037+00:00 | qa | MOVED | best-drip-coffee-maker-under-100 | design/ → rejected/ | FAIL:C04,C05

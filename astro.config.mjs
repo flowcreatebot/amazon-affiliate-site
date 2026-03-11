@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import preact from '@astrojs/preact';
 
 export default defineConfig({
   site: 'https://coffeegearpicks.com',
@@ -8,4 +9,5 @@ export default defineConfig({
     format: 'preserve',
   },
   trailingSlash: 'never',
+  integrations: [preact()],
 });

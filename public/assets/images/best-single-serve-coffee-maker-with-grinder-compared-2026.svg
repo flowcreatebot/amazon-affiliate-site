@@ -1,30 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">Best Single-Serve Coffee Maker with Grinder Compared 2026</title>
-  <desc id="desc">Editorial comparison graphic for single-serve grind and brew coffee makers by speed, cleanup, and pod compatibility.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1f2937"/>
-      <stop offset="100%" stop-color="#111827"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#f59e0b"/>
-      <stop offset="100%" stop-color="#f97316"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="675" fill="url(#bg)"/>
-  <rect x="72" y="84" width="1056" height="507" rx="24" fill="#0b1220" stroke="#374151"/>
-  <text x="108" y="170" fill="#f9fafb" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700">Best Single-Serve Coffee Makers with Grinder (2026)</text>
-  <text x="108" y="214" fill="#d1d5db" font-family="Arial, Helvetica, sans-serif" font-size="28">Ranked by cup quality, brew speed, cleanup effort, and pod flexibility</text>
+  <title id="title">Single-serve coffee maker workflow comparison illustration</title>
+  <desc id="desc">Warm editorial diagram comparing speed, cleanup effort, and brew flexibility for single-serve coffee routines.</desc>
+  <rect width="1200" height="675" fill="#FAF8F5" />
 
-  <rect x="108" y="262" width="984" height="10" rx="5" fill="url(#accent)"/>
+  <rect x="56" y="56" width="1088" height="563" rx="24" fill="#F5EDE4" stroke="#EFDFCE" stroke-width="2" />
 
-  <g font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#e5e7eb">
-    <text x="108" y="332">• Best Overall: Cuisinart Grind &amp; Brew Single-Serve</text>
-    <text x="108" y="378">• Best Budget: BLACK+DECKER Single Serve Mill &amp; Brew</text>
-    <text x="108" y="424">• Best Burr Flavor: Breville Grind Control (Single Cup Mode)</text>
-    <text x="108" y="470">• Best Pod Flexibility: Cuisinart SS-GB1</text>
-    <text x="108" y="516">• Best Minimal Cleanup: Gevi 4-in-1 Grind &amp; Brew</text>
-  </g>
+  <text x="96" y="132" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="46" font-weight="800">
+    Single-Serve Coffee Maker Workflow Comparison
+  </text>
+  <text x="96" y="172" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400">
+    Visual guide to balancing speed, cleanup, and brew flexibility in daily use
+  </text>
 
-  <text x="108" y="566" fill="#9ca3af" font-family="Arial, Helvetica, sans-serif" font-size="22">Coffee Gear Lab editorial comparison • March 2026</text>
+  <rect x="96" y="198" width="1008" height="4" rx="2" fill="#059669" />
+
+  <rect x="96" y="236" width="312" height="292" rx="12" fill="#FAF8F5" stroke="#EFDFCE" />
+  <circle cx="132" cy="280" r="14" fill="#059669" />
+  <text x="160" y="287" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700">Speed-first</text>
+  <text x="120" y="332" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="400">• One-cup routine in minutes</text>
+  <text x="120" y="366" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="400">• Fewer button presses</text>
+  <text x="120" y="400" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="400">• Best for rushed mornings</text>
+  <rect x="120" y="438" width="264" height="66" rx="12" fill="#EFDFCE" />
+  <text x="138" y="476" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600">Priority: brew time</text>
+
+  <rect x="444" y="236" width="312" height="292" rx="12" fill="#FAF8F5" stroke="#EFDFCE" />
+  <circle cx="480" cy="280" r="14" fill="#059669" />
+  <text x="508" y="287" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700">Cleanability</text>
+  <text x="468" y="332" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="400">• Quick rinse touchpoints</text>
+  <text x="468" y="366" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="400">• Easy grinder path access</text>
+  <text x="468" y="400" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="400">• Lower daily friction</text>
+  <rect x="468" y="438" width="264" height="66" rx="12" fill="#EFDFCE" />
+  <text x="486" y="476" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600">Priority: upkeep</text>
+
+  <rect x="792" y="236" width="312" height="292" rx="12" fill="#FAF8F5" stroke="#EFDFCE" />
+  <circle cx="828" cy="280" r="14" fill="#059669" />
+  <text x="856" y="287" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700">Flexibility</text>
+  <text x="816" y="332" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="400">• Beans + grounds + pod modes</text>
+  <text x="816" y="366" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="400">• Better for mixed households</text>
+  <text x="816" y="400" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="400">• Wider routine coverage</text>
+  <rect x="816" y="438" width="264" height="66" rx="12" fill="#EFDFCE" />
+  <text x="834" y="476" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600">Priority: options</text>
+
+  <text x="96" y="580" fill="#7A5B4A" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="400">
+    Coffee Gear Lab · Editorial workflow graphic · 2026
+  </text>
 </svg>

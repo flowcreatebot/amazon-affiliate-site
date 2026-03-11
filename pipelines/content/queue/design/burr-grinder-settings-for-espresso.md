@@ -7,20 +7,18 @@ secondary_keywords:
   - "grinder dial in espresso"
   - "espresso grind size"
   - "how to set grinder for espresso"
-status: rejected
+status: design
 source: backfill
 priority_rank: 14
 created_by: manual
 created_at: "2026-03-08T12:00:00+07:00"
-writer_completed_at: "2026-03-10T17:18:47+07:00"
+writer_completed_at: "2026-03-11T15:00:47.638Z"
 image_agent_completed_at: "2026-03-11T00:01:00+07:00"
 images_created:
   - "burr-grinder-settings-for-espresso-hero-2026.svg"
-qa_result: fail
-qa_rejection_reason: "FAIL:S02"
-qa_rejection_details:
-  - "S02: meta description length is 161 chars (must be 120-160) at src/pages/posts/burr-grinder-settings-for-espresso.astro:19"
-rejection_stages: [drafts]
+qa_result: null
+qa_rejection_reason: null
+qa_rejection_details: null
 designer_completed_at: "2026-03-11T05:48:41+07:00"
 deployed_url: null
 asins_verified:

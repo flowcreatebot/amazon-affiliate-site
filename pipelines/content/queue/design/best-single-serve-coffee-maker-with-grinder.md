@@ -7,7 +7,7 @@ secondary_keywords:
   - "one cup coffee maker with grinder"
   - "bean to cup single serve"
   - "single serve coffee maker with built in grinder"
-status: rework
+status: design
 source: backfill
 priority_rank: 5
 created_by: manual
@@ -27,10 +27,9 @@ asins_verified:
   - "B0F3ZSVPPG"
   - "B09NRYX5K7"
 word_count: 2018
-rework_stages: [images]
-rework_reason: "The images are terrible on these, we need to redo them. The writer should make them as placeholders and the image agent should do the images again."
-rework_initiated_by: dashboard
-rework_initiated_at: "2026-03-10T15:16:23.866Z"
+image_agent_completed_at: "2026-03-11T15:02:38.278Z"
+images_created:
+  - "best-single-serve-coffee-maker-with-grinder-compared-2026.svg"
 ---
 
 # Brief: Best Single-Serve Coffee Maker with Grinder (Phase 1.5 Refresh)

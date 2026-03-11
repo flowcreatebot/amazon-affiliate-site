@@ -7,16 +7,15 @@ secondary_keywords:
 - burr grinder cleaning
 - coffee grinder maintenance
 - grinder cleaning tablets
-status: rejected
+status: design
 source: backfill
 priority_rank: 13
 created_by: manual
 created_at: '2026-03-08T12:00:00+07:00'
-writer_completed_at: '2026-03-10T19:20:57+07:00'
-qa_result: fail
-qa_rejection_reason: 'FAIL:D03'
-qa_rejection_details: 'D03: HeroMedia img configured with loading="eager" in src/pages/posts/how-to-clean-burr-coffee-grinder.astro (HeroMedia props block under h1); checklist requires loading="lazy" for every <img>.'
-rejection_stages: [drafts]
+writer_completed_at: "2026-03-11T15:09:48.535Z"
+qa_result: null
+qa_rejection_reason: null
+qa_rejection_details: null
 designer_completed_at: '2026-03-11T09:43:00+07:00'
 image_agent_completed_at: '2026-03-11T00:03:33+07:00'
 images_created:
