@@ -35,7 +35,7 @@ backfill → briefs → drafts → images → design → qa → published
 
 - **Backfill** — Pre-generated briefs for legacy pages that need rewriting. The feeder agent promotes them to `briefs/` on a schedule (2 at a time, lowest priority_rank first), gated by a "briefs >= 3 → stop" guardrail.
 
-- **Priority order** — Every agent checks rework first, then rejected, then their normal input queue. Within each, oldest item first.
+- **Priority order** — Every agent checks rework first, then rejected, then their normal input queue. Within each, oldest item first. All picking and routing is handled programmatically by `pipeline-pick.sh` and `pipeline-router.sh`.
 
 ### Who does what
 
@@ -134,15 +134,29 @@ All under `pipelines/content/queue/` relative to the project root:
 - Always append to `pipeline.log` AFTER moving
 - The Astro source file stays at `src/pages/posts/{slug}.astro` — only the queue tracking file moves
 
-### Priority Rules
+### Priority Rules (enforced by `pipeline-pick.sh`)
 
-- **Writer:** 1) `rework/` items with "drafts" in `rework_stages`, 2) `rejected/` items with "drafts" in `rejection_stages`, 3) `briefs/`.
-- **Image Agent:** 1) `rework/` items with "images" in `rework_stages`, 2) `rejected/` items with "images" in `rejection_stages`, 3) `drafts/`.
-- **Designer:** 1) `rework/` items with "design" in `rework_stages`, 2) `rejected/` items with "design" in `rejection_stages`, 3) `images/`.
-- **All stations:** Pick the OLDEST file when multiple are available (by `created_at` or file modification time).
-- **Strategist guardrail:** If `briefs/` has 5+ files, reply `NO_REPLY` (pipeline is backed up).
-- **Duplicate-slug guardrail:** If a candidate slug already exists in `queue/published/`, strategist/feeder must run `python3 scripts/validate-refresh-override.py queue/{stage}/{slug}.md`; only proceed when `refresh_override: true` is set in frontmatter.
-- **Empty queue:** If a station's input queue is empty, reply `NO_REPLY`.
+All picking is handled by `bash scripts/pipeline-pick.sh <stage>`. The script enforces:
+- **Priority order:** 1) `rework/` items targeting this stage, 2) `rejected/` items targeting this stage, 3) normal input queue. Oldest first by `created_at`.
+- **Ordering guard:** Skips rework/rejected items if a lower-ordered stage still needs work (e.g. won't give images-targeted item to image agent if "drafts" is still listed).
+- **Empty queue:** Returns `empty` when nothing is available → agent replies `NO_REPLY`.
+
+Other guardrails (strategist max briefs, duplicate-slug) remain unchanged.
+
+### Routing (enforced by `pipeline-router.sh`)
+
+All movement is handled by `bash scripts/pipeline-router.sh <slug> <completed-stage> [qa-fail-codes]`. The script:
+- Runs PREQA gate automatically for drafts handoffs
+- Handles partial rework/rejection (removes completed stage from array, logs `PARTIAL_REWORK`)
+- Clears rework/rejection fields when all stages are done
+- **Smart skip:** After completing a rework/rejection, skips stages that already have completion timestamps (e.g. a drafts-only rejection skips images+design if those timestamps exist, going straight back to QA)
+- Maps QA fail codes to rejection_stages automatically
+- Appends to pipeline.log
+- Does NOT git commit — agents commit after routing
+
+**Output format:** `ROUTED | slug | → destination/`, `PARTIAL | slug | remaining:stages`, or `BLOCKED | slug | PREQA_FAIL`
+
+> **Deprecated:** `writer-draft-handoff.sh` is replaced by `pipeline-router.sh`. Kept for reference.
 
 ---
 
@@ -218,7 +232,7 @@ All under `pipelines/content/queue/` relative to the project root:
   - Import shared constants from `../../data/site` (`SITE`, `blogPosting`, `publisher`)
   - See standards/page-types.md for template examples per page type
 - **Guardrails:** Verify ASINs via Brave Search. No fabricated data. No sync/deploy.
-- **Pre-QA gate (enforced):** Use `bash scripts/writer-draft-handoff.sh queue/{stage}/{slug}.md {brief|rework}` for every handoff to `drafts/`. The script blocks on PREQA failure and logs `PREQA_PASS` evidence before `MOVED`.
+- **Routing:** Use `bash scripts/pipeline-router.sh "$SLUG" drafts` after writing. The router runs PREQA automatically and blocks on failure.
 
 ### QA
 - **Input:** Queue file from `design/`, standards/qa-checklist.md
@@ -260,18 +274,20 @@ All under `pipelines/content/queue/` relative to the project root:
 
 ## Rejection Handling
 
-When QA rejects a page:
+When QA rejects a page, the QA agent sets `qa_rejection_details` in frontmatter and calls:
+```bash
+bash scripts/pipeline-router.sh "$SLUG" qa "C01,I04"
+```
 
-1. QA sets `qa_rejection_reason: "FAIL:L01,S04,C08"` (comma-separated check IDs)
-2. QA sets `rejection_stages` as an inline YAML array, mapping error codes to responsible stages:
-   - C-series, S-series (except S06), L-series, X-series, D-series, I01-I03, I05-I06 → `drafts` (Writer)
-   - I04 (SVG compliance) → `images` (Image Agent)
-   - S06 (schema types) → `design` (Designer)
-   - Example: `FAIL:C01,I04` → `rejection_stages: [drafts, images]`
-3. QA moves the queue file to `rejected/`
+The router automatically:
+1. Maps fail codes to `rejection_stages` (C/S(not S06)/L/X/D/I(not I04) → drafts, I04 → images, S06 → design)
+2. Sets `qa_rejection_reason`, `qa_result: fail`, `status: rejected`
+3. Moves the file to `rejected/`
+4. Logs the move
+
 ### Stage Processing Order (Ordering Guard)
 
-When multiple stages need work, they MUST be processed in pipeline order:
+Enforced by `pipeline-pick.sh` — agents never need to implement this manually. The picker skips items where a lower-ordered stage still needs work.
 
 | Stage  | Order |
 |--------|-------|
@@ -279,22 +295,13 @@ When multiple stages need work, they MUST be processed in pipeline order:
 | images | 2     |
 | design | 3     |
 
-**Guard rule:** An agent MUST NOT process a rejected/ item if any stage with a LOWER order number than their own still appears in the `rejection_stages` array. Skip the item silently — the earlier agent will handle it first.
+### Rejection Resolution
 
-Example: `rejection_stages: [drafts, images]`
-- Writer (order 1): no lower stages → PROCEED
-- Image Agent (order 2): "drafts" (order 1) still present → SKIP
+When an agent finishes their fix and calls `pipeline-router.sh`:
+- If other stages remain → `PARTIAL` response, item stays in `rejected/`
+- If all stages done → router clears rejection fields and uses **smart skip** to route the item forward, skipping stages that already have completion timestamps
 
-4. Each agent checks `rejected/` for items listing **their** stage in `rejection_stages`
-5. Agent fixes ONLY the issues relevant to their stage
-6. Agent removes their stage from `rejection_stages`
-7. If stages remain → item stays in `rejected/` for the next agent (log `PARTIAL_REWORK`)
-8. If array is now empty → agent clears `rejection_stages`, `qa_result`, `qa_rejection_reason`, moves to the next normal pipeline stage after their own
-9. Normal pipeline flow resumes from there
-
-**Next stage after processing:** Writer → `images/` (via drafts), Image Agent → `design/`, Designer → `qa/`
-
-**Legacy:** Items without `rejection_stages` must have it set by the PM before processing. Agents encountering such items must skip them.
+**Legacy:** Items without `rejection_stages` must have it set by the PM before processing.
 
 If the same slug is rejected 2+ times, the PM daily audit flags it as a rejection loop.
 
@@ -315,32 +322,9 @@ Rework is for post-publish fixes routed to specific pipeline stages. It is separ
    rework_initiated_by: dashboard
    rework_initiated_at: "2026-03-10T10:00:00+07:00"
    ```
-### Stage Processing Order (Ordering Guard)
-
-When multiple stages need work, they MUST be processed in pipeline order:
-
-| Stage  | Order |
-|--------|-------|
-| drafts | 1     |
-| images | 2     |
-| design | 3     |
-
-**Guard rule:** An agent MUST NOT process a rework/ item if any stage with a LOWER order number than their own still appears in the `rework_stages` array. Skip the item silently — the earlier agent will handle it first.
-
-Example: `rework_stages: [drafts, images]`
-- Writer (order 1): no lower stages → PROCEED
-- Image Agent (order 2): "drafts" (order 1) still present → SKIP
-
-3. Each agent checks `rework/` as HIGHEST priority for items listing **their** stage in `rework_stages`:
-   - Writer: "drafts" in `rework_stages`
-   - Image Agent: "images" in `rework_stages`
-   - Designer: "design" in `rework_stages`
-4. Agent processes their part, then removes their stage from `rework_stages`.
-5. If stages remain → item stays in `rework/` for the next agent (log `PARTIAL_REWORK`).
-6. If array is now empty → agent clears all `rework_*` fields, moves to the next normal pipeline stage after their own.
-7. Normal pipeline flow resumes from there.
-
-**Next stage after processing:** Writer → `images/` (via drafts), Image Agent → `design/`, Designer → `qa/`
+3. `pipeline-pick.sh` handles priority and ordering guards — agents just call `bash scripts/pipeline-pick.sh <stage>`.
+4. After fixing their part, agents call `bash scripts/pipeline-router.sh "$SLUG" <stage>`.
+5. The router removes the completed stage from `rework_stages`, handles partial vs complete, and uses smart skip when all stages are done.
 
 **Legacy:** Items with `rework_target` (single string, no `rework_stages`) are treated as `rework_stages: [<rework_target>]`.
 
@@ -352,6 +336,15 @@ Example: `rework_stages: [drafts, images]`
 {timestamp} | {role} | REWORK_PICKUP | {slug} | rework/ → {stage}/ | reason:{brief}
 ```
 
+### Smart Skip
+
+When all rework/rejection stages are complete, the router uses **smart skip** to determine the destination. It walks forward from the completed stage and skips any stage that already has a completion timestamp:
+- `images` → checks `image_agent_completed_at`
+- `design` → checks `designer_completed_at`
+- QA can never be skipped
+
+**Example:** `rejection_stages: [drafts]` — Writer fixes the content. Router clears rejection fields, checks: `image_agent_completed_at` exists → skip images. `designer_completed_at` exists → skip design. Destination: `design/` (QA's input). Item goes straight back to QA, saving hours.
+
 ### Key Benefit
 
-An item needing both content and image fixes gets routed to Writer AND Image Agent sequentially, without re-running unrelated stages like QA or Design.
+An item needing both content and image fixes gets routed to Writer AND Image Agent sequentially, without re-running unrelated stages like QA or Design. Single-stage fixes skip straight back to QA via smart skip.

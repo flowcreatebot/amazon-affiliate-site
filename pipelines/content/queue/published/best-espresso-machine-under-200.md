@@ -7,7 +7,7 @@ secondary_keywords:
 - cheap espresso machine
 - espresso machine under $200
 - affordable espresso machine
-status: images
+status: published
 source: backfill
 priority_rank: 1
 created_by: manual
@@ -16,7 +16,7 @@ writer_completed_at: '2026-03-11T07:19:25+07:00'
 qa_result: null
 qa_rejection_reason: null
 qa_rejection_details: null
-designer_completed_at: '2026-03-09T18:47:00+07:00'
+designer_completed_at: "2026-03-11T06:34:52.789Z"
 deployed_url: https://coffee-gear-lab-dev.onrender.com/posts/best-espresso-machine-under-200.html
 asins_verified:
 - B08C96BG9H

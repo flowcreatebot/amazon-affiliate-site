@@ -7,7 +7,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "preqa": "node scripts/preqa-guardrail.mjs"
+    "preqa": "node scripts/preqa-guardrail.mjs",
+    "pick": "node scripts/pipeline-pick.mjs",
+    "route": "node scripts/pipeline-router.mjs"
   },
   "dependencies": {
     "astro": "^5.17.1"

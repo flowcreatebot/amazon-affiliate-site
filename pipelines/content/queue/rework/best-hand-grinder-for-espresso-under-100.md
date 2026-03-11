@@ -12,7 +12,7 @@ source: backfill
 priority_rank: 9
 created_by: manual
 created_at: "2026-03-08T12:00:00+07:00"
-writer_completed_at: "2026-03-10T09:17:06+07:00"
+writer_completed_at: "2026-03-11T06:33:12.104Z"
 qa_result: pass
 qa_rejection_reason: null
 qa_rejection_details: []
@@ -25,7 +25,7 @@ asins_verified:
   - B0CCYBVQ9B
   - B013R3Q7B2
 word_count: 2042
-rework_stages: [drafts, images]
+rework_stages: [images]
 rework_reason: "The images are terrible on these, we need to redo them. The writer should make them as placeholders and the image agent should do the images again."
 rework_initiated_by: dashboard
 rework_initiated_at: "2026-03-10T15:16:23.866Z"

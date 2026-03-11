@@ -9,7 +9,6 @@ import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
-import BestForBadge from '../../components/BestForBadge.astro';
 import HeroMedia from '../../components/HeroMedia.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
@@ -18,7 +17,7 @@ const products = [
   {
     name: 'Cuisinart DGB-550BKP1',
     asin: 'B000VTP45Q',
-    image: 'https://images-na.ssl-images-amazon.com/images/P/B000VTP45Q.01.LZZZZZZZ.jpg',
+    image: 'https://m.media-amazon.com/images/P/B000VTP45Q.01._AC_SL500_.jpg',
     imageAlt: 'Cuisinart DGB-550BKP1 grind and brew coffee maker',
     badge: { label: 'Best Overall', variant: 'overall' as const },
     rating: 4.2,
@@ -37,7 +36,7 @@ const products = [
   {
     name: 'BLACK+DECKER 12-Cup Mill & Brew',
     asin: 'B00LU2I46E',
-    image: 'https://images-na.ssl-images-amazon.com/images/P/B00LU2I46E.01.LZZZZZZZ.jpg',
+    image: 'https://m.media-amazon.com/images/P/B00LU2I46E.01._AC_SL500_.jpg',
     imageAlt: 'BLACK+DECKER 12-Cup Mill and Brew coffee maker',
     badge: { label: 'Best Budget', variant: 'budget' as const },
     rating: 4.3,
@@ -56,7 +55,7 @@ const products = [
   {
     name: 'Cuisinart DGB-400 Automatic Grind & Brew',
     asin: 'B08DCK4MPV',
-    image: '',
+    image: 'https://m.media-amazon.com/images/P/B08DCK4MPV.01._AC_SL500_.jpg',
     imageAlt: 'Cuisinart DGB-400 Automatic Grind and Brew coffee maker',
     badge: { label: 'Best Classic Programmable', variant: 'beginners' as const },
     rating: 4.1,
@@ -75,7 +74,7 @@ const products = [
   {
     name: 'Gevi 10-Cup Grind & Brew',
     asin: 'B0FX3M77DD',
-    image: '',
+    image: 'https://m.media-amazon.com/images/P/B0FX3M77DD.01._AC_SL500_.jpg',
     imageAlt: 'Gevi 10-Cup Grind and Brew coffee maker',
     badge: { label: 'Best Compact', variant: 'pourover' as const },
     rating: 4.0,
@@ -94,7 +93,7 @@ const products = [
   {
     name: 'Cuisinart Grind & Brew Single-Serve (DGB-30)',
     asin: 'B0FNXPWVD8',
-    image: '',
+    image: 'https://m.media-amazon.com/images/P/B0FNXPWVD8.01._AC_SL500_.jpg',
     imageAlt: 'Cuisinart Grind and Brew Single-Serve DGB-30 coffee maker',
     badge: { label: 'Best Single-Cup', variant: 'espresso' as const },
     rating: 4.3,
@@ -113,7 +112,7 @@ const products = [
   {
     name: "De'Longhi TrueBrew Compact",
     asin: 'B0F3ZSVPPG',
-    image: 'https://images-na.ssl-images-amazon.com/images/P/B0F3ZSVPPG.01.LZZZZZZZ.jpg',
+    image: 'https://m.media-amazon.com/images/P/B0F3ZSVPPG.01._AC_SL500_.jpg',
     imageAlt: "De'Longhi TrueBrew Compact bean to cup coffee maker",
     badge: { label: 'Best Upgrade', variant: 'upgrade' as const },
     rating: 4.4,
@@ -132,7 +131,7 @@ const products = [
   {
     name: 'Ninja CE251 + budget burr grinder combo',
     asin: 'B07S98411N',
-    image: '',
+    image: 'https://m.media-amazon.com/images/P/B07S98411N.01._AC_SL500_.jpg',
     imageAlt: 'Ninja CE251 drip brewer with budget burr grinder combo',
     badge: { label: 'Best Value Combo', variant: 'budget' as const },
     rating: 4.3,
@@ -156,72 +155,74 @@ const title = 'Best Grind and Brew Coffee Maker Under $200 (2026) Compared';
 const description = 'Compare 7 researched grind-and-brew coffee makers under $200 by workflow speed, cleanup effort, brew flexibility, and practical day-to-day value.';
 const slug = 'best-grind-and-brew-coffee-maker-under-200';
 const canonical = `${SITE.url}/posts/${slug}.html`;
+const heroImage = `${SITE.url}/assets/images/${slug}-hero-2026.svg`;
+const workflowImage = `${SITE.url}/assets/images/${slug}-workflow-2026.svg`;
 
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
+  '@context': 'https://schema.org',
+  '@graph': [
     blogPosting({
       headline: 'Best Grind and Brew Coffee Maker Under $200 (2026): 7 Top Picks',
       description: '7 researched grind-and-brew coffee makers under $200 ranked by bean-to-cup speed, cleaning burden, compatibility, and practical value.',
       slug,
       datePublished: '2026-03-06',
-      dateModified: '2026-03-06',
-      image: `${SITE.url}/assets/images/best-grind-and-brew-coffee-maker-under-200-tested-2026.svg`,
+      dateModified: '2026-03-11',
+      image: heroImage,
     }),
     {
-      "@type": "ItemList",
-      "name": "Best Grind and Brew Coffee Maker Under $200 Picks",
-      "itemListOrder": "https://schema.org/ItemListOrderAscending",
-      "numberOfItems": 7,
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Cuisinart DGB-550BKP1"},
-        {"@type":"ListItem","position":2,"name":"BLACK+DECKER 12-Cup Mill & Brew"},
-        {"@type":"ListItem","position":3,"name":"Cuisinart DGB-400 Automatic Grind & Brew"},
-        {"@type":"ListItem","position":4,"name":"Gevi 10-Cup Grind & Brew"},
-        {"@type":"ListItem","position":5,"name":"Cuisinart Grind & Brew Single-Serve (DGB-2)"},
-        {"@type":"ListItem","position":6,"name":"De'Longhi TrueBrew Compact"},
-        {"@type":"ListItem","position":7,"name":"Ninja CE251 + budget burr grinder combo"}
-      ]
+      '@type': 'ItemList',
+      name: 'Best Grind and Brew Coffee Maker Under $200 Picks',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      numberOfItems: 7,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Cuisinart DGB-550BKP1' },
+        { '@type': 'ListItem', position: 2, name: 'BLACK+DECKER 12-Cup Mill & Brew' },
+        { '@type': 'ListItem', position: 3, name: 'Cuisinart DGB-400 Automatic Grind & Brew' },
+        { '@type': 'ListItem', position: 4, name: 'Gevi 10-Cup Grind & Brew' },
+        { '@type': 'ListItem', position: 5, name: 'Cuisinart Grind & Brew Single-Serve (DGB-30)' },
+        { '@type': 'ListItem', position: 6, name: "De'Longhi TrueBrew Compact" },
+        { '@type': 'ListItem', position: 7, name: 'Ninja CE251 + budget burr grinder combo' },
+      ],
     },
     {
-      "@type": "Organization",
+      '@type': 'Organization',
       ...publisher,
-      "url": SITE.url
+      url: SITE.url,
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
+      '@type': 'FAQPage',
+      mainEntity: [
         {
-          "@type": "Question",
-          "name": "What is the best grind-and-brew coffee maker under $200 right now?",
-          "acceptedAnswer": {"@type": "Answer", "text": "For most buyers, Cuisinart DGB-550BKP1 is the strongest all-around pick under $200 because it balances value, programmable convenience, and manageable cleaning."}
+          '@type': 'Question',
+          name: 'What is the best grind-and-brew coffee maker under $200 right now?',
+          acceptedAnswer: { '@type': 'Answer', text: 'For most buyers, Cuisinart DGB-550BKP1 is the strongest all-around pick under $200 because it balances value, programmable convenience, and manageable cleaning.' },
         },
         {
-          "@type": "Question",
-          "name": "Are grind-and-brew machines under $200 worth it vs separate grinder + brewer?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Usually yes for convenience-first households. If flavor consistency is your top priority, a separate budget burr grinder plus drip brewer can outperform many integrated blade systems at similar total spend."}
+          '@type': 'Question',
+          name: 'Are grind-and-brew machines under $200 worth it vs separate grinder + brewer?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Usually yes for convenience-first households. If flavor consistency is your top priority, a separate budget burr grinder plus drip brewer can outperform many integrated blade systems at similar total spend.' },
         },
         {
-          "@type": "Question",
-          "name": "Can these machines brew pre-ground coffee too, or only whole beans?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Many under-$200 models support both beans and pre-ground coffee. Verify this mode explicitly in product specs before buying."}
+          '@type': 'Question',
+          name: 'Can these machines brew pre-ground coffee too, or only whole beans?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Many under-$200 models support both beans and pre-ground coffee. Verify this mode explicitly in product specs before buying.' },
         },
         {
-          "@type": "Question",
-          "name": "Do any models under $200 use burr grinders, or mostly blade grinders?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Most options in this range are blade-based, but a few models near the upper budget tier use burr systems and usually deliver better consistency."}
+          '@type': 'Question',
+          name: 'Do any models under $200 use burr grinders, or mostly blade grinders?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Most options in this range are blade-based, but a few models near the upper budget tier use burr systems and usually deliver better consistency.' },
         },
         {
-          "@type": "Question",
-          "name": "How often do I need to clean the grinder chute/hopper to avoid stale flavor or clogs?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Brush grinder paths every 2-3 brews, rinse removable brew parts daily, and deep-clean weekly to reduce stale oils and clog risk."}
+          '@type': 'Question',
+          name: 'How often do I need to clean the grinder chute/hopper to avoid stale flavor or clogs?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Brush grinder paths every 2-3 brews, rinse removable brew parts daily, and deep-clean weekly to reduce stale oils and clog risk.' },
         },
         {
-          "@type": "Question",
-          "name": "What is a realistic bean-to-cup brew time on busy mornings?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Expect roughly 3.5-6 minutes for a small serving and up to 13 minutes for full-carafe batches depending on machine power and grind cycle length."}
-        }
-      ]
+          '@type': 'Question',
+          name: 'What is a realistic bean-to-cup brew time on busy mornings?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Expect roughly 3.5-6 minutes for a small serving and up to 13 minutes for full-carafe batches depending on machine power and grind cycle length.' },
+        },
+      ],
     },
   ],
 };
@@ -232,7 +233,7 @@ const jsonLd = {
   canonical={canonical}
   ogTitle="Best Grind and Brew Coffee Maker Under $200 (2026): 7 Top Picks"
   ogDescription="7 researched grind-and-brew machines under $200 ranked by workflow speed, cleanup burden, and practical day-to-day fit."
-  ogImage={`${SITE.url}/assets/images/best-grind-and-brew-coffee-maker-under-200-tested-2026.svg`}
+  ogImage={heroImage}
   breadcrumbs={[
     { label: 'Home', href: '/' },
     { label: 'All Guides', href: '/posts/' },
@@ -246,7 +247,16 @@ const jsonLd = {
   <h1>Best Grind and Brew Coffee Maker Under $200 (2026): 7 Top Picks</h1>
   <p class="lead">If you want fresher coffee without buying a separate grinder, the best grind-and-brew machine under $200 should save time, not add morning friction. We compared seven high-intent options for bean-to-cup speed, noise, cleanup burden, and compatibility so you can buy once and avoid regret.</p>
 
-  <HeroMedia src="/assets/images/best-grind-and-brew-coffee-maker-under-200-tested-2026.svg" alt="Best grind and brew coffee makers under 200 dollars ranked by workflow, cleanup, and value" width={1200} height={675} caption="Editorial ranking focused on real morning workflow, not spec-sheet filler." fetchpriority="high" />
+  <!-- IMAGE_PLACEHOLDER
+  type: hero
+  slug: best-grind-and-brew-coffee-maker-under-200
+  filename: best-grind-and-brew-coffee-maker-under-200-hero-2026.svg
+  alt: "Editorial ranking of seven grind-and-brew coffee makers under $200 by workflow and value"
+  concept: "Warm cream editorial hero with abstract coffee brewer silhouettes arranged in a ranked ladder, with green accent markers for top picks"
+  width: 1200
+  height: 675
+  -->
+  <HeroMedia src={`/assets/images/${slug}-hero-2026.svg`} alt="Best grind and brew coffee makers under 200 dollars ranked by workflow, cleanup, and value" width={1200} height={675} caption="Editorial ranking focused on real morning workflow, not spec-sheet filler." fetchpriority="high" />
 
   <p><strong>Direct answer:</strong> For most buyers under $200, the Cuisinart DGB-550BKP1 is the best grind-and-brew coffee maker because it balances reliable batch performance, manageable cleaning, and strong value. If your priority is easiest maintenance, pick BLACK+DECKER Mill &amp; Brew. If you want stronger flavor consistency, step up to a burr-based model near the top of this budget.</p>
 
@@ -264,7 +274,7 @@ const jsonLd = {
     {products.filter(p => p.featured).map((p, idx) => (
       <ProductCard
         title={p.name}
-        image={p.image ? { src: p.image, alt: p.imageAlt, width: 500, height: 500 } : undefined}
+        image={{ src: p.image, alt: p.imageAlt, width: 500, height: 500 }}
         badge={p.badge}
         rating={{ score: p.rating }}
         price={p.price}
@@ -289,7 +299,8 @@ const jsonLd = {
     <p><strong>Best $150-$200:</strong> De'Longhi TrueBrew Compact — better extraction consistency and broader cup-size flexibility.</p>
   </div>
 
-  <ComparisonTable timestamp="March 9, 2026" ariaLabel="Grind and brew coffee makers under $200 comparison">
+  <h2 id="comparison">Comparison table</h2>
+  <ComparisonTable timestamp="March 11, 2026" ariaLabel="Grind and brew coffee makers under $200 comparison">
     <table>
       <thead>
         <tr>
@@ -311,7 +322,7 @@ const jsonLd = {
         {products.map(p => (
           <tr>
             <td data-label="Product">{p.name}</td>
-            <td data-label="Best for"><BestForBadge label={p.badge.label} variant={p.badge.variant} /></td>
+            <td data-label="Best for"><span class={`best-for-badge --${p.badge.variant}`}>{p.badge.label}</span></td>
             <td data-label="Grinder type">{p.grinderType}</td>
             <td data-label="Brew modes">{p.brewModes}</td>
             <td data-label="Batch size">{p.batchSize}</td>
@@ -337,6 +348,7 @@ const jsonLd = {
     <h2 id="picks">Product picks by buyer fit</h2>
 
     <h3>1) Cuisinart DGB-550BKP1 — Best overall grind-and-brew under $200</h3>
+    <p><span class="best-for-badge --overall">Best Overall</span></p>
     <p><strong>Verdict:</strong> Best for buyers who want a reliable all-rounder with low friction and stable daily coffee quality.</p>
     <p><strong>Buy this if...</strong> you want a straightforward 12-cup grind-and-brew with dependable programmable start.</p>
     <p><strong>Skip this if...</strong> you need true single-cup brewing or burr-level grind consistency.</p>
@@ -350,6 +362,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B000VTP45Q/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>2) BLACK+DECKER 12-Cup Mill &amp; Brew — Best for easiest cleanup</h3>
+    <p><span class="best-for-badge --budget">Best Budget</span></p>
     <p><strong>Verdict:</strong> Best for budget-first homes that value low maintenance and straightforward controls over maximum flavor nuance.</p>
     <p><strong>Buy this if...</strong> low upfront cost and easy cleanup matter more than grinder precision.</p>
     <p><strong>Skip this if...</strong> you are sensitive to grinder noise or want burr-based flavor clarity.</p>
@@ -363,6 +376,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B00LU2I46E/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>3) De'Longhi TrueBrew Compact — Best strongest flavor under $200</h3>
+    <p><span class="best-for-badge --upgrade">Best Upgrade</span></p>
     <p><strong>Verdict:</strong> Best for flavor-first users willing to spend near the ceiling and handle a slightly heavier cleaning cadence.</p>
     <p><strong>Buy this if...</strong> you want conical-burr consistency with both single-cup and multi-cup options.</p>
     <p><strong>Skip this if...</strong> you require pre-ground compatibility or the lowest-maintenance workflow.</p>
@@ -376,6 +390,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B0F3ZSVPPG/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>4) Gevi 10-Cup Grind &amp; Brew — Best for small kitchens</h3>
+    <p><span class="best-for-badge --pourover">Best Compact</span></p>
     <p><strong>Verdict:</strong> Best for tighter counters where footprint matters as much as cup quality.</p>
     <p><strong>Buy this if...</strong> you want a compact 10-cup format with scheduled brewing.</p>
     <p><strong>Skip this if...</strong> your household regularly needs full 12-cup output.</p>
@@ -389,6 +404,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B0FX3M77DD/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>5) Ninja CE251 + budget burr grinder combo — Best value workflow alternative</h3>
+    <p><span class="best-for-badge --budget">Best Value Combo</span></p>
     <p><strong>Verdict:</strong> Best for buyers open to a two-piece setup that still stays under $200 and outperforms many built-ins on flavor.</p>
     <p><strong>Buy this if...</strong> you prefer upgrade flexibility and better grind quality from a separate burr grinder.</p>
     <p><strong>Skip this if...</strong> you want a single all-in-one machine and minimal counter footprint.</p>
@@ -402,6 +418,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B07S98411N/ref=nosim?tag=coffee-site-20" external>Check brewer price on Amazon</CtaButton></p>
 
     <h3>6) Cuisinart DGB-400 Automatic Grind &amp; Brew — Best classic programmable batch machine</h3>
+    <p><span class="best-for-badge --beginners">Best Classic Programmable</span></p>
     <p><strong>Verdict:</strong> Best for buyers who want the familiar Cuisinart workflow with a straightforward control panel and dependable overnight scheduling.</p>
     <p><strong>Buy this if...</strong> you want a traditional 12-cup machine that supports both beans and pre-ground coffee without learning a new interface.</p>
     <p><strong>Skip this if...</strong> you need true single-cup flexibility or the lowest possible grinder noise in small apartments.</p>
@@ -415,6 +432,7 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B08DCK4MPV/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>7) Cuisinart Grind &amp; Brew Single-Serve (DGB-30) — Best for one-cup households</h3>
+    <p><span class="best-for-badge --espresso">Best Single-Cup</span></p>
     <p><strong>Verdict:</strong> Best for solo drinkers who want bean-to-cup freshness without committing counter space to a full carafe machine.</p>
     <p><strong>Buy this if...</strong> your routine is one mug at a time and you value fresh grinding more than high-volume output.</p>
     <p><strong>Skip this if...</strong> you regularly brew for multiple people or need a large thermal carafe option.</p>
@@ -430,7 +448,16 @@ const jsonLd = {
 
   <section>
     <h2 id="workflow">Workflow realism: bean-to-cup time, noise, and cleanup cadence</h2>
-    <HeroMedia src="/assets/images/grind-and-brew-under-200-workflow-2026.svg" alt="Workflow timeline for grind and brew coffee makers under 200 including brew time noise and cleaning cadence" width={1200} height={675} caption="Daily friction matters more than one-time feature comparisons." loading="lazy" />
+    <!-- IMAGE_PLACEHOLDER
+    type: workflow
+    slug: best-grind-and-brew-coffee-maker-under-200
+    filename: best-grind-and-brew-coffee-maker-under-200-workflow-2026.svg
+    alt: "Workflow timeline showing grind, brew, and cleanup phases for sub-$200 grind-and-brew machines"
+    concept: "Horizontal workflow diagram with three stages (grind, brew, clean), icon-led blocks, warm background, and green highlight lines"
+    width: 1200
+    height: 675
+    -->
+    <HeroMedia src={`/assets/images/${slug}-workflow-2026.svg`} alt="Workflow timeline for grind and brew coffee makers under 200 including brew time noise and cleaning cadence" width={1200} height={675} caption="Daily friction matters more than one-time feature comparisons." loading="lazy" />
     <p><strong>Bean-to-cup timing:</strong> Most machines here land around 3.5-6 minutes for a small-batch equivalent cup, and around 9-13 minutes for full carafes.</p>
     <p><strong>Noise reality:</strong> Blade systems are usually sharper/louder during the first 20-40 seconds. Burr systems are often lower pitch but still clearly audible in small apartments.</p>
     <p><strong>Cleanup cadence:</strong> Empty grounds and rinse basket daily, brush grinder/chute every 2-3 brews, and descale every 3-5 weeks depending on water hardness.</p>
@@ -445,6 +472,9 @@ const jsonLd = {
     <p><strong>5) Budget tiers help reduce decision fatigue.</strong> Under $100 usually means blade grinder + simpler construction, but still workable if you prioritize convenience and keep cleaning consistent. The $100-$149 tier is often the practical sweet spot for programmable features and more stable daily performance. Near $200, you start seeing better grind quality and broader brew options, though not every premium-priced model is worth paying extra for.</p>
     <p><strong>6) Check maintenance path before checkout.</strong> Many buyers compare only cup quality and forget ownership friction. Look for removable baskets, clearly accessible grinder paths, and descaling guidance that does not require special tools. If you cannot clean it in under five minutes on a weekday, long-term satisfaction drops fast regardless of the initial taste quality.</p>
     <p><strong>7) Match machine style to your morning routine.</strong> If your household leaves in waves, single-serve or smaller-batch options reduce waste and keep coffee fresher. If everyone drinks at once, a programmable carafe machine is usually better value and less effort than repeated single-cup cycles. This simple routine-first filter eliminates most buyer remorse in this category.</p>
+    <p><strong>8) Water quality can matter as much as the machine.</strong> Budget grind-and-brew buyers often blame hardware when the bigger issue is hard water scale or inconsistent filtration. If your coffee swings between bitter and flat from day to day, run a simple test: brew with filtered water for one week while keeping the same beans and dose. If flavor stabilizes, prioritize a regular descaling cadence over chasing a new machine.</p>
+    <p><strong>9) Build a repeatable baseline recipe first.</strong> Before changing grind amount, cup size, and strength settings all at once, lock one baseline for five to seven brews. Use the same roast, same water amount, and same cleaning routine. Then adjust only one variable at a time. This approach makes cheaper machines feel much more predictable because you can isolate what actually improved the cup.</p>
+    <p><strong>10) Plan for parts availability.</strong> Under-$200 appliances are only a bargain if you can keep them running. Check whether replacement carafes, filters, lids, and baskets are easy to source. If replacement parts are hard to find, the machine can become disposable after one breakage. For long-term value, a model with common replacement parts usually beats a flashier model with no support path.</p>
   </BuyingGuideSection>
 
   <section>
