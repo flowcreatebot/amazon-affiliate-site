@@ -7,7 +7,7 @@ secondary_keywords:
 - best burr grinder
 - affordable burr coffee grinder
 - budget burr grinder
-status: design
+status: published
 source: backfill
 priority_rank: 2
 created_by: manual

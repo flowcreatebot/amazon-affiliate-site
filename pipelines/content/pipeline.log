@@ -202,3 +202,5 @@
 2026-03-11T07:01:00.835+00:00 | writer | PREQA_PASS | best-manual-coffee-grinder-under-100 | checks:C01,S02,C04,C05,C06,C07,C08,S07,L01,L02b,D03
 2026-03-11T07:01:00.837+00:00 | writer | PARTIAL_REWORK | best-manual-coffee-grinder-under-100 | drafts done, remaining: images
 2026-03-11T07:02:41.240+00:00 | image-agent | MOVED | best-burr-coffee-grinder-under-200 | rework/ → design/ | source:rework
+2026-03-11T07:17:39.677+00:00 | qa | MOVED | best-burr-coffee-grinder-under-200 | design/ → qa/ | source:design
+2026-03-11T07:50:53.875+00:00 | deployer | MOVED | best-burr-coffee-grinder-under-200 | qa/ → published/ | source:qa
