@@ -6,7 +6,7 @@ secondary_keywords:
 - pour over dripper
 - pour over coffee maker for beginners
 - manual pour over brewer
-status: design
+status: published
 created_by: strategist
 created_at: '2026-03-07T09:35:00+07:00'
 writer_completed_at: "2026-03-11T10:16:09.255Z"
@@ -14,7 +14,7 @@ qa_result: null
 qa_rejection_reason: null
 qa_rejection_details: null
 designer_completed_at: '2026-03-11T03:47:00+07:00'
-deployed_url: https://coffeegearpicks.com/posts/best-pour-over-coffee-maker.html
+deployed_url: https://coffee-gear-lab-dev.onrender.com/posts/best-pour-over-coffee-maker.html
 asins_verified:
 - B000P4D5HG
 - B0000YWF5E

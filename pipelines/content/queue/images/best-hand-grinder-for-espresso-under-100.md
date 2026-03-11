@@ -7,7 +7,7 @@ secondary_keywords:
   - "hand grinder espresso"
   - "manual grinder for espresso under $100"
   - "budget hand espresso grinder"
-status: rework
+status: images
 source: backfill
 priority_rank: 9
 created_by: manual
@@ -25,10 +25,9 @@ asins_verified:
   - B0CCYBVQ9B
   - B013R3Q7B2
 word_count: 2042
-rework_stages: [images]
-rework_reason: "The images are terrible on these, we need to redo them. The writer should make them as placeholders and the image agent should do the images again."
-rework_initiated_by: dashboard
-rework_initiated_at: "2026-03-10T15:16:23.866Z"
+image_agent_completed_at: "2026-03-11T11:31:35.822Z"
+images_created:
+  - best-hand-grinder-for-espresso-under-100-hero-2026.svg
 ---
 
 # Brief: Best Hand Grinder for Espresso Under $100 (Phase 1.5 Refresh)
