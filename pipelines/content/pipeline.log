@@ -211,3 +211,5 @@
 2026-03-11T09:10:40.644+00:00 | image-agent | MOVED | best-grind-and-brew-coffee-maker-under-200 | rework/ → design/ | source:rework
 2026-03-11T09:18:14.527+00:00 | qa | MOVED | best-coffee-grinder-for-french-press | design/ → qa/ | source:design
 2026-03-11T09:50:57.030+00:00 | deployer | MOVED | best-coffee-grinder-for-french-press | qa/ → published/ | source:qa
+2026-03-11T10:16:09.253+00:00 | writer | PREQA_PASS | best-pour-over-coffee-maker | checks:C01,S02,C04,C05,C06,C07,C08,S07,L01,L02b,D03
+2026-03-11T10:16:09.255+00:00 | writer | MOVED | best-pour-over-coffee-maker | rejected/ → design/ | source:rejected

@@ -6,14 +6,13 @@ secondary_keywords:
 - pour over dripper
 - pour over coffee maker for beginners
 - manual pour over brewer
-status: rejected
+status: design
 created_by: strategist
 created_at: '2026-03-07T09:35:00+07:00'
-writer_completed_at: '2026-03-11T01:15:00+07:00'
-qa_result: fail
-qa_rejection_reason: 'FAIL:C08'
-qa_rejection_details: 'C08: banned phrasing present in methodology section ("hands-on") at src/pages/posts/best-pour-over-coffee-maker.astro line 233.'
-rejection_stages: [drafts]
+writer_completed_at: "2026-03-11T10:16:09.255Z"
+qa_result: null
+qa_rejection_reason: null
+qa_rejection_details: null
 designer_completed_at: '2026-03-11T03:47:00+07:00'
 deployed_url: https://coffeegearpicks.com/posts/best-pour-over-coffee-maker.html
 asins_verified:
