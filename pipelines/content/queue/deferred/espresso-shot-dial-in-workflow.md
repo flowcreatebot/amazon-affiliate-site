@@ -1,5 +1,6 @@
 ---
 slug: espresso-shot-dial-in-workflow
+site: coffee-gear-lab
 page_type: howto
 primary_keyword: "espresso shot dial in workflow"
 secondary_keywords:

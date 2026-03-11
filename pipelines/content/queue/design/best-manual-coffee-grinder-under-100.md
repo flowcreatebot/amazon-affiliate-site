@@ -1,5 +1,6 @@
 ---
 slug: best-manual-coffee-grinder-under-100
+site: coffee-gear-lab
 page_type: money
 primary_keyword: "best manual coffee grinder under 100"
 secondary_keywords:

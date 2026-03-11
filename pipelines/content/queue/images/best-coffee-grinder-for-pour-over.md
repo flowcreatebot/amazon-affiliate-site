@@ -1,5 +1,6 @@
 ---
 slug: best-coffee-grinder-for-pour-over
+site: coffee-gear-lab
 page_type: money
 primary_keyword: best coffee grinder for pour over
 secondary_keywords:

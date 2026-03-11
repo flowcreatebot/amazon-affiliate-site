@@ -1,5 +1,6 @@
 ---
 slug: best-drip-coffee-maker-under-100
+site: coffee-gear-lab
 page_type: money
 primary_keyword: "best drip coffee maker under 100"
 secondary_keywords:
@@ -7,17 +8,15 @@ secondary_keywords:
   - "cheap drip coffee maker"
   - "drip coffee maker under $100"
   - "programmable coffee maker under $100"
-status: rejected
+status: qa
 source: backfill
 priority_rank: 3
 created_by: manual
 created_at: "2026-03-08T12:00:00+07:00"
-writer_completed_at: "2026-03-11T15:37:58.675Z"
-qa_result: fail
-qa_rejection_reason: "FAIL:D04,I03"
-qa_rejection_details:
-  - "D04: HeroPicks Amazon CTAs render as <a class='hero-pick-card__cta'> instead of .cta-button.--primary (src/components/HeroPicks.astro:53; used in src/pages/posts/best-drip-coffee-maker-under-100.astro:107)."
-  - "I03: No hero IMAGE_PLACEHOLDER and no <HeroMedia> reference to the generated hero SVG; page only sets ogImage (src/pages/posts/best-drip-coffee-maker-under-100.astro:93)."
+writer_completed_at: "2026-03-11T16:01:36.480Z"
+qa_result: pass
+qa_rejection_reason: null
+qa_rejection_details: null
 designer_completed_at: "2026-03-10T00:47:00+07:00"
 image_agent_completed_at: "2026-03-11T09:06:11.531Z"
 images_created:
@@ -33,7 +32,6 @@ asins_verified:
   - "B08TYTBX8X"
   - "B07X43VXZV"
 word_count: 2027
-rejection_stages: [drafts]
 ---
 
 # Brief: Best Drip Coffee Maker Under $100 (Phase 1.5 Refresh)

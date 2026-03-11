@@ -1,5 +1,6 @@
 ---
 slug: best-gooseneck-kettle-for-pour-over
+site: coffee-gear-lab
 page_type: money
 primary_keyword: best gooseneck kettle for pour over
 secondary_keywords:

@@ -1,5 +1,6 @@
 ---
 slug: best-pour-over-coffee-maker
+site: coffee-gear-lab
 page_type: money
 primary_keyword: best pour over coffee maker
 secondary_keywords:

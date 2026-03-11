@@ -1,5 +1,6 @@
 ---
 slug: drip-vs-single-serve-coffee-maker
+site: coffee-gear-lab
 page_type: vs
 primary_keyword: "drip vs single serve coffee maker"
 secondary_keywords:

@@ -1,5 +1,6 @@
 ---
 slug: best-coffee-scale-for-espresso-and-pour-over
+site: coffee-gear-lab
 page_type: money
 primary_keyword: "best coffee scale for espresso and pour over"
 secondary_keywords:

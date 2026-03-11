@@ -1,0 +1,53 @@
+{
+  "siteId": "coffee-gear-lab",
+  "name": "Coffee Gear Lab",
+  "domain": "coffeegearpicks.com",
+  "devUrl": "https://coffee-gear-lab-dev.onrender.com",
+  "gaId": "G-3Q4RL7QGN4",
+  "amazonTag": "coffee-site-20",
+  "categories": [
+    { "label": "Espresso", "slug": "espresso" },
+    { "label": "Grinders", "slug": "grinders" },
+    { "label": "Brewers", "slug": "brewers" },
+    { "label": "Accessories", "slug": "accessories" },
+    { "label": "Education", "slug": "education" }
+  ],
+  "navLinks": [
+    { "label": "Home", "href": "/" },
+    { "label": "All Guides", "href": "/posts/" },
+    { "label": "Espresso", "href": "/espresso/" },
+    { "label": "Grinders", "href": "/grinders/" },
+    { "label": "Brewers", "href": "/brewers/" }
+  ],
+  "brand": {
+    "colors": {
+      "brand-900": "#2C1810",
+      "brand-800": "#3D261A",
+      "brand-700": "#5C3D2E",
+      "brand-600": "#7A5B4A",
+      "brand-400": "#B89B8A",
+      "brand-200": "#EFDFCE",
+      "brand-100": "#F5EDE4",
+      "brand-50": "#FAF8F5",
+      "cta": "#059669",
+      "cta-hover": "#047857",
+      "cta-light": "#ECFDF5",
+      "secondary": "#0369A1",
+      "secondary-hover": "#075985",
+      "surface-warm": "#FAF8F5",
+      "surface-latte": "#F5EDE4",
+      "surface-elevated": "#EFDFCE"
+    },
+    "font": "Inter",
+    "logoPath": "/assets/logo/icon.webp",
+    "themeDescription": "warm coffee tones"
+  },
+  "disclosureText": "Coffee Gear Lab may earn a commission from qualifying purchases made through links on this page. This does not change the price you pay.",
+  "deploy": {
+    "repoName": "amazon-affiliate-site",
+    "renderDevServiceId": "srv-d6mousc50q8c73anql00",
+    "renderProdServiceId": "srv-d6kql7vkijhs73fpeg10",
+    "branch": "development",
+    "prodBranch": "master"
+  }
+}

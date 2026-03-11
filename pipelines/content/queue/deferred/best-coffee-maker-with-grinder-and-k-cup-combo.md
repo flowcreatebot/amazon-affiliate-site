@@ -1,5 +1,6 @@
 ---
 slug: best-coffee-maker-with-grinder-and-k-cup-combo
+site: coffee-gear-lab
 page_type: money
 primary_keyword: "best coffee maker with grinder and k cup combo"
 secondary_keywords:

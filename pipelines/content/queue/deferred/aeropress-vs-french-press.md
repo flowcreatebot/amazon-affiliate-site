@@ -1,5 +1,6 @@
 ---
 slug: aeropress-vs-french-press
+site: coffee-gear-lab
 page_type: vs
 primary_keyword: "aeropress vs french press"
 secondary_keywords:

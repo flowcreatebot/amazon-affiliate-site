@@ -1,5 +1,6 @@
 ---
 slug: burr-grinder-settings-for-espresso
+site: coffee-gear-lab
 page_type: howto
 primary_keyword: "burr grinder settings for espresso"
 secondary_keywords:

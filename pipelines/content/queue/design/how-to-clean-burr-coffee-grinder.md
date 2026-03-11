@@ -1,5 +1,6 @@
 ---
 slug: how-to-clean-burr-coffee-grinder
+site: coffee-gear-lab
 page_type: howto
 primary_keyword: how to clean burr coffee grinder
 secondary_keywords:

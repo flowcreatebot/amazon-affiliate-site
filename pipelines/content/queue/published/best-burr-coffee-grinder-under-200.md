@@ -1,5 +1,6 @@
 ---
 slug: best-burr-coffee-grinder-under-200
+site: coffee-gear-lab
 page_type: money
 primary_keyword: best burr coffee grinder under 200
 secondary_keywords:

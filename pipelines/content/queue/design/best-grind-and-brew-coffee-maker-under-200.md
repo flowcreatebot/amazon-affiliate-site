@@ -1,5 +1,6 @@
 ---
 slug: best-grind-and-brew-coffee-maker-under-200
+site: coffee-gear-lab
 page_type: money
 primary_keyword: "best grind and brew coffee maker under 200"
 secondary_keywords:

@@ -1,5 +1,6 @@
 ---
 slug: best-single-serve-coffee-maker-with-grinder
+site: coffee-gear-lab
 page_type: money
 primary_keyword: "best single serve coffee maker with grinder"
 secondary_keywords:

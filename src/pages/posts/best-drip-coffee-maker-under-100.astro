@@ -9,7 +9,7 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroPicks from '../../components/HeroPicks.astro';
+import HeroMedia from '../../components/HeroMedia.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -104,16 +104,21 @@ const jsonLd = {
   <h1>Best Drip Coffee Maker Under $100 (2026): 8 Smart Picks</h1>
   <p class="lead">The best drip coffee maker under 100 for most people is the Ninja CE251 because it balances dependable programming, solid extraction consistency, and easy day-to-day cleanup. We researched and compared eight budget-friendly models so you can choose a brewer that actually fits your routine instead of just chasing the lowest sticker price.</p>
 
-  <HeroPicks
-    title="Best Drip Coffee Maker Under $100"
-    subtitle="8 picks compared by brew consistency, programmability, and daily value"
-    picks={[
-      { category: 'Budget', tagline: 'Best value at lowest cost', icon: 'dollar', color: '#059669', features: ['Compact digital controls', 'Auto-brew convenience', 'Easy beginner setup', 'Strong feature-to-cost ratio'], topPick: 'BLACK+DECKER CM1160B', price: '$', subtitle: 'Compact budget pick', asin: 'B01GJOMWVA' },
-      { category: 'Overall', tagline: 'Best all-around drip brewer', icon: 'target', color: '#2C1810', features: ['Consistent brew quality', 'Dependable delay brew', 'Low cleanup friction', 'Two brew style options'], topPick: 'Ninja CE251', price: '$$', subtitle: 'Strongest daily balance', asin: 'B07S98411N' },
-      { category: 'Thermal', tagline: 'Best heat retention under $100', icon: 'hand', color: '#7A5B4A', features: ['Thermal carafe included', 'No hot plate needed', 'Staggered pour friendly', 'Preserves flavor longer'], topPick: 'BLACK+DECKER Thermal CM2035B', price: '$$', subtitle: 'Passive heat retention', asin: 'B00LU2I3V0' },
-      { category: 'Compact', tagline: 'Best for small spaces', icon: 'volume-x', color: '#8B6F47', features: ['5-cup small-batch format', 'Minimal counter space', 'Fast brew for 1-2 drinkers', 'Low annual upkeep cost'], topPick: 'KRUPS Simply Brew 5-Cup', price: '$', subtitle: 'Small-batch apartment brewer', asin: 'B07X43VXZV' },
-    ]}
-    footer="coffeegearlab.com - drip coffee makers under $100 - 2026"
+  <!-- IMAGE_PLACEHOLDER
+  type: hero
+  slug: best-drip-coffee-maker-under-100
+  filename: best-drip-coffee-maker-under-100-hero-2026.svg
+  alt: "Editorial comparison of budget drip coffee makers grouped by workflow fit and value tier"
+  concept: "Warm editorial layout with abstract drip machine silhouettes, value tiers, and highlighted buying factors like programmability, cleanup effort, and carafe type"
+  width: 1200
+  height: 675
+  -->
+  <HeroMedia
+    src="/assets/images/best-drip-coffee-maker-under-100-hero-2026.svg"
+    alt="Editorial comparison of budget drip coffee makers grouped by workflow fit and value tier"
+    width={1200}
+    height={675}
+    caption="Research-driven picks grouped by the trade-offs that matter most under $100"
   />
 
   <p><strong>Quick answer:</strong> Choose Ninja CE251 for most households, Cuisinart DCC-3200P1 for deeper programming control, and BLACK+DECKER CM1160B for compact budget value. If you need a thermal carafe near this budget, BLACK+DECKER CM2035B is the most practical fit.</p>

@@ -1,5 +1,6 @@
 ---
 slug: coffee-brewing-ratio-guide
+site: coffee-gear-lab
 page_type: howto
 primary_keyword: "coffee brewing ratio guide"
 secondary_keywords:
