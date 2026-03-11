@@ -149,16 +149,20 @@ const jsonLd = {
     <JsonLd data={jsonLd} />
   </Fragment>
 
-  <HeroMedia
-    src={`/assets/images/${slug}-hero-2026.svg`}
-    alt="Editorial illustration comparing electric and stovetop gooseneck kettles for pour over brewing"
-    width={1200}
-    height={675}
-    caption="Electric and stovetop picks for better pour control, steadier extraction, and easier daily brew consistency."
-  />
-
   <h1>Best Gooseneck Kettle for Pour Over (2026)</h1>
   <p class="lead">The best gooseneck kettle for pour over is the one that gives you repeatable flow control without making your daily routine harder. We researched current Amazon listings, compared specs and long-term owner feedback, and narrowed this guide to kettles that improve consistency whether you brew one cup or a full morning batch.</p>
+
+  <HeroPicks
+    title="Best Gooseneck Kettle for Pour Over"
+    subtitle="5 kettles compared by workflow fit — find the right kettle for how you brew"
+    picks={[
+      { category: 'Budget', tagline: 'Best value electric option', icon: 'dollar', color: '#059669', features: ['Variable temperature control', '1.0L practical capacity', 'Simple controls', 'Strong value-to-feature ratio'], topPick: 'Bonavita 1.0L', price: '$$', subtitle: 'Value electric kettle', asin: 'B005YR0F40' },
+      { category: 'Overall', tagline: 'Premium daily precision', icon: 'target', color: '#2C1810', features: ['Exact temperature input', 'Hold-temperature mode', 'Refined stream control', 'Best daily workflow'], topPick: 'Fellow Stagg EKG', price: '$$$', subtitle: 'Best all-around pick', asin: 'B077JBQZPX' },
+      { category: 'Stovetop', tagline: 'Simple manual reliability', icon: 'hand', color: '#7A5B4A', features: ['No electronics to fail', 'Durable stainless steel', '1.2L capacity', 'Accessible entry point'], topPick: 'Hario V60 Buono', price: '$', subtitle: 'Best stovetop value', asin: 'B000IGOXLS' },
+      { category: 'Beginner', tagline: 'Easy one-button routine', icon: 'volume-x', color: '#8B6F47', features: ['Preset temperature modes', 'Low learning curve', 'Family-friendly controls', 'Good electric value'], topPick: 'COSORI Electric', price: '$$', subtitle: 'Simplest workflow', asin: 'B07G2MBM6L' },
+    ]}
+    footer="coffeegearlab.com - gooseneck kettles - 2026"
+  />
 
   <Toc items={[
     { href: '#quick-picks', label: 'Quick Picks' },

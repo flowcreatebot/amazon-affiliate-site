@@ -364,7 +364,14 @@ const jsonLd = {
   <p><CtaButton href={amazonUrl('B08MGYR9SX')} external>Check Price on Amazon</CtaButton></p>
 
   <h3>3) Gevi 4-in-1 Single Serve Coffee Maker — Best easy-clean option</h3>
-  <HeroMedia src={imageUrl('B0GM41GYZH')} alt="Gevi 4-in-1 single serve coffee maker" width={500} height={500} caption="A practical pick for people who prioritize low cleanup friction." />
+  <ProductCard
+    title={products[2].name}
+    image={{ src: imageUrl(products[2].asin), alt: 'Gevi 4-in-1 single serve coffee maker', width: 500, height: 500 }}
+    badge={products[2].badge}
+    rating={{ score: products[2].rating }}
+    price={products[2].price}
+    ctaUrl={amazonUrl(products[2].asin)}
+  />
   <p>If your biggest complaint with coffee machines is cleanup, Gevi is one of the easier paths in this category. The workflow is direct, and there is less complexity than some larger combo systems. It will not satisfy buyers chasing maximum grind customization, but for simple and consistent weekday use, it fits well.</p>
   <p>This is the kind of machine that works for busy routines where reliability matters more than advanced controls. You can brew quickly, rinse quickly, and move on. That is exactly what many single-serve shoppers actually want.</p>
   <ProsCons
@@ -381,7 +388,14 @@ const jsonLd = {
   <p><CtaButton href={amazonUrl('B0GM41GYZH')} external>Check Price on Amazon</CtaButton></p>
 
   <h3>4) BLACK+DECKER Mill and Brew CM5000B — Best budget pick</h3>
-  <HeroMedia src={imageUrl('B00LU2I46E')} alt="BLACK+DECKER Mill and Brew CM5000B coffee maker" width={500} height={500} caption="Best value choice for shoppers who want a lower-cost grinder machine." />
+  <ProductCard
+    title={products[3].name}
+    image={{ src: imageUrl(products[3].asin), alt: 'BLACK+DECKER Mill and Brew CM5000B coffee maker', width: 500, height: 500 }}
+    badge={products[3].badge}
+    rating={{ score: products[3].rating }}
+    price={products[3].price}
+    ctaUrl={amazonUrl(products[3].asin)}
+  />
   <p>The CM5000B stays popular because it gives entry-level buyers a path into fresh-ground coffee without premium pricing. It is better framed as a practical value machine than a specialized flavor tool. If your budget is strict and you still want fresher coffee than pod-only systems, this model deserves a close look.</p>
   <p>Expect a few compromises at this price tier, mainly noise and fewer refinement features. But as a daily workhorse for straightforward brewing, it can still be the right answer for many households.</p>
   <ProsCons
@@ -398,7 +412,14 @@ const jsonLd = {
   <p><CtaButton href={amazonUrl('B00LU2I46E')} external>Check Price on Amazon</CtaButton></p>
 
   <h3>5) Breville Grind Control — Best flavor upgrade</h3>
-  <HeroMedia src={imageUrl('B00VGGVQCI')} alt="Breville Grind Control coffee maker" width={500} height={500} caption="For buyers willing to trade a bit of speed for improved cup consistency." />
+  <ProductCard
+    title={products[4].name}
+    image={{ src: imageUrl(products[4].asin), alt: 'Breville Grind Control coffee maker', width: 500, height: 500 }}
+    badge={products[4].badge}
+    rating={{ score: products[4].rating }}
+    price={products[4].price}
+    ctaUrl={amazonUrl(products[4].asin)}
+  />
   <p>If your current machine makes cups that taste flat or inconsistent, Breville Grind Control is a meaningful upgrade. Burr-based grinding can improve particle consistency, which usually helps clarity and repeatability from cup to cup. For flavor-focused buyers, that difference matters.</p>
   <p>The machine is larger and pricier than convenience-first options, so it is not the universal answer. But if you care deeply about cup quality and are comfortable with regular maintenance, this model has one of the strongest quality ceilings in this lineup.</p>
   <ProsCons
@@ -415,7 +436,14 @@ const jsonLd = {
   <p><CtaButton href={amazonUrl('B00VGGVQCI')} external>Check Price on Amazon</CtaButton></p>
 
   <h3>6) De'Longhi TrueBrew — Best premium bean-to-cup convenience</h3>
-  <HeroMedia src={imageUrl('B0F3ZSVPPG')} alt="DeLonghi TrueBrew bean to cup coffee maker" width={500} height={500} caption="Premium option for shoppers who want one-touch bean-to-cup simplicity." />
+  <ProductCard
+    title={products[5].name}
+    image={{ src: imageUrl(products[5].asin), alt: 'DeLonghi TrueBrew bean to cup coffee maker', width: 500, height: 500 }}
+    badge={products[5].badge}
+    rating={{ score: products[5].rating }}
+    price={products[5].price}
+    ctaUrl={amazonUrl(products[5].asin)}
+  />
   <p>TrueBrew targets buyers who want fresher coffee with a premium-feeling, one-touch workflow. It is designed around whole-bean convenience and streamlined output options, which can reduce manual decision fatigue in the morning. If you value a cleaner interface and more polished operation, this is a compelling premium candidate.</p>
   <p>As with most premium machines, the value depends on your habits. If you brew often and care about convenience quality over the long run, the higher price can be justified. If your usage is occasional, lower-priced options may be smarter.</p>
   <ProsCons
@@ -432,7 +460,14 @@ const jsonLd = {
   <p><CtaButton href={amazonUrl('B0F3ZSVPPG')} external>Check Price on Amazon</CtaButton></p>
 
   <h3>7) Chefman InstaCoffee Max — Best compact choice</h3>
-  <HeroMedia src={imageUrl('B09NRYX5K7')} alt="Chefman InstaCoffee Max single serve coffee maker" width={500} height={500} caption="Space-saving single-serve option for apartments, offices, and dorms." />
+  <ProductCard
+    title={products[6].name}
+    image={{ src: imageUrl(products[6].asin), alt: 'Chefman InstaCoffee Max single serve coffee maker', width: 500, height: 500 }}
+    badge={products[6].badge}
+    rating={{ score: products[6].rating }}
+    price={products[6].price}
+    ctaUrl={amazonUrl(products[6].asin)}
+  />
   <p>Counter space is a real buying constraint, and this is where Chefman makes sense. The design suits smaller kitchens, office setups, and dorm environments where every inch matters. If compact footprint ranks above advanced controls, this model is worth considering.</p>
   <p>Like most compact machines, you trade away some flexibility and long-session capacity. But for single-cup routines in tight spaces, the simplicity can be exactly what you need.</p>
   <ProsCons

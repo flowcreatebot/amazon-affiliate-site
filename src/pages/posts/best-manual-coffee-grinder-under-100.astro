@@ -102,14 +102,16 @@ const jsonLd = {
   <h1>Best Manual Coffee Grinder Under 100 (2026): 7 Researched Picks</h1>
   <p class="lead">If you want better cups without spending electric-grinder money, the best manual coffee grinder under 100 can deliver serious value. We compared seven current options by burr quality, grind consistency, grind speed, espresso range, cleanup effort, and day-to-day workflow friction.</p>
 
-  <HeroMedia
-    src="/assets/images/best-manual-coffee-grinder-under-100-hero-2026.svg"
-    alt="Editorial comparison of seven manual coffee grinders under $100 by brew style and budget tier"
-    width={1200}
-    height={675}
-    loading="lazy"
-    fetchpriority="high"
-    caption="Researched picks for better grind consistency, faster morning workflow, and realistic value under $100."
+  <HeroPicks
+    title="4 Manual Coffee Grinders Under $100 Worth Your Money"
+    subtitle="Ranked by burr quality, grind speed, and practical daily value for home brewers"
+    picks={[
+      { category: 'Budget', tagline: 'Best value below $50', icon: 'dollar', color: '#059669', features: ['Steel burr quality', 'Under $50 entry price', 'Simple maintenance', 'Good filter grind range'], topPick: 'KINGrinder P2', price: '$', subtitle: 'Low-cost starter pick', asin: 'B0CMPSFHV8' },
+      { category: 'Overall', tagline: 'Best all-around manual grinder', icon: 'target', color: '#2C1810', features: ['Excellent grind consistency', 'Broad brew range', 'Sturdy body construction', 'Espresso-capable control'], topPick: 'KINGrinder K6', price: '$$', subtitle: 'Top manual pick', asin: 'B0CY1XFXB8' },
+      { category: 'Beginner', tagline: 'Easiest grinder to learn', icon: 'hand', color: '#7A5B4A', features: ['Simple adjustment system', 'Reliable filter consistency', 'Low cleanup burden', 'Forgiving daily workflow'], topPick: 'Timemore Chestnut C2', price: '$', subtitle: 'Beginner-friendly starter', asin: 'B0833SDN8M' },
+      { category: 'Travel', tagline: 'Best lightweight travel pick', icon: 'volume-x', color: '#8B6F47', features: ['Ultra-light body', 'Compact travel size', 'Easy disassembly', 'Affordable backup grinder'], topPick: 'Hario Mini-Slim Plus', price: '$', subtitle: 'Portable travel grinder', asin: 'B01GPMH590' },
+    ]}
+    footer="coffeegearlab.com - manual grinders under $100 - 2026"
   />
 
   <Toc
