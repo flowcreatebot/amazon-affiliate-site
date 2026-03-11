@@ -4,7 +4,7 @@ import JsonLd from '../../components/JsonLd.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
 import Toc from '../../components/Toc.astro';
 import Pill from '../../components/Pill.astro';
 import CategoryPills from '../../components/CategoryPills.astro';
@@ -62,7 +62,18 @@ const jsonLd = {
     <Pill text="Commercial Intent Assist" />
   </CategoryPills>
 
-  <HeroMedia src="../assets/images/espresso-shot-dial-in-workflow-2026.svg" alt="Espresso dial-in workflow chart showing baseline ratio, shot timing, taste diagnosis, and next adjustment" width={1200} height={675} loading="eager" fetchpriority="high" caption="Editorial workflow: diagnose the shot, make one adjustment, and repeat with less waste." />
+  <HeroSteps
+    title="Espresso Dial-In Workflow"
+    subtitle="Four steps to fix sour or bitter shots — change one variable at a time"
+    steps={[
+      { label: 'Set Baseline', icon: 'target', actions: ['18g dose in', '36g yield out (1:2)', 'Machine default temp'], time: '1 min' },
+      { label: 'Pull & Time', icon: 'timer', actions: ['Start timer at pump', 'Target 25–32 sec', 'Weigh yield on scale'], time: '~30 sec' },
+      { label: 'Taste & Diagnose', icon: 'coffee', actions: ['Sour/thin → under-extracted', 'Bitter/dry → over-extracted', 'Hollow/flat → stale or uneven prep'], time: '~1 min' },
+      { label: 'Adjust Once', icon: 'wrench', actions: ['Sour → grind finer', 'Bitter → grind coarser', 'Keep dose fixed, change one variable'], time: 'Repeat' },
+    ]}
+    outcome="Lock dose, track yield by weight, adjust grind first — most shots fix within 2–3 rounds"
+    footer="coffeegearlab.com · 2026 espresso workflow"
+  />
 
   <p><strong>Quick answer:</strong> Start at <strong>18g in, 36g out</strong> (1:2 ratio), aim for <strong>25-32 seconds</strong>, and taste before adjusting. If the shot is sour and thin, grind finer. If bitter and dry, grind coarser. Keep dose fixed and only change one variable each round.</p>
 
@@ -106,8 +117,6 @@ const jsonLd = {
       </tbody>
     </table>
   </ComparisonTable>
-
-  <HeroMedia src="../assets/images/espresso-shot-dial-in-workflow-2026.svg" alt="Espresso taste map and dial-in checkpoints for sour and bitter shot correction" width={1200} height={675} caption="When in doubt: lock dose, track yield by weight, then adjust grind first." />
 
   <h2 id="workflow">10-minute dial-in loop</h2>
   <ol>

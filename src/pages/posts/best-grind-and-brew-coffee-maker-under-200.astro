@@ -10,6 +10,7 @@ import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import HeroMedia from '../../components/HeroMedia.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -439,7 +440,16 @@ const jsonLd = {
 
   <section>
     <h2 id="workflow">Workflow realism: bean-to-cup time, noise, and cleanup cadence</h2>
-    <HeroMedia src={`/assets/images/${slug}-workflow-2026.svg`} alt="Workflow timeline for grind and brew coffee makers under 200 including brew time noise and cleaning cadence" width={1200} height={675} caption="Daily friction matters more than one-time feature comparisons." loading="lazy" />
+    <HeroSteps
+      title="Bean-to-Cup Workflow"
+      subtitle="What a typical grind-and-brew session actually looks like"
+      steps={[
+        { label: 'Grind', icon: 'zap', actions: ['20–40 sec burst', 'Blade = sharper noise peaks', 'Burr = lower, steadier pitch'], time: '~30 sec' },
+        { label: 'Brew', icon: 'coffee', actions: ['3.5 min (small cup)', '9–13 min (full carafe)', 'Pause mid-brew if supported'], time: '4–13 min' },
+        { label: 'Clean', icon: 'wind', actions: ['Empty grounds daily', 'Brush chute every 2–3 brews', 'Descale every 3–5 weeks'], time: '~3 min' },
+      ]}
+      outcome="Daily friction matters more than one-time feature comparisons"
+    />
     <p><strong>Bean-to-cup timing:</strong> Most machines here land around 3.5-6 minutes for a small-batch equivalent cup, and around 9-13 minutes for full carafes.</p>
     <p><strong>Noise reality:</strong> Blade systems are usually sharper/louder during the first 20-40 seconds. Burr systems are often lower pitch but still clearly audible in small apartments.</p>
     <p><strong>Cleanup cadence:</strong> Empty grounds and rinse basket daily, brush grinder/chute every 2-3 brews, and descale every 3-5 weeks depending on water hardness.</p>

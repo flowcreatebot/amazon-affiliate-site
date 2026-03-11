@@ -10,6 +10,7 @@ import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import HeroMedia from '../../components/HeroMedia.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
 import Toc from '../../components/Toc.astro';
 import BestForBadge from '../../components/BestForBadge.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
@@ -410,7 +411,16 @@ const jsonLd = {
   <BuyingGuideSection>
     <h2 id="buying-guide">Buying guide</h2>
 
-    <HeroMedia src="/assets/images/k-cup-combo-maintenance-cadence-2026.svg" alt="Daily, weekly, and monthly maintenance checklist for bean and K-Cup combo coffee makers" width={1200} height={675} caption="Most taste complaints in hybrid machines come from missed weekly grinder and pod-path cleaning." loading="lazy" />
+    <HeroSteps
+      title="Hybrid Machine Maintenance"
+      subtitle="Keep both bean and pod paths clean to avoid stale flavor crossover"
+      steps={[
+        { label: 'Daily', icon: 'zap', actions: ['Rinse brew basket', 'Empty pod bin and drip tray', 'Wipe grinder chute lid'], time: '~2 min' },
+        { label: 'Weekly', icon: 'wind', actions: ['Brush burr/chute path', 'Flush pod needle area', 'Wash reservoir and lid'], time: '~5 min' },
+        { label: 'Monthly', icon: 'wrench', actions: ['Descale full brew path', 'Deep-clean hopper seals', 'Check for stale bean oils'], time: '~15 min' },
+      ]}
+      outcome="Most taste complaints in hybrid machines come from missed weekly grinder and pod-path cleaning"
+    />
 
     <h3>When K-Cup compatibility is actually worth it</h3>
     <p>It is worth paying for if your household genuinely alternates between fresh beans and fast pods. If you almost never use pods, skip the hybrid premium and use our <a href="/posts/best-coffee-maker-with-grinder.html">best coffee maker with grinder guide</a> for stronger flavor-focused picks.</p>
