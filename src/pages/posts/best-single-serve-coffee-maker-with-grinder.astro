@@ -72,13 +72,13 @@ const products = [
 
 const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
 const imageMap: Record<string, string> = {
-  B09HDFLF2X: 'https://m.media-amazon.com/images/P/B09HDFLF2X.01.LZZZZZZZ.jpg',
-  B08MGYR9SX: 'https://m.media-amazon.com/images/P/B08MGYR9SX.01.LZZZZZZZ.jpg',
-  B0GM41GYZH: 'https://m.media-amazon.com/images/P/B0GM41GYZH.01.LZZZZZZZ.jpg',
-  B00LU2I46E: 'https://m.media-amazon.com/images/P/B00LU2I46E.01.LZZZZZZZ.jpg',
-  B00VGGVQCI: 'https://m.media-amazon.com/images/P/B00VGGVQCI.01.LZZZZZZZ.jpg',
-  B0F3ZSVPPG: 'https://m.media-amazon.com/images/P/B0F3ZSVPPG.01.LZZZZZZZ.jpg',
-  B09NRYX5K7: 'https://m.media-amazon.com/images/P/B09NRYX5K7.01.LZZZZZZZ.jpg',
+  B09HDFLF2X: 'https://m.media-amazon.com/images/P/B09HDFLF2X.01._AC_SL500_.jpg',
+  B08MGYR9SX: 'https://m.media-amazon.com/images/P/B08MGYR9SX.01._AC_SL500_.jpg',
+  B0GM41GYZH: 'https://m.media-amazon.com/images/P/B0GM41GYZH.01._AC_SL500_.jpg',
+  B00LU2I46E: 'https://m.media-amazon.com/images/P/B00LU2I46E.01._AC_SL500_.jpg',
+  B00VGGVQCI: 'https://m.media-amazon.com/images/P/B00VGGVQCI.01._AC_SL500_.jpg',
+  B0F3ZSVPPG: 'https://m.media-amazon.com/images/P/B0F3ZSVPPG.01._AC_SL500_.jpg',
+  B09NRYX5K7: 'https://m.media-amazon.com/images/P/B09NRYX5K7.01._AC_SL500_.jpg',
 };
 const imageUrl = (asin: string) => imageMap[asin] ?? 'https://m.media-amazon.com/images/I/61Rdl5C2AHL._AC_SL500_.jpg';
 
@@ -163,9 +163,18 @@ const jsonLd = {
   <h1>Best Single Serve Coffee Maker with Grinder (2026): 7 Picks Compared</h1>
   <p class="lead">If you want one-cup convenience without giving up fresh-ground flavor, this is the shortlist to start with. We researched and compared seven popular machines for brew quality, bean-to-cup speed, pod flexibility, daily cleanup effort, and long-term value so you can buy the right model the first time.</p>
 
+  <!-- IMAGE_PLACEHOLDER
+  type: hero
+  slug: best-single-serve-coffee-maker-with-grinder
+  filename: best-single-serve-coffee-maker-with-grinder-hero-2026.svg
+  alt: "Editorial comparison of single-serve coffee makers with built-in grinder workflows"
+  concept: "Warm-toned countertop scene with abstract single-cup machines, coffee beans, and icons representing speed, cleanup, and brew flexibility"
+  width: 1200
+  height: 675
+  -->
   <HeroMedia
-    src="/assets/images/best-single-serve-coffee-maker-with-grinder-compared-2026.svg"
-    alt="Best single serve coffee maker with grinder options compared"
+    src="/assets/images/best-single-serve-coffee-maker-with-grinder-hero-2026.svg"
+    alt="Editorial comparison of single-serve coffee makers with built-in grinder workflows"
     width={1200}
     height={675}
     caption="Our 2026 single-serve grinder picks ranked by speed, flexibility, and cleanup workload."

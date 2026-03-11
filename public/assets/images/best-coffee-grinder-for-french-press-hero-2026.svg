@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">French press grinder comparison illustration</title>
+  <desc id="desc">Warm editorial illustration showing manual and electric grinder silhouettes, coarse coffee particle motifs, and evaluation callouts for consistency, fines control, and cleanup.</desc>
+  <rect x="0" y="0" width="1200" height="675" fill="#FAF8F5"/>
+  <rect x="56" y="64" width="1088" height="547" rx="24" fill="#F5EDE4"/>
+
+  <text x="94" y="132" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="50" font-weight="800">French Press Grinder Priorities</text>
+  <text x="94" y="172" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400">Coarse consistency, low fines, and easy daily cleanup</text>
+
+  <rect x="96" y="212" width="320" height="332" rx="12" fill="#EFDFCE"/>
+  <rect x="440" y="212" width="320" height="332" rx="12" fill="#EFDFCE"/>
+  <rect x="784" y="212" width="320" height="332" rx="12" fill="#EFDFCE"/>
+
+  <text x="128" y="256" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600">Consistency</text>
+  <text x="472" y="256" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600">Fines Control</text>
+  <text x="816" y="256" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600">Cleanup Flow</text>
+
+  <rect x="190" y="292" width="128" height="182" rx="12" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="4"/>
+  <rect x="222" y="266" width="64" height="30" rx="10" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="4"/>
+  <circle cx="254" cy="390" r="38" fill="#FAF8F5" stroke="#5C3D2E" stroke-width="4"/>
+  <circle cx="254" cy="390" r="16" fill="#EFDFCE"/>
+
+  <rect x="536" y="296" width="128" height="166" rx="12" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="4"/>
+  <rect x="566" y="274" width="68" height="24" rx="10" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="4"/>
+  <rect x="552" y="330" width="96" height="96" rx="12" fill="#FAF8F5" stroke="#5C3D2E" stroke-width="3"/>
+
+  <path d="M856 454 L898 332 L940 454" fill="none" stroke="#5C3D2E" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="844" y="454" width="108" height="20" rx="8" fill="#5C3D2E"/>
+  <circle cx="898" cy="308" r="24" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="4"/>
+
+  <circle cx="136" cy="496" r="7" fill="#059669"/>
+  <circle cx="164" cy="512" r="6" fill="#059669"/>
+  <circle cx="192" cy="498" r="7" fill="#059669"/>
+  <circle cx="220" cy="514" r="6" fill="#059669"/>
+  <circle cx="248" cy="500" r="7" fill="#059669"/>
+
+  <circle cx="480" cy="496" r="6" fill="#059669"/>
+  <circle cx="506" cy="510" r="7" fill="#059669"/>
+  <circle cx="532" cy="498" r="6" fill="#059669"/>
+  <circle cx="558" cy="512" r="7" fill="#059669"/>
+  <circle cx="584" cy="500" r="6" fill="#059669"/>
+
+  <path d="M810 514 C846 482, 950 482, 992 514" fill="none" stroke="#059669" stroke-width="5" stroke-linecap="round"/>
+  <path d="M818 536 C852 510, 944 510, 986 536" fill="none" stroke="#7A5B4A" stroke-width="4" stroke-linecap="round"/>
+
+  <rect x="92" y="576" width="1016" height="44" rx="12" fill="#FAF8F5" stroke="#EFDFCE" stroke-width="2"/>
+  <text x="120" y="604" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="400">Choose a grinder that stays repeatable at coarse settings, controls fines, and fits your daily brew routine.</text>
+</svg>

@@ -7,7 +7,7 @@ secondary_keywords:
   - "coarse grind coffee grinder"
   - "grinder for french press"
   - "best grinder for french press"
-status: draft
+status: published
 source: backfill
 priority_rank: 10
 created_by: manual
@@ -26,10 +26,9 @@ asins_verified:
   - B09WH9JKY1
   - B0043095WW
 word_count: 2000
-rework_stages: [images]
-rework_reason: "The images are terrible on these, we need to redo them. The writer should make them as placeholders and the image agent should do the images again."
-rework_initiated_by: dashboard
-rework_initiated_at: "2026-03-10T15:16:23.866Z"
+image_agent_completed_at: "2026-03-11T08:31:12.275Z"
+images_created:
+  - best-coffee-grinder-for-french-press-hero-2026.svg
 ---
 
 # Brief: Best Coffee Grinder for French Press (Phase 1.5 Refresh)

@@ -1,63 +1,61 @@
 ---
-slug: best-drip-coffee-maker-under-100
+slug: best-grind-and-brew-coffee-maker-under-200
 page_type: money
-primary_keyword: "best drip coffee maker under 100"
+primary_keyword: "best grind and brew coffee maker under 200"
 secondary_keywords:
-  - "budget drip coffee maker"
-  - "cheap drip coffee maker"
-  - "drip coffee maker under $100"
-  - "programmable coffee maker under $100"
-status: draft
+  - "grind and brew coffee maker"
+  - "automatic grind and brew"
+  - "coffee maker with grinder under $200"
+  - "budget grind and brew"
+status: design
 source: backfill
-priority_rank: 3
+priority_rank: 4
 created_by: manual
 created_at: "2026-03-08T12:00:00+07:00"
-writer_completed_at: "2026-03-11T11:17:23+07:00"
-qa_result: null
+writer_completed_at: "2026-03-11T06:21:35.159Z"
+image_agent_completed_at: "2026-03-11T09:10:40.643Z"
+images_created:
+  - best-grind-and-brew-coffee-maker-under-200-hero-2026.svg
+  - best-grind-and-brew-coffee-maker-under-200-workflow-2026.svg
+qa_result: pass
 qa_rejection_reason: null
-qa_rejection_details: null
-designer_completed_at: "2026-03-10T00:47:00+07:00"
-deployed_url: "https://coffee-gear-lab-dev.onrender.com/posts/best-drip-coffee-maker-under-100.html"
+designer_completed_at: "2026-03-09T21:47:00+07:00"
+deployed_url: https://coffee-gear-lab-dev.onrender.com/posts/best-grind-and-brew-coffee-maker-under-200.html
 asins_verified:
+  - "B000VTP45Q"
+  - "B00LU2I46E"
+  - "B08DCK4MPV"
+  - "B0FX3M77DD"
+  - "B0FNXPWVD8"
+  - "B0F3ZSVPPG"
   - "B07S98411N"
-  - "B00MVWGQX0"
-  - "B01GJOMWVA"
-  - "B00EI7DPPI"
-  - "B089DWFP9L"
-  - "B00LU2I3V0"
-  - "B08TYTBX8X"
-  - "B07X43VXZV"
-word_count: 2027
-rework_stages: [images]
-rework_reason: "The images are terrible on these, we need to redo them. The writer should make them as placeholders and the image agent should do the images again."
-rework_initiated_by: dashboard
-rework_initiated_at: "2026-03-10T15:16:23.866Z"
+word_count: 2001
 ---
 
-# Brief: Best Drip Coffee Maker Under $100 (Phase 1.5 Refresh)
+# Brief: Best Grind and Brew Coffee Maker Under $200 (Phase 1.5 Refresh)
 
 ## Phase Alignment
 - **Roadmap phase:** Phase 1.5 (Design System Backfill)
 - **Why:** Legacy page needs full v2 standards alignment + product images
-- **Do not create a net-new topic page.** This is a full rewrite of existing `posts/best-drip-coffee-maker-under-100.html`.
+- **Do not create a net-new topic page.** This is a full rewrite of existing `posts/best-grind-and-brew-coffee-maker-under-200.html`.
 
 ## Keyword Data + Search Intent Analysis
 
 ### Primary Keyword Cluster
-- **Primary keyword:** best drip coffee maker under 100
+- **Primary keyword:** best grind and brew coffee maker under 200
 - **Search intent:** Commercial investigation (roundup/listicle)
 - **Funnel stage:** Mid-to-bottom funnel
 - **SERP pattern:** "best" list pages with quick picks, comparison tables, FAQ
 
 ### Secondary Keywords
-- budget drip coffee maker
-- cheap drip coffee maker
-- drip coffee maker under $100
-- programmable coffee maker under $100
+- grind and brew coffee maker
+- automatic grind and brew
+- coffee maker with grinder under $200
+- budget grind and brew
 
 ### Intent Notes for Writer
 - Users want quick top pick + budget pick before full reviews
-- Differentiate by programmability, brew capacity, cleanup burden, thermal vs glass carafe
+- Differentiate by grinder type (blade vs burr), workflow speed, cleanup effort, brew flexibility
 - No hands-on testing claims — use researched/compared language
 
 ## Required Section Outline (Money Page)
@@ -85,15 +83,15 @@ Re-verify all ASINs from the existing legacy page via Brave Search. The existing
 
 ## Internal Link Targets
 - /posts/best-coffee-maker-with-grinder.html
-- /posts/drip-vs-single-serve-coffee-maker.html
+- /posts/best-drip-coffee-maker-under-100.html
+- /posts/best-single-serve-coffee-maker-with-grinder.html
 - /posts/coffee-brewing-ratio-guide.html
-- /posts/best-grind-and-brew-coffee-maker-under-200.html
 
 ## Execution Notes for Writer
-- This is a full rewrite of existing `posts/best-drip-coffee-maker-under-100.html`
+- This is a full rewrite of existing `posts/best-grind-and-brew-coffee-maker-under-200.html`
 - Use styles-v2.css, full design system components
 - Include real product images from Amazon CDN
-- Maintain canonical URL: `https://coffeegearpicks.com/posts/best-drip-coffee-maker-under-100.html`
+- Maintain canonical URL: `https://coffeegearpicks.com/posts/best-grind-and-brew-coffee-maker-under-200.html`
 - Ensure all Amazon links use: `https://www.amazon.com/dp/{ASIN}/ref=nosim?tag=coffee-site-20`
 - Target word count: 2,000-2,400 words
 - Read standards/image-sourcing.md for product image requirements

@@ -204,3 +204,10 @@
 2026-03-11T07:02:41.240+00:00 | image-agent | MOVED | best-burr-coffee-grinder-under-200 | rework/ → design/ | source:rework
 2026-03-11T07:17:39.677+00:00 | qa | MOVED | best-burr-coffee-grinder-under-200 | design/ → qa/ | source:design
 2026-03-11T07:50:53.875+00:00 | deployer | MOVED | best-burr-coffee-grinder-under-200 | qa/ → published/ | source:qa
+2026-03-11T08:18:53.259+00:00 | writer | PREQA_PASS | best-single-serve-coffee-maker-with-grinder | checks:C01,S02,C04,C05,C06,C07,C08,S07,L01,L02b,D03
+2026-03-11T08:18:53.261+00:00 | writer | PARTIAL_REWORK | best-single-serve-coffee-maker-with-grinder | drafts done, remaining: images
+2026-03-11T08:31:12.276+00:00 | image-agent | MOVED | best-coffee-grinder-for-french-press | rework/ → design/ | source:rework
+2026-03-11T09:06:11.532+00:00 | image-agent | MOVED | best-drip-coffee-maker-under-100 | rework/ → design/ | source:rework
+2026-03-11T09:10:40.644+00:00 | image-agent | MOVED | best-grind-and-brew-coffee-maker-under-200 | rework/ → design/ | source:rework
+2026-03-11T09:18:14.527+00:00 | qa | MOVED | best-coffee-grinder-for-french-press | design/ → qa/ | source:design
+2026-03-11T09:50:57.030+00:00 | deployer | MOVED | best-coffee-grinder-for-french-press | qa/ → published/ | source:qa

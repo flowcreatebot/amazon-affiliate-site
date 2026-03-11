@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Workflow timeline for grind and brew coffee maker routines under two hundred dollars</title>
+  <desc id="desc">Three-stage workflow diagram showing grind, brew, and clean phases with typical time windows, noise expectations, and maintenance cadence in a warm editorial style.</desc>
+
+  <rect width="1200" height="675" fill="#FAF8F5"/>
+  <rect x="56" y="56" width="1088" height="563" rx="12" fill="#F5EDE4"/>
+
+  <text x="88" y="126" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="44" font-weight="800">Bean-to-Cup Workflow Under $200</text>
+  <text x="88" y="164" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400">What actually affects rushed weekday mornings</text>
+
+  <line x1="148" y1="262" x2="1052" y2="262" stroke="#059669" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="210" cy="262" r="12" fill="#059669"/>
+  <circle cx="600" cy="262" r="12" fill="#059669"/>
+  <circle cx="990" cy="262" r="12" fill="#059669"/>
+
+  <rect x="96" y="296" width="328" height="252" rx="12" fill="#FAF8F5" stroke="#B89B8A"/>
+  <rect x="436" y="296" width="328" height="252" rx="12" fill="#FAF8F5" stroke="#B89B8A"/>
+  <rect x="776" y="296" width="328" height="252" rx="12" fill="#FAF8F5" stroke="#B89B8A"/>
+
+  <text x="126" y="338" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600">1) Grind</text>
+  <text x="466" y="338" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600">2) Brew</text>
+  <text x="806" y="338" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600">3) Clean</text>
+
+  <rect x="126" y="356" width="150" height="34" rx="12" fill="#ECFDF5" stroke="#059669"/>
+  <text x="142" y="379" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600">~20-40 sec</text>
+  <rect x="466" y="356" width="178" height="34" rx="12" fill="#ECFDF5" stroke="#059669"/>
+  <text x="482" y="379" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600">~3.5-13 min</text>
+  <rect x="806" y="356" width="188" height="34" rx="12" fill="#ECFDF5" stroke="#059669"/>
+  <text x="822" y="379" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600">Daily + weekly</text>
+
+  <path d="M146 448 C180 414, 222 414, 256 448" fill="none" stroke="#5C3D2E" stroke-width="6"/>
+  <circle cx="168" cy="470" r="12" fill="#EFDFCE" stroke="#5C3D2E" stroke-width="3"/>
+  <circle cx="204" cy="482" r="12" fill="#EFDFCE" stroke="#5C3D2E" stroke-width="3"/>
+  <circle cx="238" cy="470" r="12" fill="#EFDFCE" stroke="#5C3D2E" stroke-width="3"/>
+
+  <path d="M486 478 H708" stroke="#5C3D2E" stroke-width="6" stroke-linecap="round"/>
+  <path d="M540 478 C568 444, 626 444, 654 478" fill="none" stroke="#5C3D2E" stroke-width="6"/>
+  <rect x="566" y="498" width="64" height="24" rx="12" fill="#EFDFCE" stroke="#5C3D2E"/>
+
+  <rect x="814" y="444" width="82" height="58" rx="12" fill="#EFDFCE" stroke="#5C3D2E" stroke-width="3"/>
+  <rect x="912" y="444" width="82" height="58" rx="12" fill="#EFDFCE" stroke="#5C3D2E" stroke-width="3"/>
+  <path d="M855 444 L855 418" stroke="#5C3D2E" stroke-width="5" stroke-linecap="round"/>
+  <path d="M953 444 L953 418" stroke="#5C3D2E" stroke-width="5" stroke-linecap="round"/>
+
+  <text x="126" y="528" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400">Blade grinders = sharper early noise peaks</text>
+  <text x="466" y="528" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400">Small cups are faster; full carafes need patience</text>
+  <text x="806" y="528" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400">Brush every 2-3 brews, descale every 3-5 weeks</text>
+
+  <text x="126" y="566" fill="#7A5B4A" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="400">Track these three phases first before changing beans or dose.</text>
+</svg>
