@@ -9,7 +9,7 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -167,12 +167,17 @@ const jsonLd = {
 
   <h1>Best Coffee Grinder for French Press in 2026: 7 Top Picks</h1>
   <p class="lead">If you want cleaner French press cups with less sludge, your grinder matters more than almost any other piece of gear. We researched seven strong options across manual and electric categories, then compared them for coarse consistency, fines control, cleanup burden, and everyday value for different household routines.</p>
-  <HeroMedia
-    src="/assets/images/best-coffee-grinder-for-french-press-hero-2026.svg"
-    alt="Editorial comparison of French press grinder types focused on coarse consistency and low fines"
-    width={1200}
-    height={675}
-    caption="French press buyers should prioritize coarse consistency, low fines, and practical cleanup over feature overload."
+
+  <HeroPicks
+    title="4 French Press Grinders Worth Your Money"
+    subtitle="Picked for coarse consistency, low fines, and practical daily workflow"
+    picks={[
+      { category: 'Budget', tagline: 'Best value under $100', icon: 'dollar', color: '#059669', features: ['Affordable entry price', 'Simple daily workflow', 'Low maintenance burden', 'Beginner friendly'], topPick: 'TIMEMORE Chestnut C2', price: '$', subtitle: 'Reliable budget starter', asin: 'B0833SDN8M' },
+      { category: 'Overall', tagline: 'Best all-around French press grinder', icon: 'target', color: '#2C1810', features: ['Stable coarse output', 'Stepped repeatability', 'Strong parts support', 'Multi-method flexible'], topPick: 'Baratza Encore ESP', price: '$$', subtitle: 'Dependable daily grinder', asin: 'B0BW272XCV' },
+      { category: 'Manual', tagline: 'Premium hand-ground quality', icon: 'hand', color: '#7A5B4A', features: ['Excellent coarse consistency', 'Low fines output', 'Precise click control', 'Quiet operation'], topPick: 'KINGrinder K6', price: '$$', subtitle: 'Upgrade-level manual pick', asin: 'B09WH9JKY1' },
+      { category: 'Compact', tagline: 'Best for small kitchens', icon: 'volume-x', color: '#8B6F47', features: ['Small counter footprint', 'Batch brewing speed', 'Broad brew range', 'Convenient electric workflow'], topPick: 'Fellow Opus', price: '$$', subtitle: 'Space-saving all-rounder', asin: 'B0BV96VPSR' },
+    ]}
+    footer="coffeegearlab.com - French press grinders - 2026"
   />
 
   <Toc

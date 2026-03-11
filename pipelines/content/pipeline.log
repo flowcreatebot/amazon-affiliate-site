@@ -225,3 +225,6 @@
 2026-03-11T20:02:43+07:00 | builder | MOVED | coffee-brewing-ratio-guide | backfill/ → deferred/ | status-stage-drift-fix
 2026-03-11T20:02:43+07:00 | builder | MOVED | espresso-shot-dial-in-workflow | backfill/ → deferred/ | status-stage-drift-fix
 2026-03-11T13:18:47.728+00:00 | qa | MOVED | best-coffee-maker-with-grinder | design/ → rejected/ | FAIL:C03,C06
+2026-03-11T14:18:52.169+00:00 | writer | PREQA_PASS | best-coffee-maker-with-grinder | checks:C01,S02,C04,C05,C06,C07,C08,S07,L01,L02b,D03
+2026-03-11T14:18:52.172+00:00 | writer | MOVED | best-coffee-maker-with-grinder | rejected/ → design/ | source:rejected
+2026-03-11T14:31:45.474+00:00 | image-agent | MOVED | best-manual-coffee-grinder-under-100 | rework/ → design/ | source:rework

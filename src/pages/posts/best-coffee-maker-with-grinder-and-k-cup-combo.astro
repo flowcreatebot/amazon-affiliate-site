@@ -9,7 +9,7 @@ import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import HeroSteps from '../../components/HeroSteps.astro';
 import Toc from '../../components/Toc.astro';
 import BestForBadge from '../../components/BestForBadge.astro';
@@ -154,7 +154,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-06',
       dateModified: '2026-03-06',
-      image: `${SITE.url}/assets/images/best-coffee-maker-with-grinder-and-k-cup-combo-tested-2026.svg`,
+      image: 'https://m.media-amazon.com/images/P/B08MGYR9SX.01._AC_SL500_.jpg',
     }),
     {
       "@type": "ItemList",
@@ -237,7 +237,17 @@ const jsonLd = {
   <h1>Best Coffee Maker with Grinder and K-Cup Combo (2026): 7 Researched Picks</h1>
   <p class="lead">If you want fresh-bean flavor on weekdays but still need pod backup for speed, a hybrid grinder + K-Cup machine can be the right buy. We compared seven strong options by cup quality, morning workflow friction, and real maintenance burden so you can pick once and avoid buyer regret.</p>
 
-  <HeroMedia src="/assets/images/best-coffee-maker-with-grinder-and-k-cup-combo-tested-2026.svg" alt="Best coffee maker with grinder and K-Cup combo machines ranked by speed, cleanup burden, and value" width={1200} height={675} caption="Editorial snapshot: top hybrid bean + K-Cup combo picks by workflow fit and budget." fetchpriority="high" />
+  <HeroPicks
+    title="Best Coffee Maker with Grinder and K-Cup Combo"
+    subtitle="7 hybrid bean + pod machines compared by speed, cleanup, and daily workflow"
+    picks={[
+      { category: 'Budget', tagline: 'Lowest cost grind-and-brew entry', icon: 'dollar', color: '#059669', features: ['Affordable blade grinder', 'Large 12-cup carafe output', 'Beans + ground coffee modes', 'Simple daily cleanup'], topPick: 'BLACK+DECKER Mill & Brew', price: '$', subtitle: 'Best value under $100', asin: 'B00LU2I46E' },
+      { category: 'Overall', tagline: 'Best all-around hybrid machine', icon: 'target', color: '#2C1810', features: ['Native bean + K-Cup modes', 'Quick single-cup workflow', 'Easy mode switching', 'Moderate maintenance'], topPick: 'Cuisinart SS-GB1', price: '$$', subtitle: 'Cleanest bean-pod compromise', asin: 'B08MGYR9SX' },
+      { category: 'Fastest', tagline: 'Quickest single-cup mornings', icon: 'volume-x', color: '#7A5B4A', features: ['Fast bean-to-cup cycle', 'Simple half-awake controls', 'Beans + pods + grounds', 'Compact countertop fit'], topPick: 'Cuisinart Grind & Brew Single-Serve', price: '$$', subtitle: 'Speed-first one-cup brewing', asin: 'B09HDFLF2X' },
+      { category: 'Compact', tagline: 'Small footprint flexibility', icon: 'hand', color: '#8B6F47', features: ['Smallest hybrid footprint', 'Ground + K-Cup support', 'Fast warm-up time', 'Office and apartment friendly'], topPick: 'Chefman InstaCoffee Max+', price: '$$', subtitle: 'Compact multi-mode brewer', asin: 'B09NRYX5K7' },
+    ]}
+    footer="coffeegearlab.com - hybrid bean + K-Cup coffee makers - 2026"
+  />
 
   <p><strong>Direct answer:</strong> The best coffee maker with grinder and K-Cup combo for most buyers is Cuisinart SS-GB1 because it handles beans and pods with less daily friction than most hybrids. If you are flavor-first and can skip pods, Breville Grind Control performs better. If you only care about pod speed, buy a pod-only machine instead.</p>
 
@@ -316,6 +326,15 @@ const jsonLd = {
     <p><strong>How we evaluate:</strong> We score each machine on <strong>brew quality</strong>, <strong>grinder consistency</strong>, <strong>usability</strong>, <strong>cleaning burden</strong>, and <strong>value for money</strong>. For this keyword we add a sixth factor: how smoothly each unit handles bean vs pod switching in real weekday routines.</p>
 
     <h3>1) Cuisinart SS-GB1 — Best Overall Beans + K-Cup Combo</h3>
+    <ProductCard
+      title="Cuisinart SS-GB1"
+      badge={{ label: 'Best Overall', variant: 'overall' }}
+      rating={{ score: 4.3 }}
+      price="$$"
+      ctaUrl={amazonUrl('B08MGYR9SX')}
+      featured={true}
+      noImage
+    />
     <p><strong>Why this pick:</strong> It is the cleanest compromise between fresh-ground flavor and true pod fallback in one machine.</p>
     <p><strong>Buy this if...</strong> your home alternates between whole-bean mornings and K-Cup convenience days.</p>
     <p><strong>Skip this if...</strong> you want burr-level flavor precision or full-carafe output most days.</p>
@@ -328,6 +347,14 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B08MGYR9SX" external>Check Cuisinart SS-GB1 price on Amazon</CtaButton></p>
 
     <h3>2) Cuisinart Grind &amp; Brew Single-Serve — Best for Fast Single-Cup Mornings</h3>
+    <ProductCard
+      title="Cuisinart Grind & Brew Single-Serve"
+      badge={{ label: 'Fastest Mornings', variant: 'beginners' }}
+      rating={{ score: 4.3 }}
+      price="$$"
+      ctaUrl={amazonUrl('B09HDFLF2X')}
+      noImage
+    />
     <p><strong>Why this pick:</strong> It keeps startup friction low while still giving bean freshness and pod fallback in one compact footprint.</p>
     <p><strong>Buy this if...</strong> you value speed-first one-cup brewing above deep flavor optimization.</p>
     <p><strong>Skip this if...</strong> you need low-noise grinding or bigger family-size output.</p>
@@ -340,6 +367,14 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B09HDFLF2X" external>Check Cuisinart Grind &amp; Brew Single-Serve price on Amazon</CtaButton></p>
 
     <h3>3) Gevi 4-in-1 Grind &amp; Brew — Best for Lowest Weekly Cleanup</h3>
+    <ProductCard
+      title="Gevi 4-in-1 Grind & Brew"
+      badge={{ label: 'Easiest Cleanup', variant: 'budget' }}
+      rating={{ score: 4.2 }}
+      price="$$"
+      ctaUrl={amazonUrl('B0GM41GYZH')}
+      noImage
+    />
     <p><strong>Why this pick:</strong> It has the easiest maintenance rhythm among true hybrid bean + pod options in this price range.</p>
     <p><strong>Buy this if...</strong> your top priority is low-friction upkeep more than maximum flavor detail.</p>
     <p><strong>Skip this if...</strong> you want the strongest grinder consistency for nuanced light roasts.</p>
@@ -352,6 +387,14 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B0GM41GYZH" external>Check Gevi 4-in-1 price on Amazon</CtaButton></p>
 
     <h3>4) BLACK+DECKER Mill &amp; Brew — Best Budget Hybrid Strategy Under $200</h3>
+    <ProductCard
+      title="BLACK+DECKER Mill & Brew"
+      badge={{ label: 'Best Budget', variant: 'budget' }}
+      rating={{ score: 4.1 }}
+      price="$"
+      ctaUrl={amazonUrl('B00LU2I46E')}
+      noImage
+    />
     <p><strong>Why this pick:</strong> It is the cheapest reliable entry for bean + ground use, and can still support occasional pod use via reusable pod workflows.</p>
     <p><strong>Buy this if...</strong> you brew mostly carafes and need strong value before convenience extras.</p>
     <p><strong>Skip this if...</strong> you need native one-touch K-Cup operation.</p>
@@ -364,6 +407,14 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B00LU2I46E" external>Check BLACK+DECKER Mill &amp; Brew price on Amazon</CtaButton></p>
 
     <h3>5) Chefman InstaCoffee Max+ — Best Compact Hybrid for Small Kitchens</h3>
+    <ProductCard
+      title="Chefman InstaCoffee Max+"
+      badge={{ label: 'Best Compact', variant: 'pourover' }}
+      rating={{ score: 4.0 }}
+      price="$$"
+      ctaUrl={amazonUrl('B09NRYX5K7')}
+      noImage
+    />
     <p><strong>Why this pick:</strong> It packs bean + pod flexibility into a smaller footprint than most direct competitors.</p>
     <p><strong>Buy this if...</strong> counter space is tight and you still need multiple brew modes.</p>
     <p><strong>Skip this if...</strong> you want larger reservoirs to avoid frequent refills.</p>
@@ -376,6 +427,14 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B09NRYX5K7" external>Check Chefman InstaCoffee Max+ price on Amazon</CtaButton></p>
 
     <h3>6) Breville Grind Control — Best Flavor-First Burr Upgrade</h3>
+    <ProductCard
+      title="Breville Grind Control"
+      badge={{ label: 'Best Flavor Upgrade', variant: 'upgrade' }}
+      rating={{ score: 4.5 }}
+      price="$$$"
+      ctaUrl={amazonUrl('B00VGGVQCI')}
+      noImage
+    />
     <p><strong>Why this pick:</strong> If cup quality beats pod convenience in your priorities, this is the strongest everyday burr upgrade in the cluster.</p>
     <p><strong>Buy this if...</strong> you care most about cleaner extraction and better grind consistency.</p>
     <p><strong>Skip this if...</strong> you require direct K-Cup compatibility out of the box.</p>
@@ -388,6 +447,14 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B00VGGVQCI" external>Check Breville Grind Control price on Amazon</CtaButton></p>
 
     <h3>7) De'Longhi TrueBrew — Best Premium Upgrade for Mixed One-Cup + Carafe Use</h3>
+    <ProductCard
+      title="De'Longhi TrueBrew"
+      badge={{ label: 'Best Premium', variant: 'espresso' }}
+      rating={{ score: 4.4 }}
+      price="$$$"
+      ctaUrl={amazonUrl('B0F3ZSVPPG')}
+      noImage
+    />
     <p><strong>Why this pick:</strong> It gives the broadest brew-size range for users who bounce between quick singles and larger weekend batches.</p>
     <p><strong>Buy this if...</strong> you want premium build quality and flexible output formats from one machine.</p>
     <p><strong>Skip this if...</strong> your budget is tight or you need pod support without adapters.</p>

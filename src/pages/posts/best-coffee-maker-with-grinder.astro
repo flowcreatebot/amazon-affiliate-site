@@ -9,7 +9,7 @@ import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -99,7 +99,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-08',
       dateModified: '2026-03-11',
-      image: `${SITE.url}/assets/images/${slug}-hero-2026.svg`,
+      image: productImages.breville,
     }),
     {
       '@type': 'ItemList',
@@ -127,7 +127,7 @@ const jsonLd = {
   title={title}
   description={description}
   canonical={canonical}
-  ogImage={`${SITE.url}/assets/images/${slug}-hero-2026.svg`}
+  ogImage={`${SITE.url}/assets/images/${slug}-researched-2026.svg`}
   breadcrumbs={[
     { label: 'Home', href: '/' },
     { label: 'All Guides', href: '/posts/' },
@@ -141,21 +141,16 @@ const jsonLd = {
   <h1>Best Coffee Maker with Grinder (2026): 7 Top Picks for Better Daily Coffee</h1>
   <p class="lead">If you want fresher coffee without adding a separate grinder, a grind-and-brew coffee maker is the cleanest upgrade. We researched seven top options by grinder quality, brew flexibility, cleanup burden, and real-world value so you can choose fast and avoid buyer regret.</p>
 
-  <!-- IMAGE_PLACEHOLDER
-  type: hero
-  slug: best-coffee-maker-with-grinder
-  filename: best-coffee-maker-with-grinder-hero-2026.svg
-  alt: "Editorial comparison of grind-and-brew coffee maker categories"
-  concept: "Warm-toned kitchen counter scene with abstract coffee maker silhouettes grouped by budget, single-serve, and premium workflow tiers"
-  width: 1200
-  height: 675
-  -->
-  <HeroMedia
-    src={`/assets/images/${slug}-hero-2026.svg`}
-    alt="Editorial comparison of grind-and-brew coffee maker categories"
-    width={1200}
-    height={675}
-    caption="Category map: budget carafe, single-serve convenience, and premium burr-driven upgrades."
+  <HeroPicks
+    title="Best Coffee Maker with Grinder"
+    subtitle="7 picks compared by grinder quality, brew flexibility, and daily workflow fit"
+    picks={[
+      { category: 'Budget', tagline: 'Best value for everyday brewing', icon: 'dollar', color: '#059669', features: ['Affordable grind-and-brew entry', 'Blade grinder keeps cost low', '12-cup carafe capacity', 'Grind-off pre-ground fallback'], topPick: 'BLACK+DECKER Mill & Brew', price: '$', subtitle: 'Lowest-cost fresh grinding', asin: 'B00LU2I46E' },
+      { category: 'Overall', tagline: 'Strongest all-around performance', icon: 'target', color: '#2C1810', features: ['Burr grinder consistency', 'Single-cup and carafe modes', 'Adjustable grind and strength', 'Reliable daily workflow'], topPick: 'Breville Grind Control', price: '$$$', subtitle: 'Best balance of quality and flexibility', asin: 'B00VGGVQCI' },
+      { category: 'Single-Serve', tagline: 'Fast one-cup convenience', icon: 'volume-x', color: '#7A5B4A', features: ['Bean-to-cup single servings', 'Compact kitchen footprint', 'Multiple cup size options', 'Grind bypass for pre-ground'], topPick: 'Cuisinart Grind & Brew Single-Serve', price: '$$', subtitle: 'Quick single-cup mornings', asin: 'B0FNXPWVD8' },
+      { category: 'Premium', tagline: 'Elevated grind-and-brew experience', icon: 'hand', color: '#8B6F47', features: ['Conical burr grinder', 'Multiple drink size presets', 'One-touch bean-to-cup', 'Quiet operation'], topPick: "De'Longhi TrueBrew", price: '$$$', subtitle: 'Premium drink variety', asin: 'B0F3ZSVPPG' },
+    ]}
+    footer="coffeegearlab.com - grind-and-brew coffee makers - 2026"
   />
 
   <Toc items={tocItems} />
@@ -288,7 +283,13 @@ const jsonLd = {
     <h2>Individual Product Reviews</h2>
 
     <h3>1) Breville Grind Control (BDC650BSS) — Best Overall</h3>
-    <img src={productImages.breville} alt="Breville BDC650BSS coffee maker with built in grinder" width="500" height="500" loading="lazy" />
+    <ProductCard
+      title="Breville Grind Control (BDC650BSS)"
+      image={{ src: productImages.breville, alt: 'Breville BDC650BSS coffee maker with built in grinder', width: 500, height: 500 }}
+      badge={{ label: 'Best Overall', variant: 'overall' }}
+      price="Premium range"
+      ctaUrl={productUrls.breville}
+    />
     <p>The Breville Grind Control is the safest overall pick for buyers who want better grind consistency without building a separate grinder-plus-brewer setup. Its burr platform and adjustable settings give you more control than most integrated blade machines, and it handles both single-cup and carafe routines well.</p>
     <ProsCons
       pros={['Burr grinder gives more consistent extraction potential', 'Supports both single-cup mornings and full-carafe sessions', 'Useful grind and strength controls for flavor tuning']}
@@ -298,7 +299,13 @@ const jsonLd = {
     <p><CtaButton href={productUrls.breville} external>Check Price on Amazon</CtaButton></p>
 
     <h3>2) BLACK+DECKER 12-Cup Mill &amp; Brew (CM5000B) — Best Budget</h3>
-    <img src={productImages.blackdecker} alt="BLACK+DECKER CM5000B grind and brew coffee maker" width="500" height="500" loading="lazy" />
+    <ProductCard
+      title="BLACK+DECKER 12-Cup Mill & Brew (CM5000B)"
+      image={{ src: productImages.blackdecker, alt: 'BLACK+DECKER CM5000B grind and brew coffee maker', width: 500, height: 500 }}
+      badge={{ label: 'Best Budget', variant: 'budget' }}
+      price="Budget range"
+      ctaUrl={productUrls.blackdecker}
+    />
     <p>This is one of the easiest budget entries if you want fresh-ground drip coffee without spending premium money. It uses a blade grinder, so precision is lower than burr machines, but the value is strong for households that prioritize affordability, programmability, and familiar 12-cup behavior.</p>
     <ProsCons
       pros={['Budget-friendly way to get grind-and-brew convenience', '12-cup capacity suits family and guest batches', 'Grind-off mode supports pre-ground fallback']}
@@ -308,7 +315,13 @@ const jsonLd = {
     <p><CtaButton href={productUrls.blackdecker} external>Check Price on Amazon</CtaButton></p>
 
     <h3>3) Cuisinart DGB-550BKP1 — Best for Low-Fuss Maintenance</h3>
-    <img src={productImages.cuisinartDgb550} alt="Cuisinart DGB-550BKP1 grind and brew coffee maker" width="500" height="500" loading="lazy" />
+    <ProductCard
+      title="Cuisinart DGB-550BKP1"
+      image={{ src: productImages.cuisinartDgb550, alt: 'Cuisinart DGB-550BKP1 grind and brew coffee maker', width: 500, height: 500 }}
+      badge={{ label: 'Best Low-Fuss', variant: 'beginners' }}
+      price="Mid-range"
+      ctaUrl={productUrls.cuisinartDgb550}
+    />
     <p>The DGB-550BKP1 is a straightforward daily-driver choice for buyers who want reliable routine coffee with less setup drama. It is less about tuning and more about dependable repeatability: set your schedule, brew, clean, move on. That no-nonsense rhythm is exactly why it stays relevant.</p>
     <ProsCons
       pros={['Predictable day-to-day workflow', '24-hour programmability for morning automation', 'Strong mainstream value for basic grind-and-brew use']}
@@ -317,7 +330,13 @@ const jsonLd = {
     <p><CtaButton href={productUrls.cuisinartDgb550} external>Check Price on Amazon</CtaButton></p>
 
     <h3>4) Café Specialty Grind &amp; Brew — Best Premium Drip Upgrade</h3>
-    <img src={productImages.cafeSpecialty} alt="Café Specialty grind and brew coffee maker" width="500" height="500" loading="lazy" />
+    <ProductCard
+      title="Café Specialty Grind & Brew"
+      image={{ src: productImages.cafeSpecialty, alt: 'Café Specialty grind and brew coffee maker', width: 500, height: 500 }}
+      badge={{ label: 'Best Premium Drip', variant: 'upgrade' }}
+      price="Premium range"
+      ctaUrl={productUrls.cafeSpecialty}
+    />
     <p>Café targets buyers who want upscale design, stronger brew control, and app-connected convenience in one countertop unit. It costs more than value models, but if your household brews frequently and cares about premium workflow quality, the upgrade can be justified.</p>
     <ProsCons
       pros={['Burr-based platform with premium feature set', 'Single-serve plus thermal-carafe flexibility', 'Good fit for high-frequency coffee homes']}
@@ -326,7 +345,13 @@ const jsonLd = {
     <p><CtaButton href={productUrls.cafeSpecialty} external>Check Price on Amazon</CtaButton></p>
 
     <h3>5) Cuisinart Grind &amp; Brew Single-Serve — Best One-Cup Convenience</h3>
-    <img src={productImages.cuisinartSingle} alt="Cuisinart Grind and Brew Single-Serve coffee maker" width="500" height="500" loading="lazy" />
+    <ProductCard
+      title="Cuisinart Grind & Brew Single-Serve"
+      image={{ src: productImages.cuisinartSingle, alt: 'Cuisinart Grind and Brew Single-Serve coffee maker', width: 500, height: 500 }}
+      badge={{ label: 'Best Single-Serve', variant: 'beginners' }}
+      price="Mid-range"
+      ctaUrl={productUrls.cuisinartSingle}
+    />
     <p>For solo drinkers or couples who mostly brew one cup at a time, this model is one of the cleanest fits. The built-in grinder plus selectable cup sizes keeps mornings quick while preserving bean-to-cup freshness. It is especially useful in smaller kitchens where full-carafe gear feels oversized.</p>
     <ProsCons
       pros={['Designed for fast single-cup routines', 'Includes grind-off mode for pre-ground coffee', 'Compact footprint compared with full-size combo units']}
@@ -336,7 +361,13 @@ const jsonLd = {
     <p><CtaButton href={productUrls.cuisinartSingle} external>Check Price on Amazon</CtaButton></p>
 
     <h3>6) De'Longhi TrueBrew (CAM51025MB) — Best for Drink Variety</h3>
-    <img src={productImages.trueBrew} alt="DeLonghi TrueBrew CAM51025MB coffee maker with grinder" width="500" height="500" loading="lazy" />
+    <ProductCard
+      title="De'Longhi TrueBrew (CAM51025MB)"
+      image={{ src: productImages.trueBrew, alt: 'DeLonghi TrueBrew CAM51025MB coffee maker with grinder', width: 500, height: 500 }}
+      badge={{ label: 'Best Drink Variety', variant: 'overall' }}
+      price="Premium range"
+      ctaUrl={productUrls.trueBrew}
+    />
     <p>TrueBrew is built for households that rotate between cup sizes, brew strengths, and iced coffee habits during the week. It is not the simplest interface in this list, but if your home has mixed preferences, it can replace multiple single-purpose appliances with one routine-friendly machine.</p>
     <ProsCons
       pros={['Broad brew-size and style flexibility', 'Integrated grinder keeps workflow consolidated', 'Strong fit for mixed-preference households']}
@@ -345,7 +376,13 @@ const jsonLd = {
     <p><CtaButton href={productUrls.trueBrew} external>Check Price on Amazon</CtaButton></p>
 
     <h3>7) Ninja Luxe Café 3-in-1 — Best Hybrid for Espresso + Drip Homes</h3>
-    <img src={productImages.ninjaLuxe} alt="Ninja Luxe Cafe 3-in-1 coffee maker with integrated grinder" width="500" height="500" loading="lazy" />
+    <ProductCard
+      title="Ninja Luxe Café 3-in-1"
+      image={{ src: productImages.ninjaLuxe, alt: 'Ninja Luxe Cafe 3-in-1 coffee maker with integrated grinder', width: 500, height: 500 }}
+      badge={{ label: 'Best Hybrid', variant: 'espresso' }}
+      price="Premium range"
+      ctaUrl={productUrls.ninjaLuxe}
+    />
     <p>Ninja Luxe Café is the wildcard pick for buyers who want espresso-style drinks, drip coffee, and cold brew from one body. It will not replace dedicated specialty machines for every enthusiast, but it can simplify a fragmented setup for mixed-format households.</p>
     <ProsCons
       pros={['Combines multiple brew formats in one machine', 'Integrated grinder supports broader drink workflows', 'Useful for homes split between espresso and drip habits']}
@@ -355,15 +392,6 @@ const jsonLd = {
     <p><CtaButton href={productUrls.ninjaLuxe} external>Check Price on Amazon</CtaButton></p>
   </section>
 
-  <!-- IMAGE_PLACEHOLDER
-  type: workflow
-  slug: best-coffee-maker-with-grinder
-  filename: best-coffee-maker-with-grinder-workflow-2026.svg
-  alt: "Step-by-step workflow for choosing a coffee maker with built-in grinder"
-  concept: "Decision flow from brew volume to grinder type to cleanup tolerance and budget tier using warm neutral cards"
-  width: 1200
-  height: 675
-  -->
   <section id="buying-guide">
     <BuyingGuideSection>
       <h2>Buying Guide: How to Choose the Right Grind-and-Brew Machine</h2>

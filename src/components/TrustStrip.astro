@@ -1,0 +1,22 @@
+---
+interface TrustItem {
+  icon: string;
+  title: string;
+  text: string;
+}
+interface Props {
+  items: TrustItem[];
+}
+const { items } = Astro.props;
+---
+<section class="trust-strip">
+  <div class="trust-strip__grid">
+    {items.map((item) => (
+      <div class="trust-strip__item">
+        <span class="trust-strip__icon" aria-hidden="true">{item.icon}</span>
+        <h3 class="trust-strip__title">{item.title}</h3>
+        <p class="trust-strip__text">{item.text}</p>
+      </div>
+    ))}
+  </div>
+</section>

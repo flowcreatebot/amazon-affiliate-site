@@ -10,7 +10,7 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -134,12 +134,16 @@ const jsonLd = {
   <h1>Best Coffee Scale for Espresso and Pour Over (2026)</h1>
   <p class="lead">If you want more consistent espresso shots and cleaner pour over recipes, a dedicated scale is usually the highest-impact upgrade after your grinder. We compared the top options for response speed, timer usability, footprint, and day-to-day value so you can choose the right workflow fit, not just the loudest product page.</p>
 
-  <HeroMedia
-    src="https://m.media-amazon.com/images/I/61zKmzN7rpL._AC_SL500_.jpg"
-    alt="TIMEMORE Black Mirror Nano coffee scale"
-    width={500}
-    height={500}
-    caption={`${pricesUpdated}. Product availability and pricing can change.`}
+  <HeroPicks
+    title="Best Coffee Scale for Espresso & Pour Over"
+    subtitle="3 scales compared by brew style — find the right fit for your workflow"
+    picks={[
+      { category: 'Budget', tagline: 'Best value first scale', icon: 'dollar', color: '#059669', features: ['Built-in timer', 'Clean readable display', 'Low entry price', 'Solid pour over support'], topPick: 'Greater Goods Digital', price: '$', subtitle: 'Affordable consistency', asin: 'B09B4CB7C1' },
+      { category: 'Espresso', tagline: 'Fast response for shot timing', icon: 'target', color: '#2C1810', features: ['Quick weight response', 'Compact tray-friendly size', 'Dual brew-style support', 'Precise ratio tracking'], topPick: 'TIMEMORE Black Mirror Nano', price: '$$', subtitle: 'Best espresso fit', asin: 'B09KLG247F' },
+      { category: 'Pour Over', tagline: 'Proven drip workflow', icon: 'hand', color: '#7A5B4A', features: ['Simple familiar controls', 'Reliable timer integration', 'Broad recipe support', 'Strong community ecosystem'], topPick: 'Hario V60 Drip Scale', price: '$$', subtitle: 'Best pour over fit', asin: 'B009GPJMOU' },
+      { category: 'Dual-Use', tagline: 'One scale for both styles', icon: 'volume-x', color: '#8B6F47', features: ['Espresso + pour over ready', 'Compact footprint', 'Fast response speed', 'Best all-around pick'], topPick: 'TIMEMORE Black Mirror Nano', price: '$$', subtitle: 'Best overall choice', asin: 'B09KLG247F' },
+    ]}
+    footer="coffeegearlab.com - coffee scales - 2026"
   />
 
   <Toc items={[

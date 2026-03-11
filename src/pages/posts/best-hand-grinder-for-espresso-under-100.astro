@@ -9,7 +9,7 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -100,7 +100,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-10',
       dateModified: '2026-03-11',
-      image: `${SITE.url}/assets/images/best-hand-grinder-for-espresso-under-100-hero-2026.svg`,
+      image: products[0].image,
     }),
     {
       '@type': 'ItemList',
@@ -147,13 +147,16 @@ const jsonLd = {
   <h1>Best Hand Grinder for Espresso Under 100 (2026): 5 Budget Picks That Actually Dial In</h1>
   <p class="lead">If you want the best hand grinder for espresso under 100, the hard part is not finding options, it is avoiding models that look fine on paper but feel inconsistent once you start dialing shots. We compared five current picks by burr quality, click control, grind effort, workflow friction, and realistic basket compatibility so you can buy once and avoid immediate upgrade regret.</p>
 
-  <HeroMedia
-    src="/assets/images/best-hand-grinder-for-espresso-under-100-hero-2026.svg"
-    alt="Editorial comparison of five manual espresso grinders under $100 by control and effort"
-    width={1200}
-    height={675}
-    loading="lazy"
-    caption="Researched shortlist for espresso-focused manual grinding below the $100 ceiling."
+  <HeroPicks
+    title="4 Hand Espresso Grinders Under $100 Worth Your Money"
+    subtitle="Ranked by espresso control, burr quality, and realistic daily workflow under a strict budget"
+    picks={[
+      { category: 'Budget', tagline: 'Best value for pressurized baskets', icon: 'dollar', color: '#059669', features: ['Steel burr consistency', 'Affordable entry price', 'Good for pressurized baskets', 'Reliable daily grinder'], topPick: 'Timemore Chestnut C2', price: '$', subtitle: 'Solid budget starter', asin: 'B0833SDN8M' },
+      { category: 'Overall', tagline: 'Best espresso control under $100', icon: 'target', color: '#2C1810', features: ['Fine click spacing', 'Strong burr geometry', 'Non-pressurized capable', 'Durable steel body'], topPick: 'KINGrinder K6', price: '$$', subtitle: 'Top espresso hand grinder', asin: 'B0CY1XFXB8' },
+      { category: 'Beginner', tagline: 'Easiest daily workflow', icon: 'hand', color: '#7A5B4A', features: ['Smooth handling', 'External adjustment ring', 'Compact travel size', 'Low learning curve'], topPick: '1Zpresso Q Air', price: '$$', subtitle: 'Beginner-friendly pick', asin: 'B0CJ4YFMQ9' },
+      { category: 'Travel', tagline: 'Best portable espresso grinding', icon: 'volume-x', color: '#8B6F47', features: ['Lightweight design', 'Simple operation', 'Travel-kit friendly', 'Known brand support'], topPick: 'Hario Smart G Pro', price: '$', subtitle: 'Portable travel grinder', asin: 'B0CCYBVQ9B' },
+    ]}
+    footer="coffeegearlab.com - hand espresso grinders under $100 - 2026"
   />
 
   <Toc
@@ -288,8 +291,14 @@ const jsonLd = {
 
     <article id="kingrinder-k6">
       <h3>1) KINGrinder K6 - Best hand grinder for espresso under 100 overall</h3>
-      <p><span class="best-for-badge --overall">Best Overall</span></p>
-      <img src={products[0].image} alt="KINGrinder K6 manual espresso grinder" width="500" height="500" loading="lazy" />
+      <ProductCard
+        title={products[0].name}
+        image={{ src: products[0].image, alt: 'KINGrinder K6 manual espresso grinder', width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={{ score: products[0].rating }}
+        price={products[0].price}
+        ctaUrl={amazonUrl(products[0].asin)}
+      />
       <p>The KINGrinder K6 is the strongest fit for buyers who care about espresso repeatability first and convenience second. Under the $100 ceiling, it offers one of the better combinations of burr quality, click control, and daily durability. In practical terms, that means fewer wasted shots when you switch bags and less time guessing whether a change in flow came from beans or from unstable burr behavior.</p>
       <p>The K6 still requires hand effort, and dense light roasts can feel demanding at espresso settings. But the effort usually feels worthwhile because adjustments translate into predictable changes in shot time. This matters when you are working with a non-pressurized basket and trying to stay inside a narrow extraction window without burning through half a bag of beans.</p>
       <p>Where this model wins is confidence. It does not eliminate the learning curve, but it shortens it by making each click meaningful. For someone building a serious budget espresso setup, that is the difference between a grinder you outgrow in weeks and one you can keep for a long time.</p>
@@ -309,8 +318,14 @@ const jsonLd = {
 
     <article id="1zpresso-q-air">
       <h3>2) 1Zpresso Q Air - Best beginner-friendly espresso workflow</h3>
-      <p><span class="best-for-badge --beginners">Best for Beginners</span></p>
-      <img src={products[1].image} alt="1Zpresso Q Air hand grinder for espresso" width="500" height="500" loading="lazy" />
+      <ProductCard
+        title={products[1].name}
+        image={{ src: products[1].image, alt: '1Zpresso Q Air hand grinder for espresso', width: 500, height: 500 }}
+        badge={products[1].badge}
+        rating={{ score: products[1].rating }}
+        price={products[1].price}
+        ctaUrl={amazonUrl(products[1].asin)}
+      />
       <p>The 1Zpresso Q Air is the easiest grinder in this roundup to live with day to day. It is compact, cleanly engineered, and quick to understand, which makes it attractive for first-time manual grinder buyers who do not want a steep adjustment-learning curve. If your routine includes both espresso-style drinks and filter brewing, this flexibility is a practical advantage.</p>
       <p>Its limitation is the same reason it is easy: the adjustment system is more straightforward but less granular than higher-tier espresso-focused designs. That is fine for pressurized baskets and for drinkers who prioritize convenience, but advanced non-pressurized dialing can feel constrained when a single click change jumps too far.</p>
       <p>For most people in this price tier, the Q Air is still an excellent decision because it lowers friction. You get repeatable everyday grinding, solid cup quality, and enough control to learn espresso fundamentals without fighting the hardware every morning.</p>
@@ -330,8 +345,14 @@ const jsonLd = {
 
     <article id="timemore-c2">
       <h3>3) Timemore Chestnut C2 - Best value for pressurized-basket espresso users</h3>
-      <p><span class="best-for-badge --budget">Best Budget Value</span></p>
-      <img src={products[2].image} alt="Timemore Chestnut C2 manual grinder" width="500" height="500" loading="lazy" />
+      <ProductCard
+        title={products[2].name}
+        image={{ src: products[2].image, alt: 'Timemore Chestnut C2 manual grinder', width: 500, height: 500 }}
+        badge={products[2].badge}
+        rating={{ score: products[2].rating }}
+        price={products[2].price}
+        ctaUrl={amazonUrl(products[2].asin)}
+      />
       <p>The Timemore Chestnut C2 remains one of the easiest value recommendations in manual grinding. It is widely available, generally dependable for the price, and clearly better than random no-name alternatives that dominate budget search results. For pressurized-basket espresso setups, it offers very solid value with low purchase risk.</p>
       <p>Where the C2 struggles is fine espresso calibration on non-pressurized baskets. The internal stepped system is workable, but the spacing can feel broad when you are trying to correct a shot by just a few seconds. That means you may find one click too fast and the next click too slow, especially with fresher beans.</p>
       <p>Still, if your priority is practical value and you are not expecting cafe-style precision, the C2 is a strong buy. It is also a useful crossover grinder if you switch between moka pot, AeroPress, and occasional espresso-like drinks instead of running a strict espresso-only workflow.</p>
@@ -351,8 +372,14 @@ const jsonLd = {
 
     <article id="hario-smart-g-pro">
       <h3>4) Hario Smart G Pro - Best travel hand grinder under $100 for espresso kits</h3>
-      <p><span class="best-for-badge --pourover">Best Travel Pick</span></p>
-      <img src={products[3].image} alt="Hario Smart G Pro manual coffee grinder" width="500" height="500" loading="lazy" />
+      <ProductCard
+        title={products[3].name}
+        image={{ src: products[3].image, alt: 'Hario Smart G Pro manual coffee grinder', width: 500, height: 500 }}
+        badge={products[3].badge}
+        rating={{ score: products[3].rating }}
+        price={products[3].price}
+        ctaUrl={amazonUrl(products[3].asin)}
+      />
       <p>The Hario Smart G Pro works best as a portability-first grinder. If your priority is light packing, simple cleanup, and occasional espresso use while traveling, it is a more practical fit than heavier all-metal designs. It also pairs well with compact travel brewers where absolute precision is less critical than reliability on the road.</p>
       <p>For home espresso as a daily primary grinder, it is less compelling. The internal adjustment range is serviceable, but dialing narrow shot windows can be frustrating when click increments are wider than ideal. Grind speed at espresso fineness is also slower than top picks, which adds friction if you make multiple drinks.</p>
       <p>That said, it still has a place. Buyers who value portability above all and can accept pressurized-basket limitations may find it a better real-world match than more espresso-capable but heavier alternatives.</p>
@@ -372,8 +399,14 @@ const jsonLd = {
 
     <article id="javapresse-manual">
       <h3>5) JavaPresse Manual Coffee Grinder - Best emergency option when budget is tight</h3>
-      <p><span class="best-for-badge --budget">Best Emergency Budget</span></p>
-      <img src={products[4].image} alt="JavaPresse manual coffee grinder" width="500" height="500" loading="lazy" />
+      <ProductCard
+        title={products[4].name}
+        image={{ src: products[4].image, alt: 'JavaPresse manual coffee grinder', width: 500, height: 500 }}
+        badge={products[4].badge}
+        rating={{ score: products[4].rating }}
+        price={products[4].price}
+        ctaUrl={amazonUrl(products[4].asin)}
+      />
       <p>The JavaPresse Manual Coffee Grinder is the lowest-cost option in this guide and should be treated exactly that way: a basic entry point, not a long-term espresso solution. For buyers who need something immediately and cannot stretch budget, it can get you off blade grinding and into burr grinding with minimal spend.</p>
       <p>Its ceiling is low for espresso. The ceramic burr platform and adjustment precision are limited, so consistency is weaker and dial-in often feels unstable. You can still make drinkable coffee, but expectations must match the price. It works better as a temporary grinder or as a backup in a travel bag.</p>
       <p>If your main goal is repeatable espresso with non-pressurized baskets, saving a little longer for one of the stronger steel-burr options will usually feel better in both cup quality and workflow. If price is the deciding factor today, JavaPresse is still the practical fallback.</p>

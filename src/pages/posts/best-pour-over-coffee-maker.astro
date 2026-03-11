@@ -9,7 +9,7 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -97,7 +97,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-07',
       dateModified: '2026-03-11',
-      image: `${SITE.url}/assets/images/${slug}-hero-2026.svg`,
+      image: 'https://m.media-amazon.com/images/I/51cCw+yG9BL._AC_SL500_.jpg',
     }),
     {
       '@type': 'ItemList',
@@ -146,11 +146,16 @@ const jsonLd = {
     choose once and brew confidently.
   </p>
 
-  <HeroMedia
-    src={`/assets/images/${slug}-hero-2026.svg`}
-    alt="Editorial illustration of six pour-over brewers compared by style and use case"
-    width={1200}
-    height={675}
+  <HeroPicks
+    title="Best Pour Over Coffee Maker"
+    subtitle="6 picks compared by brew style — find the right dripper for your routine"
+    picks={[
+      { category: 'Budget', tagline: 'Affordable starter kit', icon: 'dollar', color: '#059669', features: ['Brewer + carafe included', 'Simple daily workflow', 'Easy filter sourcing', 'Beginner-friendly'], topPick: 'Melitta Pour-Over Brewer', price: '$', subtitle: 'Complete starter set', asin: 'B000MIT2OK' },
+      { category: 'Precision', tagline: 'Maximum recipe control', icon: 'target', color: '#2C1810', features: ['Broad recipe support', 'Technique-rewarding design', 'Widely available filters', 'Best long-term foundation'], topPick: 'Hario V60 02', price: '$', subtitle: 'Best overall dripper', asin: 'B000P4D5HG' },
+      { category: 'Batch', tagline: 'Best for multiple cups', icon: 'volume-x', color: '#7A5B4A', features: ['Clean lighter-bodied cups', 'Built-in carafe server', 'Great for shared brewing', 'Thick-filter clarity'], topPick: 'Chemex Classic 6-Cup', price: '$$', subtitle: 'Multi-cup brewer', asin: 'B0000YWF5E' },
+      { category: 'Hybrid', tagline: 'Immersion + pour-over flex', icon: 'hand', color: '#8B6F47', features: ['Steep-and-release mode', 'Standard V60 dripper mode', 'More forgiving technique', 'Weekend experimentation'], topPick: 'Hario V60 Switch', price: '$$', subtitle: 'Dual-mode upgrade', asin: 'B0CK4J1G7V' },
+    ]}
+    footer="coffeegearlab.com - pour over coffee makers - 2026"
   />
 
   <Toc
@@ -249,6 +254,14 @@ const jsonLd = {
   <h2 id="individual-reviews">Individual Product Reviews</h2>
 
   <h3>1) Hario V60 Ceramic Coffee Dripper 02 — Best Overall</h3>
+  <ProductCard
+    title="Hario V60 Ceramic Coffee Dripper 02"
+    image={{ src: 'https://m.media-amazon.com/images/I/51cCw+yG9BL._AC_SL500_.jpg', alt: 'Hario V60 Ceramic Coffee Dripper 02 pour over coffee maker', width: 500, height: 500 }}
+    badge={{ label: 'Best Overall', variant: 'overall' }}
+    rating={{ score: 4.7 }}
+    price="Check price"
+    ctaUrl={productUrl('B000P4D5HG')}
+  />
   <p>
     The V60 02 remains the safest recommendation for most people. It has broad recipe support, easy filter access, and
     enough control to reward better technique over time. If you are still learning, you can keep recipes simple. If
@@ -268,6 +281,14 @@ const jsonLd = {
   <p><CtaButton href={productUrl('B000P4D5HG')} external>Check Price on Amazon</CtaButton></p>
 
   <h3>2) Chemex Classic Series, 6-Cup — Best for Multiple Cups</h3>
+  <ProductCard
+    title="Chemex Classic Series, 6-Cup"
+    image={{ src: 'https://m.media-amazon.com/images/I/71oMA36JxfL._AC_SL500_.jpg', alt: 'Chemex Classic Series 6-Cup pour over coffee maker', width: 500, height: 500 }}
+    badge={{ label: 'Best for Multiple Cups', variant: 'pourover' }}
+    rating={{ score: 4.7 }}
+    price="Check price"
+    ctaUrl={productUrl('B0000YWF5E')}
+  />
   <p>
     Chemex is ideal when your goal is clean, elegant batch brewing for two or more mugs. Its thicker filter style can
     mute heavier sediment and produce a tea-like cup profile that many people prefer for lighter roasts. It is less
@@ -287,6 +308,14 @@ const jsonLd = {
   <p><CtaButton href={productUrl('B0000YWF5E')} external>Check Price on Amazon</CtaButton></p>
 
   <h3>3) Melitta Pour-Over Brewer with Glass Carafe Set — Best Budget</h3>
+  <ProductCard
+    title="Melitta Pour-Over Brewer with Glass Carafe Set"
+    image={{ src: 'https://m.media-amazon.com/images/I/71QX3QG2m3L._AC_SL500_.jpg', alt: 'Melitta Pour-Over Brewer with Glass Carafe pour over coffee maker', width: 500, height: 500 }}
+    badge={{ label: 'Best Budget', variant: 'budget' }}
+    rating={{ score: 4.6 }}
+    price="Check price"
+    ctaUrl={productUrl('B000MIT2OK')}
+  />
   <p>
     If you want a complete starter setup at a lower cost, this Melitta bundle is one of the most practical options.
     It is straightforward to use, easy to clean, and beginner-friendly when you are moving from auto-drip into manual
@@ -307,6 +336,14 @@ const jsonLd = {
   <p><CtaButton href={productUrl('B000MIT2OK')} external>Check Price on Amazon</CtaButton></p>
 
   <h3>4) Hario V60 Switch Ceramic Immersion Dripper — Best Upgrade Pick</h3>
+  <ProductCard
+    title="Hario V60 Switch Ceramic Immersion Dripper"
+    image={{ src: 'https://m.media-amazon.com/images/I/41-Q1iUbZ5L._AC_SL500_.jpg', alt: 'Hario V60 Switch Ceramic Immersion Dripper', width: 500, height: 500 }}
+    badge={{ label: 'Best Upgrade Pick', variant: 'upgrade' }}
+    rating={{ score: 4.6 }}
+    price="Check price"
+    ctaUrl={productUrl('B0CK4J1G7V')}
+  />
   <p>
     The V60 Switch adds immersion control to classic V60-style brewing. That makes it useful for brewers who want more
     consistency on busy mornings, then more experimentation on weekends. You can steep and release for easier
@@ -327,6 +364,14 @@ const jsonLd = {
   <p><CtaButton href={productUrl('B0CK4J1G7V')} external>Check Price on Amazon</CtaButton></p>
 
   <h3>5) Hario V60 Ceramic Coffee Dripper 01 — Best for Solo Cups</h3>
+  <ProductCard
+    title="Hario V60 Ceramic Coffee Dripper 01"
+    image={{ src: 'https://m.media-amazon.com/images/I/51kbH15026L._AC_SL500_.jpg', alt: 'Hario V60 Ceramic Coffee Dripper 01 pour over', width: 500, height: 500 }}
+    badge={{ label: 'Best for Solo Cups', variant: 'beginners' }}
+    rating={{ score: 4.6 }}
+    price="Check price"
+    ctaUrl={productUrl('B000P4D5F8')}
+  />
   <p>
     For one-person households, the V60 01 size is an efficient daily brewer. It keeps dose size tight, speeds prep, and
     reduces coffee waste when you only need one mug. The brewing behavior is familiar if you already like V60 recipes,
@@ -346,6 +391,14 @@ const jsonLd = {
   <p><CtaButton href={productUrl('B000P4D5F8')} external>Check Price on Amazon</CtaButton></p>
 
   <h3>6) Hario V60 Ceramic Coffee Dripper 02 (Red) — Best Design Pick</h3>
+  <ProductCard
+    title="Hario V60 Ceramic Coffee Dripper 02 (Red)"
+    image={{ src: 'https://m.media-amazon.com/images/I/5186roHpocL._AC_SL500_.jpg', alt: 'Hario V60 Ceramic Coffee Dripper 02 Red pour over', width: 500, height: 500 }}
+    badge={{ label: 'Best Design Pick', variant: 'espresso' }}
+    rating={{ score: 4.6 }}
+    price="Check price"
+    ctaUrl={productUrl('B002S01CKW')}
+  />
   <p>
     This V60 ceramic variant earns a slot for buyers who want proven V60 performance with a more distinctive look. In
     cup profile and workflow it behaves similarly to other ceramic 02 options, but color and finish can matter when a

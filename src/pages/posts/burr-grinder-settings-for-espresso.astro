@@ -10,7 +10,7 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -179,12 +179,17 @@ const jsonLd = {
   <h1>Burr Grinder Settings for Espresso in 2026: How to Dial In Consistent Shots</h1>
   <p class="lead">Dialing in espresso gets much easier when you run the same sequence every time. This guide gives a practical baseline, a fast adjustment loop, and troubleshooting moves you can apply without guessing. We researched and compared common home grinder workflows so you can lock in repeatable results faster.</p>
 
-  <HeroMedia
-    src={`/assets/images/${slug}-hero-2026.svg`}
-    alt="Home espresso dial-in workflow with grinder, scale, and timing checkpoints"
-    width={1200}
-    height={675}
-    caption="Use one repeatable loop: baseline recipe, pull shot, adjust one variable, and log the result."
+  <HeroSteps
+    title="Dial In Espresso in 4 Steps"
+    subtitle="A repeatable grinder-to-shot loop you can run every morning"
+    steps={[
+      { label: "Set Baseline", icon: "target", actions: ["Choose 18g dose", "Set grind to mid-fine", "Target 36g output", "Time 25-32 seconds"], time: "2 min" },
+      { label: "Pull & Taste", icon: "coffee", actions: ["Lock portafilter", "Start timer at first drip", "Stop at target yield", "Taste and note flavor"], time: "30 sec" },
+      { label: "Adjust Grind", icon: "wrench", actions: ["Sour/fast: go finer", "Bitter/slow: go coarser", "Change one click only", "Keep dose fixed"], time: "1 min" },
+      { label: "Lock & Log", icon: "check", actions: ["Record winning setting", "Note bean and date", "Repeat for new bags", "Clean grinder weekly"], time: "Ongoing" },
+    ]}
+    outcome="Repeatable espresso shots with less waste and clearer flavor feedback."
+    footer="coffeegearlab.com - practical dial-in guide - 2026"
   />
 
   <p><strong>Quick answer:</strong> Start at 18g in and 36g out, then target roughly 25 to 32 seconds. If the shot runs fast and tastes sour, go slightly finer; if it runs slow and tastes bitter, go slightly coarser. Keep dose and yield fixed while dialing grind size so every change is clear.</p>

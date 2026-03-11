@@ -1,60 +1,160 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import Toc from '../components/Toc.astro';
-import PostListing from '../components/PostListing.astro';
+import Hero from '../components/Hero.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import GuideCard from '../components/GuideCard.astro';
+import TrustStrip from '../components/TrustStrip.astro';
 import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 import { SITE } from '../data/site';
 import posts from '../data/posts.json';
 
 const title = 'Coffee Gear Lab: Honest Buyer Guides for Home Brewers';
-const description = 'High-intent coffee gear guides and comparisons for home brewers: best grinders, affordable espresso machines, and brew method matchups.';
+const description = 'Research-backed coffee gear guides and comparisons for home brewers. Find the best grinders, espresso machines, brewers, and accessories.';
 const canonical = `${SITE.url}/`;
 
+const categories = [
+  { label: 'Espresso', href: '/espresso/', icon: '\u2615', key: 'espresso' },
+  { label: 'Grinders', href: '/grinders/', icon: '\u2699', key: 'grinders' },
+  { label: 'Brewers', href: '/brewers/', icon: '\u2601', key: 'brewers' },
+  { label: 'Accessories', href: '/posts/', icon: '\u2696', key: 'accessories' },
+  { label: 'Education', href: '/posts/', icon: '\ud83d\udcd6', key: 'education' },
+];
+
+const categoryCounts = categories.map((cat) => ({
+  ...cat,
+  count: posts.filter((p) => p.category === cat.key).length,
+}));
+
+const featuredSlugs = [
+  'best-espresso-machine-under-200',
+  'best-burr-coffee-grinder-under-200',
+  'best-drip-coffee-maker-under-100',
+];
+const featuredPosts = featuredSlugs
+  .map((slug) => posts.find((p) => p.slug === slug))
+  .filter(Boolean);
+
 const moneyPosts = posts
-  .filter((p) => p.pageType === 'money')
+  .filter((p) => p.pageType === 'money' && !featuredSlugs.includes(p.slug))
   .sort((a, b) => b.dateModified.localeCompare(a.dateModified));
 
 const supportPosts = posts
   .filter((p) => p.pageType !== 'money')
   .sort((a, b) => b.dateModified.localeCompare(a.dateModified));
+
+const trustItems = [
+  {
+    icon: '\ud83d\udd0d',
+    title: 'Research-Driven Picks',
+    text: 'Every guide compares real specs, trade-offs, and use cases instead of rehashing marketing claims.',
+  },
+  {
+    icon: '\u2696\ufe0f',
+    title: 'Clear Trade-Offs',
+    text: 'We show what each product does well and where it falls short so you can match gear to your workflow.',
+  },
+  {
+    icon: '\u26a1',
+    title: 'Buy Faster',
+    text: 'Quick picks, comparison tables, and structured guides cut through the noise so you spend less time deciding.',
+  },
+];
 ---
 <BaseLayout
   title={title}
   description={description}
   canonical={canonical}
   ogTitle="Coffee Gear Lab"
-  ogDescription="High-intent coffee gear buying guides for beginners and enthusiasts."
+  ogDescription="Research-backed coffee gear buying guides for beginners and enthusiasts."
   ogType="website"
   ogUrl={canonical}
 >
-  <Breadcrumbs items={[
-    { label: 'Home', href: '/' },
-    { label: 'Start here' },
-  ]} />
+  <div class="homepage">
 
-  <h1>Coffee Gear Guides That Help You Buy Faster</h1>
-  <p class="lead">No generic fluff. Just practical picks, clear trade-offs, and quick links to deeper guides so you can choose the right gear and start brewing.</p>
+    <!-- Hero -->
+    <Hero
+      title="Find the Right Coffee Gear Without the Guesswork"
+      subtitle="Research-backed buying guides, honest comparisons, and practical picks for home brewers at every level."
+      ctaText="Browse All Guides"
+      ctaHref="/posts/"
+    />
 
-  <Toc
-    items={[
-      { href: '#high-intent-guides', label: 'Start with high-intent guides' },
-      { href: '#supporting-education', label: 'Supporting brew education' },
-    ]}
-    ordered={false}
-  />
+    <!-- Category Navigation -->
+    <section class="home-section">
+      <SectionHeader title="Browse by Category" />
+      <div class="category-grid">
+        {categoryCounts.map((cat) => (
+          <CategoryCard label={cat.label} href={cat.href} icon={cat.icon} count={cat.count} />
+        ))}
+      </div>
+    </section>
 
-  <section id="high-intent-guides">
-    <h2>Start with high-intent guides</h2>
-    <PostListing posts={moneyPosts} initialCount={8} />
-  </section>
+    <!-- Featured / Editor's Picks -->
+    <section class="home-section">
+      <SectionHeader
+        title="Editor's Picks"
+        subtitle="Our most popular guides to get you started."
+      />
+      <div class="featured-grid">
+        {featuredPosts.map((post) => (
+          <GuideCard
+            title={post.title}
+            description={post.description}
+            href={`/posts/${post.slug}.html`}
+            category={post.category}
+            pageType={post.pageType}
+            featured
+          />
+        ))}
+      </div>
+    </section>
 
-  <section id="supporting-education">
-    <h2>Supporting brew education</h2>
-    <PostListing posts={supportPosts} />
-  </section>
+    <!-- All Buying Guides -->
+    <section class="home-section">
+      <SectionHeader
+        title="Buying Guides"
+        subtitle="Side-by-side comparisons to help you pick the right gear."
+        linkText="View all guides"
+        linkHref="/posts/"
+      />
+      <div class="guides-grid">
+        {moneyPosts.map((post) => (
+          <GuideCard
+            title={post.title}
+            description={post.description}
+            href={`/posts/${post.slug}.html`}
+            category={post.category}
+            pageType={post.pageType}
+          />
+        ))}
+      </div>
+    </section>
 
-  <p><a href="/posts/">Browse all coffee guides &rarr;</a></p>
+    <!-- How-To & Comparisons -->
+    <section class="home-section">
+      <SectionHeader
+        title="How-To Guides & Comparisons"
+        subtitle="Level up your brewing with practical knowledge."
+      />
+      <div class="guides-grid">
+        {supportPosts.map((post) => (
+          <GuideCard
+            title={post.title}
+            description={post.description}
+            href={`/posts/${post.slug}.html`}
+            category={post.category}
+            pageType={post.pageType}
+          />
+        ))}
+      </div>
+    </section>
 
-  <AffiliateDisclosure text="Some links may earn a commission at no extra cost to you. We only recommend gear that provides clear value for specific use cases." />
+    <!-- Trust Strip -->
+    <TrustStrip items={trustItems} />
+
+    <!-- Disclosure -->
+    <AffiliateDisclosure text="Some links on this site may earn a commission at no extra cost to you. We only recommend gear that provides clear value for specific use cases." />
+
+  </div>
 </BaseLayout>

@@ -9,7 +9,7 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -163,21 +163,16 @@ const jsonLd = {
   <h1>Best Single Serve Coffee Maker with Grinder (2026): 7 Picks Compared</h1>
   <p class="lead">If you want one-cup convenience without giving up fresh-ground flavor, this is the shortlist to start with. We researched and compared seven popular machines for brew quality, bean-to-cup speed, pod flexibility, daily cleanup effort, and long-term value so you can buy the right model the first time.</p>
 
-  <!-- IMAGE_PLACEHOLDER
-  type: hero
-  slug: best-single-serve-coffee-maker-with-grinder
-  filename: best-single-serve-coffee-maker-with-grinder-hero-2026.svg
-  alt: "Editorial comparison of single-serve coffee makers with built-in grinder workflows"
-  concept: "Warm-toned countertop scene with abstract single-cup machines, coffee beans, and icons representing speed, cleanup, and brew flexibility"
-  width: 1200
-  height: 675
-  -->
-  <HeroMedia
-    src="/assets/images/best-single-serve-coffee-maker-with-grinder-hero-2026.svg"
-    alt="Editorial comparison of single-serve coffee makers with built-in grinder workflows"
-    width={1200}
-    height={675}
-    caption="Our 2026 single-serve grinder picks ranked by speed, flexibility, and cleanup workload."
+  <HeroPicks
+    title="Best Single Serve Coffee Maker with Grinder"
+    subtitle="7 picks compared by speed, brew quality, and daily cleanup effort"
+    picks={[
+      { category: 'Budget', tagline: 'Affordable fresh-ground entry', icon: 'dollar', color: '#059669', features: ['Lowest-cost grinder machine', 'Simple control flow', 'Beans + pre-ground modes', 'Strong value for daily use'], topPick: 'BLACK+DECKER Mill and Brew CM5000B', price: '$', subtitle: 'Budget grind-and-brew path', asin: 'B00LU2I46E' },
+      { category: 'Overall', tagline: 'Best all-around single-serve pick', icon: 'target', color: '#2C1810', features: ['Fast weekday bean-to-cup', 'Multiple cup size options', 'Built-in grinder convenience', 'Cleaner flavor than pods'], topPick: 'Cuisinart Grind & Brew Single-Serve', price: '$$', subtitle: 'Strongest daily balance', asin: 'B09HDFLF2X' },
+      { category: 'Premium', tagline: 'Elevated bean-to-cup experience', icon: 'hand', color: '#7A5B4A', features: ['Built-in burr grinder', 'One-touch premium workflow', 'Broad cup size range', 'Strong daily convenience'], topPick: "De'Longhi TrueBrew", price: '$$$', subtitle: 'Premium one-touch brewing', asin: 'B0F3ZSVPPG' },
+      { category: 'Compact', tagline: 'Space-saving single-cup brewer', icon: 'volume-x', color: '#8B6F47', features: ['Smallest footprint option', 'Office and dorm friendly', 'Simple single-cup workflow', 'Fast brew cycle'], topPick: 'Chefman InstaCoffee Max', price: '$$', subtitle: 'Compact countertop fit', asin: 'B09NRYX5K7' },
+    ]}
+    footer="coffeegearlab.com - single-serve coffee makers with grinder - 2026"
   />
 
   <Toc items={[
@@ -320,7 +315,15 @@ const jsonLd = {
   <h2 id="product-reviews">Individual product reviews</h2>
 
   <h3>1) Cuisinart Grind &amp; Brew Single-Serve — Best Overall</h3>
-  <HeroMedia src={imageUrl('B09HDFLF2X')} alt="Cuisinart Grind and Brew single serve coffee maker with grinder" width={500} height={500} caption="Best overall balance of speed, convenience, and fresh flavor in this class." />
+  <ProductCard
+    title={products[0].name}
+    image={{ src: imageUrl(products[0].asin), alt: 'Cuisinart Grind and Brew single serve coffee maker with grinder', width: 500, height: 500 }}
+    badge={products[0].badge}
+    rating={{ score: products[0].rating }}
+    price={products[0].price}
+    ctaUrl={amazonUrl(products[0].asin)}
+    featured={true}
+  />
   <p>This model earns the top slot because it gives most buyers the best balance: fresh-bean flavor, straightforward controls, and predictable one-cup speed. It is not trying to be the most technical machine in the category. Instead, it wins by keeping your weekday routine simple while still outperforming pod-only brewers on aroma and cup character.</p>
   <p>Compared with bulkier combo units, this machine fits better in smaller kitchens and has a gentler learning curve for households moving from capsule systems. The built-in grinder adds a few extra seconds to each cycle, but the flavor bump is usually worth that tradeoff. If your primary goal is to get a better cup with only minimal extra effort, this is the safest pick.</p>
   <ProsCons
@@ -337,7 +340,14 @@ const jsonLd = {
   <p><CtaButton href={amazonUrl('B09HDFLF2X')} external>Check Price on Amazon</CtaButton></p>
 
   <h3>2) Cuisinart SS-GB1 — Best for split bean + pod households</h3>
-  <HeroMedia src={imageUrl('B08MGYR9SX')} alt="Cuisinart SS-GB1 coffee maker with grinder and pod compatibility" width={500} height={500} caption="Great fit when one person wants beans and another wants pod convenience." />
+  <ProductCard
+    title={products[1].name}
+    image={{ src: imageUrl(products[1].asin), alt: 'Cuisinart SS-GB1 coffee maker with grinder and pod compatibility', width: 500, height: 500 }}
+    badge={products[1].badge}
+    rating={{ score: products[1].rating }}
+    price={products[1].price}
+    ctaUrl={amazonUrl(products[1].asin)}
+  />
   <p>The SS-GB1 makes sense when your home has mixed preferences. One person can brew with fresh beans, another can use pods, and both can still share a single countertop machine. That sounds minor until you live with it; reducing appliance clutter is a real quality-of-life win.</p>
   <p>Where this unit stands out is flexibility. You can run quick single-serve routines or larger-batch workflows depending on your schedule. The tradeoff is slightly more cleanup because hybrid systems tend to have more surfaces that can hold residue. If you are willing to rinse consistently, the convenience upside is strong.</p>
   <ProsCons

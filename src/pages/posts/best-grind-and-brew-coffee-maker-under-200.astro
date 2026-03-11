@@ -9,7 +9,7 @@ import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import HeroSteps from '../../components/HeroSteps.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
@@ -168,7 +168,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-06',
       dateModified: '2026-03-11',
-      image: heroImage,
+      image: products[0].image,
     }),
     {
       '@type': 'ItemList',
@@ -248,7 +248,17 @@ const jsonLd = {
   <h1>Best Grind and Brew Coffee Maker Under $200 (2026): 7 Top Picks</h1>
   <p class="lead">If you want fresher coffee without buying a separate grinder, the best grind-and-brew machine under $200 should save time, not add morning friction. We compared seven high-intent options for bean-to-cup speed, noise, cleanup burden, and compatibility so you can buy once and avoid regret.</p>
 
-  <HeroMedia src={`/assets/images/${slug}-hero-2026.svg`} alt="Best grind and brew coffee makers under 200 dollars ranked by workflow, cleanup, and value" width={1200} height={675} caption="Editorial ranking focused on real morning workflow, not spec-sheet filler." fetchpriority="high" />
+  <HeroPicks
+    title="Best Grind and Brew Coffee Maker Under $200"
+    subtitle="7 picks compared by workflow speed, cleanup effort, and practical value"
+    picks={[
+      { category: 'Budget', tagline: 'Best value under $100', icon: 'dollar', color: '#059669', features: ['Lowest-cost grind-and-brew entry', 'Simple blade grinder workflow', 'Easy daily cleanup routine', 'Programmable start timer'], topPick: 'BLACK+DECKER 12-Cup Mill & Brew', price: '$', subtitle: 'Easiest cleanup on a budget', asin: 'B00LU2I46E' },
+      { category: 'Overall', tagline: 'Best all-around pick under $200', icon: 'target', color: '#2C1810', features: ['Strong value-to-performance ratio', 'Programmable 12-cup batch', 'Low daily cleaning burden', 'Beans + pre-ground modes'], topPick: 'Cuisinart DGB-550BKP1', price: '$', subtitle: 'Reliable daily all-rounder', asin: 'B000VTP45Q' },
+      { category: 'Single-Cup', tagline: 'Best for one-mug households', icon: 'volume-x', color: '#7A5B4A', features: ['Burr grinder consistency', 'Single-serve output only', 'Compact apartment footprint', 'Lower coffee waste per cup'], topPick: 'Cuisinart Grind & Brew Single-Serve (DGB-30)', price: '$$', subtitle: 'Bean-to-cup solo brewing', asin: 'B0FNXPWVD8' },
+      { category: 'Compact', tagline: 'Best for smaller kitchens', icon: 'hand', color: '#8B6F47', features: ['10-cup compact chassis', 'Programmable start available', 'Fits constrained counters', 'Mid-tier value pricing'], topPick: 'Gevi 10-Cup Grind & Brew', price: '$$', subtitle: 'Smaller footprint grind-and-brew', asin: 'B0FX3M77DD' },
+    ]}
+    footer="coffeegearlab.com - grind-and-brew under $200 - 2026"
+  />
 
   <p><strong>Direct answer:</strong> For most buyers under $200, the Cuisinart DGB-550BKP1 is the best grind-and-brew coffee maker because it balances reliable batch performance, manageable cleaning, and strong value. If your priority is easiest maintenance, pick BLACK+DECKER Mill &amp; Brew. If you want stronger flavor consistency, step up to a burr-based model near the top of this budget.</p>
 
@@ -340,7 +350,15 @@ const jsonLd = {
     <h2 id="picks">Product picks by buyer fit</h2>
 
     <h3>1) Cuisinart DGB-550BKP1 — Best overall grind-and-brew under $200</h3>
-    <p><span class="best-for-badge --overall">Best Overall</span></p>
+    <ProductCard
+      title="Cuisinart DGB-550BKP1"
+      image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+      badge={products[0].badge}
+      rating={{ score: products[0].rating }}
+      price={products[0].price}
+      ctaUrl={amazonUrl(products[0].asin)}
+      featured={true}
+    />
     <p><strong>Verdict:</strong> Best for buyers who want a reliable all-rounder with low friction and stable daily coffee quality.</p>
     <p><strong>Buy this if...</strong> you want a straightforward 12-cup grind-and-brew with dependable programmable start.</p>
     <p><strong>Skip this if...</strong> you need true single-cup brewing or burr-level grind consistency.</p>
@@ -354,7 +372,14 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B000VTP45Q/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>2) BLACK+DECKER 12-Cup Mill &amp; Brew — Best for easiest cleanup</h3>
-    <p><span class="best-for-badge --budget">Best Budget</span></p>
+    <ProductCard
+      title="BLACK+DECKER 12-Cup Mill & Brew"
+      image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+      badge={products[1].badge}
+      rating={{ score: products[1].rating }}
+      price={products[1].price}
+      ctaUrl={amazonUrl(products[1].asin)}
+    />
     <p><strong>Verdict:</strong> Best for budget-first homes that value low maintenance and straightforward controls over maximum flavor nuance.</p>
     <p><strong>Buy this if...</strong> low upfront cost and easy cleanup matter more than grinder precision.</p>
     <p><strong>Skip this if...</strong> you are sensitive to grinder noise or want burr-based flavor clarity.</p>
@@ -368,7 +393,14 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B00LU2I46E/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>3) De'Longhi TrueBrew Compact — Best strongest flavor under $200</h3>
-    <p><span class="best-for-badge --upgrade">Best Upgrade</span></p>
+    <ProductCard
+      title="De'Longhi TrueBrew Compact"
+      image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
+      badge={products[5].badge}
+      rating={{ score: products[5].rating }}
+      price={products[5].price}
+      ctaUrl={amazonUrl(products[5].asin)}
+    />
     <p><strong>Verdict:</strong> Best for flavor-first users willing to spend near the ceiling and handle a slightly heavier cleaning cadence.</p>
     <p><strong>Buy this if...</strong> you want conical-burr consistency with both single-cup and multi-cup options.</p>
     <p><strong>Skip this if...</strong> you require pre-ground compatibility or the lowest-maintenance workflow.</p>
@@ -382,7 +414,14 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B0F3ZSVPPG/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>4) Gevi 10-Cup Grind &amp; Brew — Best for small kitchens</h3>
-    <p><span class="best-for-badge --pourover">Best Compact</span></p>
+    <ProductCard
+      title="Gevi 10-Cup Grind & Brew"
+      image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+      badge={products[3].badge}
+      rating={{ score: products[3].rating }}
+      price={products[3].price}
+      ctaUrl={amazonUrl(products[3].asin)}
+    />
     <p><strong>Verdict:</strong> Best for tighter counters where footprint matters as much as cup quality.</p>
     <p><strong>Buy this if...</strong> you want a compact 10-cup format with scheduled brewing.</p>
     <p><strong>Skip this if...</strong> your household regularly needs full 12-cup output.</p>
@@ -396,7 +435,14 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B0FX3M77DD/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>5) Ninja CE251 + budget burr grinder combo — Best value workflow alternative</h3>
-    <p><span class="best-for-badge --budget">Best Value Combo</span></p>
+    <ProductCard
+      title="Ninja CE251 + budget burr grinder combo"
+      image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }}
+      badge={products[6].badge}
+      rating={{ score: products[6].rating }}
+      price={products[6].price}
+      ctaUrl={amazonUrl(products[6].asin)}
+    />
     <p><strong>Verdict:</strong> Best for buyers open to a two-piece setup that still stays under $200 and outperforms many built-ins on flavor.</p>
     <p><strong>Buy this if...</strong> you prefer upgrade flexibility and better grind quality from a separate burr grinder.</p>
     <p><strong>Skip this if...</strong> you want a single all-in-one machine and minimal counter footprint.</p>
@@ -410,7 +456,14 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B07S98411N/ref=nosim?tag=coffee-site-20" external>Check brewer price on Amazon</CtaButton></p>
 
     <h3>6) Cuisinart DGB-400 Automatic Grind &amp; Brew — Best classic programmable batch machine</h3>
-    <p><span class="best-for-badge --beginners">Best Classic Programmable</span></p>
+    <ProductCard
+      title="Cuisinart DGB-400 Automatic Grind & Brew"
+      image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+      badge={products[2].badge}
+      rating={{ score: products[2].rating }}
+      price={products[2].price}
+      ctaUrl={amazonUrl(products[2].asin)}
+    />
     <p><strong>Verdict:</strong> Best for buyers who want the familiar Cuisinart workflow with a straightforward control panel and dependable overnight scheduling.</p>
     <p><strong>Buy this if...</strong> you want a traditional 12-cup machine that supports both beans and pre-ground coffee without learning a new interface.</p>
     <p><strong>Skip this if...</strong> you need true single-cup flexibility or the lowest possible grinder noise in small apartments.</p>
@@ -424,7 +477,14 @@ const jsonLd = {
     <p><CtaButton href="https://www.amazon.com/dp/B08DCK4MPV/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
 
     <h3>7) Cuisinart Grind &amp; Brew Single-Serve (DGB-30) — Best for one-cup households</h3>
-    <p><span class="best-for-badge --espresso">Best Single-Cup</span></p>
+    <ProductCard
+      title="Cuisinart Grind & Brew Single-Serve (DGB-30)"
+      image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+      badge={products[4].badge}
+      rating={{ score: products[4].rating }}
+      price={products[4].price}
+      ctaUrl={amazonUrl(products[4].asin)}
+    />
     <p><strong>Verdict:</strong> Best for solo drinkers who want bean-to-cup freshness without committing counter space to a full carafe machine.</p>
     <p><strong>Buy this if...</strong> your routine is one mug at a time and you value fresh grinding more than high-volume output.</p>
     <p><strong>Skip this if...</strong> you regularly brew for multiple people or need a large thermal carafe option.</p>

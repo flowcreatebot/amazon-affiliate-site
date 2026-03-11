@@ -10,7 +10,7 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -131,7 +131,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-10',
       dateModified: '2026-03-10',
-      image: `${SITE.url}/assets/images/best-coffee-grinder-for-pour-over-hero-2026.svg`,
+      image: products[0].image,
     }),
     {
       '@type': 'ItemList',
@@ -176,12 +176,16 @@ const jsonLd = {
   <h1>Best Coffee Grinder for Pour Over (2026): 7 Researched Picks</h1>
   <p class="lead">The best coffee grinder for pour over should make your morning cups cleaner, sweeter, and easier to repeat. We compared seven researched options based on grind consistency, fines control, retention, static behavior, and day-to-day workflow fit.</p>
 
-  <HeroMedia
-    src="/assets/images/best-coffee-grinder-for-pour-over-hero-2026.svg"
-    alt="Editorial comparison of pour-over grinder styles focused on cup clarity and workflow"
-    width={1200}
-    height={675}
-    caption="Our pour-over grinder shortlist prioritizes cup clarity, control, and low-friction daily use."
+  <HeroPicks
+    title="4 Pour-Over Grinders Worth Your Money"
+    subtitle="Picked for cup clarity, fines control, and practical daily brewing workflow"
+    picks={[
+      { category: 'Budget', tagline: 'Best value entry point', icon: 'dollar', color: '#059669', features: ['Accessible price point', 'Beginner-friendly controls', 'Decent coarse-to-medium range', 'Low learning curve'], topPick: 'TIMEMORE Chestnut C2', price: '$', subtitle: 'Affordable starter grinder', asin: 'B0833SDN8M' },
+      { category: 'Clarity', tagline: 'Best cup separation and sweetness', icon: 'target', color: '#2C1810', features: ['Flat burr clarity', 'Low retention design', 'Single-dose workflow', 'Filter-optimized range'], topPick: 'Fellow Ode Gen 2', price: '$$$', subtitle: 'Pour-over clarity leader', asin: 'B0BLRMCM9Y' },
+      { category: 'Manual', tagline: 'Premium hand-ground pour over', icon: 'hand', color: '#7A5B4A', features: ['Excellent uniformity', 'Low retention path', 'Travel-friendly size', 'Quiet operation'], topPick: '1Zpresso K-Ultra', price: '$$$', subtitle: 'Top manual pick', asin: 'B0CC4LXF1Z' },
+      { category: 'Compact', tagline: 'Best for small kitchens', icon: 'volume-x', color: '#8B6F47', features: ['Small counter footprint', 'Broad brew range', 'Filter and espresso flex', 'Low retention for home use'], topPick: 'Fellow Opus', price: '$$', subtitle: 'Space-saving all-rounder', asin: 'B0BV96VPSR' },
+    ]}
+    footer="coffeegearlab.com - pour-over grinders - 2026"
   />
 
   <p><strong>Quick answer:</strong> If you want the best all-around pour-over result, choose Fellow Ode Gen 2. If you want better value and occasional espresso flexibility, Baratza Encore ESP is the practical buy. If you prefer hand grinding, 1Zpresso K-Ultra is the strongest manual option in this lineup.</p>
@@ -278,8 +282,15 @@ const jsonLd = {
   <h2 id="reviews">Detailed product reviews</h2>
 
   <h3>1) Fellow Ode Gen 2 — Best Overall for pour-over clarity</h3>
+  <ProductCard
+    title={products[0].name}
+    image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+    badge={{ label: products[0].bestFor, variant: products[0].badge }}
+    rating={{ score: products[0].rating }}
+    price={products[0].priceBand}
+    ctaUrl={amazonUrl(products[0].asin)}
+  />
   <p><strong>Best for:</strong> Home brewers who prioritize clean, separated cups and low-retention single-dosing.</p>
-  <p><strong>ASIN:</strong> B0BLRMCM9Y · <strong>Price band:</strong> $$$</p>
   <ProsCons
     pros={[
       'Flat burr profile is strong for flavor separation in light to medium roasts.',
@@ -295,8 +306,15 @@ const jsonLd = {
   <p><CtaButton href={amazonUrl('B0BLRMCM9Y')} external>Check Fellow Ode Gen 2 Price on Amazon</CtaButton></p>
 
   <h3>2) Baratza Encore ESP — Best Value Crossover for pour over + espresso</h3>
+  <ProductCard
+    title={products[1].name}
+    image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+    badge={{ label: products[1].bestFor, variant: products[1].badge }}
+    rating={{ score: products[1].rating }}
+    price={products[1].priceBand}
+    ctaUrl={amazonUrl(products[1].asin)}
+  />
   <p><strong>Best for:</strong> Buyers who want one grinder for filter coffee now and occasional espresso later.</p>
-  <p><strong>ASIN:</strong> B0BW272XCV · <strong>Price band:</strong> $$</p>
   <ProsCons
     pros={[
       'Strong all-around value with broad grind range coverage.',
@@ -312,8 +330,15 @@ const jsonLd = {
   <p><CtaButton href={amazonUrl('B0BW272XCV')} external>Check Baratza Encore ESP Price on Amazon</CtaButton></p>
 
   <h3>3) OXO Brew Conical Burr Grinder — Best for easy everyday workflow</h3>
+  <ProductCard
+    title={products[2].name}
+    image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+    badge={{ label: products[2].bestFor, variant: products[2].badge }}
+    rating={{ score: products[2].rating }}
+    price={products[2].priceBand}
+    ctaUrl={amazonUrl(products[2].asin)}
+  />
   <p><strong>Best for:</strong> Busy households that want quick, predictable operation with minimal learning curve.</p>
-  <p><strong>ASIN:</strong> B07CSKGLMM · <strong>Price band:</strong> $</p>
   <ProsCons
     pros={[
       'Very approachable for first-time burr grinder buyers.',
@@ -329,8 +354,15 @@ const jsonLd = {
   <p><CtaButton href={amazonUrl('B07CSKGLMM')} external>Check OXO Brew Conical Burr Grinder Price on Amazon</CtaButton></p>
 
   <h3>4) 1Zpresso K-Ultra — Best premium manual grinder for pour over</h3>
+  <ProductCard
+    title={products[3].name}
+    image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+    badge={{ label: products[3].bestFor, variant: products[3].badge }}
+    rating={{ score: products[3].rating }}
+    price={products[3].priceBand}
+    ctaUrl={amazonUrl(products[3].asin)}
+  />
   <p><strong>Best for:</strong> Manual brewers who want near-premium grind quality with travel-friendly portability.</p>
-  <p><strong>ASIN:</strong> B0CC4LXF1Z · <strong>Price band:</strong> $$$</p>
   <ProsCons
     pros={[
       'Excellent grind uniformity for a manual format.',
@@ -346,8 +378,15 @@ const jsonLd = {
   <p><CtaButton href={amazonUrl('B0CC4LXF1Z')} external>Check 1Zpresso K-Ultra Price on Amazon</CtaButton></p>
 
   <h3>5) TIMEMORE Chestnut C2 — Best budget manual under $100</h3>
+  <ProductCard
+    title={products[4].name}
+    image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+    badge={{ label: products[4].bestFor, variant: products[4].badge }}
+    rating={{ score: products[4].rating }}
+    price={products[4].priceBand}
+    ctaUrl={amazonUrl(products[4].asin)}
+  />
   <p><strong>Best for:</strong> New pour-over brewers upgrading from blade grinders at a strict budget.</p>
-  <p><strong>ASIN:</strong> B0833SDN8M · <strong>Price band:</strong> $</p>
   <ProsCons
     pros={[
       'One of the most accessible entry points into real burr grinding.',
@@ -363,8 +402,15 @@ const jsonLd = {
   <p><CtaButton href={amazonUrl('B0833SDN8M')} external>Check TIMEMORE Chestnut C2 Price on Amazon</CtaButton></p>
 
   <h3>6) Fellow Opus — Best compact electric all-rounder</h3>
+  <ProductCard
+    title={products[5].name}
+    image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
+    badge={{ label: products[5].bestFor, variant: products[5].badge }}
+    rating={{ score: products[5].rating }}
+    price={products[5].priceBand}
+    ctaUrl={amazonUrl(products[5].asin)}
+  />
   <p><strong>Best for:</strong> Small kitchens needing one electric grinder that can flex across multiple brew styles.</p>
-  <p><strong>ASIN:</strong> B0BV96VPSR · <strong>Price band:</strong> $$</p>
   <ProsCons
     pros={[
       'Compact footprint fits tighter counters well.',
@@ -380,8 +426,15 @@ const jsonLd = {
   <p><CtaButton href={amazonUrl('B0BV96VPSR')} external>Check Fellow Opus Price on Amazon</CtaButton></p>
 
   <h3>7) KINGrinder K6 — Best manual upgrade for recipe tinkerers</h3>
+  <ProductCard
+    title={products[6].name}
+    image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }}
+    badge={{ label: products[6].bestFor, variant: products[6].badge }}
+    rating={{ score: products[6].rating }}
+    price={products[6].priceBand}
+    ctaUrl={amazonUrl(products[6].asin)}
+  />
   <p><strong>Best for:</strong> Enthusiasts who frequently adjust recipes and want finer click control in a manual grinder.</p>
-  <p><strong>ASIN:</strong> B09WH9JKY1 · <strong>Price band:</strong> $$</p>
   <ProsCons
     pros={[
       'Excellent consistency for the price segment.',

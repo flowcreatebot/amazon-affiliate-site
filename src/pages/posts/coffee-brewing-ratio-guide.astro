@@ -3,6 +3,7 @@ import PostLayout from '../../layouts/PostLayout.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import Toc from '../../components/Toc.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
 const title = 'Coffee Brewing Ratio Guide (Pour Over, French Press, AeroPress)';
@@ -38,6 +39,18 @@ const jsonLd = {
 
   <h1>Coffee Brewing Ratio Guide (No Guesswork)</h1>
   <p class="lead">Use this quick chart to dial better cups faster. Start here, then adjust one variable at a time.</p>
+
+  <HeroSteps
+    title="Better Coffee in 3 Steps"
+    subtitle="Start with these ratios, then adjust one variable at a time"
+    steps={[
+      { label: "Weigh", icon: "target", actions: ["Use a scale, not scoops", "Start at the ratio below", "Measure water by weight", "Keep dose consistent"], time: "30 sec" },
+      { label: "Brew", icon: "coffee", actions: ["Pour over: 1:16", "French press: 1:15", "AeroPress: 1:14", "Adjust strength to taste"], time: "3-5 min" },
+      { label: "Adjust", icon: "wrench", actions: ["Sour: grind finer", "Bitter: grind coarser", "Change one variable only", "Log what works"], time: "Ongoing" },
+    ]}
+    outcome="Consistent, repeatable cups without guesswork."
+    footer="coffeegearlab.com - ratio guide - 2026"
+  />
 
   <Toc items={[
     { href: '#ratio-chart', label: 'Quick ratio chart' },

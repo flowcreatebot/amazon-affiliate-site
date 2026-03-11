@@ -9,7 +9,7 @@ import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import BestForBadge from '../../components/BestForBadge.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
@@ -173,7 +173,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-06',
       dateModified: '2026-03-09',
-      image: `${SITE.url}/assets/images/best-espresso-machine-under-200-hero-2026.svg`,
+      image: 'https://m.media-amazon.com/images/I/81c3ItE+jyL._AC_SL500_.jpg',
     }),
     {
       "@type": "ItemList",
@@ -260,7 +260,18 @@ const jsonLd = {
 
   <h1>Best Espresso Machine Under $200 (2026): 7 Picks Researched</h1>
   <p class="lead">You can make legit espresso under $200, but only if you match the machine to your workflow. We compared top budget models by basket style, heat-up speed, milk capability, cleanup burden, and real-world beginner friction so you can avoid weak shots and buyer's remorse.</p>
-  <HeroMedia src="/assets/images/best-espresso-machine-under-200-hero-2026.svg" alt="Best espresso machines under 200 dollars ranked by machine type, milk system, and beginner fit" width={1200} height={675} loading="lazy" caption="Editorial snapshot: strongest espresso machine picks under $200 by use case and workflow fit." />
+
+  <HeroPicks
+    title="Best Espresso Machine Under $200"
+    subtitle="7 picks compared by workflow fit — find the right machine for how you brew"
+    picks={[
+      { category: 'Budget', tagline: 'Best value for first-time buyers', icon: 'dollar', color: '#059669', features: ['Reliable pump espresso', 'Simple beginner layout', 'Common replacement parts', 'Under $100 entry'], topPick: "De'Longhi Stilosa", price: '$', subtitle: 'Best overall starter', asin: 'B08C96BG9H' },
+      { category: 'Latte', tagline: 'Strongest milk-drink value', icon: 'target', color: '#2C1810', features: ['Good steam power', 'Fast warm-up time', 'Manual shot control', 'Budget-friendly'], topPick: 'CASABREWS 3700 Essential', price: '$', subtitle: 'Best for lattes', asin: 'B0BRSP8YT6' },
+      { category: 'Manual', tagline: 'Maximum shot control per dollar', icon: 'hand', color: '#7A5B4A', features: ['Lever pressure control', 'No pump noise', 'Non-pressurized capable', 'Highest shot ceiling'], topPick: 'Flair Neo Flex', price: '$', subtitle: 'Best manual value', asin: 'B0C91668G1' },
+      { category: 'Beginner', tagline: 'Easiest milk workflow', icon: 'volume-x', color: '#8B6F47', features: ['Auto frother included', 'Large water tank', 'One-button milk drinks', 'Low learning curve'], topPick: 'Mr. Coffee Café Barista', price: '$$', subtitle: 'Best beginner convenience', asin: 'B007K9OIMU' },
+    ]}
+    footer="coffeegearlab.com - budget espresso machines - 2026"
+  />
 
   <p id="tldr"><strong>Quick answer:</strong> De'Longhi Stilosa is the best espresso machine under $200 for most beginners because it balances shot quality, control, and upgrade potential. CASABREWS 3700 Essential is the strongest milk-drink value, while Nespresso Essenza Mini is best if you care more about one-button speed than manual espresso technique.</p>
 
@@ -351,6 +362,14 @@ const jsonLd = {
     </ul>
 
     <h3>1) De'Longhi Stilosa — Best Overall Espresso Machine Under $200</h3>
+    <ProductCard
+      title="De'Longhi Stilosa"
+      image={{ src: 'https://m.media-amazon.com/images/I/81c3ItE+jyL._AC_SL500_.jpg', alt: "De'Longhi Stilosa espresso machine", width: 500, height: 500 }}
+      badge={{ label: 'Best Overall', variant: 'overall' }}
+      rating={{ score: 4.3 }}
+      price="Budget range"
+      ctaUrl={amazonUrl('B08C96BG9H')}
+    />
     <p><strong>Verdict:</strong> Best for most first-time buyers who want real pump espresso without paying for unnecessary extras.</p>
     <p><strong>Buy this if...</strong> you want a reliable starter machine with enough control to improve your shots over time.</p>
     <p><strong>Skip this if...</strong> you want one-button milk drinks with minimal manual input.</p>
@@ -360,11 +379,18 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Semi-auto · 15-bar pump claim · pressurized basket · manual steam wand · 33.8 oz tank · Espresso-capable: Yes.</p>
     <p><strong>Retention/static note:</strong> No built-in grinder; shot consistency depends heavily on your external grinder dose retention and static control.</p>
-    <p><span class="best-for-badge --overall">Best Overall</span> <strong>Price:</strong> Check price on Amazon.</p>
-    <CtaButton href="https://www.amazon.com/dp/B08C96BG9H/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
+    <p><CtaButton href="https://www.amazon.com/dp/B08C96BG9H/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
     <p><strong>Why it wins this slot:</strong> It delivers the best all-round blend of entry price, controllable shots, and long-term learning headroom.</p>
 
     <h3>2) Mr. Coffee Café Barista — Best Beginner Milk Workflow</h3>
+    <ProductCard
+      title="Mr. Coffee Café Barista"
+      image={{ src: 'https://m.media-amazon.com/images/I/71p2h853rfL._AC_SL500_.jpg', alt: 'Mr. Coffee Café Barista espresso machine', width: 500, height: 500 }}
+      badge={{ label: 'Best Beginner', variant: 'beginners' }}
+      rating={{ score: 4.1 }}
+      price="Mid range"
+      ctaUrl={amazonUrl('B007K9OIMU')}
+    />
     <p><strong>Verdict:</strong> Best for latte-heavy households that want easier milk drinks and less manual steaming practice.</p>
     <p><strong>Buy this if...</strong> your top priority is fast cappuccinos with less technique work.</p>
     <p><strong>Skip this if...</strong> you want tighter shot control and fewer internal milk parts to clean.</p>
@@ -374,11 +400,18 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Semi-auto · 15-bar pump claim · pressurized basket · auto frother · 55 oz tank · Espresso-capable: Borderline (automation-first design limits repeatable precision extraction control).</p>
     <p><strong>Retention/static note:</strong> No integrated grinder; pair with a low-retention burr grinder for better repeatability.</p>
-    <p><span class="best-for-badge --beginners">Best Beginner</span> <strong>Price:</strong> Check price on Amazon.</p>
-    <CtaButton href="https://www.amazon.com/dp/B007K9OIMU/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
+    <p><CtaButton href="https://www.amazon.com/dp/B007K9OIMU/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
     <p><strong>Why it wins this slot:</strong> It is the easiest path to acceptable milk drinks under $200.</p>
 
     <h3>3) CASABREWS 3700 Essential — Best for Lattes Under $200</h3>
+    <ProductCard
+      title="CASABREWS 3700 Essential"
+      image={{ src: 'https://m.media-amazon.com/images/I/71v90GdxAVL._AC_SL500_.jpg', alt: 'CASABREWS 3700 Essential espresso machine', width: 500, height: 500 }}
+      badge={{ label: 'Best for Lattes', variant: 'espresso' }}
+      rating={{ score: 4.2 }}
+      price="Budget range"
+      ctaUrl={amazonUrl('B0BRSP8YT6')}
+    />
     <p><strong>Verdict:</strong> Best for budget buyers who want stronger steam performance and better milk texture than typical entry machines.</p>
     <p><strong>Buy this if...</strong> you make milk drinks often and still want manual shot control.</p>
     <p><strong>Skip this if...</strong> you need a quieter machine for very early shared-space brewing.</p>
@@ -388,11 +421,18 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Semi-auto · 20-bar pump claim · pressurized basket · steam wand · 49 oz tank · Espresso-capable: Yes.</p>
     <p><strong>Retention/static note:</strong> Grinder-dependent results; clumpy static-prone grounds can reduce shot consistency on this machine.</p>
-    <p><span class="best-for-badge --espresso">Best for Lattes</span> <strong>Price:</strong> Check price on Amazon.</p>
-    <CtaButton href="https://www.amazon.com/dp/B0BRSP8YT6/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
+    <p><CtaButton href="https://www.amazon.com/dp/B0BRSP8YT6/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
     <p><strong>Why it wins this slot:</strong> Best milk-drink output under $150 without sacrificing manual espresso fundamentals.</p>
 
     <h3>4) Gevi Compact 20 Bar — Best Compact Small-Kitchen Pick</h3>
+    <ProductCard
+      title="Gevi Compact 20 Bar"
+      image={{ src: 'https://m.media-amazon.com/images/I/71pmvUI3cZL._AC_SL500_.jpg', alt: 'Gevi Compact 20 Bar espresso machine', width: 500, height: 500 }}
+      badge={{ label: 'Best Compact Pick', variant: 'pourover' }}
+      rating={{ score: 4.0 }}
+      price="Budget range"
+      ctaUrl={amazonUrl('B0D2MF7R3C')}
+    />
     <p><strong>Verdict:</strong> Best for apartments and minimal counters where footprint is a hard constraint.</p>
     <p><strong>Buy this if...</strong> you need a narrow machine that still handles real pump espresso basics.</p>
     <p><strong>Skip this if...</strong> you prioritize quiet operation or advanced extraction consistency.</p>
@@ -402,11 +442,18 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Semi-auto · 20-bar pump claim · pressurized basket · steam wand · 42 oz tank · Espresso-capable: Borderline (temperature and basket consistency can drift between consecutive shots).</p>
     <p><strong>Retention/static note:</strong> External grinder quality matters; fine static clumps can amplify channeling risk on compact baskets.</p>
-    <p><span class="best-for-badge --pourover">Best Compact Pick</span> <strong>Price:</strong> Check price on Amazon.</p>
-    <CtaButton href="https://www.amazon.com/dp/B0D2MF7R3C/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
+    <p><CtaButton href="https://www.amazon.com/dp/B0D2MF7R3C/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
     <p><strong>Why it wins this slot:</strong> It is one of the few truly compact machines that still offers full espresso + milk functionality.</p>
 
     <h3>5) Flair Neo Flex — Best Manual Espresso Value</h3>
+    <ProductCard
+      title="Flair Neo Flex"
+      image={{ src: 'https://m.media-amazon.com/images/I/61MqQwolqRL._AC_SL500_.jpg', alt: 'Flair Neo Flex manual espresso maker', width: 500, height: 500 }}
+      badge={{ label: 'Best Manual Value', variant: 'upgrade' }}
+      rating={{ score: 4.5 }}
+      price="Budget range"
+      ctaUrl={amazonUrl('B0C91668G1')}
+    />
     <p><strong>Verdict:</strong> Best for enthusiasts who want control and better shot potential per dollar than most electric units.</p>
     <p><strong>Buy this if...</strong> you enjoy manual brewing and are willing to learn manual pressure control.</p>
     <p><strong>Skip this if...</strong> you need fast back-to-back milk drinks with no prep friction.</p>
@@ -416,11 +463,18 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Manual lever · user-controlled pressure · pressurized/non-pressurized options · no milk system · Espresso-capable: Yes.</p>
     <p><strong>Retention/static note:</strong> Requires quality grinding; dose consistency and static control from your grinder have direct impact on shot quality.</p>
-    <p><span class="best-for-badge --upgrade">Best Manual Value</span> <strong>Price:</strong> Check price on Amazon.</p>
-    <CtaButton href="https://www.amazon.com/dp/B0C91668G1/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
+    <p><CtaButton href="https://www.amazon.com/dp/B0C91668G1/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
     <p><strong>Why it wins this slot:</strong> It offers the best espresso ceiling under $200 for users willing to trade convenience for control.</p>
 
     <h3>6) Nespresso Essenza Mini — Best Pod Convenience Under $200</h3>
+    <ProductCard
+      title="Nespresso Essenza Mini"
+      image={{ src: 'https://m.media-amazon.com/images/I/51FV1qFeXeL._AC_SL500_.jpg', alt: 'Nespresso Essenza Mini pod espresso machine', width: 500, height: 500 }}
+      badge={{ label: 'Best Pod Convenience', variant: 'budget' }}
+      rating={{ score: 4.4 }}
+      price="Mid range"
+      ctaUrl={amazonUrl('B06ZYJBPM9')}
+    />
     <p><strong>Verdict:</strong> Best for users who want consistent coffee-fast workflow and minimal cleanup rather than true espresso craft.</p>
     <p><strong>Buy this if...</strong> speed, tiny footprint, and no dial-in learning curve matter most.</p>
     <p><strong>Skip this if...</strong> you want fresh-ground espresso or milk-texture control.</p>
@@ -430,11 +484,18 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Pod machine · 19-bar claim · pod chamber · no milk system · 20.3 oz tank · Espresso-capable: No.</p>
     <p><strong>Retention/static note:</strong> Not grinder-based; pod freshness and capsule age replace grinder retention concerns.</p>
-    <p><span class="best-for-badge --budget">Best Pod Convenience</span> <strong>Price:</strong> Check price on Amazon.</p>
-    <CtaButton href="https://www.amazon.com/dp/B06ZYJBPM9/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
+    <p><CtaButton href="https://www.amazon.com/dp/B06ZYJBPM9/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
     <p><strong>Why it wins this slot:</strong> It is still the fastest low-effort way to get espresso-style drinks in this price range.</p>
 
     <h3>7) De'Longhi ECP3420 — Best Long-Term Budget Durability</h3>
+    <ProductCard
+      title="De'Longhi ECP3420"
+      image={{ src: 'https://m.media-amazon.com/images/I/71cMXnwKDpL._AC_SL500_.jpg', alt: "De'Longhi ECP3420 espresso machine", width: 500, height: 500 }}
+      badge={{ label: 'Best Long-Term Durability', variant: 'beginners' }}
+      rating={{ score: 4.2 }}
+      price="Mid range"
+      ctaUrl={amazonUrl('B00YCP71VK')}
+    />
     <p><strong>Verdict:</strong> Best for buyers who want a proven model with stable daily reliability and serviceable parts.</p>
     <p><strong>Buy this if...</strong> you want a safer long-term ownership bet over feature-heavy newcomers.</p>
     <p><strong>Skip this if...</strong> you need maximum milk automation or modern one-touch workflows.</p>
@@ -444,8 +505,7 @@ const jsonLd = {
     />
     <p><strong>Key specs:</strong> Semi-auto · 15-bar claim · pressurized basket · steam wand · 37 oz tank · Espresso-capable: Yes.</p>
     <p><strong>Retention/static note:</strong> Better grinder consistency noticeably improves this machine; static-heavy fine grinds can still choke shots.</p>
-    <p><span class="best-for-badge --beginners">Best Long-Term Durability</span> <strong>Price:</strong> Check price on Amazon.</p>
-    <CtaButton href="https://www.amazon.com/dp/B00YCP71VK/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton>
+    <p><CtaButton href="https://www.amazon.com/dp/B00YCP71VK/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
     <p><strong>Why it wins this slot:</strong> It is one of the most dependable budget pumps for buyers who care about ownership lifespan.</p>
   </section>
 

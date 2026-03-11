@@ -7,12 +7,15 @@ secondary_keywords:
   - "manual burr grinder"
   - "best hand grinder under $100"
   - "manual coffee grinder"
-status: rework
+status: design
 source: backfill
 priority_rank: 8
 created_by: manual
 created_at: "2026-03-08T12:00:00+07:00"
 writer_completed_at: "2026-03-11T07:01:00.837Z"
+image_agent_completed_at: "2026-03-11T14:31:45.473Z"
+images_created:
+  - "best-manual-coffee-grinder-under-100-hero-2026.svg"
 qa_result: pass
 qa_rejection_reason: null
 qa_rejection_details: null
@@ -27,10 +30,6 @@ asins_verified:
   - "B01GPMH590"
   - "B082L26FLX"
 word_count: 2001
-rework_stages: [images]
-rework_reason: "The images are terrible on these, we need to redo them. The writer should make them as placeholders and the image agent should do the images again."
-rework_initiated_by: dashboard
-rework_initiated_at: "2026-03-10T15:16:23.866Z"
 ---
 
 # Brief: Best Manual Coffee Grinder Under $100 (Phase 1.5 Refresh)
