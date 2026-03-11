@@ -1,55 +1,60 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">Editorial comparison of six burr grinders under 200 dollars by workflow and brew style</title>
-  <desc id="desc">Warm-toned infographic scene with six abstract grinder silhouettes arranged in three price tiers, with green highlights for best overall and espresso-focused picks.</desc>
+  <title id="title">Best burr coffee grinders under 200 dollars by brewing style and workflow</title>
+  <desc id="desc">Warm editorial chart with three price tiers, abstract grinder silhouettes, and highlighted tracks for overall value and espresso-ready picks.</desc>
   <rect width="1200" height="675" fill="#FAF8F5"/>
 
-  <rect x="60" y="70" width="1080" height="535" rx="12" fill="#F5EDE4" stroke="#EFDFCE" stroke-width="2"/>
+  <rect x="48" y="56" width="1104" height="563" rx="12" fill="#F5EDE4" stroke="#EFDFCE" stroke-width="2"/>
 
-  <text x="100" y="130" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="44" font-weight="800">Best Burr Grinders Under $200</text>
-  <text x="100" y="170" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400">Budget tiers, workflow fit, and espresso readiness at a glance</text>
+  <text x="88" y="126" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="46" font-weight="800">Best Burr Coffee Grinders Under $200</text>
+  <text x="88" y="168" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400">Compare budget fit, espresso control, and day-to-day workflow friction</text>
 
-  <rect x="100" y="205" width="300" height="46" rx="12" fill="#EFDFCE"/>
-  <text x="250" y="236" text-anchor="middle" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600">Under $100</text>
+  <rect x="88" y="198" width="1024" height="1" fill="#B89B8A"/>
 
-  <rect x="450" y="205" width="300" height="46" rx="12" fill="#EFDFCE"/>
-  <text x="600" y="236" text-anchor="middle" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600">$100–$149</text>
+  <rect x="90" y="220" width="320" height="44" rx="12" fill="#EFDFCE"/>
+  <text x="250" y="248" text-anchor="middle" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="600">Under $100</text>
 
-  <rect x="800" y="205" width="300" height="46" rx="12" fill="#EFDFCE"/>
-  <text x="950" y="236" text-anchor="middle" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600">$150–$200</text>
+  <rect x="440" y="220" width="320" height="44" rx="12" fill="#EFDFCE"/>
+  <text x="600" y="248" text-anchor="middle" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="600">$100–$149</text>
 
-  <g transform="translate(125 278)">
-    <rect x="0" y="25" width="92" height="180" rx="12" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
-    <rect x="22" y="0" width="48" height="40" rx="10" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
-    <circle cx="46" cy="105" r="20" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="2"/>
-    <rect x="145" y="18" width="92" height="188" rx="12" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
-    <rect x="167" y="-5" width="48" height="40" rx="10" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
-    <circle cx="191" cy="101" r="20" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="2"/>
+  <rect x="790" y="220" width="320" height="44" rx="12" fill="#EFDFCE"/>
+  <text x="950" y="248" text-anchor="middle" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="600">$150–$200</text>
+
+  <g transform="translate(120 292)">
+    <rect x="0" y="24" width="96" height="184" rx="12" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
+    <rect x="24" y="0" width="48" height="40" rx="10" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
+    <circle cx="48" cy="106" r="20" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="2"/>
+
+    <rect x="140" y="34" width="96" height="174" rx="12" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
+    <rect x="164" y="10" width="48" height="40" rx="10" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
+    <circle cx="188" cy="112" r="20" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="2"/>
   </g>
 
-  <g transform="translate(475 278)">
-    <rect x="0" y="20" width="92" height="185" rx="12" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
-    <rect x="22" y="-4" width="48" height="40" rx="10" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
-    <circle cx="46" cy="103" r="20" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="2"/>
-    <rect x="145" y="10" width="92" height="195" rx="12" fill="#ECFDF5" stroke="#059669" stroke-width="3"/>
-    <rect x="167" y="-14" width="48" height="40" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="3"/>
-    <circle cx="191" cy="98" r="20" fill="#F5EDE4" stroke="#2C1810" stroke-width="2"/>
+  <g transform="translate(470 292)">
+    <rect x="0" y="20" width="96" height="188" rx="12" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
+    <rect x="24" y="-4" width="48" height="40" rx="10" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
+    <circle cx="48" cy="106" r="20" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="2"/>
+
+    <rect x="140" y="10" width="96" height="198" rx="12" fill="#ECFDF5" stroke="#059669" stroke-width="3"/>
+    <rect x="164" y="-14" width="48" height="40" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="3"/>
+    <circle cx="188" cy="98" r="20" fill="#F5EDE4" stroke="#2C1810" stroke-width="2"/>
   </g>
 
-  <g transform="translate(825 278)">
-    <rect x="0" y="26" width="92" height="180" rx="12" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
-    <rect x="22" y="2" width="48" height="40" rx="10" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
-    <circle cx="46" cy="106" r="20" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="2"/>
-    <rect x="145" y="10" width="92" height="196" rx="12" fill="#ECFDF5" stroke="#059669" stroke-width="3"/>
-    <rect x="167" y="-14" width="48" height="40" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="3"/>
-    <circle cx="191" cy="98" r="20" fill="#F5EDE4" stroke="#2C1810" stroke-width="2"/>
+  <g transform="translate(820 292)">
+    <rect x="0" y="22" width="96" height="186" rx="12" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
+    <rect x="24" y="-2" width="48" height="40" rx="10" fill="#EFDFCE" stroke="#7A5B4A" stroke-width="2"/>
+    <circle cx="48" cy="104" r="20" fill="#F5EDE4" stroke="#5C3D2E" stroke-width="2"/>
+
+    <rect x="140" y="10" width="96" height="198" rx="12" fill="#ECFDF5" stroke="#059669" stroke-width="3"/>
+    <rect x="164" y="-14" width="48" height="40" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="3"/>
+    <circle cx="188" cy="98" r="20" fill="#F5EDE4" stroke="#2C1810" stroke-width="2"/>
   </g>
 
-  <rect x="95" y="545" width="320" height="42" rx="12" fill="#ECFDF5"/>
-  <text x="255" y="572" text-anchor="middle" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600">Best Budget Workflows</text>
+  <rect x="90" y="542" width="320" height="46" rx="12" fill="#EFDFCE"/>
+  <text x="250" y="571" text-anchor="middle" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600">Best value for filter-first homes</text>
 
-  <rect x="440" y="545" width="320" height="42" rx="12" fill="#ECFDF5"/>
-  <text x="600" y="572" text-anchor="middle" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600">Best Overall Value</text>
+  <rect x="440" y="542" width="320" height="46" rx="12" fill="#ECFDF5" stroke="#059669" stroke-width="2"/>
+  <text x="600" y="571" text-anchor="middle" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600">Top all-around performance</text>
 
-  <rect x="785" y="545" width="320" height="42" rx="12" fill="#ECFDF5"/>
-  <text x="945" y="572" text-anchor="middle" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600">Espresso-Ready Picks</text>
+  <rect x="790" y="542" width="320" height="46" rx="12" fill="#ECFDF5" stroke="#059669" stroke-width="2"/>
+  <text x="950" y="571" text-anchor="middle" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600">Espresso-ready under $200</text>
 </svg>

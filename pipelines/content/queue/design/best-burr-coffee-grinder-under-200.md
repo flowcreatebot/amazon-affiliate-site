@@ -7,7 +7,7 @@ secondary_keywords:
 - best burr grinder
 - affordable burr coffee grinder
 - budget burr grinder
-status: rework
+status: design
 source: backfill
 priority_rank: 2
 created_by: manual
@@ -26,14 +26,10 @@ asins_verified:
 - B07N4KTW38
 - B09WH9JKY1
 word_count: 2022
-image_agent_completed_at: '2026-03-11T06:30:00+07:00'
+image_agent_completed_at: "2026-03-11T07:02:41.239Z"
 images_created:
 - best-burr-coffee-grinder-under-200-hero-2026.svg
 rejection_stages: null
-rework_stages: [images]
-rework_reason: "The KINGrinder image is completely blank, I dont see anything but white background."
-rework_initiated_by: dashboard
-rework_initiated_at: "2026-03-11T02:30:49.861Z"
 ---
 
 # Brief: Best Burr Coffee Grinder Under $200 (Phase 1.5 Refresh)

@@ -332,6 +332,16 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* --- Comparison Table --- */
 .comparison-table { margin: var(--sp-8) 0; }
+
+/* Let comparison tables break out wider than article text on desktop */
+@media (min-width: 960px) {
+  .comparison-table {
+    width: min(var(--max-page), calc(100vw - 2rem));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .comparison-table__timestamp {
   font-size: 0.8rem;
   color: var(--brand-400);
