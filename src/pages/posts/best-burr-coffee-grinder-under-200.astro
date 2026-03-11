@@ -11,7 +11,6 @@ import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import HeroMedia from '../../components/HeroMedia.astro';
 import Toc from '../../components/Toc.astro';
-import BestForBadge from '../../components/BestForBadge.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
 const amazonUrl = (asin: string) =>
@@ -43,7 +42,7 @@ const products = [
     badge: { label: 'Best Budget', variant: 'budget' as const },
     rating: 4.2,
     price: '$',
-    featured: true,
+    featured: false,
     burrType: 'Conical burr',
     brewRange: 'Drip, pour over, French press',
     capacity: '12 oz hopper',
@@ -60,7 +59,7 @@ const products = [
     badge: { label: 'Best Mid-Range', variant: 'upgrade' as const },
     rating: 4.4,
     price: '$$',
-    featured: true,
+    featured: false,
     burrType: 'Conical burr',
     brewRange: 'Filter to espresso',
     capacity: '3.5 oz dosing lid',
@@ -72,8 +71,8 @@ const products = [
   {
     title: 'Turin SK40',
     asin: 'B0DR41V3CN',
-    image: undefined,
-    imageAlt: undefined,
+    image: 'https://m.media-amazon.com/images/I/31Za1GRr+6L._AC_SL500_.jpg',
+    imageAlt: 'Turin SK40 single-dose burr coffee grinder',
     badge: { label: 'Best for Espresso', variant: 'espresso' as const },
     rating: 4.5,
     price: '$$$',
@@ -89,8 +88,8 @@ const products = [
   {
     title: 'Capresso Infinity Plus',
     asin: 'B07N4KTW38',
-    image: undefined,
-    imageAlt: undefined,
+    image: 'https://images-na.ssl-images-amazon.com/images/P/B07N4KTW38.01._SX500_SCLZZZZZZZ_.jpg',
+    imageAlt: 'Capresso Infinity Plus conical burr coffee grinder',
     badge: { label: 'Best for Beginners', variant: 'beginners' as const },
     rating: 4.1,
     price: '$',
@@ -106,8 +105,8 @@ const products = [
   {
     title: 'KINGrinder K6',
     asin: 'B09WH9JKY1',
-    image: undefined,
-    imageAlt: undefined,
+    image: 'https://images-na.ssl-images-amazon.com/images/P/B09WH9JKY1.01._SX500_SCLZZZZZZZ_.jpg',
+    imageAlt: 'KINGrinder K6 manual burr coffee grinder',
     badge: { label: 'Best Manual Pick', variant: 'pourover' as const },
     rating: 4.6,
     price: '$',
@@ -136,7 +135,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-06',
       dateModified: '2026-03-09',
-      image: `${SITE.url}/assets/images/best-burr-coffee-grinder-under-200-tested-2026.svg`,
+      image: `${SITE.url}/assets/images/best-burr-coffee-grinder-under-200-hero-2026.svg`,
     }),
     {
       '@type': 'Organization',
@@ -201,7 +200,7 @@ const jsonLd = {
   description={description}
   canonical={canonical}
   ogDescription="Six burr grinder picks under $200 ranked by grind consistency, espresso range, retention control, and daily workflow fit."
-  ogImage={`${SITE.url}/assets/images/best-burr-coffee-grinder-under-200-tested-2026.svg`}
+  ogImage={`${SITE.url}/assets/images/best-burr-coffee-grinder-under-200-hero-2026.svg`}
   breadcrumbs={[
     { label: 'Home', href: '/' },
     { label: 'All Guides', href: '/posts/' },
@@ -214,9 +213,8 @@ const jsonLd = {
 
   <h1>Best Burr Coffee Grinder Under 200 (2026): 6 Top Picks</h1>
   <p class="lead">The best burr coffee grinder under 200 for most people is the Baratza Encore ESP because it balances reliable filter consistency with genuinely usable entry-espresso control. We compared six popular models by grind quality, retention/static behavior, cleanup burden, and value so you can choose once and stop replacing mediocre grinders.</p>
-
   <HeroMedia
-    src="/assets/images/best-burr-coffee-grinder-under-200-tested-2026.svg"
+    src="/assets/images/best-burr-coffee-grinder-under-200-hero-2026.svg"
     alt="Best burr coffee grinder under 200 comparison for espresso and filter brewing"
     width={1200}
     height={675}
@@ -239,7 +237,7 @@ const jsonLd = {
 
   <h2 id="quick-picks">Quick picks</h2>
   <QuickPicks>
-    {products.filter(p => p.featured).map(p => (
+    {products.map(p => (
       <ProductCard
         title={p.title}
         image={p.image ? { src: p.image, alt: p.imageAlt!, width: 500, height: 500 } : undefined}
@@ -273,7 +271,7 @@ const jsonLd = {
         {products.map(p => (
           <tr>
             <td data-label="Product">{p.title}</td>
-            <td data-label="Best for"><BestForBadge label={p.badge.label} variant={p.badge.variant} /></td>
+            <td data-label="Best for"><span class={`best-for-badge --${p.badge.variant}`}>{p.badge.label}</span></td>
             <td data-label="Burr type">{p.burrType}</td>
             <td data-label="Best brew range">{p.brewRange}</td>
             <td data-label="Capacity">{p.capacity}</td>
@@ -431,6 +429,10 @@ const jsonLd = {
 
     <h3>6) Build a complete workflow, not just a grinder purchase</h3>
     <p>A grinder upgrade works best when paired with consistent brew ratios and realistic recipe adjustments. If your cups are still inconsistent after buying a better grinder, review this <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> and this <a href="/posts/burr-grinder-settings-for-espresso.html">espresso grind setting guide</a>. Better coffee usually comes from system tuning, not one isolated product decision.</p>
+
+    <h3>7) Set expectations for noise, speed, and mess</h3>
+    <p>Many buyers focus on grind quality but underestimate workflow fatigue. Louder motors, static-heavy chutes, or awkward dose transfer can make a grinder feel worse over time even if cup quality is good. If you brew before work, a grinder that is slightly less precise but easier to run daily can produce better real-world results because you stay consistent.</p>
+    <p>Treat your first two weeks as calibration, not judgment. Use one coffee, log your settings, and make small changes instead of big jumps. This quickly reveals whether your grinder supports stable repeatable cups. A practical under-$200 grinder should help you improve with routine, not force you into constant re-dialing.</p>
   </BuyingGuideSection>
 
   <h2 id="faq">Frequently asked questions</h2>
