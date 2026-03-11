@@ -1,55 +1,109 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
   <title id="title">Editorial comparison of seven espresso burr grinders across budget, workflow style, and precision needs</title>
-  <desc id="desc">Warm-toned illustration with four buyer profile lanes, abstract grinder silhouettes, and green precision callouts for espresso workflow priorities.</desc>
+  <desc id="desc">Four buyer-profile cards showing budget, precision, quiet, and manual grinder categories with key traits and top picks.</desc>
 
+  <!-- Background -->
   <rect width="1200" height="675" fill="#FAF8F5"/>
-  <rect x="36" y="36" width="1128" height="603" rx="12" fill="#F5EDE4"/>
+  <rect x="36" y="36" width="1128" height="603" rx="16" fill="#F5EDE4"/>
 
-  <text x="72" y="104" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="42" font-weight="800">Best Burr Grinder for Espresso</text>
-  <text x="72" y="140" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400">Compare by workflow fit: budget, precision, quiet mornings, and manual control</text>
+  <!-- Header -->
+  <text x="600" y="100" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="40" font-weight="800" text-anchor="middle">Best Burr Grinder for Espresso</text>
+  <text x="600" y="138" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="400" text-anchor="middle">7 picks compared by workflow fit — find the right grinder for how you brew</text>
 
-  <rect x="72" y="184" width="252" height="398" rx="12" fill="#EFDFCE"/>
-  <rect x="348" y="184" width="252" height="398" rx="12" fill="#EFDFCE"/>
-  <rect x="624" y="184" width="252" height="398" rx="12" fill="#EFDFCE"/>
-  <rect x="900" y="184" width="228" height="398" rx="12" fill="#EFDFCE"/>
+  <!-- Divider line -->
+  <line x1="200" y1="160" x2="1000" y2="160" stroke="#D4C4B0" stroke-width="1"/>
 
-  <text x="90" y="226" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="600">Budget lane</text>
-  <text x="366" y="226" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="600">Precision lane</text>
-  <text x="642" y="226" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="600">Quiet lane</text>
-  <text x="918" y="226" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="21" font-weight="600">Manual lane</text>
+  <!-- Card 1: Budget -->
+  <rect x="60" y="186" width="258" height="430" rx="12" fill="#EFDFCE"/>
+  <rect x="60" y="186" width="258" height="80" rx="12" fill="#059669"/>
+  <rect x="60" y="240" width="258" height="26" fill="#059669"/>
+  <!-- Dollar icon -->
+  <circle cx="189" cy="220" r="24" fill="none" stroke="#fff" stroke-width="2.5"/>
+  <text x="189" y="229" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700" text-anchor="middle">$</text>
+  <text x="189" y="256" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1.5">BUDGET</text>
+  <!-- Card content -->
+  <text x="189" y="300" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Best value for new brewers</text>
+  <line x1="110" y1="316" x2="268" y2="316" stroke="#D4C4B0" stroke-width="1"/>
+  <text x="88" y="346" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Stepped adjustment</text>
+  <text x="88" y="372" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Conical burrs</text>
+  <text x="88" y="398" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Simple workflow</text>
+  <text x="88" y="424" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Under $200</text>
+  <!-- Top pick -->
+  <rect x="78" y="458" width="222" height="56" rx="8" fill="#FAF8F5" stroke="#059669" stroke-width="1.5"/>
+  <text x="189" y="482" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">TOP PICK</text>
+  <text x="189" y="502" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Baratza Encore ESP</text>
+  <!-- Price indicator -->
+  <text x="189" y="546" fill="#7A5B4A" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle">$$</text>
+  <text x="189" y="566" fill="#9A8577" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" text-anchor="middle">Fast value dial-in</text>
 
-  <g fill="none" stroke="#5C3D2E" stroke-width="5">
-    <rect x="122" y="272" width="150" height="176" rx="12"/>
-    <circle cx="197" cy="328" r="26"/>
-    <line x1="197" y1="448" x2="197" y2="500"/>
+  <!-- Card 2: Precision -->
+  <rect x="339" y="186" width="258" height="430" rx="12" fill="#EFDFCE"/>
+  <rect x="339" y="186" width="258" height="80" rx="12" fill="#2C1810"/>
+  <rect x="339" y="240" width="258" height="26" fill="#2C1810"/>
+  <!-- Target icon -->
+  <circle cx="468" cy="220" r="22" fill="none" stroke="#fff" stroke-width="2"/>
+  <circle cx="468" cy="220" r="13" fill="none" stroke="#fff" stroke-width="2"/>
+  <circle cx="468" cy="220" r="4" fill="#fff"/>
+  <text x="468" y="256" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1.5">PRECISION</text>
+  <!-- Card content -->
+  <text x="468" y="300" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Fine-tune every shot</text>
+  <line x1="389" y1="316" x2="547" y2="316" stroke="#D4C4B0" stroke-width="1"/>
+  <text x="367" y="346" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Stepless adjustment</text>
+  <text x="367" y="372" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  64mm flat burrs</text>
+  <text x="367" y="398" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Low retention</text>
+  <text x="367" y="424" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Prosumer grade</text>
+  <!-- Top pick -->
+  <rect x="357" y="458" width="222" height="56" rx="8" fill="#FAF8F5" stroke="#2C1810" stroke-width="1.5"/>
+  <text x="468" y="482" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">TOP PICK</text>
+  <text x="468" y="502" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" text-anchor="middle">DF64 Gen 2</text>
+  <!-- Price indicator -->
+  <text x="468" y="546" fill="#7A5B4A" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle">$$$</text>
+  <text x="468" y="566" fill="#9A8577" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" text-anchor="middle">Fine control for shot tuning</text>
 
-    <rect x="398" y="258" width="152" height="196" rx="12"/>
-    <circle cx="474" cy="320" r="32"/>
-    <line x1="428" y1="458" x2="520" y2="458"/>
+  <!-- Card 3: Quiet -->
+  <rect x="618" y="186" width="258" height="430" rx="12" fill="#EFDFCE"/>
+  <rect x="618" y="186" width="258" height="80" rx="12" fill="#7A5B4A"/>
+  <rect x="618" y="240" width="258" height="26" fill="#7A5B4A"/>
+  <!-- Moon/quiet icon -->
+  <path d="M735 202 A18 18 0 1 0 735 238 A14 14 0 1 1 735 202Z" fill="#fff"/>
+  <text x="747" y="256" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1.5">QUIET</text>
+  <!-- Card content -->
+  <text x="747" y="300" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Low-noise mornings</text>
+  <line x1="668" y1="316" x2="826" y2="316" stroke="#D4C4B0" stroke-width="1"/>
+  <text x="646" y="346" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Noise-dampened motor</text>
+  <text x="646" y="372" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Conical burrs</text>
+  <text x="646" y="398" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Consistent grind</text>
+  <text x="646" y="424" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Early-riser friendly</text>
+  <!-- Top pick -->
+  <rect x="636" y="458" width="222" height="56" rx="8" fill="#FAF8F5" stroke="#7A5B4A" stroke-width="1.5"/>
+  <text x="747" y="482" fill="#7A5B4A" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">TOP PICK</text>
+  <text x="747" y="502" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Eureka Mignon Notte</text>
+  <!-- Price indicator -->
+  <text x="747" y="546" fill="#7A5B4A" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle">$$$</text>
+  <text x="747" y="566" fill="#9A8577" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" text-anchor="middle">Lower-noise routines</text>
 
-    <rect x="674" y="272" width="150" height="176" rx="12"/>
-    <circle cx="749" cy="330" r="24"/>
-    <line x1="704" y1="460" x2="794" y2="460"/>
+  <!-- Card 4: Manual -->
+  <rect x="897" y="186" width="258" height="430" rx="12" fill="#EFDFCE"/>
+  <rect x="897" y="186" width="258" height="80" rx="12" fill="#8B6F47"/>
+  <rect x="897" y="240" width="258" height="26" fill="#8B6F47"/>
+  <!-- Hand/manual icon -->
+  <path d="M1018 206 L1018 234 M1010 210 L1010 230 M1026 210 L1026 230 M1034 214 L1034 228 M1006 224 Q1006 240 1018 240 Q1030 240 1034 228" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <text x="1026" y="256" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1.5">MANUAL</text>
+  <!-- Card content -->
+  <text x="1026" y="300" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Portable precision</text>
+  <line x1="947" y1="316" x2="1105" y2="316" stroke="#D4C4B0" stroke-width="1"/>
+  <text x="925" y="346" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Hand-cranked</text>
+  <text x="925" y="372" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Travel-ready</text>
+  <text x="925" y="398" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Zero counter noise</text>
+  <text x="925" y="424" fill="#5C3D2E" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400">&#x2713;  Espresso-capable burrs</text>
+  <!-- Top pick -->
+  <rect x="915" y="458" width="222" height="56" rx="8" fill="#FAF8F5" stroke="#8B6F47" stroke-width="1.5"/>
+  <text x="1026" y="482" fill="#8B6F47" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">TOP PICK</text>
+  <text x="1026" y="502" fill="#2C1810" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" text-anchor="middle">1Zpresso J-Max</text>
+  <!-- Price indicator -->
+  <text x="1026" y="546" fill="#7A5B4A" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle">$$</text>
+  <text x="1026" y="566" fill="#9A8577" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" text-anchor="middle">Portable precision</text>
 
-    <rect x="962" y="286" width="106" height="154" rx="53"/>
-    <circle cx="1015" cy="346" r="21"/>
-    <line x1="1015" y1="440" x2="1015" y2="500"/>
-  </g>
-
-  <g fill="none" stroke="#059669" stroke-width="4">
-    <path d="M414 545 C470 512, 524 512, 580 545"/>
-    <path d="M128 532 C180 500, 238 500, 286 532"/>
-    <path d="M684 532 C730 508, 776 508, 822 532"/>
-  </g>
-
-  <g fill="#059669">
-    <circle cx="474" cy="514" r="10"/>
-    <circle cx="197" cy="500" r="8"/>
-    <circle cx="749" cy="502" r="8"/>
-  </g>
-
-  <text x="90" y="560" fill="#7A5B4A" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400">Fast value dial-in</text>
-  <text x="366" y="560" fill="#7A5B4A" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400">Fine control for shot tuning</text>
-  <text x="642" y="560" fill="#7A5B4A" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400">Lower-noise routines</text>
-  <text x="918" y="560" fill="#7A5B4A" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400">Portable precision</text>
+  <!-- Footer badge -->
+  <text x="600" y="634" fill="#9A8577" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="400" text-anchor="middle">coffeegearlab.com  ·  7 grinders tested  ·  2026 editorial picks</text>
 </svg>
