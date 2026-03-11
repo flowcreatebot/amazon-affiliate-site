@@ -219,3 +219,8 @@
 2026-03-11T12:20:59.189+00:00 | writer | PREQA_PASS | best-coffee-maker-with-grinder | checks:C01,S02,C04,C05,C06,C07,C08,S07,L01,L02b,D03
 2026-03-11T12:20:59.192+00:00 | writer | MOVED | best-coffee-maker-with-grinder | rejected/ → design/ | source:rejected
 2026-03-11T12:49:21.894+00:00 | designer | MOVED | best-hand-grinder-for-espresso-under-100 | images/ → design/ | source:images
+2026-03-11T20:02:43+07:00 | builder | MOVED | best-coffee-maker-with-grinder-and-k-cup-combo | briefs/ → deferred/ | status-stage-drift-fix
+2026-03-11T20:02:43+07:00 | builder | MOVED | drip-vs-single-serve-coffee-maker | briefs/ → deferred/ | status-stage-drift-fix
+2026-03-11T20:02:43+07:00 | builder | MOVED | aeropress-vs-french-press | backfill/ → deferred/ | status-stage-drift-fix
+2026-03-11T20:02:43+07:00 | builder | MOVED | coffee-brewing-ratio-guide | backfill/ → deferred/ | status-stage-drift-fix
+2026-03-11T20:02:43+07:00 | builder | MOVED | espresso-shot-dial-in-workflow | backfill/ → deferred/ | status-stage-drift-fix

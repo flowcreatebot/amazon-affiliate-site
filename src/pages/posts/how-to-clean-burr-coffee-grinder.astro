@@ -9,7 +9,7 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
 
@@ -150,14 +150,16 @@ const jsonLd = {
   <h1>How to Clean Burr Coffee Grinder: Daily to Monthly Routine (2026)</h1>
   <p class="lead">If your cups suddenly taste flat, bitter, or dusty, your grinder is usually the bottleneck. This guide shows how to clean burr coffee grinder parts fast without damaging alignment, so you get cleaner flavor and steadier extractions.</p>
 
-  <HeroMedia
-    src={`/assets/images/${slug}-hero-2026.svg`}
-    alt="Editorial workflow showing daily, weekly, and monthly grinder cleaning steps"
-    width={1200}
-    height={675}
-    loading="eager"
-    fetchpriority="high"
-    caption="A repeatable cleaning rhythm is the easiest way to improve cup consistency."
+  <HeroSteps
+    title="Burr Grinder Cleaning Routine"
+    subtitle="Three cadences that keep grind consistent and flavor clean"
+    steps={[
+      { label: 'Daily', icon: 'zap', actions: ['Brush chute and exit', 'Wipe hopper lip oils', 'Run empty 1–2 sec'], time: '~2 min' },
+      { label: 'Weekly', icon: 'wind', actions: ['Remove hopper', 'Dry-brush upper burrs', 'Blow out chute corners', 'Check grind reference'], time: '~5 min' },
+      { label: 'Monthly', icon: 'wrench', actions: ['Full burr disassembly', 'Brush chamber and threads', 'Reassemble carefully', 'Run sacrificial dose'], time: '~15 min' },
+    ]}
+    outcome="Cleaner flavor, less retention, and more predictable extractions every brew"
+    footer="coffeegearlab.com · 2026 maintenance guide"
   />
 
   <div class="card">
