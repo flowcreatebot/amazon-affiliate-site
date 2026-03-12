@@ -10,9 +10,9 @@ import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import HeroPicks from '../../components/HeroPicks.astro';
-import HeroSteps from '../../components/HeroSteps.astro';
+import HeroMedia from '../../components/HeroMedia.astro';
 import Toc from '../../components/Toc.astro';
-import { SITE, blogPosting, publisher } from '../../data/site';
+import { SITE, AMAZON_TAG, blogPosting, publisher } from '../../data/site';
 
 const products = [
   {
@@ -150,7 +150,7 @@ const products = [
   },
 ];
 
-const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
+const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=${AMAZON_TAG}`;
 
 const title = 'Best Grind and Brew Coffee Maker Under $200 (2026) Compared';
 const description = 'Compare 7 researched grind-and-brew coffee makers under $200 by workflow speed, cleanup effort, brew flexibility, and practical day-to-day value.';
@@ -158,6 +158,7 @@ const slug = 'best-grind-and-brew-coffee-maker-under-200';
 const canonical = `${SITE.url}/posts/${slug}.html`;
 const heroImage = `${SITE.url}/assets/images/${slug}-hero-2026.svg`;
 const workflowImage = `${SITE.url}/assets/images/${slug}-workflow-2026.svg`;
+const disclosureText = `${SITE.name} may earn a commission from qualifying purchases made through links on this page. This does not change the price you pay.`;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -240,12 +241,13 @@ const jsonLd = {
     { label: 'All Guides', href: '/posts/' },
     { label: 'Best Grind and Brew Coffee Maker Under $200' },
   ]}
+  disclosureText={disclosureText}
 >
   <Fragment slot="head">
     <JsonLd data={jsonLd} />
   </Fragment>
 
-  <h1>Best Grind and Brew Coffee Maker Under $200 (2026): 7 Top Picks</h1>
+  <h1>Best Grind and Brew Coffee Maker Under 200 (2026): 7 Top Picks</h1>
   <p class="lead">If you want fresher coffee without buying a separate grinder, the best grind-and-brew machine under $200 should save time, not add morning friction. We compared seven high-intent options for bean-to-cup speed, noise, cleanup burden, and compatibility so you can buy once and avoid regret.</p>
 
   <HeroPicks
@@ -257,7 +259,7 @@ const jsonLd = {
       { category: 'Single-Cup', tagline: 'Best for one-mug households', icon: 'volume-x', color: '#7A5B4A', features: ['Burr grinder consistency', 'Single-serve output only', 'Compact apartment footprint', 'Lower coffee waste per cup'], topPick: 'Cuisinart Grind & Brew Single-Serve (DGB-30)', price: '$$', subtitle: 'Bean-to-cup solo brewing', asin: 'B0FNXPWVD8' },
       { category: 'Compact', tagline: 'Best for smaller kitchens', icon: 'hand', color: '#8B6F47', features: ['10-cup compact chassis', 'Programmable start available', 'Fits constrained counters', 'Mid-tier value pricing'], topPick: 'Gevi 10-Cup Grind & Brew', price: '$$', subtitle: 'Smaller footprint grind-and-brew', asin: 'B0FX3M77DD' },
     ]}
-    footer="coffeegearlab.com - grind-and-brew under $200 - 2026"
+    footer="coffeegearpicks.com · grind-and-brew under $200 · 2026"
   />
 
   <p><strong>Direct answer:</strong> For most buyers under $200, the Cuisinart DGB-550BKP1 is the best grind-and-brew coffee maker because it balances reliable batch performance, manageable cleaning, and strong value. If your priority is easiest maintenance, pick BLACK+DECKER Mill &amp; Brew. If you want stronger flavor consistency, step up to a burr-based model near the top of this budget.</p>
@@ -369,7 +371,7 @@ const jsonLd = {
     <p><strong>Key specs:</strong> Blade grinder · 12-cup batch · programmable start · Beans + Pre-ground modes · Espresso-capable: No.</p>
     <p><strong>Why it wins this slot:</strong> It consistently delivers the lowest buyer regret rate for this price range and intent.</p>
     <p><strong>Retention/static behavior:</strong> Low-to-moderate retention around the grinder lid; quick wipe every brew day keeps flavor cleaner.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B000VTP45Q/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[0].asin)} external>Check price on Amazon</CtaButton></p>
 
     <h3>2) BLACK+DECKER 12-Cup Mill &amp; Brew — Best for easiest cleanup</h3>
     <ProductCard
@@ -390,7 +392,7 @@ const jsonLd = {
     <p><strong>Key specs:</strong> Blade grinder · 12-cup batch · programmable start · Beans + Pre-ground modes · Espresso-capable: No.</p>
     <p><strong>Why it wins this slot:</strong> It minimizes day-to-day maintenance pain better than most sub-$100 alternatives.</p>
     <p><strong>Retention/static behavior:</strong> Static is mild in dry kitchens; brushing basket and lid every 1-2 days prevents stale carryover.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B00LU2I46E/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[1].asin)} external>Check price on Amazon</CtaButton></p>
 
     <h3>3) De'Longhi TrueBrew Compact — Best strongest flavor under $200</h3>
     <ProductCard
@@ -411,7 +413,7 @@ const jsonLd = {
     <p><strong>Key specs:</strong> Burr grinder · single-cup + multi-cup · programmable start · Beans-only mode · Espresso-capable: Borderline (concentrate mode only; no 9-bar espresso control.)</p>
     <p><strong>Why it wins this slot:</strong> It offers the most noticeable flavor jump for buyers upgrading from cheap blade machines.</p>
     <p><strong>Retention/static behavior:</strong> Moderate retention in burr chamber; weekly brush-out keeps body cleaner and reduces stale notes.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B0F3ZSVPPG/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[5].asin)} external>Check price on Amazon</CtaButton></p>
 
     <h3>4) Gevi 10-Cup Grind &amp; Brew — Best for small kitchens</h3>
     <ProductCard
@@ -432,7 +434,7 @@ const jsonLd = {
     <p><strong>Key specs:</strong> Blade grinder · 10-cup batch · programmable start · Beans + Pre-ground modes · Espresso-capable: No.</p>
     <p><strong>Why it wins this slot:</strong> It keeps full-feature convenience without the oversized footprint of many 12-cup models.</p>
     <p><strong>Retention/static behavior:</strong> Medium residue risk around chute; quick rinse every brew day prevents bitter carryover.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B0FX3M77DD/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[3].asin)} external>Check price on Amazon</CtaButton></p>
 
     <h3>5) Ninja CE251 + budget burr grinder combo — Best value workflow alternative</h3>
     <ProductCard
@@ -453,7 +455,7 @@ const jsonLd = {
     <p><strong>Key specs:</strong> Burr (separate) + drip brewer · 12-cup + manual single mug · programmable start · Beans + Pre-ground · Espresso-capable: No.</p>
     <p><strong>Why it wins this slot:</strong> It is often the best flavor-per-dollar route for buyers not locked to all-in-one hardware.</p>
     <p><strong>Retention/static behavior:</strong> Depends on grinder choice; low-retention burr models reduce mess versus common built-in blade paths.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B07S98411N/ref=nosim?tag=coffee-site-20" external>Check brewer price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[6].asin)} external>Check brewer price on Amazon</CtaButton></p>
 
     <h3>6) Cuisinart DGB-400 Automatic Grind &amp; Brew — Best classic programmable batch machine</h3>
     <ProductCard
@@ -474,7 +476,7 @@ const jsonLd = {
     <p><strong>Key specs:</strong> Blade grinder · 12-cup batch · programmable start · Beans + Pre-ground modes · Espresso-capable: No.</p>
     <p><strong>Why it ranks here:</strong> It is one of the safer picks for households prioritizing routine reliability over feature novelty. The programming flow is familiar, and most users can get repeatable mornings without constant tweaking.</p>
     <p><strong>Retention/static behavior:</strong> Static is moderate in dry climates; a quick brush around the grinder path every few brews keeps fines from accumulating and dulling flavor.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B08DCK4MPV/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[2].asin)} external>Check price on Amazon</CtaButton></p>
 
     <h3>7) Cuisinart Grind &amp; Brew Single-Serve (DGB-30) — Best for one-cup households</h3>
     <ProductCard
@@ -495,24 +497,22 @@ const jsonLd = {
     <p><strong>Key specs:</strong> Burr grinder · single-serve output · programmable options · Beans + Pre-ground modes · Espresso-capable: No.</p>
     <p><strong>Why it ranks here:</strong> It solves a specific use case extremely well: one person, one mug, fresh beans, minimal waste. If you are outside that use case, a 10-12 cup machine is usually a better value.</p>
     <p><strong>Retention/static behavior:</strong> Retention is generally lower than many budget blade systems, but rinsing removable parts daily still matters to avoid oil buildup and bitter carryover.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B0FNXPWVD8/ref=nosim?tag=coffee-site-20" external>Check price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[4].asin)} external>Check price on Amazon</CtaButton></p>
   </section>
 
   <section>
     <h2 id="workflow">Workflow realism: bean-to-cup time, noise, and cleanup cadence</h2>
-    <HeroSteps
-      title="Bean-to-Cup Workflow"
-      subtitle="What a typical grind-and-brew session actually looks like"
-      steps={[
-        { label: 'Grind', icon: 'zap', actions: ['20–40 sec burst', 'Blade = sharper noise peaks', 'Burr = lower, steadier pitch'], time: '~30 sec' },
-        { label: 'Brew', icon: 'coffee', actions: ['3.5 min (small cup)', '9–13 min (full carafe)', 'Pause mid-brew if supported'], time: '4–13 min' },
-        { label: 'Clean', icon: 'wind', actions: ['Empty grounds daily', 'Brush chute every 2–3 brews', 'Descale every 3–5 weeks'], time: '~3 min' },
-      ]}
-      outcome="Daily friction matters more than one-time feature comparisons"
+    <HeroMedia
+      src={`/assets/images/${slug}-workflow-2026.svg`}
+      alt="Morning grind-and-brew workflow timeline showing grind, brew, and cleanup windows"
+      width={1200}
+      height={675}
+      caption="Workflow timing snapshot for realistic weekday use"
     />
     <p><strong>Bean-to-cup timing:</strong> Most machines here land around 3.5-6 minutes for a small-batch equivalent cup, and around 9-13 minutes for full carafes.</p>
     <p><strong>Noise reality:</strong> Blade systems are usually sharper/louder during the first 20-40 seconds. Burr systems are often lower pitch but still clearly audible in small apartments.</p>
     <p><strong>Cleanup cadence:</strong> Empty grounds and rinse basket daily, brush grinder/chute every 2-3 brews, and descale every 3-5 weeks depending on water hardness.</p>
+    <p><strong>Practical ownership tip:</strong> If you only have 5-7 minutes before leaving home, pre-load filtered water at night and keep one backup dose of pre-ground coffee ready. That fallback routine keeps mornings predictable when a grinder chute needs brushing or your bean hopper is low. Over a full month, this small habit prevents missed brews and helps buyers stick with a machine long enough to get consistent results.</p>
   </section>
 
   <BuyingGuideSection>
