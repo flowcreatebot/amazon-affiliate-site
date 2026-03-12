@@ -9,7 +9,6 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
 import HeroSteps from '../../components/HeroSteps.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
@@ -116,7 +115,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-10',
       dateModified: '2026-03-11',
-      image: `${SITE.url}/assets/images/${slug}-workflow-2026.svg`,
+      image: tools[0].image,
     }),
     {
       '@type': 'HowTo',
@@ -258,21 +257,16 @@ const jsonLd = {
     </table>
   </ComparisonTable>
 
-  <!-- IMAGE_PLACEHOLDER
-  type: workflow
-  slug: burr-grinder-settings-for-espresso
-  filename: burr-grinder-settings-for-espresso-workflow-2026.svg
-  alt: "Four-step espresso dial-in loop from baseline to maintenance"
-  concept: "Warm editorial diagram showing baseline, pull, adjust, and log steps in a circular flow with subtle grinder iconography"
-  width: 1200
-  height: 675
-  -->
-  <HeroMedia
-    src={`/assets/images/${slug}-workflow-2026.svg`}
-    alt="Four-step espresso dial-in loop from baseline to maintenance"
-    width={1200}
-    height={675}
-    caption="Use this loop each time you open a new bag to reduce trial-and-error shots."
+  <HeroSteps
+    title="New-Bag Dial-In Loop"
+    subtitle="Run this loop each time you open a new bag to reduce trial-and-error shots"
+    steps={[
+      { label: 'Set Baseline', icon: 'target', actions: ['18g dose, 36g yield', 'Same water temp', 'Consistent puck prep', 'Fixed tamp pressure'], time: '~2 min' },
+      { label: 'Pull & Taste', icon: 'coffee', actions: ['Run one reference shot', 'Note shot time', 'Classify: sour or bitter', 'Skip tiny variations'], time: '~1 min' },
+      { label: 'Micro-Adjust', icon: 'wrench', actions: ['One click finer or coarser', 'Keep dose unchanged', 'Retest immediately', 'Log the result'], time: '~1 min' },
+    ]}
+    outcome="Faster convergence on balanced shots with less bean waste per new bag."
+    footer="coffeegearlab.com · espresso dial-in loop · 2026"
   />
 
   <h2 id="step-by-step">Numbered steps to dial in burr grinder settings for espresso</h2>
@@ -342,21 +336,16 @@ const jsonLd = {
   <h3>Trying one universal setting for every roast</h3>
   <p>Lighter roasts often need finer settings; darker roasts often like slightly coarser settings. Keep notes by bean so adjustments stay fast.</p>
 
-  <!-- IMAGE_PLACEHOLDER
-  type: diagram
-  slug: burr-grinder-settings-for-espresso
-  filename: burr-grinder-settings-for-espresso-roast-adjustments-2026.svg
-  alt: "Roast-level adjustment map for espresso grind settings"
-  concept: "Three-column warm-tone diagram showing light, medium, and dark roast adjustment tendencies with directional arrows"
-  width: 1200
-  height: 675
-  -->
-  <HeroMedia
-    src={`/assets/images/${slug}-roast-adjustments-2026.svg`}
-    alt="Roast-level adjustment map for espresso grind settings"
-    width={1200}
-    height={675}
-    caption="Use this roast-level map as a quick correction heuristic before micro-tuning by taste."
+  <HeroSteps
+    title="Roast-Level Grind Adjustments"
+    subtitle="Quick correction heuristic before micro-tuning by taste"
+    steps={[
+      { label: 'Light Roast', icon: 'zap', actions: ['Grind finer than baseline', 'Expect longer shot times', 'Higher dose may help body', 'Watch for sourness clues'], time: 'adjust' },
+      { label: 'Medium Roast', icon: 'coffee', actions: ['Start at baseline setting', 'Easiest to calibrate with', 'Most forgiving window', 'Use as reference anchor'], time: 'baseline' },
+      { label: 'Dark Roast', icon: 'wind', actions: ['Grind coarser than baseline', 'Expect faster flow rates', 'Lower dose reduces bitterness', 'Watch for dry astringency'], time: 'adjust' },
+    ]}
+    outcome="Faster first-shot accuracy when switching between roast levels."
+    footer="coffeegearlab.com · roast-level espresso adjustments · 2026"
   />
 
   <p>If your adjustments still feel random, run through our <a href="/posts/how-to-clean-burr-coffee-grinder.html">burr grinder cleaning guide</a> first, then repeat the baseline process. Many inconsistencies come from retention or prep drift rather than the grinder itself.</p>

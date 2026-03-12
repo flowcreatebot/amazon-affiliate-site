@@ -9,109 +9,17 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
 import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+import { getResolvedProducts, amazonUrl } from '../../data/products';
 
 const slug = 'best-burr-grinder-for-espresso';
 const title = 'Best Burr Grinder for Espresso (2026): 7 Top Picks';
 const description = 'Find the best burr grinder for espresso in 2026 with clear comparisons on dial-in control, burr style, retention behavior, and value for home coffee setups.';
 const canonical = `${SITE.url}/posts/${slug}.html`;
 
-const products = [
-  {
-    name: 'DF64 Gen 2',
-    asin: 'B0D962ZSCM',
-    badgeLabel: 'Best Overall',
-    badgeVariant: 'overall',
-    price: '$$$',
-    image: 'https://m.media-amazon.com/images/I/61OMC9iCcOL._AC_SL500_.jpg',
-    bestFor: 'Most home espresso users',
-    burr: '64 mm flat',
-    adjustment: 'Stepless',
-    retention: 'Low with bellows',
-    espressoLevel: 'Prosumer',
-  },
-  {
-    name: 'Baratza Encore ESP',
-    asin: 'B0BW272XCV',
-    badgeLabel: 'Best Budget',
-    badgeVariant: 'budget',
-    price: '$$',
-    image: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg',
-    bestFor: 'Best under $200',
-    burr: '40 mm conical',
-    adjustment: 'Stepped (espresso zone)',
-    retention: 'Medium',
-    espressoLevel: 'Strong',
-  },
-  {
-    name: 'Turin SK40',
-    asin: 'B0DR41V3CN',
-    badgeLabel: 'Best Stepless Value',
-    badgeVariant: 'espresso',
-    price: '$$',
-    image: 'https://m.media-amazon.com/images/I/31Za1GRr+6L._AC_SL500_.jpg',
-    bestFor: 'Stepless control on a tighter budget',
-    burr: '40 mm conical',
-    adjustment: 'Stepless',
-    retention: 'Low',
-    espressoLevel: 'Strong',
-  },
-  {
-    name: 'Baratza Sette 270',
-    asin: 'B01G82WVZ0',
-    badgeLabel: 'Best Fast Dial-In',
-    badgeVariant: 'upgrade',
-    price: '$$$',
-    image: 'https://m.media-amazon.com/images/I/512MzokrYtL._AC_SL500_.jpg',
-    bestFor: 'Fast adjustment changes',
-    burr: '40 mm conical',
-    adjustment: 'Macro + micro stepped',
-    retention: 'Medium',
-    espressoLevel: 'Strong',
-  },
-  {
-    name: 'Fellow Opus',
-    asin: 'B0BV96VPSR',
-    badgeLabel: 'Best Compact Pick',
-    badgeVariant: 'pourover',
-    price: '$$',
-    image: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg',
-    bestFor: 'Small kitchens and mixed brewing',
-    burr: '40 mm conical',
-    adjustment: 'Micro-stepped',
-    retention: 'Medium',
-    espressoLevel: 'Entry',
-  },
-  {
-    name: 'Eureka Mignon Specialita',
-    asin: 'B07GFV6HM8',
-    badgeLabel: 'Best Quiet Grinder',
-    badgeVariant: 'beginners',
-    price: '$$$',
-    image: 'https://m.media-amazon.com/images/I/61MEPYMxZIL._AC_SL500_.jpg',
-    bestFor: 'Low-noise mornings',
-    burr: '55 mm flat',
-    adjustment: 'Stepless',
-    retention: 'Medium',
-    espressoLevel: 'Prosumer',
-  },
-  {
-    name: '1Zpresso J-Ultra',
-    asin: 'B0CKYDV932',
-    badgeLabel: 'Best Manual',
-    badgeVariant: 'budget',
-    price: '$$',
-    image: 'https://m.media-amazon.com/images/I/61kOtdYruaL._AC_SL500_.jpg',
-    bestFor: 'Manual espresso precision',
-    burr: '48 mm conical',
-    adjustment: 'Micro-stepped',
-    retention: 'Very low',
-    espressoLevel: 'Strong',
-  },
-];
+const products = getResolvedProducts('best-burr-grinder-for-espresso');
 
 const faq = [
   {
@@ -145,7 +53,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-09',
       dateModified: '2026-03-09',
-      image: `${SITE.url}/assets/images/best-burr-grinder-for-espresso-hero-2026.svg`,
+      image: products[0].image,
     }),
     {
       '@type': 'ItemList',
@@ -154,7 +62,7 @@ const jsonLd = {
         '@type': 'ListItem',
         position: index + 1,
         name: p.name,
-        url: `https://www.amazon.com/dp/${p.asin}/ref=nosim?tag=coffee-site-20`,
+        url: amazonUrl(p.asin),
       })),
     },
     {
@@ -218,31 +126,17 @@ const jsonLd = {
 
   <h2 id="quick-picks">Quick picks</h2>
   <QuickPicks>
-    <ProductCard
-      title="DF64 Gen 2"
-      image={{ src: 'https://m.media-amazon.com/images/I/61OMC9iCcOL._AC_SL500_.jpg', alt: 'DF64 Gen 2 burr grinder for espresso', width: 500, height: 500 }}
-      badge={{ label: 'Best Overall', variant: 'overall' }}
-      rating={{ score: 4.6 }}
-      price="$$$"
-      ctaUrl="https://www.amazon.com/dp/B0D962ZSCM/ref=nosim?tag=coffee-site-20"
-      featured={true}
-    />
-    <ProductCard
-      title="Baratza Encore ESP"
-      image={{ src: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg', alt: 'Baratza Encore ESP burr grinder', width: 500, height: 500 }}
-      badge={{ label: 'Best Budget', variant: 'budget' }}
-      rating={{ score: 4.5 }}
-      price="$$"
-      ctaUrl="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20"
-    />
-    <ProductCard
-      title="Turin SK40"
-      image={{ src: 'https://m.media-amazon.com/images/I/31Za1GRr+6L._AC_SL500_.jpg', alt: 'Turin SK40 single dose burr grinder', width: 500, height: 500 }}
-      badge={{ label: 'Best Stepless Value', variant: 'espresso' }}
-      rating={{ score: 4.4 }}
-      price="$$"
-      ctaUrl="https://www.amazon.com/dp/B0DR41V3CN/ref=nosim?tag=coffee-site-20"
-    />
+    {products.slice(0, 3).map((p, i) => (
+      <ProductCard
+        title={p.name}
+        image={{ src: p.image, alt: p.imageAlt, width: 500, height: 500 }}
+        badge={p.badge}
+        rating={{ score: p.rating }}
+        price={p.price}
+        ctaUrl={amazonUrl(p.asin)}
+        featured={i === 0}
+      />
+    ))}
   </QuickPicks>
 
   <h2 id="comparison-table">Comparison table</h2>
@@ -264,13 +158,13 @@ const jsonLd = {
         {products.map((p) => (
           <tr>
             <td data-label="Product">{p.name}</td>
-            <td data-label="Best for"><span class={`best-for-badge --${p.badgeVariant}`}>{p.bestFor}</span></td>
-            <td data-label="Burr set">{p.burr}</td>
-            <td data-label="Adjustment">{p.adjustment}</td>
-            <td data-label="Retention/static">{p.retention}</td>
-            <td data-label="Espresso level">{p.espressoLevel}</td>
+            <td data-label="Best for"><span class={`best-for-badge --${p.badge.variant}`}>{p.bestFor}</span></td>
+            <td data-label="Burr set">{p.specs.burr}</td>
+            <td data-label="Adjustment">{p.specs.adjustment}</td>
+            <td data-label="Retention/static">{p.specs.retention}</td>
+            <td data-label="Espresso level">{p.specs.espressoLevel}</td>
             <td data-label="Price band">{p.price}</td>
-            <td data-label="Link"><CtaButton href={`https://www.amazon.com/dp/${p.asin}/ref=nosim?tag=coffee-site-20`} size="sm" external>Check Price</CtaButton></td>
+            <td data-label="Link"><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
           </tr>
         ))}
       </tbody>
@@ -285,11 +179,11 @@ const jsonLd = {
 
   <h3>1) DF64 Gen 2 — Best overall burr grinder for espresso</h3>
   <ProductCard
-    title="DF64 Gen 2"
-    image={{ src: 'https://m.media-amazon.com/images/I/61OMC9iCcOL._AC_SL500_.jpg', alt: 'DF64 Gen 2 flat burr espresso grinder', width: 500, height: 500 }}
-    badge={{ label: 'Best Overall', variant: 'overall' }}
-    price="$$$"
-    ctaUrl="https://www.amazon.com/dp/B0D962ZSCM/ref=nosim?tag=coffee-site-20"
+    title={products[0].name}
+    image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+    badge={products[0].badge}
+    price={products[0].price}
+    ctaUrl={amazonUrl(products[0].asin)}
   />
   <p>DF64 Gen 2 hits the strongest balance for most home espresso users who want clear shot improvements without stepping into ultra-premium grinder pricing. The 64 mm flat burr format gives better clarity and separation than many entry conical options, while the stepless collar makes tiny shot-time corrections easier when beans age through the week.</p>
   <p>Workflow is still simple enough for daily use. You get a single-dose path, low retention behavior with a quick bellows finish, and predictable grind response once you mark your rough espresso zone. If your current grinder feels like guesswork between clicks, DF64 Gen 2 usually feels like a real control upgrade rather than a minor spec bump.</p>
@@ -304,15 +198,15 @@ const jsonLd = {
       'Learning curve is steeper than basic stepped grinders.',
     ]}
   />
-  <p><CtaButton href="https://www.amazon.com/dp/B0D962ZSCM/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <h3>2) Baratza Encore ESP — Best burr grinder for espresso under $200</h3>
   <ProductCard
-    title="Baratza Encore ESP"
-    image={{ src: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg', alt: 'Baratza Encore ESP conical burr grinder', width: 500, height: 500 }}
-    badge={{ label: 'Best Budget', variant: 'budget' }}
-    price="$$"
-    ctaUrl="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20"
+    title={products[1].name}
+    image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+    badge={products[1].badge}
+    price={products[1].price}
+    ctaUrl={amazonUrl(products[1].asin)}
   />
   <p>Encore ESP is the safest budget recommendation when you need true espresso range but want a machine that stays approachable. The stepped interface is easy to learn, replacement parts are widely available, and the grinder is forgiving enough for beginners pulling their first non-pressurized shots.</p>
   <p>You trade away micro-level precision versus stepless grinders, especially with lighter beans and narrow extraction targets. But for most people building a capable home setup without overspending, Encore ESP keeps the learning curve manageable and still offers enough control to produce clean, balanced espresso once dose and prep are consistent.</p>
@@ -327,15 +221,15 @@ const jsonLd = {
       'Static and retention are moderate in dry conditions.',
     ]}
   />
-  <p><CtaButton href="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <h3>3) Turin SK40 — Best stepless value pick</h3>
   <ProductCard
-    title="Turin SK40"
-    image={{ src: 'https://m.media-amazon.com/images/I/31Za1GRr+6L._AC_SL500_.jpg', alt: 'Turin SK40 espresso grinder', width: 500, height: 500 }}
-    badge={{ label: 'Best Stepless Value', variant: 'espresso' }}
-    price="$$"
-    ctaUrl="https://www.amazon.com/dp/B0DR41V3CN/ref=nosim?tag=coffee-site-20"
+    title={products[2].name}
+    image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+    badge={products[2].badge}
+    price={products[2].price}
+    ctaUrl={amazonUrl(products[2].asin)}
   />
   <p>SK40 is the strong middle lane for buyers who want stepless espresso control without jumping to a much higher spend tier. It gives single-dose style workflow and low-retention behavior that make recipe iteration faster when you rotate beans frequently.</p>
   <p>The fit and finish is more practical than luxurious, but the core espresso job is solid: small adjustments produce clear shot-time changes and the machine is compact enough for tight counters. If you care about precision more than premium branding, SK40 is easy to justify.</p>
@@ -350,15 +244,15 @@ const jsonLd = {
       'Noise level is average rather than quiet.',
     ]}
   />
-  <p><CtaButton href="https://www.amazon.com/dp/B0DR41V3CN/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <h3>4) Baratza Sette 270 — Best fast dial-in hopper grinder</h3>
   <ProductCard
-    title="Baratza Sette 270"
-    image={{ src: 'https://m.media-amazon.com/images/I/512MzokrYtL._AC_SL500_.jpg', alt: 'Baratza Sette 270 espresso grinder', width: 500, height: 500 }}
-    badge={{ label: 'Best Fast Dial-In', variant: 'upgrade' }}
-    price="$$$"
-    ctaUrl="https://www.amazon.com/dp/B01G82WVZ0/ref=nosim?tag=coffee-site-20"
+    title={products[3].name}
+    image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+    badge={products[3].badge}
+    price={products[3].price}
+    ctaUrl={amazonUrl(products[3].asin)}
   />
   <p>Sette 270 is still one of the fastest grinders to adjust in real home use. The macro-plus-micro system helps you move quickly from broad corrections into fine tuning, which is useful when a new bag lands far from your previous setting. For users who value speed over single-dose ritual, this remains a practical workhorse.</p>
   <ProsCons
@@ -372,15 +266,15 @@ const jsonLd = {
       'Not ideal for frequent bean swapping.',
     ]}
   />
-  <p><CtaButton href="https://www.amazon.com/dp/B01G82WVZ0/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <h3>5) Fellow Opus — Best compact crossover pick</h3>
   <ProductCard
-    title="Fellow Opus"
-    image={{ src: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg', alt: 'Fellow Opus coffee grinder', width: 500, height: 500 }}
-    badge={{ label: 'Best Compact Pick', variant: 'pourover' }}
-    price="$$"
-    ctaUrl="https://www.amazon.com/dp/B0BV96VPSR/ref=nosim?tag=coffee-site-20"
+    title={products[4].name}
+    image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+    badge={products[4].badge}
+    price={products[4].price}
+    ctaUrl={amazonUrl(products[4].asin)}
   />
   <p>Opus works well for mixed households that alternate between espresso and filter without giving up too much counter space. It is not the easiest grinder to master on day one, but once you understand the adjustment system it can cover a broad brew range in a clean, compact form.</p>
   <ProsCons
@@ -394,15 +288,15 @@ const jsonLd = {
       'Fine grind static can require extra cleanup.',
     ]}
   />
-  <p><CtaButton href="https://www.amazon.com/dp/B0BV96VPSR/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <h3>6) Eureka Mignon Specialita — Best quiet morning grinder</h3>
   <ProductCard
-    title="Eureka Mignon Specialita"
-    image={{ src: 'https://m.media-amazon.com/images/I/61MEPYMxZIL._AC_SL500_.jpg', alt: 'Eureka Mignon Specialita espresso grinder', width: 500, height: 500 }}
-    badge={{ label: 'Best Quiet Grinder', variant: 'beginners' }}
-    price="$$$"
-    ctaUrl="https://www.amazon.com/dp/B07GFV6HM8/ref=nosim?tag=coffee-site-20"
+    title={products[5].name}
+    image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
+    badge={products[5].badge}
+    price={products[5].price}
+    ctaUrl={amazonUrl(products[5].asin)}
   />
   <p>Specialita is a strong choice for people who need less noise in shared living spaces but still want credible espresso performance. It offers flat-burr flavor potential with a calmer sound profile than many comparably capable options.</p>
   <ProsCons
@@ -416,15 +310,15 @@ const jsonLd = {
       'Retention is higher than single-dose-focused designs.',
     ]}
   />
-  <p><CtaButton href="https://www.amazon.com/dp/B07GFV6HM8/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <h3>7) 1Zpresso J-Ultra — Best manual grinder for espresso precision</h3>
   <ProductCard
-    title="1Zpresso J-Ultra"
-    image={{ src: 'https://m.media-amazon.com/images/I/61kOtdYruaL._AC_SL500_.jpg', alt: '1Zpresso J-Ultra manual grinder', width: 500, height: 500 }}
-    badge={{ label: 'Best Manual', variant: 'budget' }}
-    price="$$"
-    ctaUrl="https://www.amazon.com/dp/B0CKYDV932/ref=nosim?tag=coffee-site-20"
+    title={products[6].name}
+    image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }}
+    badge={products[6].badge}
+    price={products[6].price}
+    ctaUrl={amazonUrl(products[6].asin)}
   />
   <p>J-Ultra is the manual pick for buyers who want high precision without electric grinder noise. You get very low retention, highly repeatable adjustment steps, and excellent travel flexibility. The tradeoff is effort: espresso-fine manual grinding is real work, especially for multiple drinks in a row.</p>
   <ProsCons
@@ -438,7 +332,7 @@ const jsonLd = {
       'Less practical for multi-drink households.',
     ]}
   />
-  <p><CtaButton href="https://www.amazon.com/dp/B0CKYDV932/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[6].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <BuyingGuideSection>
     <h2 id="buying-guide">Buying guide: how to choose the right espresso grinder</h2>

@@ -10,63 +10,17 @@ import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import HeroPicks from '../../components/HeroPicks.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+import { getResolvedProducts, amazonUrl } from '../../data/products';
 
 const slug = 'best-hand-grinder-for-espresso-under-100';
 const title = 'Best Hand Grinder for Espresso Under 100 (2026): 5 Picks';
 const description = 'Find the best hand grinder for espresso under 100 with five researched picks, verified ASIN links, and practical buying guidance for 2026 home baristas.';
 const canonical = `${SITE.url}/posts/${slug}.html`;
 
-const products = [
-  {
-    name: 'KINGrinder K6',
-    asin: 'B0CY1XFXB8',
-    image: 'https://m.media-amazon.com/images/P/B0CY1XFXB8.01._AC_SL500_.jpg',
-    bestFor: 'Best overall espresso control under $100',
-    price: '$89-$99',
-    rating: 4.7,
-    badge: { label: 'Best Overall', variant: 'overall' as const },
-  },
-  {
-    name: '1Zpresso Q Air',
-    asin: 'B0CJ4YFMQ9',
-    image: 'https://m.media-amazon.com/images/P/B0CJ4YFMQ9.01._AC_SL500_.jpg',
-    bestFor: 'Best easy daily workflow',
-    price: '$69-$89',
-    rating: 4.6,
-    badge: { label: 'Best for Beginners', variant: 'beginners' as const },
-  },
-  {
-    name: 'Timemore Chestnut C2',
-    asin: 'B0833SDN8M',
-    image: 'https://m.media-amazon.com/images/I/61Y8BsO8kYL._AC_SL500_.jpg',
-    bestFor: 'Best value for pressurized-basket espresso',
-    price: '$45-$69',
-    rating: 4.5,
-    badge: { label: 'Best Budget Value', variant: 'budget' as const },
-  },
-  {
-    name: 'Hario Smart G Pro',
-    asin: 'B0CCYBVQ9B',
-    image: 'https://m.media-amazon.com/images/P/B0CCYBVQ9B.01._AC_SL500_.jpg',
-    bestFor: 'Best travel-focused option',
-    price: '$54-$64',
-    rating: 4.3,
-    badge: { label: 'Best Travel Pick', variant: 'pourover' as const },
-  },
-  {
-    name: 'JavaPresse Manual Coffee Grinder',
-    asin: 'B013R3Q7B2',
-    image: 'https://m.media-amazon.com/images/P/B013R3Q7B2.01._AC_SL500_.jpg',
-    bestFor: 'Best ultra-low-cost backup',
-    price: '$26-$35',
-    rating: 4.1,
-    badge: { label: 'Best Emergency Budget', variant: 'budget' as const },
-  },
-];
-
-const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
+const products = getResolvedProducts('best-hand-grinder-for-espresso-under-100');
 
 const faqItems = [
   {
@@ -134,6 +88,7 @@ const jsonLd = {
   title={title}
   description={description}
   canonical={canonical}
+  disclosureText="Coffee Gear Lab may earn a commission from qualifying purchases made through links on this page. This does not change the price you pay."
   breadcrumbs={[
     { label: 'Home', href: '/' },
     { label: 'All Guides', href: '/posts/' },
@@ -156,7 +111,7 @@ const jsonLd = {
       { category: 'Beginner', tagline: 'Easiest daily workflow', icon: 'hand', color: '#7A5B4A', features: ['Smooth handling', 'External adjustment ring', 'Compact travel size', 'Low learning curve'], topPick: '1Zpresso Q Air', price: '$$', subtitle: 'Beginner-friendly pick', asin: 'B0CJ4YFMQ9' },
       { category: 'Travel', tagline: 'Best portable espresso grinding', icon: 'volume-x', color: '#8B6F47', features: ['Lightweight design', 'Simple operation', 'Travel-kit friendly', 'Known brand support'], topPick: 'Hario Smart G Pro', price: '$', subtitle: 'Portable travel grinder', asin: 'B0CCYBVQ9B' },
     ]}
-    footer="coffeegearlab.com - hand espresso grinders under $100 - 2026"
+    footer="coffeegearpicks.com - hand espresso grinders under $100 - 2026"
   />
 
   <Toc
@@ -284,6 +239,23 @@ const jsonLd = {
     <p>We researched each model using current Amazon listings, manufacturer documentation, and repeat buyer feedback patterns focused on espresso workflow. Instead of judging grinders by marketing language, we prioritized practical signals: click precision, burr alignment stability, dose-to-dose consistency, grind speed for an 18g espresso dose, and cleanup burden over a normal week of use.</p>
     <p>Espresso under $100 requires compromise, so our rankings weight compromise quality rather than chasing unrealistic perfection. For example, a grinder can score well here even if it is not a true specialty benchmark, as long as it gives dependable control for the price and does not force constant redialing after minor bean changes. We also separate pressurized-basket viability from non-pressurized-basket viability, because those are very different standards in real kitchens.</p>
     <p>Finally, we compare total daily friction, not only cup quality. If a grinder creates excessive static mess, takes too long to grind dense beans, or needs fiddly disassembly every few days, it falls in rank even when the burr set is decent. People shopping this budget tier usually want predictable mornings, not a technical side project before coffee.</p>
+  </section>
+
+  <section aria-labelledby="espresso-workflow-visual">
+    <h2 id="espresso-workflow-visual">What budget espresso dial-in looks like in practice</h2>
+    <p>Manual grinding gets easier when you follow a fixed loop: keep dose and yield steady, adjust one click at a time, and only make one change between shots. This simple process helps budget grinders feel more predictable, especially when click spacing is wider than premium models.</p>
+    <HeroSteps
+      title="Budget Espresso Dial-In Loop"
+      subtitle="Use one-variable adjustments to reduce wasted shots with budget hand grinders"
+      steps={[
+        { label: 'Lock Dose', icon: 'target', actions: ['Weigh 18g every time', 'Use the same beans', 'Keep puck prep fixed', 'Tare scale before dosing'], time: '~1 min' },
+        { label: 'Adjust One Click', icon: 'wrench', actions: ['Sour/fast: go finer', 'Bitter/slow: go coarser', 'Change only one click', 'Never skip two clicks'], time: '~30 sec' },
+        { label: 'Track Shot Time', icon: 'timer', actions: ['Start timer at pump on', 'Target 25-32 seconds', 'Note yield in grams', 'Write one taste word'], time: '~1 min' },
+        { label: 'Compare to Baseline', icon: 'list', actions: ['Check against last shot', 'Log setting + result', 'Repeat until balanced', 'Save winning setting'], time: '~30 sec' },
+      ]}
+      outcome="Fewer wasted shots and faster convergence on balanced espresso with budget hand grinders."
+      footer="coffeegearlab.com · budget espresso dial-in · 2026"
+    />
   </section>
 
   <section id="individual-reviews">

@@ -12,31 +12,14 @@ import CtaButton from '../../components/CtaButton.astro';
 import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+import { getResolvedProducts, amazonUrl } from '../../data/products';
+
+const products = getResolvedProducts('best-coffee-maker-with-grinder');
 
 const title = 'Best Coffee Maker with Grinder (2026): 7 Top Picks';
 const description = 'Compare the best coffee maker with grinder options in 2026, including burr and blade models, single-serve picks, and premium grind-and-brew upgrades.';
 const slug = 'best-coffee-maker-with-grinder';
 const canonical = `${SITE.url}/posts/${slug}.html`;
-
-const productUrls = {
-  breville: 'https://www.amazon.com/dp/B00VGGVQCI/ref=nosim?tag=coffee-site-20',
-  blackdecker: 'https://www.amazon.com/dp/B00LU2I46E/ref=nosim?tag=coffee-site-20',
-  cuisinartDgb550: 'https://www.amazon.com/dp/B000VTP45Q/ref=nosim?tag=coffee-site-20',
-  cafeSpecialty: 'https://www.amazon.com/dp/B0CG2P2J88/ref=nosim?tag=coffee-site-20',
-  cuisinartSingle: 'https://www.amazon.com/dp/B0FNXPWVD8/ref=nosim?tag=coffee-site-20',
-  trueBrew: 'https://www.amazon.com/dp/B0F3ZSVPPG/ref=nosim?tag=coffee-site-20',
-  ninjaLuxe: 'https://www.amazon.com/dp/B0D45PK5V4/ref=nosim?tag=coffee-site-20',
-};
-
-const productImages = {
-  breville: 'https://images-na.ssl-images-amazon.com/images/P/B00VGGVQCI.01.LZZZZZZZ.jpg',
-  blackdecker: 'https://images-na.ssl-images-amazon.com/images/P/B00LU2I46E.01.LZZZZZZZ.jpg',
-  cuisinartDgb550: 'https://images-na.ssl-images-amazon.com/images/P/B000VTP45Q.01.LZZZZZZZ.jpg',
-  cafeSpecialty: 'https://images-na.ssl-images-amazon.com/images/P/B0CG2P2J88.01.LZZZZZZZ.jpg',
-  cuisinartSingle: 'https://images-na.ssl-images-amazon.com/images/P/B0FNXPWVD8.01.LZZZZZZZ.jpg',
-  trueBrew: 'https://images-na.ssl-images-amazon.com/images/P/B0F3ZSVPPG.01.LZZZZZZZ.jpg',
-  ninjaLuxe: 'https://images-na.ssl-images-amazon.com/images/P/B0D45PK5V4.01.LZZZZZZZ.jpg',
-};
 
 const tocItems = [
   { href: '#quick-picks', label: 'Quick picks' },
@@ -99,20 +82,17 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-08',
       dateModified: '2026-03-11',
-      image: productImages.breville,
+      image: products[0].image,
     }),
     {
       '@type': 'ItemList',
       name: 'Best Coffee Maker with Grinder Picks',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Breville Grind Control (BDC650BSS)', url: productUrls.breville },
-        { '@type': 'ListItem', position: 2, name: 'BLACK+DECKER 12-Cup Mill & Brew (CM5000B)', url: productUrls.blackdecker },
-        { '@type': 'ListItem', position: 3, name: 'Cuisinart DGB-550BKP1 Grind & Brew', url: productUrls.cuisinartDgb550 },
-        { '@type': 'ListItem', position: 4, name: 'Café Specialty Grind & Brew', url: productUrls.cafeSpecialty },
-        { '@type': 'ListItem', position: 5, name: 'Cuisinart Grind & Brew Single-Serve', url: productUrls.cuisinartSingle },
-        { '@type': 'ListItem', position: 6, name: "De'Longhi TrueBrew CAM51025MB", url: productUrls.trueBrew },
-        { '@type': 'ListItem', position: 7, name: 'Ninja Luxe Café 3-in-1', url: productUrls.ninjaLuxe },
-      ],
+      itemListElement: products.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: p.name,
+        url: amazonUrl(p.asin),
+      })),
     },
     {
       '@type': 'FAQPage',
@@ -127,7 +107,7 @@ const jsonLd = {
   title={title}
   description={description}
   canonical={canonical}
-  ogImage={`${SITE.url}/assets/images/${slug}-researched-2026.svg`}
+  ogImage={products[0].image}
   breadcrumbs={[
     { label: 'Home', href: '/' },
     { label: 'All Guides', href: '/posts/' },
@@ -158,31 +138,17 @@ const jsonLd = {
   <section id="quick-picks">
     <h2>Quick Picks</h2>
     <QuickPicks>
-      <ProductCard
-        title="Breville Grind Control (BDC650BSS)"
-        image={{ src: productImages.breville, alt: 'Breville BDC650BSS coffee maker with built in grinder', width: 500, height: 500 }}
-        badge={{ label: 'Best Overall', variant: 'overall' }}
-        rating={{ score: 4.6 }}
-        price="Premium range"
-        ctaUrl={productUrls.breville}
-        featured
-      />
-      <ProductCard
-        title="BLACK+DECKER 12-Cup Mill & Brew (CM5000B)"
-        image={{ src: productImages.blackdecker, alt: 'BLACK+DECKER CM5000B grind and brew coffee maker', width: 500, height: 500 }}
-        badge={{ label: 'Best Budget', variant: 'budget' }}
-        rating={{ score: 4.3 }}
-        price="Budget range"
-        ctaUrl={productUrls.blackdecker}
-      />
-      <ProductCard
-        title="Cuisinart Grind & Brew Single-Serve"
-        image={{ src: productImages.cuisinartSingle, alt: 'Cuisinart Grind and Brew Single-Serve coffee maker with grinder', width: 500, height: 500 }}
-        badge={{ label: 'Best Single-Serve', variant: 'beginners' }}
-        rating={{ score: 4.4 }}
-        price="Mid-range"
-        ctaUrl={productUrls.cuisinartSingle}
-      />
+      {products.slice(0, 3).map((p, i) => (
+        <ProductCard
+          title={p.name}
+          image={{ src: p.image, alt: p.imageAlt, width: 500, height: 500 }}
+          badge={p.badge}
+          rating={{ score: p.rating }}
+          price={p.price}
+          ctaUrl={amazonUrl(p.asin)}
+          featured={i === 0}
+        />
+      ))}
     </QuickPicks>
   </section>
 
@@ -202,69 +168,17 @@ const jsonLd = {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Breville Grind Control</td>
-            <td data-label="Best For"><span class="best-for-badge --overall">Overall quality</span></td>
-            <td data-label="Grinder">Burr</td>
-            <td data-label="Brew Format">Single cup + carafe</td>
-            <td data-label="Capacity">12-cup</td>
-            <td data-label="Rating">4.6</td>
-            <td><CtaButton href={productUrls.breville} size="sm" external>Check Price</CtaButton></td>
-          </tr>
-          <tr>
-            <td>BLACK+DECKER Mill &amp; Brew</td>
-            <td data-label="Best For"><span class="best-for-badge --budget">Lowest cost</span></td>
-            <td data-label="Grinder">Blade</td>
-            <td data-label="Brew Format">Carafe</td>
-            <td data-label="Capacity">12-cup</td>
-            <td data-label="Rating">4.3</td>
-            <td><CtaButton href={productUrls.blackdecker} size="sm" external>Check Price</CtaButton></td>
-          </tr>
-          <tr>
-            <td>Cuisinart DGB-550BKP1</td>
-            <td data-label="Best For"><span class="best-for-badge --budget">Easy value</span></td>
-            <td data-label="Grinder">Blade</td>
-            <td data-label="Brew Format">Carafe</td>
-            <td data-label="Capacity">12-cup</td>
-            <td data-label="Rating">4.2</td>
-            <td><CtaButton href={productUrls.cuisinartDgb550} size="sm" external>Check Price</CtaButton></td>
-          </tr>
-          <tr>
-            <td>Café Specialty Grind &amp; Brew</td>
-            <td data-label="Best For"><span class="best-for-badge --upgrade">Premium drip workflow</span></td>
-            <td data-label="Grinder">Burr</td>
-            <td data-label="Brew Format">Single-serve + thermal carafe</td>
-            <td data-label="Capacity">10-cup</td>
-            <td data-label="Rating">4.5</td>
-            <td><CtaButton href={productUrls.cafeSpecialty} size="sm" external>Check Price</CtaButton></td>
-          </tr>
-          <tr>
-            <td>Cuisinart Grind &amp; Brew Single-Serve</td>
-            <td data-label="Best For"><span class="best-for-badge --beginners">One-cup speed</span></td>
-            <td data-label="Grinder">Stainless burr</td>
-            <td data-label="Brew Format">Single-serve</td>
-            <td data-label="Capacity">6 cup sizes</td>
-            <td data-label="Rating">4.4</td>
-            <td><CtaButton href={productUrls.cuisinartSingle} size="sm" external>Check Price</CtaButton></td>
-          </tr>
-          <tr>
-            <td>De'Longhi TrueBrew</td>
-            <td data-label="Best For"><span class="best-for-badge --overall">Drink variety</span></td>
-            <td data-label="Grinder">Conical burr</td>
-            <td data-label="Brew Format">Single cup + carafe + iced</td>
-            <td data-label="Capacity">8 oz to 24 oz</td>
-            <td data-label="Rating">4.4</td>
-            <td><CtaButton href={productUrls.trueBrew} size="sm" external>Check Price</CtaButton></td>
-          </tr>
-          <tr>
-            <td>Ninja Luxe Café 3-in-1</td>
-            <td data-label="Best For"><span class="best-for-badge --espresso">Espresso + drip hybrid</span></td>
-            <td data-label="Grinder">Integrated burr</td>
-            <td data-label="Brew Format">Espresso + drip + cold brew</td>
-            <td data-label="Capacity">Multi-size</td>
-            <td data-label="Rating">4.4</td>
-            <td><CtaButton href={productUrls.ninjaLuxe} size="sm" external>Check Price</CtaButton></td>
-          </tr>
+          {products.map(p => (
+            <tr>
+              <td>{p.name}</td>
+              <td data-label="Best For"><span class={`best-for-badge --${p.badge.variant}`}>{p.bestFor}</span></td>
+              <td data-label="Grinder">{p.specs.grinder}</td>
+              <td data-label="Brew Format">{p.specs.brewFormat}</td>
+              <td data-label="Capacity">{p.specs.capacity}</td>
+              <td data-label="Rating">{p.rating}</td>
+              <td><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </ComparisonTable>
@@ -284,11 +198,11 @@ const jsonLd = {
 
     <h3>1) Breville Grind Control (BDC650BSS) — Best Overall</h3>
     <ProductCard
-      title="Breville Grind Control (BDC650BSS)"
-      image={{ src: productImages.breville, alt: 'Breville BDC650BSS coffee maker with built in grinder', width: 500, height: 500 }}
-      badge={{ label: 'Best Overall', variant: 'overall' }}
-      price="Premium range"
-      ctaUrl={productUrls.breville}
+      title={products[0].name}
+      image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+      badge={products[0].badge}
+      price={products[0].price}
+      ctaUrl={amazonUrl(products[0].asin)}
     />
     <p>The Breville Grind Control is the safest overall pick for buyers who want better grind consistency without building a separate grinder-plus-brewer setup. Its burr platform and adjustable settings give you more control than most integrated blade machines, and it handles both single-cup and carafe routines well.</p>
     <ProsCons
@@ -296,15 +210,15 @@ const jsonLd = {
       cons={['Higher upfront cost than entry models', 'Grinder path benefits from regular brushing']}
     />
     <p>If you want one machine that can serve both weekday speed and weekend batch brewing, this is still the most complete option in the category.</p>
-    <p><CtaButton href={productUrls.breville} external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>2) BLACK+DECKER 12-Cup Mill &amp; Brew (CM5000B) — Best Budget</h3>
     <ProductCard
-      title="BLACK+DECKER 12-Cup Mill & Brew (CM5000B)"
-      image={{ src: productImages.blackdecker, alt: 'BLACK+DECKER CM5000B grind and brew coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Budget', variant: 'budget' }}
-      price="Budget range"
-      ctaUrl={productUrls.blackdecker}
+      title={products[1].name}
+      image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+      badge={products[1].badge}
+      price={products[1].price}
+      ctaUrl={amazonUrl(products[1].asin)}
     />
     <p>This is one of the easiest budget entries if you want fresh-ground drip coffee without spending premium money. It uses a blade grinder, so precision is lower than burr machines, but the value is strong for households that prioritize affordability, programmability, and familiar 12-cup behavior.</p>
     <ProsCons
@@ -312,45 +226,45 @@ const jsonLd = {
       cons={['Blade grinder is less consistent than burr systems', 'Grinding cycle can be loud in small spaces']}
     />
     <p>If your budget ceiling is tight, compare this with our <a href="/posts/best-drip-coffee-maker-under-100.html">best drip coffee maker under $100</a> picks before deciding.</p>
-    <p><CtaButton href={productUrls.blackdecker} external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>3) Cuisinart DGB-550BKP1 — Best for Low-Fuss Maintenance</h3>
     <ProductCard
-      title="Cuisinart DGB-550BKP1"
-      image={{ src: productImages.cuisinartDgb550, alt: 'Cuisinart DGB-550BKP1 grind and brew coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Low-Fuss', variant: 'beginners' }}
-      price="Mid-range"
-      ctaUrl={productUrls.cuisinartDgb550}
+      title={products[2].name}
+      image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+      badge={products[2].badge}
+      price={products[2].price}
+      ctaUrl={amazonUrl(products[2].asin)}
     />
     <p>The DGB-550BKP1 is a straightforward daily-driver choice for buyers who want reliable routine coffee with less setup drama. It is less about tuning and more about dependable repeatability: set your schedule, brew, clean, move on. That no-nonsense rhythm is exactly why it stays relevant.</p>
     <ProsCons
       pros={['Predictable day-to-day workflow', '24-hour programmability for morning automation', 'Strong mainstream value for basic grind-and-brew use']}
       cons={['Blade grinder limits fine control', 'Fewer advanced customization options']}
     />
-    <p><CtaButton href={productUrls.cuisinartDgb550} external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>4) Café Specialty Grind &amp; Brew — Best Premium Drip Upgrade</h3>
     <ProductCard
-      title="Café Specialty Grind & Brew"
-      image={{ src: productImages.cafeSpecialty, alt: 'Café Specialty grind and brew coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Premium Drip', variant: 'upgrade' }}
-      price="Premium range"
-      ctaUrl={productUrls.cafeSpecialty}
+      title={products[3].name}
+      image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+      badge={products[3].badge}
+      price={products[3].price}
+      ctaUrl={amazonUrl(products[3].asin)}
     />
     <p>Café targets buyers who want upscale design, stronger brew control, and app-connected convenience in one countertop unit. It costs more than value models, but if your household brews frequently and cares about premium workflow quality, the upgrade can be justified.</p>
     <ProsCons
       pros={['Burr-based platform with premium feature set', 'Single-serve plus thermal-carafe flexibility', 'Good fit for high-frequency coffee homes']}
       cons={['Price is high versus budget alternatives', 'More features means a longer learning curve']}
     />
-    <p><CtaButton href={productUrls.cafeSpecialty} external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>5) Cuisinart Grind &amp; Brew Single-Serve — Best One-Cup Convenience</h3>
     <ProductCard
-      title="Cuisinart Grind & Brew Single-Serve"
-      image={{ src: productImages.cuisinartSingle, alt: 'Cuisinart Grind and Brew Single-Serve coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Single-Serve', variant: 'beginners' }}
-      price="Mid-range"
-      ctaUrl={productUrls.cuisinartSingle}
+      title={products[4].name}
+      image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+      badge={products[4].badge}
+      price={products[4].price}
+      ctaUrl={amazonUrl(products[4].asin)}
     />
     <p>For solo drinkers or couples who mostly brew one cup at a time, this model is one of the cleanest fits. The built-in grinder plus selectable cup sizes keeps mornings quick while preserving bean-to-cup freshness. It is especially useful in smaller kitchens where full-carafe gear feels oversized.</p>
     <ProsCons
@@ -358,30 +272,30 @@ const jsonLd = {
       cons={['Not ideal for large family batch brewing', 'Needs regular chute and descale maintenance']}
     />
     <p>Want more single-cup options? See our <a href="/posts/best-single-serve-coffee-maker-with-grinder.html">best single-serve coffee maker with grinder guide</a>.</p>
-    <p><CtaButton href={productUrls.cuisinartSingle} external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>6) De'Longhi TrueBrew (CAM51025MB) — Best for Drink Variety</h3>
     <ProductCard
-      title="De'Longhi TrueBrew (CAM51025MB)"
-      image={{ src: productImages.trueBrew, alt: 'DeLonghi TrueBrew CAM51025MB coffee maker with grinder', width: 500, height: 500 }}
-      badge={{ label: 'Best Drink Variety', variant: 'overall' }}
-      price="Premium range"
-      ctaUrl={productUrls.trueBrew}
+      title={products[5].name}
+      image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
+      badge={products[5].badge}
+      price={products[5].price}
+      ctaUrl={amazonUrl(products[5].asin)}
     />
     <p>TrueBrew is built for households that rotate between cup sizes, brew strengths, and iced coffee habits during the week. It is not the simplest interface in this list, but if your home has mixed preferences, it can replace multiple single-purpose appliances with one routine-friendly machine.</p>
     <ProsCons
       pros={['Broad brew-size and style flexibility', 'Integrated grinder keeps workflow consolidated', 'Strong fit for mixed-preference households']}
       cons={['More menu complexity than basic drip brewers', 'Larger counter footprint than compact units']}
     />
-    <p><CtaButton href={productUrls.trueBrew} external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>7) Ninja Luxe Café 3-in-1 — Best Hybrid for Espresso + Drip Homes</h3>
     <ProductCard
-      title="Ninja Luxe Café 3-in-1"
-      image={{ src: productImages.ninjaLuxe, alt: 'Ninja Luxe Cafe 3-in-1 coffee maker with integrated grinder', width: 500, height: 500 }}
-      badge={{ label: 'Best Hybrid', variant: 'espresso' }}
-      price="Premium range"
-      ctaUrl={productUrls.ninjaLuxe}
+      title={products[6].name}
+      image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }}
+      badge={products[6].badge}
+      price={products[6].price}
+      ctaUrl={amazonUrl(products[6].asin)}
     />
     <p>Ninja Luxe Café is the wildcard pick for buyers who want espresso-style drinks, drip coffee, and cold brew from one body. It will not replace dedicated specialty machines for every enthusiast, but it can simplify a fragmented setup for mixed-format households.</p>
     <ProsCons
@@ -389,7 +303,7 @@ const jsonLd = {
       cons={['Cleanup is heavier than simple drip-only models', 'Learning curve is steeper for first-time hybrid users']}
     />
     <p>If your priority is value espresso first, start with our <a href="/posts/best-espresso-machine-under-200.html">best espresso machine under $200</a> shortlist.</p>
-    <p><CtaButton href={productUrls.ninjaLuxe} external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[6].asin)} external>Check Price on Amazon</CtaButton></p>
   </section>
 
   <section id="buying-guide">

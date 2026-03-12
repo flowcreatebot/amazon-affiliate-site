@@ -12,58 +12,14 @@ import JsonLd from '../../components/JsonLd.astro';
 import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+import { getResolvedProducts, amazonUrl } from '../../data/products';
 
 const slug = 'best-pour-over-coffee-maker';
 const title = 'Best Pour Over Coffee Maker (2026): 6 Top Picks';
 const description = 'Compare the best pour over coffee maker options in 2026 with researched picks, buying tips, and a side-by-side table for beginners and daily brewers.';
 const canonical = `${SITE.url}/posts/${slug}.html`;
 
-const products = [
-  {
-    name: 'Hario V60 Ceramic Coffee Dripper 02',
-    asin: 'B000P4D5HG',
-    badge: { label: 'Best Overall', variant: 'overall' as const },
-    rating: 4.7,
-    image: 'https://m.media-amazon.com/images/I/51cCw+yG9BL._AC_SL500_.jpg',
-  },
-  {
-    name: 'Chemex Classic Series, 6-Cup',
-    asin: 'B0000YWF5E',
-    badge: { label: 'Best for Multiple Cups', variant: 'pourover' as const },
-    rating: 4.7,
-    image: 'https://m.media-amazon.com/images/I/71oMA36JxfL._AC_SL500_.jpg',
-  },
-  {
-    name: 'Melitta Pour-Over Brewer with Glass Carafe Set',
-    asin: 'B000MIT2OK',
-    badge: { label: 'Best Budget', variant: 'budget' as const },
-    rating: 4.6,
-    image: 'https://m.media-amazon.com/images/I/71QX3QG2m3L._AC_SL500_.jpg',
-  },
-  {
-    name: 'Hario V60 Switch Ceramic Immersion Dripper',
-    asin: 'B0CK4J1G7V',
-    badge: { label: 'Best Upgrade Pick', variant: 'upgrade' as const },
-    rating: 4.6,
-    image: 'https://m.media-amazon.com/images/I/41-Q1iUbZ5L._AC_SL500_.jpg',
-  },
-  {
-    name: 'Hario V60 Ceramic Coffee Dripper 01',
-    asin: 'B000P4D5F8',
-    badge: { label: 'Best for Solo Cups', variant: 'beginners' as const },
-    rating: 4.6,
-    image: 'https://m.media-amazon.com/images/I/51kbH15026L._AC_SL500_.jpg',
-  },
-  {
-    name: 'Hario V60 Ceramic Coffee Dripper 02 (Red)',
-    asin: 'B002S01CKW',
-    badge: { label: 'Best Design Pick', variant: 'espresso' as const },
-    rating: 4.6,
-    image: 'https://m.media-amazon.com/images/I/5186roHpocL._AC_SL500_.jpg',
-  },
-];
-
-const productUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
+const products = getResolvedProducts('best-pour-over-coffee-maker');
 
 const faq = [
   {
@@ -106,7 +62,7 @@ const jsonLd = {
         '@type': 'ListItem',
         position: index + 1,
         name: p.name,
-        url: productUrl(p.asin),
+        url: amazonUrl(p.asin),
       })),
     },
     {
@@ -177,7 +133,7 @@ const jsonLd = {
       badge={products[0].badge}
       rating={{ score: products[0].rating }}
       price="Check price"
-      ctaUrl={productUrl(products[0].asin)}
+      ctaUrl={amazonUrl(products[0].asin)}
       featured={true}
     />
     <ProductCard
@@ -186,7 +142,7 @@ const jsonLd = {
       badge={products[1].badge}
       rating={{ score: products[1].rating }}
       price="Check price"
-      ctaUrl={productUrl(products[1].asin)}
+      ctaUrl={amazonUrl(products[1].asin)}
     />
     <ProductCard
       title={products[2].name}
@@ -194,7 +150,7 @@ const jsonLd = {
       badge={products[2].badge}
       rating={{ score: products[2].rating }}
       price="Check price"
-      ctaUrl={productUrl(products[2].asin)}
+      ctaUrl={amazonUrl(products[2].asin)}
     />
   </QuickPicks>
 
@@ -225,7 +181,7 @@ const jsonLd = {
             <td data-label="Learning Curve">{p.asin === 'B000MIT2OK' ? 'Easy' : p.asin === 'B0CK4J1G7V' ? 'Low–Medium' : 'Medium'}</td>
             <td data-label="Cleanup">Easy</td>
             <td data-label="Price">See Amazon</td>
-            <td data-label="Link"><CtaButton href={productUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
+            <td data-label="Link"><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
           </tr>
         ))}
       </tbody>
@@ -260,7 +216,7 @@ const jsonLd = {
     badge={{ label: 'Best Overall', variant: 'overall' }}
     rating={{ score: 4.7 }}
     price="Check price"
-    ctaUrl={productUrl('B000P4D5HG')}
+    ctaUrl={amazonUrl(products[0].asin)}
   />
   <p>
     The V60 02 remains the safest recommendation for most people. It has broad recipe support, easy filter access, and
@@ -278,7 +234,7 @@ const jsonLd = {
       'Poor grind consistency can quickly show up as uneven extraction',
     ]}
   />
-  <p><CtaButton href={productUrl('B000P4D5HG')} external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <h3>2) Chemex Classic Series, 6-Cup — Best for Multiple Cups</h3>
   <ProductCard
@@ -287,7 +243,7 @@ const jsonLd = {
     badge={{ label: 'Best for Multiple Cups', variant: 'pourover' }}
     rating={{ score: 4.7 }}
     price="Check price"
-    ctaUrl={productUrl('B0000YWF5E')}
+    ctaUrl={amazonUrl(products[1].asin)}
   />
   <p>
     Chemex is ideal when your goal is clean, elegant batch brewing for two or more mugs. Its thicker filter style can
@@ -305,7 +261,7 @@ const jsonLd = {
       'Needs proper grind and pouring pace to avoid slow drawdown',
     ]}
   />
-  <p><CtaButton href={productUrl('B0000YWF5E')} external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <h3>3) Melitta Pour-Over Brewer with Glass Carafe Set — Best Budget</h3>
   <ProductCard
@@ -314,7 +270,7 @@ const jsonLd = {
     badge={{ label: 'Best Budget', variant: 'budget' }}
     rating={{ score: 4.6 }}
     price="Check price"
-    ctaUrl={productUrl('B000MIT2OK')}
+    ctaUrl={amazonUrl(products[2].asin)}
   />
   <p>
     If you want a complete starter setup at a lower cost, this Melitta bundle is one of the most practical options.
@@ -333,7 +289,7 @@ const jsonLd = {
       'Less suitable for advanced extraction experimentation',
     ]}
   />
-  <p><CtaButton href={productUrl('B000MIT2OK')} external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <h3>4) Hario V60 Switch Ceramic Immersion Dripper — Best Upgrade Pick</h3>
   <ProductCard
@@ -342,7 +298,7 @@ const jsonLd = {
     badge={{ label: 'Best Upgrade Pick', variant: 'upgrade' }}
     rating={{ score: 4.6 }}
     price="Check price"
-    ctaUrl={productUrl('B0CK4J1G7V')}
+    ctaUrl={amazonUrl(products[3].asin)}
   />
   <p>
     The V60 Switch adds immersion control to classic V60-style brewing. That makes it useful for brewers who want more
@@ -361,7 +317,7 @@ const jsonLd = {
       'Can feel overkill if you only want a very simple routine',
     ]}
   />
-  <p><CtaButton href={productUrl('B0CK4J1G7V')} external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <h3>5) Hario V60 Ceramic Coffee Dripper 01 — Best for Solo Cups</h3>
   <ProductCard
@@ -370,7 +326,7 @@ const jsonLd = {
     badge={{ label: 'Best for Solo Cups', variant: 'beginners' }}
     rating={{ score: 4.6 }}
     price="Check price"
-    ctaUrl={productUrl('B000P4D5F8')}
+    ctaUrl={amazonUrl(products[4].asin)}
   />
   <p>
     For one-person households, the V60 01 size is an efficient daily brewer. It keeps dose size tight, speeds prep, and
@@ -388,7 +344,7 @@ const jsonLd = {
       'Still requires reasonable pour control for consistent cups',
     ]}
   />
-  <p><CtaButton href={productUrl('B000P4D5F8')} external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <h3>6) Hario V60 Ceramic Coffee Dripper 02 (Red) — Best Design Pick</h3>
   <ProductCard
@@ -397,7 +353,7 @@ const jsonLd = {
     badge={{ label: 'Best Design Pick', variant: 'espresso' }}
     rating={{ score: 4.6 }}
     price="Check price"
-    ctaUrl={productUrl('B002S01CKW')}
+    ctaUrl={amazonUrl(products[5].asin)}
   />
   <p>
     This V60 ceramic variant earns a slot for buyers who want proven V60 performance with a more distinctive look. In
@@ -416,7 +372,7 @@ const jsonLd = {
       'Performance still depends on grind and pouring consistency',
     ]}
   />
-  <p><CtaButton href={productUrl('B002S01CKW')} external>Check Price on Amazon</CtaButton></p>
+  <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
 
   <h2>Which Pour-Over Brewer Fits Your Buyer Profile?</h2>
   <p>

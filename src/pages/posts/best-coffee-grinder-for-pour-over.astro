@@ -10,89 +10,17 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+import { getResolvedProducts, amazonUrl } from '../../data/products';
 
 const slug = 'best-coffee-grinder-for-pour-over';
 const title = 'Best Coffee Grinder for Pour Over (2026)';
 const description = 'Find the best coffee grinder for pour over in 2026. We compared 7 researched picks for clarity, fines control, workflow, and value for V60, Kalita, and Chemex.';
 const canonical = `${SITE.url}/posts/${slug}.html`;
 
-const products = [
-  {
-    name: 'Fellow Ode Gen 2',
-    asin: 'B0BLRMCM9Y',
-    bestFor: 'Best Overall for Clarity',
-    badge: 'overall',
-    priceBand: '$$$',
-    rating: 4.7,
-    image: 'https://images-na.ssl-images-amazon.com/images/P/B0BLRMCM9Y.01._SX500_SCLZZZZZZZ_.jpg',
-    imageAlt: 'Fellow Ode Gen 2 flat burr coffee grinder',
-  },
-  {
-    name: 'Baratza Encore ESP',
-    asin: 'B0BW272XCV',
-    bestFor: 'Best Value Crossover',
-    badge: 'budget',
-    priceBand: '$$',
-    rating: 4.6,
-    image: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg',
-    imageAlt: 'Baratza Encore ESP conical burr coffee grinder',
-  },
-  {
-    name: 'OXO Brew Conical Burr Grinder',
-    asin: 'B07CSKGLMM',
-    bestFor: 'Best for Easy Daily Workflow',
-    badge: 'beginners',
-    priceBand: '$',
-    rating: 4.3,
-    image: 'https://m.media-amazon.com/images/I/71DeUg8G7kS._AC_SL500_.jpg',
-    imageAlt: 'OXO Brew conical burr coffee grinder',
-  },
-  {
-    name: '1Zpresso K-Ultra',
-    asin: 'B0CC4LXF1Z',
-    bestFor: 'Best Premium Manual Pick',
-    badge: 'pourover',
-    priceBand: '$$$',
-    rating: 4.7,
-    image: 'https://images-na.ssl-images-amazon.com/images/P/B0CC4LXF1Z.01._SX500_SCLZZZZZZZ_.jpg',
-    imageAlt: '1Zpresso K-Ultra manual coffee grinder',
-  },
-  {
-    name: 'TIMEMORE Chestnut C2',
-    asin: 'B0833SDN8M',
-    bestFor: 'Best Budget Manual Under $100',
-    badge: 'budget',
-    priceBand: '$',
-    rating: 4.3,
-    image: 'https://m.media-amazon.com/images/I/61Y8BsO8kYL._AC_SL500_.jpg',
-    imageAlt: 'TIMEMORE Chestnut C2 manual burr coffee grinder',
-  },
-  {
-    name: 'Fellow Opus',
-    asin: 'B0BV96VPSR',
-    bestFor: 'Best Compact All-Rounder',
-    badge: 'upgrade',
-    priceBand: '$$',
-    rating: 4.4,
-    image: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg',
-    imageAlt: 'Fellow Opus conical burr coffee grinder',
-  },
-  {
-    name: 'KINGrinder K6',
-    asin: 'B09WH9JKY1',
-    bestFor: 'Best Manual Upgrade for Tinkerers',
-    badge: 'espresso',
-    priceBand: '$$',
-    rating: 4.6,
-    image: 'https://images-na.ssl-images-amazon.com/images/P/B09WH9JKY1.01._SX500_SCLZZZZZZZ_.jpg',
-    imageAlt: 'KINGrinder K6 manual coffee grinder',
-  },
-] as const;
-
-const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
+const products = getResolvedProducts('best-coffee-grinder-for-pour-over');
 
 const faq = [
   {
@@ -176,21 +104,16 @@ const jsonLd = {
   <h1>Best Coffee Grinder for Pour Over (2026): 7 Researched Picks</h1>
   <p class="lead">The best coffee grinder for pour over should make your morning cups cleaner, sweeter, and easier to repeat. We compared seven researched options based on grind consistency, fines control, retention, static behavior, and day-to-day workflow fit.</p>
 
-  <!-- IMAGE_PLACEHOLDER
-  type: hero
-  slug: best-coffee-grinder-for-pour-over
-  filename: best-coffee-grinder-for-pour-over-hero-2026.svg
-  alt: "Editorial comparison of seven pour-over coffee grinders by workflow and budget tier"
-  concept: "Warm-toned editorial composition showing abstract grinder silhouettes, brew dripper icons, and tiered labels for budget, value, and premium choices"
-  width: 1200
-  height: 675
-  -->
-  <HeroMedia
-    src="/assets/images/best-coffee-grinder-for-pour-over-hero-2026.svg"
-    alt="Editorial comparison of seven pour-over coffee grinders by workflow and budget tier"
-    width={1200}
-    height={675}
-    caption="Our 2026 researched picks across manual and electric pour-over grinder workflows."
+  <HeroPicks
+    title="7 Pour-Over Grinders Worth Your Money in 2026"
+    subtitle="Ranked by clarity potential, fines control, and daily workflow fit"
+    picks={[
+      { category: 'Budget', tagline: 'Best value for everyday brewing', icon: 'dollar', color: '#059669', features: ['Conical burr consistency', 'Timer-based dosing', 'Easy daily cleanup', 'Under $100 entry'], topPick: 'OXO Brew Conical Burr Grinder', price: '$', subtitle: 'Simple daily workflow', asin: 'B07CSKGLMM' },
+      { category: 'Overall', tagline: 'Best clarity for pour over', icon: 'target', color: '#2C1810', features: ['Flat burr separation', 'Low retention design', 'Single-dose friendly', 'V60 and Chemex optimized'], topPick: 'Fellow Ode Gen 2', price: '$$$', subtitle: 'Top pour-over clarity', asin: 'B0BLRMCM9Y' },
+      { category: 'Manual', tagline: 'Best hand-ground precision', icon: 'hand', color: '#7A5B4A', features: ['Steel conical burrs', 'Zero motor noise', 'Travel-ready size', 'Strong clarity per dollar'], topPick: '1Zpresso K-Ultra', price: '$$$', subtitle: 'Premium manual pick', asin: 'B0CC4LXF1Z' },
+      { category: 'Crossover', tagline: 'Best value for filter + espresso', icon: 'volume-x', color: '#8B6F47', features: ['Broad grind range', 'Strong parts support', 'Predictable adjustment', 'Long-term value'], topPick: 'Baratza Encore ESP', price: '$$', subtitle: 'Versatile daily grinder', asin: 'B0BW272XCV' },
+    ]}
+    footer="coffeegearlab.com - pour-over grinders - 2026"
   />
 
   <p><strong>Quick answer:</strong> If you want the best all-around pour-over result, choose Fellow Ode Gen 2. If you want better value and occasional espresso flexibility, Baratza Encore ESP is the practical buy. If you prefer hand grinding, 1Zpresso K-Ultra is the strongest manual option in this lineup.</p>
@@ -212,27 +135,27 @@ const jsonLd = {
       featured={true}
       title={products[0].name}
       image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
-      badge={{ label: 'Best Overall', variant: 'overall' }}
+      badge={products[0].badge}
       rating={{ score: products[0].rating }}
-      price={products[0].priceBand}
+      price={products[0].price}
       ctaUrl={amazonUrl(products[0].asin)}
       ctaText="Check Price on Amazon"
     />
     <ProductCard
       title={products[1].name}
       image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
-      badge={{ label: 'Best Value', variant: 'budget' }}
+      badge={products[1].badge}
       rating={{ score: products[1].rating }}
-      price={products[1].priceBand}
+      price={products[1].price}
       ctaUrl={amazonUrl(products[1].asin)}
       ctaText="Check Price on Amazon"
     />
     <ProductCard
       title={products[3].name}
       image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
-      badge={{ label: 'Best Manual', variant: 'pourover' }}
+      badge={products[3].badge}
       rating={{ score: products[3].rating }}
-      price={products[3].priceBand}
+      price={products[3].price}
       ctaUrl={amazonUrl(products[3].asin)}
       ctaText="Check Price on Amazon"
     />
@@ -260,10 +183,10 @@ const jsonLd = {
         {products.map((product) => (
           <tr>
             <td data-label="Product">{product.name}</td>
-            <td data-label="Best For"><BestForBadge label={product.bestFor} variant={product.badge} /></td>
+            <td data-label="Best For"><BestForBadge label={product.badge.label} variant={product.badge.variant} /></td>
             <td data-label="Burr Type">{product.name.includes('Ode') ? 'Flat burr' : 'Conical burr'}</td>
             <td data-label="Workflow">{product.name.includes('1Zpresso') || product.name.includes('TIMEMORE') || product.name.includes('KINGrinder') ? 'Manual grinding' : 'Electric grinding'}</td>
-            <td data-label="Price Band">{product.priceBand}</td>
+            <td data-label="Price Band">{product.price}</td>
             <td data-label="Rating">{product.rating}</td>
             <td><CtaButton href={amazonUrl(product.asin)} size="sm" external>Check Price</CtaButton></td>
           </tr>
@@ -290,9 +213,9 @@ const jsonLd = {
   <ProductCard
     title={products[0].name}
     image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
-    badge={{ label: products[0].bestFor, variant: products[0].badge }}
+    badge={products[0].badge}
     rating={{ score: products[0].rating }}
-    price={products[0].priceBand}
+    price={products[0].price}
     ctaUrl={amazonUrl(products[0].asin)}
   />
   <p><strong>Best for:</strong> Home brewers who prioritize clean, separated cups and low-retention single-dosing.</p>
@@ -314,9 +237,9 @@ const jsonLd = {
   <ProductCard
     title={products[1].name}
     image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
-    badge={{ label: products[1].bestFor, variant: products[1].badge }}
+    badge={products[1].badge}
     rating={{ score: products[1].rating }}
-    price={products[1].priceBand}
+    price={products[1].price}
     ctaUrl={amazonUrl(products[1].asin)}
   />
   <p><strong>Best for:</strong> Buyers who want one grinder for filter coffee now and occasional espresso later.</p>
@@ -338,9 +261,9 @@ const jsonLd = {
   <ProductCard
     title={products[2].name}
     image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
-    badge={{ label: products[2].bestFor, variant: products[2].badge }}
+    badge={products[2].badge}
     rating={{ score: products[2].rating }}
-    price={products[2].priceBand}
+    price={products[2].price}
     ctaUrl={amazonUrl(products[2].asin)}
   />
   <p><strong>Best for:</strong> Busy households that want quick, predictable operation with minimal learning curve.</p>
@@ -362,9 +285,9 @@ const jsonLd = {
   <ProductCard
     title={products[3].name}
     image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
-    badge={{ label: products[3].bestFor, variant: products[3].badge }}
+    badge={products[3].badge}
     rating={{ score: products[3].rating }}
-    price={products[3].priceBand}
+    price={products[3].price}
     ctaUrl={amazonUrl(products[3].asin)}
   />
   <p><strong>Best for:</strong> Manual brewers who want near-premium grind quality with travel-friendly portability.</p>
@@ -386,9 +309,9 @@ const jsonLd = {
   <ProductCard
     title={products[4].name}
     image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
-    badge={{ label: products[4].bestFor, variant: products[4].badge }}
+    badge={products[4].badge}
     rating={{ score: products[4].rating }}
-    price={products[4].priceBand}
+    price={products[4].price}
     ctaUrl={amazonUrl(products[4].asin)}
   />
   <p><strong>Best for:</strong> New pour-over brewers upgrading from blade grinders at a strict budget.</p>
@@ -410,9 +333,9 @@ const jsonLd = {
   <ProductCard
     title={products[5].name}
     image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
-    badge={{ label: products[5].bestFor, variant: products[5].badge }}
+    badge={products[5].badge}
     rating={{ score: products[5].rating }}
-    price={products[5].priceBand}
+    price={products[5].price}
     ctaUrl={amazonUrl(products[5].asin)}
   />
   <p><strong>Best for:</strong> Small kitchens needing one electric grinder that can flex across multiple brew styles.</p>
@@ -434,9 +357,9 @@ const jsonLd = {
   <ProductCard
     title={products[6].name}
     image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }}
-    badge={{ label: products[6].bestFor, variant: products[6].badge }}
+    badge={products[6].badge}
     rating={{ score: products[6].rating }}
-    price={products[6].priceBand}
+    price={products[6].price}
     ctaUrl={amazonUrl(products[6].asin)}
   />
   <p><strong>Best for:</strong> Enthusiasts who frequently adjust recipes and want finer click control in a manual grinder.</p>

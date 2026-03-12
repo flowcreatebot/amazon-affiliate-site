@@ -12,66 +12,14 @@ import JsonLd from '../../components/JsonLd.astro';
 import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+import { getResolvedProducts, amazonUrl } from '../../data/products';
 
 const slug = 'best-gooseneck-kettle-for-pour-over';
 const title = 'Best Gooseneck Kettle for Pour Over (2026)';
 const description = 'Find the best gooseneck kettle for pour over in 2026 with clear picks for control, temperature stability, and value across electric and stovetop options.';
 const canonical = `${SITE.url}/posts/${slug}.html`;
 
-const products = [
-  {
-    name: 'Fellow Stagg EKG Electric Kettle',
-    asin: 'B077JBQZPX',
-    image: 'https://m.media-amazon.com/images/I/51MfuBJO2BL._AC_SL500_.jpg',
-    badge: { label: 'Best Overall', variant: 'overall' as const },
-    rating: 4.7,
-    type: 'Electric (variable temp + hold)',
-    capacity: '0.9L',
-    bestFor: 'Daily precision brewing',
-  },
-  {
-    name: 'Bonavita 1.0L Variable Temperature Kettle',
-    asin: 'B005YR0F40',
-    image: 'https://m.media-amazon.com/images/I/51X0CfJgo7L._AC_SL500_.jpg',
-    badge: { label: 'Best Value', variant: 'budget' as const },
-    rating: 4.5,
-    type: 'Electric (variable temp)',
-    capacity: '1.0L',
-    bestFor: 'Value-focused buyers',
-  },
-  {
-    name: 'Hario V60 Buono Stovetop Kettle',
-    asin: 'B000IGOXLS',
-    image: 'https://m.media-amazon.com/images/I/51Fz0LSH41L._AC_SL500_.jpg',
-    badge: { label: 'Best Stovetop Value', variant: 'pourover' as const },
-    rating: 4.6,
-    type: 'Stovetop',
-    capacity: '1.2L',
-    bestFor: 'Manual brewing workflows',
-  },
-  {
-    name: 'COSORI Electric Gooseneck Kettle',
-    asin: 'B07G2MBM6L',
-    image: 'https://m.media-amazon.com/images/I/61loaANnLDL._AC_SL500_.jpg',
-    badge: { label: 'Best for Beginners', variant: 'beginners' as const },
-    rating: 4.5,
-    type: 'Electric (preset modes)',
-    capacity: '0.8L',
-    bestFor: 'Simple one-button routines',
-  },
-  {
-    name: 'Fellow Stagg Stovetop Pour-Over Kettle',
-    asin: 'B014UN7B7C',
-    image: 'https://m.media-amazon.com/images/I/61F-tkFlebL._AC_SL500_.jpg',
-    badge: { label: 'Best Premium Stovetop', variant: 'upgrade' as const },
-    rating: 4.6,
-    type: 'Stovetop',
-    capacity: '1.0L',
-    bestFor: 'Design-forward manual brewers',
-  },
-];
-
-const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
+const products = getResolvedProducts('best-gooseneck-kettle-for-pour-over');
 
 const faq = [
   {
@@ -224,8 +172,8 @@ const jsonLd = {
             <tr>
               <td data-label="Product">{product.name}</td>
               <td data-label="Best For"><span class={`best-for-badge --${product.badge.variant}`}>{product.bestFor}</span></td>
-              <td data-label="Type">{product.type}</td>
-              <td data-label="Capacity">{product.capacity}</td>
+              <td data-label="Type">{product.specs.type}</td>
+              <td data-label="Capacity">{product.specs.capacity}</td>
               <td data-label="Check Price"><CtaButton href={amazonUrl(product.asin)} size="sm" external>Check Price</CtaButton></td>
             </tr>
           ))}

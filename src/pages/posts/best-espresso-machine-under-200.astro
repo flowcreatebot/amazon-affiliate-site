@@ -13,151 +13,9 @@ import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import BestForBadge from '../../components/BestForBadge.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+import { getResolvedProducts, amazonUrl } from '../../data/products';
 
-const products = [
-  {
-    name: "De'Longhi Stilosa",
-    asin: 'B08C96BG9H',
-    image: 'https://m.media-amazon.com/images/I/81c3ItE+jyL._AC_SL500_.jpg',
-    imageAlt: "De'Longhi Stilosa espresso machine",
-    badge: { label: 'Best Overall', variant: 'overall' as const },
-    rating: 4.3,
-    price: 'Budget range',
-    featured: true,
-    bestFor: 'Best overall under $200',
-    machineType: 'Semi-auto',
-    pumpPressure: '15 bar',
-    basketStyle: 'Pressurized',
-    heatUp: '~45 sec',
-    milkSystem: 'Steam wand',
-    waterTank: '33.8 oz',
-    cleanup: 'Med',
-    priceBand: '$',
-    espressoCapable: 'Yes',
-  },
-  {
-    name: 'Mr. Coffee Café Barista',
-    asin: 'B007K9OIMU',
-    image: 'https://m.media-amazon.com/images/I/71p2h853rfL._AC_SL500_.jpg',
-    imageAlt: 'Mr. Coffee Café Barista espresso machine',
-    badge: { label: 'Best Beginner', variant: 'beginners' as const },
-    rating: 4.1,
-    price: 'Mid range',
-    featured: true,
-    bestFor: 'Best beginner milk workflow',
-    machineType: 'Semi-auto',
-    pumpPressure: '15 bar',
-    basketStyle: 'Pressurized',
-    heatUp: '~60 sec',
-    milkSystem: 'Auto frother',
-    waterTank: '55 oz',
-    cleanup: 'Med',
-    priceBand: '$$',
-    espressoCapable: 'Borderline',
-  },
-  {
-    name: 'CASABREWS 3700 Essential',
-    asin: 'B0BRSP8YT6',
-    image: 'https://m.media-amazon.com/images/I/71v90GdxAVL._AC_SL500_.jpg',
-    imageAlt: 'CASABREWS 3700 Essential espresso machine',
-    badge: { label: 'Best for Lattes', variant: 'espresso' as const },
-    rating: 4.2,
-    price: 'Budget range',
-    featured: true,
-    bestFor: 'Best for lattes under $200',
-    machineType: 'Semi-auto',
-    pumpPressure: '20 bar',
-    basketStyle: 'Pressurized',
-    heatUp: '~40 sec',
-    milkSystem: 'Steam wand',
-    waterTank: '49 oz',
-    cleanup: 'Med',
-    priceBand: '$',
-    espressoCapable: 'Yes',
-  },
-  {
-    name: 'Gevi Compact 20 Bar',
-    asin: 'B0D2MF7R3C',
-    image: 'https://m.media-amazon.com/images/I/71pmvUI3cZL._AC_SL500_.jpg',
-    imageAlt: 'Gevi Compact 20 Bar espresso machine',
-    badge: { label: 'Best Compact Pick', variant: 'pourover' as const },
-    rating: 4.0,
-    price: 'Budget range',
-    featured: false,
-    bestFor: 'Best compact small-kitchen pick',
-    machineType: 'Semi-auto',
-    pumpPressure: '20 bar',
-    basketStyle: 'Pressurized',
-    heatUp: '~35 sec',
-    milkSystem: 'Steam wand',
-    waterTank: '42 oz',
-    cleanup: 'Med',
-    priceBand: '$',
-    espressoCapable: 'Borderline',
-  },
-  {
-    name: 'Flair Neo Flex',
-    asin: 'B0C91668G1',
-    image: 'https://m.media-amazon.com/images/I/61MqQwolqRL._AC_SL500_.jpg',
-    imageAlt: 'Flair Neo Flex manual espresso maker',
-    badge: { label: 'Best Manual Value', variant: 'upgrade' as const },
-    rating: 4.5,
-    price: 'Budget range',
-    featured: false,
-    bestFor: 'Best manual espresso value',
-    machineType: 'Manual',
-    pumpPressure: 'Lever pressure (manual)',
-    basketStyle: 'Pressurized / non-pressurized capable',
-    heatUp: '~90 sec prep',
-    milkSystem: 'None',
-    waterTank: 'Manual brew chamber',
-    cleanup: 'Low',
-    priceBand: '$',
-    espressoCapable: 'Yes',
-  },
-  {
-    name: 'Nespresso Essenza Mini',
-    asin: 'B06ZYJBPM9',
-    image: 'https://m.media-amazon.com/images/I/51FV1qFeXeL._AC_SL500_.jpg',
-    imageAlt: 'Nespresso Essenza Mini pod espresso machine',
-    badge: { label: 'Best Pod Convenience', variant: 'budget' as const },
-    rating: 4.4,
-    price: 'Mid range',
-    featured: false,
-    bestFor: 'Best pod convenience',
-    machineType: 'Pod',
-    pumpPressure: '19 bar',
-    basketStyle: 'Pod',
-    heatUp: '~25 sec',
-    milkSystem: 'None',
-    waterTank: '20.3 oz',
-    cleanup: 'Low',
-    priceBand: '$$',
-    espressoCapable: 'No',
-  },
-  {
-    name: "De'Longhi ECP3420",
-    asin: 'B00YCP71VK',
-    image: 'https://m.media-amazon.com/images/I/71cMXnwKDpL._AC_SL500_.jpg',
-    imageAlt: "De'Longhi ECP3420 espresso machine",
-    badge: { label: 'Best Long-Term Durability', variant: 'beginners' as const },
-    rating: 4.2,
-    price: 'Mid range',
-    featured: false,
-    bestFor: 'Best long-term budget durability',
-    machineType: 'Semi-auto',
-    pumpPressure: '15 bar',
-    basketStyle: 'Pressurized',
-    heatUp: '~45 sec',
-    milkSystem: 'Steam wand',
-    waterTank: '37 oz',
-    cleanup: 'Med',
-    priceBand: '$$',
-    espressoCapable: 'Yes',
-  },
-];
-
-const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
+const products = getResolvedProducts('best-espresso-machine-under-200');
 
 const title = 'Best Espresso Machine Under $200 (2026): 7 Picks Researched';
 const description = 'Compare 7 researched espresso machines under $200 by machine type, basket style, milk system, heat-up time, and cleanup effort to buy the right budget model.';
@@ -247,7 +105,7 @@ const jsonLd = {
   canonical={canonical}
   ogTitle="Best Espresso Machine Under $200 (2026): 7 Picks Researched"
   ogDescription="7 budget espresso picks ranked for beginners, milk drinks, compact kitchens, and pod convenience under $200."
-  ogImage={`${SITE.url}/assets/images/best-espresso-machine-under-200-hero-2026.svg`}
+  ogImage={products[0].image}
   breadcrumbs={[
     { label: 'Home', href: '/' },
     { label: 'All Guides', href: '/posts/' },
@@ -323,15 +181,15 @@ const jsonLd = {
           <tr>
             <td>{p.name}</td>
             <td data-label="Best for"><BestForBadge label={p.badge.label} variant={p.badge.variant} /></td>
-            <td data-label="Machine type">{p.machineType}</td>
-            <td data-label="Pump pressure claim">{p.pumpPressure}</td>
-            <td data-label="Basket style">{p.basketStyle}</td>
-            <td data-label="Heat-up time">{p.heatUp}</td>
-            <td data-label="Milk system">{p.milkSystem}</td>
-            <td data-label="Water tank capacity">{p.waterTank}</td>
-            <td data-label="Cleanup effort">{p.cleanup}</td>
-            <td data-label="Price band">{p.priceBand}</td>
-            <td data-label="Espresso-capable">{p.espressoCapable}</td>
+            <td data-label="Machine type">{p.specs.machineType}</td>
+            <td data-label="Pump pressure claim">{p.specs.pumpPressure}</td>
+            <td data-label="Basket style">{p.specs.basketStyle}</td>
+            <td data-label="Heat-up time">{p.specs.heatUp}</td>
+            <td data-label="Milk system">{p.specs.milkSystem}</td>
+            <td data-label="Water tank capacity">{p.specs.waterTank}</td>
+            <td data-label="Cleanup effort">{p.specs.cleanup}</td>
+            <td data-label="Price band">{p.specs.priceBand}</td>
+            <td data-label="Espresso-capable">{p.specs.espressoCapable}</td>
             <td><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check price</CtaButton></td>
           </tr>
         ))}

@@ -10,154 +10,18 @@ import FaqAccordion from '../../components/FaqAccordion.astro';
 import FaqItem from '../../components/FaqItem.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import HeroPicks from '../../components/HeroPicks.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
 import Toc from '../../components/Toc.astro';
-import { SITE, AMAZON_TAG, blogPosting, publisher } from '../../data/site';
+import { SITE, blogPosting, publisher } from '../../data/site';
+import { getResolvedProducts, amazonUrl } from '../../data/products';
 
-const products = [
-  {
-    name: 'Cuisinart DGB-550BKP1',
-    asin: 'B000VTP45Q',
-    image: 'https://m.media-amazon.com/images/P/B000VTP45Q.01._AC_SL500_.jpg',
-    imageAlt: 'Cuisinart DGB-550BKP1 grind and brew coffee maker',
-    badge: { label: 'Best Overall', variant: 'overall' as const },
-    rating: 4.2,
-    price: '$100-$149',
-    featured: true,
-    grinderType: 'Blade',
-    brewModes: 'Beans + Pre-ground',
-    batchSize: '12-cup batch, no true single-cup',
-    programmable: 'Yes',
-    beanToCup: '~4.5-6 min (small batch)',
-    noise: 'Moderate',
-    cleanup: 'Low',
-    priceBand: '$',
-    espressoCapable: 'No',
-  },
-  {
-    name: 'BLACK+DECKER 12-Cup Mill & Brew',
-    asin: 'B00LU2I46E',
-    image: 'https://m.media-amazon.com/images/P/B00LU2I46E.01._AC_SL500_.jpg',
-    imageAlt: 'BLACK+DECKER 12-Cup Mill and Brew coffee maker',
-    badge: { label: 'Best Budget', variant: 'budget' as const },
-    rating: 4.3,
-    price: 'Under $100',
-    featured: true,
-    grinderType: 'Blade',
-    brewModes: 'Beans + Pre-ground',
-    batchSize: '12-cup batch, no true single-cup',
-    programmable: 'Yes',
-    beanToCup: '~5-6 min (small batch)',
-    noise: 'Moderate-Loud',
-    cleanup: 'Low',
-    priceBand: '$',
-    espressoCapable: 'No',
-  },
-  {
-    name: 'Cuisinart DGB-400 Automatic Grind & Brew',
-    asin: 'B08DCK4MPV',
-    image: 'https://m.media-amazon.com/images/P/B08DCK4MPV.01._AC_SL500_.jpg',
-    imageAlt: 'Cuisinart DGB-400 Automatic Grind and Brew coffee maker',
-    badge: { label: 'Best Classic Programmable', variant: 'beginners' as const },
-    rating: 4.1,
-    price: '$$',
-    featured: false,
-    grinderType: 'Blade',
-    brewModes: 'Beans + Pre-ground',
-    batchSize: '12-cup batch, no true single-cup',
-    programmable: 'Yes',
-    beanToCup: '~5-6 min (small batch)',
-    noise: 'Moderate',
-    cleanup: 'Medium',
-    priceBand: '$$',
-    espressoCapable: 'No',
-  },
-  {
-    name: 'Gevi 10-Cup Grind & Brew',
-    asin: 'B0FX3M77DD',
-    image: 'https://m.media-amazon.com/images/P/B0FX3M77DD.01._AC_SL500_.jpg',
-    imageAlt: 'Gevi 10-Cup Grind and Brew coffee maker',
-    badge: { label: 'Best Compact', variant: 'pourover' as const },
-    rating: 4.0,
-    price: '$$',
-    featured: false,
-    grinderType: 'Built-in grinder',
-    brewModes: 'Beans + Pre-ground',
-    batchSize: '10-cup batch, no true single-cup',
-    programmable: 'Yes',
-    beanToCup: '~4.5-6 min (small batch)',
-    noise: 'Moderate',
-    cleanup: 'Medium',
-    priceBand: '$$',
-    espressoCapable: 'No',
-  },
-  {
-    name: 'Cuisinart Grind & Brew Single-Serve (DGB-30)',
-    asin: 'B0FNXPWVD8',
-    image: 'https://m.media-amazon.com/images/P/B0FNXPWVD8.01._AC_SL500_.jpg',
-    imageAlt: 'Cuisinart Grind and Brew Single-Serve DGB-30 coffee maker',
-    badge: { label: 'Best Single-Cup', variant: 'espresso' as const },
-    rating: 4.3,
-    price: '$$',
-    featured: false,
-    grinderType: 'Conical burr',
-    brewModes: 'Beans + Pre-ground',
-    batchSize: 'Single-serve only (multi cup sizes)',
-    programmable: 'Yes',
-    beanToCup: '~4-5 min per cup',
-    noise: 'Moderate',
-    cleanup: 'Medium',
-    priceBand: '$$',
-    espressoCapable: 'No',
-  },
-  {
-    name: "De'Longhi TrueBrew Compact",
-    asin: 'B0F3ZSVPPG',
-    image: 'https://m.media-amazon.com/images/P/B0F3ZSVPPG.01._AC_SL500_.jpg',
-    imageAlt: "De'Longhi TrueBrew Compact bean to cup coffee maker",
-    badge: { label: 'Best Upgrade', variant: 'upgrade' as const },
-    rating: 4.4,
-    price: '$170-$199',
-    featured: true,
-    grinderType: 'Conical burr',
-    brewModes: 'Beans-only',
-    batchSize: 'Single cup + multi-cup',
-    programmable: 'Yes',
-    beanToCup: '~4-6 min',
-    noise: 'Moderate',
-    cleanup: 'Medium',
-    priceBand: '$$$',
-    espressoCapable: 'No (concentrate mode, not true espresso pressure)',
-  },
-  {
-    name: 'Ninja CE251 + budget burr grinder combo',
-    asin: 'B07S98411N',
-    image: 'https://m.media-amazon.com/images/P/B07S98411N.01._AC_SL500_.jpg',
-    imageAlt: 'Ninja CE251 drip brewer with budget burr grinder combo',
-    badge: { label: 'Best Value Combo', variant: 'budget' as const },
-    rating: 4.3,
-    price: '$$',
-    featured: false,
-    grinderType: 'Burr (separate grinder)',
-    brewModes: 'Beans + Pre-ground',
-    batchSize: '12-cup batch + manual single mug',
-    programmable: 'Yes',
-    beanToCup: '~4-6 min including grinding',
-    noise: 'Moderate',
-    cleanup: 'Medium',
-    priceBand: '$$',
-    espressoCapable: 'No',
-  },
-];
-
-const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=${AMAZON_TAG}`;
+const products = getResolvedProducts('best-grind-and-brew-coffee-maker-under-200');
 
 const title = 'Best Grind and Brew Coffee Maker Under $200 (2026) Compared';
 const description = 'Compare 7 researched grind-and-brew coffee makers under $200 by workflow speed, cleanup effort, brew flexibility, and practical day-to-day value.';
 const slug = 'best-grind-and-brew-coffee-maker-under-200';
 const canonical = `${SITE.url}/posts/${slug}.html`;
-const heroImage = `${SITE.url}/assets/images/${slug}-hero-2026.svg`;
-const workflowImage = `${SITE.url}/assets/images/${slug}-workflow-2026.svg`;
+const heroImage = products[0].image;
 const disclosureText = `${SITE.name} may earn a commission from qualifying purchases made through links on this page. This does not change the price you pay.`;
 
 const jsonLd = {
@@ -327,15 +191,15 @@ const jsonLd = {
           <tr>
             <td data-label="Product">{p.name}</td>
             <td data-label="Best for"><span class={`best-for-badge --${p.badge.variant}`}>{p.badge.label}</span></td>
-            <td data-label="Grinder type">{p.grinderType}</td>
-            <td data-label="Brew modes">{p.brewModes}</td>
-            <td data-label="Batch size">{p.batchSize}</td>
-            <td data-label="Programmable">{p.programmable}</td>
-            <td data-label="Bean-to-cup time">{p.beanToCup}</td>
-            <td data-label="Noise level">{p.noise}</td>
-            <td data-label="Cleanup burden">{p.cleanup}</td>
-            <td data-label="Price band">{p.priceBand}</td>
-            <td data-label="Espresso-capable">{p.espressoCapable}</td>
+            <td data-label="Grinder type">{p.specs.grinderType}</td>
+            <td data-label="Brew modes">{p.specs.brewModes}</td>
+            <td data-label="Batch size">{p.specs.batchSize}</td>
+            <td data-label="Programmable">{p.specs.programmable}</td>
+            <td data-label="Bean-to-cup time">{p.specs.beanToCup}</td>
+            <td data-label="Noise level">{p.specs.noise}</td>
+            <td data-label="Cleanup burden">{p.specs.cleanup}</td>
+            <td data-label="Price band">{p.specs.priceBand}</td>
+            <td data-label="Espresso-capable">{p.specs.espressoCapable}</td>
             <td data-label="Link"><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
           </tr>
         ))}
@@ -502,12 +366,17 @@ const jsonLd = {
 
   <section>
     <h2 id="workflow">Workflow realism: bean-to-cup time, noise, and cleanup cadence</h2>
-    <HeroMedia
-      src={`/assets/images/${slug}-workflow-2026.svg`}
-      alt="Morning grind-and-brew workflow timeline showing grind, brew, and cleanup windows"
-      width={1200}
-      height={675}
-      caption="Workflow timing snapshot for realistic weekday use"
+    <HeroSteps
+      title="Grind-and-Brew Morning Workflow"
+      subtitle="A realistic weekday cycle from beans to clean machine"
+      steps={[
+        { label: 'Load Beans', icon: 'coffee', actions: ['Fill hopper or single-dose', 'Set grind amount', 'Add filtered water', 'Confirm basket is clean'], time: '~1 min' },
+        { label: 'Grind & Brew', icon: 'zap', actions: ['Machine grinds automatically', 'Brewing starts after grind', 'Wait for full cycle', 'Listen for completion'], time: '~4-6 min' },
+        { label: 'Empty Grounds', icon: 'wind', actions: ['Remove used basket', 'Discard spent grounds', 'Wipe basket edges', 'Check for clogs'], time: '~1 min' },
+        { label: 'Rinse Daily', icon: 'droplets', actions: ['Rinse removable parts', 'Wipe grinder lid', 'Descale every 3-5 weeks', 'Brush chute weekly'], time: '~2 min' },
+      ]}
+      outcome="Fresher coffee with minimal morning friction and predictable cleanup."
+      footer="coffeegearlab.com · grind-and-brew workflow · 2026"
     />
     <p><strong>Bean-to-cup timing:</strong> Most machines here land around 3.5-6 minutes for a small-batch equivalent cup, and around 9-13 minutes for full carafes.</p>
     <p><strong>Noise reality:</strong> Blade systems are usually sharper/louder during the first 20-40 seconds. Burr systems are often lower pitch but still clearly audible in small apartments.</p>

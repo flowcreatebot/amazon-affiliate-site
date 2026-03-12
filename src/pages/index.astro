@@ -60,6 +60,29 @@ const trustItems = [
     text: 'Quick picks, comparison tables, and structured guides cut through the noise so you spend less time deciding.',
   },
 ];
+
+const funFacts = [
+  {
+    icon: '\ud83c\udf31',
+    title: 'Coffee Starts as a Fruit',
+    text: 'Coffee beans are the seeds of a cherry-like fruit, and they are processed before roasting.',
+  },
+  {
+    icon: '\u23f1\ufe0f',
+    title: 'Freshness Has a Sweet Spot',
+    text: 'Most beans taste best after a short rest post-roast, usually between days 5 and 21.',
+  },
+  {
+    icon: '\ud83d\udca7',
+    title: 'Water Drives Flavor',
+    text: 'Because brewed coffee is mostly water, mineral balance and filtration can change flavor dramatically.',
+  },
+  {
+    icon: '\u2696\ufe0f',
+    title: 'Brew Ratio Matters',
+    text: 'A simple starting point is 1:16 (coffee to water by weight), then tweak to taste.',
+  },
+];
 ---
 <BaseLayout
   title={title}
@@ -146,6 +169,23 @@ const trustItems = [
             category={post.category}
             pageType={post.pageType}
           />
+        ))}
+      </div>
+    </section>
+
+    <!-- Fun Facts -->
+    <section class="home-section">
+      <SectionHeader
+        title="Coffee Fun Facts"
+        subtitle="Quick, useful nuggets to make your next brew a little better."
+      />
+      <div class="fun-facts-grid">
+        {funFacts.map((fact) => (
+          <article class="fun-fact-card">
+            <span class="fun-fact-card__icon" aria-hidden="true">{fact.icon}</span>
+            <h3 class="fun-fact-card__title">{fact.title}</h3>
+            <p class="fun-fact-card__text">{fact.text}</p>
+          </article>
         ))}
       </div>
     </section>

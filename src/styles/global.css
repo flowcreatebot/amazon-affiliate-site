@@ -915,6 +915,44 @@ footer {
   }
 }
 
+/* --- Fun Facts --- */
+.fun-facts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
+}
+@media (min-width: 640px) {
+  .fun-facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.fun-fact-card {
+  background: var(--surface-white);
+  border: 1px solid var(--brand-200);
+  border-radius: var(--radius);
+  padding: var(--sp-5);
+}
+
+.fun-fact-card__icon {
+  display: inline-block;
+  font-size: 1.4rem;
+  margin-bottom: var(--sp-2);
+}
+
+.fun-fact-card__title {
+  margin: 0 0 var(--sp-2);
+  font-size: 1rem;
+  color: var(--brand-900);
+}
+
+.fun-fact-card__text {
+  margin: 0;
+  color: var(--brand-600);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
 /* --- Trust Strip --- */
 .trust-strip {
   background: var(--surface-latte);

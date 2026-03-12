@@ -9,9 +9,12 @@ import FaqItem from '../../components/FaqItem.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+import { getResolvedProducts, amazonUrl } from '../../data/products';
+
+const products = getResolvedProducts('best-drip-coffee-maker-under-100');
 
 const slug = 'best-drip-coffee-maker-under-100';
 const title = 'Best Drip Coffee Maker Under $100 (2026): 8 Smart Picks';
@@ -90,7 +93,7 @@ const jsonLd = {
   description={description}
   canonical={canonical}
   ogDescription="Eight researched drip coffee makers under $100 compared by reliability, programmability, cleanup burden, and practical daily workflow fit."
-  ogImage={`${SITE.url}/assets/images/best-drip-coffee-maker-under-100-hero-2026.svg`}
+  ogImage="https://m.media-amazon.com/images/I/81+HcYgDo1L._AC_SL500_.jpg"
   breadcrumbs={[
     { label: 'Home', href: '/' },
     { label: 'All Guides', href: '/posts/' },
@@ -104,21 +107,16 @@ const jsonLd = {
   <h1>Best Drip Coffee Maker Under $100 (2026): 8 Smart Picks</h1>
   <p class="lead">The best drip coffee maker under 100 for most people is the Ninja CE251 because it balances dependable programming, solid extraction consistency, and easy day-to-day cleanup. We researched and compared eight budget-friendly models so you can choose a brewer that actually fits your routine instead of just chasing the lowest sticker price.</p>
 
-  <!-- IMAGE_PLACEHOLDER
-  type: hero
-  slug: best-drip-coffee-maker-under-100
-  filename: best-drip-coffee-maker-under-100-hero-2026.svg
-  alt: "Editorial comparison of budget drip coffee makers grouped by workflow fit and value tier"
-  concept: "Warm editorial layout with abstract drip machine silhouettes, value tiers, and highlighted buying factors like programmability, cleanup effort, and carafe type"
-  width: 1200
-  height: 675
-  -->
-  <HeroMedia
-    src="/assets/images/best-drip-coffee-maker-under-100-hero-2026.svg"
-    alt="Editorial comparison of budget drip coffee makers grouped by workflow fit and value tier"
-    width={1200}
-    height={675}
-    caption="Research-driven picks grouped by the trade-offs that matter most under $100"
+  <HeroPicks
+    title="8 Drip Coffee Makers Under $100 Worth Buying"
+    subtitle="Ranked by brew consistency, programmability, cleanup effort, and daily value"
+    picks={[
+      { category: 'Overall', tagline: 'Best all-around value and reliability', icon: 'target', color: '#2C1810', features: ['Dependable delay brew', 'Consistent cup quality', 'Quick daily cleanup', 'Mid-range pricing'], topPick: 'Ninja CE251 Programmable Brewer', price: '$$', subtitle: 'Reliable daily workhorse', asin: 'B07S98411N' },
+      { category: 'Budget', tagline: 'Best compact budget pick', icon: 'dollar', color: '#059669', features: ['Auto-brew timer', 'Compact footprint', 'Beginner-friendly controls', 'Lowest cost tier'], topPick: 'BLACK+DECKER CM1160B', price: '$', subtitle: 'Simple and affordable', asin: 'B01GJOMWVA' },
+      { category: 'Programmable', tagline: 'Deepest scheduling controls', icon: 'volume-x', color: '#7A5B4A', features: ['Brew strength tuning', '1-4 cup mode', '14-cup capacity', 'Feature-rich panel'], topPick: 'Cuisinart DCC-3200P1', price: '$$', subtitle: 'Max programmable value', asin: 'B00MVWGQX0' },
+      { category: 'Thermal', tagline: 'Best heat retention under $100', icon: 'hand', color: '#8B6F47', features: ['No hot plate needed', 'Steady heat over time', 'Good for slow mornings', 'Solid build quality'], topPick: 'BLACK+DECKER CM2035B', price: '$$', subtitle: 'Thermal carafe value', asin: 'B00LU2I3V0' },
+    ]}
+    footer="coffeegearlab.com - drip coffee makers under $100 - 2026"
   />
 
   <p><strong>Quick answer:</strong> Choose Ninja CE251 for most households, Cuisinart DCC-3200P1 for deeper programming control, and BLACK+DECKER CM1160B for compact budget value. If you need a thermal carafe near this budget, BLACK+DECKER CM2035B is the most practical fit.</p>
@@ -137,31 +135,17 @@ const jsonLd = {
 
   <h2 id="quick-picks">Quick picks</h2>
   <QuickPicks>
-    <ProductCard
-      title="Ninja CE251 Programmable Brewer"
-      image={{ src: 'https://m.media-amazon.com/images/I/81+HcYgDo1L._AC_SL500_.jpg', alt: 'Ninja CE251 programmable drip coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Overall', variant: 'overall' }}
-      rating={{ score: 4.5 }}
-      price="$$"
-      ctaUrl="https://www.amazon.com/dp/B07S98411N/ref=nosim?tag=coffee-site-20"
-      featured={true}
-    />
-    <ProductCard
-      title="Cuisinart DCC-3200P1 Perfectemp"
-      image={{ src: 'https://m.media-amazon.com/images/I/71io+Gh4ApL._AC_SL500_.jpg', alt: 'Cuisinart DCC-3200P1 Perfectemp drip coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Programmable', variant: 'upgrade' }}
-      rating={{ score: 4.4 }}
-      price="$$"
-      ctaUrl="https://www.amazon.com/dp/B00MVWGQX0/ref=nosim?tag=coffee-site-20"
-    />
-    <ProductCard
-      title="BLACK+DECKER CM1160B 12-Cup Digital"
-      image={{ src: 'https://m.media-amazon.com/images/I/61Rdl5C2AHL._AC_SL500_.jpg', alt: 'BLACK+DECKER CM1160B 12-cup digital drip coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Budget', variant: 'budget' }}
-      rating={{ score: 4.3 }}
-      price="$"
-      ctaUrl="https://www.amazon.com/dp/B01GJOMWVA/ref=nosim?tag=coffee-site-20"
-    />
+    {products.slice(0, 3).map((p, i) => (
+      <ProductCard
+        title={p.name}
+        image={{ src: p.image, alt: p.imageAlt, width: 500, height: 500 }}
+        badge={p.badge}
+        rating={{ score: p.rating }}
+        price={p.price}
+        ctaUrl={amazonUrl(p.asin)}
+        featured={i === 0}
+      />
+    ))}
   </QuickPicks>
 
   <h2 id="comparison-table">Comparison table</h2>
@@ -180,86 +164,18 @@ const jsonLd = {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Ninja CE251</td>
-          <td data-label="Best for">Overall value and reliability</td>
-          <td data-label="Capacity">12 cups</td>
-          <td data-label="Carafe">Glass</td>
-          <td data-label="Programming">Delay brew + 2 brew styles</td>
-          <td data-label="Cleanup effort">Low</td>
-          <td data-label="Price band">$$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B07S98411N/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>Cuisinart DCC-3200P1</td>
-          <td data-label="Best for">Feature-rich programmability</td>
-          <td data-label="Capacity">14 cups</td>
-          <td data-label="Carafe">Glass</td>
-          <td data-label="Programming">Brew strength + 1-4 cup mode</td>
-          <td data-label="Cleanup effort">Medium</td>
-          <td data-label="Price band">$$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B00MVWGQX0/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>BLACK+DECKER CM1160B</td>
-          <td data-label="Best for">Compact budget kitchens</td>
-          <td data-label="Capacity">12 cups</td>
-          <td data-label="Carafe">Glass</td>
-          <td data-label="Programming">Auto-brew + sneak-a-cup</td>
-          <td data-label="Cleanup effort">Low</td>
-          <td data-label="Price band">$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B01GJOMWVA/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>Hamilton Beach 2-Way 49980A</td>
-          <td data-label="Best for">Single cup + full pot homes</td>
-          <td data-label="Capacity">12 cups</td>
-          <td data-label="Carafe">Glass</td>
-          <td data-label="Programming">Programmable carafe side</td>
-          <td data-label="Cleanup effort">Medium</td>
-          <td data-label="Price band">$$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B00EI7DPPI/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>Mr. Coffee 12-Cup Programmable</td>
-          <td data-label="Best for">Lowest upfront cost</td>
-          <td data-label="Capacity">12 cups</td>
-          <td data-label="Carafe">Glass</td>
-          <td data-label="Programming">Brew now or later</td>
-          <td data-label="Cleanup effort">Medium</td>
-          <td data-label="Price band">$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B089DWFP9L/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>BLACK+DECKER Thermal CM2035B</td>
-          <td data-label="Best for">Thermal carafe under $100</td>
-          <td data-label="Capacity">12 cups</td>
-          <td data-label="Carafe">Thermal</td>
-          <td data-label="Programming">Auto clean + no-drip pour</td>
-          <td data-label="Cleanup effort">Medium</td>
-          <td data-label="Price band">$$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B00LU2I3V0/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>Mueller 12-Cup Drip</td>
-          <td data-label="Best for">Simple manual operation</td>
-          <td data-label="Capacity">12 cups</td>
-          <td data-label="Carafe">Glass</td>
-          <td data-label="Programming">Basic controls</td>
-          <td data-label="Cleanup effort">Low</td>
-          <td data-label="Price band">$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B08TYTBX8X/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
-        <tr>
-          <td>KRUPS Simply Brew 5-Cup</td>
-          <td data-label="Best for">Small apartments and low volume</td>
-          <td data-label="Capacity">5 cups</td>
-          <td data-label="Carafe">Glass</td>
-          <td data-label="Programming">Pause and brew</td>
-          <td data-label="Cleanup effort">Low</td>
-          <td data-label="Price band">$</td>
-          <td><CtaButton href="https://www.amazon.com/dp/B07X43VXZV/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
-        </tr>
+        {products.map(p => (
+          <tr>
+            <td>{p.name}</td>
+            <td data-label="Best for">{p.bestFor}</td>
+            <td data-label="Capacity">{p.specs.capacity}</td>
+            <td data-label="Carafe">{p.specs.carafe}</td>
+            <td data-label="Programming">{p.specs.programming}</td>
+            <td data-label="Cleanup effort">{p.specs.cleanupEffort}</td>
+            <td data-label="Price band">{p.specs.priceBand}</td>
+            <td><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+        ))}
       </tbody>
     </table>
   </ComparisonTable>
@@ -276,12 +192,12 @@ const jsonLd = {
 
     <h3>1) Ninja CE251 Programmable Brewer — Best Overall</h3>
     <ProductCard
-      title="Ninja CE251 Programmable Brewer"
-      image={{ src: 'https://m.media-amazon.com/images/I/81+HcYgDo1L._AC_SL500_.jpg', alt: 'Ninja CE251 programmable drip coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Overall', variant: 'overall' }}
-      rating={{ score: 4.5 }}
-      price="$$"
-      ctaUrl="https://www.amazon.com/dp/B07S98411N/ref=nosim?tag=coffee-site-20"
+      title={products[0].name}
+      image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+      badge={products[0].badge}
+      rating={{ score: products[0].rating }}
+      price={products[0].price}
+      ctaUrl={amazonUrl(products[0].asin)}
     />
     <p><strong>Best for:</strong> Buyers who want the best drip coffee maker under 100 with low hassle and reliable daily scheduling. <strong>Price band:</strong> $$.</p>
     <p>The Ninja CE251 wins because it delivers the strongest balance of consistency, convenience, and maintenance ease in this budget tier. The control panel is straightforward, the brew pause is useful without making a mess, and the removable reservoir helps with fast refills on busy mornings.</p>
@@ -297,16 +213,16 @@ const jsonLd = {
         'Not the smallest footprint for compact counters.',
       ]}
     />
-    <p><CtaButton href="https://www.amazon.com/dp/B07S98411N/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>2) Cuisinart DCC-3200P1 Perfectemp — Best Programmable Feature Set</h3>
     <ProductCard
-      title="Cuisinart DCC-3200P1 Perfectemp"
-      image={{ src: 'https://m.media-amazon.com/images/I/71io+Gh4ApL._AC_SL500_.jpg', alt: 'Cuisinart DCC-3200P1 Perfectemp drip coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Programmable', variant: 'upgrade' }}
-      rating={{ score: 4.4 }}
-      price="$$"
-      ctaUrl="https://www.amazon.com/dp/B00MVWGQX0/ref=nosim?tag=coffee-site-20"
+      title={products[1].name}
+      image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+      badge={products[1].badge}
+      rating={{ score: products[1].rating }}
+      price={products[1].price}
+      ctaUrl={amazonUrl(products[1].asin)}
     />
     <p><strong>Best for:</strong> Homes that want stronger scheduling controls and larger capacity while staying close to the $100 ceiling. <strong>Price band:</strong> $$.</p>
     <p>If your top priority is programmable control, this model is hard to beat. It gives more flexibility than simpler competitors, including small-batch options and strength tuning that can better match different roast styles.</p>
@@ -322,16 +238,16 @@ const jsonLd = {
         'Cleanup is moderate due to extra parts and size.',
       ]}
     />
-    <p><CtaButton href="https://www.amazon.com/dp/B00MVWGQX0/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>3) BLACK+DECKER CM1160B 12-Cup Digital — Best Budget Compact Pick</h3>
     <ProductCard
-      title="BLACK+DECKER CM1160B 12-Cup Digital"
-      image={{ src: 'https://m.media-amazon.com/images/I/61Rdl5C2AHL._AC_SL500_.jpg', alt: 'BLACK+DECKER CM1160B 12-cup digital drip coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Budget', variant: 'budget' }}
-      rating={{ score: 4.3 }}
-      price="$"
-      ctaUrl="https://www.amazon.com/dp/B01GJOMWVA/ref=nosim?tag=coffee-site-20"
+      title={products[2].name}
+      image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+      badge={products[2].badge}
+      rating={{ score: products[2].rating }}
+      price={products[2].price}
+      ctaUrl={amazonUrl(products[2].asin)}
     />
     <p><strong>Best for:</strong> Buyers who need low-cost programmability and a footprint that fits tighter kitchens. <strong>Price band:</strong> $.</p>
     <p>The CM1160B makes sense for buyers who want dependable daily drip coffee without paying for extra complexity. It gives you auto-brew convenience plus a compact shape that works in apartments, guest kitchens, and shared spaces.</p>
@@ -347,16 +263,16 @@ const jsonLd = {
         'Carafe ergonomics are acceptable, not exceptional.',
       ]}
     />
-    <p><CtaButton href="https://www.amazon.com/dp/B01GJOMWVA/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>4) Hamilton Beach 2-Way 49980A — Best for Mixed Single-Cup + Carafe Homes</h3>
     <ProductCard
-      title="Hamilton Beach 2-Way 49980A"
-      image={{ src: 'https://m.media-amazon.com/images/I/71Rokx6cySL._AC_SL500_.jpg', alt: 'Hamilton Beach 2-Way 49980A drip coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Hybrid Workflow', variant: 'beginners' }}
-      rating={{ score: 4.2 }}
-      price="$$"
-      ctaUrl="https://www.amazon.com/dp/B00EI7DPPI/ref=nosim?tag=coffee-site-20"
+      title={products[3].name}
+      image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+      badge={products[3].badge}
+      rating={{ score: products[3].rating }}
+      price={products[3].price}
+      ctaUrl={amazonUrl(products[3].asin)}
     />
     <p><strong>Best for:</strong> Families split between quick single cups and full-pot brewing. <strong>Price band:</strong> $$.</p>
     <p>This model is a practical compromise when one person wants a fast solo cup and another prefers full-pot brewing. It avoids pod lock-in while still supporting flexible morning routines.</p>
@@ -372,16 +288,16 @@ const jsonLd = {
         'Workflow is less simple than single-purpose brewers.',
       ]}
     />
-    <p><CtaButton href="https://www.amazon.com/dp/B00EI7DPPI/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>5) Mr. Coffee 12-Cup Programmable — Best for Strict Upfront Budgets</h3>
     <ProductCard
-      title="Mr. Coffee 12-Cup Programmable"
-      image={{ src: 'https://m.media-amazon.com/images/I/71h%2B7mA9NwL._AC_SL500_.jpg', alt: 'Mr. Coffee 12-cup programmable drip coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Low Cost', variant: 'budget' }}
-      rating={{ score: 4.1 }}
-      price="$"
-      ctaUrl="https://www.amazon.com/dp/B089DWFP9L/ref=nosim?tag=coffee-site-20"
+      title={products[4].name}
+      image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+      badge={products[4].badge}
+      rating={{ score: products[4].rating }}
+      price={products[4].price}
+      ctaUrl={amazonUrl(products[4].asin)}
     />
     <p><strong>Best for:</strong> Buyers who want automatic scheduling and the lowest practical entry cost. <strong>Price band:</strong> $.</p>
     <p>This is the value pick when price is non-negotiable and you still want timer convenience. It covers fundamentals without trying to be premium, and that is the right expectation in this range.</p>
@@ -397,16 +313,16 @@ const jsonLd = {
         'Long-term reliability can vary by usage intensity.',
       ]}
     />
-    <p><CtaButton href="https://www.amazon.com/dp/B089DWFP9L/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>6) BLACK+DECKER Thermal CM2035B — Best Thermal Carafe Value</h3>
     <ProductCard
-      title="BLACK+DECKER Thermal CM2035B"
-      image={{ src: 'https://m.media-amazon.com/images/I/71lMlM6tzCL._AC_SL500_.jpg', alt: 'BLACK+DECKER Thermal CM2035B drip coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Thermal', variant: 'upgrade' }}
-      rating={{ score: 4.2 }}
-      price="$$"
-      ctaUrl="https://www.amazon.com/dp/B00LU2I3V0/ref=nosim?tag=coffee-site-20"
+      title={products[5].name}
+      image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
+      badge={products[5].badge}
+      rating={{ score: products[5].rating }}
+      price={products[5].price}
+      ctaUrl={amazonUrl(products[5].asin)}
     />
     <p><strong>Best for:</strong> Homes that drink coffee over a longer window and need better passive heat retention. <strong>Price band:</strong> $$.</p>
     <p>Thermal choices under $100 are limited, so this model fills an important niche. If you dislike reheated taste from prolonged hot-plate use, thermal can be a better everyday experience.</p>
@@ -422,16 +338,16 @@ const jsonLd = {
         'Heavier pouring feel compared with lighter glass carafes.',
       ]}
     />
-    <p><CtaButton href="https://www.amazon.com/dp/B00LU2I3V0/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>7) Mueller 12-Cup Drip — Best No-Frills Simplicity</h3>
     <ProductCard
-      title="Mueller 12-Cup Drip"
-      image={{ src: 'https://m.media-amazon.com/images/I/71LQmJfQfAL._AC_SL500_.jpg', alt: 'Mueller 12-cup drip coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Simple Controls', variant: 'beginners' }}
-      rating={{ score: 4.0 }}
-      price="$"
-      ctaUrl="https://www.amazon.com/dp/B08TYTBX8X/ref=nosim?tag=coffee-site-20"
+      title={products[6].name}
+      image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }}
+      badge={products[6].badge}
+      rating={{ score: products[6].rating }}
+      price={products[6].price}
+      ctaUrl={amazonUrl(products[6].asin)}
     />
     <p><strong>Best for:</strong> Buyers who want straightforward operation and minimal feature complexity. <strong>Price band:</strong> $.</p>
     <p>Mueller is the practical pick for users who do not care about advanced scheduling and just want reliable drip output with simple controls. It is easy to explain to any household member, which matters more than people admit.</p>
@@ -447,16 +363,16 @@ const jsonLd = {
         'Feature set is basic compared with similarly priced programmable models.',
       ]}
     />
-    <p><CtaButton href="https://www.amazon.com/dp/B08TYTBX8X/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[6].asin)} external>Check Price on Amazon</CtaButton></p>
 
     <h3>8) KRUPS Simply Brew 5-Cup — Best for Small-Batch Brewing</h3>
     <ProductCard
-      title="KRUPS Simply Brew 5-Cup"
-      image={{ src: 'https://m.media-amazon.com/images/I/71tr4J2XfXL._AC_SL500_.jpg', alt: 'KRUPS Simply Brew 5-cup drip coffee maker', width: 500, height: 500 }}
-      badge={{ label: 'Best Small Batch', variant: 'pourover' }}
-      rating={{ score: 4.1 }}
-      price="$"
-      ctaUrl="https://www.amazon.com/dp/B07X43VXZV/ref=nosim?tag=coffee-site-20"
+      title={products[7].name}
+      image={{ src: products[7].image, alt: products[7].imageAlt, width: 500, height: 500 }}
+      badge={products[7].badge}
+      rating={{ score: products[7].rating }}
+      price={products[7].price}
+      ctaUrl={amazonUrl(products[7].asin)}
     />
     <p><strong>Best for:</strong> Apartment dwellers, couples, or anyone brewing smaller daily volumes. <strong>Price band:</strong> $.</p>
     <p>This pick is for buyers who are tired of brewing oversized pots and wasting coffee. Small-batch brewing can improve consistency for low-volume use and makes daily cleanup faster.</p>
@@ -472,7 +388,7 @@ const jsonLd = {
         'Limited programmable depth compared with 12-cup competitors.',
       ]}
     />
-    <p><CtaButton href="https://www.amazon.com/dp/B07X43VXZV/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+    <p><CtaButton href={amazonUrl(products[7].asin)} external>Check Price on Amazon</CtaButton></p>
   </section>
 
   <section>

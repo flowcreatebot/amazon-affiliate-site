@@ -14,131 +14,9 @@ import HeroSteps from '../../components/HeroSteps.astro';
 import Toc from '../../components/Toc.astro';
 import BestForBadge from '../../components/BestForBadge.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+import { getResolvedProducts, amazonUrl } from '../../data/products';
 
-const amazonUrl = (asin: string) =>
-  `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
-
-const products = [
-  {
-    title: 'Cuisinart SS-GB1',
-    asin: 'B08MGYR9SX',
-    badge: { label: 'Best Overall', variant: 'overall' },
-    rating: 4.3,
-    price: '$$',
-    featured: true,
-    noImage: true,
-    grinderType: 'Built-in grinder',
-    compatMode: 'Beans + K-Cup',
-    cupSizes: '8/10/12 oz',
-    timeToFirst: '~4-5 min',
-    waterRes: '40 oz',
-    noise: 'Moderate',
-    maintenance: 'Medium',
-    priceBand: '$$',
-  },
-  {
-    title: 'Cuisinart Grind & Brew Single-Serve',
-    asin: 'B09HDFLF2X',
-    badge: { label: 'Fastest Mornings', variant: 'beginners' },
-    rating: 4.3,
-    price: '$$',
-    featured: true,
-    noImage: true,
-    grinderType: 'Conical burr',
-    compatMode: 'Beans + K-Cup',
-    cupSizes: '8/10/12 oz',
-    timeToFirst: '~4-6 min',
-    waterRes: '48 oz',
-    noise: 'Moderate',
-    maintenance: 'Medium',
-    priceBand: '$$',
-  },
-  {
-    title: 'Gevi 4-in-1 Grind & Brew',
-    asin: 'B0GM41GYZH',
-    badge: { label: 'Easiest Cleanup', variant: 'budget' },
-    rating: 4.2,
-    price: '$$',
-    featured: true,
-    noImage: true,
-    grinderType: 'No grinder',
-    compatMode: 'Ground + K-Cup',
-    cupSizes: '6-14 oz',
-    timeToFirst: '~3-5 min',
-    waterRes: '40 oz',
-    noise: 'Moderate',
-    maintenance: 'Low',
-    priceBand: '$$',
-  },
-  {
-    title: 'BLACK+DECKER Mill & Brew',
-    asin: 'B00LU2I46E',
-    badge: { label: 'Best Budget', variant: 'budget' },
-    rating: 4.1,
-    price: '$',
-    featured: false,
-    noImage: true,
-    grinderType: 'Blade',
-    compatMode: 'Beans + Ground (K-Cup via reusable pod workaround)',
-    cupSizes: '12-cup carafe',
-    timeToFirst: '~8-10 min',
-    waterRes: '64 oz',
-    noise: 'Loud',
-    maintenance: 'Low',
-    priceBand: '$',
-  },
-  {
-    title: 'Chefman InstaCoffee Max+',
-    asin: 'B09NRYX5K7',
-    badge: { label: 'Best Compact', variant: 'pourover' },
-    rating: 4.0,
-    price: '$$',
-    featured: false,
-    noImage: true,
-    grinderType: 'No grinder',
-    compatMode: 'Ground + K-Cup',
-    cupSizes: 'Up to 14 oz',
-    timeToFirst: '~1-2 min',
-    waterRes: '14 oz fill-per-cup',
-    noise: 'Moderate',
-    maintenance: 'Medium',
-    priceBand: '$$',
-  },
-  {
-    title: 'Breville Grind Control',
-    asin: 'B00VGGVQCI',
-    badge: { label: 'Best Flavor Upgrade', variant: 'upgrade' },
-    rating: 4.5,
-    price: '$$$',
-    featured: false,
-    noImage: true,
-    grinderType: 'Burr',
-    compatMode: 'Beans + Ground',
-    cupSizes: '8 oz to 12-cup',
-    timeToFirst: '~6-9 min',
-    waterRes: '60 oz',
-    noise: 'Moderate',
-    maintenance: 'Medium',
-    priceBand: '$$$',
-  },
-  {
-    title: "De'Longhi TrueBrew",
-    asin: 'B0F3ZSVPPG',
-    badge: { label: 'Best Premium', variant: 'espresso' },
-    rating: 4.4,
-    price: '$$$',
-    featured: false,
-    noImage: true,
-    grinderType: 'Burr',
-    compatMode: 'Beans + Ground',
-    cupSizes: '8-24 oz (plus 3 oz espresso-style)',
-    timeToFirst: '~5-8 min',
-    waterRes: '60 oz',
-    noise: 'Quiet',
-    maintenance: 'Medium',
-    priceBand: '$$$',
-  },
-];
+const products = getResolvedProducts('best-coffee-maker-with-grinder-and-k-cup-combo');
 
 const title = 'Best Coffee Maker with Grinder and K-Cup Combo (2026)';
 const description = 'Compare the best bean-and-pod coffee makers by flavor, speed, cleanup effort, and K-Cup compatibility to choose the right hybrid machine.';
@@ -225,7 +103,7 @@ const jsonLd = {
   canonical={canonical}
   ogTitle="Best Coffee Maker with Grinder and K-Cup Combo (2026): 7 Researched Picks"
   ogDescription="7 hybrid bean + pod coffee makers ranked by workflow speed, maintenance burden, and flavor-first value."
-  ogImage={`${SITE.url}/assets/images/best-coffee-maker-with-grinder-and-k-cup-combo-tested-2026.svg`}
+  ogImage="https://m.media-amazon.com/images/P/B08MGYR9SX.01._AC_SL500_.jpg"
   breadcrumbs={[
     { label: 'Home', href: '/' },
     { label: 'All Guides', href: '/posts/' },
@@ -264,7 +142,7 @@ const jsonLd = {
   <QuickPicks>
     {products.filter(p => p.featured).map(p => (
       <ProductCard
-        title={p.title}
+        title={p.name}
         badge={p.badge}
         rating={{ score: p.rating }}
         price={p.price}
@@ -304,16 +182,16 @@ const jsonLd = {
       <tbody>
         {products.map(p => (
           <tr>
-            <td data-label="Product">{p.title}</td>
+            <td data-label="Product">{p.name}</td>
             <td data-label="Best for"><BestForBadge label={p.badge.label} variant={p.badge.variant} /></td>
-            <td data-label="Grinder type">{p.grinderType}</td>
-            <td data-label="Compatibility mode">{p.compatMode}</td>
-            <td data-label="Cup sizes">{p.cupSizes}</td>
-            <td data-label="Time to first cup">{p.timeToFirst}</td>
-            <td data-label="Water reservoir">{p.waterRes}</td>
-            <td data-label="Noise level">{p.noise}</td>
-            <td data-label="Maintenance burden">{p.maintenance}</td>
-            <td data-label="Price band">{p.priceBand}</td>
+            <td data-label="Grinder type">{p.specs.grinderType}</td>
+            <td data-label="Compatibility mode">{p.specs.compatMode}</td>
+            <td data-label="Cup sizes">{p.specs.cupSizes}</td>
+            <td data-label="Time to first cup">{p.specs.timeToFirst}</td>
+            <td data-label="Water reservoir">{p.specs.waterRes}</td>
+            <td data-label="Noise level">{p.specs.noise}</td>
+            <td data-label="Maintenance burden">{p.specs.maintenance}</td>
+            <td data-label="Price band">{p.specs.priceBand}</td>
             <td><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
           </tr>
         ))}

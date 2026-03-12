@@ -12,75 +12,14 @@ import JsonLd from '../../components/JsonLd.astro';
 import HeroPicks from '../../components/HeroPicks.astro';
 import Toc from '../../components/Toc.astro';
 import { SITE, blogPosting, publisher } from '../../data/site';
+import { getResolvedProducts, amazonUrl } from '../../data/products';
 
 const slug = 'best-single-serve-coffee-maker-with-grinder';
 const title = 'Best Single Serve Coffee Maker with Grinder (2026)';
 const description = 'The best single serve coffee maker with grinder for 2026, compared for speed, brew quality, cleanup, and pod flexibility so you pick faster.';
 const canonical = `${SITE.url}/posts/${slug}.html`;
 
-const products = [
-  {
-    name: 'Cuisinart Grind & Brew Single-Serve',
-    asin: 'B09HDFLF2X',
-    badge: { label: 'Best Overall', variant: 'overall' as const },
-    rating: 4.4,
-    price: '$$'
-  },
-  {
-    name: 'Cuisinart SS-GB1',
-    asin: 'B08MGYR9SX',
-    badge: { label: 'Best Beans + Pods', variant: 'upgrade' as const },
-    rating: 4.3,
-    price: '$$'
-  },
-  {
-    name: 'Gevi 4-in-1 Single Serve Coffee Maker',
-    asin: 'B0GM41GYZH',
-    badge: { label: 'Best Easy-Clean Option', variant: 'budget' as const },
-    rating: 4.2,
-    price: '$$'
-  },
-  {
-    name: 'BLACK+DECKER Mill and Brew CM5000B',
-    asin: 'B00LU2I46E',
-    badge: { label: 'Best Budget Pick', variant: 'budget' as const },
-    rating: 4.1,
-    price: '$'
-  },
-  {
-    name: 'Breville Grind Control',
-    asin: 'B00VGGVQCI',
-    badge: { label: 'Best Flavor Upgrade', variant: 'upgrade' as const },
-    rating: 4.3,
-    price: '$$$'
-  },
-  {
-    name: "De'Longhi TrueBrew",
-    asin: 'B0F3ZSVPPG',
-    badge: { label: 'Best Premium Bean-to-Cup', variant: 'overall' as const },
-    rating: 4.2,
-    price: '$$$'
-  },
-  {
-    name: 'Chefman InstaCoffee Max',
-    asin: 'B09NRYX5K7',
-    badge: { label: 'Best Compact Choice', variant: 'beginners' as const },
-    rating: 4.0,
-    price: '$$'
-  }
-];
-
-const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
-const imageMap: Record<string, string> = {
-  B09HDFLF2X: 'https://m.media-amazon.com/images/P/B09HDFLF2X.01._AC_SL500_.jpg',
-  B08MGYR9SX: 'https://m.media-amazon.com/images/P/B08MGYR9SX.01._AC_SL500_.jpg',
-  B0GM41GYZH: 'https://m.media-amazon.com/images/P/B0GM41GYZH.01._AC_SL500_.jpg',
-  B00LU2I46E: 'https://m.media-amazon.com/images/P/B00LU2I46E.01._AC_SL500_.jpg',
-  B00VGGVQCI: 'https://m.media-amazon.com/images/P/B00VGGVQCI.01._AC_SL500_.jpg',
-  B0F3ZSVPPG: 'https://m.media-amazon.com/images/P/B0F3ZSVPPG.01._AC_SL500_.jpg',
-  B09NRYX5K7: 'https://m.media-amazon.com/images/P/B09NRYX5K7.01._AC_SL500_.jpg',
-};
-const imageUrl = (asin: string) => imageMap[asin] ?? 'https://m.media-amazon.com/images/I/61Rdl5C2AHL._AC_SL500_.jpg';
+const products = getResolvedProducts('best-single-serve-coffee-maker-with-grinder');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -91,7 +30,7 @@ const jsonLd = {
       slug,
       datePublished: '2026-03-09',
       dateModified: '2026-03-09',
-      image: imageUrl(products[0].asin),
+      image: products[0].image,
     }),
     {
       '@type': 'ItemList',
@@ -189,7 +128,7 @@ const jsonLd = {
   <QuickPicks>
     <ProductCard
       title={products[0].name}
-      image={{ src: imageUrl(products[0].asin), alt: 'Cuisinart Grind and Brew single serve coffee maker with built in grinder', width: 500, height: 500 }}
+      image={{ src: products[0].image, alt: 'Cuisinart Grind and Brew single serve coffee maker with built in grinder', width: 500, height: 500 }}
       badge={products[0].badge}
       rating={{ score: products[0].rating }}
       price={products[0].price}
@@ -198,7 +137,7 @@ const jsonLd = {
     />
     <ProductCard
       title={products[1].name}
-      image={{ src: imageUrl(products[1].asin), alt: 'Cuisinart SS-GB1 single serve coffee maker with grinder and pod support', width: 500, height: 500 }}
+      image={{ src: products[1].image, alt: 'Cuisinart SS-GB1 single serve coffee maker with grinder and pod support', width: 500, height: 500 }}
       badge={products[1].badge}
       rating={{ score: products[1].rating }}
       price={products[1].price}
@@ -206,7 +145,7 @@ const jsonLd = {
     />
     <ProductCard
       title={products[2].name}
-      image={{ src: imageUrl(products[2].asin), alt: 'Gevi 4-in-1 single serve coffee maker for ground coffee and pods', width: 500, height: 500 }}
+      image={{ src: products[2].image, alt: 'Gevi 4-in-1 single serve coffee maker for ground coffee and pods', width: 500, height: 500 }}
       badge={products[2].badge}
       rating={{ score: products[2].rating }}
       price={products[2].price}
@@ -317,7 +256,7 @@ const jsonLd = {
   <h3>1) Cuisinart Grind &amp; Brew Single-Serve — Best Overall</h3>
   <ProductCard
     title={products[0].name}
-    image={{ src: imageUrl(products[0].asin), alt: 'Cuisinart Grind and Brew single serve coffee maker with grinder', width: 500, height: 500 }}
+    image={{ src: products[0].image, alt: 'Cuisinart Grind and Brew single serve coffee maker with grinder', width: 500, height: 500 }}
     badge={products[0].badge}
     rating={{ score: products[0].rating }}
     price={products[0].price}
@@ -342,7 +281,7 @@ const jsonLd = {
   <h3>2) Cuisinart SS-GB1 — Best for split bean + pod households</h3>
   <ProductCard
     title={products[1].name}
-    image={{ src: imageUrl(products[1].asin), alt: 'Cuisinart SS-GB1 coffee maker with grinder and pod compatibility', width: 500, height: 500 }}
+    image={{ src: products[1].image, alt: 'Cuisinart SS-GB1 coffee maker with grinder and pod compatibility', width: 500, height: 500 }}
     badge={products[1].badge}
     rating={{ score: products[1].rating }}
     price={products[1].price}
@@ -366,7 +305,7 @@ const jsonLd = {
   <h3>3) Gevi 4-in-1 Single Serve Coffee Maker — Best easy-clean option</h3>
   <ProductCard
     title={products[2].name}
-    image={{ src: imageUrl(products[2].asin), alt: 'Gevi 4-in-1 single serve coffee maker', width: 500, height: 500 }}
+    image={{ src: products[2].image, alt: 'Gevi 4-in-1 single serve coffee maker', width: 500, height: 500 }}
     badge={products[2].badge}
     rating={{ score: products[2].rating }}
     price={products[2].price}
@@ -390,7 +329,7 @@ const jsonLd = {
   <h3>4) BLACK+DECKER Mill and Brew CM5000B — Best budget pick</h3>
   <ProductCard
     title={products[3].name}
-    image={{ src: imageUrl(products[3].asin), alt: 'BLACK+DECKER Mill and Brew CM5000B coffee maker', width: 500, height: 500 }}
+    image={{ src: products[3].image, alt: 'BLACK+DECKER Mill and Brew CM5000B coffee maker', width: 500, height: 500 }}
     badge={products[3].badge}
     rating={{ score: products[3].rating }}
     price={products[3].price}
@@ -414,7 +353,7 @@ const jsonLd = {
   <h3>5) Breville Grind Control — Best flavor upgrade</h3>
   <ProductCard
     title={products[4].name}
-    image={{ src: imageUrl(products[4].asin), alt: 'Breville Grind Control coffee maker', width: 500, height: 500 }}
+    image={{ src: products[4].image, alt: 'Breville Grind Control coffee maker', width: 500, height: 500 }}
     badge={products[4].badge}
     rating={{ score: products[4].rating }}
     price={products[4].price}
@@ -438,7 +377,7 @@ const jsonLd = {
   <h3>6) De'Longhi TrueBrew — Best premium bean-to-cup convenience</h3>
   <ProductCard
     title={products[5].name}
-    image={{ src: imageUrl(products[5].asin), alt: 'DeLonghi TrueBrew bean to cup coffee maker', width: 500, height: 500 }}
+    image={{ src: products[5].image, alt: 'DeLonghi TrueBrew bean to cup coffee maker', width: 500, height: 500 }}
     badge={products[5].badge}
     rating={{ score: products[5].rating }}
     price={products[5].price}
@@ -462,7 +401,7 @@ const jsonLd = {
   <h3>7) Chefman InstaCoffee Max — Best compact choice</h3>
   <ProductCard
     title={products[6].name}
-    image={{ src: imageUrl(products[6].asin), alt: 'Chefman InstaCoffee Max single serve coffee maker', width: 500, height: 500 }}
+    image={{ src: products[6].image, alt: 'Chefman InstaCoffee Max single serve coffee maker', width: 500, height: 500 }}
     badge={products[6].badge}
     rating={{ score: products[6].rating }}
     price={products[6].price}

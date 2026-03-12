@@ -1,0 +1,927 @@
+{
+  "best-burr-coffee-grinder-under-200": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "baratza-encore-esp",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "price": "$$",
+        "featured": true,
+        "extraSpecs": {
+          "cleanup": "Low",
+          "priceBand": "$$",
+          "espressoCapable": "Yes"
+        }
+      },
+      {
+        "id": "oxo-brew-conical-burr-grinder",
+        "badge": { "label": "Best Budget", "variant": "budget" },
+        "price": "$",
+        "featured": false,
+        "extraSpecs": {
+          "cleanup": "Low",
+          "priceBand": "$",
+          "espressoCapable": "Borderline"
+        }
+      },
+      {
+        "id": "fellow-opus",
+        "badge": { "label": "Best Mid-Range", "variant": "upgrade" },
+        "price": "$$",
+        "featured": false,
+        "extraSpecs": {
+          "cleanup": "Medium",
+          "priceBand": "$$",
+          "espressoCapable": "Yes"
+        }
+      },
+      {
+        "id": "turin-sk40",
+        "badge": { "label": "Best for Espresso", "variant": "espresso" },
+        "price": "$$$",
+        "featured": false,
+        "extraSpecs": {
+          "cleanup": "Medium",
+          "priceBand": "$$$",
+          "espressoCapable": "Yes"
+        }
+      },
+      {
+        "id": "capresso-infinity-plus",
+        "badge": { "label": "Best for Beginners", "variant": "beginners" },
+        "price": "$",
+        "featured": false,
+        "extraSpecs": {
+          "cleanup": "Low",
+          "priceBand": "$",
+          "espressoCapable": "No"
+        }
+      },
+      {
+        "id": "kingrinder-k6",
+        "badge": { "label": "Best Manual Pick", "variant": "pourover" },
+        "price": "$",
+        "featured": false,
+        "extraSpecs": {
+          "cleanup": "Low",
+          "priceBand": "$",
+          "espressoCapable": "Yes"
+        }
+      }
+    ]
+  },
+  "best-burr-grinder-for-espresso": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "df64-gen-2",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "price": "$$$",
+        "bestFor": "Most home espresso users",
+        "extraSpecs": {}
+      },
+      {
+        "id": "baratza-encore-esp",
+        "badge": { "label": "Best Budget", "variant": "budget" },
+        "price": "$$",
+        "bestFor": "Best under $200",
+        "extraSpecs": {}
+      },
+      {
+        "id": "turin-sk40",
+        "badge": { "label": "Best Stepless Value", "variant": "espresso" },
+        "price": "$$",
+        "bestFor": "Stepless control on a tighter budget",
+        "extraSpecs": {}
+      },
+      {
+        "id": "baratza-sette-270",
+        "badge": { "label": "Best Fast Dial-In", "variant": "upgrade" },
+        "price": "$$$",
+        "bestFor": "Fast adjustment changes",
+        "extraSpecs": {}
+      },
+      {
+        "id": "fellow-opus",
+        "badge": { "label": "Best Compact Pick", "variant": "pourover" },
+        "price": "$$",
+        "bestFor": "Small kitchens and mixed brewing",
+        "extraSpecs": {}
+      },
+      {
+        "id": "eureka-mignon-specialita",
+        "badge": { "label": "Best Quiet Grinder", "variant": "beginners" },
+        "price": "$$$",
+        "bestFor": "Low-noise mornings",
+        "extraSpecs": {}
+      },
+      {
+        "id": "1zpresso-j-ultra",
+        "badge": { "label": "Best Manual", "variant": "budget" },
+        "price": "$$",
+        "bestFor": "Manual espresso precision",
+        "extraSpecs": {}
+      }
+    ]
+  },
+  "best-coffee-grinder-for-french-press": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "baratza-encore-esp",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "price": "$$ ($199 range)",
+        "bestFor": "Best Overall",
+        "extraSpecs": {}
+      },
+      {
+        "id": "fellow-opus",
+        "badge": { "label": "Best for Batch Brewing", "variant": "upgrade" },
+        "price": "$$ ($195 range)",
+        "bestFor": "Best for Batch Brewing",
+        "extraSpecs": {}
+      },
+      {
+        "id": "1zpresso-q-air",
+        "badge": { "label": "Best Manual Travel Pick", "variant": "pourover" },
+        "price": "$$ ($60-$80)",
+        "bestFor": "Best Manual Travel Pick",
+        "extraSpecs": {}
+      },
+      {
+        "id": "timemore-chestnut-c2",
+        "badge": { "label": "Best Budget Under $100", "variant": "budget" },
+        "price": "$ ($50-$70)",
+        "bestFor": "Best Budget Under $100",
+        "extraSpecs": {}
+      },
+      {
+        "id": "oxo-brew-conical-burr-grinder",
+        "badge": { "label": "Best Electric Value", "variant": "beginners" },
+        "price": "$ ($90-$110)",
+        "bestFor": "Best Electric Value",
+        "extraSpecs": {}
+      },
+      {
+        "id": "kingrinder-k6",
+        "badge": { "label": "Best Manual Upgrade", "variant": "espresso" },
+        "price": "$$ ($95-$130)",
+        "bestFor": "Best Manual Upgrade",
+        "extraSpecs": {}
+      },
+      {
+        "id": "bodum-bistro-burr-grinder",
+        "badge": { "label": "Best Compact Countertop Pick", "variant": "beginners" },
+        "price": "$ ($85-$110)",
+        "bestFor": "Best Compact Countertop Pick",
+        "extraSpecs": {}
+      }
+    ]
+  },
+  "best-coffee-grinder-for-pour-over": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "fellow-ode-gen-2",
+        "badge": { "label": "Best Overall for Clarity", "variant": "overall" },
+        "price": "$$$",
+        "bestFor": "Best Overall for Clarity",
+        "extraSpecs": {}
+      },
+      {
+        "id": "baratza-encore-esp",
+        "badge": { "label": "Best Value Crossover", "variant": "budget" },
+        "price": "$$",
+        "bestFor": "Best Value Crossover",
+        "extraSpecs": {}
+      },
+      {
+        "id": "oxo-brew-conical-burr-grinder",
+        "badge": { "label": "Best for Easy Daily Workflow", "variant": "beginners" },
+        "price": "$",
+        "bestFor": "Best for Easy Daily Workflow",
+        "extraSpecs": {}
+      },
+      {
+        "id": "1zpresso-k-ultra",
+        "badge": { "label": "Best Premium Manual Pick", "variant": "pourover" },
+        "price": "$$$",
+        "bestFor": "Best Premium Manual Pick",
+        "extraSpecs": {}
+      },
+      {
+        "id": "timemore-chestnut-c2",
+        "badge": { "label": "Best Budget Manual Under $100", "variant": "budget" },
+        "price": "$",
+        "bestFor": "Best Budget Manual Under $100",
+        "extraSpecs": {}
+      },
+      {
+        "id": "fellow-opus",
+        "badge": { "label": "Best Compact All-Rounder", "variant": "upgrade" },
+        "price": "$$",
+        "bestFor": "Best Compact All-Rounder",
+        "extraSpecs": {}
+      },
+      {
+        "id": "kingrinder-k6",
+        "badge": { "label": "Best Manual Upgrade for Tinkerers", "variant": "espresso" },
+        "price": "$$",
+        "bestFor": "Best Manual Upgrade for Tinkerers",
+        "extraSpecs": {}
+      }
+    ]
+  },
+  "best-coffee-maker-with-grinder-and-k-cup-combo": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "cuisinart-ss-gb1",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "price": "$$",
+        "featured": true,
+        "noImage": true,
+        "extraSpecs": {
+          "cupSizes": "8/10/12 oz",
+          "timeToFirst": "~4-5 min",
+          "waterRes": "40 oz",
+          "noise": "Moderate",
+          "maintenance": "Medium",
+          "priceBand": "$$"
+        }
+      },
+      {
+        "id": "cuisinart-grind-brew-single-serve",
+        "badge": { "label": "Fastest Mornings", "variant": "beginners" },
+        "price": "$$",
+        "featured": true,
+        "noImage": true,
+        "extraSpecs": {
+          "cupSizes": "8/10/12 oz",
+          "timeToFirst": "~4-6 min",
+          "waterRes": "48 oz",
+          "noise": "Moderate",
+          "maintenance": "Medium",
+          "priceBand": "$$"
+        }
+      },
+      {
+        "id": "gevi-4-in-1",
+        "badge": { "label": "Easiest Cleanup", "variant": "budget" },
+        "price": "$$",
+        "featured": true,
+        "noImage": true,
+        "extraSpecs": {
+          "cupSizes": "6-14 oz",
+          "timeToFirst": "~3-5 min",
+          "waterRes": "40 oz",
+          "noise": "Moderate",
+          "maintenance": "Low",
+          "priceBand": "$$"
+        }
+      },
+      {
+        "id": "black-decker-mill-and-brew",
+        "badge": { "label": "Best Budget", "variant": "budget" },
+        "price": "$",
+        "featured": false,
+        "noImage": true,
+        "extraSpecs": {
+          "cupSizes": "12-cup carafe",
+          "timeToFirst": "~8-10 min",
+          "waterRes": "64 oz",
+          "noise": "Loud",
+          "maintenance": "Low",
+          "priceBand": "$"
+        }
+      },
+      {
+        "id": "chefman-instacoffee-max",
+        "badge": { "label": "Best Compact", "variant": "pourover" },
+        "price": "$$",
+        "featured": false,
+        "noImage": true,
+        "extraSpecs": {
+          "cupSizes": "Up to 14 oz",
+          "timeToFirst": "~1-2 min",
+          "waterRes": "14 oz fill-per-cup",
+          "noise": "Moderate",
+          "maintenance": "Medium",
+          "priceBand": "$$"
+        }
+      },
+      {
+        "id": "breville-grind-control",
+        "badge": { "label": "Best Flavor Upgrade", "variant": "upgrade" },
+        "price": "$$$",
+        "featured": false,
+        "noImage": true,
+        "extraSpecs": {
+          "cupSizes": "8 oz to 12-cup",
+          "timeToFirst": "~6-9 min",
+          "waterRes": "60 oz",
+          "noise": "Moderate",
+          "maintenance": "Medium",
+          "priceBand": "$$$"
+        }
+      },
+      {
+        "id": "delonghi-truebrew",
+        "badge": { "label": "Best Premium", "variant": "espresso" },
+        "price": "$$$",
+        "featured": false,
+        "noImage": true,
+        "extraSpecs": {
+          "cupSizes": "8-24 oz (plus 3 oz espresso-style)",
+          "timeToFirst": "~5-8 min",
+          "waterRes": "60 oz",
+          "noise": "Quiet",
+          "maintenance": "Medium",
+          "priceBand": "$$$"
+        }
+      }
+    ]
+  },
+  "best-coffee-scale-for-espresso-and-pour-over": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "timemore-black-mirror-nano",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "price": "$59-$89",
+        "bestFor": "Espresso and pour over in one compact footprint",
+        "extraSpecs": {}
+      },
+      {
+        "id": "hario-v60-drip-scale",
+        "badge": { "label": "Best for Pour Over", "variant": "pourover" },
+        "price": "$45-$67",
+        "bestFor": "Classic manual brew workflow with simple timing",
+        "extraSpecs": {}
+      },
+      {
+        "id": "greater-goods-digital-coffee-scale",
+        "badge": { "label": "Best Budget", "variant": "budget" },
+        "price": "$19-$25",
+        "bestFor": "First dedicated coffee scale on a tight budget",
+        "extraSpecs": {}
+      },
+      {
+        "id": "acaia-pearl-s",
+        "badge": { "label": "Best App Connected", "variant": "upgrade" },
+        "price": "$190-$220",
+        "bestFor": "Advanced app features and brew logging",
+        "extraSpecs": {}
+      },
+      {
+        "id": "kitchentour-coffee-scale",
+        "badge": { "label": "Best Compact Pick", "variant": "espresso" },
+        "price": "$22-$35",
+        "bestFor": "Small espresso stations with limited tray space",
+        "extraSpecs": {}
+      },
+      {
+        "id": "maestri-house-rechargeable-coffee-scale",
+        "badge": { "label": "Best Rechargeable", "variant": "beginners" },
+        "price": "$35-$49",
+        "bestFor": "USB-C charging and clean day-to-day usability",
+        "extraSpecs": {}
+      }
+    ]
+  },
+  "best-espresso-machine-under-200": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "delonghi-stilosa",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "price": "Budget range",
+        "featured": true,
+        "bestFor": "Best overall under $200",
+        "extraSpecs": {
+          "cleanup": "Med",
+          "priceBand": "$",
+          "espressoCapable": "Yes"
+        }
+      },
+      {
+        "id": "mr-coffee-cafe-barista",
+        "badge": { "label": "Best Beginner", "variant": "beginners" },
+        "price": "Mid range",
+        "featured": true,
+        "bestFor": "Best beginner milk workflow",
+        "extraSpecs": {
+          "cleanup": "Med",
+          "priceBand": "$$",
+          "espressoCapable": "Borderline"
+        }
+      },
+      {
+        "id": "casabrews-3700-essential",
+        "badge": { "label": "Best for Lattes", "variant": "espresso" },
+        "price": "Budget range",
+        "featured": true,
+        "bestFor": "Best for lattes under $200",
+        "extraSpecs": {
+          "cleanup": "Med",
+          "priceBand": "$",
+          "espressoCapable": "Yes"
+        }
+      },
+      {
+        "id": "gevi-compact-20-bar",
+        "badge": { "label": "Best Compact Pick", "variant": "pourover" },
+        "price": "Budget range",
+        "featured": false,
+        "bestFor": "Best compact small-kitchen pick",
+        "extraSpecs": {
+          "cleanup": "Med",
+          "priceBand": "$",
+          "espressoCapable": "Borderline"
+        }
+      },
+      {
+        "id": "flair-neo-flex",
+        "badge": { "label": "Best Manual Value", "variant": "upgrade" },
+        "price": "Budget range",
+        "featured": false,
+        "bestFor": "Best manual espresso value",
+        "extraSpecs": {
+          "cleanup": "Low",
+          "priceBand": "$",
+          "espressoCapable": "Yes"
+        }
+      },
+      {
+        "id": "nespresso-essenza-mini",
+        "badge": { "label": "Best Pod Convenience", "variant": "budget" },
+        "price": "Mid range",
+        "featured": false,
+        "bestFor": "Best pod convenience",
+        "extraSpecs": {
+          "cleanup": "Low",
+          "priceBand": "$$",
+          "espressoCapable": "No"
+        }
+      },
+      {
+        "id": "delonghi-ecp3420",
+        "badge": { "label": "Best Long-Term Durability", "variant": "beginners" },
+        "price": "Mid range",
+        "featured": false,
+        "bestFor": "Best long-term budget durability",
+        "extraSpecs": {
+          "cleanup": "Med",
+          "priceBand": "$$",
+          "espressoCapable": "Yes"
+        }
+      }
+    ]
+  },
+  "best-gooseneck-kettle-for-pour-over": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "fellow-stagg-ekg",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "bestFor": "Daily precision brewing",
+        "extraSpecs": {}
+      },
+      {
+        "id": "bonavita-1l-variable-temp-kettle",
+        "badge": { "label": "Best Value", "variant": "budget" },
+        "bestFor": "Value-focused buyers",
+        "extraSpecs": {}
+      },
+      {
+        "id": "hario-v60-buono-stovetop-kettle",
+        "badge": { "label": "Best Stovetop Value", "variant": "pourover" },
+        "bestFor": "Manual brewing workflows",
+        "extraSpecs": {}
+      },
+      {
+        "id": "cosori-electric-gooseneck-kettle",
+        "badge": { "label": "Best for Beginners", "variant": "beginners" },
+        "bestFor": "Simple one-button routines",
+        "extraSpecs": {}
+      },
+      {
+        "id": "fellow-stagg-stovetop-kettle",
+        "badge": { "label": "Best Premium Stovetop", "variant": "upgrade" },
+        "bestFor": "Design-forward manual brewers",
+        "extraSpecs": {}
+      }
+    ]
+  },
+  "best-grind-and-brew-coffee-maker-under-200": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "cuisinart-dgb-550bkp1",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "price": "$100-$149",
+        "featured": true,
+        "extraSpecs": {
+          "beanToCup": "~4.5-6 min (small batch)",
+          "noise": "Moderate",
+          "cleanup": "Low",
+          "priceBand": "$",
+          "espressoCapable": "No"
+        }
+      },
+      {
+        "id": "black-decker-mill-and-brew",
+        "badge": { "label": "Best Budget", "variant": "budget" },
+        "price": "Under $100",
+        "featured": true,
+        "extraSpecs": {
+          "beanToCup": "~5-6 min (small batch)",
+          "noise": "Moderate-Loud",
+          "cleanup": "Low",
+          "priceBand": "$",
+          "espressoCapable": "No"
+        }
+      },
+      {
+        "id": "cuisinart-dgb-400",
+        "badge": { "label": "Best Classic Programmable", "variant": "beginners" },
+        "price": "$$",
+        "featured": false,
+        "extraSpecs": {
+          "beanToCup": "~5-6 min (small batch)",
+          "noise": "Moderate",
+          "cleanup": "Medium",
+          "priceBand": "$$",
+          "espressoCapable": "No"
+        }
+      },
+      {
+        "id": "gevi-10-cup-grind-and-brew",
+        "badge": { "label": "Best Compact", "variant": "pourover" },
+        "price": "$$",
+        "featured": false,
+        "extraSpecs": {
+          "beanToCup": "~4.5-6 min (small batch)",
+          "noise": "Moderate",
+          "cleanup": "Medium",
+          "priceBand": "$$",
+          "espressoCapable": "No"
+        }
+      },
+      {
+        "id": "cuisinart-dgb-30",
+        "badge": { "label": "Best Single-Cup", "variant": "espresso" },
+        "price": "$$",
+        "featured": false,
+        "extraSpecs": {
+          "beanToCup": "~4-5 min per cup",
+          "noise": "Moderate",
+          "cleanup": "Medium",
+          "priceBand": "$$",
+          "espressoCapable": "No"
+        }
+      },
+      {
+        "id": "delonghi-truebrew",
+        "badge": { "label": "Best Upgrade", "variant": "upgrade" },
+        "price": "$170-$199",
+        "featured": true,
+        "extraSpecs": {
+          "beanToCup": "~4-6 min",
+          "noise": "Moderate",
+          "cleanup": "Medium",
+          "priceBand": "$$$",
+          "espressoCapable": "No (concentrate mode, not true espresso pressure)"
+        }
+      },
+      {
+        "id": "ninja-ce251",
+        "badge": { "label": "Best Value Combo", "variant": "budget" },
+        "price": "$$",
+        "featured": false,
+        "extraSpecs": {
+          "beanToCup": "~4-6 min including grinding",
+          "noise": "Moderate",
+          "cleanup": "Medium",
+          "priceBand": "$$",
+          "espressoCapable": "No"
+        }
+      }
+    ]
+  },
+  "best-hand-grinder-for-espresso-under-100": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "kingrinder-k6-espresso",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "price": "$89-$99",
+        "bestFor": "Best overall espresso control under $100",
+        "extraSpecs": {}
+      },
+      {
+        "id": "1zpresso-q-air",
+        "badge": { "label": "Best for Beginners", "variant": "beginners" },
+        "price": "$69-$89",
+        "bestFor": "Best easy daily workflow",
+        "extraSpecs": {}
+      },
+      {
+        "id": "timemore-chestnut-c2",
+        "badge": { "label": "Best Budget Value", "variant": "budget" },
+        "price": "$45-$69",
+        "bestFor": "Best value for pressurized-basket espresso",
+        "extraSpecs": {}
+      },
+      {
+        "id": "hario-smart-g-pro",
+        "badge": { "label": "Best Travel Pick", "variant": "pourover" },
+        "price": "$54-$64",
+        "bestFor": "Best travel-focused option",
+        "extraSpecs": {}
+      },
+      {
+        "id": "javapresse-manual-coffee-grinder",
+        "badge": { "label": "Best Emergency Budget", "variant": "budget" },
+        "price": "$26-$35",
+        "bestFor": "Best ultra-low-cost backup",
+        "extraSpecs": {}
+      }
+    ]
+  },
+  "best-pour-over-coffee-maker": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "hario-v60-ceramic-02",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "extraSpecs": {}
+      },
+      {
+        "id": "chemex-classic-6-cup",
+        "badge": { "label": "Best for Multiple Cups", "variant": "pourover" },
+        "extraSpecs": {}
+      },
+      {
+        "id": "melitta-pour-over-set",
+        "badge": { "label": "Best Budget", "variant": "budget" },
+        "extraSpecs": {}
+      },
+      {
+        "id": "hario-v60-switch",
+        "badge": { "label": "Best Upgrade Pick", "variant": "upgrade" },
+        "extraSpecs": {}
+      },
+      {
+        "id": "hario-v60-ceramic-01",
+        "badge": { "label": "Best for Solo Cups", "variant": "beginners" },
+        "extraSpecs": {}
+      },
+      {
+        "id": "hario-v60-ceramic-02-red",
+        "badge": { "label": "Best Design Pick", "variant": "espresso" },
+        "extraSpecs": {}
+      }
+    ]
+  },
+  "best-single-serve-coffee-maker-with-grinder": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "cuisinart-grind-brew-single-serve",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "price": "$$",
+        "extraSpecs": {}
+      },
+      {
+        "id": "cuisinart-ss-gb1",
+        "badge": { "label": "Best Beans + Pods", "variant": "upgrade" },
+        "price": "$$",
+        "extraSpecs": {}
+      },
+      {
+        "id": "gevi-4-in-1",
+        "badge": { "label": "Best Easy-Clean Option", "variant": "budget" },
+        "price": "$$",
+        "extraSpecs": {}
+      },
+      {
+        "id": "black-decker-mill-and-brew",
+        "badge": { "label": "Best Budget Pick", "variant": "budget" },
+        "price": "$",
+        "extraSpecs": {}
+      },
+      {
+        "id": "breville-grind-control",
+        "badge": { "label": "Best Flavor Upgrade", "variant": "upgrade" },
+        "price": "$$$",
+        "extraSpecs": {}
+      },
+      {
+        "id": "delonghi-truebrew",
+        "badge": { "label": "Best Premium Bean-to-Cup", "variant": "overall" },
+        "price": "$$$",
+        "extraSpecs": {}
+      },
+      {
+        "id": "chefman-instacoffee-max",
+        "badge": { "label": "Best Compact Choice", "variant": "beginners" },
+        "price": "$$",
+        "extraSpecs": {}
+      }
+    ]
+  },
+  "best-drip-coffee-maker-under-100": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "ninja-ce251",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "price": "$$",
+        "featured": true,
+        "bestFor": "Overall value and reliability",
+        "extraSpecs": {
+          "capacity": "12 cups",
+          "carafe": "Glass",
+          "programming": "Delay brew + 2 brew styles",
+          "cleanupEffort": "Low",
+          "priceBand": "$$"
+        }
+      },
+      {
+        "id": "cuisinart-dcc-3200p1",
+        "badge": { "label": "Best Programmable", "variant": "upgrade" },
+        "price": "$$",
+        "bestFor": "Feature-rich programmability",
+        "extraSpecs": {
+          "capacity": "14 cups",
+          "carafe": "Glass",
+          "programming": "Brew strength + 1-4 cup mode",
+          "cleanupEffort": "Medium",
+          "priceBand": "$$"
+        }
+      },
+      {
+        "id": "black-decker-cm1160b",
+        "badge": { "label": "Best Budget", "variant": "budget" },
+        "price": "$",
+        "bestFor": "Compact budget kitchens",
+        "extraSpecs": {
+          "capacity": "12 cups",
+          "carafe": "Glass",
+          "programming": "Auto-brew + sneak-a-cup",
+          "cleanupEffort": "Low",
+          "priceBand": "$"
+        }
+      },
+      {
+        "id": "hamilton-beach-2-way-49980a",
+        "badge": { "label": "Best Hybrid Workflow", "variant": "beginners" },
+        "price": "$$",
+        "bestFor": "Single cup + full pot homes",
+        "extraSpecs": {
+          "capacity": "12 cups",
+          "carafe": "Glass",
+          "programming": "Programmable carafe side",
+          "cleanupEffort": "Medium",
+          "priceBand": "$$"
+        }
+      },
+      {
+        "id": "mr-coffee-12-cup-programmable",
+        "badge": { "label": "Best Low Cost", "variant": "budget" },
+        "price": "$",
+        "bestFor": "Lowest upfront cost",
+        "extraSpecs": {
+          "capacity": "12 cups",
+          "carafe": "Glass",
+          "programming": "Brew now or later",
+          "cleanupEffort": "Medium",
+          "priceBand": "$"
+        }
+      },
+      {
+        "id": "black-decker-thermal-cm2035b",
+        "badge": { "label": "Best Thermal", "variant": "upgrade" },
+        "price": "$$",
+        "bestFor": "Thermal carafe under $100",
+        "extraSpecs": {
+          "capacity": "12 cups",
+          "carafe": "Thermal",
+          "programming": "Auto clean + no-drip pour",
+          "cleanupEffort": "Medium",
+          "priceBand": "$$"
+        }
+      },
+      {
+        "id": "mueller-12-cup-drip",
+        "badge": { "label": "Best Simple Controls", "variant": "beginners" },
+        "price": "$",
+        "bestFor": "Simple manual operation",
+        "extraSpecs": {
+          "capacity": "12 cups",
+          "carafe": "Glass",
+          "programming": "Basic controls",
+          "cleanupEffort": "Low",
+          "priceBand": "$"
+        }
+      },
+      {
+        "id": "krups-simply-brew-5-cup",
+        "badge": { "label": "Best Small Batch", "variant": "pourover" },
+        "price": "$",
+        "bestFor": "Small apartments and low volume",
+        "extraSpecs": {
+          "capacity": "5 cups",
+          "carafe": "Glass",
+          "programming": "Pause and brew",
+          "cleanupEffort": "Low",
+          "priceBand": "$"
+        }
+      }
+    ]
+  },
+  "best-coffee-maker-with-grinder": {
+    "pageType": "money",
+    "products": [
+      {
+        "id": "breville-grind-control",
+        "badge": { "label": "Best Overall", "variant": "overall" },
+        "price": "Premium range",
+        "featured": true,
+        "bestFor": "Overall quality",
+        "extraSpecs": {
+          "grinder": "Burr",
+          "brewFormat": "Single cup + carafe",
+          "capacity": "12-cup"
+        }
+      },
+      {
+        "id": "black-decker-mill-and-brew",
+        "badge": { "label": "Best Budget", "variant": "budget" },
+        "price": "Budget range",
+        "bestFor": "Lowest cost",
+        "extraSpecs": {
+          "grinder": "Blade",
+          "brewFormat": "Carafe",
+          "capacity": "12-cup"
+        }
+      },
+      {
+        "id": "cuisinart-dgb-550bkp1",
+        "badge": { "label": "Best Low-Fuss", "variant": "beginners" },
+        "price": "Mid-range",
+        "bestFor": "Easy value",
+        "extraSpecs": {
+          "grinder": "Blade",
+          "brewFormat": "Carafe",
+          "capacity": "12-cup"
+        }
+      },
+      {
+        "id": "cafe-specialty-grind-and-brew",
+        "badge": { "label": "Best Premium Drip", "variant": "upgrade" },
+        "price": "Premium range",
+        "bestFor": "Premium drip workflow",
+        "extraSpecs": {
+          "grinder": "Burr",
+          "brewFormat": "Single-serve + thermal carafe",
+          "capacity": "10-cup"
+        }
+      },
+      {
+        "id": "cuisinart-dgb-30",
+        "badge": { "label": "Best Single-Serve", "variant": "beginners" },
+        "price": "Mid-range",
+        "bestFor": "One-cup speed",
+        "extraSpecs": {
+          "grinder": "Stainless burr",
+          "brewFormat": "Single-serve",
+          "capacity": "6 cup sizes"
+        }
+      },
+      {
+        "id": "delonghi-truebrew",
+        "badge": { "label": "Best Drink Variety", "variant": "overall" },
+        "price": "Premium range",
+        "bestFor": "Drink variety",
+        "extraSpecs": {
+          "grinder": "Conical burr",
+          "brewFormat": "Single cup + carafe + iced",
+          "capacity": "8 oz to 24 oz"
+        }
+      },
+      {
+        "id": "ninja-luxe-cafe-3-in-1",
+        "badge": { "label": "Best Hybrid", "variant": "espresso" },
+        "price": "Premium range",
+        "bestFor": "Espresso + drip hybrid",
+        "extraSpecs": {
+          "grinder": "Integrated burr",
+          "brewFormat": "Espresso + drip + cold brew",
+          "capacity": "Multi-size"
+        }
+      }
+    ]
+  }
+}
