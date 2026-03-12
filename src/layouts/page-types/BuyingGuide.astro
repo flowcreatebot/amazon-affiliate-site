@@ -1,0 +1,99 @@
+---
+/**
+ * BuyingGuide template — educational buying guide pages
+ *
+ * Auto-renders: PostLayout, H1, Toc, FaqAccordion, JSON-LD
+ * Writer fills: lead, types-comparison, key-factors, budget-tiers, common-mistakes, featured-picks, extra-sections
+ */
+import PostLayout from '../PostLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import Toc from '../../components/Toc.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+import FaqItem from '../../components/FaqItem.astro';
+import { SITE } from '../../data/site';
+import { buyingGuidePageGraph } from '../../data/schema';
+import type { TocItem, FaqItem as FaqItemType } from './types';
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  datePublished: string;
+  dateModified: string;
+  ogImage?: string;
+  ogDescription?: string;
+  tocItems: TocItem[];
+  faqItems: FaqItemType[];
+}
+
+const {
+  slug,
+  title,
+  description,
+  category,
+  datePublished,
+  dateModified,
+  ogImage,
+  ogDescription,
+  tocItems,
+  faqItems,
+} = Astro.props;
+
+const canonical = `${SITE.url}/posts/${slug}.html`;
+
+const jsonLd = buyingGuidePageGraph({
+  title,
+  description,
+  slug,
+  datePublished,
+  dateModified,
+  image: ogImage,
+  faqItems,
+});
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogDescription={ogDescription}
+  ogImage={ogImage}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'All Guides', href: '/posts/' },
+    { label: title.replace(/\s*\(2026\).*$/, '') },
+  ]}
+>
+  <Fragment slot="head">
+    <JsonLd data={jsonLd} />
+  </Fragment>
+
+  <h1>{title}</h1>
+  <slot name="lead" />
+
+  <Toc items={tocItems} />
+
+  <slot name="types-comparison" />
+
+  <slot name="key-factors" />
+
+  <slot name="budget-tiers" />
+
+  <slot name="common-mistakes" />
+
+  <slot name="featured-picks" />
+
+  <slot name="extra-sections" />
+
+  <section>
+    <h2 id="faq">Frequently asked questions</h2>
+    <FaqAccordion>
+      {faqItems.map((item) => (
+        <FaqItem question={item.q}>
+          <p>{item.a}</p>
+        </FaqItem>
+      ))}
+    </FaqAccordion>
+  </section>
+</PostLayout>

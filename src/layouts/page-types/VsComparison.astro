@@ -1,0 +1,124 @@
+---
+/**
+ * VsComparison template — head-to-head product/method comparison pages
+ *
+ * Auto-renders: PostLayout, H1, CategoryPills, HeroVersus, Toc, FaqAccordion, JSON-LD
+ * Writer fills: lead, quick-verdict, comparison-table, feature-comparisons, buyer-profiles, supporting-gear, extra-sections
+ */
+import PostLayout from '../PostLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import HeroVersus from '../../components/HeroVersus.astro';
+import Toc from '../../components/Toc.astro';
+import CategoryPills from '../../components/CategoryPills.astro';
+import Pill from '../../components/Pill.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+import FaqItem from '../../components/FaqItem.astro';
+import { SITE } from '../../data/site';
+import { vsPageGraph } from '../../data/schema';
+import type { TocItem, FaqItem as FaqItemType, HeroVersusConfig } from './types';
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  datePublished: string;
+  dateModified: string;
+  ogImage?: string;
+  ogDescription?: string;
+  heroVersus: HeroVersusConfig;
+  tocItems: TocItem[];
+  faqItems: FaqItemType[];
+  categoryPills?: string[];
+}
+
+const {
+  slug,
+  title,
+  description,
+  category,
+  datePublished,
+  dateModified,
+  ogImage,
+  ogDescription,
+  heroVersus,
+  tocItems,
+  faqItems,
+  categoryPills,
+} = Astro.props;
+
+const canonical = `${SITE.url}/posts/${slug}.html`;
+
+const jsonLd = vsPageGraph({
+  title,
+  description,
+  slug,
+  datePublished,
+  dateModified,
+  image: ogImage ?? `${SITE.url}/og-default.png`,
+  faqItems,
+});
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogDescription={ogDescription}
+  ogImage={ogImage}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'All Guides', href: '/posts/' },
+    { label: title.replace(/\s*\(2026\).*$/, '') },
+  ]}
+>
+  <Fragment slot="head">
+    <JsonLd data={jsonLd} />
+  </Fragment>
+
+  <h1>{title}</h1>
+  <slot name="lead" />
+
+  {categoryPills && categoryPills.length > 0 && (
+    <CategoryPills>
+      {categoryPills.map((text) => (
+        <Pill text={text} />
+      ))}
+    </CategoryPills>
+  )}
+
+  <HeroVersus
+    title={heroVersus.title}
+    subtitle={heroVersus.subtitle}
+    left={heroVersus.left}
+    right={heroVersus.right}
+    stats={heroVersus.stats}
+    verdict={heroVersus.verdict}
+    footer={heroVersus.footer}
+  />
+
+  <slot name="quick-verdict" />
+
+  <Toc items={tocItems} />
+
+  <slot name="comparison-table" />
+
+  <slot name="feature-comparisons" />
+
+  <slot name="buyer-profiles" />
+
+  <slot name="supporting-gear" />
+
+  <slot name="extra-sections" />
+
+  <section>
+    <h2 id="faq">FAQ</h2>
+    <FaqAccordion>
+      {faqItems.map((item) => (
+        <FaqItem question={item.q}>
+          <p>{item.a}</p>
+        </FaqItem>
+      ))}
+    </FaqAccordion>
+  </section>
+</PostLayout>

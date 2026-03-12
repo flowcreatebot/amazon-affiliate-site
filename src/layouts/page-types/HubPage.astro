@@ -1,0 +1,72 @@
+---
+/**
+ * HubPage template — category/hub landing pages
+ *
+ * Auto-renders: BaseLayout, H1, JSON-LD (CollectionPage)
+ * Writer fills: intro, extra-sections
+ * Note: Uses BaseLayout directly (no PostLayout — no affiliate disclosure)
+ */
+import BaseLayout from '../BaseLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { SITE } from '../../data/site';
+import { hubPageGraph } from '../../data/schema';
+
+interface Subcategory {
+  label: string;
+  slug: string;
+  description: string;
+  count?: number;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  ogImage?: string;
+  subcategories?: Subcategory[];
+}
+
+const {
+  title,
+  description,
+  category,
+  ogImage,
+  subcategories,
+} = Astro.props;
+
+const canonical = `${SITE.url}/${category}/`;
+
+const jsonLd = hubPageGraph({
+  title,
+  description,
+  url: canonical,
+});
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+>
+  <Fragment slot="head">
+    <JsonLd data={jsonLd} />
+  </Fragment>
+
+  <h1>{title}</h1>
+  <slot name="intro" />
+
+  {subcategories && subcategories.length > 0 && (
+    <div class="card-grid">
+      {subcategories.map((sub) => (
+        <a href={`/${sub.slug}/`} class="card">
+          <h3>{sub.label}</h3>
+          <p>{sub.description}</p>
+          {sub.count && <span class="card__count">{sub.count} guides</span>}
+        </a>
+      ))}
+    </div>
+  )}
+
+  <slot name="extra-sections" />
+</BaseLayout>
