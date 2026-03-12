@@ -1,24 +1,12 @@
 ---
-import PostLayout from '../../layouts/PostLayout.astro';
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsCons from '../../components/ProsCons.astro';
-import FaqAccordion from '../../components/FaqAccordion.astro';
-import FaqItem from '../../components/FaqItem.astro';
-import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
-import JsonLd from '../../components/JsonLd.astro';
-import HeroPicks from '../../components/HeroPicks.astro';
-import HeroVersus from '../../components/HeroVersus.astro';
 import HeroSteps from '../../components/HeroSteps.astro';
-import Toc from '../../components/Toc.astro';
-import { SITE, AMAZON_TAG, blogPosting, publisher } from '../../data/site';
-
-const slug = 'best-espresso-machine-under-200';
-const title = 'Best Espresso Machine Under 200 (2026): 7 Smart Picks';
-const description = 'Find the best espresso machine under 200 in 2026 with seven researched picks compared by milk performance, learning curve, cleanup, and long-term value.';
-const canonical = `${SITE.url}/posts/${slug}.html`;
+import { amazonUrl } from '../../data/products';
 
 const products = [
   {
@@ -58,10 +46,10 @@ const products = [
     }
   },
   {
-    name: 'Mr. Coffee Café Barista',
+    name: 'Mr. Coffee Caf\u00e9 Barista',
     asin: 'B007K9OIMU',
     image: 'PLACEHOLDER_IMG:B007K9OIMU',
-    imageAlt: 'Mr. Coffee Café Barista espresso machine with automatic milk frother pitcher',
+    imageAlt: 'Mr. Coffee Caf\u00e9 Barista espresso machine with automatic milk frother pitcher',
     badge: { label: 'Best for Beginners', variant: 'beginners' },
     bestFor: 'Low-effort milk workflow',
     price: 'Check price',
@@ -148,101 +136,29 @@ const products = [
     }
   }
 ];
-
-function amazonUrl(asin: string) {
-  return `https://www.amazon.com/dp/${asin}/ref=nosim?tag=${AMAZON_TAG}`;
-}
-
-const faqs = [
-  {
-    q: 'Can I make real espresso under $200, or is this range only for weak coffee?',
-    a: 'You can make solid espresso in this budget, but grinder quality and puck prep matter more than flashy pressure claims. A reliable machine plus a consistent burr grinder produces better results than an expensive machine paired with inconsistent grounds.'
-  },
-  {
-    q: 'Is a 20-bar machine automatically better than 15-bar?',
-    a: 'Not automatically. Once a machine can generate enough pressure for espresso, consistency, basket design, and temperature behavior are usually more important than the headline bar number printed on the box.'
-  },
-  {
-    q: 'Should beginners avoid manual steam wands?',
-    a: 'Not necessarily. Manual wands have a learning curve, but they give better control over texture once you practice. If convenience is your priority, an automatic frother model may fit your routine better.'
-  },
-  {
-    q: 'Do pod machines count as espresso machines for this budget?',
-    a: 'Pod systems can still be a valid choice when speed and cleanup matter most. They are convenient and consistent, but they do not offer the same freshness and control as ground-coffee pump or manual systems.'
-  }
-];
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    blogPosting({
-      headline: title,
-      description,
-      slug,
-      datePublished: '2026-03-12',
-      dateModified: '2026-03-12',
-      image: products[0].image,
-    }),
-    {
-      '@type': 'ItemList',
-      name: 'Best Espresso Machine Under 200 Picks',
-      itemListElement: products.map((p, idx) => ({
-        '@type': 'ListItem',
-        position: idx + 1,
-        name: p.name,
-        url: amazonUrl(p.asin),
-      })),
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: faqs.map((f) => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: f.a,
-        },
-      })),
-    },
-    {
-      '@type': 'Organization',
-      ...publisher,
-      '@id': `${SITE.url}/#publisher`,
-    },
-  ],
-};
 ---
 
-<PostLayout
-  title={title}
-  description={description}
-  canonical={canonical}
-  breadcrumbs={[
-    { label: 'Home', href: '/' },
-    { label: 'All Guides', href: '/posts/' },
-    { label: 'Best Espresso Machine Under 200' },
-  ]}
->
-  <Fragment slot="head">
-    <JsonLd data={jsonLd} />
-  </Fragment>
-
-  <h1>Best Espresso Machine Under 200 in 2026: 7 Picks Worth Buying</h1>
-  <p class="lead">If you want the best espresso machine under 200, the key is matching your daily workflow to the right machine style. We compared seven researched options by milk performance, consistency potential, cleanup burden, and upgrade headroom so you can buy once and brew better.</p>
-
-  <HeroPicks
-    title="Best Espresso Machine Under 200"
-    subtitle="Seven researched picks organized by real-world workflow fit"
-    picks={[
+<MoneyPage
+  slug="best-espresso-machine-under-200"
+  title="Best Espresso Machine Under 200 (2026): 7 Smart Picks"
+  description="Find the best espresso machine under 200 in 2026 with seven researched picks compared by milk performance, learning curve, cleanup, and long-term value."
+  category="machines"
+  datePublished="2026-03-12"
+  dateModified="2026-03-12"
+  ogImage={products[0].image}
+  products={products}
+  heroPicks={{
+    title: "Best Espresso Machine Under 200",
+    subtitle: "Seven researched picks organized by real-world workflow fit",
+    picks: [
       { category: 'Budget', tagline: 'Strong entry point for real espresso', icon: 'dollar', color: '#059669', features: ['Simple control layout', 'Manual steam wand', 'Easy parts availability', 'Great first machine'], topPick: products[0].name, price: '$', subtitle: 'Starter value winner', asin: products[0].asin },
       { category: 'Precision', tagline: 'Higher shot ceiling for tinkerers', icon: 'target', color: '#2C1810', features: ['Manual lever control', 'No pump noise', 'Portable format', 'Technique-focused'], topPick: products[4].name, price: '$$', subtitle: 'Best manual control', asin: products[4].asin },
       { category: 'Quiet', tagline: 'Low-fuss convenience and speed', icon: 'volume-x', color: '#7A5B4A', features: ['Fast heat-up', 'Minimal cleanup', 'Tiny footprint', 'Consistent capsules'], topPick: products[5].name, price: '$$', subtitle: 'Fast weekday routine', asin: products[5].asin },
       { category: 'Manual', tagline: 'Milk drinks without premium spend', icon: 'hand', color: '#8B6F47', features: ['Manual wand practice', 'Good latte value', 'Compact countertop size', 'Beginner-friendly controls'], topPick: products[1].name, price: '$$', subtitle: 'Best budget milk setup', asin: products[1].asin },
-    ]}
-    footer="coffeegearpicks.com · 2026 espresso picks"
-  />
-
-  <Toc items={[
+    ],
+    footer: "coffeegearpicks.com \u00b7 2026 espresso picks",
+  }}
+  tocItems={[
     { href: '#quick-picks', label: 'Quick picks' },
     { href: '#comparison-table', label: 'Comparison table' },
     { href: '#how-we-evaluate', label: 'How we evaluate' },
@@ -250,321 +166,312 @@ const jsonLd = {
     { href: '#buying-guide', label: 'Buying guide' },
     { href: '#faq', label: 'FAQ' },
     { href: '#related', label: 'Related espresso guides' },
-  ]} />
+  ]}
+  faqItems={[
+    { q: 'Can I make real espresso under $200, or is this range only for weak coffee?', a: 'You can make solid espresso in this budget, but grinder quality and puck prep matter more than flashy pressure claims. A reliable machine plus a consistent burr grinder produces better results than an expensive machine paired with inconsistent grounds.' },
+    { q: 'Is a 20-bar machine automatically better than 15-bar?', a: 'Not automatically. Once a machine can generate enough pressure for espresso, consistency, basket design, and temperature behavior are usually more important than the headline bar number printed on the box.' },
+    { q: 'Should beginners avoid manual steam wands?', a: 'Not necessarily. Manual wands have a learning curve, but they give better control over texture once you practice. If convenience is your priority, an automatic frother model may fit your routine better.' },
+    { q: 'Do pod machines count as espresso machines for this budget?', a: 'Pod systems can still be a valid choice when speed and cleanup matter most. They are convenient and consistent, but they do not offer the same freshness and control as ground-coffee pump or manual systems.' },
+  ]}
+>
+  <Fragment slot="lead">
+    <p class="lead">If you want the best espresso machine under 200, the key is matching your daily workflow to the right machine style. We compared seven researched options by milk performance, consistency potential, cleanup burden, and upgrade headroom so you can buy once and brew better.</p>
+  </Fragment>
 
-  <h2 id="quick-picks">Quick picks</h2>
-  <QuickPicks>
-    <ProductCard
-      featured={true}
-      title={products[0].name}
-      image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
-      badge={products[0].badge}
-      rating={products[0].rating}
-      price={products[0].price}
-      ctaUrl={amazonUrl(products[0].asin)}
-    />
-    <ProductCard
-      title={products[1].name}
-      image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
-      badge={products[1].badge}
-      rating={products[1].rating}
-      price={products[1].price}
-      ctaUrl={amazonUrl(products[1].asin)}
-    />
-    <ProductCard
-      title={products[2].name}
-      image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
-      badge={products[2].badge}
-      rating={products[2].rating}
-      price={products[2].price}
-      ctaUrl={amazonUrl(products[2].asin)}
-    />
-  </QuickPicks>
-
-  <h2 id="comparison-table">Comparison table</h2>
-  <ComparisonTable
-    timestamp="March 12, 2026"
-    headers={['Product', 'Best For', 'Machine Type', 'Pressure', 'Basket', 'Milk System', 'Tank', 'Heat-Up', '']}
-    ariaLabel="Best espresso machine under 200 comparison"
-  >
-    <table>
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Best For</th>
-          <th>Machine Type</th>
-          <th>Pressure</th>
-          <th>Basket</th>
-          <th>Milk System</th>
-          <th>Tank</th>
-          <th>Heat-Up</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {products.map((p) => (
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable
+      timestamp="March 12, 2026"
+      ariaLabel="Best espresso machine under 200 comparison"
+    >
+      <table>
+        <thead>
           <tr>
-            <td data-label="Product">{p.name}</td>
-            <td data-label="Best For">{p.bestFor}</td>
-            <td data-label="Machine Type">{p.specs.machineType}</td>
-            <td data-label="Pressure">{p.specs.pressure}</td>
-            <td data-label="Basket">{p.specs.basket}</td>
-            <td data-label="Milk System">{p.specs.milk}</td>
-            <td data-label="Tank">{p.specs.tank}</td>
-            <td data-label="Heat-Up">{p.specs.heatUp}</td>
-            <td data-label="Buy"><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check price</CtaButton></td>
+            <th>Product</th>
+            <th>Best For</th>
+            <th>Machine Type</th>
+            <th>Pressure</th>
+            <th>Basket</th>
+            <th>Milk System</th>
+            <th>Tank</th>
+            <th>Heat-Up</th>
+            <th></th>
           </tr>
-        ))}
-      </tbody>
-    </table>
-  </ComparisonTable>
+        </thead>
+        <tbody>
+          {products.map((p) => (
+            <tr>
+              <td data-label="Product">{p.name}</td>
+              <td data-label="Best For">{p.bestFor}</td>
+              <td data-label="Machine Type">{p.specs.machineType}</td>
+              <td data-label="Pressure">{p.specs.pressure}</td>
+              <td data-label="Basket">{p.specs.basket}</td>
+              <td data-label="Milk System">{p.specs.milk}</td>
+              <td data-label="Tank">{p.specs.tank}</td>
+              <td data-label="Heat-Up">{p.specs.heatUp}</td>
+              <td data-label="Buy"><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check price</CtaButton></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
 
-  <h2 id="how-we-evaluate">How we evaluate machines in this budget</h2>
-  <p>For this guide, we compared each model against the same buyer reality: people want better espresso at home without crossing the $200 line. That means recommendation quality depends on practical trade-offs, not spec-sheet hype. We scored each machine across shot consistency potential, milk-drink workflow, learning curve, cleanup friction, and long-term ownership value.</p>
-  <p>Shot consistency potential focuses on how repeatable a machine feels when you use an espresso-capable grind and basic puck prep. Some models look similar in marketing photos but behave very differently once you brew back-to-back drinks. We favored options that feel forgiving enough for beginners while still rewarding better grind control over time.</p>
-  <p>Milk workflow matters because many shoppers in this tier are buying for cappuccinos and lattes, not straight shots only. We separated manual and automatic milk systems so readers can choose based on routine: if you enjoy learning texture control, manual can be stronger; if you need speed at 7 AM, automatic systems can be the right call.</p>
-  <p>Finally, we weighted daily friction. A machine that makes okay coffee but fits your routine beats a technically better machine that you avoid using. Cleanup design, refill access, and part availability all influence whether a budget buy actually turns into daily value.</p>
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate machines in this budget</h2>
+      <p>For this guide, we compared each model against the same buyer reality: people want better espresso at home without crossing the $200 line. That means recommendation quality depends on practical trade-offs, not spec-sheet hype. We scored each machine across shot consistency potential, milk-drink workflow, learning curve, cleanup friction, and long-term ownership value.</p>
+      <p>Shot consistency potential focuses on how repeatable a machine feels when you use an espresso-capable grind and basic puck prep. Some models look similar in marketing photos but behave very differently once you brew back-to-back drinks. We favored options that feel forgiving enough for beginners while still rewarding better grind control over time.</p>
+      <p>Milk workflow matters because many shoppers in this tier are buying for cappuccinos and lattes, not straight shots only. We separated manual and automatic milk systems so readers can choose based on routine: if you enjoy learning texture control, manual can be stronger; if you need speed at 7 AM, automatic systems can be the right call.</p>
+      <p>Finally, we weighted daily friction. A machine that makes okay coffee but fits your routine beats a technically better machine that you avoid using. Cleanup design, refill access, and part availability all influence whether a budget buy actually turns into daily value.</p>
+    </section>
+  </Fragment>
 
-  <h2 id="reviews">Detailed product reviews</h2>
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="reviews">Detailed product reviews</h2>
 
-  <h3>1) De'Longhi Stilosa — best espresso machine under 200 for most people</h3>
-  <ProductCard
-    title={products[0].name}
-    image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
-    badge={products[0].badge}
-    rating={products[0].rating}
-    price={products[0].price}
-    ctaUrl={amazonUrl(products[0].asin)}
-  />
-  <p>The Stilosa is the most balanced choice in this range. It gives beginners a straightforward interface while still letting you build useful espresso habits. If you pair it with a decent burr grinder and consistent dose routine, it can produce shots that are clearly ahead of typical drip convenience coffee.</p>
-  <p>Its biggest win is ownership value. Replacement parts are easy to find, community troubleshooting is strong, and your learning effort carries forward if you upgrade later. That makes it a smart center pick when you want reliable daily use without overcomplicating your setup.</p>
-  <ProsCons
-    pros={[
-      'Best balance of price, control, and long-term value in this tier',
-      'Manual steam wand supports better texture practice over time',
-      'Easy to find accessories and replacement parts'
-    ]}
-    cons={[
-      'Steam power is workable but not premium-level',
-      'Small tray needs more frequent emptying'
-    ]}
-  />
-  <CtaButton href={amazonUrl(products[0].asin)} external>Check price on Amazon</CtaButton>
+      <h3>1) De'Longhi Stilosa — best espresso machine under 200 for most people</h3>
+      <ProductCard
+        title={products[0].name}
+        image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={products[0].rating}
+        price={products[0].price}
+        ctaUrl={amazonUrl(products[0].asin)}
+      />
+      <p>The Stilosa is the most balanced choice in this range. It gives beginners a straightforward interface while still letting you build useful espresso habits. If you pair it with a decent burr grinder and consistent dose routine, it can produce shots that are clearly ahead of typical drip convenience coffee.</p>
+      <p>Its biggest win is ownership value. Replacement parts are easy to find, community troubleshooting is strong, and your learning effort carries forward if you upgrade later. That makes it a smart center pick when you want reliable daily use without overcomplicating your setup.</p>
+      <ProsCons
+        pros={[
+          'Best balance of price, control, and long-term value in this tier',
+          'Manual steam wand supports better texture practice over time',
+          'Easy to find accessories and replacement parts'
+        ]}
+        cons={[
+          'Steam power is workable but not premium-level',
+          'Small tray needs more frequent emptying'
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check price on Amazon</CtaButton></p>
 
-  <h3>2) CASABREWS 3700 Essential — best budget choice for milk drinks</h3>
-  <ProductCard
-    title={products[1].name}
-    image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
-    badge={products[1].badge}
-    rating={products[1].rating}
-    price={products[1].price}
-    ctaUrl={amazonUrl(products[1].asin)}
-  />
-  <p>If your main goal is lattes and cappuccinos under a strict budget, this model lands in a useful middle zone: enough manual control to improve your shots, but fast enough heat behavior for weekday use. It feels less toy-like than many low-cost machines and usually gives a better milk-drink experience than entry models that prioritize price over steam usability.</p>
-  <p>It is still a budget machine, so puck prep quality matters. Give it consistent grind size and dose control, and it rewards you. Skip those basics and results become less predictable.</p>
-  <ProsCons
-    pros={[
-      'Strong milk-drink performance for the price class',
-      'Fast warm-up supports busy morning routines',
-      'Good feature-to-cost value in the under-200 bracket'
-    ]}
-    cons={[
-      'Build feel is lighter than older legacy models',
-      'Benefits heavily from better grinder consistency'
-    ]}
-  />
-  <CtaButton href={amazonUrl(products[1].asin)} external>Check price on Amazon</CtaButton>
+      <h3>2) CASABREWS 3700 Essential — best budget choice for milk drinks</h3>
+      <ProductCard
+        title={products[1].name}
+        image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+        badge={products[1].badge}
+        rating={products[1].rating}
+        price={products[1].price}
+        ctaUrl={amazonUrl(products[1].asin)}
+      />
+      <p>If your main goal is lattes and cappuccinos under a strict budget, this model lands in a useful middle zone: enough manual control to improve your shots, but fast enough heat behavior for weekday use. It feels less toy-like than many low-cost machines and usually gives a better milk-drink experience than entry models that prioritize price over steam usability.</p>
+      <p>It is still a budget machine, so puck prep quality matters. Give it consistent grind size and dose control, and it rewards you. Skip those basics and results become less predictable.</p>
+      <ProsCons
+        pros={[
+          'Strong milk-drink performance for the price class',
+          'Fast warm-up supports busy morning routines',
+          'Good feature-to-cost value in the under-200 bracket'
+        ]}
+        cons={[
+          'Build feel is lighter than older legacy models',
+          'Benefits heavily from better grinder consistency'
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check price on Amazon</CtaButton></p>
 
-  <h3>3) Mr. Coffee Café Barista — easiest path for beginners who want convenience</h3>
-  <ProductCard
-    title={products[2].name}
-    image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
-    badge={products[2].badge}
-    rating={products[2].rating}
-    price={products[2].price}
-    ctaUrl={amazonUrl(products[2].asin)}
-  />
-  <p>This is the easiest recommendation for buyers who care more about repeatable convenience than espresso craft. The automatic frother helps reduce technique stress, and the larger tank is practical for households making several milk drinks each day.</p>
-  <p>The trade-off is control ceiling. You get fast, good-enough drinks with less manual effort, but fewer ways to fine-tune extraction and texture compared with fully manual steam routines.</p>
-  <ProsCons
-    pros={[
-      'Automatic milk workflow lowers beginner friction',
-      'Good fit for multi-drink households',
-      'Simple day-to-day operation'
-    ]}
-    cons={[
-      'Less texture control than manual steam wands',
-      'More milk-system cleanup steps after use'
-    ]}
-  />
-  <CtaButton href={amazonUrl(products[2].asin)} external>Check price on Amazon</CtaButton>
+      <h3>3) Mr. Coffee Caf&eacute; Barista — easiest path for beginners who want convenience</h3>
+      <ProductCard
+        title={products[2].name}
+        image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+        badge={products[2].badge}
+        rating={products[2].rating}
+        price={products[2].price}
+        ctaUrl={amazonUrl(products[2].asin)}
+      />
+      <p>This is the easiest recommendation for buyers who care more about repeatable convenience than espresso craft. The automatic frother helps reduce technique stress, and the larger tank is practical for households making several milk drinks each day.</p>
+      <p>The trade-off is control ceiling. You get fast, good-enough drinks with less manual effort, but fewer ways to fine-tune extraction and texture compared with fully manual steam routines.</p>
+      <ProsCons
+        pros={[
+          'Automatic milk workflow lowers beginner friction',
+          'Good fit for multi-drink households',
+          'Simple day-to-day operation'
+        ]}
+        cons={[
+          'Less texture control than manual steam wands',
+          'More milk-system cleanup steps after use'
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check price on Amazon</CtaButton></p>
 
-  <h3>4) Gevi Compact 20 Bar — best compact machine for small kitchens</h3>
-  <ProductCard
-    title={products[3].name}
-    image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
-    badge={products[3].badge}
-    rating={products[3].rating}
-    price={products[3].price}
-    ctaUrl={amazonUrl(products[3].asin)}
-  />
-  <p>Some buyers are limited by countertop space more than budget. Gevi’s compact footprint is the reason it makes this list. It keeps core pump-machine functionality while fitting apartments, offices, and smaller kitchen setups where wider bodies become annoying fast.</p>
-  <p>Compared with top picks, you may notice a little less consistency across repeated drinks, but if space is your blocker this is still a practical choice that keeps you in the ground-coffee workflow instead of forcing pod-only options.</p>
-  <ProsCons
-    pros={[
-      'Countertop-friendly compact form factor',
-      'Simple control surface for daily use',
-      'Accessible price for small-space setups'
-    ]}
-    cons={[
-      'Not the strongest option for repeatability under heavy daily use',
-      'Can run noisier in shared-space mornings'
-    ]}
-  />
-  <CtaButton href={amazonUrl(products[3].asin)} external>Check price on Amazon</CtaButton>
+      <h3>4) Gevi Compact 20 Bar — best compact machine for small kitchens</h3>
+      <ProductCard
+        title={products[3].name}
+        image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+        badge={products[3].badge}
+        rating={products[3].rating}
+        price={products[3].price}
+        ctaUrl={amazonUrl(products[3].asin)}
+      />
+      <p>Some buyers are limited by countertop space more than budget. Gevi's compact footprint is the reason it makes this list. It keeps core pump-machine functionality while fitting apartments, offices, and smaller kitchen setups where wider bodies become annoying fast.</p>
+      <p>Compared with top picks, you may notice a little less consistency across repeated drinks, but if space is your blocker this is still a practical choice that keeps you in the ground-coffee workflow instead of forcing pod-only options.</p>
+      <ProsCons
+        pros={[
+          'Countertop-friendly compact form factor',
+          'Simple control surface for daily use',
+          'Accessible price for small-space setups'
+        ]}
+        cons={[
+          'Not the strongest option for repeatability under heavy daily use',
+          'Can run noisier in shared-space mornings'
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check price on Amazon</CtaButton></p>
 
-  <h3>5) Flair Neo Flex — best manual option for shot control under $200</h3>
-  <ProductCard
-    title={products[4].name}
-    image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
-    badge={products[4].badge}
-    rating={products[4].rating}
-    price={products[4].price}
-    ctaUrl={amazonUrl(products[4].asin)}
-  />
-  <p>If your priority is extraction control rather than convenience, Neo Flex stands out. It removes pump automation and puts pressure management in your hands, which can produce excellent shots for the money when your prep is disciplined.</p>
-  <p>It is not an all-in-one machine: you will need a kettle workflow and separate milk setup if you want lattes. But for budget buyers who enjoy process and control, this can deliver the highest quality ceiling in the group.</p>
-  <ProsCons
-    pros={[
-      'High control potential for espresso-focused users',
-      'No electric pump noise',
-      'Strong value for enthusiasts on a strict budget'
-    ]}
-    cons={[
-      'Manual workflow is slower and less forgiving',
-      'No integrated steaming for milk drinks'
-    ]}
-  />
-  <CtaButton href={amazonUrl(products[4].asin)} external>Check price on Amazon</CtaButton>
+      <h3>5) Flair Neo Flex — best manual option for shot control under $200</h3>
+      <ProductCard
+        title={products[4].name}
+        image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+        badge={products[4].badge}
+        rating={products[4].rating}
+        price={products[4].price}
+        ctaUrl={amazonUrl(products[4].asin)}
+      />
+      <p>If your priority is extraction control rather than convenience, Neo Flex stands out. It removes pump automation and puts pressure management in your hands, which can produce excellent shots for the money when your prep is disciplined.</p>
+      <p>It is not an all-in-one machine: you will need a kettle workflow and separate milk setup if you want lattes. But for budget buyers who enjoy process and control, this can deliver the highest quality ceiling in the group.</p>
+      <ProsCons
+        pros={[
+          'High control potential for espresso-focused users',
+          'No electric pump noise',
+          'Strong value for enthusiasts on a strict budget'
+        ]}
+        cons={[
+          'Manual workflow is slower and less forgiving',
+          'No integrated steaming for milk drinks'
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check price on Amazon</CtaButton></p>
 
-  <h3>6) Nespresso Essenza Mini — best one-button convenience pick</h3>
-  <ProductCard
-    title={products[5].name}
-    image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
-    badge={products[5].badge}
-    rating={products[5].rating}
-    price={products[5].price}
-    ctaUrl={amazonUrl(products[5].asin)}
-  />
-  <p>Essenza Mini is here for one reason: time. It heats quickly, stays compact, and keeps cleanup very light. If your weekday priority is speed and consistency, this can be a better lifestyle fit than entry pump machines that demand more prep and cleanup attention.</p>
-  <p>Just be clear about the trade-off: capsule workflow sacrifices freshness flexibility and detailed extraction control. For many users that is acceptable because it keeps good coffee realistic every morning.</p>
-  <ProsCons
-    pros={[
-      'Fastest routine in this roundup',
-      'Very compact footprint for tight spaces',
-      'Low maintenance effort'
-    ]}
-    cons={[
-      'Capsule ecosystem limits bean choice flexibility',
-      'Lower long-term espresso craft ceiling versus ground-coffee setups'
-    ]}
-  />
-  <CtaButton href={amazonUrl(products[5].asin)} external>Check price on Amazon</CtaButton>
+      <h3>6) Nespresso Essenza Mini — best one-button convenience pick</h3>
+      <ProductCard
+        title={products[5].name}
+        image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
+        badge={products[5].badge}
+        rating={products[5].rating}
+        price={products[5].price}
+        ctaUrl={amazonUrl(products[5].asin)}
+      />
+      <p>Essenza Mini is here for one reason: time. It heats quickly, stays compact, and keeps cleanup very light. If your weekday priority is speed and consistency, this can be a better lifestyle fit than entry pump machines that demand more prep and cleanup attention.</p>
+      <p>Just be clear about the trade-off: capsule workflow sacrifices freshness flexibility and detailed extraction control. For many users that is acceptable because it keeps good coffee realistic every morning.</p>
+      <ProsCons
+        pros={[
+          'Fastest routine in this roundup',
+          'Very compact footprint for tight spaces',
+          'Low maintenance effort'
+        ]}
+        cons={[
+          'Capsule ecosystem limits bean choice flexibility',
+          'Lower long-term espresso craft ceiling versus ground-coffee setups'
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[5].asin)} external>Check price on Amazon</CtaButton></p>
 
-  <h3>7) De'Longhi ECP3420 — best durability-focused budget pick</h3>
-  <ProductCard
-    title={products[6].name}
-    image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }}
-    badge={products[6].badge}
-    rating={products[6].rating}
-    price={products[6].price}
-    ctaUrl={amazonUrl(products[6].asin)}
-  />
-  <p>The ECP3420 is a pragmatic recommendation for buyers who want a machine that keeps working with routine maintenance. It is not flashy, but it has a long history in budget espresso discussions for a reason: steady daily use and predictable behavior once dialed in.</p>
-  <p>If you care about long ownership and serviceability more than trend features, this is one of the safer buys in the category.</p>
-  <ProsCons
-    pros={[
-      'Strong durability reputation in the budget segment',
-      'Manual wand allows skill growth for milk texture',
-      'Good fit for buyers prioritizing ownership lifespan'
-    ]}
-    cons={[
-      'Less modern feel than newer design-heavy models',
-      'Still benefits from upgrades like a better basket and grinder pairing'
-    ]}
-  />
-  <CtaButton href={amazonUrl(products[6].asin)} external>Check price on Amazon</CtaButton>
+      <h3>7) De'Longhi ECP3420 — best durability-focused budget pick</h3>
+      <ProductCard
+        title={products[6].name}
+        image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }}
+        badge={products[6].badge}
+        rating={products[6].rating}
+        price={products[6].price}
+        ctaUrl={amazonUrl(products[6].asin)}
+      />
+      <p>The ECP3420 is a pragmatic recommendation for buyers who want a machine that keeps working with routine maintenance. It is not flashy, but it has a long history in budget espresso discussions for a reason: steady daily use and predictable behavior once dialed in.</p>
+      <p>If you care about long ownership and serviceability more than trend features, this is one of the safer buys in the category.</p>
+      <ProsCons
+        pros={[
+          'Strong durability reputation in the budget segment',
+          'Manual wand allows skill growth for milk texture',
+          'Good fit for buyers prioritizing ownership lifespan'
+        ]}
+        cons={[
+          'Less modern feel than newer design-heavy models',
+          'Still benefits from upgrades like a better basket and grinder pairing'
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[6].asin)} external>Check price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
 
-  <h2>Performance factors that matter most under $200</h2>
-  <p>Most budget espresso disappointment comes from expectations mismatch, not total machine failure. Buyers see a high pressure number, assume café-level results, then get frustrated when bitter, sour, or thin shots show up in the first week. In this price bracket, the right approach is to optimize the full workflow: grinder consistency, dose discipline, puck prep, and routine maintenance. The machine still matters, but it is one part of a system.</p>
-  <p>Temperature behavior is one of the quiet differentiators in this category. Two machines can look nearly identical and still feel very different across back-to-back drinks. A model that recovers heat predictably helps beginners because timing mistakes are less punishing. If your household makes multiple drinks in one session, this matters more than cosmetic features or oversized pressure labels.</p>
-  <p>Basket style influences how forgiving the machine feels. Pressurized baskets are friendlier when your grinder is limited or when you occasionally use pre-ground coffee. Non-pressurized setups can produce better clarity and balance, but they punish inconsistent grind quality quickly. For most first-time buyers under $200, a forgiving basket plus better grinder habits is usually the fastest route to improvement.</p>
+  <Fragment slot="extra-sections">
+    <section>
+      <h2>Performance factors that matter most under $200</h2>
+      <p>Most budget espresso disappointment comes from expectations mismatch, not total machine failure. Buyers see a high pressure number, assume caf&eacute;-level results, then get frustrated when bitter, sour, or thin shots show up in the first week. In this price bracket, the right approach is to optimize the full workflow: grinder consistency, dose discipline, puck prep, and routine maintenance. The machine still matters, but it is one part of a system.</p>
+      <p>Temperature behavior is one of the quiet differentiators in this category. Two machines can look nearly identical and still feel very different across back-to-back drinks. A model that recovers heat predictably helps beginners because timing mistakes are less punishing. If your household makes multiple drinks in one session, this matters more than cosmetic features or oversized pressure labels.</p>
+      <p>Basket style influences how forgiving the machine feels. Pressurized baskets are friendlier when your grinder is limited or when you occasionally use pre-ground coffee. Non-pressurized setups can produce better clarity and balance, but they punish inconsistent grind quality quickly. For most first-time buyers under $200, a forgiving basket plus better grinder habits is usually the fastest route to improvement.</p>
 
-  <h3>Why grinders still decide your cup quality</h3>
-  <p>Even the best espresso machine under 200 cannot save inconsistent grounds. If particle size swings too wide, water finds weak paths through the puck and extraction drifts cup to cup. That is why people sometimes blame a machine when the grinder is the actual bottleneck. A machine upgrade can help, but consistent grinding usually delivers bigger quality gains first.</p>
-  <p>If your budget is tight, start by stabilizing three variables before buying more gear: dose weight, grind size, and shot yield target. Keep those stable for one week and your results usually become more predictable. From there, micro-adjust grind size and shot time. This method is slower than random tinkering, but it builds repeatable outcomes and lowers frustration.</p>
+      <h3>Why grinders still decide your cup quality</h3>
+      <p>Even the best espresso machine under 200 cannot save inconsistent grounds. If particle size swings too wide, water finds weak paths through the puck and extraction drifts cup to cup. That is why people sometimes blame a machine when the grinder is the actual bottleneck. A machine upgrade can help, but consistent grinding usually delivers bigger quality gains first.</p>
+      <p>If your budget is tight, start by stabilizing three variables before buying more gear: dose weight, grind size, and shot yield target. Keep those stable for one week and your results usually become more predictable. From there, micro-adjust grind size and shot time. This method is slower than random tinkering, but it builds repeatable outcomes and lowers frustration.</p>
 
-  <h3>Milk drink strategy for budget machines</h3>
-  <p>Milk drinks hide some extraction flaws, which can be useful when you are still learning. But milk workflow should still match your machine. Manual steam wands reward technique and can produce richer texture once you practice, while automatic systems reduce friction and keep weekday speed high. Neither is universally better; they solve different problems.</p>
-  <p>For cappuccino-heavy households, look at cleanup flow as much as milk texture quality. A machine that creates extra detachable milk parts may save effort during brewing but add effort afterward. If daily cleanup feels annoying, quality declines over time because routines slip. The right pick is the machine whose maintenance you will realistically do every day.</p>
+      <h3>Milk drink strategy for budget machines</h3>
+      <p>Milk drinks hide some extraction flaws, which can be useful when you are still learning. But milk workflow should still match your machine. Manual steam wands reward technique and can produce richer texture once you practice, while automatic systems reduce friction and keep weekday speed high. Neither is universally better; they solve different problems.</p>
+      <p>For cappuccino-heavy households, look at cleanup flow as much as milk texture quality. A machine that creates extra detachable milk parts may save effort during brewing but add effort afterward. If daily cleanup feels annoying, quality declines over time because routines slip. The right pick is the machine whose maintenance you will realistically do every day.</p>
 
-  <h3>Counter space, noise, and practical ownership</h3>
-  <p>Under-$200 buyers often ignore kitchen constraints during shopping, then regret it after purchase. Measure your real footprint, including side access for refills and front access for cup placement. Compact designs are not just about aesthetics; they affect whether the machine feels convenient or in the way.</p>
-  <p>Noise profile also matters in shared homes. Pump machines can be loud enough to change when you brew, especially early mornings. If that conflicts with your routine, a quieter workflow might create more long-term value than chasing slightly better extraction potential. This is why convenience picks and compact picks remain on the list even when enthusiast options score higher in pure control.</p>
+      <h3>Counter space, noise, and practical ownership</h3>
+      <p>Under-$200 buyers often ignore kitchen constraints during shopping, then regret it after purchase. Measure your real footprint, including side access for refills and front access for cup placement. Compact designs are not just about aesthetics; they affect whether the machine feels convenient or in the way.</p>
+      <p>Noise profile also matters in shared homes. Pump machines can be loud enough to change when you brew, especially early mornings. If that conflicts with your routine, a quieter workflow might create more long-term value than chasing slightly better extraction potential. This is why convenience picks and compact picks remain on the list even when enthusiast options score higher in pure control.</p>
 
-  <h3>When to upgrade versus when to optimize</h3>
-  <p>A lot of buyers ask whether they should replace their machine after a few weak shots. Usually, no. Before replacing anything, run a quick optimization cycle: fresh beans, better grind consistency, measured dose, proper puck prep, and regular descaling. In many cases, this dramatically improves cup quality without spending more money.</p>
-  <p>Upgrade only when your limits are clear and repeatable. For example, if you consistently want stronger steam performance for back-to-back milk drinks, then a machine change makes sense. If your issue is inconsistent extraction from variable grind size, spending on a better grinder is typically the smarter move.</p>
+      <h3>When to upgrade versus when to optimize</h3>
+      <p>A lot of buyers ask whether they should replace their machine after a few weak shots. Usually, no. Before replacing anything, run a quick optimization cycle: fresh beans, better grind consistency, measured dose, proper puck prep, and regular descaling. In many cases, this dramatically improves cup quality without spending more money.</p>
+      <p>Upgrade only when your limits are clear and repeatable. For example, if you consistently want stronger steam performance for back-to-back milk drinks, then a machine change makes sense. If your issue is inconsistent extraction from variable grind size, spending on a better grinder is typically the smarter move.</p>
 
-  <h3>Budget planning that avoids buyer's remorse</h3>
-  <p>Think in system cost, not machine sticker price. A realistic setup includes the machine, grinder quality, scale, basic cleaning tools, and descaling supplies. Skipping all accessories to maximize machine spend usually backfires. A balanced setup often produces better espresso than an expensive machine paired with weak support tools.</p>
-  <p>For most people, the sweet spot is a reliable machine between entry and mid budget, then steady improvement through workflow discipline. That approach keeps costs controlled and still delivers a noticeable quality jump over pod-only convenience coffee. It also gives you a clean upgrade path later: improve grinder first, then machine only when your skill and routine justify it.</p>
+      <h3>Budget planning that avoids buyer's remorse</h3>
+      <p>Think in system cost, not machine sticker price. A realistic setup includes the machine, grinder quality, scale, basic cleaning tools, and descaling supplies. Skipping all accessories to maximize machine spend usually backfires. A balanced setup often produces better espresso than an expensive machine paired with weak support tools.</p>
+      <p>For most people, the sweet spot is a reliable machine between entry and mid budget, then steady improvement through workflow discipline. That approach keeps costs controlled and still delivers a noticeable quality jump over pod-only convenience coffee. It also gives you a clean upgrade path later: improve grinder first, then machine only when your skill and routine justify it.</p>
+    </section>
+  </Fragment>
 
-  <BuyingGuideSection>
-    <h2 id="buying-guide">Buying guide: how to choose the right machine under $200</h2>
-    <p>The easiest mistake in this budget is chasing feature lists without matching your routine. Start with your weekday reality: do you want better espresso craft, faster milk drinks, or minimal cleanup? The answer should decide your machine category before you compare model names.</p>
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide: how to choose the right machine under $200</h2>
+      <p>The easiest mistake in this budget is chasing feature lists without matching your routine. Start with your weekday reality: do you want better espresso craft, faster milk drinks, or minimal cleanup? The answer should decide your machine category before you compare model names.</p>
 
-    <h3>Step 1: pick your workflow type first</h3>
-    <p>If you enjoy learning extraction and milk technique, choose a semi-automatic or manual setup. If your main goal is quick, repeatable drinks, convenience-focused systems often deliver better real-world value even if they have a lower espresso ceiling.</p>
+      <h3>Step 1: pick your workflow type first</h3>
+      <p>If you enjoy learning extraction and milk technique, choose a semi-automatic or manual setup. If your main goal is quick, repeatable drinks, convenience-focused systems often deliver better real-world value even if they have a lower espresso ceiling.</p>
 
-    <h3>Step 2: budget for grinder and scale, not just the machine</h3>
-    <p>In this tier, grind consistency has more impact than small machine differences. If your grinder is inconsistent, even a good machine produces uneven cups. For practical setup planning, pair this guide with our <a href="/posts/best-burr-grinder-for-espresso.html">best burr grinder for espresso</a> and <a href="/posts/burr-grinder-settings-for-espresso.html">espresso grind settings guide</a>.</p>
+      <h3>Step 2: budget for grinder and scale, not just the machine</h3>
+      <p>In this tier, grind consistency has more impact than small machine differences. If your grinder is inconsistent, even a good machine produces uneven cups. For practical setup planning, pair this guide with our <a href="/posts/best-burr-grinder-for-espresso.html">best burr grinder for espresso</a> and <a href="/posts/burr-grinder-settings-for-espresso.html">espresso grind settings guide</a>.</p>
 
-    <h3>Step 3: check maintenance tolerance before you buy</h3>
-    <p>Every machine here needs routine cleaning to stay consistent. Some have easier drip-tray access and simpler milk cleanup than others. If you know you dislike maintenance, choose the model with the least friction because that is what keeps quality stable over months.</p>
+      <h3>Step 3: check maintenance tolerance before you buy</h3>
+      <p>Every machine here needs routine cleaning to stay consistent. Some have easier drip-tray access and simpler milk cleanup than others. If you know you dislike maintenance, choose the model with the least friction because that is what keeps quality stable over months.</p>
 
-    <HeroSteps
-      title="Simple maintenance cadence for budget espresso machines"
-      subtitle="A repeatable routine keeps shots cleaner and machine behavior more stable"
-      steps={[
-        { label: 'Daily', icon: 'calendar', actions: ['Rinse basket and portafilter', 'Purge wand after milk drinks', 'Wipe tray and drip area'], time: '~3 min' },
-        { label: 'Weekly', icon: 'check', actions: ['Deep-rinse removable parts', 'Clean steam tip openings', 'Brush coffee oils from key touch points'], time: '~10 min' },
-        { label: 'Monthly', icon: 'wrench', actions: ['Descale based on water hardness', 'Inspect seals and gaskets', 'Reset your grind baseline'], time: '~20 min' },
-      ]}
-      outcome="Better flavor consistency, fewer clogs, and longer machine lifespan"
-    />
+      <HeroSteps
+        title="Simple maintenance cadence for budget espresso machines"
+        subtitle="A repeatable routine keeps shots cleaner and machine behavior more stable"
+        steps={[
+          { label: 'Daily', icon: 'calendar', actions: ['Rinse basket and portafilter', 'Purge wand after milk drinks', 'Wipe tray and drip area'], time: '~3 min' },
+          { label: 'Weekly', icon: 'check', actions: ['Deep-rinse removable parts', 'Clean steam tip openings', 'Brush coffee oils from key touch points'], time: '~10 min' },
+          { label: 'Monthly', icon: 'wrench', actions: ['Descale based on water hardness', 'Inspect seals and gaskets', 'Reset your grind baseline'], time: '~20 min' },
+        ]}
+        outcome="Better flavor consistency, fewer clogs, and longer machine lifespan"
+      />
 
-    <h3>Step 4: match machine to your drink priority</h3>
-    <p>If you mostly drink straight espresso, prioritize extraction control and basket compatibility. If you mostly drink milk beverages, prioritize steam usability and easy cleanup after frothing. For supporting gear, our <a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">espresso and pour-over scale guide</a> helps tighten consistency without overspending.</p>
+      <h3>Step 4: match machine to your drink priority</h3>
+      <p>If you mostly drink straight espresso, prioritize extraction control and basket compatibility. If you mostly drink milk beverages, prioritize steam usability and easy cleanup after frothing. For supporting gear, our <a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">espresso and pour-over scale guide</a> helps tighten consistency without overspending.</p>
 
-    <h3>Step 5: choose realistic upgrade path</h3>
-    <p>A smart under-200 buy should not trap you. Favor models that work now and still improve with better grinding and prep habits later. That way your next upgrade can be selective rather than a complete reset.</p>
-  </BuyingGuideSection>
+      <h3>Step 5: choose realistic upgrade path</h3>
+      <p>A smart under-200 buy should not trap you. Favor models that work now and still improve with better grinding and prep habits later. That way your next upgrade can be selective rather than a complete reset.</p>
+    </BuyingGuideSection>
+  </Fragment>
 
-  <h2 id="faq">Frequently asked questions</h2>
-  <FaqAccordion>
-    {faqs.map((faq) => (
-      <FaqItem question={faq.q}>
-        <p>{faq.a}</p>
-      </FaqItem>
-    ))}
-  </FaqAccordion>
-
-  <h2 id="related">Related espresso guides</h2>
-  <ul>
-    <li><a href="/posts/best-burr-grinder-for-espresso.html">Best Burr Grinder for Espresso</a></li>
-    <li><a href="/posts/burr-grinder-settings-for-espresso.html">Burr Grinder Settings for Espresso</a></li>
-    <li><a href="/posts/best-hand-grinder-for-espresso-under-100.html">Best Hand Grinder for Espresso Under $100</a></li>
-    <li><a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">Best Coffee Scale for Espresso and Pour Over</a></li>
-  </ul>
-</PostLayout>
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related">Related espresso guides</h2>
+      <ul>
+        <li><a href="/posts/best-burr-grinder-for-espresso.html">Best Burr Grinder for Espresso</a></li>
+        <li><a href="/posts/burr-grinder-settings-for-espresso.html">Burr Grinder Settings for Espresso</a></li>
+        <li><a href="/posts/best-hand-grinder-for-espresso-under-100.html">Best Hand Grinder for Espresso Under $100</a></li>
+        <li><a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">Best Coffee Scale for Espresso and Pour Over</a></li>
+      </ul>
+    </section>
+  </Fragment>
+</MoneyPage>

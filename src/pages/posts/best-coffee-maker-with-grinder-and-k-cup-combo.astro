@@ -1,135 +1,40 @@
 ---
-import PostLayout from '../../layouts/PostLayout.astro';
-import JsonLd from '../../components/JsonLd.astro';
-import QuickPicks from '../../components/QuickPicks.astro';
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsCons from '../../components/ProsCons.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
-import FaqAccordion from '../../components/FaqAccordion.astro';
-import FaqItem from '../../components/FaqItem.astro';
-import CtaButton from '../../components/CtaButton.astro';
-import HeroPicks from '../../components/HeroPicks.astro';
 import HeroSteps from '../../components/HeroSteps.astro';
-import Toc from '../../components/Toc.astro';
-import BestForBadge from '../../components/BestForBadge.astro';
-import { SITE, blogPosting, publisher } from '../../data/site';
 import { getResolvedProducts, amazonUrl } from '../../data/products';
 
 const products = getResolvedProducts('best-coffee-maker-with-grinder-and-k-cup-combo');
-
-const title = 'Best Coffee Maker with Grinder and K-Cup Combo (2026)';
-const description = 'Compare the best bean-and-pod coffee makers by flavor, speed, cleanup effort, and K-Cup compatibility to choose the right hybrid machine.';
-const slug = 'best-coffee-maker-with-grinder-and-k-cup-combo';
-const canonical = `${SITE.url}/posts/${slug}.html`;
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    blogPosting({
-      headline: 'Best Coffee Maker with Grinder and K-Cup Combo (2026): 7 Researched Picks',
-      description: 'Compare seven bean-and-pod coffee makers by speed, cleanup burden, grinder quality, and hybrid workflow value.',
-      slug,
-      datePublished: '2026-03-06',
-      dateModified: '2026-03-06',
-      image: 'https://m.media-amazon.com/images/P/B08MGYR9SX.01._AC_SL500_.jpg',
-    }),
-    {
-      "@type": "ItemList",
-      "name": "Best Coffee Maker with Grinder and K-Cup Combo Picks",
-      "itemListOrder": "https://schema.org/ItemListOrderAscending",
-      "numberOfItems": 7,
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Cuisinart SS-GB1"},
-        {"@type":"ListItem","position":2,"name":"Cuisinart Grind & Brew Single-Serve"},
-        {"@type":"ListItem","position":3,"name":"Gevi 4-in-1 Grind & Brew"},
-        {"@type":"ListItem","position":4,"name":"BLACK+DECKER Mill & Brew"},
-        {"@type":"ListItem","position":5,"name":"Chefman InstaCoffee Max+"},
-        {"@type":"ListItem","position":6,"name":"Breville Grind Control"},
-        {"@type":"ListItem","position":7,"name":"De'Longhi TrueBrew"}
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Are coffee makers with grinder and K-Cup combo systems worth it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "They are worth it for households that use both bean and pod modes regularly. If your routine is almost all one mode, a dedicated machine is usually better value."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can one machine really handle beans, ground coffee, and K-Cups well?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Better hybrid machines can handle all three modes, but each model has trade-offs in grinder quality, speed, and maintenance burden."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is a burr grinder necessary in a hybrid machine?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Not mandatory, but burr grinders improve consistency and flavor clarity. Choose burr when cup quality matters more than lowest upfront cost."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How often should I deep-clean these combo systems to avoid clogs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Rinse brew parts daily, clean grinder and pod-path components weekly, and descale monthly. In hard-water homes, descale every 2 to 3 weeks."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is a realistic brew time from whole beans to one cup?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most one-cup hybrid machines take around 4 to 6 minutes from whole beans, while carafe-focused models are typically slower for full-batch output."
-          }
-        }
-      ]
-    },
-  ],
-};
 ---
-<PostLayout
-  title={title}
-  description={description}
-  canonical={canonical}
+
+<MoneyPage
+  slug="best-coffee-maker-with-grinder-and-k-cup-combo"
+  title="Best Coffee Maker with Grinder and K-Cup Combo (2026)"
+  description="Compare the best bean-and-pod coffee makers by flavor, speed, cleanup effort, and K-Cup compatibility to choose the right hybrid machine."
+  category="brewers"
+  datePublished="2026-03-06"
+  dateModified="2026-03-06"
   ogTitle="Best Coffee Maker with Grinder and K-Cup Combo (2026): 7 Researched Picks"
   ogDescription="7 hybrid bean + pod coffee makers ranked by workflow speed, maintenance burden, and flavor-first value."
   ogImage="https://m.media-amazon.com/images/P/B08MGYR9SX.01._AC_SL500_.jpg"
-  breadcrumbs={[
-    { label: 'Home', href: '/' },
-    { label: 'All Guides', href: '/posts/' },
-    { label: 'Best Coffee Maker with Grinder and K-Cup Combo' },
-  ]}
->
-  <JsonLd data={jsonLd} slot="head" />
-
-  <h1>Best Coffee Maker with Grinder and K-Cup Combo (2026): 7 Researched Picks</h1>
-  <p class="lead">If you want fresh-bean flavor on weekdays but still need pod backup for speed, a hybrid grinder + K-Cup machine can be the right buy. We compared seven strong options by cup quality, morning workflow friction, and real maintenance burden so you can pick once and avoid buyer regret.</p>
-
-  <HeroPicks
-    title="Best Coffee Maker with Grinder and K-Cup Combo"
-    subtitle="7 hybrid bean + pod machines compared by speed, cleanup, and daily workflow"
-    picks={[
+  products={products}
+  heroPicks={{
+    title: "Best Coffee Maker with Grinder and K-Cup Combo",
+    subtitle: "7 hybrid bean + pod machines compared by speed, cleanup, and daily workflow",
+    picks: [
       { category: 'Budget', tagline: 'Lowest cost grind-and-brew entry', icon: 'dollar', color: '#059669', features: ['Affordable blade grinder', 'Large 12-cup carafe output', 'Beans + ground coffee modes', 'Simple daily cleanup'], topPick: 'BLACK+DECKER Mill & Brew', price: '$', subtitle: 'Best value under $100', asin: 'B00LU2I46E' },
       { category: 'Overall', tagline: 'Best all-around hybrid machine', icon: 'target', color: '#2C1810', features: ['Native bean + K-Cup modes', 'Quick single-cup workflow', 'Easy mode switching', 'Moderate maintenance'], topPick: 'Cuisinart SS-GB1', price: '$$', subtitle: 'Cleanest bean-pod compromise', asin: 'B08MGYR9SX' },
       { category: 'Fastest', tagline: 'Quickest single-cup mornings', icon: 'volume-x', color: '#7A5B4A', features: ['Fast bean-to-cup cycle', 'Simple half-awake controls', 'Beans + pods + grounds', 'Compact countertop fit'], topPick: 'Cuisinart Grind & Brew Single-Serve', price: '$$', subtitle: 'Speed-first one-cup brewing', asin: 'B09HDFLF2X' },
       { category: 'Compact', tagline: 'Small footprint flexibility', icon: 'hand', color: '#8B6F47', features: ['Smallest hybrid footprint', 'Ground + K-Cup support', 'Fast warm-up time', 'Office and apartment friendly'], topPick: 'Chefman InstaCoffee Max+', price: '$$', subtitle: 'Compact multi-mode brewer', asin: 'B09NRYX5K7' },
-    ]}
-    footer="coffeegearlab.com - hybrid bean + K-Cup coffee makers - 2026"
-  />
-
-  <p><strong>Direct answer:</strong> The best coffee maker with grinder and K-Cup combo for most buyers is Cuisinart SS-GB1 because it handles beans and pods with less daily friction than most hybrids. If you are flavor-first and can skip pods, Breville Grind Control performs better. If you only care about pod speed, buy a pod-only machine instead.</p>
-
-  <Toc items={[
+    ],
+    footer: "coffeegearlab.com - hybrid bean + K-Cup coffee makers - 2026",
+  }}
+  tocItems={[
+    { href: '#quick-answer', label: 'Direct answer' },
     { href: '#tldr', label: 'TL;DR winners' },
     { href: '#comparison-table', label: 'Comparison table' },
     { href: '#product-picks', label: 'Product picks by buyer fit' },
@@ -137,281 +42,278 @@ const jsonLd = {
     { href: '#buying-guide', label: 'Buying guide' },
     { href: '#faq', label: 'FAQ' },
     { href: '#related-guides', label: 'Related guides' },
-  ]} />
+  ]}
+  faqItems={[
+    { q: 'Are coffee makers with grinder and K-Cup combo systems worth it?', a: 'Yes for mixed households that genuinely use both bean and pod modes. They are less worth it when your routine is almost all pods or almost all bean brewing.' },
+    { q: 'Can one machine really handle beans, ground coffee, and K-Cups well?', a: 'The better hybrids can, but performance is usually strongest in one primary mode. Most still involve trade-offs between grinder quality, speed, and cleaning complexity.' },
+    { q: 'Is a burr grinder necessary in a hybrid machine?', a: 'Not strictly, but burr grinders improve flavor clarity and consistency. If cup quality is your top goal, burr models are worth the higher price.' },
+    { q: 'How often should I deep-clean these combo systems to avoid clogs?', a: 'Do a quick rinse daily, targeted chute and pod-path cleaning weekly, and full descale/deep-clean monthly. Hard-water homes often need descaling every 2-3 weeks.' },
+    { q: 'What is a realistic brew time from whole beans to one cup?', a: 'Most hybrid one-cup models take around 4-6 minutes from whole beans. Carafe-focused machines usually need 8-10 minutes for a full batch.' },
+  ]}
+>
+  <Fragment slot="lead">
+    <p class="lead">If you want fresh-bean flavor on weekdays but still need pod backup for speed, a hybrid grinder + K-Cup machine can be the right buy. We compared seven strong options by cup quality, morning workflow friction, and real maintenance burden so you can pick once and avoid buyer regret.</p>
+  </Fragment>
 
-  <QuickPicks>
-    {products.filter(p => p.featured).map(p => (
+  <Fragment slot="quick-answer">
+    <p id="quick-answer"><strong>Direct answer:</strong> The best coffee maker with grinder and K-Cup combo for most buyers is Cuisinart SS-GB1 because it handles beans and pods with less daily friction than most hybrids. If you are flavor-first and can skip pods, Breville Grind Control performs better. If you only care about pod speed, buy a pod-only machine instead.</p>
+  </Fragment>
+
+  <Fragment slot="comparison-table">
+    <h2 id="tldr">TL;DR winners</h2>
+    <div class="card">
+      <p><strong>Best overall hybrid:</strong> Cuisinart SS-GB1</p>
+      <p><strong>Best budget under $200:</strong> BLACK+DECKER Mill &amp; Brew + reusable pod setup</p>
+      <p><strong>Best easiest cleanup:</strong> Gevi 4-in-1 Grind &amp; Brew</p>
+      <p><strong>Best for fastest mornings:</strong> Cuisinart Grind &amp; Brew Single-Serve</p>
+      <p><strong>Best flavor-first upgrade:</strong> Breville Grind Control</p>
+    </div>
+
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="Prices checked: March 2026" ariaLabel="Coffee makers with grinder and K-Cup combo comparison">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Best for</th>
+            <th>Grinder type</th>
+            <th>Compatibility mode</th>
+            <th>Cup sizes</th>
+            <th>Time to first cup</th>
+            <th>Water reservoir</th>
+            <th>Noise level</th>
+            <th>Maintenance burden</th>
+            <th>Price band</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map(p => (
+            <tr>
+              <td data-label="Product">{p.name}</td>
+              <td data-label="Best for">{p.bestFor}</td>
+              <td data-label="Grinder type">{p.specs.grinderType}</td>
+              <td data-label="Compatibility mode">{p.specs.compatMode}</td>
+              <td data-label="Cup sizes">{p.specs.cupSizes}</td>
+              <td data-label="Time to first cup">{p.specs.timeToFirst}</td>
+              <td data-label="Water reservoir">{p.specs.waterRes}</td>
+              <td data-label="Noise level">{p.specs.noise}</td>
+              <td data-label="Maintenance burden">{p.specs.maintenance}</td>
+              <td data-label="Price band">{p.specs.priceBand}</td>
+              <td><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate</h2>
+      <p>We score each machine on <strong>brew quality</strong>, <strong>grinder consistency</strong>, <strong>usability</strong>, <strong>cleaning burden</strong>, and <strong>value for money</strong>. For this keyword we add a sixth factor: how smoothly each unit handles bean vs pod switching in real weekday routines.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="product-picks">Product picks by buyer fit</h2>
+
+      <h3>1) Cuisinart SS-GB1 — Best Overall Beans + K-Cup Combo</h3>
       <ProductCard
-        title={p.name}
-        badge={p.badge}
-        rating={{ score: p.rating }}
-        price={p.price}
-        ctaUrl={amazonUrl(p.asin)}
-        featured={p.featured}
+        title="Cuisinart SS-GB1"
+        badge={{ label: 'Best Overall', variant: 'overall' }}
+        rating={{ score: 4.3 }}
+        price="$$"
+        ctaUrl={amazonUrl('B08MGYR9SX')}
+        featured={true}
         noImage
       />
-    ))}
-  </QuickPicks>
+      <p><strong>Why this pick:</strong> It is the cleanest compromise between fresh-ground flavor and true pod fallback in one machine.</p>
+      <p><strong>Buy this if...</strong> your home alternates between whole-bean mornings and K-Cup convenience days.</p>
+      <p><strong>Skip this if...</strong> you want burr-level flavor precision or full-carafe output most days.</p>
+      <ProsCons
+        pros={["Native bean + pod compatibility is easy to switch.", "Quick one-cup workflow without full-pot waste.", "Strong fit for mixed-preference households."]}
+        cons={["Blade grinder limits particle uniformity.", "Pod and grinder paths need regular rinsing."]}
+      />
+      <p><strong>Key specs:</strong> Built-in grinder · beans + K-Cup modes · 8/10/12 oz sizes · 40 oz single-serve reservoir.</p>
+      <p><strong>Workflow realism:</strong> Expect about 4-5 minutes from whole beans to finished cup and a 2-3 minute end-of-day rinse routine.</p>
+      <p><CtaButton href="https://www.amazon.com/dp/B08MGYR9SX" external>Check Cuisinart SS-GB1 price on Amazon</CtaButton></p>
 
-  <h2 id="tldr">TL;DR winners</h2>
-  <div class="card">
-    <p><strong>Best overall hybrid:</strong> Cuisinart SS-GB1</p>
-    <p><strong>Best budget under $200:</strong> BLACK+DECKER Mill &amp; Brew + reusable pod setup</p>
-    <p><strong>Best easiest cleanup:</strong> Gevi 4-in-1 Grind &amp; Brew</p>
-    <p><strong>Best for fastest mornings:</strong> Cuisinart Grind &amp; Brew Single-Serve</p>
-    <p><strong>Best flavor-first upgrade:</strong> Breville Grind Control</p>
-  </div>
+      <h3>2) Cuisinart Grind &amp; Brew Single-Serve — Best for Fast Single-Cup Mornings</h3>
+      <ProductCard
+        title="Cuisinart Grind & Brew Single-Serve"
+        badge={{ label: 'Fastest Mornings', variant: 'beginners' }}
+        rating={{ score: 4.3 }}
+        price="$$"
+        ctaUrl={amazonUrl('B09HDFLF2X')}
+        noImage
+      />
+      <p><strong>Why this pick:</strong> It keeps startup friction low while still giving bean freshness and pod fallback in one compact footprint.</p>
+      <p><strong>Buy this if...</strong> you value speed-first one-cup brewing above deep flavor optimization.</p>
+      <p><strong>Skip this if...</strong> you need low-noise grinding or bigger family-size output.</p>
+      <ProsCons
+        pros={["Simple controls that are easy half-awake.", "Handles beans, grounds, and K-Cup styles.", "Reliable weekday pace for solo drinkers."]}
+        cons={["Blade grinding can flatten cup clarity.", "Needs regular descale cadence to keep flow stable."]}
+      />
+      <p><strong>Key specs:</strong> Conical burr grinder · single-serve bean + K-Cup brewing · 8/10/12 oz sizes · 48 oz reservoir.</p>
+      <p><strong>Workflow realism:</strong> Whole-bean cups land in around 4-6 minutes. Plan for weekly pod-needle cleaning to prevent clog drift.</p>
+      <p><CtaButton href="https://www.amazon.com/dp/B09HDFLF2X" external>Check Cuisinart Grind &amp; Brew Single-Serve price on Amazon</CtaButton></p>
 
-  <ComparisonTable timestamp="Prices checked: March 2026" ariaLabel="Coffee makers with grinder and K-Cup combo comparison">
-    <table>
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Best for</th>
-          <th>Grinder type</th>
-          <th>Compatibility mode</th>
-          <th>Cup sizes</th>
-          <th>Time to first cup</th>
-          <th>Water reservoir</th>
-          <th>Noise level</th>
-          <th>Maintenance burden</th>
-          <th>Price band</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {products.map(p => (
-          <tr>
-            <td data-label="Product">{p.name}</td>
-            <td data-label="Best for"><BestForBadge label={p.badge.label} variant={p.badge.variant} /></td>
-            <td data-label="Grinder type">{p.specs.grinderType}</td>
-            <td data-label="Compatibility mode">{p.specs.compatMode}</td>
-            <td data-label="Cup sizes">{p.specs.cupSizes}</td>
-            <td data-label="Time to first cup">{p.specs.timeToFirst}</td>
-            <td data-label="Water reservoir">{p.specs.waterRes}</td>
-            <td data-label="Noise level">{p.specs.noise}</td>
-            <td data-label="Maintenance burden">{p.specs.maintenance}</td>
-            <td data-label="Price band">{p.specs.priceBand}</td>
-            <td><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </ComparisonTable>
+      <h3>3) Gevi 4-in-1 Grind &amp; Brew — Best for Lowest Weekly Cleanup</h3>
+      <ProductCard
+        title="Gevi 4-in-1 Grind & Brew"
+        badge={{ label: 'Easiest Cleanup', variant: 'budget' }}
+        rating={{ score: 4.2 }}
+        price="$$"
+        ctaUrl={amazonUrl('B0GM41GYZH')}
+        noImage
+      />
+      <p><strong>Why this pick:</strong> It has the easiest maintenance rhythm among true hybrid bean + pod options in this price range.</p>
+      <p><strong>Buy this if...</strong> your top priority is low-friction upkeep more than maximum flavor detail.</p>
+      <p><strong>Skip this if...</strong> you want the strongest grinder consistency for nuanced light roasts.</p>
+      <ProsCons
+        pros={["Simple rinse paths and removable components.", "Flexible brew modes for mixed household needs.", "Practical mid-tier pricing."]}
+        cons={["Blade grinder quality is good, not great.", "Long-term reliability data is thinner than legacy brands."]}
+      />
+      <p><strong>Key specs:</strong> No built-in grinder · K-Cup + ground coffee support · 6-14 oz brew sizes · 40 oz reservoir.</p>
+      <p><strong>Workflow realism:</strong> Typical pod or ground-cup cycles land around 3-5 minutes, and weekly cleaning mostly means descaling plus pod-path rinse.</p>
+      <p><CtaButton href="https://www.amazon.com/dp/B0GM41GYZH" external>Check Gevi 4-in-1 price on Amazon</CtaButton></p>
 
-  <section>
-    <h2 id="product-picks">Product picks by buyer fit</h2>
-    <p><strong>How we evaluate:</strong> We score each machine on <strong>brew quality</strong>, <strong>grinder consistency</strong>, <strong>usability</strong>, <strong>cleaning burden</strong>, and <strong>value for money</strong>. For this keyword we add a sixth factor: how smoothly each unit handles bean vs pod switching in real weekday routines.</p>
+      <h3>4) BLACK+DECKER Mill &amp; Brew — Best Budget Hybrid Strategy Under $200</h3>
+      <ProductCard
+        title="BLACK+DECKER Mill & Brew"
+        badge={{ label: 'Best Budget', variant: 'budget' }}
+        rating={{ score: 4.1 }}
+        price="$"
+        ctaUrl={amazonUrl('B00LU2I46E')}
+        noImage
+      />
+      <p><strong>Why this pick:</strong> It is the cheapest reliable entry for bean + ground use, and can still support occasional pod use via reusable pod workflows.</p>
+      <p><strong>Buy this if...</strong> you brew mostly carafes and need strong value before convenience extras.</p>
+      <p><strong>Skip this if...</strong> you need native one-touch K-Cup operation.</p>
+      <ProsCons
+        pros={["Excellent value for new grind-and-brew users.", "Large batch output for families.", "Low ownership cost and easy replacement parts."]}
+        cons={["No native K-Cup module built in.", "Louder grind cycle than premium burr units."]}
+      />
+      <p><strong>Key specs:</strong> Blade grinder · beans + ground support · 12-cup carafe · ~64 oz tank.</p>
+      <p><strong>Workflow realism:</strong> Full-pot brew takes 8-10 minutes and cleanup is low, but pod-style drinks require extra accessory handling.</p>
+      <p><CtaButton href="https://www.amazon.com/dp/B00LU2I46E" external>Check BLACK+DECKER Mill &amp; Brew price on Amazon</CtaButton></p>
 
-    <h3>1) Cuisinart SS-GB1 — Best Overall Beans + K-Cup Combo</h3>
-    <ProductCard
-      title="Cuisinart SS-GB1"
-      badge={{ label: 'Best Overall', variant: 'overall' }}
-      rating={{ score: 4.3 }}
-      price="$$"
-      ctaUrl={amazonUrl('B08MGYR9SX')}
-      featured={true}
-      noImage
-    />
-    <p><strong>Why this pick:</strong> It is the cleanest compromise between fresh-ground flavor and true pod fallback in one machine.</p>
-    <p><strong>Buy this if...</strong> your home alternates between whole-bean mornings and K-Cup convenience days.</p>
-    <p><strong>Skip this if...</strong> you want burr-level flavor precision or full-carafe output most days.</p>
-    <ProsCons
-      pros={["Native bean + pod compatibility is easy to switch.", "Quick one-cup workflow without full-pot waste.", "Strong fit for mixed-preference households."]}
-      cons={["Blade grinder limits particle uniformity.", "Pod and grinder paths need regular rinsing."]}
-    />
-    <p><strong>Key specs:</strong> Built-in grinder · beans + K-Cup modes · 8/10/12 oz sizes · 40 oz single-serve reservoir.</p>
-    <p><strong>Workflow realism:</strong> Expect about 4-5 minutes from whole beans to finished cup and a 2-3 minute end-of-day rinse routine.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B08MGYR9SX" external>Check Cuisinart SS-GB1 price on Amazon</CtaButton></p>
+      <h3>5) Chefman InstaCoffee Max+ — Best Compact Hybrid for Small Kitchens</h3>
+      <ProductCard
+        title="Chefman InstaCoffee Max+"
+        badge={{ label: 'Best Compact', variant: 'pourover' }}
+        rating={{ score: 4.0 }}
+        price="$$"
+        ctaUrl={amazonUrl('B09NRYX5K7')}
+        noImage
+      />
+      <p><strong>Why this pick:</strong> It packs bean + pod flexibility into a smaller footprint than most direct competitors.</p>
+      <p><strong>Buy this if...</strong> counter space is tight and you still need multiple brew modes.</p>
+      <p><strong>Skip this if...</strong> you want larger reservoirs to avoid frequent refills.</p>
+      <ProsCons
+        pros={["Small-footprint layout suits apartments and offices.", "Decent mode flexibility for one-cup routines.", "Fast warm-up relative to many carafe machines."]}
+        cons={["Smaller reservoir increases refill cadence.", "Blade grind quality is average versus burr systems."]}
+      />
+      <p><strong>Key specs:</strong> No built-in grinder · K-Cup + ground coffee support · up to 14 oz capacity · compact single-serve design.</p>
+      <p><strong>Workflow realism:</strong> This is a fast pod/grounds machine (roughly 1-2 minutes to brew) with a tiny footprint and no grinder-cleaning routine.</p>
+      <p><CtaButton href="https://www.amazon.com/dp/B09NRYX5K7" external>Check Chefman InstaCoffee Max+ price on Amazon</CtaButton></p>
 
-    <h3>2) Cuisinart Grind &amp; Brew Single-Serve — Best for Fast Single-Cup Mornings</h3>
-    <ProductCard
-      title="Cuisinart Grind & Brew Single-Serve"
-      badge={{ label: 'Fastest Mornings', variant: 'beginners' }}
-      rating={{ score: 4.3 }}
-      price="$$"
-      ctaUrl={amazonUrl('B09HDFLF2X')}
-      noImage
-    />
-    <p><strong>Why this pick:</strong> It keeps startup friction low while still giving bean freshness and pod fallback in one compact footprint.</p>
-    <p><strong>Buy this if...</strong> you value speed-first one-cup brewing above deep flavor optimization.</p>
-    <p><strong>Skip this if...</strong> you need low-noise grinding or bigger family-size output.</p>
-    <ProsCons
-      pros={["Simple controls that are easy half-awake.", "Handles beans, grounds, and K-Cup styles.", "Reliable weekday pace for solo drinkers."]}
-      cons={["Blade grinding can flatten cup clarity.", "Needs regular descale cadence to keep flow stable."]}
-    />
-    <p><strong>Key specs:</strong> Conical burr grinder · single-serve bean + K-Cup brewing · 8/10/12 oz sizes · 48 oz reservoir.</p>
-    <p><strong>Workflow realism:</strong> Whole-bean cups land in around 4-6 minutes. Plan for weekly pod-needle cleaning to prevent clog drift.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B09HDFLF2X" external>Check Cuisinart Grind &amp; Brew Single-Serve price on Amazon</CtaButton></p>
+      <h3>6) Breville Grind Control — Best Flavor-First Burr Upgrade</h3>
+      <ProductCard
+        title="Breville Grind Control"
+        badge={{ label: 'Best Flavor Upgrade', variant: 'upgrade' }}
+        rating={{ score: 4.5 }}
+        price="$$$"
+        ctaUrl={amazonUrl('B00VGGVQCI')}
+        noImage
+      />
+      <p><strong>Why this pick:</strong> If cup quality beats pod convenience in your priorities, this is the strongest everyday burr upgrade in the cluster.</p>
+      <p><strong>Buy this if...</strong> you care most about cleaner extraction and better grind consistency.</p>
+      <p><strong>Skip this if...</strong> you require direct K-Cup compatibility out of the box.</p>
+      <ProsCons
+        pros={["Burr grinder improves repeatability and clarity.", "Useful control set for strength and grind tuning.", "Single-cup and carafe flexibility in one body."]}
+        cons={["Price climbs above most hybrid blade competitors.", "More chute care needed to keep retention down."]}
+      />
+      <p><strong>Key specs:</strong> Burr grinder · beans + ground modes · 8 oz to 12-cup output · 60 oz reservoir.</p>
+      <p><strong>Workflow realism:</strong> Bean-to-cup takes around 6-9 minutes depending on strength settings, with weekly brush cleaning mandatory.</p>
+      <p><CtaButton href="https://www.amazon.com/dp/B00VGGVQCI" external>Check Breville Grind Control price on Amazon</CtaButton></p>
 
-    <h3>3) Gevi 4-in-1 Grind &amp; Brew — Best for Lowest Weekly Cleanup</h3>
-    <ProductCard
-      title="Gevi 4-in-1 Grind & Brew"
-      badge={{ label: 'Easiest Cleanup', variant: 'budget' }}
-      rating={{ score: 4.2 }}
-      price="$$"
-      ctaUrl={amazonUrl('B0GM41GYZH')}
-      noImage
-    />
-    <p><strong>Why this pick:</strong> It has the easiest maintenance rhythm among true hybrid bean + pod options in this price range.</p>
-    <p><strong>Buy this if...</strong> your top priority is low-friction upkeep more than maximum flavor detail.</p>
-    <p><strong>Skip this if...</strong> you want the strongest grinder consistency for nuanced light roasts.</p>
-    <ProsCons
-      pros={["Simple rinse paths and removable components.", "Flexible brew modes for mixed household needs.", "Practical mid-tier pricing."]}
-      cons={["Blade grinder quality is good, not great.", "Long-term reliability data is thinner than legacy brands."]}
-    />
-    <p><strong>Key specs:</strong> No built-in grinder · K-Cup + ground coffee support · 6-14 oz brew sizes · 40 oz reservoir.</p>
-    <p><strong>Workflow realism:</strong> Typical pod or ground-cup cycles land around 3-5 minutes, and weekly cleaning mostly means descaling plus pod-path rinse.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B0GM41GYZH" external>Check Gevi 4-in-1 price on Amazon</CtaButton></p>
+      <h3>7) De'Longhi TrueBrew — Best Premium Upgrade for Mixed One-Cup + Carafe Use</h3>
+      <ProductCard
+        title="De'Longhi TrueBrew"
+        badge={{ label: 'Best Premium', variant: 'espresso' }}
+        rating={{ score: 4.4 }}
+        price="$$$"
+        ctaUrl={amazonUrl('B0F3ZSVPPG')}
+        noImage
+      />
+      <p><strong>Why this pick:</strong> It gives the broadest brew-size range for users who bounce between quick singles and larger weekend batches.</p>
+      <p><strong>Buy this if...</strong> you want premium build quality and flexible output formats from one machine.</p>
+      <p><strong>Skip this if...</strong> your budget is tight or you need pod support without adapters.</p>
+      <ProsCons
+        pros={["Burr grinding improves consistency over most blade hybrids.", "Wide size presets from small cups to larger servings.", "Quiet operation relative to many similarly capable models."]}
+        cons={["Premium price tier.", "More components to keep clean over time."]}
+      />
+      <p><strong>Key specs:</strong> Built-in conical burr grinder · bean-only brewing (no K-Cup mode) · 8-24 oz sizes plus espresso-style setting · 60 oz reservoir.</p>
+      <p><strong>Workflow realism:</strong> One-cup bean brews usually finish in 5-8 minutes; monthly descale and grinder-path cleaning keep extraction stable.</p>
+      <p><CtaButton href="https://www.amazon.com/dp/B0F3ZSVPPG" external>Check De'Longhi TrueBrew price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
 
-    <h3>4) BLACK+DECKER Mill &amp; Brew — Best Budget Hybrid Strategy Under $200</h3>
-    <ProductCard
-      title="BLACK+DECKER Mill & Brew"
-      badge={{ label: 'Best Budget', variant: 'budget' }}
-      rating={{ score: 4.1 }}
-      price="$"
-      ctaUrl={amazonUrl('B00LU2I46E')}
-      noImage
-    />
-    <p><strong>Why this pick:</strong> It is the cheapest reliable entry for bean + ground use, and can still support occasional pod use via reusable pod workflows.</p>
-    <p><strong>Buy this if...</strong> you brew mostly carafes and need strong value before convenience extras.</p>
-    <p><strong>Skip this if...</strong> you need native one-touch K-Cup operation.</p>
-    <ProsCons
-      pros={["Excellent value for new grind-and-brew users.", "Large batch output for families.", "Low ownership cost and easy replacement parts."]}
-      cons={["No native K-Cup module built in.", "Louder grind cycle than premium burr units."]}
-    />
-    <p><strong>Key specs:</strong> Blade grinder · beans + ground support · 12-cup carafe · ~64 oz tank.</p>
-    <p><strong>Workflow realism:</strong> Full-pot brew takes 8-10 minutes and cleanup is low, but pod-style drinks require extra accessory handling.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B00LU2I46E" external>Check BLACK+DECKER Mill &amp; Brew price on Amazon</CtaButton></p>
+  <Fragment slot="extra-sections">
+    <section>
+      <h2 id="workflow-realism">Workflow realism: where hybrid machines save time (and where they don't)</h2>
+      <p><strong>Morning speed:</strong> true one-cup hybrids usually land in the 4-6 minute range from whole beans, while carafe-first machines take 8+ minutes.</p>
+      <p><strong>Hidden friction:</strong> switching between oily dark beans and pods without cleaning can clog needles and flatten flavor quickly.</p>
+      <p><strong>Best practical rule:</strong> if you use pod mode more than 70% of the time, buy a dedicated pod unit and keep a separate grinder for quality bean days.</p>
+      <p>Not sure whether your routine should start with batch drip or one-cup convenience? Compare both paths in <a href="/posts/drip-vs-single-serve-coffee-maker.html">drip vs single-serve coffee maker</a> before paying for hybrid flexibility.</p>
+    </section>
+  </Fragment>
 
-    <h3>5) Chefman InstaCoffee Max+ — Best Compact Hybrid for Small Kitchens</h3>
-    <ProductCard
-      title="Chefman InstaCoffee Max+"
-      badge={{ label: 'Best Compact', variant: 'pourover' }}
-      rating={{ score: 4.0 }}
-      price="$$"
-      ctaUrl={amazonUrl('B09NRYX5K7')}
-      noImage
-    />
-    <p><strong>Why this pick:</strong> It packs bean + pod flexibility into a smaller footprint than most direct competitors.</p>
-    <p><strong>Buy this if...</strong> counter space is tight and you still need multiple brew modes.</p>
-    <p><strong>Skip this if...</strong> you want larger reservoirs to avoid frequent refills.</p>
-    <ProsCons
-      pros={["Small-footprint layout suits apartments and offices.", "Decent mode flexibility for one-cup routines.", "Fast warm-up relative to many carafe machines."]}
-      cons={["Smaller reservoir increases refill cadence.", "Blade grind quality is average versus burr systems."]}
-    />
-    <p><strong>Key specs:</strong> No built-in grinder · K-Cup + ground coffee support · up to 14 oz capacity · compact single-serve design.</p>
-    <p><strong>Workflow realism:</strong> This is a fast pod/grounds machine (roughly 1-2 minutes to brew) with a tiny footprint and no grinder-cleaning routine.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B09NRYX5K7" external>Check Chefman InstaCoffee Max+ price on Amazon</CtaButton></p>
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide</h2>
 
-    <h3>6) Breville Grind Control — Best Flavor-First Burr Upgrade</h3>
-    <ProductCard
-      title="Breville Grind Control"
-      badge={{ label: 'Best Flavor Upgrade', variant: 'upgrade' }}
-      rating={{ score: 4.5 }}
-      price="$$$"
-      ctaUrl={amazonUrl('B00VGGVQCI')}
-      noImage
-    />
-    <p><strong>Why this pick:</strong> If cup quality beats pod convenience in your priorities, this is the strongest everyday burr upgrade in the cluster.</p>
-    <p><strong>Buy this if...</strong> you care most about cleaner extraction and better grind consistency.</p>
-    <p><strong>Skip this if...</strong> you require direct K-Cup compatibility out of the box.</p>
-    <ProsCons
-      pros={["Burr grinder improves repeatability and clarity.", "Useful control set for strength and grind tuning.", "Single-cup and carafe flexibility in one body."]}
-      cons={["Price climbs above most hybrid blade competitors.", "More chute care needed to keep retention down."]}
-    />
-    <p><strong>Key specs:</strong> Burr grinder · beans + ground modes · 8 oz to 12-cup output · 60 oz reservoir.</p>
-    <p><strong>Workflow realism:</strong> Bean-to-cup takes around 6-9 minutes depending on strength settings, with weekly brush cleaning mandatory.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B00VGGVQCI" external>Check Breville Grind Control price on Amazon</CtaButton></p>
+      <HeroSteps
+        title="Hybrid Machine Maintenance"
+        subtitle="Keep both bean and pod paths clean to avoid stale flavor crossover"
+        steps={[
+          { label: 'Daily', icon: 'zap', actions: ['Rinse brew basket', 'Empty pod bin and drip tray', 'Wipe grinder chute lid'], time: '~2 min' },
+          { label: 'Weekly', icon: 'wind', actions: ['Brush burr/chute path', 'Flush pod needle area', 'Wash reservoir and lid'], time: '~5 min' },
+          { label: 'Monthly', icon: 'wrench', actions: ['Descale full brew path', 'Deep-clean hopper seals', 'Check for stale bean oils'], time: '~15 min' },
+        ]}
+        outcome="Most taste complaints in hybrid machines come from missed weekly grinder and pod-path cleaning"
+      />
 
-    <h3>7) De'Longhi TrueBrew — Best Premium Upgrade for Mixed One-Cup + Carafe Use</h3>
-    <ProductCard
-      title="De'Longhi TrueBrew"
-      badge={{ label: 'Best Premium', variant: 'espresso' }}
-      rating={{ score: 4.4 }}
-      price="$$$"
-      ctaUrl={amazonUrl('B0F3ZSVPPG')}
-      noImage
-    />
-    <p><strong>Why this pick:</strong> It gives the broadest brew-size range for users who bounce between quick singles and larger weekend batches.</p>
-    <p><strong>Buy this if...</strong> you want premium build quality and flexible output formats from one machine.</p>
-    <p><strong>Skip this if...</strong> your budget is tight or you need pod support without adapters.</p>
-    <ProsCons
-      pros={["Burr grinding improves consistency over most blade hybrids.", "Wide size presets from small cups to larger servings.", "Quiet operation relative to many similarly capable models."]}
-      cons={["Premium price tier.", "More components to keep clean over time."]}
-    />
-    <p><strong>Key specs:</strong> Built-in conical burr grinder · bean-only brewing (no K-Cup mode) · 8-24 oz sizes plus espresso-style setting · 60 oz reservoir.</p>
-    <p><strong>Workflow realism:</strong> One-cup bean brews usually finish in 5-8 minutes; monthly descale and grinder-path cleaning keep extraction stable.</p>
-    <p><CtaButton href="https://www.amazon.com/dp/B0F3ZSVPPG" external>Check De'Longhi TrueBrew price on Amazon</CtaButton></p>
-  </section>
+      <h3>When K-Cup compatibility is actually worth it</h3>
+      <p>It is worth paying for if your household genuinely alternates between fresh beans and fast pods. If you almost never use pods, skip the hybrid premium and use our <a href="/posts/best-coffee-maker-with-grinder.html">best coffee maker with grinder guide</a> for stronger flavor-focused picks.</p>
 
-  <section>
-    <h2 id="workflow-realism">Workflow realism: where hybrid machines save time (and where they don't)</h2>
-    <p><strong>Morning speed:</strong> true one-cup hybrids usually land in the 4-6 minute range from whole beans, while carafe-first machines take 8+ minutes.</p>
-    <p><strong>Hidden friction:</strong> switching between oily dark beans and pods without cleaning can clog needles and flatten flavor quickly.</p>
-    <p><strong>Best practical rule:</strong> if you use pod mode more than 70% of the time, buy a dedicated pod unit and keep a separate grinder for quality bean days.</p>
-    <p>Not sure whether your routine should start with batch drip or one-cup convenience? Compare both paths in <a href="/posts/drip-vs-single-serve-coffee-maker.html">drip vs single-serve coffee maker</a> before paying for hybrid flexibility.</p>
-  </section>
+      <h3>Burr vs blade impact in hybrid machines</h3>
+      <p>Burr systems produce cleaner flavor and better repeatability. Blade systems cost less and are easier to maintain. For deeper grinder context, compare our <a href="/posts/best-single-serve-coffee-maker-with-grinder.html">single-serve grinder roundup</a> and <a href="/posts/best-burr-coffee-grinder-under-200.html">best burr grinder under $200 picks</a>.</p>
 
-  <BuyingGuideSection>
-    <h2 id="buying-guide">Buying guide</h2>
+      <h3>How reservoir size changes daily workflow</h3>
+      <p>Sub-45 oz tanks are fine for one user but trigger refill fatigue in shared homes. If your machine serves multiple people, prioritize 50+ oz capacity to reduce interruptions and keep brew temperature more stable.</p>
 
-    <HeroSteps
-      title="Hybrid Machine Maintenance"
-      subtitle="Keep both bean and pod paths clean to avoid stale flavor crossover"
-      steps={[
-        { label: 'Daily', icon: 'zap', actions: ['Rinse brew basket', 'Empty pod bin and drip tray', 'Wipe grinder chute lid'], time: '~2 min' },
-        { label: 'Weekly', icon: 'wind', actions: ['Brush burr/chute path', 'Flush pod needle area', 'Wash reservoir and lid'], time: '~5 min' },
-        { label: 'Monthly', icon: 'wrench', actions: ['Descale full brew path', 'Deep-clean hopper seals', 'Check for stale bean oils'], time: '~15 min' },
-      ]}
-      outcome="Most taste complaints in hybrid machines come from missed weekly grinder and pod-path cleaning"
-    />
+      <h3>Real maintenance checklist (daily / weekly / monthly)</h3>
+      <p>Daily: rinse brew basket and pod tray. Weekly: brush chute and flush pod needle area. Monthly: descale and deep-clean hopper seals. Use our full <a href="/posts/how-to-clean-burr-coffee-grinder.html">grinder cleaning routine</a> and pair with dose consistency from the <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a>.</p>
+    </BuyingGuideSection>
+  </Fragment>
 
-    <h3>When K-Cup compatibility is actually worth it</h3>
-    <p>It is worth paying for if your household genuinely alternates between fresh beans and fast pods. If you almost never use pods, skip the hybrid premium and use our <a href="/posts/best-coffee-maker-with-grinder.html">best coffee maker with grinder guide</a> for stronger flavor-focused picks.</p>
-
-    <h3>Burr vs blade impact in hybrid machines</h3>
-    <p>Burr systems produce cleaner flavor and better repeatability. Blade systems cost less and are easier to maintain. For deeper grinder context, compare our <a href="/posts/best-single-serve-coffee-maker-with-grinder.html">single-serve grinder roundup</a> and <a href="/posts/best-burr-coffee-grinder-under-200.html">best burr grinder under $200 picks</a>.</p>
-
-    <h3>How reservoir size changes daily workflow</h3>
-    <p>Sub-45 oz tanks are fine for one user but trigger refill fatigue in shared homes. If your machine serves multiple people, prioritize 50+ oz capacity to reduce interruptions and keep brew temperature more stable.</p>
-
-    <h3>Real maintenance checklist (daily / weekly / monthly)</h3>
-    <p>Daily: rinse brew basket and pod tray. Weekly: brush chute and flush pod needle area. Monthly: descale and deep-clean hopper seals. Use our full <a href="/posts/how-to-clean-burr-coffee-grinder.html">grinder cleaning routine</a> and pair with dose consistency from the <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a>.</p>
-  </BuyingGuideSection>
-
-  <section>
-    <h2 id="faq">Frequently Asked Questions</h2>
-    <FaqAccordion>
-      <FaqItem question="Are coffee makers with grinder and K-Cup combo systems worth it?">
-        <p>Yes for mixed households that genuinely use both bean and pod modes. They are less worth it when your routine is almost all pods or almost all bean brewing.</p>
-      </FaqItem>
-      <FaqItem question="Can one machine really handle beans, ground coffee, and K-Cups well?">
-        <p>The better hybrids can, but performance is usually strongest in one primary mode. Most still involve trade-offs between grinder quality, speed, and cleaning complexity.</p>
-      </FaqItem>
-      <FaqItem question="Is a burr grinder necessary in a hybrid machine?">
-        <p>Not strictly, but burr grinders improve flavor clarity and consistency. If cup quality is your top goal, burr models are worth the higher price.</p>
-      </FaqItem>
-      <FaqItem question="How often should I deep-clean these combo systems to avoid clogs?">
-        <p>Do a quick rinse daily, targeted chute and pod-path cleaning weekly, and full descale/deep-clean monthly. Hard-water homes often need descaling every 2-3 weeks.</p>
-      </FaqItem>
-      <FaqItem question="What is a realistic brew time from whole beans to one cup?">
-        <p>Most hybrid one-cup models take around 4-6 minutes from whole beans. Carafe-focused machines usually need 8-10 minutes for a full batch.</p>
-      </FaqItem>
-    </FaqAccordion>
-  </section>
-
-  <section>
-    <h2 id="related-guides">Related guides</h2>
-    <ul>
-      <li><a href="/posts/best-single-serve-coffee-maker-with-grinder.html">Best Single-Serve Coffee Maker with Grinder (2026)</a></li>
-      <li><a href="/posts/best-coffee-maker-with-grinder.html">Best Coffee Maker with Grinder (2026)</a></li>
-      <li><a href="/posts/best-drip-coffee-maker-under-100.html">Best Drip Coffee Maker Under $100</a></li>
-      <li><a href="/posts/drip-vs-single-serve-coffee-maker.html">Drip vs Single-Serve Coffee Maker (Buyer Comparison)</a></li>
-      <li><a href="/posts/best-burr-coffee-grinder-under-200.html">Best Burr Coffee Grinder Under $200</a></li>
-      <li><a href="/posts/how-to-clean-burr-coffee-grinder.html">How to Clean a Burr Coffee Grinder</a></li>
-      <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide</a></li>
-      <li><a href="/posts/burr-grinder-settings-for-espresso.html">Burr Grinder Settings for Espresso</a></li>
-    </ul>
-  </section>
-</PostLayout>
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/best-single-serve-coffee-maker-with-grinder.html">Best Single-Serve Coffee Maker with Grinder (2026)</a></li>
+        <li><a href="/posts/best-coffee-maker-with-grinder.html">Best Coffee Maker with Grinder (2026)</a></li>
+        <li><a href="/posts/best-drip-coffee-maker-under-100.html">Best Drip Coffee Maker Under $100</a></li>
+        <li><a href="/posts/drip-vs-single-serve-coffee-maker.html">Drip vs Single-Serve Coffee Maker (Buyer Comparison)</a></li>
+        <li><a href="/posts/best-burr-coffee-grinder-under-200.html">Best Burr Coffee Grinder Under $200</a></li>
+        <li><a href="/posts/how-to-clean-burr-coffee-grinder.html">How to Clean a Burr Coffee Grinder</a></li>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide</a></li>
+        <li><a href="/posts/burr-grinder-settings-for-espresso.html">Burr Grinder Settings for Espresso</a></li>
+      </ul>
+    </section>
+  </Fragment>
+</MoneyPage>

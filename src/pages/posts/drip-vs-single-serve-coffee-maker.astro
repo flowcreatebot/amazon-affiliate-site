@@ -1,156 +1,106 @@
 ---
-import PostLayout from '../../layouts/PostLayout.astro';
-import JsonLd from '../../components/JsonLd.astro';
+import VsComparison from '../../layouts/page-types/VsComparison.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
-import FaqAccordion from '../../components/FaqAccordion.astro';
-import FaqItem from '../../components/FaqItem.astro';
-import HeroVersus from '../../components/HeroVersus.astro';
-import Toc from '../../components/Toc.astro';
-import Pill from '../../components/Pill.astro';
-import CategoryPills from '../../components/CategoryPills.astro';
-import { SITE, blogPosting, publisher } from '../../data/site';
-
-const title = 'Drip vs Single-Serve Coffee Maker (2026): Which Should You Buy?';
-const description = 'Compare drip vs single-serve coffee makers on brew speed, cup cost, cleanup, and household fit so you can choose the right machine for daily use.';
-const slug = 'drip-vs-single-serve-coffee-maker';
-const canonical = `${SITE.url}/posts/${slug}.html`;
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    blogPosting({
-      headline: title,
-      description: 'Drip vs single-serve coffee makers compared on speed, cup cost, cleanup burden, and household-fit workflows.',
-      slug,
-      datePublished: '2026-03-06',
-      dateModified: '2026-03-06',
-      image: `${SITE.url}/og-default.png`,
-    }),
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"Which is cheaper long-term: drip or single-serve?","acceptedAnswer":{"@type":"Answer","text":"Drip is usually cheaper long-term because bulk ground coffee costs less per cup than pods. Single-serve can still be worthwhile when convenience and lower brew waste are priorities."}},
-        {"@type":"Question","name":"Do single-serve machines always make worse coffee than drip?","acceptedAnswer":{"@type":"Answer","text":"No. Good single-serve machines can be consistent and enjoyable, but drip setups usually offer higher flavor ceiling when grind and brew variables are controlled."}},
-        {"@type":"Question","name":"What is better for families: drip or single-serve?","acceptedAnswer":{"@type":"Answer","text":"Drip is generally better for families because it handles multi-cup demand with lower repeated effort."}},
-        {"@type":"Question","name":"Can one machine handle both drip and pod workflows?","acceptedAnswer":{"@type":"Answer","text":"Some hybrid models can. They trade some flavor precision for flexibility, so choose them only if you will use both modes regularly."}},
-        {"@type":"Question","name":"How often should I descale each type?","acceptedAnswer":{"@type":"Answer","text":"Descale every 1 to 3 months depending on water hardness and brew frequency. Hard-water homes usually need a shorter schedule."}}
-      ],
-    },
-  ],
-};
 ---
-<PostLayout
-  title={title}
-  description={description}
-  canonical={canonical}
+
+<VsComparison
+  slug="drip-vs-single-serve-coffee-maker"
+  title="Drip vs Single-Serve Coffee Maker (2026): Which Should You Buy?"
+  description="Compare drip vs single-serve coffee makers on brew speed, cup cost, cleanup, and household fit so you can choose the right machine for daily use."
+  category="brewers"
+  datePublished="2026-03-06"
+  dateModified="2026-03-06"
   ogDescription="Side-by-side buyer comparison for speed, ownership cost, cleanup burden, and practical household fit."
-  breadcrumbs={[
-    { label: 'Home', href: '/' },
-    { label: 'All Guides', href: '/posts/' },
-    { label: 'Drip vs Single-Serve Coffee Maker' },
-  ]}
->
-  <JsonLd data={jsonLd} slot="head" />
-
-  <h1>Drip vs Single-Serve Coffee Maker (2026): Fast Buyer Decision Guide</h1>
-  <p class="lead">Both machine types can make decent coffee, but they solve different problems. If you brew for multiple people and care about lower per-cup cost, drip usually wins. If you prioritize one-cup speed and low decision friction, single-serve is often the better fit.</p>
-
-  <CategoryPills>
-    <Pill text="Supporting Page" />
-    <Pill text="Brewer Comparison" />
-    <Pill text="Commercial Intent Assist" />
-  </CategoryPills>
-
-  <HeroVersus
-    title="Drip vs Single-Serve Coffee Maker"
-    subtitle="Two machine types, different daily trade-offs — here's how they compare"
-    left={{ name: 'Drip', icon: 'coffee', color: '#5C3D2E', bestFor: 'Batch brewing, lower cup cost, multi-person households' }}
-    right={{ name: 'Single-Serve', icon: 'zap', color: '#0369A1', bestFor: 'One-cup speed, low decision friction, varied schedules' }}
-    stats={[
+  categoryPills={["Supporting Page", "Brewer Comparison", "Commercial Intent Assist"]}
+  heroVersus={{
+    title: "Drip vs Single-Serve Coffee Maker",
+    subtitle: "Two machine types, different daily trade-offs — here's how they compare",
+    left: { name: 'Drip', icon: 'coffee', color: '#5C3D2E', bestFor: 'Batch brewing, lower cup cost, multi-person households' },
+    right: { name: 'Single-Serve', icon: 'zap', color: '#0369A1', bestFor: 'One-cup speed, low decision friction, varied schedules' },
+    stats: [
       { label: 'Time to first cup', value: '~6–10 min (full pot) | ~3–5 min (single cup)', winner: 'right' },
       { label: 'Cost per cup', value: 'Lower with ground beans | Higher with pods', winner: 'left' },
       { label: 'Flavor ceiling', value: 'Higher when dialed in | Consistent, less tweakable', winner: 'left' },
       { label: 'Cleanup', value: 'Basket + carafe + descale | Needle path + drip tray', winner: 'tie' },
       { label: 'Batch size', value: '4–12 cups per brew | 1 cup at a time', winner: 'left' },
       { label: 'Counter footprint', value: 'Medium-Large | Small-Medium', winner: 'right' },
-    ]}
-    verdict="Drip for multi-cup households on a budget. Single-serve for fast solo mornings."
-    footer="coffeegearlab.com · 2026 brewer comparison"
-  />
-
-  <p><strong>Quick answer:</strong> Buy a <strong>drip coffee maker</strong> if you usually brew 2+ cups per session and want lower running cost with bulk coffee. Buy a <strong>single-serve machine</strong> if you need faster one-cup convenience, cleaner weekday workflows, or flexible drink choices with minimal prep.</p>
-
-  <Toc items={[
+    ],
+    verdict: "Drip for multi-cup households on a budget. Single-serve for fast solo mornings.",
+    footer: "coffeegearlab.com · 2026 brewer comparison",
+  }}
+  tocItems={[
     { href: '#comparison', label: 'Side-by-side comparison' },
     { href: '#workflow', label: 'Workflow realism: speed, refill cadence, cleanup' },
     { href: '#cost', label: 'Cost per cup and long-term ownership reality' },
     { href: '#buy-fit', label: 'Buy this if... / skip this if...' },
     { href: '#best-next-step', label: 'Best next step by buyer type' },
     { href: '#faq', label: 'FAQ' },
-  ]} ordered />
+  ]}
+  faqItems={[
+    { q: 'Which is cheaper long-term: drip or single-serve?', a: 'Drip is usually cheaper long-term because bulk ground coffee costs less per cup than pods. Single-serve can still be reasonable when convenience and reduced brew waste matter most.' },
+    { q: 'Do single-serve machines always make worse coffee than drip?', a: 'Not always. High-quality single-serve machines can be consistent and tasty, but drip setups usually offer a higher flavor ceiling when grind, ratio, and water quality are dialed in.' },
+    { q: 'What is better for families: drip or single-serve?', a: 'Drip is better for most families because it handles multi-cup demand with less repeated effort. Single-serve fits households with staggered routines and different drink preferences.' },
+    { q: 'Can one machine handle both drip and pod workflows?', a: 'Some hybrid machines can. They trade some flavor precision for flexibility, so choose them only if you will use both modes regularly.' },
+    { q: 'How often should I descale each type?', a: 'For both types, descale every 1-3 months depending on water hardness and usage. Hard-water homes usually need a shorter cadence to keep flow rate and flavor stable.' },
+  ]}
+>
+  <Fragment slot="lead">
+    <p class="lead">Both machine types can make decent coffee, but they solve different problems. If you brew for multiple people and care about lower per-cup cost, drip usually wins. If you prioritize one-cup speed and low decision friction, single-serve is often the better fit.</p>
+  </Fragment>
 
-  <h2 id="comparison">Side-by-side comparison</h2>
-  <ComparisonTable>
-    <table>
-      <thead>
-        <tr><th>Decision factor</th><th>Drip coffee maker</th><th>Single-serve coffee maker</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Best for</td><td data-label="Drip coffee maker">2-4 drinkers, batch brewing, lower cup cost</td><td data-label="Single-serve coffee maker">Solo drinkers, varied schedules, one-cup convenience</td></tr>
-        <tr><td>Time to first cup</td><td data-label="Drip coffee maker">~6-10 min (full-pot design)</td><td data-label="Single-serve coffee maker">~3-5 min (single-cup design)</td></tr>
-        <tr><td>Per-cup running cost</td><td data-label="Drip coffee maker">Usually lower with ground beans + paper filters</td><td data-label="Single-serve coffee maker">Higher with pods; moderate with reusable pod workflows</td></tr>
-        <tr><td>Flavor ceiling</td><td data-label="Drip coffee maker">High when ratio, grind, and water temp are controlled</td><td data-label="Single-serve coffee maker">Consistent and convenient, less tweakability by default</td></tr>
-        <tr><td>Cleanup burden</td><td data-label="Drip coffee maker">Low-Medium (basket, carafe, periodic descale)</td><td data-label="Single-serve coffee maker">Low-Medium (needle path, pod area, drip tray)</td></tr>
-        <tr><td>Counter footprint</td><td data-label="Drip coffee maker">Medium-Large</td><td data-label="Single-serve coffee maker">Small-Medium</td></tr>
-        <tr><td>Ownership friction</td><td data-label="Drip coffee maker">Refill less often, brew more at once</td><td data-label="Single-serve coffee maker">Refill/empty less brew waste, but more frequent small tasks</td></tr>
-      </tbody>
-    </table>
-  </ComparisonTable>
+  <Fragment slot="quick-verdict">
+    <p><strong>Quick answer:</strong> Buy a <strong>drip coffee maker</strong> if you usually brew 2+ cups per session and want lower running cost with bulk coffee. Buy a <strong>single-serve machine</strong> if you need faster one-cup convenience, cleaner weekday workflows, or flexible drink choices with minimal prep.</p>
+  </Fragment>
 
-  <h2 id="workflow">Workflow realism: speed, refill cadence, cleanup</h2>
-  <p>Drip machines feel slower at first cup, but they are efficient when your household drinks multiple cups in a short window. Single-serve machines win for irregular schedules and quick solo brews, especially when different people want different cup sizes or roast styles.</p>
-  <p>If you are choosing between fresh-ground and pod-heavy workflows, compare our <a href="/posts/best-single-serve-coffee-maker-with-grinder.html">best single-serve coffee maker with grinder picks</a> and <a href="/posts/best-coffee-maker-with-grinder-and-k-cup-combo.html">best coffee maker with grinder + K-Cup combo roundup</a>.</p>
+  <Fragment slot="comparison-table">
+    <h2 id="comparison">Side-by-side comparison</h2>
+    <ComparisonTable>
+      <table>
+        <thead>
+          <tr><th>Decision factor</th><th>Drip coffee maker</th><th>Single-serve coffee maker</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Best for</td><td data-label="Drip coffee maker">2-4 drinkers, batch brewing, lower cup cost</td><td data-label="Single-serve coffee maker">Solo drinkers, varied schedules, one-cup convenience</td></tr>
+          <tr><td>Time to first cup</td><td data-label="Drip coffee maker">~6-10 min (full-pot design)</td><td data-label="Single-serve coffee maker">~3-5 min (single-cup design)</td></tr>
+          <tr><td>Per-cup running cost</td><td data-label="Drip coffee maker">Usually lower with ground beans + paper filters</td><td data-label="Single-serve coffee maker">Higher with pods; moderate with reusable pod workflows</td></tr>
+          <tr><td>Flavor ceiling</td><td data-label="Drip coffee maker">High when ratio, grind, and water temp are controlled</td><td data-label="Single-serve coffee maker">Consistent and convenient, less tweakability by default</td></tr>
+          <tr><td>Cleanup burden</td><td data-label="Drip coffee maker">Low-Medium (basket, carafe, periodic descale)</td><td data-label="Single-serve coffee maker">Low-Medium (needle path, pod area, drip tray)</td></tr>
+          <tr><td>Counter footprint</td><td data-label="Drip coffee maker">Medium-Large</td><td data-label="Single-serve coffee maker">Small-Medium</td></tr>
+          <tr><td>Ownership friction</td><td data-label="Drip coffee maker">Refill less often, brew more at once</td><td data-label="Single-serve coffee maker">Refill/empty less brew waste, but more frequent small tasks</td></tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
 
-  <h2 id="cost">Cost per cup and long-term ownership reality</h2>
-  <p><strong>Drip usually wins long-term cost</strong> when you brew regularly using ground coffee. <strong>Single-serve often wins convenience</strong> when waste reduction and decision speed matter more than pure cost-per-cup math.</p>
-  <p>Budget-conscious buyers should start with our <a href="/posts/best-drip-coffee-maker-under-100.html">best drip coffee maker under $100 guide</a>. If your priority is one-cup speed with fresh beans, use <a href="/posts/best-coffee-maker-with-grinder.html">best coffee maker with grinder</a> for stronger flavor-first options.</p>
+  <Fragment slot="feature-comparisons">
+    <h2 id="workflow">Workflow realism: speed, refill cadence, cleanup</h2>
+    <p>Drip machines feel slower at first cup, but they are efficient when your household drinks multiple cups in a short window. Single-serve machines win for irregular schedules and quick solo brews, especially when different people want different cup sizes or roast styles.</p>
+    <p>If you are choosing between fresh-ground and pod-heavy workflows, compare our <a href="/posts/best-single-serve-coffee-maker-with-grinder.html">best single-serve coffee maker with grinder picks</a> and <a href="/posts/best-coffee-maker-with-grinder-and-k-cup-combo.html">best coffee maker with grinder + K-Cup combo roundup</a>.</p>
 
-  <h2 id="buy-fit">Buy this if... / Skip this if...</h2>
-  <h3>Drip coffee maker</h3>
-  <p><strong>Buy this if...</strong> you brew for multiple people, want lower per-cup cost, and prefer predictable batch routines.</p>
-  <p><strong>Skip this if...</strong> your schedule is unpredictable and you mostly make one cup at a time.</p>
+    <h2 id="cost">Cost per cup and long-term ownership reality</h2>
+    <p><strong>Drip usually wins long-term cost</strong> when you brew regularly using ground coffee. <strong>Single-serve often wins convenience</strong> when waste reduction and decision speed matter more than pure cost-per-cup math.</p>
+    <p>Budget-conscious buyers should start with our <a href="/posts/best-drip-coffee-maker-under-100.html">best drip coffee maker under $100 guide</a>. If your priority is one-cup speed with fresh beans, use <a href="/posts/best-coffee-maker-with-grinder.html">best coffee maker with grinder</a> for stronger flavor-first options.</p>
+  </Fragment>
 
-  <h3>Single-serve coffee maker</h3>
-  <p><strong>Buy this if...</strong> you need fast one-cup convenience and value low-friction mornings over absolute lowest cup cost.</p>
-  <p><strong>Skip this if...</strong> your home regularly needs full-carafe volume and you dislike pod-related upkeep.</p>
+  <Fragment slot="buyer-profiles">
+    <h2 id="buy-fit">Buy this if... / Skip this if...</h2>
+    <h3>Drip coffee maker</h3>
+    <p><strong>Buy this if...</strong> you brew for multiple people, want lower per-cup cost, and prefer predictable batch routines.</p>
+    <p><strong>Skip this if...</strong> your schedule is unpredictable and you mostly make one cup at a time.</p>
 
-  <h2 id="best-next-step">Best next step by buyer type</h2>
-  <ul>
-    <li><strong>Batch-first household:</strong> Start with <a href="/posts/best-drip-coffee-maker-under-100.html">Best Drip Coffee Maker Under $100</a>.</li>
-    <li><strong>One-cup speed-first buyer:</strong> Start with <a href="/posts/best-single-serve-coffee-maker-with-grinder.html">Best Single-Serve Coffee Maker with Grinder</a>.</li>
-    <li><strong>Mixed bean + pod household:</strong> Use <a href="/posts/best-coffee-maker-with-grinder-and-k-cup-combo.html">Best Coffee Maker with Grinder and K-Cup Combo</a>.</li>
-    <li><strong>Flavor-first but still automated:</strong> Compare with <a href="/posts/best-coffee-maker-with-grinder.html">Best Coffee Maker with Grinder</a>.</li>
-    <li><strong>Consistency tuning:</strong> Lock extraction with the <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a>.</li>
-  </ul>
+    <h3>Single-serve coffee maker</h3>
+    <p><strong>Buy this if...</strong> you need fast one-cup convenience and value low-friction mornings over absolute lowest cup cost.</p>
+    <p><strong>Skip this if...</strong> your home regularly needs full-carafe volume and you dislike pod-related upkeep.</p>
+  </Fragment>
 
-  <section>
-    <h2 id="faq">FAQ</h2>
-    <FaqAccordion>
-      <FaqItem question="Which is cheaper long-term: drip or single-serve?">
-        <p>Drip is usually cheaper long-term because bulk ground coffee costs less per cup than pods. Single-serve can still be reasonable when convenience and reduced brew waste matter most.</p>
-      </FaqItem>
-      <FaqItem question="Do single-serve machines always make worse coffee than drip?">
-        <p>Not always. High-quality single-serve machines can be consistent and tasty, but drip setups usually offer a higher flavor ceiling when grind, ratio, and water quality are dialed in.</p>
-      </FaqItem>
-      <FaqItem question="What is better for families: drip or single-serve?">
-        <p>Drip is better for most families because it handles multi-cup demand with less repeated effort. Single-serve fits households with staggered routines and different drink preferences.</p>
-      </FaqItem>
-      <FaqItem question="Can one machine handle both drip and pod workflows?">
-        <p>Some hybrid machines can. If you need both modes regularly, see our <a href="/posts/best-coffee-maker-with-grinder-and-k-cup-combo.html">beans + K-Cup combo guide</a> for realistic trade-offs.</p>
-      </FaqItem>
-      <FaqItem question="How often should I descale each type?">
-        <p>For both types, descale every 1-3 months depending on water hardness and usage. Hard-water homes usually need a shorter cadence to keep flow rate and flavor stable.</p>
-      </FaqItem>
-    </FaqAccordion>
-  </section>
-</PostLayout>
+  <Fragment slot="supporting-gear">
+    <h2 id="best-next-step">Best next step by buyer type</h2>
+    <ul>
+      <li><strong>Batch-first household:</strong> Start with <a href="/posts/best-drip-coffee-maker-under-100.html">Best Drip Coffee Maker Under $100</a>.</li>
+      <li><strong>One-cup speed-first buyer:</strong> Start with <a href="/posts/best-single-serve-coffee-maker-with-grinder.html">Best Single-Serve Coffee Maker with Grinder</a>.</li>
+      <li><strong>Mixed bean + pod household:</strong> Use <a href="/posts/best-coffee-maker-with-grinder-and-k-cup-combo.html">Best Coffee Maker with Grinder and K-Cup Combo</a>.</li>
+      <li><strong>Flavor-first but still automated:</strong> Compare with <a href="/posts/best-coffee-maker-with-grinder.html">Best Coffee Maker with Grinder</a>.</li>
+      <li><strong>Consistency tuning:</strong> Lock extraction with the <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a>.</li>
+    </ul>
+  </Fragment>
+</VsComparison>

@@ -1,522 +1,425 @@
 ---
-import PostLayout from '../../layouts/PostLayout.astro';
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsCons from '../../components/ProsCons.astro';
-import FaqAccordion from '../../components/FaqAccordion.astro';
-import FaqItem from '../../components/FaqItem.astro';
-import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
-import JsonLd from '../../components/JsonLd.astro';
-import HeroPicks from '../../components/HeroPicks.astro';
-import Toc from '../../components/Toc.astro';
-import { SITE, blogPosting, publisher } from '../../data/site';
 import { getResolvedProducts, amazonUrl } from '../../data/products';
 
-const slug = 'best-pour-over-coffee-maker';
-const title = 'Best Pour Over Coffee Maker (2026): 6 Top Picks';
-const description = 'Compare the best pour over coffee maker options in 2026 with researched picks, buying tips, and a side-by-side table for beginners and daily brewers.';
-const canonical = `${SITE.url}/posts/${slug}.html`;
-
 const products = getResolvedProducts('best-pour-over-coffee-maker');
-
-const faq = [
-  {
-    question: 'What is the easiest pour-over coffee maker for beginners?',
-    answer:
-      'A simple cone dripper with easy-to-find paper filters is usually easiest. For most new brewers, the Hario V60 01 or a Melitta-style setup keeps the learning curve manageable while still making clean coffee.',
-  },
-  {
-    question: 'Does Chemex make better coffee than V60?',
-    answer:
-      'Not automatically. Chemex often gives a cleaner and lighter cup because of thicker paper filters, while V60 gives more recipe control and can produce brighter or sweeter cups depending on grind and pouring style.',
-  },
-  {
-    question: 'Can one grinder work for all pour-over brewers?',
-    answer:
-      'Yes. A consistent burr grinder can cover V60, Chemex, Melitta, and immersion-style drippers. You usually adjust coarser for slower brewers and finer for faster-draining brewers.',
-  },
-  {
-    question: 'How often should I replace pour-over filters?',
-    answer:
-      'Paper filters are single-use, so replace them every brew. Keep filter packs dry and sealed to avoid stale paper smells and inconsistent flow.',
-  },
-];
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    blogPosting({
-      headline: title,
-      description,
-      slug,
-      datePublished: '2026-03-07',
-      dateModified: '2026-03-11',
-      image: 'https://m.media-amazon.com/images/I/51cCw+yG9BL._AC_SL500_.jpg',
-    }),
-    {
-      '@type': 'ItemList',
-      name: 'Best Pour Over Coffee Maker Picks',
-      itemListElement: products.map((p, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: p.name,
-        url: amazonUrl(p.asin),
-      })),
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: faq.map((f) => ({
-        '@type': 'Question',
-        name: f.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: f.answer,
-        },
-      })),
-    },
-    publisher,
-  ],
-};
 ---
 
-<PostLayout
-  title={title}
-  description={description}
-  canonical={canonical}
-  breadcrumbs={[
-    { label: 'Home', href: '/' },
-    { label: 'All Guides', href: '/posts/' },
-    { label: 'Best Pour Over Coffee Maker' },
-  ]}
->
-  <Fragment slot="head">
-    <JsonLd data={jsonLd} />
-  </Fragment>
-
-  <h1>Best Pour Over Coffee Maker (2026): 6 Researched Picks</h1>
-  <p class="lead">
-    The best pour over coffee maker is the one that matches your daily routine, not just the one with the most hype.
-    We compared six proven brewers by ease of use, filter availability, cup style, and long-term value so you can
-    choose once and brew confidently.
-  </p>
-
-  <HeroPicks
-    title="Best Pour Over Coffee Maker"
-    subtitle="6 picks compared by brew style — find the right dripper for your routine"
-    picks={[
+<MoneyPage
+  slug="best-pour-over-coffee-maker"
+  title="Best Pour Over Coffee Maker (2026): 6 Top Picks"
+  description="Compare the best pour over coffee maker options in 2026 with researched picks, buying tips, and a side-by-side table for beginners and daily brewers."
+  category="brewers"
+  datePublished="2026-03-07"
+  dateModified="2026-03-11"
+  ogImage="https://m.media-amazon.com/images/I/51cCw+yG9BL._AC_SL500_.jpg"
+  products={products}
+  heroPicks={{
+    title: "Best Pour Over Coffee Maker",
+    subtitle: "6 picks compared by brew style — find the right dripper for your routine",
+    picks: [
       { category: 'Budget', tagline: 'Affordable starter kit', icon: 'dollar', color: '#059669', features: ['Brewer + carafe included', 'Simple daily workflow', 'Easy filter sourcing', 'Beginner-friendly'], topPick: 'Melitta Pour-Over Brewer', price: '$', subtitle: 'Complete starter set', asin: 'B000MIT2OK' },
       { category: 'Precision', tagline: 'Maximum recipe control', icon: 'target', color: '#2C1810', features: ['Broad recipe support', 'Technique-rewarding design', 'Widely available filters', 'Best long-term foundation'], topPick: 'Hario V60 02', price: '$', subtitle: 'Best overall dripper', asin: 'B000P4D5HG' },
       { category: 'Batch', tagline: 'Best for multiple cups', icon: 'volume-x', color: '#7A5B4A', features: ['Clean lighter-bodied cups', 'Built-in carafe server', 'Great for shared brewing', 'Thick-filter clarity'], topPick: 'Chemex Classic 6-Cup', price: '$$', subtitle: 'Multi-cup brewer', asin: 'B0000YWF5E' },
       { category: 'Hybrid', tagline: 'Immersion + pour-over flex', icon: 'hand', color: '#8B6F47', features: ['Steep-and-release mode', 'Standard V60 dripper mode', 'More forgiving technique', 'Weekend experimentation'], topPick: 'Hario V60 Switch', price: '$$', subtitle: 'Dual-mode upgrade', asin: 'B0CK4J1G7V' },
-    ]}
-    footer="coffeegearlab.com - pour over coffee makers - 2026"
-  />
+    ],
+    footer: "coffeegearlab.com - pour over coffee makers - 2026",
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Individual product reviews' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    { q: 'What is the easiest pour-over coffee maker for beginners?', a: 'A simple cone dripper with easy-to-find paper filters is usually easiest. For most new brewers, the Hario V60 01 or a Melitta-style setup keeps the learning curve manageable while still making clean coffee.' },
+    { q: 'Does Chemex make better coffee than V60?', a: 'Not automatically. Chemex often gives a cleaner and lighter cup because of thicker paper filters, while V60 gives more recipe control and can produce brighter or sweeter cups depending on grind and pouring style.' },
+    { q: 'Can one grinder work for all pour-over brewers?', a: 'Yes. A consistent burr grinder can cover V60, Chemex, Melitta, and immersion-style drippers. You usually adjust coarser for slower brewers and finer for faster-draining brewers.' },
+    { q: 'How often should I replace pour-over filters?', a: 'Paper filters are single-use, so replace them every brew. Keep filter packs dry and sealed to avoid stale paper smells and inconsistent flow.' },
+  ]}
+>
+  <Fragment slot="lead">
+    <p class="lead">
+      The best pour over coffee maker is the one that matches your daily routine, not just the one with the most hype.
+      We compared six proven brewers by ease of use, filter availability, cup style, and long-term value so you can
+      choose once and brew confidently.
+    </p>
+  </Fragment>
 
-  <Toc
-    items={[
-      { href: '#quick-picks', label: 'Quick picks' },
-      { href: '#comparison-table', label: 'Comparison table' },
-      { href: '#how-we-evaluate', label: 'How we evaluate' },
-      { href: '#individual-reviews', label: 'Individual product reviews' },
-      { href: '#buying-guide', label: 'Buying guide' },
-      { href: '#faq', label: 'Frequently asked questions' },
-    ]}
-  />
-
-  <h2 id="quick-picks">Quick Picks</h2>
-  <QuickPicks>
-    <ProductCard
-      title={products[0].name}
-      image={{ src: products[0].image, alt: 'Hario V60 Ceramic Coffee Dripper 02 pour over coffee maker', width: 500, height: 500 }}
-      badge={products[0].badge}
-      rating={{ score: products[0].rating }}
-      price="Check price"
-      ctaUrl={amazonUrl(products[0].asin)}
-      featured={true}
-    />
-    <ProductCard
-      title={products[1].name}
-      image={{ src: products[1].image, alt: 'Chemex Classic Series 6-Cup pour over coffee maker', width: 500, height: 500 }}
-      badge={products[1].badge}
-      rating={{ score: products[1].rating }}
-      price="Check price"
-      ctaUrl={amazonUrl(products[1].asin)}
-    />
-    <ProductCard
-      title={products[2].name}
-      image={{ src: products[2].image, alt: 'Melitta Pour-Over Brewer with Glass Carafe pour over coffee maker', width: 500, height: 500 }}
-      badge={products[2].badge}
-      rating={{ score: products[2].rating }}
-      price="Check price"
-      ctaUrl={amazonUrl(products[2].asin)}
-    />
-  </QuickPicks>
-
-  <h2 id="comparison-table">Comparison Table</h2>
-  <ComparisonTable
-    timestamp="Prices updated: March 11, 2026"
-    headers={['Product', 'Best For', 'Style', 'Learning Curve', 'Cleanup', 'Price', 'Link']}
-    ariaLabel="Best pour over coffee maker comparison"
-  >
-    <table>
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Best For</th>
-          <th>Style</th>
-          <th>Learning Curve</th>
-          <th>Cleanup</th>
-          <th>Price</th>
-          <th>Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        {products.map((p) => (
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Comparison Table</h2>
+    <ComparisonTable
+      timestamp="Prices updated: March 11, 2026"
+      ariaLabel="Best pour over coffee maker comparison"
+    >
+      <table>
+        <thead>
           <tr>
-            <td data-label="Product">{p.name}</td>
-            <td data-label="Best For"><span class={`best-for-badge --${p.badge.variant}`}>{p.badge.label}</span></td>
-            <td data-label="Style">{p.asin === 'B0CK4J1G7V' ? 'Hybrid immersion + pour-over' : p.asin === 'B0000YWF5E' ? 'Carafe + thick filter system' : 'Manual cone dripper'}</td>
-            <td data-label="Learning Curve">{p.asin === 'B000MIT2OK' ? 'Easy' : p.asin === 'B0CK4J1G7V' ? 'Low–Medium' : 'Medium'}</td>
-            <td data-label="Cleanup">Easy</td>
-            <td data-label="Price">See Amazon</td>
-            <td data-label="Link"><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
+            <th>Product</th>
+            <th>Best For</th>
+            <th>Style</th>
+            <th>Learning Curve</th>
+            <th>Cleanup</th>
+            <th>Price</th>
+            <th>Link</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
-  </ComparisonTable>
+        </thead>
+        <tbody>
+          {products.map((p) => (
+            <tr>
+              <td data-label="Product">{p.name}</td>
+              <td data-label="Best For"><span class={`best-for-badge --${p.badge.variant}`}>{p.badge.label}</span></td>
+              <td data-label="Style">{p.asin === 'B0CK4J1G7V' ? 'Hybrid immersion + pour-over' : p.asin === 'B0000YWF5E' ? 'Carafe + thick filter system' : 'Manual cone dripper'}</td>
+              <td data-label="Learning Curve">{p.asin === 'B000MIT2OK' ? 'Easy' : p.asin === 'B0CK4J1G7V' ? 'Low–Medium' : 'Medium'}</td>
+              <td data-label="Cleanup">Easy</td>
+              <td data-label="Price">See Amazon</td>
+              <td data-label="Link"><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
 
-  <h2 id="how-we-evaluate">How We Evaluate Pour-Over Brewers</h2>
-  <p>
-    For this roundup, we researched listings, compared brewer design choices, and analyzed what matters in real daily
-    kitchens: consistency, forgiveness, cleanup friction, and filter availability. We do not claim in-house lab
-    testing for this page. Instead, we focused on practical decision criteria that help buyers avoid gear regret.
-  </p>
-  <p>
-    We score each brewer on repeatability first. Can you brew a similar cup tomorrow morning without perfect barista
-    technique? If a brewer only performs when every variable is perfect, it may still be excellent, but it is not the
-    best fit for most homes. We also weight replacement filters heavily because hard-to-find filters are one of the
-    fastest ways a good brewer gets abandoned after a few weeks.
-  </p>
-  <p>
-    Finally, we compare each pick as part of a complete setup. A brewer is only one layer in the chain. A stable pour
-    from a gooseneck kettle, a reliable grind from a burr grinder, and repeatable ratio tracking from a coffee scale
-    matter just as much as the dripper itself. That is why this page links to full setup guides, not just product
-    cards.
-  </p>
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How We Evaluate Pour-Over Brewers</h2>
+      <p>
+        For this roundup, we researched listings, compared brewer design choices, and analyzed what matters in real daily
+        kitchens: consistency, forgiveness, cleanup friction, and filter availability. We do not claim in-house lab
+        testing for this page. Instead, we focused on practical decision criteria that help buyers avoid gear regret.
+      </p>
+      <p>
+        We score each brewer on repeatability first. Can you brew a similar cup tomorrow morning without perfect barista
+        technique? If a brewer only performs when every variable is perfect, it may still be excellent, but it is not the
+        best fit for most homes. We also weight replacement filters heavily because hard-to-find filters are one of the
+        fastest ways a good brewer gets abandoned after a few weeks.
+      </p>
+      <p>
+        Finally, we compare each pick as part of a complete setup. A brewer is only one layer in the chain. A stable pour
+        from a gooseneck kettle, a reliable grind from a burr grinder, and repeatable ratio tracking from a coffee scale
+        matter just as much as the dripper itself. That is why this page links to full setup guides, not just product
+        cards.
+      </p>
+    </section>
+  </Fragment>
 
-  <h2 id="individual-reviews">Individual Product Reviews</h2>
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="product-reviews">Individual Product Reviews</h2>
 
-  <h3>1) Hario V60 Ceramic Coffee Dripper 02 — Best Overall</h3>
-  <ProductCard
-    title="Hario V60 Ceramic Coffee Dripper 02"
-    image={{ src: 'https://m.media-amazon.com/images/I/51cCw+yG9BL._AC_SL500_.jpg', alt: 'Hario V60 Ceramic Coffee Dripper 02 pour over coffee maker', width: 500, height: 500 }}
-    badge={{ label: 'Best Overall', variant: 'overall' }}
-    rating={{ score: 4.7 }}
-    price="Check price"
-    ctaUrl={amazonUrl(products[0].asin)}
-  />
-  <p>
-    The V60 02 remains the safest recommendation for most people. It has broad recipe support, easy filter access, and
-    enough control to reward better technique over time. If you are still learning, you can keep recipes simple. If
-    you like experimenting, the same brewer scales well as your grinder and pouring consistency improve.
-  </p>
-  <ProsCons
-    pros={[
-      'Huge recipe ecosystem with fast troubleshooting support online',
-      'Great balance between beginner accessibility and advanced control',
-      'Replacement filters are widely available and affordable',
-    ]}
-    cons={[
-      'Technique matters more than with very forgiving flat-bottom systems',
-      'Poor grind consistency can quickly show up as uneven extraction',
-    ]}
-  />
-  <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
+      <h3>1) Hario V60 Ceramic Coffee Dripper 02 — Best Overall</h3>
+      <ProductCard
+        title="Hario V60 Ceramic Coffee Dripper 02"
+        image={{ src: 'https://m.media-amazon.com/images/I/51cCw+yG9BL._AC_SL500_.jpg', alt: 'Hario V60 Ceramic Coffee Dripper 02 pour over coffee maker', width: 500, height: 500 }}
+        badge={{ label: 'Best Overall', variant: 'overall' }}
+        rating={{ score: 4.7 }}
+        price="Check price"
+        ctaUrl={amazonUrl(products[0].asin)}
+      />
+      <p>
+        The V60 02 remains the safest recommendation for most people. It has broad recipe support, easy filter access, and
+        enough control to reward better technique over time. If you are still learning, you can keep recipes simple. If
+        you like experimenting, the same brewer scales well as your grinder and pouring consistency improve.
+      </p>
+      <ProsCons
+        pros={[
+          'Huge recipe ecosystem with fast troubleshooting support online',
+          'Great balance between beginner accessibility and advanced control',
+          'Replacement filters are widely available and affordable',
+        ]}
+        cons={[
+          'Technique matters more than with very forgiving flat-bottom systems',
+          'Poor grind consistency can quickly show up as uneven extraction',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
 
-  <h3>2) Chemex Classic Series, 6-Cup — Best for Multiple Cups</h3>
-  <ProductCard
-    title="Chemex Classic Series, 6-Cup"
-    image={{ src: 'https://m.media-amazon.com/images/I/71oMA36JxfL._AC_SL500_.jpg', alt: 'Chemex Classic Series 6-Cup pour over coffee maker', width: 500, height: 500 }}
-    badge={{ label: 'Best for Multiple Cups', variant: 'pourover' }}
-    rating={{ score: 4.7 }}
-    price="Check price"
-    ctaUrl={amazonUrl(products[1].asin)}
-  />
-  <p>
-    Chemex is ideal when your goal is clean, elegant batch brewing for two or more mugs. Its thicker filter style can
-    mute heavier sediment and produce a tea-like cup profile that many people prefer for lighter roasts. It is less
-    agile for quick single-cup mornings, but it shines when you want one larger, tidy brew to serve and share.
-  </p>
-  <ProsCons
-    pros={[
-      'Excellent for cleaner, lighter-bodied cups',
-      'Great match for households brewing more than one cup at a time',
-      'Iconic all-in-one brewer and server design',
-    ]}
-    cons={[
-      'Bulkier than compact cone drippers',
-      'Needs proper grind and pouring pace to avoid slow drawdown',
-    ]}
-  />
-  <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
+      <h3>2) Chemex Classic Series, 6-Cup — Best for Multiple Cups</h3>
+      <ProductCard
+        title="Chemex Classic Series, 6-Cup"
+        image={{ src: 'https://m.media-amazon.com/images/I/71oMA36JxfL._AC_SL500_.jpg', alt: 'Chemex Classic Series 6-Cup pour over coffee maker', width: 500, height: 500 }}
+        badge={{ label: 'Best for Multiple Cups', variant: 'pourover' }}
+        rating={{ score: 4.7 }}
+        price="Check price"
+        ctaUrl={amazonUrl(products[1].asin)}
+      />
+      <p>
+        Chemex is ideal when your goal is clean, elegant batch brewing for two or more mugs. Its thicker filter style can
+        mute heavier sediment and produce a tea-like cup profile that many people prefer for lighter roasts. It is less
+        agile for quick single-cup mornings, but it shines when you want one larger, tidy brew to serve and share.
+      </p>
+      <ProsCons
+        pros={[
+          'Excellent for cleaner, lighter-bodied cups',
+          'Great match for households brewing more than one cup at a time',
+          'Iconic all-in-one brewer and server design',
+        ]}
+        cons={[
+          'Bulkier than compact cone drippers',
+          'Needs proper grind and pouring pace to avoid slow drawdown',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
 
-  <h3>3) Melitta Pour-Over Brewer with Glass Carafe Set — Best Budget</h3>
-  <ProductCard
-    title="Melitta Pour-Over Brewer with Glass Carafe Set"
-    image={{ src: 'https://m.media-amazon.com/images/I/71QX3QG2m3L._AC_SL500_.jpg', alt: 'Melitta Pour-Over Brewer with Glass Carafe pour over coffee maker', width: 500, height: 500 }}
-    badge={{ label: 'Best Budget', variant: 'budget' }}
-    rating={{ score: 4.6 }}
-    price="Check price"
-    ctaUrl={amazonUrl(products[2].asin)}
-  />
-  <p>
-    If you want a complete starter setup at a lower cost, this Melitta bundle is one of the most practical options.
-    It is straightforward to use, easy to clean, and beginner-friendly when you are moving from auto-drip into manual
-    brewing. The tradeoff is less fine-grained control than some premium drippers, but many users value simplicity
-    over endless experimentation.
-  </p>
-  <ProsCons
-    pros={[
-      'Affordable kit with brewer and carafe included',
-      'Simple daily workflow with low setup friction',
-      'Easy filter sourcing in most markets',
-    ]}
-    cons={[
-      'Narrower tuning range than higher-end systems',
-      'Less suitable for advanced extraction experimentation',
-    ]}
-  />
-  <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
+      <h3>3) Melitta Pour-Over Brewer with Glass Carafe Set — Best Budget</h3>
+      <ProductCard
+        title="Melitta Pour-Over Brewer with Glass Carafe Set"
+        image={{ src: 'https://m.media-amazon.com/images/I/71QX3QG2m3L._AC_SL500_.jpg', alt: 'Melitta Pour-Over Brewer with Glass Carafe pour over coffee maker', width: 500, height: 500 }}
+        badge={{ label: 'Best Budget', variant: 'budget' }}
+        rating={{ score: 4.6 }}
+        price="Check price"
+        ctaUrl={amazonUrl(products[2].asin)}
+      />
+      <p>
+        If you want a complete starter setup at a lower cost, this Melitta bundle is one of the most practical options.
+        It is straightforward to use, easy to clean, and beginner-friendly when you are moving from auto-drip into manual
+        brewing. The tradeoff is less fine-grained control than some premium drippers, but many users value simplicity
+        over endless experimentation.
+      </p>
+      <ProsCons
+        pros={[
+          'Affordable kit with brewer and carafe included',
+          'Simple daily workflow with low setup friction',
+          'Easy filter sourcing in most markets',
+        ]}
+        cons={[
+          'Narrower tuning range than higher-end systems',
+          'Less suitable for advanced extraction experimentation',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
 
-  <h3>4) Hario V60 Switch Ceramic Immersion Dripper — Best Upgrade Pick</h3>
-  <ProductCard
-    title="Hario V60 Switch Ceramic Immersion Dripper"
-    image={{ src: 'https://m.media-amazon.com/images/I/41-Q1iUbZ5L._AC_SL500_.jpg', alt: 'Hario V60 Switch Ceramic Immersion Dripper', width: 500, height: 500 }}
-    badge={{ label: 'Best Upgrade Pick', variant: 'upgrade' }}
-    rating={{ score: 4.6 }}
-    price="Check price"
-    ctaUrl={amazonUrl(products[3].asin)}
-  />
-  <p>
-    The V60 Switch adds immersion control to classic V60-style brewing. That makes it useful for brewers who want more
-    consistency on busy mornings, then more experimentation on weekends. You can steep and release for easier
-    repeatability, or run it like a standard dripper for cleaner, higher-clarity cups. It is a smart upgrade if you
-    want flexibility without owning two separate brewers.
-  </p>
-  <ProsCons
-    pros={[
-      'Hybrid brew style supports both immersion and pour-over workflows',
-      'More forgiving when pouring technique is still developing',
-      'Strong long-term tool for recipe experimentation',
-    ]}
-    cons={[
-      'More parts to clean than a basic dripper',
-      'Can feel overkill if you only want a very simple routine',
-    ]}
-  />
-  <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
+      <h3>4) Hario V60 Switch Ceramic Immersion Dripper — Best Upgrade Pick</h3>
+      <ProductCard
+        title="Hario V60 Switch Ceramic Immersion Dripper"
+        image={{ src: 'https://m.media-amazon.com/images/I/41-Q1iUbZ5L._AC_SL500_.jpg', alt: 'Hario V60 Switch Ceramic Immersion Dripper', width: 500, height: 500 }}
+        badge={{ label: 'Best Upgrade Pick', variant: 'upgrade' }}
+        rating={{ score: 4.6 }}
+        price="Check price"
+        ctaUrl={amazonUrl(products[3].asin)}
+      />
+      <p>
+        The V60 Switch adds immersion control to classic V60-style brewing. That makes it useful for brewers who want more
+        consistency on busy mornings, then more experimentation on weekends. You can steep and release for easier
+        repeatability, or run it like a standard dripper for cleaner, higher-clarity cups. It is a smart upgrade if you
+        want flexibility without owning two separate brewers.
+      </p>
+      <ProsCons
+        pros={[
+          'Hybrid brew style supports both immersion and pour-over workflows',
+          'More forgiving when pouring technique is still developing',
+          'Strong long-term tool for recipe experimentation',
+        ]}
+        cons={[
+          'More parts to clean than a basic dripper',
+          'Can feel overkill if you only want a very simple routine',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
 
-  <h3>5) Hario V60 Ceramic Coffee Dripper 01 — Best for Solo Cups</h3>
-  <ProductCard
-    title="Hario V60 Ceramic Coffee Dripper 01"
-    image={{ src: 'https://m.media-amazon.com/images/I/51kbH15026L._AC_SL500_.jpg', alt: 'Hario V60 Ceramic Coffee Dripper 01 pour over', width: 500, height: 500 }}
-    badge={{ label: 'Best for Solo Cups', variant: 'beginners' }}
-    rating={{ score: 4.6 }}
-    price="Check price"
-    ctaUrl={amazonUrl(products[4].asin)}
-  />
-  <p>
-    For one-person households, the V60 01 size is an efficient daily brewer. It keeps dose size tight, speeds prep, and
-    reduces coffee waste when you only need one mug. The brewing behavior is familiar if you already like V60 recipes,
-    but the smaller format often feels easier to manage during early-morning routines.
-  </p>
-  <ProsCons
-    pros={[
-      'Excellent format for single-cup daily brewing',
-      'Compact storage footprint for smaller kitchens',
-      'Keeps the same V60-style recipe ecosystem as larger sizes',
-    ]}
-    cons={[
-      'Not ideal when you need to brew for two people regularly',
-      'Still requires reasonable pour control for consistent cups',
-    ]}
-  />
-  <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
+      <h3>5) Hario V60 Ceramic Coffee Dripper 01 — Best for Solo Cups</h3>
+      <ProductCard
+        title="Hario V60 Ceramic Coffee Dripper 01"
+        image={{ src: 'https://m.media-amazon.com/images/I/51kbH15026L._AC_SL500_.jpg', alt: 'Hario V60 Ceramic Coffee Dripper 01 pour over', width: 500, height: 500 }}
+        badge={{ label: 'Best for Solo Cups', variant: 'beginners' }}
+        rating={{ score: 4.6 }}
+        price="Check price"
+        ctaUrl={amazonUrl(products[4].asin)}
+      />
+      <p>
+        For one-person households, the V60 01 size is an efficient daily brewer. It keeps dose size tight, speeds prep, and
+        reduces coffee waste when you only need one mug. The brewing behavior is familiar if you already like V60 recipes,
+        but the smaller format often feels easier to manage during early-morning routines.
+      </p>
+      <ProsCons
+        pros={[
+          'Excellent format for single-cup daily brewing',
+          'Compact storage footprint for smaller kitchens',
+          'Keeps the same V60-style recipe ecosystem as larger sizes',
+        ]}
+        cons={[
+          'Not ideal when you need to brew for two people regularly',
+          'Still requires reasonable pour control for consistent cups',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
 
-  <h3>6) Hario V60 Ceramic Coffee Dripper 02 (Red) — Best Design Pick</h3>
-  <ProductCard
-    title="Hario V60 Ceramic Coffee Dripper 02 (Red)"
-    image={{ src: 'https://m.media-amazon.com/images/I/5186roHpocL._AC_SL500_.jpg', alt: 'Hario V60 Ceramic Coffee Dripper 02 Red pour over', width: 500, height: 500 }}
-    badge={{ label: 'Best Design Pick', variant: 'espresso' }}
-    rating={{ score: 4.6 }}
-    price="Check price"
-    ctaUrl={amazonUrl(products[5].asin)}
-  />
-  <p>
-    This V60 ceramic variant earns a slot for buyers who want proven V60 performance with a more distinctive look. In
-    cup profile and workflow it behaves similarly to other ceramic 02 options, but color and finish can matter when a
-    brewer sits on your counter every day. If aesthetics help you stick to a routine, that is a legitimate buying
-    factor.
-  </p>
-  <ProsCons
-    pros={[
-      'Proven V60 brew behavior with an eye-catching colorway',
-      'Good thermal stability from ceramic build',
-      'Pairs well with standard V60 filters and recipes',
-    ]}
-    cons={[
-      'Functionally similar to other V60 02 ceramics',
-      'Performance still depends on grind and pouring consistency',
-    ]}
-  />
-  <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
+      <h3>6) Hario V60 Ceramic Coffee Dripper 02 (Red) — Best Design Pick</h3>
+      <ProductCard
+        title="Hario V60 Ceramic Coffee Dripper 02 (Red)"
+        image={{ src: 'https://m.media-amazon.com/images/I/5186roHpocL._AC_SL500_.jpg', alt: 'Hario V60 Ceramic Coffee Dripper 02 Red pour over', width: 500, height: 500 }}
+        badge={{ label: 'Best Design Pick', variant: 'espresso' }}
+        rating={{ score: 4.6 }}
+        price="Check price"
+        ctaUrl={amazonUrl(products[5].asin)}
+      />
+      <p>
+        This V60 ceramic variant earns a slot for buyers who want proven V60 performance with a more distinctive look. In
+        cup profile and workflow it behaves similarly to other ceramic 02 options, but color and finish can matter when a
+        brewer sits on your counter every day. If aesthetics help you stick to a routine, that is a legitimate buying
+        factor.
+      </p>
+      <ProsCons
+        pros={[
+          'Proven V60 brew behavior with an eye-catching colorway',
+          'Good thermal stability from ceramic build',
+          'Pairs well with standard V60 filters and recipes',
+        ]}
+        cons={[
+          'Functionally similar to other V60 02 ceramics',
+          'Performance still depends on grind and pouring consistency',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
 
-  <h2>Which Pour-Over Brewer Fits Your Buyer Profile?</h2>
-  <p>
-    If you are brand new to pour-over and want the shortest path to reliable coffee, start with a forgiving setup and a
-    clear recipe card you can repeat for two weeks. In that profile, the Melitta set or V60 01 usually produces faster
-    confidence than a more complex workflow. Confidence matters because once brewing feels intuitive, skill grows
-    naturally. If early cups are frustrating, most people quit before they see what manual brewing can do.
-  </p>
-  <p>
-    If you already own a decent grinder and want room to improve cup quality over time, the V60 02 is often the best
-    long-term foundation. It has enough precision to reward better technique without forcing complicated hardware. Many
-    advanced recipes are built around this format, so troubleshooting is easier than with niche brewers. This matters
-    when you hit plateaus and need practical adjustments instead of trial-and-error chaos.
-  </p>
-  <p>
-    If your priority is serving two people consistently before work, Chemex can reduce workflow stress. One larger brew
-    is often calmer than running two separate small brews while managing timing and cleanup. The thicker paper style can
-    also produce the clean profile many households find approachable. It is not the fastest single-cup option, but for
-    repeatable shared brewing, it solves a real morning logistics problem.
-  </p>
-  <p>
-    If you enjoy experimenting with extraction but still want a backup mode that is easier on rushed days, the V60
-    Switch is the practical upgrade path. You can use immersion for consistency when tired, then open-dripper methods
-    when you have time to fine-tune. That dual-mode flexibility is why it is worth paying more only if you will actually
-    use both modes. If not, a simpler dripper remains the better value.
-  </p>
-  <p>
-    If kitchen space is tight, pay close attention to storage footprint and cleanup ergonomics. Compact drippers with
-    simple filter handling usually win in small apartments where counter space is limited. A brewer that is annoying to
-    store is less likely to stay in daily rotation. Convenience is not a minor preference here; it directly affects how
-    often you brew and how quickly your skills improve through repetition.
-  </p>
-  <p>
-    If you care heavily about visual design because your brewer stays on display, choosing a design-forward variant can
-    be reasonable as long as performance is equivalent. Gear aesthetics can increase daily use, and daily use is what
-    builds consistency. Just make sure style does not hide poor availability for filters or spare parts. The best design
-    purchase is one you still enjoy six months later, not just one that photographs well on day one.
-  </p>
-  <p>
-    Budget planning should include accessories, not just the dripper price. A low-cost brewer plus reliable filters,
-    decent grinder settings, and a basic scale can outperform an expensive brewer running on inconsistent prep. Buyers
-    often overspend on the brewer and underspend on process tools, then blame the dripper for unstable cups. Rebalancing
-    that budget usually produces better coffee and better long-term value.
-  </p>
-  <p>
-    The final tie-breaker should be emotional friction: which option feels easiest to repeat every morning? The right
-    answer is rarely the most complex product. It is the one that turns brewing into a stable routine you look forward
-    to. Once routine is stable, upgrades become optional refinements rather than expensive attempts to solve process
-    chaos. That is the path that keeps both cup quality and satisfaction moving up.
-  </p>
+  <Fragment slot="extra-sections">
+    <section>
+      <h2>Which Pour-Over Brewer Fits Your Buyer Profile?</h2>
+      <p>
+        If you are brand new to pour-over and want the shortest path to reliable coffee, start with a forgiving setup and a
+        clear recipe card you can repeat for two weeks. In that profile, the Melitta set or V60 01 usually produces faster
+        confidence than a more complex workflow. Confidence matters because once brewing feels intuitive, skill grows
+        naturally. If early cups are frustrating, most people quit before they see what manual brewing can do.
+      </p>
+      <p>
+        If you already own a decent grinder and want room to improve cup quality over time, the V60 02 is often the best
+        long-term foundation. It has enough precision to reward better technique without forcing complicated hardware. Many
+        advanced recipes are built around this format, so troubleshooting is easier than with niche brewers. This matters
+        when you hit plateaus and need practical adjustments instead of trial-and-error chaos.
+      </p>
+      <p>
+        If your priority is serving two people consistently before work, Chemex can reduce workflow stress. One larger brew
+        is often calmer than running two separate small brews while managing timing and cleanup. The thicker paper style can
+        also produce the clean profile many households find approachable. It is not the fastest single-cup option, but for
+        repeatable shared brewing, it solves a real morning logistics problem.
+      </p>
+      <p>
+        If you enjoy experimenting with extraction but still want a backup mode that is easier on rushed days, the V60
+        Switch is the practical upgrade path. You can use immersion for consistency when tired, then open-dripper methods
+        when you have time to fine-tune. That dual-mode flexibility is why it is worth paying more only if you will actually
+        use both modes. If not, a simpler dripper remains the better value.
+      </p>
+      <p>
+        If kitchen space is tight, pay close attention to storage footprint and cleanup ergonomics. Compact drippers with
+        simple filter handling usually win in small apartments where counter space is limited. A brewer that is annoying to
+        store is less likely to stay in daily rotation. Convenience is not a minor preference here; it directly affects how
+        often you brew and how quickly your skills improve through repetition.
+      </p>
+      <p>
+        If you care heavily about visual design because your brewer stays on display, choosing a design-forward variant can
+        be reasonable as long as performance is equivalent. Gear aesthetics can increase daily use, and daily use is what
+        builds consistency. Just make sure style does not hide poor availability for filters or spare parts. The best design
+        purchase is one you still enjoy six months later, not just one that photographs well on day one.
+      </p>
+      <p>
+        Budget planning should include accessories, not just the dripper price. A low-cost brewer plus reliable filters,
+        decent grinder settings, and a basic scale can outperform an expensive brewer running on inconsistent prep. Buyers
+        often overspend on the brewer and underspend on process tools, then blame the dripper for unstable cups. Rebalancing
+        that budget usually produces better coffee and better long-term value.
+      </p>
+      <p>
+        The final tie-breaker should be emotional friction: which option feels easiest to repeat every morning? The right
+        answer is rarely the most complex product. It is the one that turns brewing into a stable routine you look forward
+        to. Once routine is stable, upgrades become optional refinements rather than expensive attempts to solve process
+        chaos. That is the path that keeps both cup quality and satisfaction moving up.
+      </p>
+    </section>
+  </Fragment>
 
-  <BuyingGuideSection>
-    <h2 id="buying-guide">Buying Guide: How to Choose the Right Pour-Over Brewer</h2>
-    <p>
-      <strong>Start with your weekday workflow.</strong> The most common buying mistake is choosing a brewer for an ideal
-      Saturday morning ritual, then discovering that your real weekday routine is rushed and distracted. If you brew
-      before work, prioritize setup speed, easy cleanup, and filter availability first. A brewer that fits your life
-      will get used. A brewer that only fits your fantasy routine usually ends up in a cabinet.
-    </p>
-    <p>
-      <strong>Choose cup profile before features.</strong> People often compare drippers by materials or shape before
-      deciding the flavor profile they actually want. If you prefer a cleaner, lighter, tea-like result, thicker filter
-      systems and slower extraction styles can feel better. If you want more control and broader flavor range from one
-      coffee, cone drippers are usually more flexible. There is no universal winner; only a better fit for your taste.
-    </p>
-    <p>
-      <strong>Plan your setup as one system.</strong> A brewer does not work in isolation. Water temperature stability,
-      grinder consistency, kettle flow control, and ratio tracking all shape the final cup as much as the dripper body.
-      If one part of your chain is weak, adding a premium brewer alone rarely fixes inconsistency. A practical approach
-      is to improve one bottleneck at a time and recheck your baseline cup after each change.
-    </p>
-    <p>
-      <strong>Filter logistics are a long-term quality factor.</strong> If replacement filters are hard to buy in your
-      region, you will either overpay or postpone brewing. Both destroy consistency. Before checkout, confirm compatible
-      filters are easy to source, sold in quantities you can store, and available from at least two suppliers. This one
-      check prevents more buyer regret than most spec comparisons.
-    </p>
-    <p>
-      <strong>Match brewer size to your real serving pattern.</strong> If you only brew one mug most days, a compact
-      single-cup format is easier to dial in and wastes less coffee. If two people drink together every morning, a
-      larger brewer saves time and keeps workflow calmer. Many buyers choose bigger by default, then fight with awkward
-      dose scaling and uneven extraction on small brews.
-    </p>
-    <p>
-      <strong>Use repeatability as your north star.</strong> The best brewer for home use is not the one that can make a
-      perfect cup once. It is the one that can make a very good cup repeatedly when you are tired, distracted, and using
-      normal kitchen constraints. If your process is fragile, simplify it. Consistent good cups beat occasional great
-      cups followed by frustration.
-    </p>
-    <p>
-      <strong>How to run a 7-day dial-in workflow:</strong> Day 1, lock dose and water amount. Day 2, adjust grind one
-      step finer and compare sweetness vs bitterness. Day 3, return to baseline and test one step coarser for body and
-      drawdown behavior. Day 4, keep grind fixed and change total brew time by modifying pour pacing. Day 5, test bloom
-      duration while keeping all else stable. Day 6, compare two filter papers if available. Day 7, repeat your best
-      recipe to verify consistency. This process gives signal instead of random guesswork.
-    </p>
-    <p>
-      <strong>Water quality matters more than many upgrades.</strong> If your water is very hard, very soft, or heavily
-      chlorinated, cup clarity and sweetness suffer no matter which brewer you buy. You do not need a lab setup, but
-      using filtered water with stable taste can produce a larger improvement than changing dripper models. If your cups
-      always taste flat or harsh across different coffees, check water before replacing gear.
-    </p>
-    <p>
-      <strong>Know when to upgrade.</strong> Upgrade only when you can name your limitation clearly. Good examples:
-      “I cannot maintain clarity across light roasts with my current flow control,” or “I need more consistent two-cup
-      batches before work.” Weak examples: “Everyone says this model is better.” Clear upgrade reasons prevent expensive
-      sidegrades that do not solve your actual problem.
-    </p>
-    <p>
-      <strong>Avoid common beginner traps:</strong> changing coffee and grind and ratio in the same brew, skipping paper
-      rinse, eyeballing dose without a scale, and chasing social-media recipes before stabilizing your own baseline.
-      Keep variables controlled. Once your baseline is reliable, then experiment. Structured experimentation gives faster
-      improvements and makes each purchase decision more informed.
-    </p>
-    <p>
-      <strong>Time-to-cup should influence your choice.</strong> Some brewers feel amazing when you have ten spare
-      minutes, but annoying when you have three. Think honestly about your schedule. If your brewing window is short,
-      choose a setup with fewer steps and faster cleanup. If brewing is your daily ritual and decompression time, a more
-      involved process can be worth it. Practical fit should outrank internet rankings.
-    </p>
-    <p>
-      <strong>Use internal benchmarks to keep progress objective.</strong> Brew the same coffee with the same ratio twice
-      per week and compare notes. If quality is improving, your setup and process are moving in the right direction. If
-      quality is drifting, simplify. This habit creates a feedback loop that helps you decide whether your next best move
-      is a new brewer, a grinder adjustment, or just better process discipline.
-    </p>
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying Guide: How to Choose the Right Pour-Over Brewer</h2>
+      <p>
+        <strong>Start with your weekday workflow.</strong> The most common buying mistake is choosing a brewer for an ideal
+        Saturday morning ritual, then discovering that your real weekday routine is rushed and distracted. If you brew
+        before work, prioritize setup speed, easy cleanup, and filter availability first. A brewer that fits your life
+        will get used. A brewer that only fits your fantasy routine usually ends up in a cabinet.
+      </p>
+      <p>
+        <strong>Choose cup profile before features.</strong> People often compare drippers by materials or shape before
+        deciding the flavor profile they actually want. If you prefer a cleaner, lighter, tea-like result, thicker filter
+        systems and slower extraction styles can feel better. If you want more control and broader flavor range from one
+        coffee, cone drippers are usually more flexible. There is no universal winner; only a better fit for your taste.
+      </p>
+      <p>
+        <strong>Plan your setup as one system.</strong> A brewer does not work in isolation. Water temperature stability,
+        grinder consistency, kettle flow control, and ratio tracking all shape the final cup as much as the dripper body.
+        If one part of your chain is weak, adding a premium brewer alone rarely fixes inconsistency. A practical approach
+        is to improve one bottleneck at a time and recheck your baseline cup after each change.
+      </p>
+      <p>
+        <strong>Filter logistics are a long-term quality factor.</strong> If replacement filters are hard to buy in your
+        region, you will either overpay or postpone brewing. Both destroy consistency. Before checkout, confirm compatible
+        filters are easy to source, sold in quantities you can store, and available from at least two suppliers. This one
+        check prevents more buyer regret than most spec comparisons.
+      </p>
+      <p>
+        <strong>Match brewer size to your real serving pattern.</strong> If you only brew one mug most days, a compact
+        single-cup format is easier to dial in and wastes less coffee. If two people drink together every morning, a
+        larger brewer saves time and keeps workflow calmer. Many buyers choose bigger by default, then fight with awkward
+        dose scaling and uneven extraction on small brews.
+      </p>
+      <p>
+        <strong>Use repeatability as your north star.</strong> The best brewer for home use is not the one that can make a
+        perfect cup once. It is the one that can make a very good cup repeatedly when you are tired, distracted, and using
+        normal kitchen constraints. If your process is fragile, simplify it. Consistent good cups beat occasional great
+        cups followed by frustration.
+      </p>
+      <p>
+        <strong>How to run a 7-day dial-in workflow:</strong> Day 1, lock dose and water amount. Day 2, adjust grind one
+        step finer and compare sweetness vs bitterness. Day 3, return to baseline and test one step coarser for body and
+        drawdown behavior. Day 4, keep grind fixed and change total brew time by modifying pour pacing. Day 5, test bloom
+        duration while keeping all else stable. Day 6, compare two filter papers if available. Day 7, repeat your best
+        recipe to verify consistency. This process gives signal instead of random guesswork.
+      </p>
+      <p>
+        <strong>Water quality matters more than many upgrades.</strong> If your water is very hard, very soft, or heavily
+        chlorinated, cup clarity and sweetness suffer no matter which brewer you buy. You do not need a lab setup, but
+        using filtered water with stable taste can produce a larger improvement than changing dripper models. If your cups
+        always taste flat or harsh across different coffees, check water before replacing gear.
+      </p>
+      <p>
+        <strong>Know when to upgrade.</strong> Upgrade only when you can name your limitation clearly. Good examples:
+        "I cannot maintain clarity across light roasts with my current flow control," or "I need more consistent two-cup
+        batches before work." Weak examples: "Everyone says this model is better." Clear upgrade reasons prevent expensive
+        sidegrades that do not solve your actual problem.
+      </p>
+      <p>
+        <strong>Avoid common beginner traps:</strong> changing coffee and grind and ratio in the same brew, skipping paper
+        rinse, eyeballing dose without a scale, and chasing social-media recipes before stabilizing your own baseline.
+        Keep variables controlled. Once your baseline is reliable, then experiment. Structured experimentation gives faster
+        improvements and makes each purchase decision more informed.
+      </p>
+      <p>
+        <strong>Time-to-cup should influence your choice.</strong> Some brewers feel amazing when you have ten spare
+        minutes, but annoying when you have three. Think honestly about your schedule. If your brewing window is short,
+        choose a setup with fewer steps and faster cleanup. If brewing is your daily ritual and decompression time, a more
+        involved process can be worth it. Practical fit should outrank internet rankings.
+      </p>
+      <p>
+        <strong>Use internal benchmarks to keep progress objective.</strong> Brew the same coffee with the same ratio twice
+        per week and compare notes. If quality is improving, your setup and process are moving in the right direction. If
+        quality is drifting, simplify. This habit creates a feedback loop that helps you decide whether your next best move
+        is a new brewer, a grinder adjustment, or just better process discipline.
+      </p>
 
-    <h3>Build the Rest of Your Setup</h3>
-    <p>
-      <CtaButton href="/posts/best-gooseneck-kettle-for-pour-over.html" variant="secondary">Best Gooseneck Kettle</CtaButton>
-      <CtaButton href="/posts/best-coffee-grinder-for-pour-over.html" variant="secondary">Best Coffee Grinder for Pour Over</CtaButton>
-      <CtaButton href="/posts/best-coffee-scale-for-espresso-and-pour-over.html" variant="secondary">Best Coffee Scale</CtaButton>
-      <CtaButton href="/posts/coffee-brewing-ratio-guide.html" variant="secondary">Coffee Brewing Ratio Guide</CtaButton>
-    </p>
-  </BuyingGuideSection>
-
-  <section>
-    <h2 id="faq">Frequently Asked Questions</h2>
-    <FaqAccordion>
-      {faq.map((item) => (
-        <FaqItem question={item.question}>
-          <p>{item.answer}</p>
-        </FaqItem>
-      ))}
-    </FaqAccordion>
-  </section>
-</PostLayout>
+      <h3>Build the Rest of Your Setup</h3>
+      <p>
+        <CtaButton href="/posts/best-gooseneck-kettle-for-pour-over.html" variant="secondary">Best Gooseneck Kettle</CtaButton>
+        <CtaButton href="/posts/best-coffee-grinder-for-pour-over.html" variant="secondary">Best Coffee Grinder for Pour Over</CtaButton>
+        <CtaButton href="/posts/best-coffee-scale-for-espresso-and-pour-over.html" variant="secondary">Best Coffee Scale</CtaButton>
+        <CtaButton href="/posts/coffee-brewing-ratio-guide.html" variant="secondary">Coffee Brewing Ratio Guide</CtaButton>
+      </p>
+    </BuyingGuideSection>
+  </Fragment>
+</MoneyPage>

@@ -1,419 +1,305 @@
 ---
-import PostLayout from '../../layouts/PostLayout.astro';
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsCons from '../../components/ProsCons.astro';
-import FaqAccordion from '../../components/FaqAccordion.astro';
-import FaqItem from '../../components/FaqItem.astro';
-import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
-import JsonLd from '../../components/JsonLd.astro';
-import HeroPicks from '../../components/HeroPicks.astro';
-import HeroSteps from '../../components/HeroSteps.astro';
-import Toc from '../../components/Toc.astro';
-import { SITE, blogPosting, publisher } from '../../data/site';
 import { getResolvedProducts, amazonUrl } from '../../data/products';
 
-const slug = 'best-coffee-scale-for-espresso-and-pour-over';
-const title = 'Best Coffee Scale for Espresso and Pour Over (2026)';
-const description = 'We compared the best coffee scale for espresso and pour over in 2026 by speed, footprint, and workflow so you can buy the right fit and brew more consistently.';
-const canonical = `${SITE.url}/posts/${slug}.html`;
-
 const products = getResolvedProducts('best-coffee-scale-for-espresso-and-pour-over');
-
-const faqs = [
-  {
-    q: 'Do I need a different scale for espresso and pour over?',
-    a: 'Not always. One scale can handle both if it has quick response, a stable timer, and a footprint that fits your espresso setup. Espresso-first users should prioritize response speed; pour-over-first users should prioritize readability and timer ergonomics.',
-  },
-  {
-    q: 'What is the ideal precision for coffee scales?',
-    a: 'For home coffee brewing, 0.1 g readability is the practical standard. It gives enough precision for espresso yield tracking and pour over ratio control without forcing you into expensive lab-style equipment.',
-  },
-  {
-    q: 'Is app connectivity worth paying extra for?',
-    a: 'It depends on your routine. App-connected scales are useful if you log recipes, track consistency, or run repeatable brew profiles. If you just want reliable daily brewing, a simpler non-app model is usually enough.',
-  },
-  {
-    q: 'How often should I calibrate a coffee scale?',
-    a: 'For normal home use, check accuracy every few months or whenever readings seem inconsistent. Keep the scale dry, avoid loading heavy objects on it, and use a known calibration weight if your model supports calibration mode.',
-  },
-  {
-    q: 'Why does scale response speed matter so much for espresso?',
-    a: 'Espresso output changes quickly in the final seconds of a shot. If the display lags, you stop late and overshoot your target yield. Faster response gives tighter control and more repeatable flavor.',
-  },
-];
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    blogPosting({
-      headline: title,
-      description,
-      slug,
-      datePublished: '2026-03-11',
-      dateModified: '2026-03-11',
-      image: products[0].image,
-    }),
-    {
-      '@type': 'ItemList',
-      name: 'Best coffee scale for espresso and pour over picks',
-      itemListOrder: 'https://schema.org/ItemListOrderAscending',
-      numberOfItems: products.length,
-      author: publisher,
-      itemListElement: products.map((product, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: product.name,
-        url: amazonUrl(product.asin),
-      })),
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.q,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.a,
-        },
-      })),
-    },
-  ],
-};
 ---
 
-<PostLayout
-  title={title}
-  description={description}
-  canonical={canonical}
-  breadcrumbs={[
-    { label: 'Home', href: '/' },
-    { label: 'All Guides', href: '/posts/' },
-    { label: 'Best Coffee Scale for Espresso and Pour Over' },
-  ]}
->
-  <Fragment slot="head">
-    <JsonLd data={jsonLd} />
-  </Fragment>
-
-  <h1>Best Coffee Scale for Espresso and Pour Over (2026)</h1>
-  <p class="lead">If you want repeatable espresso and cleaner pour over cups, a dedicated scale is one of the highest-leverage upgrades you can make. We researched the top options for response speed, workflow fit, footprint, and value so you can choose a model that actually improves your daily routine.</p>
-
-  <HeroPicks
-    title="6 Coffee Scales for Espresso and Pour Over"
-    subtitle="Ranked by response speed, footprint fit, and workflow value"
-    picks={[
+<MoneyPage
+  slug="best-coffee-scale-for-espresso-and-pour-over"
+  title="Best Coffee Scale for Espresso and Pour Over (2026)"
+  description="We compared the best coffee scale for espresso and pour over in 2026 by speed, footprint, and workflow so you can buy the right fit and brew more consistently."
+  category="scales"
+  datePublished="2026-03-11"
+  dateModified="2026-03-11"
+  ogImage={products[0].image}
+  products={products}
+  heroPicks={{
+    title: "6 Coffee Scales for Espresso and Pour Over",
+    subtitle: "Ranked by response speed, footprint fit, and workflow value",
+    picks: [
       { category: 'Overall', tagline: 'Best for mixed espresso and pour over', icon: 'target', color: '#2C1810', features: ['Fast response time', 'Compact espresso fit', 'Usable pour-over timer', 'Strong all-around pick'], topPick: 'TIMEMORE Black Mirror Nano', price: '$$', subtitle: 'Best dual-method scale', asin: 'B09KLG247F' },
       { category: 'Budget', tagline: 'Easiest low-cost upgrade', icon: 'dollar', color: '#059669', features: ['Very affordable entry', 'Built-in timer', 'Good daily readability', 'First scale value'], topPick: 'Greater Goods Digital Coffee Scale', price: '$', subtitle: 'Budget starter scale', asin: 'B09B4CB7C1' },
       { category: 'Pour Over', tagline: 'Best for manual brew workflow', icon: 'hand', color: '#7A5B4A', features: ['Simple control flow', 'Stable timer integration', 'Broad user familiarity', 'Classic V60 partner'], topPick: 'Hario V60 Drip Scale', price: '$$', subtitle: 'Classic pour-over pick', asin: 'B009GPJMOU' },
       { category: 'Compact', tagline: 'Best for tight espresso stations', icon: 'volume-x', color: '#8B6F47', features: ['Small platform size', 'Simple daily operation', 'Affordable compact option', 'Fits cramped trays'], topPick: 'KitchenTour Coffee Scale', price: '$', subtitle: 'Compact espresso fit', asin: 'B083PX1VHG' },
-    ]}
-    footer="coffeegearlab.com - coffee scales for espresso and pour over - 2026"
-  />
+    ],
+    footer: "coffeegearlab.com - coffee scales for espresso and pour over - 2026",
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Individual reviews' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    { q: 'Do I need a different scale for espresso and pour over?', a: 'Not always. One scale can handle both if it has quick response, a stable timer, and a footprint that fits your espresso setup. Espresso-first users should prioritize response speed; pour-over-first users should prioritize readability and timer ergonomics.' },
+    { q: 'What is the ideal precision for coffee scales?', a: 'For home coffee brewing, 0.1 g readability is the practical standard. It gives enough precision for espresso yield tracking and pour over ratio control without forcing you into expensive lab-style equipment.' },
+    { q: 'Is app connectivity worth paying extra for?', a: 'It depends on your routine. App-connected scales are useful if you log recipes, track consistency, or run repeatable brew profiles. If you just want reliable daily brewing, a simpler non-app model is usually enough.' },
+    { q: 'How often should I calibrate a coffee scale?', a: 'For normal home use, check accuracy every few months or whenever readings seem inconsistent. Keep the scale dry, avoid loading heavy objects on it, and use a known calibration weight if your model supports calibration mode.' },
+    { q: 'Why does scale response speed matter so much for espresso?', a: 'Espresso output changes quickly in the final seconds of a shot. If the display lags, you stop late and overshoot your target yield. Faster response gives tighter control and more repeatable flavor.' },
+  ]}
+>
+  <Fragment slot="lead">
+    <p class="lead">If you want repeatable espresso and cleaner pour over cups, a dedicated scale is one of the highest-leverage upgrades you can make. We researched the top options for response speed, workflow fit, footprint, and value so you can choose a model that actually improves your daily routine.</p>
+  </Fragment>
 
-  <Toc
-    items={[
-      { href: '#quick-picks', label: 'Quick picks' },
-      { href: '#comparison-table', label: 'Comparison table' },
-      { href: '#how-we-evaluate', label: 'How we evaluate' },
-      { href: '#reviews', label: 'Individual reviews' },
-      { href: '#buying-guide', label: 'Buying guide' },
-      { href: '#faq', label: 'Frequently asked questions' },
-    ]}
-  />
-
-  <h2 id="quick-picks">Quick Picks</h2>
-  <QuickPicks>
-    <ProductCard
-      title={products[0].name}
-      image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
-      badge={products[0].badge}
-      rating={{ score: products[0].rating }}
-      price={products[0].price}
-      ctaUrl={amazonUrl(products[0].asin)}
-      featured={true}
-    />
-    <ProductCard
-      title={products[2].name}
-      image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
-      badge={products[2].badge}
-      rating={{ score: products[2].rating }}
-      price={products[2].price}
-      ctaUrl={amazonUrl(products[2].asin)}
-    />
-    <ProductCard
-      title={products[1].name}
-      image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
-      badge={products[1].badge}
-      rating={{ score: products[1].rating }}
-      price={products[1].price}
-      ctaUrl={amazonUrl(products[1].asin)}
-    />
-  </QuickPicks>
-
-  <h2 id="comparison-table">Side-by-Side Comparison</h2>
-  <ComparisonTable
-    timestamp="Prices updated: March 11, 2026"
-    headers={['Product', 'Best For', 'Price', 'Rating', 'Link']}
-    ariaLabel="Best coffee scale for espresso and pour over comparison table"
-  >
-    <table>
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Best For</th>
-          <th>Price</th>
-          <th>Rating</th>
-          <th>Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        {products.map((product) => (
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Side-by-Side Comparison</h2>
+    <ComparisonTable
+      timestamp="Prices updated: March 11, 2026"
+      ariaLabel="Best coffee scale for espresso and pour over comparison table"
+    >
+      <table>
+        <thead>
           <tr>
-            <td data-label="Product">{product.name}</td>
-            <td data-label="Best For">{product.bestFor}</td>
-            <td data-label="Price">{product.price}</td>
-            <td data-label="Rating">{product.rating.toFixed(1)} / 5</td>
-            <td data-label="Link">
-              <CtaButton href={amazonUrl(product.asin)} size="sm" external>Check Price</CtaButton>
-            </td>
+            <th>Product</th>
+            <th>Best For</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Link</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
-  </ComparisonTable>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr>
+              <td data-label="Product">{product.name}</td>
+              <td data-label="Best For">{product.bestFor}</td>
+              <td data-label="Price">{product.price}</td>
+              <td data-label="Rating">{product.rating.toFixed(1)} / 5</td>
+              <td data-label="Link">
+                <CtaButton href={amazonUrl(product.asin)} size="sm" external>Check Price</CtaButton>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
 
-  <h2 id="how-we-evaluate">How We Evaluate Coffee Scales</h2>
-  <p>We compared each model across the factors that matter most in real brewing: readout speed, stability at low weights, timer usability, build quality, footprint, and long-term ease of use. We also reviewed available listing details and confirmed each ASIN link format so the page stays affiliate-compliant and easy to maintain.</p>
-  <p>For espresso, response speed and physical dimensions are non-negotiable. A slow display can cause overshoot in the final seconds of a shot, which shifts extraction and flavor. A large platform that barely fits your tray also adds friction and eventually pushes people back to guesswork. Compact, responsive scales consistently perform better for espresso-heavy routines.</p>
-  <p>For pour over, readability and timer workflow matter just as much as raw precision. You want quick tare, clean visibility at kettle height, and stable tracking through bloom and pulse pours. A good pour-over scale reduces mental overhead so you can focus on flow control and recipe timing.</p>
-  <p>To tighten your full brew system, pair this guide with our <a href="/posts/best-coffee-grinder-for-pour-over.html">best coffee grinder for pour over roundup</a>, <a href="/posts/burr-grinder-settings-for-espresso.html">burr grinder settings for espresso guide</a>, and <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a>. If you are still choosing core hardware, our <a href="/posts/best-espresso-machine-under-200.html">best espresso machine under $200 picks</a> helps you balance budget and capability.</p>
-  <HeroSteps
-    title="Choose Your Coffee Scale in 3 Steps"
-    subtitle="Match brew style first, then response speed, then footprint"
-    steps={[
-      { label: 'Choose Brew Style', icon: 'coffee', actions: ['Espresso-first: prioritize speed', 'Pour-over-first: prioritize readability', 'Hybrid: balance both factors', 'Check your daily routine'], time: '~1 min' },
-      { label: 'Match Response Speed', icon: 'zap', actions: ['Fast display for espresso stop', 'Stable tracking for pour over', 'Test with your typical cup', 'Avoid laggy budget traps'], time: '~1 min' },
-      { label: 'Check Footprint Fit', icon: 'target', actions: ['Measure espresso tray space', 'Confirm dripper clearance', 'Test cup/server stability', 'Verify before checkout'], time: '~1 min' },
-    ]}
-    outcome="A scale that fits your station, matches your brew method, and gets used every morning."
-    footer="coffeegearlab.com · coffee scale selection · 2026"
-  />
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How We Evaluate Coffee Scales</h2>
+      <p>We compared each model across the factors that matter most in real brewing: readout speed, stability at low weights, timer usability, build quality, footprint, and long-term ease of use. We also reviewed available listing details and confirmed each ASIN link format so the page stays affiliate-compliant and easy to maintain.</p>
+      <p>For espresso, response speed and physical dimensions are non-negotiable. A slow display can cause overshoot in the final seconds of a shot, which shifts extraction and flavor. A large platform that barely fits your tray also adds friction and eventually pushes people back to guesswork. Compact, responsive scales consistently perform better for espresso-heavy routines.</p>
+      <p>For pour over, readability and timer workflow matter just as much as raw precision. You want quick tare, clean visibility at kettle height, and stable tracking through bloom and pulse pours. A good pour-over scale reduces mental overhead so you can focus on flow control and recipe timing.</p>
+      <p>To tighten your full brew system, pair this guide with our <a href="/posts/best-coffee-grinder-for-pour-over.html">best coffee grinder for pour over roundup</a>, <a href="/posts/burr-grinder-settings-for-espresso.html">burr grinder settings for espresso guide</a>, and <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a>. If you are still choosing core hardware, our <a href="/posts/best-espresso-machine-under-200.html">best espresso machine under $200 picks</a> helps you balance budget and capability.</p>
+    </section>
+  </Fragment>
 
-  <h2 id="reviews">Individual Product Reviews</h2>
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="product-reviews">Individual Product Reviews</h2>
 
-  <h3>1) TIMEMORE Black Mirror Nano — Best Overall</h3>
-  <ProductCard
-    title={products[0].name}
-    image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
-    badge={products[0].badge}
-    rating={{ score: products[0].rating }}
-    price={products[0].price}
-    ctaUrl={amazonUrl(products[0].asin)}
-  />
-  <p>The TIMEMORE Black Mirror Nano is the most balanced option for people who brew espresso and pour over every week. It is compact enough for tighter espresso trays, but still readable enough for manual brew timing and ratio tracking. That combination is exactly why it remains the strongest all-around pick in this category.</p>
-  <p>In practical workflow terms, this model gives fewer stop-point surprises on espresso and less timer friction on pour over. If your goal is one scale that can move between brew styles without feeling like a compromise, this is the safest recommendation for most home users.</p>
-  <ProsCons
-    pros={[
-      'Fast response for espresso yield control',
-      'Compact body fits more machine setups',
-      'Usable timer workflow for pour over',
-      'Strong all-around performance for mixed brewing',
-    ]}
-    cons={[
-      'Costs more than entry-level models',
-      'Compact platform can feel tight with larger drippers',
-      'Not the cheapest path if you only brew one method',
-    ]}
-  />
-  <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
+      <h3>1) TIMEMORE Black Mirror Nano — Best Overall</h3>
+      <ProductCard
+        title={products[0].name}
+        image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={{ score: products[0].rating }}
+        price={products[0].price}
+        ctaUrl={amazonUrl(products[0].asin)}
+      />
+      <p>The TIMEMORE Black Mirror Nano is the most balanced option for people who brew espresso and pour over every week. It is compact enough for tighter espresso trays, but still readable enough for manual brew timing and ratio tracking. That combination is exactly why it remains the strongest all-around pick in this category.</p>
+      <p>In practical workflow terms, this model gives fewer stop-point surprises on espresso and less timer friction on pour over. If your goal is one scale that can move between brew styles without feeling like a compromise, this is the safest recommendation for most home users.</p>
+      <ProsCons
+        pros={[
+          'Fast response for espresso yield control',
+          'Compact body fits more machine setups',
+          'Usable timer workflow for pour over',
+          'Strong all-around performance for mixed brewing',
+        ]}
+        cons={[
+          'Costs more than entry-level models',
+          'Compact platform can feel tight with larger drippers',
+          'Not the cheapest path if you only brew one method',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
 
-  <h3>2) Hario V60 Drip Scale — Best for Pour Over</h3>
-  <ProductCard
-    title={products[1].name}
-    image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
-    badge={products[1].badge}
-    rating={{ score: products[1].rating }}
-    price={products[1].price}
-    ctaUrl={amazonUrl(products[1].asin)}
-  />
-  <p>The Hario V60 Drip Scale is still one of the easiest ways to make pour over more repeatable without complexity. Controls are simple, timer behavior is familiar, and the overall workflow maps well to classic V60 and Kalita routines. If pour over is your primary brew method, this model is still a dependable buy.</p>
-  <p>Compared with espresso-focused compact scales, the Hario tradeoff is responsiveness near rapid espresso shot finishes. It can work for occasional espresso, but it shines most when your routine is bloom, pulse pours, and total beverage control.</p>
-  <ProsCons
-    pros={[
-      'Simple control flow for manual brew routines',
-      'Readable display and stable timer integration',
-      'Well-known model with broad user familiarity',
-      'Strong value for pour-over-first homes',
-    ]}
-    cons={[
-      'Not the fastest option for espresso stop timing',
-      'Larger footprint than some espresso minis',
-      'Less attractive for app-driven logging workflows',
-    ]}
-  />
-  <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
+      <h3>2) Hario V60 Drip Scale — Best for Pour Over</h3>
+      <ProductCard
+        title={products[1].name}
+        image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+        badge={products[1].badge}
+        rating={{ score: products[1].rating }}
+        price={products[1].price}
+        ctaUrl={amazonUrl(products[1].asin)}
+      />
+      <p>The Hario V60 Drip Scale is still one of the easiest ways to make pour over more repeatable without complexity. Controls are simple, timer behavior is familiar, and the overall workflow maps well to classic V60 and Kalita routines. If pour over is your primary brew method, this model is still a dependable buy.</p>
+      <p>Compared with espresso-focused compact scales, the Hario tradeoff is responsiveness near rapid espresso shot finishes. It can work for occasional espresso, but it shines most when your routine is bloom, pulse pours, and total beverage control.</p>
+      <ProsCons
+        pros={[
+          'Simple control flow for manual brew routines',
+          'Readable display and stable timer integration',
+          'Well-known model with broad user familiarity',
+          'Strong value for pour-over-first homes',
+        ]}
+        cons={[
+          'Not the fastest option for espresso stop timing',
+          'Larger footprint than some espresso minis',
+          'Less attractive for app-driven logging workflows',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
 
-  <h3>3) Greater Goods Digital Coffee Scale — Best Budget</h3>
-  <ProductCard
-    title={products[2].name}
-    image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
-    badge={products[2].badge}
-    rating={{ score: products[2].rating }}
-    price={products[2].price}
-    ctaUrl={amazonUrl(products[2].asin)}
-  />
-  <p>If you are moving from scoop-based brewing, this is the easiest low-cost upgrade that usually improves consistency immediately. It gives you basic precision and timer support without forcing a high initial spend. For beginners building a full setup, that budget flexibility is valuable.</p>
-  <p>The key compromise is response refinement versus mid-range and premium picks. For routine pour over this is often acceptable, but espresso users who want tighter end-shot control may eventually outgrow it.</p>
-  <ProsCons
-    pros={[
-      'Very affordable entry point',
-      'Useful built-in timer for simple recipes',
-      'Good readability for daily use',
-      'Strong value for first dedicated scale buyers',
-    ]}
-    cons={[
-      'Response behavior is less refined than premium options',
-      'Not ideal for precision-focused espresso routines',
-      'Fewer advanced convenience features',
-    ]}
-  />
-  <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
+      <h3>3) Greater Goods Digital Coffee Scale — Best Budget</h3>
+      <ProductCard
+        title={products[2].name}
+        image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+        badge={products[2].badge}
+        rating={{ score: products[2].rating }}
+        price={products[2].price}
+        ctaUrl={amazonUrl(products[2].asin)}
+      />
+      <p>If you are moving from scoop-based brewing, this is the easiest low-cost upgrade that usually improves consistency immediately. It gives you basic precision and timer support without forcing a high initial spend. For beginners building a full setup, that budget flexibility is valuable.</p>
+      <p>The key compromise is response refinement versus mid-range and premium picks. For routine pour over this is often acceptable, but espresso users who want tighter end-shot control may eventually outgrow it.</p>
+      <ProsCons
+        pros={[
+          'Very affordable entry point',
+          'Useful built-in timer for simple recipes',
+          'Good readability for daily use',
+          'Strong value for first dedicated scale buyers',
+        ]}
+        cons={[
+          'Response behavior is less refined than premium options',
+          'Not ideal for precision-focused espresso routines',
+          'Fewer advanced convenience features',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
 
-  <h3>4) Acaia Pearl S — Best App-Connected Option</h3>
-  <ProductCard
-    title={products[3].name}
-    image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
-    badge={products[3].badge}
-    rating={{ score: products[3].rating }}
-    price={products[3].price}
-    ctaUrl={amazonUrl(products[3].asin)}
-  />
-  <p>The Acaia Pearl S is built for brewers who want digital workflow depth: app pairing, recipe memory, and cleaner long-term tracking. If you frequently compare coffees, optimize repeatability, or maintain multiple brew profiles, its ecosystem is a real advantage rather than a gimmick.</p>
-  <p>That said, this is a premium-priced tool. If you mostly want straightforward dose and timer consistency, you can get strong practical results from lower-cost models. The Pearl S makes the most sense when process logging itself is a core part of your brewing routine.</p>
-  <ProsCons
-    pros={[
-      'Strong app ecosystem and brew logging options',
-      'Premium feel and stable repeatability',
-      'Great for recipe-focused hobbyists',
-      'Useful for long-term consistency tracking',
-    ]}
-    cons={[
-      'High price relative to core needs',
-      'App features can be unnecessary for casual users',
-      'Less compelling if you prefer zero-phone workflows',
-    ]}
-  />
-  <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
+      <h3>4) Acaia Pearl S — Best App-Connected Option</h3>
+      <ProductCard
+        title={products[3].name}
+        image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+        badge={products[3].badge}
+        rating={{ score: products[3].rating }}
+        price={products[3].price}
+        ctaUrl={amazonUrl(products[3].asin)}
+      />
+      <p>The Acaia Pearl S is built for brewers who want digital workflow depth: app pairing, recipe memory, and cleaner long-term tracking. If you frequently compare coffees, optimize repeatability, or maintain multiple brew profiles, its ecosystem is a real advantage rather than a gimmick.</p>
+      <p>That said, this is a premium-priced tool. If you mostly want straightforward dose and timer consistency, you can get strong practical results from lower-cost models. The Pearl S makes the most sense when process logging itself is a core part of your brewing routine.</p>
+      <ProsCons
+        pros={[
+          'Strong app ecosystem and brew logging options',
+          'Premium feel and stable repeatability',
+          'Great for recipe-focused hobbyists',
+          'Useful for long-term consistency tracking',
+        ]}
+        cons={[
+          'High price relative to core needs',
+          'App features can be unnecessary for casual users',
+          'Less compelling if you prefer zero-phone workflows',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
 
-  <h3>5) KitchenTour Coffee Scale — Best Compact Footprint</h3>
-  <ProductCard
-    title={products[4].name}
-    image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
-    badge={products[4].badge}
-    rating={{ score: products[4].rating }}
-    price={products[4].price}
-    ctaUrl={amazonUrl(products[4].asin)}
-  />
-  <p>Counter space and tray clearance are common pain points for home espresso setups. The KitchenTour scale earns its place by staying compact and easy to position, which removes a surprising amount of daily friction. If your current scale constantly bumps cups, steam wands, or drip tray edges, this style of form factor matters.</p>
-  <p>Compact sizing does mean fewer premium extras, but most people buying this category care more about fit and dependable timing than advanced software features. It is a practical, no-drama choice for smaller stations.</p>
-  <ProsCons
-    pros={[
-      'Small platform suited to tight espresso spaces',
-      'Simple day-to-day operation',
-      'Affordable versus premium compact alternatives',
-      'Good workflow fit for smaller home setups',
-    ]}
-    cons={[
-      'Less feature depth than app-connected models',
-      'Can feel cramped for large manual brew vessels',
-      'Build refinement trails higher-tier picks',
-    ]}
-  />
-  <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
+      <h3>5) KitchenTour Coffee Scale — Best Compact Footprint</h3>
+      <ProductCard
+        title={products[4].name}
+        image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+        badge={products[4].badge}
+        rating={{ score: products[4].rating }}
+        price={products[4].price}
+        ctaUrl={amazonUrl(products[4].asin)}
+      />
+      <p>Counter space and tray clearance are common pain points for home espresso setups. The KitchenTour scale earns its place by staying compact and easy to position, which removes a surprising amount of daily friction. If your current scale constantly bumps cups, steam wands, or drip tray edges, this style of form factor matters.</p>
+      <p>Compact sizing does mean fewer premium extras, but most people buying this category care more about fit and dependable timing than advanced software features. It is a practical, no-drama choice for smaller stations.</p>
+      <ProsCons
+        pros={[
+          'Small platform suited to tight espresso spaces',
+          'Simple day-to-day operation',
+          'Affordable versus premium compact alternatives',
+          'Good workflow fit for smaller home setups',
+        ]}
+        cons={[
+          'Less feature depth than app-connected models',
+          'Can feel cramped for large manual brew vessels',
+          'Build refinement trails higher-tier picks',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
 
-  <h3>6) Maestri House Rechargeable Coffee Scale — Best Rechargeable Pick</h3>
-  <ProductCard
-    title={products[5].name}
-    image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
-    badge={products[5].badge}
-    rating={{ score: products[5].rating }}
-    price={products[5].price}
-    ctaUrl={amazonUrl(products[5].asin)}
-  />
-  <p>For buyers who are tired of battery swaps, a rechargeable model can make ownership easier. The Maestri House option is attractive for users who want modern convenience with straightforward controls, especially in kitchens where the scale is used daily for both espresso and pour over.</p>
-  <p>Rechargeable convenience does not replace core performance, but it can reduce maintenance annoyances enough that people use the scale more consistently. If your brew corner already has USB-C charging nearby, this option fits naturally into that setup.</p>
-  <ProsCons
-    pros={[
-      'USB-C charging simplifies long-term use',
-      'Balanced feature set for mixed brew methods',
-      'Readable interface and practical timer behavior',
-      'Good mid-range value for convenience-focused buyers',
-    ]}
-    cons={[
-      'Battery longevity varies with use patterns',
-      'Less proven track record than legacy models',
-      'Still not as workflow-rich as premium app ecosystems',
-    ]}
-  />
-  <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
+      <h3>6) Maestri House Rechargeable Coffee Scale — Best Rechargeable Pick</h3>
+      <ProductCard
+        title={products[5].name}
+        image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
+        badge={products[5].badge}
+        rating={{ score: products[5].rating }}
+        price={products[5].price}
+        ctaUrl={amazonUrl(products[5].asin)}
+      />
+      <p>For buyers who are tired of battery swaps, a rechargeable model can make ownership easier. The Maestri House option is attractive for users who want modern convenience with straightforward controls, especially in kitchens where the scale is used daily for both espresso and pour over.</p>
+      <p>Rechargeable convenience does not replace core performance, but it can reduce maintenance annoyances enough that people use the scale more consistently. If your brew corner already has USB-C charging nearby, this option fits naturally into that setup.</p>
+      <ProsCons
+        pros={[
+          'USB-C charging simplifies long-term use',
+          'Balanced feature set for mixed brew methods',
+          'Readable interface and practical timer behavior',
+          'Good mid-range value for convenience-focused buyers',
+        ]}
+        cons={[
+          'Battery longevity varies with use patterns',
+          'Less proven track record than legacy models',
+          'Still not as workflow-rich as premium app ecosystems',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
 
-  <BuyingGuideSection>
-    <h2 id="buying-guide">Buying Guide: How to Choose a Scale That You’ll Actually Use</h2>
-    <p>Start with your brew priority. Espresso-first users should filter options by response speed and footprint before looking at extras. Pour-over-first users should prioritize display readability and timer ergonomics. Hybrid users should target a compact model that still feels comfortable under drippers and servers.</p>
-    <p>Second, decide whether you want “workflow depth” or “workflow simplicity.” If you track recipes and compare coffees often, app-connected options can provide real value. If your goal is fast, repeatable daily brewing, a clean non-app model often delivers better value and fewer distractions.</p>
-    <p>Third, buy for physical compatibility, not marketing claims. Measure your espresso tray area and confirm the scale dimensions before checkout. This one step prevents the most common purchase regret in this category.</p>
-    <p>Fourth, treat the scale as one part of a system. Consistency gains are strongest when you combine scale-based dosing with stable grind settings and repeatable brew ratios. If your grinder is inconsistent, even the best scale cannot fully rescue cup quality.</p>
-    <p>Finally, build a baseline recipe and log short notes for one week. Keep dose, yield, and time fixed, then adjust one variable at a time. That process turns your scale from a gadget into a reliable decision tool for better coffee.</p>
-  </BuyingGuideSection>
-  <HeroSteps
-    title="Narrow Your Scale Shortlist"
-    subtitle="Budget, brew method, speed, and compatibility in 4 steps"
-    steps={[
-      { label: 'Set Budget', icon: 'list', actions: ['Under $30: entry tier', '$30-$90: mid-range sweet spot', '$100+: premium app models', 'Match spend to brew frequency'], time: '~1 min' },
-      { label: 'Pick Brew Method', icon: 'coffee', actions: ['Espresso: compact + fast', 'Pour over: readable + timed', 'Both: balanced all-rounder', 'Single method saves money'], time: '~1 min' },
-      { label: 'Compare Speed & Size', icon: 'zap', actions: ['Check display lag specs', 'Measure platform dimensions', 'Verify tray/dripper fit', 'Prioritize daily comfort'], time: '~2 min' },
-      { label: 'Verify Compatibility', icon: 'check', actions: ['Test with your machine', 'Confirm cup clearance', 'Check power/battery type', 'Read return policy first'], time: '~1 min' },
-    ]}
-    outcome="A confident purchase that fits your station and improves consistency from day one."
-    footer="coffeegearlab.com · scale buying guide · 2026"
-  />
+  <Fragment slot="extra-sections">
+    <section>
+      <h2>Espresso Workflow: How to Use Your Scale for Better Shot Consistency</h2>
+      <p>The biggest gain from a coffee scale in espresso is not just measuring dose once. The real gain is repeatable control from puck prep to shot stop. Start with one repeatable recipe: for example 18 grams in, 36 grams out. Keep that ratio fixed while dialing grind. This lets taste feedback map cleanly to grind changes instead of random variable drift.</p>
+      <p>Before each shot, place your cup on the scale and tare to zero. That eliminates cup-weight offset errors and makes your stop target clear. Watch flow behavior in phases: first drip timing, mid-shot flow speed, and final 5 grams. If your scale display lags, stop slightly early and let momentum carry the final grams. Over time you learn your scale's response behavior and can hit targets more reliably.</p>
+      <p>Use short logs, not long journals. A one-line note with dose, yield, time, and taste is enough: "18 in / 36 out / 30s / slightly bitter." On the next shot, change one variable only. If bitter, grind slightly coarser. If sour and thin, grind finer. This one-change approach turns your scale into a true calibration tool instead of a passive accessory.</p>
+      <p>Consistency also depends on station ergonomics. If the display is hidden behind your cup or the platform wobbles on the drip tray, you will miss targets no matter how accurate the load cell is. Choose a model that physically fits your machine and cup routine. Convenience is not a luxury here; convenience is what keeps you using the tool every morning.</p>
+    </section>
 
-  <h2>Espresso Workflow: How to Use Your Scale for Better Shot Consistency</h2>
-  <p>The biggest gain from a coffee scale in espresso is not just measuring dose once. The real gain is repeatable control from puck prep to shot stop. Start with one repeatable recipe: for example 18 grams in, 36 grams out. Keep that ratio fixed while dialing grind. This lets taste feedback map cleanly to grind changes instead of random variable drift.</p>
-  <p>Before each shot, place your cup on the scale and tare to zero. That eliminates cup-weight offset errors and makes your stop target clear. Watch flow behavior in phases: first drip timing, mid-shot flow speed, and final 5 grams. If your scale display lags, stop slightly early and let momentum carry the final grams. Over time you learn your scale’s response behavior and can hit targets more reliably.</p>
-  <p>Use short logs, not long journals. A one-line note with dose, yield, time, and taste is enough: “18 in / 36 out / 30s / slightly bitter.” On the next shot, change one variable only. If bitter, grind slightly coarser. If sour and thin, grind finer. This one-change approach turns your scale into a true calibration tool instead of a passive accessory.</p>
-  <p>Consistency also depends on station ergonomics. If the display is hidden behind your cup or the platform wobbles on the drip tray, you will miss targets no matter how accurate the load cell is. Choose a model that physically fits your machine and cup routine. Convenience is not a luxury here; convenience is what keeps you using the tool every morning.</p>
+    <section>
+      <h2>Pour Over Workflow: Ratio, Timing, and Repeatability</h2>
+      <p>For pour over, a scale helps you lock the two numbers that drive cup quality: dose and water. A practical starting point is 1:16 to 1:17 (for example, 20 g coffee to 320-340 g water). Once you hold those numbers steady, you can tune flavor with grind size and pour pattern instead of chasing random outcomes.</p>
+      <p>Use timer checkpoints to break a brew into observable stages. Start the timer at first pour. Track bloom water, total water at midpoint, and final drawdown time. If drawdown runs too fast and tastes sour, grind finer or pour more gently. If drawdown is too slow and tastes harsh, grind coarser or reduce agitation. Your scale creates objective waypoints that make adjustments faster and less frustrating.</p>
+      <p>Readability matters more than many buyers expect. A display that is clear while pouring from kettle height reduces mental load and keeps your pours smooth. This is why some brewers prefer simpler scales with large digits over feature-dense models. In real kitchens, clarity often beats complexity.</p>
+      <p>When sharing gear with family or roommates, scale-based recipes also create a shared language. Instead of "a little more water," everyone can follow the same targets. That keeps results more consistent across different brewers and makes troubleshooting much easier when coffee quality drifts.</p>
+    </section>
 
-  <h2>Pour Over Workflow: Ratio, Timing, and Repeatability</h2>
-  <p>For pour over, a scale helps you lock the two numbers that drive cup quality: dose and water. A practical starting point is 1:16 to 1:17 (for example, 20 g coffee to 320–340 g water). Once you hold those numbers steady, you can tune flavor with grind size and pour pattern instead of chasing random outcomes.</p>
-  <p>Use timer checkpoints to break a brew into observable stages. Start the timer at first pour. Track bloom water, total water at midpoint, and final drawdown time. If drawdown runs too fast and tastes sour, grind finer or pour more gently. If drawdown is too slow and tastes harsh, grind coarser or reduce agitation. Your scale creates objective waypoints that make adjustments faster and less frustrating.</p>
-  <p>Readability matters more than many buyers expect. A display that is clear while pouring from kettle height reduces mental load and keeps your pours smooth. This is why some brewers prefer simpler scales with large digits over feature-dense models. In real kitchens, clarity often beats complexity.</p>
-  <p>When sharing gear with family or roommates, scale-based recipes also create a shared language. Instead of “a little more water,” everyone can follow the same targets. That keeps results more consistent across different brewers and makes troubleshooting much easier when coffee quality drifts.</p>
+    <section>
+      <h2>Common Coffee Scale Mistakes (and How to Avoid Them)</h2>
+      <p><strong>Mistake 1: Buying only by price.</strong> Budget matters, but a cheaper scale that is awkward or laggy can cost more over time if you stop using it. Prioritize fit and response first, then choose the best model in your budget band.</p>
+      <p><strong>Mistake 2: Ignoring footprint.</strong> Many returns happen because the platform is too large for compact espresso machines. Measure your available space before you buy, especially if you use wider cups or bottomless portafilters with limited clearance.</p>
+      <p><strong>Mistake 3: Changing multiple variables at once.</strong> If you alter dose, grind, and yield simultaneously, you cannot tell what fixed the cup. Keep your dose and ratio stable and adjust one variable at a time.</p>
+      <p><strong>Mistake 4: Treating timer and weight as separate tasks.</strong> The best brewers combine both. Weight without timing misses flow context; timing without weight misses ratio control. Use both together for repeatable results.</p>
+      <p><strong>Mistake 5: Neglecting basic maintenance.</strong> Moisture, steam, and fine coffee particles can affect controls and long-term reliability. Wipe the platform after each session, avoid storing heavy objects on top, and keep charging or battery replacement on a predictable cadence.</p>
+    </section>
 
-  <h2>Common Coffee Scale Mistakes (and How to Avoid Them)</h2>
-  <p><strong>Mistake 1: Buying only by price.</strong> Budget matters, but a cheaper scale that is awkward or laggy can cost more over time if you stop using it. Prioritize fit and response first, then choose the best model in your budget band.</p>
-  <p><strong>Mistake 2: Ignoring footprint.</strong> Many returns happen because the platform is too large for compact espresso machines. Measure your available space before you buy, especially if you use wider cups or bottomless portafilters with limited clearance.</p>
-  <p><strong>Mistake 3: Changing multiple variables at once.</strong> If you alter dose, grind, and yield simultaneously, you cannot tell what fixed the cup. Keep your dose and ratio stable and adjust one variable at a time.</p>
-  <p><strong>Mistake 4: Treating timer and weight as separate tasks.</strong> The best brewers combine both. Weight without timing misses flow context; timing without weight misses ratio control. Use both together for repeatable results.</p>
-  <p><strong>Mistake 5: Neglecting basic maintenance.</strong> Moisture, steam, and fine coffee particles can affect controls and long-term reliability. Wipe the platform after each session, avoid storing heavy objects on top, and keep charging or battery replacement on a predictable cadence.</p>
+    <section>
+      <h2>Which Type of Buyer Should Choose Which Scale?</h2>
+      <p>If you are a hybrid brewer who makes espresso on weekdays and pour over on weekends, the TIMEMORE Black Mirror Nano is the most practical one-scale solution. It balances compactness, speed, and usability better than most alternatives in its price tier.</p>
+      <p>If your routine is mostly pour over and you value a familiar, no-surprises interface, the Hario V60 Drip Scale remains one of the safest picks. It keeps workflow simple and encourages consistency, which is what most users need more than extra features.</p>
+      <p>If you are upgrading from scoop brewing and want immediate consistency without spending much, the Greater Goods model is the most accessible entry point. It is an easy way to build better habits while saving budget for grinder upgrades.</p>
+      <p>If you actively log recipes or refine multiple coffees every week, the Acaia Pearl S is worth considering for its ecosystem depth. It is expensive, but it can support a higher-discipline brew workflow if you will actually use the app features.</p>
+      <p>If your espresso station is physically cramped, the KitchenTour style compact form factor is often the best quality-of-life upgrade. A scale that fits cleanly gets used consistently, and that consistency is what improves cup quality over time.</p>
+      <p>If you dislike battery swaps and want cleaner daily ownership, a rechargeable option like the Maestri House model can remove enough friction to make regular weighing effortless. Convenience matters because convenience drives consistency.</p>
+    </section>
+  </Fragment>
 
-  <h2>Which Type of Buyer Should Choose Which Scale?</h2>
-  <p>If you are a hybrid brewer who makes espresso on weekdays and pour over on weekends, the TIMEMORE Black Mirror Nano is the most practical one-scale solution. It balances compactness, speed, and usability better than most alternatives in its price tier.</p>
-  <p>If your routine is mostly pour over and you value a familiar, no-surprises interface, the Hario V60 Drip Scale remains one of the safest picks. It keeps workflow simple and encourages consistency, which is what most users need more than extra features.</p>
-  <p>If you are upgrading from scoop brewing and want immediate consistency without spending much, the Greater Goods model is the most accessible entry point. It is an easy way to build better habits while saving budget for grinder upgrades.</p>
-  <p>If you actively log recipes or refine multiple coffees every week, the Acaia Pearl S is worth considering for its ecosystem depth. It is expensive, but it can support a higher-discipline brew workflow if you will actually use the app features.</p>
-  <p>If your espresso station is physically cramped, the KitchenTour style compact form factor is often the best quality-of-life upgrade. A scale that fits cleanly gets used consistently, and that consistency is what improves cup quality over time.</p>
-  <p>If you dislike battery swaps and want cleaner daily ownership, a rechargeable option like the Maestri House model can remove enough friction to make regular weighing effortless. Convenience matters because convenience drives consistency.</p>
-
-  <h2 id="faq">Frequently Asked Questions</h2>
-  <FaqAccordion>
-    {faqs.map((faq) => (
-      <FaqItem question={faq.q}>
-        <p>{faq.a}</p>
-      </FaqItem>
-    ))}
-  </FaqAccordion>
-</PostLayout>
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying Guide: How to Choose a Scale That You'll Actually Use</h2>
+      <p>Start with your brew priority. Espresso-first users should filter options by response speed and footprint before looking at extras. Pour-over-first users should prioritize display readability and timer ergonomics. Hybrid users should target a compact model that still feels comfortable under drippers and servers.</p>
+      <p>Second, decide whether you want "workflow depth" or "workflow simplicity." If you track recipes and compare coffees often, app-connected options can provide real value. If your goal is fast, repeatable daily brewing, a clean non-app model often delivers better value and fewer distractions.</p>
+      <p>Third, buy for physical compatibility, not marketing claims. Measure your espresso tray area and confirm the scale dimensions before checkout. This one step prevents the most common purchase regret in this category.</p>
+      <p>Fourth, treat the scale as one part of a system. Consistency gains are strongest when you combine scale-based dosing with stable grind settings and repeatable brew ratios. If your grinder is inconsistent, even the best scale cannot fully rescue cup quality.</p>
+      <p>Finally, build a baseline recipe and log short notes for one week. Keep dose, yield, and time fixed, then adjust one variable at a time. That process turns your scale from a gadget into a reliable decision tool for better coffee.</p>
+    </BuyingGuideSection>
+  </Fragment>
+</MoneyPage>
