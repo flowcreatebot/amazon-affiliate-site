@@ -144,7 +144,7 @@ const funFacts = [
         linkHref="/posts/"
       />
       <div class="guides-grid">
-        {moneyPosts.map((post) => (
+        {moneyPosts.slice(0, 9).map((post) => (
           <GuideCard
             title={post.title}
             description={post.description}
