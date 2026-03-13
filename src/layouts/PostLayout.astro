@@ -29,7 +29,7 @@ const {
 <BaseLayout {...baseProps}>
   <slot name="head" slot="head" />
   <Breadcrumbs items={breadcrumbs} />
-  {showDisclosure && <AffiliateDisclosure text={disclosureText} />}
+  {showDisclosure && <AffiliateDisclosure text={disclosureText ?? DISCLOSURE_TEXT} />}
   <slot />
   {showDisclosure && <AffiliateDisclosure text={disclosureText ?? DISCLOSURE_TEXT} />}
 </BaseLayout>

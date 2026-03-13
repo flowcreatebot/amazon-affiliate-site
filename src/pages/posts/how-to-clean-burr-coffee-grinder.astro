@@ -6,7 +6,6 @@ import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsCons from '../../components/ProsCons.astro';
 import QuickPicks from '../../components/QuickPicks.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
-import HeroSteps from '../../components/HeroSteps.astro';
 
 const tools = [
   {
@@ -16,7 +15,7 @@ const tools = [
     badge: 'beginners' as const,
     price: '$',
     rating: 4.3,
-    image: 'https://m.media-amazon.com/images/I/71DeUg8G7kS._AC_SL500_.jpg',
+    image: 'PLACEHOLDER_IMG:B07CSKGLMM',
     imageAlt: 'OXO Brew Conical Burr Grinder with grounds bin',
   },
   {
@@ -26,7 +25,7 @@ const tools = [
     badge: 'upgrade' as const,
     price: '$$',
     rating: 4.4,
-    image: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg',
+    image: 'PLACEHOLDER_IMG:B0BV96VPSR',
     imageAlt: 'Fellow Opus conical burr coffee grinder',
   },
   {
@@ -36,7 +35,7 @@ const tools = [
     badge: 'overall' as const,
     price: '$$',
     rating: 4.6,
-    image: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg',
+    image: 'PLACEHOLDER_IMG:B0BW272XCV',
     imageAlt: 'Baratza Encore ESP burr grinder on white background',
   },
 ];
@@ -68,6 +67,7 @@ const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim
     { href: '#what-you-need', label: "What you'll need" },
     { href: '#steps', label: 'Numbered cleaning steps' },
     { href: '#mistakes', label: 'Common mistakes to avoid' },
+    { href: '#troubleshooting', label: 'Troubleshooting' },
     { href: '#upgrade-picks', label: 'Easy-clean grinder picks' },
     { href: '#faq', label: 'Frequently asked questions' },
   ]}
@@ -160,6 +160,16 @@ const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim
     </ul>
     <p>Another frequent mistake is over-correcting when flavor changes after maintenance. A cleaner grinder can produce faster flow at the same dial position because fewer old fines remain in the path. That does not mean the grinder is broken. It usually means your previous setting included hidden resistance from residue.</p>
     <p>It also helps to track your brew results in a simple log for two weeks after adopting a cleaning routine. Record dose, grind mark, brew time, and a quick taste note. Patterns become obvious fast, and troubleshooting becomes objective instead of guesswork.</p>
+  </Fragment>
+
+  <Fragment slot="troubleshooting">
+    <h2 id="troubleshooting">Troubleshooting after cleaning</h2>
+    <ul>
+      <li><strong>Shots suddenly run fast:</strong> old fines were adding resistance. Grind slightly finer and pull 1-2 calibration shots before judging flavor.</li>
+      <li><strong>Filter coffee tastes hollow:</strong> check burr carrier seating and dial alignment, then return to your baseline ratio from our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a>.</li>
+      <li><strong>Static mess got worse:</strong> brush anti-static tabs more thoroughly during weekly cleaning and reduce bean hopper dwell time.</li>
+      <li><strong>Grind range feels shifted:</strong> verify zero-point per manual, then compare target ranges with our <a href="/posts/burr-grinder-settings-for-espresso.html">burr grinder settings guide</a>.</li>
+    </ul>
   </Fragment>
 
   <Fragment slot="extra-sections">

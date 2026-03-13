@@ -5,9 +5,136 @@ import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsCons from '../../components/ProsCons.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
-import { getResolvedProducts, amazonUrl } from '../../data/products';
+import { amazonUrl } from '../../data/products';
 
-const products = getResolvedProducts('best-single-serve-coffee-maker-with-grinder');
+const products = [
+  {
+    id: 'cuisinart-grind-brew-single-serve-dgb-2',
+    name: 'Cuisinart Grind & Brew Single-Serve',
+    brand: 'Cuisinart',
+    asin: 'B09HDFLF2X',
+    image: 'https://m.media-amazon.com/images/P/B09HDFLF2X.01._AC_SL500_.jpg',
+    imageAlt: 'Cuisinart Grind & Brew single-serve coffee maker with built-in grinder',
+    category: 'brewers',
+    rating: 4.4,
+    specs: {
+      grinder: 'Built-in',
+      brewModes: 'Beans + pods',
+      cupSizes: '8, 10, 12 oz',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: '$$',
+    bestFor: 'Fast weekday bean-to-cup brewing',
+  },
+  {
+    id: 'cuisinart-ss-gb1',
+    name: 'Cuisinart SS-GB1',
+    brand: 'Cuisinart',
+    asin: 'B08MGYR9SX',
+    image: 'https://m.media-amazon.com/images/P/B08MGYR9SX.01._AC_SL500_.jpg',
+    imageAlt: 'Cuisinart SS-GB1 coffee maker with grinder and pod compatibility',
+    category: 'brewers',
+    rating: 4.3,
+    specs: {
+      grinder: 'Built-in',
+      brewModes: 'Beans + ground + pods',
+      cupSizes: 'Single serve + 12-cup carafe',
+    },
+    badge: { label: 'Best for Families', variant: 'beginners' },
+    price: '$$',
+    bestFor: 'Split bean and pod households',
+  },
+  {
+    id: 'gevi-4-in-1-single-serve',
+    name: 'Gevi 4-in-1 Single Serve',
+    brand: 'Gevi',
+    asin: 'B0GM41GYZH',
+    image: 'https://m.media-amazon.com/images/P/B0GM41GYZH.01._AC_SL500_.jpg',
+    imageAlt: 'Gevi 4-in-1 single-serve coffee maker for grounds and pods',
+    category: 'brewers',
+    rating: 4.2,
+    specs: {
+      grinder: 'No integrated grinder listed',
+      brewModes: 'Ground + K-Cup',
+      cupSizes: '6-14 oz',
+    },
+    badge: { label: 'Easiest Cleanup', variant: 'budget' },
+    price: '$$',
+    bestFor: 'Low-friction cleanup routines',
+  },
+  {
+    id: 'black-decker-cm5000b',
+    name: 'BLACK+DECKER Mill and Brew CM5000B',
+    brand: 'BLACK+DECKER',
+    asin: 'B00LU2I46E',
+    image: 'https://m.media-amazon.com/images/P/B00LU2I46E.01._AC_SL500_.jpg',
+    imageAlt: 'BLACK+DECKER Mill and Brew CM5000B programmable coffee maker with grinder',
+    category: 'brewers',
+    rating: 4.1,
+    specs: {
+      grinder: 'Built-in',
+      brewModes: 'Beans + ground',
+      cupSizes: 'Up to 12-cup batch',
+    },
+    badge: { label: 'Best Budget', variant: 'budget' },
+    price: '$',
+    bestFor: 'Budget-focused buyers',
+  },
+  {
+    id: 'breville-grind-control',
+    name: 'Breville Grind Control',
+    brand: 'Breville',
+    asin: 'B00VGGVQCI',
+    image: 'https://m.media-amazon.com/images/P/B00VGGVQCI.01._AC_SL500_.jpg',
+    imageAlt: 'Breville Grind Control coffee maker with burr grinder',
+    category: 'brewers',
+    rating: 4.5,
+    specs: {
+      grinder: 'Burr',
+      brewModes: 'Beans + ground',
+      cupSizes: 'Single cup to 12-cup carafe',
+    },
+    badge: { label: 'Flavor Upgrade', variant: 'upgrade' },
+    price: '$$$',
+    bestFor: 'Flavor-focused upgrades',
+  },
+  {
+    id: 'delonghi-truebrew',
+    name: "De'Longhi TrueBrew",
+    brand: "De'Longhi",
+    asin: 'B0F3ZSVPPG',
+    image: 'https://m.media-amazon.com/images/P/B0F3ZSVPPG.01._AC_SL500_.jpg',
+    imageAlt: "De'Longhi TrueBrew bean-to-cup coffee maker", 
+    category: 'brewers',
+    rating: 4.4,
+    specs: {
+      grinder: 'Built-in burr',
+      brewModes: 'Bean-focused workflow',
+      cupSizes: '8-24 oz',
+    },
+    badge: { label: 'Best Premium', variant: 'upgrade' },
+    price: '$$$',
+    bestFor: 'Premium one-touch convenience',
+  },
+  {
+    id: 'chefman-instacoffee-max',
+    name: 'Chefman InstaCoffee Max',
+    brand: 'Chefman',
+    asin: 'B09NRYX5K7',
+    image: 'https://m.media-amazon.com/images/P/B09NRYX5K7.01._AC_SL500_.jpg',
+    imageAlt: 'Chefman InstaCoffee Max compact single-serve coffee maker',
+    category: 'brewers',
+    rating: 4.0,
+    specs: {
+      grinder: 'No integrated grinder listed',
+      brewModes: 'Ground + K-Cup',
+      cupSizes: 'Single-serve',
+    },
+    badge: { label: 'Best Compact', variant: 'beginners' },
+    price: '$$',
+    bestFor: 'Small counters and dorm setups',
+  },
+];
 ---
 
 <MoneyPage
@@ -51,10 +178,14 @@ const products = getResolvedProducts('best-single-serve-coffee-maker-with-grinde
     <p class="lead">If you want one-cup convenience without giving up fresh-ground flavor, this is the shortlist to start with. We researched and compared seven popular machines for brew quality, bean-to-cup speed, pod flexibility, daily cleanup effort, and long-term value so you can buy the right model the first time.</p>
   </Fragment>
 
+  <Fragment slot="quick-answer">
+    <p><strong>Quick answer:</strong> The best single serve coffee maker with grinder for most buyers in 2026 is the Cuisinart Grind &amp; Brew Single-Serve because it balances flavor, speed, and cleanup. Pick Cuisinart SS-GB1 if your home needs bean and pod flexibility, or choose BLACK+DECKER CM5000B if you want the most budget-friendly grinder machine.</p>
+  </Fragment>
+
   <Fragment slot="comparison-table">
     <h2 id="comparison-table">Comparison table</h2>
     <ComparisonTable
-      timestamp="March 9, 2026"
+      timestamp="Prices updated: March 13, 2026"
       ariaLabel="Single serve coffee makers with grinder comparison"
     >
       <table>
@@ -352,5 +483,17 @@ const products = getResolvedProducts('best-single-serve-coffee-maker-with-grinde
       <p><strong>Match price tier to usage frequency.</strong> Budget machines can be excellent for one or two cups a day. Premium models make more sense when you brew often and want a smoother long-term experience. If you are still deciding between formats, read <a href="/posts/drip-vs-single-serve-coffee-maker.html">Drip vs Single-Serve Coffee Maker</a>. For broader options, see <a href="/posts/best-coffee-maker-with-grinder.html">Best Coffee Maker with Grinder</a>. If pod flexibility is non-negotiable, compare with <a href="/posts/best-coffee-maker-with-grinder-and-k-cup-combo.html">Best Coffee Maker with Grinder and K-Cup Combo</a>. For sub-$200 value picks, use <a href="/posts/best-grind-and-brew-coffee-maker-under-200.html">Best Grind and Brew Coffee Maker Under $200</a>.</p>
       <p><strong>Final decision shortcut:</strong> choose Cuisinart Grind &amp; Brew Single-Serve for the safest all-around buy, Cuisinart SS-GB1 for shared bean+pod households, Breville Grind Control for flavor-focused upgrades, and BLACK+DECKER CM5000B if price is your main constraint.</p>
     </BuyingGuideSection>
+  </Fragment>
+
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/best-coffee-maker-with-grinder.html">Best Coffee Maker with Grinder (2026)</a></li>
+        <li><a href="/posts/best-coffee-maker-with-grinder-and-k-cup-combo.html">Best Coffee Maker with Grinder and K-Cup Combo</a></li>
+        <li><a href="/posts/drip-vs-single-serve-coffee-maker.html">Drip vs Single-Serve Coffee Maker</a></li>
+        <li><a href="/posts/best-grind-and-brew-coffee-maker-under-200.html">Best Grind and Brew Coffee Maker Under $200</a></li>
+      </ul>
+    </section>
   </Fragment>
 </MoneyPage>

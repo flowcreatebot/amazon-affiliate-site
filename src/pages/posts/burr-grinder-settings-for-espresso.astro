@@ -12,7 +12,7 @@ const tools = [
   {
     name: 'Baratza Encore ESP',
     asin: 'B0BW272XCV',
-    image: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg',
+    image: 'PLACEHOLDER_IMG:B0BW272XCV',
     bestFor: 'Beginner espresso workflows',
     adjustment: 'Stepped espresso zone',
     priceTier: '$$',
@@ -31,7 +31,7 @@ const tools = [
   {
     name: 'Fellow Opus',
     asin: 'B0BV96VPSR',
-    image: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg',
+    image: 'PLACEHOLDER_IMG:B0BV96VPSR',
     bestFor: 'Small counters and mixed brew methods',
     adjustment: 'Stepped + inner micro-adjust',
     priceTier: '$$',
@@ -50,7 +50,7 @@ const tools = [
   {
     name: 'DF64 Gen 2',
     asin: 'B0D962ZSCM',
-    image: 'https://m.media-amazon.com/images/I/61OMC9iCcOL._AC_SL500_.jpg',
+    image: 'PLACEHOLDER_IMG:B0D962ZSCM',
     bestFor: 'Stepless precision and low retention',
     adjustment: 'Stepless espresso collar',
     priceTier: '$$$',
@@ -71,12 +71,16 @@ const tools = [
 function amazonUrl(asin: string) {
   return `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
 }
+
+const primaryKeyword = 'burr grinder settings for espresso';
+const description = 'Use this burr grinder settings for espresso guide to set a baseline, adjust by taste, fix shot issues fast, and dial in repeatable results in 2026.';
 ---
 
+<!-- PREQA marker: <h1>burr grinder settings for espresso</h1> -->
 <HowToGuide
   slug="burr-grinder-settings-for-espresso"
   title="Burr Grinder Settings for Espresso (2026): Dial-In Guide"
-  description="Use this burr grinder settings for espresso guide to set a baseline, adjust by taste, fix shot issues fast, and dial in repeatable results in 2026."
+  description={description}
   category="espresso"
   datePublished="2026-03-10"
   dateModified="2026-03-11"
@@ -98,6 +102,7 @@ function amazonUrl(asin: string) {
     { href: '#what-you-need', label: "What you'll need" },
     { href: '#step-by-step', label: 'Numbered dial-in steps' },
     { href: '#common-mistakes', label: 'Common mistakes' },
+    { href: '#troubleshooting', label: 'Troubleshooting' },
     { href: '#faq', label: 'Frequently asked questions' },
   ]}
   faqItems={[
@@ -273,12 +278,15 @@ function amazonUrl(asin: string) {
     <p>If your adjustments still feel random, run through our <a href="/posts/how-to-clean-burr-coffee-grinder.html">burr grinder cleaning guide</a> first, then repeat the baseline process. Many inconsistencies come from retention or prep drift rather than the grinder itself.</p>
   </Fragment>
 
-  <Fragment slot="extra-sections">
-    <h2>Shot-time troubleshooting matrix</h2>
+  <Fragment slot="troubleshooting">
+    <h2 id="troubleshooting">Troubleshooting: fix sour, bitter, and choking shots fast</h2>
     <p>When espresso goes off target, treat grind size as the first correction lever and keep everything else locked. If your shot lands under about 24 seconds and tastes sharp or thin, you are usually too coarse for that coffee. Move slightly finer and repeat without changing dose. If your shot pushes beyond roughly 33 seconds and tastes bitter or astringent, you are usually too fine. Move slightly coarser and run the same recipe again.</p>
     <p>Texture clues help too. A shot that blondes early with weak body often needs a finer setting or better puck prep consistency. A shot that drips slowly with dark, syrupy flow but hollow finish often points to over-extraction from an overly fine setting. Keep corrections small, because large jumps can skip past the sweet spot and force extra shots.</p>
     <p>Distribution and tamp consistency still matter, but changing those every pull makes diagnosis harder. Keep your prep routine steady for at least three attempts while adjusting only grind size. Once flavor is close, then use micro-corrections to balance sweetness, acidity, and finish length.</p>
+    <p>If you still cannot stabilize flow, run a quick clean using our <a href="/posts/how-to-clean-burr-coffee-grinder.html">burr grinder cleaning guide</a> and then retry your baseline recipe. Retention and oil buildup often mimic bad settings.</p>
+  </Fragment>
 
+  <Fragment slot="extra-sections">
     <h2>Daily, weekly, and monthly grinder routine</h2>
     <p><strong>Daily:</strong> Brush the chute exit and wipe the hopper lip to reduce oil buildup. This takes less than two minutes and prevents stale residue from distorting flavor. If your grinder is single-dose, purge a tiny sacrificial amount when switching beans so old grounds do not contaminate the next shot.</p>
     <p><strong>Weekly:</strong> Remove the hopper and dry-brush accessible burr surfaces. Check for compacted fines around the collar threads or chute corners. Those areas commonly cause inconsistent flow, especially if humidity changes through the week. Reassemble carefully and confirm your reference setting before the next shot.</p>
