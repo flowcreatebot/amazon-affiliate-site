@@ -581,7 +581,7 @@ tbody tr:hover td:last-child { background: var(--surface-elevated); }
 }
 .card h3 { margin-top: 0; }
 .card p { margin-bottom: 0; flex: 1; }
-.card .listing-category { margin-top: auto; }
+.card .listing-category { margin-top: var(--sp-3); }
 
 /* --- Note / Callout --- */
 .note {
