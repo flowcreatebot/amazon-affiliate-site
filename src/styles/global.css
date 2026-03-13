@@ -713,6 +713,25 @@ footer {
 
 /* --- Hero --- */
 /* --- Listing Hero Banner --- */
+.listing-body {
+  width: min(var(--max-page), calc(100vw - 2rem));
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.listing-body .card-grid {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .listing-body .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 960px) {
+  .listing-body .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .listing-hero {
   position: relative;
   width: min(var(--max-page), calc(100vw - 2rem));

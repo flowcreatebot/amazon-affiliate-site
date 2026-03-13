@@ -84,7 +84,9 @@ const {
 
   <Breadcrumbs items={breadcrumbs} />
 
-  <PostListing posts={posts} initialCount={initialCount} showCategory={showCategory} />
+  <div class="listing-body">
+    <PostListing posts={posts} initialCount={initialCount} showCategory={showCategory} />
 
-  <AffiliateDisclosure text={disclosureText} />
+    <AffiliateDisclosure text={disclosureText} />
+  </div>
 </BaseLayout>
