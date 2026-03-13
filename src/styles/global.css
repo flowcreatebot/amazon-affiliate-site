@@ -745,9 +745,11 @@ footer {
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 3;
-    row-gap: var(--sp-2);
+    row-gap: 0;
     margin-bottom: var(--sp-4);
   }
+  .listing-body .card h3 { margin-bottom: var(--sp-1); }
+  .listing-body .card p { margin-top: 0; }
 }
 
 .listing-hero {
