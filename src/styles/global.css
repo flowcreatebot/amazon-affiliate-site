@@ -574,6 +574,7 @@ tbody tr:hover td:last-child { background: var(--surface-elevated); }
   border: 1px solid var(--brand-200);
   border-radius: var(--radius);
   padding: var(--sp-4);
+  height: 100%;
 }
 .card h3 { margin-top: 0; }
 .card p { margin-bottom: 0; }
