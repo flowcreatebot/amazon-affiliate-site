@@ -1,0 +1,144 @@
+---
+/**
+ * MoneyPage template — product roundup pages
+ *
+ * Auto-renders: PostLayout, H1, HeroPicks, Toc, QuickPicks, ComparisonTable, FaqAccordion, JSON-LD
+ * Writer fills: lead, quick-answer, methodology, product-reviews, buying-guide, related-guides, extra-sections
+ */
+import PostLayout from '../PostLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import HeroPicks from '../../components/HeroPicks.astro';
+import Toc from '../../components/Toc.astro';
+import QuickPicks from '../../components/QuickPicks.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+import FaqItem from '../../components/FaqItem.astro';
+import { SITE } from '../../data/site';
+import { amazonUrl } from '../../data/products';
+import { moneyPageGraph } from '../../data/schema';
+import type { ResolvedProduct } from '../../data/products';
+import type { TocItem, FaqItem as FaqItemType, HeroPick } from './types';
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  datePublished: string;
+  dateModified: string;
+  ogImage?: string;
+  ogDescription?: string;
+  heroPicks: {
+    title: string;
+    subtitle: string;
+    picks: HeroPick[];
+    footer?: string;
+  };
+  tocItems: TocItem[];
+  products: ResolvedProduct[];
+  faqItems: FaqItemType[];
+  comparisonTimestamp?: string;
+  comparisonAriaLabel?: string;
+}
+
+const {
+  slug,
+  title,
+  description,
+  category,
+  datePublished,
+  dateModified,
+  ogImage,
+  ogDescription,
+  heroPicks,
+  tocItems,
+  products,
+  faqItems,
+  comparisonTimestamp,
+  comparisonAriaLabel,
+} = Astro.props;
+
+const canonical = `${SITE.url}/posts/${slug}.html`;
+
+const jsonLd = moneyPageGraph({
+  title,
+  description,
+  slug,
+  datePublished,
+  dateModified,
+  image: ogImage,
+  productNames: products.map((p) => p.name),
+  faqItems,
+});
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogDescription={ogDescription}
+  ogImage={ogImage}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'All Guides', href: '/posts/' },
+    { label: title.replace(/\s*\(2026\).*$/, '') },
+  ]}
+>
+  <Fragment slot="head">
+    <JsonLd data={jsonLd} />
+  </Fragment>
+
+  <h1>{title}</h1>
+  <slot name="lead" />
+
+  <HeroPicks
+    title={heroPicks.title}
+    subtitle={heroPicks.subtitle}
+    picks={heroPicks.picks}
+    footer={heroPicks.footer}
+  />
+
+  <slot name="quick-answer" />
+
+  <Toc items={tocItems} />
+
+  <h2 id="quick-picks">Quick picks</h2>
+  <QuickPicks>
+    {products.slice(0, 3).map((p, i) => (
+      <ProductCard
+        title={p.name}
+        image={{ src: p.image, alt: p.imageAlt, width: 500, height: 500 }}
+        badge={p.badge}
+        rating={{ score: p.rating }}
+        price={p.price}
+        ctaUrl={amazonUrl(p.asin)}
+        featured={i === 0}
+      />
+    ))}
+  </QuickPicks>
+
+  <slot name="comparison-table" />
+
+  <slot name="methodology" />
+
+  <slot name="product-reviews" />
+
+  <slot name="extra-sections" />
+
+  <slot name="buying-guide" />
+
+  <section>
+    <h2 id="faq">Frequently asked questions</h2>
+    <FaqAccordion>
+      {faqItems.map((item) => (
+        <FaqItem question={item.q}>
+          <p>{item.a}</p>
+        </FaqItem>
+      ))}
+    </FaqAccordion>
+  </section>
+
+  <slot name="related-guides" />
+</PostLayout>

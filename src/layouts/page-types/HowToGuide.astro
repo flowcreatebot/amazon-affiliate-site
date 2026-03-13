@@ -1,0 +1,153 @@
+---
+/**
+ * HowToGuide template — procedural/educational guide pages
+ *
+ * Auto-renders: PostLayout, H1, HeroSteps, Toc, QuickPicks (if products), FaqAccordion, JSON-LD
+ * Writer fills: lead, quick-answer, what-youll-need, steps, common-mistakes, troubleshooting, extra-sections
+ */
+import PostLayout from '../PostLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
+import Toc from '../../components/Toc.astro';
+import QuickPicks from '../../components/QuickPicks.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+import FaqItem from '../../components/FaqItem.astro';
+import { SITE } from '../../data/site';
+import { amazonUrl } from '../../data/products';
+import { howToPageGraph } from '../../data/schema';
+import type { ResolvedProduct } from '../../data/products';
+import type { TocItem, FaqItem as FaqItemType, HeroStepsConfig } from './types';
+
+interface HowToStep {
+  name: string;
+  text: string;
+}
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  datePublished: string;
+  dateModified: string;
+  ogImage?: string;
+  ogDescription?: string;
+  heroSteps: HeroStepsConfig;
+  tocItems: TocItem[];
+  products?: ResolvedProduct[];
+  faqItems: FaqItemType[];
+  /** Supplies for HowTo schema */
+  supplies?: string[];
+  /** Step summaries for HowTo schema (separate from editorial step content) */
+  schemaSteps: HowToStep[];
+  /** Tools for HowTo schema (defaults to product names if products provided) */
+  schemaTools?: string[];
+}
+
+const {
+  slug,
+  title,
+  description,
+  category,
+  datePublished,
+  dateModified,
+  ogImage,
+  ogDescription,
+  heroSteps,
+  tocItems,
+  products,
+  faqItems,
+  supplies,
+  schemaSteps,
+  schemaTools,
+} = Astro.props;
+
+const canonical = `${SITE.url}/posts/${slug}.html`;
+
+const toolNames = schemaTools ?? products?.map((p) => p.name) ?? [];
+
+const jsonLd = howToPageGraph({
+  title,
+  description,
+  slug,
+  datePublished,
+  dateModified,
+  image: ogImage ?? products?.[0]?.image,
+  howToName: `How to ${title.replace(/\s*\(2026\).*$/, '').toLowerCase()}`,
+  howToDescription: description,
+  supplies,
+  tools: toolNames.length > 0 ? toolNames : undefined,
+  howToSteps: schemaSteps,
+  faqItems,
+});
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogDescription={ogDescription}
+  ogImage={ogImage}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'All Guides', href: '/posts/' },
+    { label: title.replace(/\s*\(2026\).*$/, '') },
+  ]}
+>
+  <Fragment slot="head">
+    <JsonLd data={jsonLd} />
+  </Fragment>
+
+  <h1>{title}</h1>
+  <slot name="lead" />
+
+  <HeroSteps
+    title={heroSteps.title}
+    subtitle={heroSteps.subtitle}
+    steps={heroSteps.steps}
+    outcome={heroSteps.outcome}
+    footer={heroSteps.footer}
+  />
+
+  <Toc items={tocItems} />
+
+  <slot name="quick-answer" />
+
+  <slot name="what-youll-need" />
+
+  {products && products.length > 0 && (
+    <QuickPicks>
+      {products.map((p, i) => (
+        <ProductCard
+          title={p.name}
+          image={{ src: p.image, alt: p.imageAlt, width: 500, height: 500 }}
+          badge={p.badge}
+          rating={{ score: p.rating }}
+          price={p.price}
+          ctaUrl={amazonUrl(p.asin)}
+          featured={i === 0}
+        />
+      ))}
+    </QuickPicks>
+  )}
+
+  <slot name="steps" />
+
+  <slot name="common-mistakes" />
+
+  <slot name="troubleshooting" />
+
+  <slot name="extra-sections" />
+
+  <section>
+    <h2 id="faq">Frequently asked questions</h2>
+    <FaqAccordion>
+      {faqItems.map((item) => (
+        <FaqItem question={item.q}>
+          <p>{item.a}</p>
+        </FaqItem>
+      ))}
+    </FaqAccordion>
+  </section>
+</PostLayout>

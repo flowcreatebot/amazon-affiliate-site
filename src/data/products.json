@@ -1,0 +1,793 @@
+{
+  "baratza-encore-esp": {
+    "name": "Baratza Encore ESP",
+    "brand": "Baratza",
+    "asin": "B0BW272XCV",
+    "image": "https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg",
+    "imageAlt": "Baratza Encore ESP burr coffee grinder",
+    "category": "grinders",
+    "rating": 4.6,
+    "specs": {
+      "burrType": "Conical burr",
+      "brewRange": "Pour over to espresso",
+      "capacity": "8 oz hopper",
+      "adjustmentStyle": "Stepped with espresso zone"
+    }
+  },
+  "oxo-brew-conical-burr-grinder": {
+    "name": "OXO Brew Conical Burr Grinder",
+    "brand": "OXO",
+    "asin": "B07CSKGLMM",
+    "image": "https://m.media-amazon.com/images/I/71DeUg8G7kS._AC_SL500_.jpg",
+    "imageAlt": "OXO Brew Conical Burr coffee grinder",
+    "category": "grinders",
+    "rating": 4.3,
+    "specs": {
+      "burrType": "Conical burr",
+      "brewRange": "Drip, pour over, French press",
+      "capacity": "12 oz hopper",
+      "adjustmentStyle": "Stepped + micro positions"
+    }
+  },
+  "fellow-opus": {
+    "name": "Fellow Opus",
+    "brand": "Fellow",
+    "asin": "B0BV96VPSR",
+    "image": "https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg",
+    "imageAlt": "Fellow Opus conical burr coffee grinder",
+    "category": "grinders",
+    "rating": 4.4,
+    "specs": {
+      "burrType": "Conical burr",
+      "brewRange": "Filter to espresso",
+      "capacity": "3.5 oz dosing lid",
+      "adjustmentStyle": "Stepped + inner micro adjust"
+    }
+  },
+  "turin-sk40": {
+    "name": "Turin SK40",
+    "brand": "Turin",
+    "asin": "B0DR41V3CN",
+    "image": "https://m.media-amazon.com/images/I/31Za1GRr+6L._AC_SL500_.jpg",
+    "imageAlt": "Turin SK40 single-dose burr coffee grinder",
+    "category": "grinders",
+    "rating": 4.5,
+    "specs": {
+      "burrType": "Conical burr",
+      "brewRange": "Espresso-focused",
+      "capacity": "Single-dose workflow",
+      "adjustmentStyle": "Stepless collar"
+    }
+  },
+  "capresso-infinity-plus": {
+    "name": "Capresso Infinity Plus",
+    "brand": "Capresso",
+    "asin": "B07N4KTW38",
+    "image": "https://images-na.ssl-images-amazon.com/images/P/B07N4KTW38.01._SX500_SCLZZZZZZZ_.jpg",
+    "imageAlt": "Capresso Infinity Plus conical burr coffee grinder",
+    "category": "grinders",
+    "rating": 4.1,
+    "specs": {
+      "burrType": "Conical burr",
+      "brewRange": "Drip and batch coffee",
+      "capacity": "8.8 oz hopper",
+      "adjustmentStyle": "Stepped dial + timer"
+    }
+  },
+  "kingrinder-k6": {
+    "name": "KINGrinder K6",
+    "brand": "KINGrinder",
+    "asin": "B09WH9JKY1",
+    "image": "https://images-na.ssl-images-amazon.com/images/P/B09WH9JKY1.01._SX500_SCLZZZZZZZ_.jpg",
+    "imageAlt": "KINGrinder K6 manual burr coffee grinder",
+    "category": "grinders",
+    "rating": 4.6,
+    "specs": {
+      "burrType": "Manual conical burr",
+      "brewRange": "Pour over to espresso",
+      "capacity": "30-35 g dose",
+      "adjustmentStyle": "External click dial"
+    }
+  },
+  "df64-gen-2": {
+    "name": "DF64 Gen 2",
+    "brand": "DF64",
+    "asin": "B0D962ZSCM",
+    "image": "https://m.media-amazon.com/images/I/61OMC9iCcOL._AC_SL500_.jpg",
+    "imageAlt": "DF64 Gen 2 flat burr espresso grinder",
+    "category": "grinders",
+    "rating": 4.6,
+    "specs": {
+      "burr": "64 mm flat",
+      "adjustment": "Stepless",
+      "retention": "Low with bellows",
+      "espressoLevel": "Prosumer"
+    }
+  },
+  "baratza-sette-270": {
+    "name": "Baratza Sette 270",
+    "brand": "Baratza",
+    "asin": "B01G82WVZ0",
+    "image": "https://m.media-amazon.com/images/I/512MzokrYtL._AC_SL500_.jpg",
+    "imageAlt": "Baratza Sette 270 espresso grinder",
+    "category": "grinders",
+    "rating": 4.4,
+    "specs": {
+      "burr": "40 mm conical",
+      "adjustment": "Macro + micro stepped",
+      "retention": "Medium",
+      "espressoLevel": "Strong"
+    }
+  },
+  "eureka-mignon-specialita": {
+    "name": "Eureka Mignon Specialita",
+    "brand": "Eureka",
+    "asin": "B07GFV6HM8",
+    "image": "https://m.media-amazon.com/images/I/61MEPYMxZIL._AC_SL500_.jpg",
+    "imageAlt": "Eureka Mignon Specialita espresso grinder",
+    "category": "grinders",
+    "rating": 4.5,
+    "specs": {
+      "burr": "55 mm flat",
+      "adjustment": "Stepless",
+      "retention": "Medium",
+      "espressoLevel": "Prosumer"
+    }
+  },
+  "1zpresso-j-ultra": {
+    "name": "1Zpresso J-Ultra",
+    "brand": "1Zpresso",
+    "asin": "B0CKYDV932",
+    "image": "https://m.media-amazon.com/images/I/61kOtdYruaL._AC_SL500_.jpg",
+    "imageAlt": "1Zpresso J-Ultra manual espresso grinder",
+    "category": "grinders",
+    "rating": 4.5,
+    "specs": {
+      "burr": "48 mm conical",
+      "adjustment": "Micro-stepped",
+      "retention": "Very low",
+      "espressoLevel": "Strong"
+    }
+  },
+  "1zpresso-q-air": {
+    "name": "1Zpresso Q Air",
+    "brand": "1Zpresso",
+    "asin": "B0CJ4YFMQ9",
+    "image": "https://images-na.ssl-images-amazon.com/images/P/B0CJ4YFMQ9.01._SX500_SCLZZZZZZZ_.jpg",
+    "imageAlt": "1Zpresso Q Air manual coffee grinder",
+    "category": "grinders",
+    "rating": 4.6,
+    "specs": {}
+  },
+  "timemore-chestnut-c2": {
+    "name": "TIMEMORE Chestnut C2",
+    "brand": "TIMEMORE",
+    "asin": "B0833SDN8M",
+    "image": "https://m.media-amazon.com/images/I/61Y8BsO8kYL._AC_SL500_.jpg",
+    "imageAlt": "TIMEMORE Chestnut C2 manual burr coffee grinder",
+    "category": "grinders",
+    "rating": 4.5,
+    "specs": {}
+  },
+  "bodum-bistro-burr-grinder": {
+    "name": "Bodum Bistro Burr Grinder",
+    "brand": "Bodum",
+    "asin": "B0043095WW",
+    "image": "https://images-na.ssl-images-amazon.com/images/P/B0043095WW.01._SX500_SCLZZZZZZZ_.jpg",
+    "imageAlt": "Bodum Bistro Burr Grinder",
+    "category": "grinders",
+    "rating": 3.9,
+    "specs": {}
+  },
+  "fellow-ode-gen-2": {
+    "name": "Fellow Ode Gen 2",
+    "brand": "Fellow",
+    "asin": "B0BLRMCM9Y",
+    "image": "https://images-na.ssl-images-amazon.com/images/P/B0BLRMCM9Y.01._SX500_SCLZZZZZZZ_.jpg",
+    "imageAlt": "Fellow Ode Gen 2 flat burr coffee grinder",
+    "category": "grinders",
+    "rating": 4.7,
+    "specs": {}
+  },
+  "1zpresso-k-ultra": {
+    "name": "1Zpresso K-Ultra",
+    "brand": "1Zpresso",
+    "asin": "B0CC4LXF1Z",
+    "image": "https://images-na.ssl-images-amazon.com/images/P/B0CC4LXF1Z.01._SX500_SCLZZZZZZZ_.jpg",
+    "imageAlt": "1Zpresso K-Ultra manual coffee grinder",
+    "category": "grinders",
+    "rating": 4.7,
+    "specs": {}
+  },
+  "kingrinder-k6-espresso": {
+    "name": "KINGrinder K6",
+    "brand": "KINGrinder",
+    "asin": "B0CY1XFXB8",
+    "image": "https://m.media-amazon.com/images/P/B0CY1XFXB8.01._AC_SL500_.jpg",
+    "imageAlt": "KINGrinder K6 manual espresso grinder",
+    "category": "grinders",
+    "rating": 4.7,
+    "specs": {}
+  },
+  "hario-smart-g-pro": {
+    "name": "Hario Smart G Pro",
+    "brand": "Hario",
+    "asin": "B0CCYBVQ9B",
+    "image": "https://m.media-amazon.com/images/P/B0CCYBVQ9B.01._AC_SL500_.jpg",
+    "imageAlt": "Hario Smart G Pro manual coffee grinder",
+    "category": "grinders",
+    "rating": 4.3,
+    "specs": {}
+  },
+  "javapresse-manual-coffee-grinder": {
+    "name": "JavaPresse Manual Coffee Grinder",
+    "brand": "JavaPresse",
+    "asin": "B013R3Q7B2",
+    "image": "https://m.media-amazon.com/images/P/B013R3Q7B2.01._AC_SL500_.jpg",
+    "imageAlt": "JavaPresse Manual Coffee Grinder",
+    "category": "grinders",
+    "rating": 4.1,
+    "specs": {}
+  },
+  "cuisinart-ss-gb1": {
+    "name": "Cuisinart SS-GB1",
+    "brand": "Cuisinart",
+    "asin": "B08MGYR9SX",
+    "image": "https://m.media-amazon.com/images/P/B08MGYR9SX.01._AC_SL500_.jpg",
+    "imageAlt": "",
+    "category": "grind-and-brew",
+    "rating": 4.3,
+    "specs": {
+      "grinderType": "Built-in grinder",
+      "compatMode": "Beans + K-Cup"
+    }
+  },
+  "cuisinart-grind-brew-single-serve": {
+    "name": "Cuisinart Grind & Brew Single-Serve",
+    "brand": "Cuisinart",
+    "asin": "B09HDFLF2X",
+    "image": "https://m.media-amazon.com/images/P/B09HDFLF2X.01._AC_SL500_.jpg",
+    "imageAlt": "Cuisinart Grind and Brew Single-Serve coffee maker",
+    "category": "grind-and-brew",
+    "rating": 4.4,
+    "specs": {
+      "grinderType": "Conical burr",
+      "compatMode": "Beans + K-Cup"
+    }
+  },
+  "gevi-4-in-1": {
+    "name": "Gevi 4-in-1",
+    "brand": "Gevi",
+    "asin": "B0GM41GYZH",
+    "image": "https://m.media-amazon.com/images/P/B0GM41GYZH.01._AC_SL500_.jpg",
+    "imageAlt": "Gevi 4-in-1 single serve coffee maker",
+    "category": "single-serve",
+    "rating": 4.2,
+    "specs": {
+      "grinderType": "No grinder",
+      "compatMode": "Ground + K-Cup"
+    }
+  },
+  "black-decker-mill-and-brew": {
+    "name": "BLACK+DECKER Mill & Brew",
+    "brand": "BLACK+DECKER",
+    "asin": "B00LU2I46E",
+    "image": "https://m.media-amazon.com/images/P/B00LU2I46E.01._AC_SL500_.jpg",
+    "imageAlt": "BLACK+DECKER Mill and Brew coffee maker",
+    "category": "grind-and-brew",
+    "rating": 4.3,
+    "specs": {
+      "grinderType": "Blade",
+      "compatMode": "Beans + Ground"
+    }
+  },
+  "chefman-instacoffee-max": {
+    "name": "Chefman InstaCoffee Max",
+    "brand": "Chefman",
+    "asin": "B09NRYX5K7",
+    "image": "https://m.media-amazon.com/images/P/B09NRYX5K7.01._AC_SL500_.jpg",
+    "imageAlt": "Chefman InstaCoffee Max single serve coffee maker",
+    "category": "single-serve",
+    "rating": 4.0,
+    "specs": {
+      "grinderType": "No grinder",
+      "compatMode": "Ground + K-Cup"
+    }
+  },
+  "breville-grind-control": {
+    "name": "Breville Grind Control",
+    "brand": "Breville",
+    "asin": "B00VGGVQCI",
+    "image": "https://images-na.ssl-images-amazon.com/images/P/B00VGGVQCI.01.LZZZZZZZ.jpg",
+    "imageAlt": "Breville BDC650BSS coffee maker with built in grinder",
+    "category": "grind-and-brew",
+    "rating": 4.6,
+    "specs": {
+      "grinderType": "Burr",
+      "compatMode": "Beans + Ground"
+    }
+  },
+  "delonghi-truebrew": {
+    "name": "De'Longhi TrueBrew",
+    "brand": "De'Longhi",
+    "asin": "B0F3ZSVPPG",
+    "image": "https://m.media-amazon.com/images/P/B0F3ZSVPPG.01._AC_SL500_.jpg",
+    "imageAlt": "De'Longhi TrueBrew bean to cup coffee maker",
+    "category": "grind-and-brew",
+    "rating": 4.4,
+    "specs": {
+      "grinderType": "Conical burr",
+      "compatMode": "Beans + Ground"
+    }
+  },
+  "timemore-black-mirror-nano": {
+    "name": "TIMEMORE Black Mirror Nano",
+    "brand": "TIMEMORE",
+    "asin": "B09KLG247F",
+    "image": "https://m.media-amazon.com/images/I/61zKmzN7rpL._AC_SL500_.jpg",
+    "imageAlt": "TIMEMORE Black Mirror Nano coffee scale",
+    "category": "scales",
+    "rating": 4.6,
+    "specs": {}
+  },
+  "hario-v60-drip-scale": {
+    "name": "Hario V60 Drip Scale",
+    "brand": "Hario",
+    "asin": "B009GPJMOU",
+    "image": "https://m.media-amazon.com/images/I/71hmVxb++0L._AC_SL500_.jpg",
+    "imageAlt": "Hario V60 Drip Scale for pour over coffee",
+    "category": "scales",
+    "rating": 4.5,
+    "specs": {}
+  },
+  "greater-goods-digital-coffee-scale": {
+    "name": "Greater Goods Digital Coffee Scale",
+    "brand": "Greater Goods",
+    "asin": "B09B4CB7C1",
+    "image": "https://m.media-amazon.com/images/I/71-L+FLDJYL._AC_SL500_.jpg",
+    "imageAlt": "Greater Goods digital coffee scale with timer",
+    "category": "scales",
+    "rating": 4.4,
+    "specs": {}
+  },
+  "acaia-pearl-s": {
+    "name": "Acaia Pearl S",
+    "brand": "Acaia",
+    "asin": "B07MYP3J8Y",
+    "image": "https://m.media-amazon.com/images/P/B07MYP3J8Y.01._AC_SL500_.jpg",
+    "imageAlt": "Acaia Pearl S smart coffee scale",
+    "category": "scales",
+    "rating": 4.5,
+    "specs": {}
+  },
+  "kitchentour-coffee-scale": {
+    "name": "KitchenTour Coffee Scale",
+    "brand": "KitchenTour",
+    "asin": "B083PX1VHG",
+    "image": "https://m.media-amazon.com/images/P/B083PX1VHG.01._AC_SL500_.jpg",
+    "imageAlt": "KitchenTour compact espresso coffee scale",
+    "category": "scales",
+    "rating": 4.3,
+    "specs": {}
+  },
+  "maestri-house-rechargeable-coffee-scale": {
+    "name": "Maestri House Rechargeable Coffee Scale",
+    "brand": "Maestri House",
+    "asin": "B0BRFTHZPJ",
+    "image": "https://m.media-amazon.com/images/P/B0BRFTHZPJ.01._AC_SL500_.jpg",
+    "imageAlt": "Maestri House rechargeable coffee scale with timer",
+    "category": "scales",
+    "rating": 4.4,
+    "specs": {}
+  },
+  "delonghi-stilosa": {
+    "name": "De'Longhi Stilosa",
+    "brand": "De'Longhi",
+    "asin": "B08C96BG9H",
+    "image": "https://m.media-amazon.com/images/I/81c3ItE+jyL._AC_SL500_.jpg",
+    "imageAlt": "De'Longhi Stilosa espresso machine",
+    "category": "espresso-machines",
+    "rating": 4.3,
+    "specs": {
+      "machineType": "Semi-auto",
+      "pumpPressure": "15 bar",
+      "basketStyle": "Pressurized",
+      "heatUp": "~45 sec",
+      "milkSystem": "Steam wand",
+      "waterTank": "33.8 oz"
+    }
+  },
+  "mr-coffee-cafe-barista": {
+    "name": "Mr. Coffee Caf\u00e9 Barista",
+    "brand": "Mr. Coffee",
+    "asin": "B007K9OIMU",
+    "image": "https://m.media-amazon.com/images/I/71p2h853rfL._AC_SL500_.jpg",
+    "imageAlt": "Mr. Coffee Caf\u00e9 Barista espresso machine",
+    "category": "espresso-machines",
+    "rating": 4.1,
+    "specs": {
+      "machineType": "Semi-auto",
+      "pumpPressure": "15 bar",
+      "basketStyle": "Pressurized",
+      "heatUp": "~60 sec",
+      "milkSystem": "Auto frother",
+      "waterTank": "55 oz"
+    }
+  },
+  "casabrews-3700-essential": {
+    "name": "CASABREWS 3700 Essential",
+    "brand": "CASABREWS",
+    "asin": "B0BRSP8YT6",
+    "image": "https://m.media-amazon.com/images/I/71v90GdxAVL._AC_SL500_.jpg",
+    "imageAlt": "CASABREWS 3700 Essential espresso machine",
+    "category": "espresso-machines",
+    "rating": 4.2,
+    "specs": {
+      "machineType": "Semi-auto",
+      "pumpPressure": "20 bar",
+      "basketStyle": "Pressurized",
+      "heatUp": "~40 sec",
+      "milkSystem": "Steam wand",
+      "waterTank": "49 oz"
+    }
+  },
+  "gevi-compact-20-bar": {
+    "name": "Gevi Compact 20 Bar",
+    "brand": "Gevi",
+    "asin": "B0D2MF7R3C",
+    "image": "https://m.media-amazon.com/images/I/71pmvUI3cZL._AC_SL500_.jpg",
+    "imageAlt": "Gevi Compact 20 Bar espresso machine",
+    "category": "espresso-machines",
+    "rating": 4.0,
+    "specs": {
+      "machineType": "Semi-auto",
+      "pumpPressure": "20 bar",
+      "basketStyle": "Pressurized",
+      "heatUp": "~35 sec",
+      "milkSystem": "Steam wand",
+      "waterTank": "42 oz"
+    }
+  },
+  "flair-neo-flex": {
+    "name": "Flair Neo Flex",
+    "brand": "Flair",
+    "asin": "B0C91668G1",
+    "image": "https://m.media-amazon.com/images/I/61MqQwolqRL._AC_SL500_.jpg",
+    "imageAlt": "Flair Neo Flex manual espresso maker",
+    "category": "espresso-machines",
+    "rating": 4.5,
+    "specs": {
+      "machineType": "Manual",
+      "pumpPressure": "Lever pressure (manual)",
+      "basketStyle": "Pressurized / non-pressurized capable",
+      "heatUp": "~90 sec prep",
+      "milkSystem": "None",
+      "waterTank": "Manual brew chamber"
+    }
+  },
+  "nespresso-essenza-mini": {
+    "name": "Nespresso Essenza Mini",
+    "brand": "Nespresso",
+    "asin": "B06ZYJBPM9",
+    "image": "https://m.media-amazon.com/images/I/51FV1qFeXeL._AC_SL500_.jpg",
+    "imageAlt": "Nespresso Essenza Mini pod espresso machine",
+    "category": "espresso-machines",
+    "rating": 4.4,
+    "specs": {
+      "machineType": "Pod",
+      "pumpPressure": "19 bar",
+      "basketStyle": "Pod",
+      "heatUp": "~25 sec",
+      "milkSystem": "None",
+      "waterTank": "20.3 oz"
+    }
+  },
+  "delonghi-ecp3420": {
+    "name": "De'Longhi ECP3420",
+    "brand": "De'Longhi",
+    "asin": "B00YCP71VK",
+    "image": "https://m.media-amazon.com/images/I/71cMXnwKDpL._AC_SL500_.jpg",
+    "imageAlt": "De'Longhi ECP3420 espresso machine",
+    "category": "espresso-machines",
+    "rating": 4.2,
+    "specs": {
+      "machineType": "Semi-auto",
+      "pumpPressure": "15 bar",
+      "basketStyle": "Pressurized",
+      "heatUp": "~45 sec",
+      "milkSystem": "Steam wand",
+      "waterTank": "37 oz"
+    }
+  },
+  "fellow-stagg-ekg": {
+    "name": "Fellow Stagg EKG Electric Kettle",
+    "brand": "Fellow",
+    "asin": "B077JBQZPX",
+    "image": "https://m.media-amazon.com/images/I/51MfuBJO2BL._AC_SL500_.jpg",
+    "imageAlt": "Fellow Stagg EKG electric gooseneck kettle",
+    "category": "kettles",
+    "rating": 4.7,
+    "specs": {
+      "type": "Electric (variable temp + hold)",
+      "capacity": "0.9L"
+    }
+  },
+  "bonavita-1l-variable-temp-kettle": {
+    "name": "Bonavita 1.0L Variable Temperature Kettle",
+    "brand": "Bonavita",
+    "asin": "B005YR0F40",
+    "image": "https://m.media-amazon.com/images/I/51X0CfJgo7L._AC_SL500_.jpg",
+    "imageAlt": "Bonavita 1.0L variable temperature gooseneck kettle",
+    "category": "kettles",
+    "rating": 4.5,
+    "specs": {
+      "type": "Electric (variable temp)",
+      "capacity": "1.0L"
+    }
+  },
+  "hario-v60-buono-stovetop-kettle": {
+    "name": "Hario V60 Buono Stovetop Kettle",
+    "brand": "Hario",
+    "asin": "B000IGOXLS",
+    "image": "https://m.media-amazon.com/images/I/51Fz0LSH41L._AC_SL500_.jpg",
+    "imageAlt": "Hario V60 Buono stovetop gooseneck kettle",
+    "category": "kettles",
+    "rating": 4.6,
+    "specs": {
+      "type": "Stovetop",
+      "capacity": "1.2L"
+    }
+  },
+  "cosori-electric-gooseneck-kettle": {
+    "name": "COSORI Electric Gooseneck Kettle",
+    "brand": "COSORI",
+    "asin": "B07G2MBM6L",
+    "image": "https://m.media-amazon.com/images/I/61loaANnLDL._AC_SL500_.jpg",
+    "imageAlt": "COSORI electric gooseneck kettle",
+    "category": "kettles",
+    "rating": 4.5,
+    "specs": {
+      "type": "Electric (preset modes)",
+      "capacity": "0.8L"
+    }
+  },
+  "fellow-stagg-stovetop-kettle": {
+    "name": "Fellow Stagg Stovetop Pour-Over Kettle",
+    "brand": "Fellow",
+    "asin": "B014UN7B7C",
+    "image": "https://m.media-amazon.com/images/I/61F-tkFlebL._AC_SL500_.jpg",
+    "imageAlt": "Fellow Stagg stovetop pour-over kettle",
+    "category": "kettles",
+    "rating": 4.6,
+    "specs": {
+      "type": "Stovetop",
+      "capacity": "1.0L"
+    }
+  },
+  "cuisinart-dgb-550bkp1": {
+    "name": "Cuisinart DGB-550BKP1",
+    "brand": "Cuisinart",
+    "asin": "B000VTP45Q",
+    "image": "https://m.media-amazon.com/images/P/B000VTP45Q.01._AC_SL500_.jpg",
+    "imageAlt": "Cuisinart DGB-550BKP1 grind and brew coffee maker",
+    "category": "grind-and-brew",
+    "rating": 4.2,
+    "specs": {
+      "grinderType": "Blade",
+      "brewModes": "Beans + Pre-ground",
+      "batchSize": "12-cup batch, no true single-cup",
+      "programmable": "Yes"
+    }
+  },
+  "cuisinart-dgb-400": {
+    "name": "Cuisinart DGB-400 Automatic Grind & Brew",
+    "brand": "Cuisinart",
+    "asin": "B08DCK4MPV",
+    "image": "https://m.media-amazon.com/images/P/B08DCK4MPV.01._AC_SL500_.jpg",
+    "imageAlt": "Cuisinart DGB-400 Automatic Grind and Brew coffee maker",
+    "category": "grind-and-brew",
+    "rating": 4.1,
+    "specs": {
+      "grinderType": "Blade",
+      "brewModes": "Beans + Pre-ground",
+      "batchSize": "12-cup batch, no true single-cup",
+      "programmable": "Yes"
+    }
+  },
+  "gevi-10-cup-grind-and-brew": {
+    "name": "Gevi 10-Cup Grind & Brew",
+    "brand": "Gevi",
+    "asin": "B0FX3M77DD",
+    "image": "https://m.media-amazon.com/images/P/B0FX3M77DD.01._AC_SL500_.jpg",
+    "imageAlt": "Gevi 10-Cup Grind and Brew coffee maker",
+    "category": "grind-and-brew",
+    "rating": 4.0,
+    "specs": {
+      "grinderType": "Built-in grinder",
+      "brewModes": "Beans + Pre-ground",
+      "batchSize": "10-cup batch, no true single-cup",
+      "programmable": "Yes"
+    }
+  },
+  "cuisinart-dgb-30": {
+    "name": "Cuisinart Grind & Brew Single-Serve (DGB-30)",
+    "brand": "Cuisinart",
+    "asin": "B0FNXPWVD8",
+    "image": "https://m.media-amazon.com/images/P/B0FNXPWVD8.01._AC_SL500_.jpg",
+    "imageAlt": "Cuisinart Grind and Brew Single-Serve DGB-30 coffee maker",
+    "category": "grind-and-brew",
+    "rating": 4.4,
+    "specs": {
+      "grinderType": "Conical burr",
+      "brewModes": "Beans + Pre-ground",
+      "batchSize": "Single-serve only (multi cup sizes)",
+      "programmable": "Yes"
+    }
+  },
+  "ninja-ce251": {
+    "name": "Ninja CE251",
+    "brand": "Ninja",
+    "asin": "B07S98411N",
+    "image": "https://m.media-amazon.com/images/I/81+HcYgDo1L._AC_SL500_.jpg",
+    "imageAlt": "Ninja CE251 programmable drip coffee maker",
+    "category": "drip-coffee-makers",
+    "rating": 4.5,
+    "specs": {}
+  },
+  "hario-v60-ceramic-02": {
+    "name": "Hario V60 Ceramic Coffee Dripper 02",
+    "brand": "Hario",
+    "asin": "B000P4D5HG",
+    "image": "https://m.media-amazon.com/images/I/51cCw+yG9BL._AC_SL500_.jpg",
+    "imageAlt": "Hario V60 Ceramic Coffee Dripper 02",
+    "category": "pour-over-makers",
+    "rating": 4.7,
+    "specs": {}
+  },
+  "chemex-classic-6-cup": {
+    "name": "Chemex Classic Series, 6-Cup",
+    "brand": "Chemex",
+    "asin": "B0000YWF5E",
+    "image": "https://m.media-amazon.com/images/I/71oMA36JxfL._AC_SL500_.jpg",
+    "imageAlt": "Chemex Classic Series 6-Cup pour over coffee maker",
+    "category": "pour-over-makers",
+    "rating": 4.7,
+    "specs": {}
+  },
+  "melitta-pour-over-set": {
+    "name": "Melitta Pour-Over Brewer with Glass Carafe Set",
+    "brand": "Melitta",
+    "asin": "B000MIT2OK",
+    "image": "https://m.media-amazon.com/images/I/71QX3QG2m3L._AC_SL500_.jpg",
+    "imageAlt": "Melitta Pour-Over Brewer with Glass Carafe Set",
+    "category": "pour-over-makers",
+    "rating": 4.6,
+    "specs": {}
+  },
+  "hario-v60-switch": {
+    "name": "Hario V60 Switch Ceramic Immersion Dripper",
+    "brand": "Hario",
+    "asin": "B0CK4J1G7V",
+    "image": "https://m.media-amazon.com/images/I/41-Q1iUbZ5L._AC_SL500_.jpg",
+    "imageAlt": "Hario V60 Switch Ceramic Immersion Dripper",
+    "category": "pour-over-makers",
+    "rating": 4.6,
+    "specs": {}
+  },
+  "hario-v60-ceramic-01": {
+    "name": "Hario V60 Ceramic Coffee Dripper 01",
+    "brand": "Hario",
+    "asin": "B000P4D5F8",
+    "image": "https://m.media-amazon.com/images/I/51kbH15026L._AC_SL500_.jpg",
+    "imageAlt": "Hario V60 Ceramic Coffee Dripper 01",
+    "category": "pour-over-makers",
+    "rating": 4.6,
+    "specs": {}
+  },
+  "hario-v60-ceramic-02-red": {
+    "name": "Hario V60 Ceramic Coffee Dripper 02 (Red)",
+    "brand": "Hario",
+    "asin": "B002S01CKW",
+    "image": "https://m.media-amazon.com/images/I/5186roHpocL._AC_SL500_.jpg",
+    "imageAlt": "Hario V60 Ceramic Coffee Dripper 02 Red",
+    "category": "pour-over-makers",
+    "rating": 4.6,
+    "specs": {}
+  },
+  "cuisinart-dcc-3200p1": {
+    "name": "Cuisinart DCC-3200P1 Perfectemp",
+    "brand": "Cuisinart",
+    "asin": "B00MVWGQX0",
+    "image": "https://m.media-amazon.com/images/I/71io+Gh4ApL._AC_SL500_.jpg",
+    "imageAlt": "Cuisinart DCC-3200P1 Perfectemp drip coffee maker",
+    "category": "drip-coffee-makers",
+    "rating": 4.4,
+    "specs": {}
+  },
+  "black-decker-cm1160b": {
+    "name": "BLACK+DECKER CM1160B 12-Cup Digital",
+    "brand": "BLACK+DECKER",
+    "asin": "B01GJOMWVA",
+    "image": "https://m.media-amazon.com/images/I/61Rdl5C2AHL._AC_SL500_.jpg",
+    "imageAlt": "BLACK+DECKER CM1160B 12-cup digital drip coffee maker",
+    "category": "drip-coffee-makers",
+    "rating": 4.3,
+    "specs": {}
+  },
+  "hamilton-beach-2-way-49980a": {
+    "name": "Hamilton Beach 2-Way 49980A",
+    "brand": "Hamilton Beach",
+    "asin": "B00EI7DPPI",
+    "image": "https://m.media-amazon.com/images/P/B00EI7DPPI.01._AC_SL500_.jpg",
+    "imageAlt": "Hamilton Beach 2-Way 49980A drip coffee maker",
+    "category": "drip-coffee-makers",
+    "rating": 4.2,
+    "specs": {}
+  },
+  "mr-coffee-12-cup-programmable": {
+    "name": "Mr. Coffee 12-Cup Programmable",
+    "brand": "Mr. Coffee",
+    "asin": "B089DWFP9L",
+    "image": "https://m.media-amazon.com/images/P/B089DWFP9L.01._AC_SL500_.jpg",
+    "imageAlt": "Mr. Coffee 12-cup programmable drip coffee maker",
+    "category": "drip-coffee-makers",
+    "rating": 4.1,
+    "specs": {}
+  },
+  "black-decker-thermal-cm2035b": {
+    "name": "BLACK+DECKER Thermal CM2035B",
+    "brand": "BLACK+DECKER",
+    "asin": "B00LU2I3V0",
+    "image": "https://m.media-amazon.com/images/P/B00LU2I3V0.01._AC_SL500_.jpg",
+    "imageAlt": "BLACK+DECKER Thermal CM2035B drip coffee maker",
+    "category": "drip-coffee-makers",
+    "rating": 4.2,
+    "specs": {}
+  },
+  "mueller-12-cup-drip": {
+    "name": "Mueller 12-Cup Drip",
+    "brand": "Mueller",
+    "asin": "B08TYTBX8X",
+    "image": "https://m.media-amazon.com/images/P/B08TYTBX8X.01._AC_SL500_.jpg",
+    "imageAlt": "Mueller 12-cup drip coffee maker",
+    "category": "drip-coffee-makers",
+    "rating": 4.0,
+    "specs": {}
+  },
+  "krups-simply-brew-5-cup": {
+    "name": "KRUPS Simply Brew 5-Cup",
+    "brand": "KRUPS",
+    "asin": "B07X43VXZV",
+    "image": "https://m.media-amazon.com/images/P/B07X43VXZV.01._AC_SL500_.jpg",
+    "imageAlt": "KRUPS Simply Brew 5-cup drip coffee maker",
+    "category": "drip-coffee-makers",
+    "rating": 4.1,
+    "specs": {}
+  },
+  "cafe-specialty-grind-and-brew": {
+    "name": "Caf\u00e9 Specialty Grind & Brew",
+    "brand": "Caf\u00e9",
+    "asin": "B0CG2P2J88",
+    "image": "https://images-na.ssl-images-amazon.com/images/P/B0CG2P2J88.01.LZZZZZZZ.jpg",
+    "imageAlt": "Caf\u00e9 Specialty grind and brew coffee maker",
+    "category": "grind-and-brew",
+    "rating": 4.5,
+    "specs": {
+      "grinderType": "Burr",
+      "brewModes": "Single-serve + thermal carafe"
+    }
+  },
+  "ninja-luxe-cafe-3-in-1": {
+    "name": "Ninja Luxe Caf\u00e9 3-in-1",
+    "brand": "Ninja",
+    "asin": "B0D45PK5V4",
+    "image": "https://images-na.ssl-images-amazon.com/images/P/B0D45PK5V4.01.LZZZZZZZ.jpg",
+    "imageAlt": "Ninja Luxe Cafe 3-in-1 coffee maker with integrated grinder",
+    "category": "grind-and-brew",
+    "rating": 4.4,
+    "specs": {
+      "grinderType": "Integrated burr",
+      "brewModes": "Espresso + drip + cold brew"
+    }
+  }
+}

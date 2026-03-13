@@ -1,0 +1,14 @@
+---
+interface Props {
+  label: string;
+  href: string;
+  icon: string;
+  count: number;
+}
+const { label, href, icon, count } = Astro.props;
+---
+<a class="category-card" href={href}>
+  <span class="category-card__icon" aria-hidden="true">{icon}</span>
+  <span class="category-card__label">{label}</span>
+  <span class="category-card__count">{count} {count === 1 ? 'guide' : 'guides'}</span>
+</a>

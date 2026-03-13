@@ -1,0 +1,133 @@
+---
+/**
+ * SingleReview template — individual product review pages
+ *
+ * Auto-renders: PostLayout, H1, featured ProductCard, Toc, FaqAccordion, JSON-LD
+ * Writer fills: lead, verdict-detail, specs-table, performance, alternatives, extra-sections
+ */
+import PostLayout from '../PostLayout.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import Toc from '../../components/Toc.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import FaqAccordion from '../../components/FaqAccordion.astro';
+import FaqItem from '../../components/FaqItem.astro';
+import { SITE } from '../../data/site';
+import { amazonUrl } from '../../data/products';
+import { reviewPageGraph } from '../../data/schema';
+import type { ResolvedProduct } from '../../data/products';
+import type { TocItem, FaqItem as FaqItemType } from './types';
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  datePublished: string;
+  dateModified: string;
+  ogImage?: string;
+  ogDescription?: string;
+  product: ResolvedProduct;
+  tocItems: TocItem[];
+  verdict: {
+    score: number;
+    summary: string;
+    bestFor: string;
+  };
+  pros: string[];
+  cons: string[];
+  faqItems: FaqItemType[];
+}
+
+const {
+  slug,
+  title,
+  description,
+  category,
+  datePublished,
+  dateModified,
+  ogImage,
+  ogDescription,
+  product,
+  tocItems,
+  verdict,
+  pros,
+  cons,
+  faqItems,
+} = Astro.props;
+
+const canonical = `${SITE.url}/posts/${slug}.html`;
+
+const jsonLd = reviewPageGraph({
+  title,
+  description,
+  slug,
+  datePublished,
+  dateModified,
+  image: ogImage ?? product.image,
+  product,
+  review: { score: verdict.score, summary: verdict.summary },
+  faqItems,
+});
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogDescription={ogDescription}
+  ogImage={ogImage ?? product.image}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'All Guides', href: '/posts/' },
+    { label: title.replace(/\s*\(2026\).*$/, '') },
+  ]}
+>
+  <Fragment slot="head">
+    <JsonLd data={jsonLd} />
+  </Fragment>
+
+  <h1>{title}</h1>
+  <slot name="lead" />
+
+  <ProductCard
+    title={product.name}
+    image={{ src: product.image, alt: product.imageAlt, width: 500, height: 500 }}
+    badge={product.badge}
+    rating={{ score: product.rating }}
+    price={product.price}
+    ctaUrl={amazonUrl(product.asin)}
+    featured={true}
+  />
+
+  <div class="verdict-box">
+    <p><strong>Verdict:</strong> {verdict.summary}</p>
+    <p><strong>Best for:</strong> {verdict.bestFor}</p>
+    <p><strong>Rating:</strong> {verdict.score}/5</p>
+  </div>
+
+  <ProsCons pros={pros} cons={cons} />
+
+  <Toc items={tocItems} />
+
+  <slot name="verdict-detail" />
+
+  <slot name="specs-table" />
+
+  <slot name="performance" />
+
+  <slot name="alternatives" />
+
+  <slot name="extra-sections" />
+
+  <section>
+    <h2 id="faq">Frequently asked questions</h2>
+    <FaqAccordion>
+      {faqItems.map((item) => (
+        <FaqItem question={item.q}>
+          <p>{item.a}</p>
+        </FaqItem>
+      ))}
+    </FaqAccordion>
+  </section>
+</PostLayout>

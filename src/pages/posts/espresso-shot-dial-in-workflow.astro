@@ -1,151 +1,114 @@
 ---
-import PostLayout from '../../layouts/PostLayout.astro';
-import JsonLd from '../../components/JsonLd.astro';
+import HowToGuide from '../../layouts/page-types/HowToGuide.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
-import FaqAccordion from '../../components/FaqAccordion.astro';
-import FaqItem from '../../components/FaqItem.astro';
-import HeroMedia from '../../components/HeroMedia.astro';
-import Toc from '../../components/Toc.astro';
-import Pill from '../../components/Pill.astro';
-import CategoryPills from '../../components/CategoryPills.astro';
-import { SITE, blogPosting, publisher } from '../../data/site';
-
-const title = 'Espresso Shot Dial-In Workflow (2026): Fix Sour or Bitter Shots Fast';
-const description = 'Use this step-by-step espresso dial-in workflow to fix sour or bitter shots fast with dose, yield, grind, and shot-time adjustments that actually work.';
-const slug = 'espresso-shot-dial-in-workflow';
-const canonical = `${SITE.url}/posts/${slug}.html`;
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    blogPosting({
-      headline: title,
-      description: 'Step-by-step espresso dial-in workflow to diagnose taste and adjust grind, ratio, and timing quickly.',
-      slug,
-      datePublished: '2026-03-06',
-      dateModified: '2026-03-06',
-      image: `${SITE.url}/assets/images/espresso-shot-dial-in-workflow-2026.svg`,
-    }),
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"Should I adjust grind size or dose first?","acceptedAnswer":{"@type":"Answer","text":"Adjust grind size first and keep dose fixed so each shot remains comparable."}},
-        {"@type":"Question","name":"What shot time should I target for budget espresso machines?","acceptedAnswer":{"@type":"Answer","text":"Start around 25 to 32 seconds for a 1:2 shot and adjust by taste."}},
-        {"@type":"Question","name":"Can I dial in without a scale?","acceptedAnswer":{"@type":"Answer","text":"You can, but results are less repeatable. A scale is the fastest consistency upgrade."}},
-        {"@type":"Question","name":"Why does my shot taste different every morning?","acceptedAnswer":{"@type":"Answer","text":"Variability is usually from retention, inconsistent dose, and skipped cleanup steps."}},
-        {"@type":"Question","name":"How often should I clean my grinder if I brew espresso daily?","acceptedAnswer":{"@type":"Answer","text":"Do a quick brush-out every few days and a deeper clean weekly to control stale buildup and static clumps."}}
-      ],
-    },
-  ],
-};
 ---
-<PostLayout
-  title={title}
-  description={description}
-  canonical={canonical}
+
+<HowToGuide
+  slug="espresso-shot-dial-in-workflow"
+  title="Espresso Shot Dial-In Workflow (2026): Fix Sour or Bitter Shots Fast"
+  description="Use this step-by-step espresso dial-in workflow to fix sour or bitter shots fast with dose, yield, grind, and shot-time adjustments that actually work."
+  category="espresso"
+  datePublished="2026-03-06"
+  dateModified="2026-03-06"
   ogDescription="A practical home-espresso workflow to diagnose shot taste and adjust grind, ratio, and timing with fewer wasted shots."
-  ogImage={`${SITE.url}/assets/images/espresso-shot-dial-in-workflow-2026.svg`}
-  breadcrumbs={[
-    { label: 'Home', href: '/' },
-    { label: 'All Guides', href: '/posts/' },
-    { label: 'Espresso Shot Dial-In Workflow' },
-  ]}
->
-  <JsonLd data={jsonLd} slot="head" />
-
-  <h1>Espresso Shot Dial-In Workflow (2026): Fix Sour or Bitter Shots Fast</h1>
-  <p class="lead">Most home espresso frustration comes from changing too many variables at once. This workflow keeps your process stable, then makes one targeted adjustment per shot so you can move from random outcomes to repeatable, good-tasting espresso in under 15 minutes.</p>
-
-  <CategoryPills>
-    <Pill text="Supporting Page" />
-    <Pill text="Espresso Workflow" />
-    <Pill text="Commercial Intent Assist" />
-  </CategoryPills>
-
-  <HeroMedia src="../assets/images/espresso-shot-dial-in-workflow-2026.svg" alt="Espresso dial-in workflow chart showing baseline ratio, shot timing, taste diagnosis, and next adjustment" width={1200} height={675} loading="eager" fetchpriority="high" caption="Editorial workflow: diagnose the shot, make one adjustment, and repeat with less waste." />
-
-  <p><strong>Quick answer:</strong> Start at <strong>18g in, 36g out</strong> (1:2 ratio), aim for <strong>25-32 seconds</strong>, and taste before adjusting. If the shot is sour and thin, grind finer. If bitter and dry, grind coarser. Keep dose fixed and only change one variable each round.</p>
-
-  <Toc items={[
+  heroSteps={{
+    title: "Espresso Dial-In Workflow",
+    subtitle: "Four steps to fix sour or bitter shots — change one variable at a time",
+    steps: [
+      { label: 'Set Baseline', icon: 'target', actions: ['18g dose in', '36g yield out (1:2)', 'Machine default temp'], time: '1 min' },
+      { label: 'Pull & Time', icon: 'timer', actions: ['Start timer at pump', 'Target 25–32 sec', 'Weigh yield on scale'], time: '~30 sec' },
+      { label: 'Taste & Diagnose', icon: 'coffee', actions: ['Sour/thin → under-extracted', 'Bitter/dry → over-extracted', 'Hollow/flat → stale or uneven prep'], time: '~1 min' },
+      { label: 'Adjust Once', icon: 'wrench', actions: ['Sour → grind finer', 'Bitter → grind coarser', 'Keep dose fixed, change one variable'], time: 'Repeat' },
+    ],
+    outcome: "Lock dose, track yield by weight, adjust grind first — most shots fix within 2–3 rounds",
+    footer: "coffeegearlab.com · 2026 espresso workflow",
+  }}
+  tocItems={[
+    { href: '#quick-answer', label: 'Quick answer' },
     { href: '#baseline', label: 'Baseline setup (first shot)' },
     { href: '#diagnose', label: 'Taste diagnosis and adjustments' },
     { href: '#workflow', label: '10-minute dial-in loop' },
     { href: '#tools', label: 'Tools that speed up consistency' },
-    { href: '#faq', label: 'FAQ' },
-  ]} ordered />
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    { q: 'Should I adjust grind size or dose first?', a: 'Adjust grind size first. Keep dose constant so each shot is comparable and your diagnosis stays clean.' },
+    { q: 'What shot time should I target for budget espresso machines?', a: 'Start around 25-32 seconds for a 1:2 shot. Then use taste to decide whether to move finer or coarser.' },
+    { q: 'Can I dial in without a scale?', a: 'You can, but it is slower and less repeatable. A scale is the highest-impact upgrade for dialing espresso quickly.' },
+    { q: 'Why does my shot taste different every morning?', a: 'Common causes are grinder retention, inconsistent dose, and skipped cleanup. Purging stale grounds and logging dose/yield reduces this variability.' },
+    { q: 'How often should I clean my grinder if I brew espresso daily?', a: 'Quick brush-out every few days and deeper cleaning weekly is usually enough to prevent stale buildup and static-heavy clumps.' },
+  ]}
+  schemaSteps={[
+    { name: 'Set a baseline recipe', text: 'Start at 18g dose in and 36g yield out at a 1:2 ratio with machine default temperature.' },
+    { name: 'Pull and time the shot', text: 'Start a timer at pump activation, target 25-32 seconds, and weigh yield on a scale.' },
+    { name: 'Taste and diagnose', text: 'Label the shot as sour/thin (under-extracted), bitter/dry (over-extracted), or hollow/flat (stale or prep issue).' },
+    { name: 'Adjust one variable', text: 'If sour, grind finer. If bitter, grind coarser. Keep dose fixed and change only one variable per round.' },
+  ]}
+  supplies={['Fresh espresso beans', 'Digital coffee scale with timer']}
+  schemaTools={['Espresso machine', 'Burr grinder', 'Tamper']}
+>
+  <Fragment slot="lead">
+    <p class="lead">Most home espresso frustration comes from changing too many variables at once. This workflow keeps your process stable, then makes one targeted adjustment per shot so you can move from random outcomes to repeatable, good-tasting espresso in under 15 minutes.</p>
+  </Fragment>
 
-  <h2 id="baseline">Baseline setup (first shot)</h2>
-  <ComparisonTable>
-    <table>
-      <thead>
-        <tr><th>Variable</th><th>Start point</th><th>Why it matters</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Dose</td><td data-label="Start point">18g</td><td data-label="Why it matters">Keeps puck depth stable so taste changes are easier to interpret.</td></tr>
-        <tr><td>Yield</td><td data-label="Start point">36g (1:2 ratio)</td><td data-label="Why it matters">Solid baseline for most medium roasts and pressurized-basket setups.</td></tr>
-        <tr><td>Shot time</td><td data-label="Start point">25-32 sec</td><td data-label="Why it matters">Useful range for balancing sweetness vs harshness.</td></tr>
-        <tr><td>Water temp</td><td data-label="Start point">Machine default / medium</td><td data-label="Why it matters">Only tweak temperature after grind + ratio are close.</td></tr>
-        <tr><td>Puck prep</td><td data-label="Start point">Level bed + firm tamp</td><td data-label="Why it matters">Reduces channeling and random shot swings.</td></tr>
-      </tbody>
-    </table>
-  </ComparisonTable>
-  <p>New to budget machines? Use this with our <a href="/posts/best-espresso-machine-under-200.html">best espresso machine under $200 guide</a> so your workflow matches your machine type and basket reality.</p>
+  <Fragment slot="quick-answer">
+    <h2 id="quick-answer">Quick answer</h2>
+    <p><strong>Quick answer:</strong> Start at <strong>18g in, 36g out</strong> (1:2 ratio), aim for <strong>25-32 seconds</strong>, and taste before adjusting. If the shot is sour and thin, grind finer. If bitter and dry, grind coarser. Keep dose fixed and only change one variable each round.</p>
+  </Fragment>
 
-  <h2 id="diagnose">Taste diagnosis and adjustments</h2>
-  <ComparisonTable>
-    <table>
-      <thead>
-        <tr><th>What you taste</th><th>Likely issue</th><th>First adjustment</th><th>Second adjustment (if needed)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Sour + thin</td><td data-label="Likely issue">Under-extraction</td><td data-label="First adjustment">Grind finer</td><td data-label="Second adjustment (if needed)">Increase yield slightly (1:2.1)</td></tr>
-        <tr><td>Bitter + dry</td><td data-label="Likely issue">Over-extraction</td><td data-label="First adjustment">Grind coarser</td><td data-label="Second adjustment (if needed)">Shorten yield slightly (1:1.8-1.9)</td></tr>
-        <tr><td>Hollow + flat</td><td data-label="Likely issue">Stale grounds / uneven prep</td><td data-label="First adjustment">Improve puck prep</td><td data-label="Second adjustment (if needed)">Fresh beans + grinder cleanup</td></tr>
-        <tr><td>Fast shot + weak body</td><td data-label="Likely issue">Too coarse / channeling</td><td data-label="First adjustment">Grind finer</td><td data-label="Second adjustment (if needed)">Check distribution and tamp level</td></tr>
-        <tr><td>Very slow + harsh shot</td><td data-label="Likely issue">Too fine / overpacked puck</td><td data-label="First adjustment">Grind coarser</td><td data-label="Second adjustment (if needed)">Lower dose by 0.5g</td></tr>
-      </tbody>
-    </table>
-  </ComparisonTable>
+  <Fragment slot="steps">
+    <h2 id="baseline">Baseline setup (first shot)</h2>
+    <ComparisonTable>
+      <table>
+        <thead>
+          <tr><th>Variable</th><th>Start point</th><th>Why it matters</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Dose</td><td data-label="Start point">18g</td><td data-label="Why it matters">Keeps puck depth stable so taste changes are easier to interpret.</td></tr>
+          <tr><td>Yield</td><td data-label="Start point">36g (1:2 ratio)</td><td data-label="Why it matters">Solid baseline for most medium roasts and pressurized-basket setups.</td></tr>
+          <tr><td>Shot time</td><td data-label="Start point">25-32 sec</td><td data-label="Why it matters">Useful range for balancing sweetness vs harshness.</td></tr>
+          <tr><td>Water temp</td><td data-label="Start point">Machine default / medium</td><td data-label="Why it matters">Only tweak temperature after grind + ratio are close.</td></tr>
+          <tr><td>Puck prep</td><td data-label="Start point">Level bed + firm tamp</td><td data-label="Why it matters">Reduces channeling and random shot swings.</td></tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
+    <p>New to budget machines? Use this with our <a href="/posts/best-espresso-machine-under-200.html">best espresso machine under $200 guide</a> so your workflow matches your machine type and basket reality.</p>
 
-  <HeroMedia src="../assets/images/espresso-shot-dial-in-workflow-2026.svg" alt="Espresso taste map and dial-in checkpoints for sour and bitter shot correction" width={1200} height={675} caption="When in doubt: lock dose, track yield by weight, then adjust grind first." />
+    <h2 id="diagnose">Taste diagnosis and adjustments</h2>
+    <ComparisonTable>
+      <table>
+        <thead>
+          <tr><th>What you taste</th><th>Likely issue</th><th>First adjustment</th><th>Second adjustment (if needed)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Sour + thin</td><td data-label="Likely issue">Under-extraction</td><td data-label="First adjustment">Grind finer</td><td data-label="Second adjustment (if needed)">Increase yield slightly (1:2.1)</td></tr>
+          <tr><td>Bitter + dry</td><td data-label="Likely issue">Over-extraction</td><td data-label="First adjustment">Grind coarser</td><td data-label="Second adjustment (if needed)">Shorten yield slightly (1:1.8-1.9)</td></tr>
+          <tr><td>Hollow + flat</td><td data-label="Likely issue">Stale grounds / uneven prep</td><td data-label="First adjustment">Improve puck prep</td><td data-label="Second adjustment (if needed)">Fresh beans + grinder cleanup</td></tr>
+          <tr><td>Fast shot + weak body</td><td data-label="Likely issue">Too coarse / channeling</td><td data-label="First adjustment">Grind finer</td><td data-label="Second adjustment (if needed)">Check distribution and tamp level</td></tr>
+          <tr><td>Very slow + harsh shot</td><td data-label="Likely issue">Too fine / overpacked puck</td><td data-label="First adjustment">Grind coarser</td><td data-label="Second adjustment (if needed)">Lower dose by 0.5g</td></tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
 
-  <h2 id="workflow">10-minute dial-in loop</h2>
-  <ol>
-    <li>Pull baseline shot at 18g in / 36g out and record shot time.</li>
-    <li>Taste and label it (sour, bitter, hollow, balanced).</li>
-    <li>Change one variable only (usually grind size first).</li>
-    <li>Pull the next shot and compare directly.</li>
-    <li>Stop once sweetness and body are balanced; do not chase perfection forever.</li>
-  </ol>
-  <p>If your grinder is hard to control for espresso, use the buyer-fit picks in <a href="/posts/best-burr-grinder-for-espresso.html">best burr grinder for espresso</a> and keep a backup baseline from our <a href="/posts/burr-grinder-settings-for-espresso.html">espresso grinder settings guide</a>.</p>
+    <h2 id="workflow">10-minute dial-in loop</h2>
+    <ol>
+      <li>Pull baseline shot at 18g in / 36g out and record shot time.</li>
+      <li>Taste and label it (sour, bitter, hollow, balanced).</li>
+      <li>Change one variable only (usually grind size first).</li>
+      <li>Pull the next shot and compare directly.</li>
+      <li>Stop once sweetness and body are balanced; do not chase perfection forever.</li>
+    </ol>
+    <p>If your grinder is hard to control for espresso, use the buyer-fit picks in <a href="/posts/best-burr-grinder-for-espresso.html">best burr grinder for espresso</a> and keep a backup baseline from our <a href="/posts/burr-grinder-settings-for-espresso.html">espresso grinder settings guide</a>.</p>
+  </Fragment>
 
-  <h2 id="tools">Tools that speed up consistency</h2>
-  <ul>
-    <li><a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">Coffee scale with timer</a> — the fastest upgrade for repeatable yield and shot time.</li>
-    <li><a href="/posts/best-burr-coffee-grinder-under-200.html">Low-retention burr grinder</a> — reduces stale fines and random shot behavior.</li>
-    <li><a href="/posts/how-to-clean-burr-coffee-grinder.html">Simple grinder cleaning routine</a> — keeps flavor from drifting week to week.</li>
-    <li><a href="/posts/best-hand-grinder-for-espresso-under-100.html">Budget manual espresso grinder options</a> — if you need precision without high spend.</li>
-    <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee ratio reference</a> — useful when dialing non-espresso brew methods too.</li>
-  </ul>
-
-  <section>
-    <h2 id="faq">FAQ</h2>
-    <FaqAccordion>
-      <FaqItem question="Should I adjust grind size or dose first?">
-        <p>Adjust grind size first. Keep dose constant so each shot is comparable and your diagnosis stays clean.</p>
-      </FaqItem>
-      <FaqItem question="What shot time should I target for budget espresso machines?">
-        <p>Start around 25-32 seconds for a 1:2 shot. Then use taste to decide whether to move finer or coarser.</p>
-      </FaqItem>
-      <FaqItem question="Can I dial in without a scale?">
-        <p>You can, but it is slower and less repeatable. A scale is the highest-impact upgrade for dialing espresso quickly.</p>
-      </FaqItem>
-      <FaqItem question="Why does my shot taste different every morning?">
-        <p>Common causes are grinder retention, inconsistent dose, and skipped cleanup. Purging stale grounds and logging dose/yield reduces this variability.</p>
-      </FaqItem>
-      <FaqItem question="How often should I clean my grinder if I brew espresso daily?">
-        <p>Quick brush-out every few days and deeper cleaning weekly is usually enough to prevent stale buildup and static-heavy clumps.</p>
-      </FaqItem>
-    </FaqAccordion>
-  </section>
-</PostLayout>
+  <Fragment slot="extra-sections">
+    <h2 id="tools">Tools that speed up consistency</h2>
+    <ul>
+      <li><a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">Coffee scale with timer</a> — the fastest upgrade for repeatable yield and shot time.</li>
+      <li><a href="/posts/best-burr-coffee-grinder-under-200.html">Low-retention burr grinder</a> — reduces stale fines and random shot behavior.</li>
+      <li><a href="/posts/how-to-clean-burr-coffee-grinder.html">Simple grinder cleaning routine</a> — keeps flavor from drifting week to week.</li>
+      <li><a href="/posts/best-hand-grinder-for-espresso-under-100.html">Budget manual espresso grinder options</a> — if you need precision without high spend.</li>
+      <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee ratio reference</a> — useful when dialing non-espresso brew methods too.</li>
+    </ul>
+  </Fragment>
+</HowToGuide>

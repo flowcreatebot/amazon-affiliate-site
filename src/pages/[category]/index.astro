@@ -49,7 +49,7 @@ export function getStaticPaths() {
 
 const { category, categoryPosts } = Astro.props;
 const meta = categoryMeta[category] || { name: category, description: '', intro: '' };
-const title = `${meta.name} | Coffee Gear Lab`;
+const title = `${meta.name} | ${SITE.name}`;
 const canonical = `${SITE.url}/${category}/`;
 ---
 <BaseLayout

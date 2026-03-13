@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Analytics from '../components/Analytics.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ChatWidget from '../components/chat/ChatWidget';
 
 interface Props {
   title: string;
@@ -52,5 +53,6 @@ const {
     <slot />
   </main>
   <Footer />
+  <ChatWidget client:idle apiUrl="https://coffee-chat-api-k616.onrender.com" />
 </body>
 </html>

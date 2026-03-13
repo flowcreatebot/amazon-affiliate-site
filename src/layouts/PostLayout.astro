@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+import { DISCLOSURE_TEXT } from '../data/site';
 
 interface Props {
   title: string;
@@ -28,7 +29,7 @@ const {
 <BaseLayout {...baseProps}>
   <slot name="head" slot="head" />
   <Breadcrumbs items={breadcrumbs} />
-  {showDisclosure && <AffiliateDisclosure text={disclosureText} />}
+  {showDisclosure && <AffiliateDisclosure text={disclosureText ?? DISCLOSURE_TEXT} />}
   <slot />
-  {showDisclosure && <AffiliateDisclosure text={disclosureText ?? 'Coffee Gear Lab may earn a commission from qualifying purchases made through links on this page. This does not change the price you pay.'} />}
+  {showDisclosure && <AffiliateDisclosure text={disclosureText ?? DISCLOSURE_TEXT} />}
 </BaseLayout>

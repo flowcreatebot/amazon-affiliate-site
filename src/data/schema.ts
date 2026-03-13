@@ -1,0 +1,262 @@
+// JSON-LD schema builder helpers for page-type templates
+// Reuses blogPosting() and publisher from site.ts
+
+import { SITE, blogPosting, publisher } from './site';
+import type { ResolvedProduct } from './products';
+
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
+export function buildFaqSchema(items: FaqItem[]) {
+  return {
+    '@type': 'FAQPage' as const,
+    mainEntity: items.map((item) => ({
+      '@type': 'Question' as const,
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer' as const,
+        text: item.a,
+      },
+    })),
+  };
+}
+
+export function buildItemListSchema(names: string[]) {
+  return {
+    '@type': 'ItemList' as const,
+    itemListElement: names.map((name, i) => ({
+      '@type': 'ListItem' as const,
+      position: i + 1,
+      name,
+    })),
+  };
+}
+
+interface HowToStep {
+  name: string;
+  text: string;
+}
+
+export function buildHowToSchema(opts: {
+  name: string;
+  description: string;
+  supplies?: string[];
+  tools?: string[];
+  steps: HowToStep[];
+}) {
+  return {
+    '@type': 'HowTo' as const,
+    name: opts.name,
+    description: opts.description,
+    ...(opts.supplies
+      ? { supply: opts.supplies.map((s) => ({ '@type': 'HowToSupply' as const, name: s })) }
+      : {}),
+    ...(opts.tools
+      ? { tool: opts.tools.map((t) => ({ '@type': 'HowToTool' as const, name: t })) }
+      : {}),
+    step: opts.steps.map((s) => ({
+      '@type': 'HowToStep' as const,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
+export function buildProductSchema(
+  product: ResolvedProduct,
+  review?: { score: number; summary: string }
+) {
+  const schema: Record<string, any> = {
+    '@type': 'Product' as const,
+    name: product.name,
+    brand: { '@type': 'Brand' as const, name: product.brand },
+    ...(product.image ? { image: product.image } : {}),
+  };
+  if (review) {
+    schema.review = {
+      '@type': 'Review' as const,
+      reviewRating: {
+        '@type': 'Rating' as const,
+        ratingValue: review.score,
+        bestRating: 5,
+      },
+      reviewBody: review.summary,
+      author: publisher,
+    };
+  }
+  return schema;
+}
+
+/** Build the full @graph array for a money page */
+export function moneyPageGraph(opts: {
+  title: string;
+  description: string;
+  slug: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+  productNames: string[];
+  faqItems: FaqItem[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      blogPosting({
+        headline: opts.title,
+        description: opts.description,
+        slug: opts.slug,
+        datePublished: opts.datePublished,
+        dateModified: opts.dateModified,
+        image: opts.image,
+      }),
+      buildItemListSchema(opts.productNames),
+      buildFaqSchema(opts.faqItems),
+      publisher,
+    ],
+  };
+}
+
+/** Build the full @graph array for a VS comparison page */
+export function vsPageGraph(opts: {
+  title: string;
+  description: string;
+  slug: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+  faqItems: FaqItem[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      blogPosting({
+        headline: opts.title,
+        description: opts.description,
+        slug: opts.slug,
+        datePublished: opts.datePublished,
+        dateModified: opts.dateModified,
+        image: opts.image,
+      }),
+      buildFaqSchema(opts.faqItems),
+      publisher,
+    ],
+  };
+}
+
+/** Build the full @graph array for a how-to guide page */
+export function howToPageGraph(opts: {
+  title: string;
+  description: string;
+  slug: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+  howToName: string;
+  howToDescription: string;
+  supplies?: string[];
+  tools?: string[];
+  howToSteps: HowToStep[];
+  faqItems: FaqItem[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      blogPosting({
+        headline: opts.title,
+        description: opts.description,
+        slug: opts.slug,
+        datePublished: opts.datePublished,
+        dateModified: opts.dateModified,
+        image: opts.image,
+      }),
+      buildHowToSchema({
+        name: opts.howToName,
+        description: opts.howToDescription,
+        supplies: opts.supplies,
+        tools: opts.tools,
+        steps: opts.howToSteps,
+      }),
+      buildFaqSchema(opts.faqItems),
+      publisher,
+    ],
+  };
+}
+
+/** Build the full @graph array for a single review page */
+export function reviewPageGraph(opts: {
+  title: string;
+  description: string;
+  slug: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+  product: ResolvedProduct;
+  review: { score: number; summary: string };
+  faqItems: FaqItem[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      blogPosting({
+        headline: opts.title,
+        description: opts.description,
+        slug: opts.slug,
+        datePublished: opts.datePublished,
+        dateModified: opts.dateModified,
+        image: opts.image,
+      }),
+      buildProductSchema(opts.product, opts.review),
+      buildFaqSchema(opts.faqItems),
+      publisher,
+    ],
+  };
+}
+
+/** Build the full @graph array for a buying guide page */
+export function buyingGuidePageGraph(opts: {
+  title: string;
+  description: string;
+  slug: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+  faqItems: FaqItem[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      blogPosting({
+        headline: opts.title,
+        description: opts.description,
+        slug: opts.slug,
+        datePublished: opts.datePublished,
+        dateModified: opts.dateModified,
+        image: opts.image,
+      }),
+      buildFaqSchema(opts.faqItems),
+      publisher,
+    ],
+  };
+}
+
+/** Build the full JSON-LD for a hub/category page */
+export function hubPageGraph(opts: {
+  title: string;
+  description: string;
+  url: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage' as const,
+        name: opts.title,
+        description: opts.description,
+        url: opts.url,
+      },
+      publisher,
+    ],
+  };
+}

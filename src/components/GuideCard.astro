@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  category: string;
+  pageType: string;
+  featured?: boolean;
+}
+const { title, description, href, category, pageType, featured = false } = Astro.props;
+
+const categoryLabels: Record<string, string> = {
+  espresso: 'Espresso',
+  grinders: 'Grinders',
+  brewers: 'Brewers',
+  accessories: 'Accessories',
+  education: 'Education',
+};
+
+const typeLabels: Record<string, string> = {
+  money: 'Buying Guide',
+  howto: 'How-To',
+  vs: 'Comparison',
+};
+---
+<article class:list={['guide-card', { '--featured': featured }]}>
+  <div class="guide-card__meta">
+    <span class="guide-card__category">{categoryLabels[category] || category}</span>
+    <span class="guide-card__type">{typeLabels[pageType] || pageType}</span>
+  </div>
+  <h3 class="guide-card__title"><a href={href}>{title}</a></h3>
+  <p class="guide-card__desc">{description}</p>
+  <a class="guide-card__link" href={href}>Read guide <span aria-hidden="true">&rarr;</span></a>
+</article>
