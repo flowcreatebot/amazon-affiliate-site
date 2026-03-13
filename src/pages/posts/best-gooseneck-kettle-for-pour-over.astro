@@ -5,75 +5,182 @@ import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsCons from '../../components/ProsCons.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
-import { getResolvedProducts, amazonUrl } from '../../data/products';
+import { amazonUrl, type ResolvedProduct } from '../../data/products';
 
-const products = getResolvedProducts('best-gooseneck-kettle-for-pour-over');
+const description = 'Find the best gooseneck kettle for pour over in 2026 with researched electric and stovetop picks for flow control, temperature accuracy, and daily value.';
+
+const products: ResolvedProduct[] = [
+  {
+    id: 'fellow-stagg-ekg',
+    name: 'Fellow Stagg EKG Electric Kettle',
+    brand: 'Fellow',
+    asin: 'B077JBQZPX',
+    image: 'PLACEHOLDER_IMG:B077JBQZPX',
+    imageAlt: 'Fellow Stagg EKG electric gooseneck kettle in matte black finish',
+    category: 'kettles',
+    rating: 4.7,
+    specs: {
+      type: 'Electric gooseneck',
+      capacity: '0.9L',
+      temperature: 'Variable with hold mode',
+      material: 'Stainless steel',
+      shutoff: 'Auto safety shutoff',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: 'Check price',
+    bestFor: 'Most home brewers who want precision and convenience',
+    featured: true,
+  },
+  {
+    id: 'bonavita-1l',
+    name: 'Bonavita 1.0L Variable Temperature Kettle',
+    brand: 'Bonavita',
+    asin: 'B005YR0F40',
+    image: 'PLACEHOLDER_IMG:B005YR0F40',
+    imageAlt: 'Bonavita 1.0 liter variable temperature electric gooseneck kettle',
+    category: 'kettles',
+    rating: 4.5,
+    specs: {
+      type: 'Electric gooseneck',
+      capacity: '1.0L',
+      temperature: 'Variable with hold behavior',
+      material: 'Stainless steel',
+      shutoff: 'Auto safety shutoff',
+    },
+    badge: { label: 'Best Budget Electric', variant: 'budget' },
+    price: 'Check price',
+    bestFor: 'Strong value electric workflows',
+  },
+  {
+    id: 'hario-buono',
+    name: 'Hario V60 Buono Stovetop Kettle',
+    brand: 'Hario',
+    asin: 'B000IGOXLS',
+    image: 'PLACEHOLDER_IMG:B000IGOXLS',
+    imageAlt: 'Hario V60 Buono stainless steel stovetop gooseneck kettle',
+    category: 'kettles',
+    rating: 4.6,
+    specs: {
+      type: 'Stovetop gooseneck',
+      capacity: '1.2L',
+      temperature: 'Manual heat control',
+      material: 'Stainless steel',
+      shutoff: 'Depends on stovetop',
+    },
+    badge: { label: 'Best Stovetop Value', variant: 'pourover' },
+    price: 'Check price',
+    bestFor: 'Manual brewers prioritizing simplicity',
+  },
+  {
+    id: 'cosori-electric',
+    name: 'COSORI Electric Gooseneck Kettle',
+    brand: 'COSORI',
+    asin: 'B07G2MBM6L',
+    image: 'PLACEHOLDER_IMG:B07G2MBM6L',
+    imageAlt: 'COSORI electric gooseneck kettle for pour over coffee brewing',
+    category: 'kettles',
+    rating: 4.5,
+    specs: {
+      type: 'Electric gooseneck',
+      capacity: '0.8L',
+      temperature: 'Preset + variable control',
+      material: 'Stainless steel',
+      shutoff: 'Boil-dry and auto shutoff',
+    },
+    badge: { label: 'Best Temperature Control', variant: 'beginners' },
+    price: 'Check price',
+    bestFor: 'Simple first electric gooseneck',
+  },
+  {
+    id: 'fellow-stagg-stovetop',
+    name: 'Fellow Stagg Stovetop Pour-Over Kettle',
+    brand: 'Fellow',
+    asin: 'B014UN7B7C',
+    image: 'PLACEHOLDER_IMG:B014UN7B7C',
+    imageAlt: 'Fellow Stagg stovetop gooseneck kettle in polished steel',
+    category: 'kettles',
+    rating: 4.6,
+    specs: {
+      type: 'Stovetop gooseneck',
+      capacity: '1.0L',
+      temperature: 'Manual heat control',
+      material: 'Stainless steel',
+      shutoff: 'Depends on stovetop',
+    },
+    badge: { label: 'Best Premium Stovetop', variant: 'upgrade' },
+    price: 'Check price',
+    bestFor: 'Design-forward manual workflows',
+  },
+];
 ---
 
 <MoneyPage
   slug="best-gooseneck-kettle-for-pour-over"
-  title="Best Gooseneck Kettle for Pour Over (2026)"
-  description="Find the best gooseneck kettle for pour over in 2026 with clear picks for control, temperature stability, and value across electric and stovetop options."
+  title="Best Gooseneck Kettle for Pour Over (2026): 5 Smart Picks"
+  description={description}
   category="kettles"
-  datePublished="2026-03-10"
-  dateModified="2026-03-10"
-  ogImage="https://m.media-amazon.com/images/I/51MfuBJO2BL._AC_SL500_.jpg"
+  datePublished="2026-03-13"
+  dateModified="2026-03-13"
+  ogImage={products[0].image}
   products={products}
   heroPicks={{
-    title: "Best Gooseneck Kettle for Pour Over",
-    subtitle: "5 kettles compared by workflow fit — find the right kettle for how you brew",
+    title: 'Best Gooseneck Kettle for Pour Over',
+    subtitle: 'Electric and stovetop picks ranked by stream control, temperature workflow, and long-term value',
     picks: [
-      { category: 'Budget', tagline: 'Best value electric option', icon: 'dollar', color: '#059669', features: ['Variable temperature control', '1.0L practical capacity', 'Simple controls', 'Strong value-to-feature ratio'], topPick: 'Bonavita 1.0L', price: '$$', subtitle: 'Value electric kettle', asin: 'B005YR0F40' },
-      { category: 'Overall', tagline: 'Premium daily precision', icon: 'target', color: '#2C1810', features: ['Exact temperature input', 'Hold-temperature mode', 'Refined stream control', 'Best daily workflow'], topPick: 'Fellow Stagg EKG', price: '$$$', subtitle: 'Best all-around pick', asin: 'B077JBQZPX' },
-      { category: 'Stovetop', tagline: 'Simple manual reliability', icon: 'hand', color: '#7A5B4A', features: ['No electronics to fail', 'Durable stainless steel', '1.2L capacity', 'Accessible entry point'], topPick: 'Hario V60 Buono', price: '$', subtitle: 'Best stovetop value', asin: 'B000IGOXLS' },
-      { category: 'Beginner', tagline: 'Easy one-button routine', icon: 'volume-x', color: '#8B6F47', features: ['Preset temperature modes', 'Low learning curve', 'Family-friendly controls', 'Good electric value'], topPick: 'COSORI Electric', price: '$$', subtitle: 'Simplest workflow', asin: 'B07G2MBM6L' },
+      { category: 'Overall', tagline: 'Best all-around daily precision', icon: 'target', color: '#2C1810', features: ['Variable temp control', 'Hold-temperature mode', 'Excellent stream stability', 'Strong daily workflow'], topPick: 'Fellow Stagg EKG', price: '$$$', subtitle: 'Premium precision routine', asin: 'B077JBQZPX' },
+      { category: 'Budget', tagline: 'Best value electric option', icon: 'dollar', color: '#059669', features: ['Variable temperature', '1.0L practical volume', 'Simple controls', 'Great value for features'], topPick: 'Bonavita 1.0L', price: '$$', subtitle: 'Value electric consistency', asin: 'B005YR0F40' },
+      { category: 'Manual', tagline: 'Best stovetop reliability', icon: 'hand', color: '#7A5B4A', features: ['No electronics to fail', '1.2L stovetop capacity', 'Classic pour profile', 'Easy long-term ownership'], topPick: 'Hario V60 Buono', price: '$', subtitle: 'Manual classic for pour over', asin: 'B000IGOXLS' },
+      { category: 'Temperature', tagline: 'Best temp presets for repeatability', icon: 'volume-x', color: '#8B6F47', features: ['Preset temperatures', 'Low learning curve', 'Quick heat-up workflow', 'Friendly daily controls'], topPick: 'COSORI Electric', price: '$$', subtitle: 'Consistent temp control workflow', asin: 'B07G2MBM6L' },
     ],
-    footer: "coffeegearlab.com - gooseneck kettles - 2026",
+    footer: 'coffeegearpicks.com · 2026 kettle roundup',
   }}
   tocItems={[
-    { href: '#quick-picks', label: 'Quick Picks' },
-    { href: '#comparison-table', label: 'Comparison Table' },
-    { href: '#how-we-evaluate', label: 'How We Evaluate' },
-    { href: '#product-reviews', label: 'Individual Reviews' },
-    { href: '#buying-guide', label: 'Buying Guide' },
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Individual product reviews' },
+    { href: '#buying-guide', label: 'Buying guide' },
     { href: '#faq', label: 'FAQ' },
   ]}
   faqItems={[
-    { q: 'Do I need an electric kettle for pour over?', a: 'No. A stovetop gooseneck can brew excellent coffee. Electric models mainly add convenience: faster repeat boils, hold-temperature behavior, and easier consistency when making multiple cups.' },
-    { q: 'What temperature is best for most pour over recipes?', a: 'A practical range is 195°F to 205°F. Lighter roasts usually perform better near the top of that range, while darker roasts often taste cleaner a bit lower. Keep your recipe and grind stable while adjusting temperature.' },
-    { q: 'How much capacity should I buy for home use?', a: 'For most people, 0.8L to 1.0L is the sweet spot. It covers one to two cups comfortably while staying easier to control than oversized kettles during slow bloom pours.' },
-    { q: 'How often should I descale a gooseneck kettle?', a: 'Check monthly, then descale based on buildup and local water hardness. In hard-water areas, every 2-4 weeks is common. In softer water regions, every 1-2 months often works.' },
-    { q: 'Is flow control really that different between kettles?', a: 'Yes. Spout geometry, handle balance, and total weight all influence how stable your stream feels, especially near the end of a pour. Better control usually means easier repeatability and fewer extraction swings.' },
+    { q: 'Do I need an electric gooseneck kettle for pour over?', a: 'No. A good stovetop gooseneck can make excellent coffee. Electric kettles mainly improve convenience through faster reheats, hold-temperature behavior, and repeatable target settings.' },
+    { q: 'What temperature should I use for pour over coffee?', a: 'Most brewers do well between 195°F and 205°F. Lighter roasts often perform better near the higher end, while darker roasts can taste cleaner slightly lower.' },
+    { q: 'What capacity is best for most home users?', a: 'For most households, 0.8L to 1.0L is the practical sweet spot. It is enough for one to two cups while staying easier to control than oversized kettles.' },
+    { q: 'How often should I descale a gooseneck kettle?', a: 'Check monthly. In hard-water areas, many people descale every 2 to 4 weeks. In softer-water areas, every 1 to 2 months is common.' },
+    { q: 'Can a gooseneck kettle improve extraction consistency?', a: 'Yes. Better stream control makes it easier to repeat bloom and pulse pours, which helps maintain more stable extraction from brew to brew.' },
   ]}
 >
   <Fragment slot="lead">
-    <p class="lead">The best gooseneck kettle for pour over is the one that gives you repeatable flow control without making your daily routine harder. We researched current Amazon listings, compared specs and long-term owner feedback, and narrowed this guide to kettles that improve consistency whether you brew one cup or a full morning batch.</p>
+    <p class="lead">The best gooseneck kettle for pour over is the one that makes your recipe easier to repeat on busy mornings, not just the one with the longest feature list. We researched current listings, compared specs that matter for everyday brewing, and ranked the strongest electric and stovetop options for control, consistency, and value.</p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <p><strong>Quick answer:</strong> If you want the most complete electric workflow, choose the Fellow Stagg EKG. If you want better value with variable-temperature control, choose the Bonavita 1.0L. If you prefer manual simplicity and long-term durability, the Hario V60 Buono is the safest stovetop pick for most brewers.</p>
   </Fragment>
 
   <Fragment slot="comparison-table">
-    <h2 id="comparison-table">Comparison Table</h2>
-    <ComparisonTable
-      timestamp="Prices updated: March 10, 2026"
-      ariaLabel="Best gooseneck kettle for pour over comparison"
-    >
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="March 13, 2026" ariaLabel="Best gooseneck kettles for pour over comparison table">
       <table>
         <thead>
           <tr>
             <th>Product</th>
-            <th>Best For</th>
+            <th>Best for</th>
             <th>Type</th>
             <th>Capacity</th>
-            <th>Check Price</th>
+            <th>Temperature workflow</th>
+            <th>Check price</th>
           </tr>
         </thead>
         <tbody>
           {products.map((product) => (
             <tr>
               <td data-label="Product">{product.name}</td>
-              <td data-label="Best For"><span class={`best-for-badge --${product.badge.variant}`}>{product.bestFor}</span></td>
+              <td data-label="Best for"><span class={`best-for-badge --${product.badge.variant}`}>{product.bestFor}</span></td>
               <td data-label="Type">{product.specs.type}</td>
               <td data-label="Capacity">{product.specs.capacity}</td>
-              <td data-label="Check Price"><CtaButton href={amazonUrl(product.asin)} size="sm" external>Check Price</CtaButton></td>
+              <td data-label="Temperature workflow">{product.specs.temperature}</td>
+              <td data-label="Check price"><CtaButton href={amazonUrl(product.asin)} size="sm" external>Check Price</CtaButton></td>
             </tr>
           ))}
         </tbody>
@@ -83,146 +190,158 @@ const products = getResolvedProducts('best-gooseneck-kettle-for-pour-over');
 
   <Fragment slot="methodology">
     <section>
-      <h2 id="how-we-evaluate">How We Evaluate</h2>
-      <p>For this roundup, we analyzed current Amazon availability, core technical specs, and recurring user feedback themes for each model. We focused on practical outcomes in home kitchens: whether a kettle helps you pour with less turbulence, stay near your target brew temperature, and repeat your recipe with fewer surprises from cup to cup.</p>
-      <p>Our scoring weighted five factors. <strong>Flow control</strong> came first because pour precision drives extraction consistency in V60, Kalita Wave, Chemex, and similar brewers. <strong>Temperature behavior</strong> came second, especially for electric models where hold modes and responsive heating reduce timing friction. <strong>Ergonomics</strong> covered handle comfort, center-of-mass balance, and stability when the kettle is partially filled. <strong>Capacity</strong> reflected real household use, not just maximum volume on paper. <strong>Value</strong> compared features and durability signals against current market positioning.</p>
-      <p>We excluded models with common complaints about unstable stream behavior, awkward handling at low fill levels, or inconsistent heating. We also prioritized options with clear replacement-path logic: budget picks that still brew well now, and premium picks that make sense when you already have a strong grinder and scale setup.</p>
-      <p>We also compared how each kettle supports recipe execution in real brew cycles. For example, lighter roasts with higher extraction targets usually require stricter flow and temperature discipline than medium-dark blends. Kettles that drift in stream stability during long pours can produce avoidable bitterness or under-extraction, even if your grind size is dialed in.</p>
-      <p>Another factor is recovery speed between brews. If you make coffee for two or more people, a kettle that reheats predictably and keeps controls simple can save real time and reduce inconsistency from cup to cup. In contrast, purely spec-heavy models with clumsy interfaces may look good on paper but create more friction than value during everyday use.</p>
-      <p>Because kettle performance is part of a larger brew system, we recommend pairing this guide with your grinder and ratio workflow. If you are still building your setup, continue with our <a href="/posts/best-coffee-grinder-for-pour-over.html">best coffee grinder for pour over</a> guide, then lock in dose and water with the <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a>. For better pouring consistency, also check the <a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">best coffee scale for espresso and pour over</a> roundup.</p>
+      <h2 id="how-we-evaluate">How we evaluate</h2>
+      <p>For this update, we compared each kettle against five practical decision factors: stream control, temperature behavior, ergonomics, capacity fit, and value versus feature set. We also reviewed how each model supports real home workflows, including single-cup weekday brews, two-cup back-to-back sessions, and slower weekend routines where stability matters more than speed.</p>
+      <p><strong>Stream control</strong> was weighted first. In pour over coffee, your kettle is the steering wheel for extraction. A stable, predictable stream helps you manage bloom agitation and pulse timing without over-disturbing the bed. Kettles that feel jumpy near the end of a pour can make good recipes feel inconsistent even when grind and dose are solid.</p>
+      <p><strong>Temperature behavior</strong> came next. Electric models were evaluated on ease of setting targets, hold-temperature behavior, and recovery between brews. Stovetop models were assessed on control feel and predictability when paired with a basic heating routine. The point is not gadget complexity — it is whether you can repeat your chosen recipe with low friction.</p>
+      <p><strong>Ergonomics and balance</strong> were reviewed from a daily-use perspective: handle comfort, wrist stability during slow circles, and confidence when the kettle is partially filled. A kettle can have good specs and still be tiring to use if its balance is awkward mid-pour. That matters over hundreds of brews.</p>
+      <p><strong>Capacity fit</strong> focused on real households. Many brewers overbuy capacity, then end up with a kettle that feels heavier and less precise than necessary. For most people, 0.8L to 1.0L is the best compromise between practical volume and pour control. Larger sizes make sense only if you consistently brew multiple cups per cycle.</p>
+      <p><strong>Value</strong> compared what you actually gain at each price tier. Budget picks were rewarded for covering core brew needs without major compromise. Premium picks had to justify extra spend through meaningful workflow advantages, not cosmetic upgrades alone. This keeps recommendations useful for both first-time buyers and experienced brewers upgrading one part of a larger setup.</p>
+      <p>If your kettle decision is tied to broader setup planning, pair this guide with our <a href="/posts/best-coffee-grinder-for-pour-over.html">best coffee grinder for pour over</a> roundup, then lock dose and yield with the <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a>. For cleaner recipe consistency, a responsive scale also matters; see <a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">best coffee scale for espresso and pour over</a>.</p>
     </section>
   </Fragment>
 
   <Fragment slot="product-reviews">
     <section>
-      <h2 id="product-reviews">Individual Product Reviews</h2>
+      <h2 id="product-reviews">Individual product reviews</h2>
 
       <h3>1) Fellow Stagg EKG Electric Kettle (ASIN: B077JBQZPX)</h3>
       <ProductCard
-        title="Fellow Stagg EKG Electric Kettle"
-        image={{ src: 'https://m.media-amazon.com/images/I/51MfuBJO2BL._AC_SL500_.jpg', alt: 'Fellow Stagg EKG electric gooseneck kettle in matte black', width: 500, height: 500 }}
-        badge={{ label: 'Best Overall', variant: 'overall' }}
-        rating={{ score: 4.7 }}
-        price="Check price"
-        ctaUrl={amazonUrl('B077JBQZPX')}
+        title={products[0].name}
+        image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={{ score: products[0].rating }}
+        price={products[0].price}
+        ctaUrl={amazonUrl(products[0].asin)}
       />
-      <p>The Fellow Stagg EKG is still the strongest all-around choice if you want a premium electric gooseneck that feels precise every day. It gives you exact temperature input, hold behavior for back-to-back brews, and a stream that stays easy to modulate during bloom and pulse pours.</p>
-      <p>Where this kettle earns its place is consistency under normal home workflow pressure. If you brew before work, pause between pours, or switch beans frequently, it removes a lot of guesswork from heat management. The interface is quick to learn, and the balance stays comfortable even during slower 3-4 minute pour patterns.</p>
-      <p>The biggest advantage is confidence: when your brew variables drift, you can rule out kettle behavior faster and adjust grind, dose, or ratio with cleaner feedback. For brewers who log recipes and chase repeatability, that makes this kettle a practical long-term tool rather than just a design upgrade.</p>
-      <p>The tradeoff is price. If your grinder is still entry-level, your cup quality may improve more from a grinder upgrade first. But if your grind quality is already solid, this kettle is a high-impact quality-of-life improvement that also tightens repeatability.</p>
+      <p>The Stagg EKG remains our best overall recommendation because it balances precision, simplicity, and everyday usability better than most competitors. You get variable temperature control, hold behavior for repeated brews, and a stream profile that is easy to modulate during bloom and pulse pours. That combination lowers friction for both new and experienced brewers.</p>
+      <p>Where this kettle stands out is repeatability under normal life constraints. On paper, many models offer similar controls. In real routines — early mornings, interrupted brews, switching between recipes — the Stagg EKG stays predictable. That makes it easier to diagnose recipe issues quickly because your kettle variable is stable.</p>
+      <p>It also fits “one good cup, then another” workflows well. If you brew for yourself and one other person, hold behavior and fast control adjustments save time while preserving consistency. For brewers tracking light-roast recipes where temperature shifts matter, this can reduce avoidable cup-to-cup swings.</p>
+      <p>The tradeoff is cost. If your grinder is still entry level, budget may be better spent on grind quality first. But once your grinder and scale are already strong, this kettle is a meaningful quality-of-life and consistency upgrade.</p>
       <ProsCons
-        pros={['Excellent stream control for bloom and pulse pours', 'Reliable variable temperature and hold behavior', 'Refined build and daily usability']}
-        cons={['Premium pricing compared with value models', '0.9L capacity may feel small for large households']}
+        pros={['Excellent stream control and balance', 'Reliable variable-temperature workflow', 'Strong hold mode for repeat brews']}
+        cons={['Premium pricing', '0.9L capacity is modest for larger households']}
       />
-      <p><CtaButton href={amazonUrl('B077JBQZPX')} external>Check Price on Amazon</CtaButton></p>
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
 
       <h3>2) Bonavita 1.0L Variable Temperature Kettle (ASIN: B005YR0F40)</h3>
       <ProductCard
-        title="Bonavita 1.0L Variable Temperature Kettle"
-        image={{ src: 'https://m.media-amazon.com/images/I/51X0CfJgo7L._AC_SL500_.jpg', alt: 'Bonavita 1.0 liter variable temperature electric gooseneck kettle', width: 500, height: 500 }}
-        badge={{ label: 'Best Value', variant: 'budget' }}
-        rating={{ score: 4.5 }}
-        price="Check price"
-        ctaUrl={amazonUrl('B005YR0F40')}
+        title={products[1].name}
+        image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+        badge={products[1].badge}
+        rating={{ score: products[1].rating }}
+        price={products[1].price}
+        ctaUrl={amazonUrl(products[1].asin)}
       />
-      <p>If you want core electric functionality at a lower cost, Bonavita remains a practical pick. It covers the important features—variable temperature and controlled gooseneck pouring—without paying for premium finishes or extra interface complexity.</p>
-      <p>The 1.0L capacity is useful for multi-cup mornings and households that brew in sequence. The stream is controlled enough for repeatable V60 and flat-bed dripper recipes, and the larger volume helps when you brew multiple servings without immediate refill.</p>
-      <p>In this price tier, predictability matters more than polish. Bonavita wins because it keeps the core workflow simple: set temperature, heat, pour, repeat. That straightforward operation makes it easier for newer brewers to build good habits and for experienced brewers to stay efficient on busy mornings.</p>
-      <p>For buyers balancing budget across a full setup, this is the value move: enough kettle precision to improve brewing now, while leaving budget room for better grinder burr quality or filters.</p>
+      <p>The Bonavita 1.0L is the strongest budget electric pick for people who want real temperature control without premium-brand pricing. It gives you the core features that matter for pour over consistency, and it does so with a straightforward interface that does not get in your way.</p>
+      <p>Its value shows up in practical routines. The 1.0L volume is useful when you brew multiple cups, and the controls are simple enough for households where more than one person makes coffee. You are not paying for flashy extras; you are paying for baseline precision and repeatability.</p>
+      <p>For many buyers, this is the best “balanced setup” choice because it leaves budget for a better grinder, fresh filters, or a responsive scale. In terms of cup quality improvement per dollar, that systems approach usually beats overspending on a single piece of gear.</p>
+      <p>It does not feel as refined as top-tier models, and stream feel may be less polished in very slow pours. Still, for value-focused electric brewing, it remains a strong recommendation.</p>
       <ProsCons
-        pros={['Strong value-to-feature ratio', 'Useful 1.0L capacity for multi-cup use', 'Simple controls with practical temperature adjustment']}
-        cons={['Less premium fit-and-finish than top-tier kettles', 'Pour feel is competent but not class-leading']}
+        pros={['Strong price-to-feature ratio', 'Useful 1.0L capacity', 'Simple variable-temp workflow']}
+        cons={['Less premium fit and finish', 'Not the most refined stream feel in class']}
       />
-      <p><CtaButton href={amazonUrl('B005YR0F40')} external>Check Price on Amazon</CtaButton></p>
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
 
       <h3>3) Hario V60 Buono Stovetop Kettle (ASIN: B000IGOXLS)</h3>
       <ProductCard
-        title="Hario V60 Buono Stovetop Kettle"
-        image={{ src: 'https://m.media-amazon.com/images/I/51Fz0LSH41L._AC_SL500_.jpg', alt: 'Hario V60 Buono stainless steel stovetop pour over kettle', width: 500, height: 500 }}
-        badge={{ label: 'Best Stovetop Value', variant: 'pourover' }}
-        rating={{ score: 4.6 }}
-        price="Check price"
-        ctaUrl={amazonUrl('B000IGOXLS')}
+        title={products[2].name}
+        image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+        badge={products[2].badge}
+        rating={{ score: products[2].rating }}
+        price={products[2].price}
+        ctaUrl={amazonUrl(products[2].asin)}
       />
-      <p>The Hario V60 Buono is a long-standing manual option that still deserves a place in 2026. It is dependable, easy to own, and excellent for brewers who prefer simple stovetop gear over electric components.</p>
-      <p>This kettle is especially good for people who prioritize pour feel and mechanical simplicity. You lose hold-temperature convenience, but you gain fewer failure points and straightforward long-term maintenance. Pair it with a thermometer or temperature routine and it stays highly competitive for home pour-over use.</p>
-      <p>Its biggest advantage is reliability over time. If you care about durability, repair simplicity, and a minimal learning curve, this kettle stays relevant year after year. It is also a practical backup kettle when electric units are in maintenance or when you brew in locations without a convenient electric base.</p>
-      <p>For first-time specialty coffee users, this is often the cleanest on-ramp into better flow control without committing to higher electric-kettle spend.</p>
+      <p>The Hario V60 Buono is our best stovetop value pick because it is durable, predictable, and easy to own long term. If you prefer manual workflows and fewer electronic failure points, this kettle still delivers excellent control for pour over fundamentals.</p>
+      <p>The biggest advantage is ownership simplicity. You do not need to worry about electric base issues, firmware-like quirks, or proprietary parts. Heat it, pour it, maintain it. That makes it appealing for buyers who want reliability over feature density.</p>
+      <p>It is especially good for people who already brew with a thermometer routine or who are comfortable using sensory cues for water readiness. In those setups, the lack of digital control is not a blocker. It is simply a different style of precision.</p>
+      <p>The main compromise is convenience. There is no hold mode and recovery speed depends on your stovetop. But if your goal is clean manual control at a fair price, it is still one of the safest picks in the category.</p>
       <ProsCons
-        pros={['Reliable manual pour control', 'Durable ownership model with no electronics', 'Accessible entry point for new brewers']}
-        cons={['No built-in temperature hold', 'Heating speed depends on stovetop performance']}
+        pros={['Reliable manual stream control', 'Durable stainless-steel construction', 'Excellent value for stovetop users']}
+        cons={['No built-in temperature hold', 'Slower back-to-back workflow than electric options']}
       />
-      <p><CtaButton href={amazonUrl('B000IGOXLS')} external>Check Price on Amazon</CtaButton></p>
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
 
       <h3>4) COSORI Electric Gooseneck Kettle (ASIN: B07G2MBM6L)</h3>
       <ProductCard
-        title="COSORI Electric Gooseneck Kettle"
-        image={{ src: 'https://m.media-amazon.com/images/I/61loaANnLDL._AC_SL500_.jpg', alt: 'COSORI electric gooseneck kettle for pour over coffee', width: 500, height: 500 }}
-        badge={{ label: 'Best for Beginners', variant: 'beginners' }}
-        rating={{ score: 4.5 }}
-        price="Check price"
-        ctaUrl={amazonUrl('B07G2MBM6L')}
+        title={products[3].name}
+        image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+        badge={products[3].badge}
+        rating={{ score: products[3].rating }}
+        price={products[3].price}
+        ctaUrl={amazonUrl(products[3].asin)}
       />
-      <p>The COSORI electric gooseneck is a strong beginner-friendly electric option with straightforward operation and useful preset behavior. It is ideal for households where multiple people use the kettle and want a low-friction routine.</p>
-      <p>Compared with premium models, the build feel is simpler, but performance is still solid for daily pour over. If you are upgrading from a non-gooseneck kettle, the stream-control improvement is immediate and often more important than premium finish details.</p>
-      <p>This model is also forgiving for inconsistent routines. If you brew at different times, hand off brew duties between family members, or move quickly in the morning, its controls stay approachable. That lowers the chance of "gear friction" becoming the reason you skip careful brewing.</p>
-      <p>It is best for buyers who want convenience and consistency without overthinking the purchase.</p>
+      <p>COSORI is our top beginner electric recommendation because it reduces learning friction. Preset temperatures and simple controls make it easy to start brewing with more precision than a standard kettle, even if you are brand new to pour over technique.</p>
+      <p>This kettle is a practical first step when you are transitioning from basic drip routines to manual brewers like V60 or Kalita Wave. You get immediate gains in stream control and workflow consistency without having to master a complex interface.</p>
+      <p>It also works well in shared kitchens where multiple people brew differently. Straightforward controls reduce mistakes and make the kettle approachable for everyone in the household, not just the person who nerds out on extraction variables.</p>
+      <p>Compared with premium options, materials and stream nuance are less refined. But for most first-time buyers, the jump in control and convenience is substantial enough to justify the pick.</p>
       <ProsCons
-        pros={['Easy learning curve for first-time pour-over users', 'Useful preset/temperature workflow', 'Good electric value']}
-        cons={['Less premium materials than higher-tier picks', 'Fine-flow control not as nuanced as top models']}
+        pros={['Easy controls for first-time users', 'Useful preset and variable settings', 'Strong everyday value']}
+        cons={['Less refined build feel than premium picks', 'Fine stream modulation is weaker than top-tier models']}
       />
-      <p><CtaButton href={amazonUrl('B07G2MBM6L')} external>Check Price on Amazon</CtaButton></p>
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
 
       <h3>5) Fellow Stagg Stovetop Pour-Over Kettle (ASIN: B014UN7B7C)</h3>
       <ProductCard
-        title="Fellow Stagg Stovetop Pour-Over Kettle"
-        image={{ src: 'https://m.media-amazon.com/images/I/61F-tkFlebL._AC_SL500_.jpg', alt: 'Fellow Stagg stainless steel stovetop gooseneck kettle', width: 500, height: 500 }}
-        badge={{ label: 'Best Premium Stovetop', variant: 'upgrade' }}
-        rating={{ score: 4.6 }}
-        price="Check price"
-        ctaUrl={amazonUrl('B014UN7B7C')}
+        title={products[4].name}
+        image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+        badge={products[4].badge}
+        rating={{ score: products[4].rating }}
+        price={products[4].price}
+        ctaUrl={amazonUrl(products[4].asin)}
       />
-      <p>This is the premium stovetop pick for brewers who want manual workflow with upgraded fit, finish, and handling feel. It keeps the benefits of stovetop simplicity while improving ergonomic confidence during longer controlled pours.</p>
-      <p>Relative to basic stovetop kettles, it feels more deliberate and balanced in hand, especially when controlling slow concentric pours. It is best suited to users who already know they prefer manual kettle workflows and want a model they can keep for years.</p>
-      <p>It also suits users who care about kitchen integration: a kettle that performs well and still looks intentional on the counter. That matters for daily-use gear because products you enjoy using tend to stay in rotation longer, which improves consistency by habit alone.</p>
-      <p>It is not a budget-first buy, but for design-conscious manual brewers it is one of the strongest long-term options in this category.</p>
+      <p>If you want a premium manual setup, the Fellow Stagg stovetop model is the most compelling upgrade path. It keeps stovetop simplicity while improving feel, balance, and visual design for people who brew daily and care about tactile control.</p>
+      <p>In use, it feels more deliberate than budget stovetop models, especially during slow final pours where wrist stability matters. For brewers who enjoy manual brewing as a ritual, this improved ergonomics profile can make a noticeable difference over time.</p>
+      <p>This kettle also makes sense if you want one long-term stovetop tool instead of rotating through cheaper replacements. Build quality and ownership satisfaction are part of the value equation for gear that lives on your counter and gets used constantly.</p>
+      <p>It is not the right pick for strict budget buyers. But for design-conscious manual brewers, it is a strong premium option with practical upside beyond aesthetics.</p>
       <ProsCons
-        pros={['Premium stovetop build quality', 'Controlled stream with confident handling', 'Great fit for manual-focused brew routines']}
-        cons={['Higher cost than entry stovetop models', 'No electric speed or hold features']}
+        pros={['Premium manual handling and build quality', 'Confident stream profile for controlled pours', 'Great fit for long-term stovetop workflows']}
+        cons={['Higher price than basic stovetop models', 'No electric convenience features']}
       />
-      <p><CtaButton href={amazonUrl('B014UN7B7C')} external>Check Price on Amazon</CtaButton></p>
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
     </section>
   </Fragment>
 
   <Fragment slot="extra-sections">
     <section>
-      <h2>Electric vs Stovetop: Which One Is Better for You?</h2>
-      <p>Electric and stovetop gooseneck kettles can both make excellent pour over coffee, but they solve different workflow problems. Electric models are best when you want speed, repeatable target temperatures, and less manual timing overhead. They work especially well for weekday routines where you want consistent results with fewer steps. Stovetop models are best when you value simplicity, lower maintenance, and a more manual brewing rhythm.</p>
-      <p>If you brew multiple times per day, electric kettles usually win on convenience. Hold-temperature features make it easier to brew back-to-back without reheating from scratch, and digital controls help you return to the same recipe quickly. This matters if you switch between light and medium roasts, where small temperature changes can noticeably shift sweetness, acidity, and clarity in the cup.</p>
-      <p>Stovetop kettles, on the other hand, can be excellent for durability and long-term ownership cost. There are fewer electronic failure points, less dependence on proprietary bases, and often simpler cleaning routines. For brewers who already monitor temperature manually, a stovetop model can deliver precision without unnecessary complexity.</p>
-      <p>The biggest mistake is choosing by feature count instead of daily behavior. A kettle with dozens of modes is not useful if the interface slows you down. Likewise, a minimalist stovetop kettle is not ideal if your schedule needs fast repeat boils and exact temperature recall. The right choice is the one that makes your normal recipe easier to repeat on your busiest days, not just your most relaxed ones.</p>
-      <p>If your setup is still evolving, start by locking in consistency fundamentals first: stable grind size, accurate dose, and repeatable pour pattern. Once those are reliable, the differences between kettles become easier to feel and easier to justify.</p>
+      <h2>Electric vs stovetop gooseneck kettles</h2>
+      <p>Both styles can produce excellent pour over coffee. The right choice depends on your routine, not internet debates. Electric kettles are best for consistency with lower effort: set target temperature, heat quickly, and repeat with less guesswork. Stovetop kettles are best for simplicity and long-term durability when you prefer manual control and fewer electronics.</p>
+      <p>If you brew one cup before work and need fast recovery for a second cup, electric usually wins. Hold-temperature behavior helps avoid reboil cycles, and repeatable targets reduce recipe drift when you switch between coffees. In fast routines, these small convenience gains add up and often improve consistency by making the “correct process” easier to follow.</p>
+      <p>Stovetop tends to win for buyers who value durability, straightforward maintenance, and lower complexity. With a stable routine, a stovetop kettle can be just as effective for extraction control. The key is consistency in your heat timing and pour pattern. If you already use a scale and timer reliably, manual workflows can be very repeatable.</p>
+      <p>A practical rule: if convenience is your bottleneck, buy electric. If reliability and simplicity are your priorities, buy stovetop. Either way, your grinder quality and brew ratio discipline will still matter as much as kettle choice.</p>
     </section>
 
     <section>
-      <h2>Common Gooseneck Kettle Buying Mistakes</h2>
-      <p><strong>1) Buying oversized capacity you do not need.</strong> Bigger is not automatically better. Large kettles can feel less nimble during bloom pours and can add fatigue in long brew sessions. For most home brewers, 0.8L to 1.0L is the practical sweet spot for control and convenience.</p>
-      <p><strong>2) Prioritizing aesthetics over stream control.</strong> A beautiful kettle that pours unpredictably will hurt repeatability. Stream behavior determines how evenly water contacts the coffee bed. Prioritize balance and pour stability first, then choose finish and style.</p>
-      <p><strong>3) Ignoring local water hardness and descaling needs.</strong> Mineral buildup can reduce heating consistency and change how kettles perform over time. Set a maintenance reminder from day one. Regular descaling preserves temperature behavior and extends product life.</p>
-      <p><strong>4) Overpaying for features you will never use.</strong> If you always brew one roast at one temperature, an elaborate interface may not create meaningful gains. Spend where your workflow benefits most. In many setups, grinder quality or scale responsiveness delivers bigger cup improvements than extra kettle modes.</p>
-      <p><strong>5) Treating kettle upgrades as a standalone fix.</strong> Kettles improve consistency, but they cannot correct weak grind distribution or inconsistent coffee-to-water ratios. Think in systems: grinder, scale, kettle, and recipe tracking should work together. This is why many brewers see better results by upgrading one weak link at a time, not by chasing one premium purchase.</p>
-      <p>Avoid these mistakes and your kettle choice becomes much easier. Focus on flow control, practical capacity, and everyday usability. Those three factors will do more for cup consistency than any marketing claim.</p>
+      <h2>Common buying mistakes (and how to avoid them)</h2>
+      <p><strong>Buying too much capacity.</strong> Bigger kettles can feel less agile and more fatiguing in delicate pours. Unless you regularly brew for several people at once, 0.8L to 1.0L is usually enough.</p>
+      <p><strong>Chasing features instead of workflow fit.</strong> A long feature list does not guarantee better coffee. Prioritize controls you will actually use every week, not options you may never touch.</p>
+      <p><strong>Ignoring water hardness and maintenance.</strong> Scale buildup affects heat behavior over time. Build descaling into your routine from day one so your kettle stays predictable.</p>
+      <p><strong>Overspending before fixing bigger bottlenecks.</strong> If your grinder is inconsistent, kettle upgrades have reduced impact. Balance your budget across grinder, scale, and kettle to improve cups faster.</p>
+      <p><strong>Choosing by aesthetics alone.</strong> Design matters, but control feel matters more. If possible, prioritize stream stability and handling confidence over visual style.</p>
     </section>
   </Fragment>
 
   <Fragment slot="buying-guide">
     <BuyingGuideSection>
-      <h2 id="buying-guide">Buying Guide: How to Choose the Right Gooseneck Kettle</h2>
-      <p><strong>Start with your workflow, not the spec sheet.</strong> If you brew one cup quickly before work, an electric kettle with hold-temperature support often delivers the biggest practical gain. If you enjoy a slower routine and want fewer electronics to maintain, a quality stovetop model is still an excellent long-term decision.</p>
-      <p><strong>Flow control matters more than marketing language.</strong> A stable stream reduces agitation spikes and helps maintain even extraction across the coffee bed. Better stream control also makes recipe notes reproducible. When your pour shape stays consistent, grind and ratio adjustments become easier to evaluate.</p>
-      <p><strong>Capacity should match your real volume.</strong> Most home brewers do best in the 0.8L to 1.0L range. Oversized kettles can feel heavier and less stable in delicate phases of the brew, especially near bloom. Buy only as much volume as your normal routine needs.</p>
-      <p><strong>Electric vs stovetop:</strong> Electric models prioritize speed and temperature repeatability; stovetop models prioritize simplicity and often lower long-term maintenance. Neither is universally better—pick the one that aligns with how you actually brew every day.</p>
-      <p><strong>Build your setup as a system.</strong> Kettle upgrades compound when your grinder and scale are already reliable. If you need supporting picks, see <a href="/posts/best-pour-over-coffee-maker.html">best pour over coffee maker</a> and <a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">best coffee scale for espresso and pour over</a> for a balanced workflow stack.</p>
+      <h2 id="buying-guide">Buying guide: how to choose the right gooseneck kettle</h2>
+      <p><strong>Step 1: define your brew rhythm.</strong> If you brew quickly before work or make multiple cups in sequence, an electric kettle with variable temperature and hold behavior is usually the better fit. If you prefer a slower manual routine and want fewer points of failure, a stovetop model can be the smarter long-term purchase.</p>
+      <p><strong>Step 2: prioritize control over complexity.</strong> What matters most is how stable and comfortable the stream feels during real pours. Better control helps you execute bloom and pulse stages consistently, which improves extraction repeatability more than novelty features.</p>
+      <p><strong>Step 3: match capacity to actual use.</strong> For most homes, 0.8L to 1.0L is the practical target. It covers one to two cups while keeping handling manageable. Move above that only if you regularly brew larger batches.</p>
+      <p><strong>Step 4: consider maintenance realities.</strong> Electric models need occasional descaling and care around the base. Stovetop models are simpler mechanically but rely more on your heat management routine. Neither is wrong — just pick what you will maintain consistently.</p>
+      <p><strong>Step 5: think in systems, not single products.</strong> A kettle helps, but cup quality comes from your full workflow: grinder consistency, scale accuracy, recipe tracking, and water choice. If you are still building your setup, continue with <a href="/posts/best-pour-over-coffee-maker.html">best pour over coffee maker</a> and <a href="/posts/best-coffee-grinder-for-pour-over.html">best coffee grinder for pour over</a> to close the loop.</p>
+      <p><strong>Step 6: decide your upgrade horizon.</strong> If you expect to keep this kettle for many years, paying more for better ergonomics can make sense because comfort affects every brew. If you are still learning and may change methods soon, a value-first option is often smarter. Either way, define your goal before buying: reduce daily friction, increase recipe repeatability, or build a long-term ritual setup. That clarity will guide the right choice faster than brand hype.</p>
     </BuyingGuideSection>
+  </Fragment>
+
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/best-pour-over-coffee-maker.html">Best pour over coffee maker</a></li>
+        <li><a href="/posts/best-coffee-grinder-for-pour-over.html">Best coffee grinder for pour over</a></li>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee brewing ratio guide</a></li>
+        <li><a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">Best coffee scale for espresso and pour over</a></li>
+      </ul>
+    </section>
   </Fragment>
 </MoneyPage>
