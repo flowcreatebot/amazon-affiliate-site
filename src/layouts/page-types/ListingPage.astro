@@ -1,0 +1,90 @@
+---
+/**
+ * ListingPage template — category and index listing pages
+ *
+ * Full-width hero banner with dark overlay, title, subtitle, optional category nav.
+ * Below: breadcrumbs, post listing, affiliate disclosure.
+ */
+import BaseLayout from '../BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PostListing from '../../components/PostListing.astro';
+import AffiliateDisclosure from '../../components/AffiliateDisclosure.astro';
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  seoTitle: string;
+  description: string;
+  intro: string;
+  canonical: string;
+  heroImage: string;
+  heroImageAlt: string;
+  breadcrumbs: BreadcrumbItem[];
+  posts: any[];
+  initialCount?: number;
+  showCategory?: boolean;
+  categoryNav?: NavLink[];
+  disclosureText?: string;
+}
+
+const {
+  title,
+  seoTitle,
+  description,
+  intro,
+  canonical,
+  heroImage,
+  heroImageAlt,
+  breadcrumbs,
+  posts,
+  initialCount = 10,
+  showCategory = false,
+  categoryNav,
+  disclosureText = 'Some links may earn a commission at no extra cost to you. We only recommend gear that provides clear value for specific use cases.',
+} = Astro.props;
+---
+<BaseLayout
+  title={seoTitle}
+  description={description}
+  canonical={canonical}
+  ogType="website"
+  ogUrl={canonical}
+>
+  <div class="listing-hero">
+    <img
+      class="listing-hero__img"
+      src={heroImage}
+      alt={heroImageAlt}
+      width="1792"
+      height="1024"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="listing-hero__overlay">
+      <h1 class="listing-hero__title">{title}</h1>
+      <p class="listing-hero__intro">{intro}</p>
+      {categoryNav && categoryNav.length > 0 && (
+        <nav class="listing-hero__nav" aria-label="Browse by category">
+          {categoryNav.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </nav>
+      )}
+    </div>
+  </div>
+
+  <Breadcrumbs items={breadcrumbs} />
+
+  <PostListing posts={posts} initialCount={initialCount} showCategory={showCategory} />
+
+  <AffiliateDisclosure text={disclosureText} />
+</BaseLayout>

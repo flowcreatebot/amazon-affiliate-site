@@ -712,6 +712,75 @@ footer {
 }
 
 /* --- Hero --- */
+/* --- Listing Hero Banner --- */
+.listing-hero {
+  position: relative;
+  width: min(var(--max-page), calc(100vw - 2rem));
+  margin: 0 auto var(--sp-10);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.listing-hero__img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center 40%;
+}
+@media (min-width: 640px) {
+  .listing-hero__img { height: 340px; }
+}
+.listing-hero__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--sp-8) var(--sp-6);
+  background: linear-gradient(
+    to top,
+    rgba(44, 24, 16, 0.88) 0%,
+    rgba(44, 24, 16, 0.55) 50%,
+    rgba(44, 24, 16, 0.1) 100%
+  );
+}
+.listing-hero__title {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 var(--sp-3);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.listing-hero__intro {
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.5;
+  margin: 0 0 var(--sp-4);
+  max-width: 600px;
+}
+.listing-hero__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.listing-hero__nav a {
+  display: inline-block;
+  padding: var(--sp-1) var(--sp-4);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.listing-hero__nav a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
 .hero {
   text-align: center;
   padding: var(--sp-12) 0 var(--sp-10);
