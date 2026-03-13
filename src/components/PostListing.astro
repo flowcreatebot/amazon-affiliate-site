@@ -34,8 +34,8 @@ const categoryLabels: Record<string, string> = {
     {posts.map((post, i) => (
       <div class={i >= initialCount ? 'listing-hidden' : ''} style={i >= initialCount ? 'display:none' : ''}>
         <Card title={post.title} href={`/posts/${post.slug}.html`}>
-          {showCategory && <span class="listing-category">{categoryLabels[post.category] || post.category}</span>}
           <p>{post.description}</p>
+          {showCategory && <span class="listing-category">{categoryLabels[post.category] || post.category}</span>}
         </Card>
       </div>
     ))}

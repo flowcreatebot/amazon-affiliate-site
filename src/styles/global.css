@@ -575,9 +575,12 @@ tbody tr:hover td:last-child { background: var(--surface-elevated); }
   border-radius: var(--radius);
   padding: var(--sp-4);
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .card h3 { margin-top: 0; }
-.card p { margin-bottom: 0; }
+.card p { margin-bottom: 0; flex: 1; }
+.card .listing-category { margin-top: auto; }
 
 /* --- Note / Callout --- */
 .note {
