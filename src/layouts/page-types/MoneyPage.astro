@@ -41,6 +41,7 @@ interface Props {
   faqItems: FaqItemType[];
   comparisonTimestamp?: string;
   comparisonAriaLabel?: string;
+  contentImage?: { src: string; alt: string; caption?: string };
 }
 
 const {
@@ -58,6 +59,7 @@ const {
   faqItems,
   comparisonTimestamp,
   comparisonAriaLabel,
+  contentImage,
 } = Astro.props;
 
 const canonical = `${SITE.url}/posts/${slug}.html`;
@@ -128,6 +130,20 @@ const jsonLd = moneyPageGraph({
   <slot name="extra-sections" />
 
   <slot name="buying-guide" />
+
+  {contentImage && (
+    <figure class="hero-media">
+      <img
+        src={contentImage.src}
+        alt={contentImage.alt}
+        width="1792"
+        height="1024"
+        loading="lazy"
+        decoding="async"
+      />
+      {contentImage.caption && <figcaption>{contentImage.caption}</figcaption>}
+    </figure>
+  )}
 
   <section>
     <h2 id="faq">Frequently asked questions</h2>
