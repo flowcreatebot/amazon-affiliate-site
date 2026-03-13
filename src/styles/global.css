@@ -736,6 +736,19 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+/* Align card internals across rows via subgrid */
+@media (min-width: 640px) {
+  .listing-body .card-grid {
+    row-gap: 0;
+  }
+  .listing-body .card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    row-gap: var(--sp-2);
+    margin-bottom: var(--sp-4);
+  }
+}
 
 .listing-hero {
   position: relative;
