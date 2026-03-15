@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'preact/hooks';
+import { useState, useCallback, useEffect } from 'preact/hooks';
 import type { Message, Source } from './types';
 import ChatPanel from './ChatPanel';
 import './chat.css';
@@ -16,6 +16,18 @@ export default function ChatWidget({ apiUrl }: Props) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [isStreaming, setIsStreaming] = useState(false);
+  const [showTeaser, setShowTeaser] = useState(false);
+
+  useEffect(() => {
+    if (sessionStorage.getItem('cgl-chat-teaser-dismissed')) return;
+    const timer = setTimeout(() => setShowTeaser(true), 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const dismissTeaser = useCallback(() => {
+    setShowTeaser(false);
+    sessionStorage.setItem('cgl-chat-teaser-dismissed', '1');
+  }, []);
 
   const handleSend = useCallback(async (text: string) => {
     const userMsg: Message = { id: nextId(), role: 'user', content: text };
@@ -122,9 +134,23 @@ export default function ChatWidget({ apiUrl }: Props) {
           onClose={() => setOpen(false)}
         />
       )}
+      {showTeaser && !open && (
+        <div class="cgl-chat-teaser">
+          <span class="cgl-chat-teaser-text">👋 Ask us anything about coffee!</span>
+          <button
+            class="cgl-chat-teaser-close"
+            onClick={(e) => { e.stopPropagation(); dismissTeaser(); }}
+            aria-label="Dismiss"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      )}
       <button
         class={`cgl-chat-trigger ${open ? 'cgl-chat-trigger--open' : ''}`}
-        onClick={() => setOpen(!open)}
+        onClick={() => { setOpen(!open); if (!open) dismissTeaser(); }}
         aria-label={open ? 'Close chat' : 'Open chat'}
       >
         {open ? (

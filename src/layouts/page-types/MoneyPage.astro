@@ -129,8 +129,6 @@ const jsonLd = moneyPageGraph({
 
   <slot name="extra-sections" />
 
-  <slot name="buying-guide" />
-
   {contentImage && (
     <figure class="hero-media">
       <img
@@ -144,6 +142,8 @@ const jsonLd = moneyPageGraph({
       {contentImage.caption && <figcaption>{contentImage.caption}</figcaption>}
     </figure>
   )}
+
+  <slot name="buying-guide" />
 
   <section>
     <h2 id="faq">Frequently asked questions</h2>

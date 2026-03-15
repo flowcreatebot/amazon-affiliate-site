@@ -354,7 +354,7 @@
     "name": "Acaia Pearl S",
     "brand": "Acaia",
     "asin": "B07MYP3J8Y",
-    "image": "PLACEHOLDER_IMG:B07MYP3J8Y",
+    "image": "https://m.media-amazon.com/images/I/61DmUAGOzCL._AC_SL500_.jpg",
     "imageAlt": "Acaia Pearl S smart coffee scale",
     "category": "scales",
     "rating": 4.5,
@@ -374,7 +374,7 @@
     "name": "Maestri House Rechargeable Coffee Scale",
     "brand": "Maestri House",
     "asin": "B0BRFTHZPJ",
-    "image": "PLACEHOLDER_IMG:B0BRFTHZPJ",
+    "image": "https://m.media-amazon.com/images/I/61zKmzN7rpL._AC_SL500_.jpg",
     "imageAlt": "Maestri House rechargeable coffee scale with timer",
     "category": "scales",
     "rating": 4.4,
@@ -398,11 +398,11 @@
     }
   },
   "mr-coffee-cafe-barista": {
-    "name": "Mr. Coffee Café Barista",
+    "name": "Mr. Coffee Caf\u00e9 Barista",
     "brand": "Mr. Coffee",
     "asin": "B007K9OIMU",
     "image": "https://m.media-amazon.com/images/I/71p2h853rfL._AC_SL500_.jpg",
-    "imageAlt": "Mr. Coffee Café Barista espresso machine",
+    "imageAlt": "Mr. Coffee Caf\u00e9 Barista espresso machine",
     "category": "espresso-machines",
     "rating": 4.1,
     "specs": {
@@ -765,11 +765,11 @@
     "specs": {}
   },
   "cafe-specialty-grind-and-brew": {
-    "name": "Café Specialty Grind & Brew",
-    "brand": "Café",
+    "name": "Caf\u00e9 Specialty Grind & Brew",
+    "brand": "Caf\u00e9",
     "asin": "B0CG2P2J88",
     "image": "https://m.media-amazon.com/images/I/71yP-ZoqQWL._AC_SL500_.jpg",
-    "imageAlt": "Café Specialty grind and brew coffee maker",
+    "imageAlt": "Caf\u00e9 Specialty grind and brew coffee maker",
     "category": "grind-and-brew",
     "rating": 4.5,
     "specs": {
@@ -778,7 +778,7 @@
     }
   },
   "ninja-luxe-cafe-3-in-1": {
-    "name": "Ninja Luxe Café 3-in-1",
+    "name": "Ninja Luxe Caf\u00e9 3-in-1",
     "brand": "Ninja",
     "asin": "B0D45PK5V4",
     "image": "https://m.media-amazon.com/images/I/61D9GtphxuL._AC_SL500_.jpg",
