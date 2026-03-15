@@ -84,7 +84,7 @@ const products = [
   {
     name: 'Flair Neo Flex',
     asin: 'B0C91668G1',
-    image: 'https://m.media-amazon.com/images/I/61MqQwolqRL._AC_SL500_.jpg',
+    image: 'https://m.media-amazon.com/images/I/61lMpWioWzL._AC_SL500_.jpg',
     imageAlt: 'Flair Neo Flex manual lever espresso maker with portable frame',
     badge: { label: 'Best Manual Espresso', variant: 'upgrade' },
     bestFor: 'Manual shot control',
@@ -144,7 +144,7 @@ const products = [
   description="Find the best espresso machine under 200 in 2026 with seven researched picks compared by milk performance, learning curve, cleanup, and long-term value."
   category="machines"
   datePublished="2026-03-12"
-  dateModified="2026-03-12"
+  dateModified="2026-03-14"
   ogImage={products[0].image}
   products={products}
   heroPicks={{
@@ -173,15 +173,24 @@ const products = [
     { q: 'Should beginners avoid manual steam wands?', a: 'Not necessarily. Manual wands have a learning curve, but they give better control over texture once you practice. If convenience is your priority, an automatic frother model may fit your routine better.' },
     { q: 'Do pod machines count as espresso machines for this budget?', a: 'Pod systems can still be a valid choice when speed and cleanup matter most. They are convenient and consistent, but they do not offer the same freshness and control as ground-coffee pump or manual systems.' },
   ]}
+  contentImage={{
+    src: '/assets/content-espresso-machine.webp',
+    alt: 'A compact stainless espresso machine pulling a shot into a white demitasse cup beside a metal tamper and coffee beans on a cream linen surface.',
+    caption: 'A practical under-$200 espresso setup focused on daily shot workflow and milk-drink prep.',
+  }}
 >
   <Fragment slot="lead">
     <p class="lead">If you want the best espresso machine under 200, the key is matching your daily workflow to the right machine style. We compared seven researched options by milk performance, consistency potential, cleanup burden, and upgrade headroom so you can buy once and brew better.</p>
   </Fragment>
 
+  <Fragment slot="quick-answer">
+    <p><strong>Quick answer:</strong> For most buyers, the De'Longhi Stilosa is the best espresso machine under 200 because it balances shot quality potential, beginner-friendly controls, and long-term ownership value. Choose CASABREWS 3700 if milk drinks are your priority, or Flair Neo Flex if you want maximum manual control.</p>
+  </Fragment>
+
   <Fragment slot="comparison-table">
     <h2 id="comparison-table">Comparison table</h2>
     <ComparisonTable
-      timestamp="March 12, 2026"
+      timestamp="Prices updated: March 14, 2026"
       ariaLabel="Best espresso machine under 200 comparison"
     >
       <table>
@@ -431,20 +440,6 @@ const products = [
   </Fragment>
 
   <Fragment slot="buying-guide">
-    <BuyingGuideSection>
-      <h2 id="buying-guide">Buying guide: how to choose the right machine under $200</h2>
-      <p>The easiest mistake in this budget is chasing feature lists without matching your routine. Start with your weekday reality: do you want better espresso craft, faster milk drinks, or minimal cleanup? The answer should decide your machine category before you compare model names.</p>
-
-      <h3>Step 1: pick your workflow type first</h3>
-      <p>If you enjoy learning extraction and milk technique, choose a semi-automatic or manual setup. If your main goal is quick, repeatable drinks, convenience-focused systems often deliver better real-world value even if they have a lower espresso ceiling.</p>
-
-      <h3>Step 2: budget for grinder and scale, not just the machine</h3>
-      <p>In this tier, grind consistency has more impact than small machine differences. If your grinder is inconsistent, even a good machine produces uneven cups. For practical setup planning, pair this guide with our <a href="/posts/best-burr-grinder-for-espresso.html">best burr grinder for espresso</a> and <a href="/posts/burr-grinder-settings-for-espresso.html">espresso grind settings guide</a>.</p>
-
-      <h3>Step 3: check maintenance tolerance before you buy</h3>
-      <p>Every machine here needs routine cleaning to stay consistent. Some have easier drip-tray access and simpler milk cleanup than others. If you know you dislike maintenance, choose the model with the least friction because that is what keeps quality stable over months.</p>
-    </BuyingGuideSection>
-
     <HeroSteps
       title="Simple maintenance cadence for budget espresso machines"
       subtitle="A repeatable routine keeps shots cleaner and machine behavior more stable"
@@ -458,6 +453,18 @@ const products = [
     />
 
     <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide: how to choose the right machine under $200</h2>
+      <p>The easiest mistake in this budget is chasing feature lists without matching your routine. Start with your weekday reality: do you want better espresso craft, faster milk drinks, or minimal cleanup? The answer should decide your machine category before you compare model names.</p>
+
+      <h3>Step 1: pick your workflow type first</h3>
+      <p>If you enjoy learning extraction and milk technique, choose a semi-automatic or manual setup. If your main goal is quick, repeatable drinks, convenience-focused systems often deliver better real-world value even if they have a lower espresso ceiling.</p>
+
+      <h3>Step 2: budget for grinder and scale, not just the machine</h3>
+      <p>In this tier, grind consistency has more impact than small machine differences. If your grinder is inconsistent, even a good machine produces uneven cups. For practical setup planning, pair this guide with our <a href="/posts/best-burr-grinder-for-espresso.html">best burr grinder for espresso</a> and <a href="/posts/burr-grinder-settings-for-espresso.html">espresso grind settings guide</a>.</p>
+
+      <h3>Step 3: check maintenance tolerance before you buy</h3>
+      <p>Every machine here needs routine cleaning to stay consistent. Some have easier drip-tray access and simpler milk cleanup than others. If you know you dislike maintenance, choose the model with the least friction because that is what keeps quality stable over months.</p>
+
       <h3>Step 4: match machine to your drink priority</h3>
       <p>If you mostly drink straight espresso, prioritize extraction control and basket compatibility. If you mostly drink milk beverages, prioritize steam usability and easy cleanup after frothing. For supporting gear, our <a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">espresso and pour-over scale guide</a> helps tighten consistency without overspending.</p>
 

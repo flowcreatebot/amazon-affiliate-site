@@ -25,6 +25,7 @@ interface Props {
   ogDescription?: string;
   tocItems: TocItem[];
   faqItems: FaqItemType[];
+  contentImage?: { src: string; alt: string; caption?: string };
 }
 
 const {
@@ -38,6 +39,7 @@ const {
   ogDescription,
   tocItems,
   faqItems,
+  contentImage,
 } = Astro.props;
 
 const canonical = `${SITE.url}/posts/${slug}.html`;
@@ -85,6 +87,20 @@ const jsonLd = buyingGuidePageGraph({
   <slot name="featured-picks" />
 
   <slot name="extra-sections" />
+
+  {contentImage && (
+    <figure class="hero-media">
+      <img
+        src={contentImage.src}
+        alt={contentImage.alt}
+        width="1792"
+        height="1024"
+        loading="lazy"
+        decoding="async"
+      />
+      {contentImage.caption && <figcaption>{contentImage.caption}</figcaption>}
+    </figure>
+  )}
 
   <section>
     <h2 id="faq">Frequently asked questions</h2>

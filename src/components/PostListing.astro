@@ -32,12 +32,15 @@ const categoryLabels: Record<string, string> = {
 <div class="post-listing">
   <CardGrid>
     {posts.map((post, i) => (
-      <div class={i >= initialCount ? 'listing-hidden' : ''} style={i >= initialCount ? 'display:none' : ''}>
-        <Card title={post.title} href={`/posts/${post.slug}.html`}>
-          {showCategory && <span class="listing-category">{categoryLabels[post.category] || post.category}</span>}
-          <p>{post.description}</p>
-        </Card>
-      </div>
+      <Card
+        title={post.title}
+        href={`/posts/${post.slug}.html`}
+        class={i >= initialCount ? 'listing-hidden' : ''}
+        hidden={i >= initialCount}
+      >
+        <p>{post.description}</p>
+        {showCategory && <span class="listing-category">{categoryLabels[post.category] || post.category}</span>}
+      </Card>
     ))}
   </CardGrid>
   {hasMore && (

@@ -9,7 +9,7 @@ import HeroSteps from '../../components/HeroSteps.astro';
 import { amazonUrl } from '../../data/products';
 
 const title = 'Best Coffee Grinder for Pour Over (2026)';
-const description = 'Find the best coffee grinder for pour over in 2026. We compared 7 researched picks for clarity, fines control, workflow, and value for V60, Kalita, and Chemex.';
+const description = 'Find the best coffee grinder for pour over in 2026. We compared 7 researched picks for cleaner cups, better consistency, and lower daily workflow friction.';
 
 const products = [
   {
@@ -20,9 +20,9 @@ const products = [
     burr: 'Flat burr',
     workflow: 'Electric single-dose',
     price: 'Check price',
-    rating: { score: 4.7 },
-    image: 'https://images-na.ssl-images-amazon.com/images/P/B0BLRMCM9Y.01._SX500_SCLZZZZZZZ_.jpg',
-    imageAlt: 'Fellow Ode Gen 2 flat burr coffee grinder for pour over brewing',
+    rating: 4.7,
+    image: 'https://m.media-amazon.com/images/I/71trJPFvsqL._AC_SL500_.jpg',
+    imageAlt: 'Fellow Ode Gen 2 flat burr coffee grinder for pour-over brewing',
   },
   {
     name: 'Baratza Encore ESP',
@@ -32,9 +32,9 @@ const products = [
     burr: 'Conical burr',
     workflow: 'Electric stepped',
     price: 'Check price',
-    rating: { score: 4.6 },
+    rating: 4.6,
     image: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg',
-    imageAlt: 'Baratza Encore ESP conical burr grinder for pour over and espresso',
+    imageAlt: 'Baratza Encore ESP conical burr grinder for pour-over and espresso',
   },
   {
     name: 'OXO Brew Conical Burr Grinder',
@@ -44,9 +44,9 @@ const products = [
     burr: 'Conical burr',
     workflow: 'Electric timer dosing',
     price: 'Check price',
-    rating: { score: 4.5 },
+    rating: 4.5,
     image: 'https://m.media-amazon.com/images/I/71DeUg8G7kS._AC_SL500_.jpg',
-    imageAlt: 'OXO Brew conical burr coffee grinder for daily pour over use',
+    imageAlt: 'OXO Brew conical burr coffee grinder for daily pour-over use',
   },
   {
     name: '1Zpresso K-Ultra',
@@ -56,9 +56,9 @@ const products = [
     burr: 'Conical burr',
     workflow: 'Manual hand grinding',
     price: 'Check price',
-    rating: { score: 4.8 },
-    image: 'https://images-na.ssl-images-amazon.com/images/P/B0CC4LXF1Z.01._SX500_SCLZZZZZZZ_.jpg',
-    imageAlt: '1Zpresso K-Ultra manual burr coffee grinder for pour over travel setup',
+    rating: 4.8,
+    image: 'https://m.media-amazon.com/images/I/618n6WtwT7L._AC_SL500_.jpg',
+    imageAlt: '1Zpresso K-Ultra manual burr coffee grinder for travel pour-over setups',
   },
   {
     name: 'TIMEMORE Chestnut C2',
@@ -68,9 +68,9 @@ const products = [
     burr: 'Conical burr',
     workflow: 'Manual hand grinding',
     price: 'Check price',
-    rating: { score: 4.4 },
+    rating: 4.4,
     image: 'https://m.media-amazon.com/images/I/61Y8BsO8kYL._AC_SL500_.jpg',
-    imageAlt: 'TIMEMORE Chestnut C2 manual burr grinder for pour over beginners',
+    imageAlt: 'TIMEMORE Chestnut C2 manual burr grinder for pour-over beginners',
   },
   {
     name: 'Fellow Opus',
@@ -80,9 +80,9 @@ const products = [
     burr: 'Conical burr',
     workflow: 'Electric compact',
     price: 'Check price',
-    rating: { score: 4.4 },
+    rating: 4.4,
     image: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg',
-    imageAlt: 'Fellow Opus compact electric burr grinder for pour over and espresso',
+    imageAlt: 'Fellow Opus compact electric burr grinder for pour-over and espresso',
   },
   {
     name: 'KINGrinder K6',
@@ -92,8 +92,8 @@ const products = [
     burr: 'Conical burr',
     workflow: 'Manual click precision',
     price: 'Check price',
-    rating: { score: 4.6 },
-    image: 'https://images-na.ssl-images-amazon.com/images/P/B09WH9JKY1.01._SX500_SCLZZZZZZZ_.jpg',
+    rating: 4.6,
+    image: 'https://m.media-amazon.com/images/I/71eOqsBey4L._AC_SL500_.jpg',
     imageAlt: 'KINGrinder K6 manual burr grinder with precise click adjustments for pour over',
   },
 ];
@@ -105,19 +105,19 @@ const products = [
   description={description}
   category="grinders"
   datePublished="2026-03-10"
-  dateModified="2026-03-13"
+  dateModified="2026-03-14"
   ogImage={products[0].image}
   products={products}
   heroPicks={{
-    title: "7 Pour-Over Grinders Worth Your Money in 2026",
-    subtitle: "Ranked by clarity potential, fines control, and daily workflow fit",
+    title: '7 Pour-Over Grinders Worth Buying in 2026',
+    subtitle: 'Ranked by clarity potential, fines control, and daily workflow fit',
     picks: [
       { category: 'Budget', tagline: 'Best value for everyday brewing', icon: 'dollar', color: '#059669', features: ['Conical burr consistency', 'Timer-based dosing', 'Easy daily cleanup', 'Under $100 entry'], topPick: 'OXO Brew Conical Burr Grinder', price: '$', subtitle: 'Simple daily workflow', asin: 'B07CSKGLMM' },
       { category: 'Overall', tagline: 'Best clarity for pour over', icon: 'target', color: '#2C1810', features: ['Flat burr separation', 'Low retention design', 'Single-dose friendly', 'V60 and Chemex optimized'], topPick: 'Fellow Ode Gen 2', price: '$$$', subtitle: 'Top pour-over clarity', asin: 'B0BLRMCM9Y' },
       { category: 'Manual', tagline: 'Best hand-ground precision', icon: 'hand', color: '#7A5B4A', features: ['Steel conical burrs', 'Zero motor noise', 'Travel-ready size', 'Strong clarity per dollar'], topPick: '1Zpresso K-Ultra', price: '$$$', subtitle: 'Premium manual pick', asin: 'B0CC4LXF1Z' },
-      { category: 'Crossover', tagline: 'Best value for filter + espresso', icon: 'volume-x', color: '#7A5B4A', features: ['Broad grind range', 'Strong parts support', 'Predictable adjustment', 'Long-term value'], topPick: 'Baratza Encore ESP', price: '$$', subtitle: 'Versatile daily grinder', asin: 'B0BW272XCV' },
+      { category: 'Crossover', tagline: 'Best value for filter + espresso', icon: 'volume-x', color: '#5C3D2E', features: ['Broad grind range', 'Strong parts support', 'Predictable adjustment', 'Long-term value'], topPick: 'Baratza Encore ESP', price: '$$', subtitle: 'Versatile daily grinder', asin: 'B0BW272XCV' },
     ],
-    footer: "coffeegearpicks.com \u00b7 pour-over grinders \u00b7 2026",
+    footer: 'coffeegearpicks.com · pour-over grinders · 2026',
   }}
   tocItems={[
     { href: '#quick-picks', label: 'Quick picks' },
@@ -134,8 +134,13 @@ const products = [
     { q: 'Are flat burr grinders always better for pour over?', a: 'Not always. Flat burr models often emphasize flavor separation and clarity, while conical burr models often lean toward body and sweetness. Your best choice depends on flavor preference, workflow, and budget.' },
     { q: 'Do I need an electric grinder for pour over?', a: 'No. A quality manual grinder can make excellent pour over coffee. Electric models are usually better for speed, consistency over multiple doses, and convenience when you brew daily for more than one person.' },
     { q: 'How often should I clean a pour-over grinder?', a: 'Brush loose grounds every few brews and deep-clean monthly. Regular cleaning helps reduce stale flavor carryover, keeps grind output more consistent, and lowers fines buildup that can muddy cups.' },
-    { q: 'Can one grinder cover pour over and espresso?', a: 'Some can, but there are trade-offs. Crossover grinders like Encore ESP or Opus can handle both styles. Dedicated filter grinders usually optimize pour over clarity, while espresso-focused grinders prioritize fine-range control.' },
+    { q: 'Can one grinder cover pour over and espresso?', a: 'Some can, but there are trade-offs. Crossover grinders like Encore ESP or Opus can handle both styles. Dedicated filter grinders usually optimize pour-over clarity, while espresso-focused grinders prioritize fine-range control.' },
   ]}
+  contentImage={{
+    src: '/assets/content-pour-over-grinder.webp',
+    alt: 'Manual and electric coffee grinders beside a V60 dripper, glass carafe, and gooseneck kettle on a warm linen surface with scattered coffee beans.',
+    caption: 'A pour-over workflow setup showing grinder options and brew tools used to dial in cleaner, more consistent cups.',
+  }}
 >
   <Fragment slot="lead">
     <p class="lead">The best coffee grinder for pour over should make your morning cups cleaner, sweeter, and easier to repeat. We compared seven researched options based on grind consistency, fines control, retention, static behavior, and day-to-day workflow fit for V60, Kalita, and Chemex brewers.</p>
@@ -147,7 +152,7 @@ const products = [
 
   <Fragment slot="comparison-table">
     <h2 id="comparison-table">Comparison table</h2>
-    <ComparisonTable timestamp="Prices updated: March 13, 2026" ariaLabel="Best coffee grinder for pour over comparison">
+    <ComparisonTable timestamp="Prices updated: March 14, 2026" ariaLabel="Best coffee grinder for pour over comparison">
       <table>
         <thead>
           <tr>
@@ -168,7 +173,7 @@ const products = [
               <td data-label="Burr Type">{product.burr}</td>
               <td data-label="Workflow">{product.workflow}</td>
               <td data-label="Price Band">{product.price}</td>
-              <td data-label="Rating">{product.rating.score}</td>
+              <td data-label="Rating">{product.rating}</td>
               <td data-label="Link"><CtaButton href={amazonUrl(product.asin)} size="sm" external>Check Price</CtaButton></td>
             </tr>
           ))}
@@ -195,49 +200,49 @@ const products = [
     <h2 id="reviews">Detailed product reviews</h2>
 
     <h3>1) Fellow Ode Gen 2 — Best Overall for pour-over clarity</h3>
-    <ProductCard title={products[0].name} image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }} badge={products[0].badge} rating={products[0].rating} price={products[0].price} ctaUrl={amazonUrl(products[0].asin)} />
+    <ProductCard title={products[0].name} image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }} badge={products[0].badge} rating={{ score: products[0].rating }} price={products[0].price} ctaUrl={amazonUrl(products[0].asin)} />
     <p><strong>Best for:</strong> Home brewers who prioritize clean, separated cups and low-retention single-dosing.</p>
     <p>Ode Gen 2 earns the top slot because it consistently matches what most pour-over buyers actually want: a cleaner cup with less dialing drama. If your main brewing methods are V60 and flat-bottom drippers, this grinder is easier to justify than mixed-use espresso crossovers. The trade-off is cost, but if cup clarity matters more than having one tool for every brew style, Ode Gen 2 is usually the better long-term fit.</p>
     <ProsCons pros={['Flat burr profile is strong for flavor separation in light to medium roasts.', 'Low retention helps with recipe switching between coffees.', 'Simple electric workflow keeps weekday brewing fast and repeatable.']} cons={['More expensive than entry-level conical alternatives.', 'Filter-focused range is not ideal for dedicated espresso dialing.']} />
     <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Fellow Ode Gen 2 Price on Amazon</CtaButton></p>
 
     <h3>2) Baratza Encore ESP — Best value crossover for pour over + espresso</h3>
-    <ProductCard title={products[1].name} image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }} badge={products[1].badge} rating={products[1].rating} price={products[1].price} ctaUrl={amazonUrl(products[1].asin)} />
+    <ProductCard title={products[1].name} image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }} badge={products[1].badge} rating={{ score: products[1].rating }} price={products[1].price} ctaUrl={amazonUrl(products[1].asin)} />
     <p><strong>Best for:</strong> Buyers who want one grinder for filter coffee now and occasional espresso later.</p>
     <p>Encore ESP is the safe recommendation for people who do not want to buy twice. It gives better flexibility than most similarly priced models and handles pour-over reliably with less complexity than many enthusiast grinders. If you value convenience, supportability, and multi-style use more than squeezing maximum clarity from every cup, this is the strongest mid-budget pick.</p>
     <ProsCons pros={['Strong all-around value with broad grind range coverage.', 'Easier parts ecosystem and support than many budget competitors.', 'Practical step structure for beginners learning brew adjustments.']} cons={['Not as clarity-focused as dedicated flat-burr filter grinders.', 'Some retention/static management is still needed in dry conditions.']} />
     <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Baratza Encore ESP Price on Amazon</CtaButton></p>
 
     <h3>3) OXO Brew Conical Burr Grinder — Best for easy everyday workflow</h3>
-    <ProductCard title={products[2].name} image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }} badge={products[2].badge} rating={products[2].rating} price={products[2].price} ctaUrl={amazonUrl(products[2].asin)} />
+    <ProductCard title={products[2].name} image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }} badge={products[2].badge} rating={{ score: products[2].rating }} price={products[2].price} ctaUrl={amazonUrl(products[2].asin)} />
     <p><strong>Best for:</strong> Busy households that want quick, predictable operation with minimal learning curve.</p>
     <p>OXO Brew is about reducing friction. It is not the most technical grinder in this lineup, but it gets consistent enough grind for better pour-over than blade alternatives and older false-burr models. If your goal is a reliable daily grinder without enthusiast complexity, this remains a practical budget-electric choice.</p>
     <ProsCons pros={['Very approachable for first-time burr grinder buyers.', 'Timer-based operation is simple for repeatable weekday brewing.', 'Good value for medium to coarse pour-over ranges.']} cons={['Cup clarity is not as high as premium options.', 'Static and fines can increase in low-humidity kitchens.']} />
     <p><CtaButton href={amazonUrl(products[2].asin)} external>Check OXO Brew Conical Burr Grinder Price on Amazon</CtaButton></p>
 
     <h3>4) 1Zpresso K-Ultra — Best premium manual grinder for pour over</h3>
-    <ProductCard title={products[3].name} image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }} badge={products[3].badge} rating={products[3].rating} price={products[3].price} ctaUrl={amazonUrl(products[3].asin)} />
+    <ProductCard title={products[3].name} image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }} badge={products[3].badge} rating={{ score: products[3].rating }} price={products[3].price} ctaUrl={amazonUrl(products[3].asin)} />
     <p><strong>Best for:</strong> Manual brewers who want near-premium grind quality with travel-friendly portability.</p>
     <p>K-Ultra is the strongest manual option here for buyers who care about cup quality per dollar and do not mind hand grinding. It gives strong clarity while keeping workflow compact and quiet. If your normal routine is one to two cups at a time and you prefer low counter footprint, this is an easy recommendation.</p>
     <ProsCons pros={['Excellent grind uniformity for a manual format.', 'Low retention and tidy grounds path help consistency.', 'Portable design is ideal for travel, office, or minimalist setups.']} cons={['Manual effort is real if you brew multiple doses each morning.', 'Premium manual pricing can overlap entry electric options.']} />
     <p><CtaButton href={amazonUrl(products[3].asin)} external>Check 1Zpresso K-Ultra Price on Amazon</CtaButton></p>
 
     <h3>5) TIMEMORE Chestnut C2 — Best budget manual under $100</h3>
-    <ProductCard title={products[4].name} image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }} badge={products[4].badge} rating={products[4].rating} price={products[4].price} ctaUrl={amazonUrl(products[4].asin)} />
+    <ProductCard title={products[4].name} image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }} badge={products[4].badge} rating={{ score: products[4].rating }} price={products[4].price} ctaUrl={amazonUrl(products[4].asin)} />
     <p><strong>Best for:</strong> New pour-over brewers upgrading from blade grinders at a strict budget.</p>
     <p>Chestnut C2 is still a strong starter recommendation because it upgrades cup consistency without forcing a big budget jump. It is not a perfect grinder, but it is usually enough to make immediate improvements in pour-over repeatability, especially if you are moving from pre-ground coffee or blade grinding.</p>
     <ProsCons pros={['One of the most accessible entry points into real burr grinding.', 'Simple adjustment approach for beginners learning recipes.', 'Compact, durable design for small spaces and travel.']} cons={['More fines than higher-tier manual and electric grinders.', 'Slower grind speed can feel tiring for larger brews.']} />
     <p><CtaButton href={amazonUrl(products[4].asin)} external>Check TIMEMORE Chestnut C2 Price on Amazon</CtaButton></p>
 
     <h3>6) Fellow Opus — Best compact electric all-rounder</h3>
-    <ProductCard title={products[5].name} image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }} badge={products[5].badge} rating={products[5].rating} price={products[5].price} ctaUrl={amazonUrl(products[5].asin)} />
+    <ProductCard title={products[5].name} image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }} badge={products[5].badge} rating={{ score: products[5].rating }} price={products[5].price} ctaUrl={amazonUrl(products[5].asin)} />
     <p><strong>Best for:</strong> Small kitchens needing one electric grinder that can flex across multiple brew styles.</p>
     <p>Opus is a practical option when size matters as much as performance. It is a better fit for buyers who want one compact machine than for buyers chasing absolute pour-over clarity. If your setup has limited space and you want flexibility, Opus is one of the safer compromises.</p>
     <ProsCons pros={['Compact footprint fits tighter counters well.', 'Broad adjustment coverage works for filter and occasional espresso.', 'Generally low retention for everyday home use.']} cons={['Adjustment logic takes time to learn at first.', 'Can need extra cleanup around the chute in dry climates.']} />
     <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Fellow Opus Price on Amazon</CtaButton></p>
 
     <h3>7) KINGrinder K6 — Best manual upgrade for recipe tinkerers</h3>
-    <ProductCard title={products[6].name} image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }} badge={products[6].badge} rating={products[6].rating} price={products[6].price} ctaUrl={amazonUrl(products[6].asin)} />
+    <ProductCard title={products[6].name} image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }} badge={products[6].badge} rating={{ score: products[6].rating }} price={products[6].price} ctaUrl={amazonUrl(products[6].asin)} />
     <p><strong>Best for:</strong> Enthusiasts who frequently adjust recipes and want finer click control in a manual grinder.</p>
     <p>KINGrinder K6 closes much of the gap between budget manual grinders and far more expensive options. For brewers who enjoy experimenting with ratio, pour style, and grind changes across different drippers, this model gives a lot of control without crossing into premium-electric pricing.</p>
     <ProsCons pros={['Excellent consistency for the price segment.', 'Strong click precision for repeatable recipe tuning.', 'Very low retention and clean dosing behavior.']} cons={['Heavier than many compact travel hand grinders.', 'Manual operation is less convenient for high-volume routines.']} />
@@ -272,6 +277,10 @@ const products = [
       <p>Better grinders reduce fines, but process still matters. If cups are muddy, first check your pour technique and agitation. Aggressive swirling, long bloom stirring, and high turbulence can push extra fines into the filter bed and stall flow. Use gentler pours and keep agitation consistent.</p>
       <p>Second, clean your grinder burr chamber regularly. Old residue breaks off as micro-particles and can mimic poor grinder performance. A quick brush every few brews and monthly deep clean often fixes random bitterness issues that people blame on beans.</p>
       <p>Third, be realistic with roast level. Very dark coffee can produce more sediment feel and bitterness at settings that work well for light-to-medium roasts. If you switch roast profiles often, expect to keep separate baseline settings.</p>
+
+      <h3>Who should skip this guide</h3>
+      <p>Skip this roundup if you only drink pre-ground coffee and do not plan to adjust grind size, because these recommendations are for people brewing whole beans and tuning recipes. Also skip if your primary goal is espresso-only dialing. In that case, you will get better results from a dedicated espresso-focused grinder guide instead of a pour-over-first list.</p>
+      <p>If your setup is mostly automatic drip with no intent to change brew variables, your money may go further by upgrading filters and water quality first. This guide is for readers who want to improve cup clarity and repeatability by choosing a better grinder and using it intentionally.</p>
 
       <h3>Electric vs manual: choose for your real morning constraints</h3>
       <p>Manual grinders are excellent if you brew one cup and enjoy a slower routine. They also travel better and often deliver strong grind quality per dollar. But if you brew for two people before work, manual effort can become the bottleneck that pushes you toward rushed technique and inconsistent cups.</p>
@@ -320,10 +329,10 @@ const products = [
     <section>
       <h2 id="related">Related guides</h2>
       <ul>
-        <li><a href="/posts/best-burr-coffee-grinder-under-200.html">Best Burr Coffee Grinder Under $200</a></li>
-        <li><a href="/posts/best-manual-coffee-grinder-under-100.html">Best Manual Coffee Grinder Under $100</a></li>
-        <li><a href="/posts/how-to-clean-burr-coffee-grinder.html">How to Clean a Burr Coffee Grinder</a></li>
         <li><a href="/posts/best-pour-over-coffee-maker.html">Best Pour Over Coffee Maker</a></li>
+        <li><a href="/posts/best-gooseneck-kettle-for-pour-over.html">Best Gooseneck Kettle for Pour Over</a></li>
+        <li><a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">Best Coffee Scale for Espresso and Pour Over</a></li>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide</a></li>
       </ul>
     </section>
   </Fragment>

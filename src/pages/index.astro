@@ -101,6 +101,8 @@ const funFacts = [
       subtitle="Research-backed buying guides, honest comparisons, and practical picks for home brewers at every level."
       ctaText="Browse All Guides"
       ctaHref="/posts/"
+      image="/assets/hero-coffee-gear.webp"
+      imageAlt="Flat lay of premium coffee gear including an espresso maker, burr grinder, pour-over brewer, and latte art"
     />
 
     <!-- Category Navigation -->
@@ -142,7 +144,7 @@ const funFacts = [
         linkHref="/posts/"
       />
       <div class="guides-grid">
-        {moneyPosts.map((post) => (
+        {moneyPosts.slice(0, 9).map((post) => (
           <GuideCard
             title={post.title}
             description={post.description}

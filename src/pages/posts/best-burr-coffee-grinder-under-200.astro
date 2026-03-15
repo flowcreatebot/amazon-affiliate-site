@@ -5,59 +5,198 @@ import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsCons from '../../components/ProsCons.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
-import { getResolvedProducts, amazonUrl } from '../../data/products';
+import type { ResolvedProduct } from '../../data/products';
+import { amazonUrl } from '../../data/products';
 
-const products = getResolvedProducts('best-burr-coffee-grinder-under-200');
+const products: ResolvedProduct[] = [
+  {
+    id: 'baratza-encore-esp',
+    name: 'Baratza Encore ESP',
+    brand: 'Baratza',
+    asin: 'B0BW272XCV',
+    image: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg',
+    imageAlt: 'Baratza Encore ESP conical burr coffee grinder for espresso and filter brewing',
+    category: 'grinders',
+    rating: 4.5,
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: '$199.95',
+    bestFor: 'One grinder for filter and entry espresso',
+    specs: {
+      burrType: '40mm conical burrs',
+      brewRange: 'Espresso to French press',
+      capacity: '8 oz hopper / 5 oz grounds bin',
+      adjustmentStyle: 'Stepped (ESP fine range + macro steps)',
+      cleanup: 'Moderate (easy upper burr access)',
+      priceBand: '$$$',
+      espressoCapable: 'Yes',
+    },
+  },
+  {
+    id: 'oxo-brew-conical-burr',
+    name: 'OXO Brew Conical Burr Grinder',
+    brand: 'OXO',
+    asin: 'B07CSKGLMM',
+    image: 'https://m.media-amazon.com/images/I/71DeUg8G7kS._AC_SL500_.jpg',
+    imageAlt: 'OXO Brew conical burr coffee grinder with hopper and grounds bin',
+    category: 'grinders',
+    rating: 4.4,
+    badge: { label: 'Best Budget', variant: 'budget' },
+    price: '$99.95',
+    bestFor: 'Affordable daily drip and pour over',
+    specs: {
+      burrType: '40mm stainless conical burrs',
+      brewRange: 'Drip, pour over, French press',
+      capacity: '12 oz hopper',
+      adjustmentStyle: 'Stepped grind dial + one-touch timer',
+      cleanup: 'Easy (removable top burr)',
+      priceBand: '$',
+      espressoCapable: 'Limited',
+    },
+  },
+  {
+    id: 'fellow-opus',
+    name: 'Fellow Opus Conical Burr Grinder',
+    brand: 'Fellow',
+    asin: 'B0BV96VPSR',
+    image: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg',
+    imageAlt: 'Fellow Opus conical burr grinder in matte black for home coffee bars',
+    category: 'grinders',
+    rating: 4.3,
+    badge: { label: 'Best Upgrade Under $200', variant: 'upgrade' },
+    price: '$195.00',
+    bestFor: 'Compact all-round use with modern workflow',
+    specs: {
+      burrType: '40mm conical burrs (C6-40 Burly)',
+      brewRange: 'Espresso to cold brew',
+      capacity: '110g hopper',
+      adjustmentStyle: 'Macro ring + internal micro adjustment',
+      cleanup: 'Moderate (anti-static helps)',
+      priceBand: '$$$',
+      espressoCapable: 'Yes',
+    },
+  },
+  {
+    id: 'turin-sk40',
+    name: 'Turin SK40 Single Dose Grinder',
+    brand: 'Turin',
+    asin: 'B0DR41V3CN',
+    image: 'https://m.media-amazon.com/images/I/71TC7uTcF0L._AC_SL500_.jpg',
+    imageAlt: 'Turin SK40 single-dose espresso grinder with stepless adjustment collar',
+    category: 'grinders',
+    rating: 4.4,
+    badge: { label: 'Best for Espresso Under $200', variant: 'espresso' },
+    price: '$199.00',
+    bestFor: 'Stepless control and lower retention espresso prep',
+    specs: {
+      burrType: '40mm conical burrs',
+      brewRange: 'Espresso-focused, can brew filter',
+      capacity: 'Single-dose bellows workflow',
+      adjustmentStyle: 'Stepless collar',
+      cleanup: 'Moderate (single-dose routine)',
+      priceBand: '$$$',
+      espressoCapable: 'Yes',
+    },
+  },
+  {
+    id: 'capresso-infinity-plus',
+    name: 'Capresso Infinity Plus',
+    brand: 'Capresso',
+    asin: 'B07N4KTW38',
+    image: 'https://m.media-amazon.com/images/I/71F5vKMTMhL._AC_SL500_.jpg',
+    imageAlt: 'Capresso Infinity Plus conical burr coffee grinder for drip and pour over',
+    category: 'grinders',
+    rating: 4.2,
+    badge: { label: 'Best for Filter Coffee', variant: 'pourover' },
+    price: '$119.99',
+    bestFor: 'Simple operation for daily filter brewing',
+    specs: {
+      burrType: 'Steel conical burrs',
+      brewRange: 'Drip, pour over, French press',
+      capacity: '8.8 oz bean container',
+      adjustmentStyle: '16-step grind settings',
+      cleanup: 'Easy',
+      priceBand: '$$',
+      espressoCapable: 'No',
+    },
+  },
+  {
+    id: 'kingrinder-k6',
+    name: 'KINGrinder K6 Manual Grinder',
+    brand: 'KINGrinder',
+    asin: 'B09WH9JKY1',
+    image: 'https://m.media-amazon.com/images/I/71eOqsBey4L._AC_SL500_.jpg',
+    imageAlt: 'KINGrinder K6 manual burr grinder with foldable handle for precision grinding',
+    category: 'grinders',
+    rating: 4.7,
+    badge: { label: 'Best Manual Value', variant: 'beginners' },
+    price: '$129.00',
+    bestFor: 'Maximum grind quality per dollar',
+    specs: {
+      burrType: '48mm stainless conical burrs',
+      brewRange: 'Espresso to French press',
+      capacity: '35-40g per dose',
+      adjustmentStyle: 'External click adjustment',
+      cleanup: 'Easy (low retention)',
+      priceBand: '$$',
+      espressoCapable: 'Yes',
+    },
+  },
+];
 ---
 
 <MoneyPage
   slug="best-burr-coffee-grinder-under-200"
-  title="Best Burr Coffee Grinders Under $200 (2026): 6 Top Picks"
-  description="Find the best burr coffee grinder under 200 for filter or espresso use, with top picks by budget tier, workflow style, and cleanup effort."
+  title="Best Burr Coffee Grinder Under 200 (2026): 6 Top Picks"
+  description="Find the best burr coffee grinder under 200 with six researched picks for espresso and filter brewing, plus clear tradeoffs, specs, and buying advice."
   category="grinders"
   datePublished="2026-03-06"
-  dateModified="2026-03-09"
-  ogDescription="Six burr grinder picks under $200 ranked by grind consistency, espresso range, retention control, and daily workflow fit."
+  dateModified="2026-03-13"
+  ogDescription="Six burr grinder picks under $200 ranked by consistency, espresso range, retention control, and day-to-day workflow value."
   ogImage="https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg"
   products={products}
   heroPicks={{
-    title: "4 Burr Grinders Under $200 Worth Your Money",
-    subtitle: "Ranked by grind quality, workflow fit, and value across filter and espresso use",
+    title: 'Best Burr Coffee Grinder Under 200: Fast Pick Guide',
+    subtitle: 'Choose by workflow fit, not hype: budget filter brewing, all-around use, espresso tuning, or manual precision',
     picks: [
-      { category: 'Budget', tagline: 'Best value for everyday brewing', icon: 'dollar', color: '#059669', features: ['Conical burr consistency', 'Simple stepped control', 'Easy cleanup routine', 'Under $100 entry'], topPick: 'OXO Brew Conical Burr Grinder', price: '$', subtitle: 'Reliable filter upgrade', asin: 'B07CSKGLMM' },
-      { category: 'Overall', tagline: 'Best all-around pick under $200', icon: 'target', color: '#2C1810', features: ['Filter and espresso range', 'Strong parts support', 'Predictable adjustment', 'Long-term value'], topPick: 'Baratza Encore ESP', price: '$$', subtitle: 'Versatile daily grinder', asin: 'B0BW272XCV' },
-      { category: 'Espresso', tagline: 'Stepless control on a budget', icon: 'volume-x', color: '#7A5B4A', features: ['Stepless collar adjustment', 'Single-dose workflow', 'Low retention design', 'Espresso-first focus'], topPick: 'Turin SK40', price: '$$$', subtitle: 'Precise espresso dialing', asin: 'B0DR41V3CN' },
-      { category: 'Manual', tagline: 'Maximum grind quality per dollar', icon: 'hand', color: '#8B6F47', features: ['Steel conical burrs', 'Zero motor noise', 'Travel-ready size', 'Wide brew range'], topPick: 'KINGrinder K6', price: '$', subtitle: 'Hand-ground precision', asin: 'B09WH9JKY1' },
+      { category: 'Budget', tagline: 'Best value for daily filter coffee', icon: 'dollar', color: '#059669', features: ['Consistent conical burr output', 'Simple timer workflow', 'Easy to clean weekly', 'Usually near the $100 mark'], topPick: 'OXO Brew Conical Burr Grinder', price: '$', subtitle: 'Affordable and beginner friendly', asin: 'B07CSKGLMM' },
+      { category: 'Overall', tagline: 'Most complete option under $200', icon: 'target', color: '#2C1810', features: ['Filter + entry espresso range', 'Reliable parts support', 'Predictable grind changes', 'Strong long-term value'], topPick: 'Baratza Encore ESP', price: '$$$', subtitle: 'Best one-grinder household pick', asin: 'B0BW272XCV' },
+      { category: 'Espresso', tagline: 'Finer tuning for shot dialing', icon: 'volume-x', color: '#7A5B4A', features: ['Stepless collar control', 'Single-dose workflow', 'Lower retention path', 'Good value for espresso-first users'], topPick: 'Turin SK40', price: '$$$', subtitle: 'Precise under-$200 espresso option', asin: 'B0DR41V3CN' },
+      { category: 'Manual', tagline: 'Maximum cup quality per dollar', icon: 'hand', color: '#8B6F47', features: ['Large steel burr set', 'No motor noise', 'Portable for travel setups', 'Wide range from espresso to press'], topPick: 'KINGrinder K6', price: '$$', subtitle: 'Hand-grinding with serious precision', asin: 'B09WH9JKY1' },
     ],
-    footer: "coffeegearlab.com - burr grinders under $200 - 2026",
+    footer: 'coffeegearpicks.com · 2026 burr grinder picks',
   }}
   tocItems={[
     { href: '#quick-picks', label: 'Quick picks' },
     { href: '#comparison-table', label: 'Comparison table' },
     { href: '#how-we-evaluate', label: 'How we evaluate' },
-    { href: '#product-reviews', label: 'Product reviews' },
+    { href: '#product-reviews', label: 'Individual product reviews' },
     { href: '#buying-guide', label: 'Buying guide' },
     { href: '#faq', label: 'FAQ' },
     { href: '#related-guides', label: 'Related guides' },
   ]}
   faqItems={[
-    { q: 'Are burr grinders really better than blade grinders for daily coffee?', a: 'Yes. Burr grinders produce tighter particle ranges, which improves extraction consistency and makes cups taste cleaner and sweeter across drip, pour over, and espresso.' },
-    { q: 'Can I make real espresso with a burr grinder under 200?', a: 'Yes, but only with models that offer meaningful fine adjustment. Encore ESP, Fellow Opus, and Turin SK40 are more suitable than basic filter-only stepped grinders.' },
-    { q: 'How often should I clean a burr grinder?', a: 'For daily use, brush the exit path every few days and do a deeper burr clean every 4 to 6 weeks. This controls retention, stale grounds, and static mess.' },
-    { q: 'Is a manual burr grinder a smart alternative under 200?', a: 'Yes. A high-quality manual grinder like the KINGrinder K6 often delivers excellent grind quality per dollar, but with lower convenience for larger brew volumes.' },
+    { q: 'What is the best burr coffee grinder under 200 for most people?', a: 'For most home brewers, Baratza Encore ESP is the best burr coffee grinder under 200 because it balances espresso-capable adjustment with easy daily filter workflow.' },
+    { q: 'Can a burr grinder under $200 make real espresso?', a: 'Yes, but choose a model with finer control. Encore ESP, Fellow Opus, Turin SK40, and manual options like KINGrinder K6 offer better espresso tuning than filter-only stepped grinders.' },
+    { q: 'How often should I clean a burr grinder?', a: 'Brush out the chute and grounds path weekly, then do a deeper burr clean every 4 to 6 weeks. This helps flavor consistency and reduces stale retention.' },
+    { q: 'Are manual burr grinders worth it in this budget?', a: 'Often yes. A strong manual grinder can deliver excellent grind quality per dollar, especially for one or two cups at a time, but it is less convenient for high-volume morning batches.' },
   ]}
+  contentImage={{
+    src: '/assets/content-burr-grinder-under-200.webp',
+    alt: 'Three burr coffee grinders arranged on a warm linen surface with bowls of coarse, medium, and fine grounds beside scattered coffee beans and a ceramic cup.',
+    caption: 'Different grinder styles create very different workflows, but grind consistency and low-retention design matter most under the $200 budget.',
+  }}
 >
   <Fragment slot="lead">
-    <p class="lead">The best burr coffee grinder under 200 for most people is the Baratza Encore ESP because it balances reliable filter consistency with genuinely usable entry-espresso control. We compared six popular models by grind quality, retention/static behavior, cleanup burden, and value so you can choose once and stop replacing mediocre grinders.</p>
+    <p class="lead">The best burr coffee grinder under 200 for most kitchens is the Baratza Encore ESP because it gives you dependable filter performance and legitimate entry-level espresso control in one machine. We researched and compared six popular options for grind consistency, retention, adjustment precision, maintenance friction, and value-per-dollar so you can choose once and brew better every day.</p>
   </Fragment>
 
   <Fragment slot="quick-answer">
-    <p><strong>Quick answer:</strong> Buy Baratza Encore ESP for the best all-around value. OXO Brew Conical Burr is the best budget-first pick, Fellow Opus is the best mid-range all-rounder, and Turin SK40 is the best espresso-leaning choice before you cross the $200 line.</p>
+    <p><strong>Quick answer:</strong> Pick Encore ESP if you want one grinder for both filter and espresso. Choose OXO Brew if your goal is the best low-cost filter upgrade. Go Turin SK40 if espresso tuning is your top priority, and choose KINGrinder K6 if you care most about cup quality per dollar and can accept manual effort.</p>
   </Fragment>
 
   <Fragment slot="comparison-table">
     <h2 id="comparison-table">Comparison table</h2>
-    <ComparisonTable timestamp="Prices updated: March 9, 2026" ariaLabel="Best burr coffee grinder under 200 comparison table">
+    <ComparisonTable timestamp="Prices updated: March 13, 2026" ariaLabel="Best burr coffee grinder under 200 comparison">
       <table>
         <thead>
           <tr>
@@ -74,10 +213,10 @@ const products = getResolvedProducts('best-burr-coffee-grinder-under-200');
           </tr>
         </thead>
         <tbody>
-          {products.map(p => (
+          {products.map((p) => (
             <tr>
               <td data-label="Product">{p.name}</td>
-              <td data-label="Best for"><span class={`best-for-badge --${p.badge.variant}`}>{p.badge.label}</span></td>
+              <td data-label="Best for">{p.bestFor}</td>
               <td data-label="Burr type">{p.specs.burrType}</td>
               <td data-label="Best brew range">{p.specs.brewRange}</td>
               <td data-label="Capacity">{p.specs.capacity}</td>
@@ -96,19 +235,19 @@ const products = getResolvedProducts('best-burr-coffee-grinder-under-200');
   <Fragment slot="methodology">
     <section>
       <h2 id="how-we-evaluate">How we evaluate</h2>
-      <p>For this roundup, we focused on real buyer outcomes: cleaner flavor in the cup, fewer dialing headaches, and less daily mess. Each grinder was compared by burr consistency potential, grind-range usefulness for different brew methods, retention/static behavior, cleaning burden, and overall price-to-performance balance under a strict $200 cap.</p>
-      <p>We weighted grind range differently based on use case. A grinder that only performs well in drip or pour over can still rank highly for budget households, but it cannot lead the list when buyers want one machine for both filter and espresso. In this price band, adjustment precision is often the difference between repeatable espresso and frustrating shot variance.</p>
-      <p>Retention and static were treated as practical quality factors, not cosmetic details. Cheap grinders that spray fines everywhere or hold stale coffee in the chute lose points because they add friction to every brew day. Small improvements in grounds handling can matter as much as burr geometry when you are brewing before work and need a predictable routine.</p>
-      <p>We also considered maintenance burden over time. Some grinders are easy to open, brush, and return to the same setting, while others require more fiddling. A strong value pick should not just produce a good cup on day one; it should remain easy enough to maintain that you keep using it consistently.</p>
-      <p>Finally, we compared relative value inside three practical tiers: under $100, $100 to $149, and $150 to $200. This makes recommendations clearer for buyers who already know their spending ceiling. Instead of one generic winner, you get the best fit for your budget, brew style, and tolerance for daily workflow complexity.</p>
+      <p>For this roundup, we compared each grinder using a practical home-brewer lens instead of spec-sheet theater. The highest weight went to grind consistency in the cup, then adjustment usefulness across brew methods, retention behavior, cleanup burden, and overall long-term value under a hard $200 ceiling. We looked for grinders that improve daily coffee quality without introducing complicated routines most people will abandon.</p>
+      <p>We separated espresso-capable and filter-first recommendations because this budget class includes both, and the wrong choice wastes money quickly. A grinder can be excellent for drip and still frustrate espresso users if fine-range adjustment is too coarse. Likewise, an espresso-focused grinder can be overkill for households brewing only batch coffee. That distinction matters more than flashy marketing language.</p>
+      <p>Retention and static were treated as workflow-critical, not cosmetic details. When grounds cling to chutes or scatter over the counter, people skip good habits and coffee quality drops over time. A model with slightly lower spec bragging rights but cleaner daily behavior can outperform a “higher tier” grinder in real life because you actually use it consistently.</p>
+      <p>We also prioritized maintainability. Accessible burr chambers, straightforward reassembly, and predictable setting return all influence long-term ownership satisfaction. Under $200, reliability and serviceability often beat chasing the absolute highest burr diameter. The goal is not perfection; it is dependable performance that still feels easy six months from now.</p>
+      <p>Finally, we grouped recommendations by buyer intent: budget filter upgrade, all-around home use, espresso-first control, and manual value. This helps avoid one-size-fits-all picks and lets you choose based on your actual brew habits instead of generic “best overall” claims.</p>
     </section>
   </Fragment>
 
   <Fragment slot="product-reviews">
     <section>
-      <h2 id="product-reviews">Product reviews by use case</h2>
+      <h2 id="product-reviews">Individual product reviews</h2>
 
-      <h3>1) Baratza Encore ESP</h3>
+      <h3>1) Baratza Encore ESP — Best Overall</h3>
       <ProductCard
         title={products[0].name}
         image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
@@ -117,23 +256,23 @@ const products = getResolvedProducts('best-burr-coffee-grinder-under-200');
         price={products[0].price}
         ctaUrl={amazonUrl(products[0].asin)}
       />
-      <p><strong>Best for:</strong> Home brewers who want one grinder for pour over, drip, and occasional espresso without crossing the $200 threshold.</p>
+      <p><strong>Best for:</strong> Anyone who wants one grinder that can handle weekday drip and occasional espresso without jumping into premium pricing.</p>
+      <p>Encore ESP earns top placement because it solves the usual budget compromise: either filter-friendly simplicity or espresso-capable precision, but rarely both. Its dedicated fine adjustment zone gives better shot dialing than generic stepped grinders while still keeping medium and coarse settings predictable for pour over and batch brewing.</p>
+      <p>Ownership is straightforward. Replacement parts are accessible, support is generally easier than with niche imports, and the workflow stays manageable even for first-time burr grinder buyers. If you want a low-regret purchase with room to grow your skills, this is the safest recommendation in this bracket.</p>
       <ProsCons
         pros={[
-          'Consistent grind quality for this price class.',
-          'Useful espresso-focused adjustment zone.',
-          'Strong long-term serviceability and parts support.',
+          'Useful espresso-focused fine range without losing filter versatility.',
+          'Reliable brand support and long-term serviceability.',
+          'Predictable grind changes that reduce dialing frustration.',
         ]}
         cons={[
-          'Louder than premium grinders.',
-          'Some retention unless you adopt a simple single-dose routine.',
+          'Motor noise is noticeable in quiet kitchens.',
+          'Retention is manageable but not class-leading without routine brushing.',
         ]}
       />
-      <p>The Encore ESP earns the top spot because it avoids the biggest compromise common in entry grinders: weak espresso control. Its adjustment design gives enough resolution in the fine range to dial better shots while still covering medium and coarse settings for filter brewing. For mixed-method households, that flexibility is hard to beat under $200.</p>
-      <p>Daily workflow is straightforward: predictable dosing, manageable cleanup, and no unusual accessories required. If you want a grinder that stays useful even after your brewing skills improve, this is the safest long-term buy in this price band.</p>
-      <p><CtaButton href="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
 
-      <h3>2) OXO Brew Conical Burr Grinder</h3>
+      <h3>2) OXO Brew Conical Burr Grinder — Best Budget</h3>
       <ProductCard
         title={products[1].name}
         image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
@@ -142,23 +281,23 @@ const products = getResolvedProducts('best-burr-coffee-grinder-under-200');
         price={products[1].price}
         ctaUrl={amazonUrl(products[1].asin)}
       />
-      <p><strong>Best for:</strong> Buyers upgrading from blade grinders who mainly brew drip, pour over, or French press and want reliable results near the lower end of the budget.</p>
+      <p><strong>Best for:</strong> Buyers moving up from blade grinders who want cleaner, more consistent filter coffee without a steep learning curve.</p>
+      <p>OXO Brew remains one of the best value picks when your priority is repeatable drip, pour over, or French press results at a low entry cost. Controls are intuitive, timer-based dosing is easy to repeat, and weekly cleanup is simple enough that most users will keep up with it. That practical consistency is what most households need, not espresso-spec complexity.</p>
+      <p>Where it falls short is true espresso tuning. If you plan to build an espresso workflow soon, it is better to spend closer to the top of this budget. But for pure filter brewing, OXO offers one of the strongest quality jumps per dollar.</p>
       <ProsCons
         pros={[
-          'Strong value for filter-focused brewing.',
-          'Simple controls and low learning curve.',
-          'Easy to keep clean for daily use.',
+          'Excellent value for filter-focused coffee routines.',
+          'Beginner-friendly setup and operation.',
+          'Quick maintenance with removable top burr.',
         ]}
         cons={[
-          'Limited precision for repeatable espresso dialing.',
-          'Can produce extra static in dry environments.',
+          'Fine-range precision is limited for espresso shot dialing.',
+          'Can generate static in dry environments.',
         ]}
       />
-      <p>OXO Brew is the best under-$100 style option when your priority is consistency without complexity. It delivers a clear upgrade over blade grinders and does not require a long adjustment-learning phase. For batch brew households, that matters more than having an espresso-first feature set you may never use.</p>
-      <p>If your plan is strictly filter coffee, this grinder keeps cost low while still producing noticeably cleaner cups than entry blade alternatives. If espresso is a near-term goal, however, move up to Encore ESP, Opus, or SK40 for better fine-range control.</p>
-      <p><CtaButton href="https://www.amazon.com/dp/B07CSKGLMM/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
 
-      <h3>3) Fellow Opus</h3>
+      <h3>3) Fellow Opus — Best Compact Upgrade</h3>
       <ProductCard
         title={products[2].name}
         image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
@@ -167,23 +306,23 @@ const products = getResolvedProducts('best-burr-coffee-grinder-under-200');
         price={products[2].price}
         ctaUrl={amazonUrl(products[2].asin)}
       />
-      <p><strong>Best for:</strong> Kitchen setups that rotate between pour over, AeroPress, and entry espresso while prioritizing compact size and cleaner daily workflow.</p>
+      <p><strong>Best for:</strong> Smaller kitchens that rotate between pour over, AeroPress, and occasional espresso while keeping a clean countertop workflow.</p>
+      <p>Opus is a strong middle path for buyers who want modern ergonomics and wide grind range without crossing the $200 mark. It handles filter coffee confidently and reaches espresso settings with more flexibility than most basic stepped grinders. The design is compact, and anti-static behavior helps keep daily prep less messy.</p>
+      <p>The tradeoff is adjustment learning curve. Getting the most from Opus takes a short calibration period, especially if you change brew methods often. Once you understand its adjustment logic, it becomes a dependable all-rounder with a cleaner footprint than many comparably priced options.</p>
       <ProsCons
         pros={[
-          'Broad grind range from filter to espresso.',
-          'Compact footprint and tidy countertop behavior.',
-          'Good performance-per-dollar in the mid-range tier.',
+          'Broad grind range for mixed brew-method households.',
+          'Compact body works well in smaller kitchens.',
+          'Good performance-to-price ratio near the top of this budget.',
         ]}
         cons={[
-          'Micro-adjustment workflow takes time to learn.',
-          'Cleanup is moderate versus simpler stepped grinders.',
+          'Micro-adjustment workflow is less intuitive at first.',
+          'Deep cleaning takes more care than basic timer grinders.',
         ]}
       />
-      <p>Fellow Opus sits in the sweet spot for buyers who want versatility without paying premium-grinder prices. It handles filter brewing confidently and can reach espresso territory with enough control for regular home use. That makes it a practical single-grinder option for people experimenting across brew methods.</p>
-      <p>Where Opus shines is day-to-day livability: compact size, decent retention behavior, and an overall workflow that feels modern. It is not the easiest model to master instantly, but once you understand its adjustment pattern, it becomes a dependable all-rounder in this budget bracket.</p>
-      <p><CtaButton href="https://www.amazon.com/dp/B0BV96VPSR/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
 
-      <h3>4) Turin SK40</h3>
+      <h3>4) Turin SK40 — Best Espresso Control Under $200</h3>
       <ProductCard
         title={products[3].name}
         image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
@@ -192,23 +331,23 @@ const products = getResolvedProducts('best-burr-coffee-grinder-under-200');
         price={products[3].price}
         ctaUrl={amazonUrl(products[3].asin)}
       />
-      <p><strong>Best for:</strong> Espresso-first users who want stronger fine-adjustment control and low-retention single-dosing without stepping into premium pricing tiers.</p>
+      <p><strong>Best for:</strong> Espresso-first users who want stepless-style adjustment and a single-dose workflow without premium grinder pricing.</p>
+      <p>SK40 stands out when espresso dialing is your top metric. Its stepless collar offers finer shot-time control than many sub-$200 stepped alternatives, making it easier to tune for different roast levels and dose/yield targets. If you care about minimizing retention and switching beans frequently, single-dosing is a real advantage.</p>
+      <p>It is less plug-and-play than hopper-first grinders. You will spend a little more time per dose, and beginners may need a week or two to feel fluent with the workflow. For espresso-focused users, though, that effort often pays back in more repeatable shots and fewer sudden quality swings.</p>
       <ProsCons
         pros={[
-          'Stepless-style control supports precise espresso dialing.',
-          'Single-dose workflow helps reduce stale retention.',
-          'High espresso value for the price segment.',
+          'Stepless adjustment supports precise espresso tuning.',
+          'Single-dose workflow helps control retention.',
+          'Strong espresso value before entering prosumer pricing tiers.',
         ]}
         cons={[
-          'Less beginner-friendly than simple click-dial grinders.',
-          'Workflow includes more manual prep steps for each dose.',
+          'Less beginner-friendly than simple stepped grinders.',
+          'Workflow includes more manual prep steps per dose.',
         ]}
       />
-      <p>SK40 is the most espresso-leaning recommendation here. The stepless-style collar gives finer control than many stepped budget grinders, which helps when dialing lighter roasts or making small shot-time corrections. If your coffee routine is mostly espresso drinks, this model gives you more tuning headroom than typical all-purpose options.</p>
-      <p>The tradeoff is complexity. Single-dosing and bellows workflows can feel slower at first, especially if you are used to hopper-based convenience. For espresso-focused users, that extra routine often pays off through cleaner transitions and more predictable shot behavior.</p>
-      <p><CtaButton href="https://www.amazon.com/dp/B0DR41V3CN/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
 
-      <h3>5) Capresso Infinity Plus</h3>
+      <h3>5) Capresso Infinity Plus — Best Filter-Only Simplicity</h3>
       <ProductCard
         title={products[4].name}
         image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
@@ -217,23 +356,23 @@ const products = getResolvedProducts('best-burr-coffee-grinder-under-200');
         price={products[4].price}
         ctaUrl={amazonUrl(products[4].asin)}
       />
-      <p><strong>Best for:</strong> Households that brew daily drip coffee and want a simple, low-friction grinder with minimal setup complexity.</p>
+      <p><strong>Best for:</strong> Households that brew mostly drip coffee and want easy operation with minimal setup friction.</p>
+      <p>Infinity Plus is still a practical recommendation for filter-focused routines where simplicity beats advanced adjustment range. Its control scheme is straightforward, maintenance is low effort, and it consistently outperforms blade grinders in cup clarity and repeatability. For many buyers, that jump is all they need.</p>
+      <p>It is not the right option for serious espresso ambitions. But if your daily routine is batch brew and your priority is dependable convenience, Capresso remains a sensible under-$200 choice.</p>
       <ProsCons
         pros={[
-          'Beginner-friendly controls and timer workflow.',
-          'Low-maintenance design for routine drip brewing.',
-          'Often priced well for first-time burr-grinder buyers.',
+          'Easy daily workflow for drip and pour over.',
+          'Low maintenance burden for new burr grinder owners.',
+          'Often priced competitively in the mid-budget range.',
         ]}
         cons={[
-          'Not intended for true espresso tuning.',
-          'Less adjustment precision than newer competitors.',
+          'Limited fine control for espresso dialing.',
+          'Older design competes with newer all-round alternatives.',
         ]}
       />
-      <p>Capresso Infinity Plus remains a practical option for people who care more about convenience than maximum grind-range flexibility. It is quick to learn, easy to clean, and far more consistent than blade grinders for everyday drip coffee.</p>
-      <p>If you are building toward espresso, this should not be your final grinder. But if your household mostly brews batch coffee and wants dependable improvement with minimal fuss, it still earns a place on a sub-$200 shortlist.</p>
-      <p><CtaButton href="https://www.amazon.com/dp/B07N4KTW38/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
 
-      <h3>6) KINGrinder K6 (manual)</h3>
+      <h3>6) KINGrinder K6 — Best Manual Value</h3>
       <ProductCard
         title={products[5].name}
         image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
@@ -242,59 +381,72 @@ const products = getResolvedProducts('best-burr-coffee-grinder-under-200');
         price={products[5].price}
         ctaUrl={amazonUrl(products[5].asin)}
       />
-      <p><strong>Best for:</strong> Buyers who want maximum grind quality per dollar and are comfortable trading motor convenience for control and consistency.</p>
+      <p><strong>Best for:</strong> Buyers who prioritize grind quality over convenience and are comfortable with hand grinding one or two doses at a time.</p>
+      <p>KINGrinder K6 is the value outlier in this guide. At this price, a strong manual grinder can rival or beat many electric entries in grind uniformity, especially for pour over and espresso-focused single doses. It also avoids motor noise and keeps retention low with a direct grind path.</p>
+      <p>The obvious compromise is effort. High-resistance espresso settings require more work, and manual grinding is slower for larger batches. If you want maximum cup quality per dollar and brew smaller volumes, K6 is a compelling choice.</p>
       <ProsCons
         pros={[
-          'Excellent grind quality for the price.',
-          'Wide usable range from pour over to espresso.',
-          'No motor noise and very low retention path.',
+          'Excellent grind quality per dollar in this budget class.',
+          'Wide usable range from espresso to coarse brewing.',
+          'Quiet operation and very low retention path.',
         ]}
         cons={[
-          'Manual effort increases at espresso settings.',
-          'Less practical for large multi-cup batches.',
+          'Manual effort increases at finer settings.',
+          'Less practical for high-volume morning brewing.',
         ]}
       />
-      <p>The K6 is the sleeper value pick of this list. Manual grinders at this quality level can outperform many electric entry models on grind uniformity, especially when you are focused on one dose at a time. It is a strong option for people who prioritize cup quality and do not mind hand grinding.</p>
-      <p>For fast weekday volume, electric grinders remain more convenient. But for small-batch brewing, travel, or quiet early-morning use, K6 offers serious performance without burning your full budget.</p>
-      <p><CtaButton href="https://www.amazon.com/dp/B09WH9JKY1/ref=nosim?tag=coffee-site-20" external>Check Price on Amazon</CtaButton></p>
+      <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
     </section>
   </Fragment>
 
   <Fragment slot="extra-sections">
     <section>
-      <h2>Who should buy which grinder?</h2>
-      <p>If you brew mostly pour over or batch drip and want the easiest path from blade to burr consistency, start with OXO Brew or Capresso Infinity Plus. Both options are simple to learn, low maintenance, and reliable enough to improve cup quality without requiring deep grinder expertise. These are practical choices for households that value routine speed over espresso experimentation.</p>
-      <p>If you want one grinder that can comfortably cover both filter and espresso, Baratza Encore ESP remains the safest recommendation. It is not the flashiest option, but it is forgiving, predictable, and easier to live with long term than many budget models that chase specs but miss workflow consistency. For most buyers under this budget cap, that balance is the right call.</p>
-      <p>If espresso quality is your top priority and you already understand dose, yield, and shot-time tuning, Turin SK40 gives more control at this price than most mainstream alternatives. If you want similar flexibility in a smaller footprint with better all-around kitchen ergonomics, Fellow Opus is the better middle ground. The best pick depends on whether you prefer precision-first tuning or convenience-first versatility.</p>
-      <p>Manual users should look seriously at KINGrinder K6. It is ideal for people who brew one or two cups at a time, travel often, or want quiet early-morning coffee without waking the whole house. The tradeoff is effort at finer settings, but the quality-per-dollar ratio is hard to ignore.</p>
+      <h2>Who should skip this guide?</h2>
+      <p>If your budget can stretch to the mid-$300 range, you may get better long-term value from a grinder with larger burrs, lower retention, and easier micro-adjustment for espresso. This under-$200 list is for buyers who need strong value now, not top-end speed or café-level workflow refinement.</p>
+      <p>You should also skip this guide if you only need occasional pre-ground coffee support and do not plan to dial recipes at all. In that case, a burr grinder may be unnecessary complexity. But if you care about consistency and want repeatable cups, the picks above are the strongest value options before the next pricing tier.</p>
+
+      <h2>Common mistakes when shopping for a burr grinder under $200</h2>
+      <h3>1) Buying by discount percentage instead of grind behavior</h3>
+      <p>A deep sale can make a weak grinder look like a smart deal, especially in this price range. The problem is that discount math does not tell you whether the grinder can hold grind consistency across different brew methods. If a unit struggles with clumping, uneven particles, or wildly shifting output after small setting changes, the discounted price will not save your coffee routine. Prioritize known grind behavior first, then price.</p>
+
+      <h3>2) Assuming all burr grinders are automatically espresso-ready</h3>
+      <p>Many buyers hear “burr grinder” and assume any model can dial espresso shots reliably. In reality, some under-$200 grinders are clearly filter-first designs. They may reach fine settings, but step spacing is too broad to make repeatable espresso adjustments practical. If espresso is part of your plan, check adjustment design and user workflow details early instead of discovering this limitation after purchase.</p>
+
+      <h3>3) Ignoring workflow friction (retention, static, cleanup)</h3>
+      <p>Shoppers often focus on burr size and motor claims while ignoring daily usability. Retention and static are not minor annoyances. They affect flavor freshness, dose consistency, and whether you actually keep your station clean. A slightly less “impressive” grinder with cleaner grounds handling can outperform a spec-heavy alternative over months of real use because the routine stays smooth.</p>
+
+      <h3>4) Overbuying complexity for a simple brew routine</h3>
+      <p>If your household only brews batch drip coffee, an espresso-first single-dose workflow may be unnecessary complexity. Complex grinders are not bad; they are just optimized for different goals. Match features to your brewing habits. This keeps your learning curve reasonable and prevents paying for capabilities you rarely use.</p>
+
+      <h3>5) Skipping maintenance planning</h3>
+      <p>Even great grinders lose performance when burr chambers and chutes accumulate old grounds. A good buying decision includes a realistic cleaning cadence. If you cannot commit to quick weekly brushing and periodic deeper cleaning, choose a model with easy access and simpler disassembly. Consistent maintenance protects both flavor and long-term value more than chasing one extra settings notch on paper.</p>
+
+      <h3>6) Expecting one grinder to solve recipe inconsistency alone</h3>
+      <p>A better grinder improves your floor and ceiling, but it does not replace dose control, water ratio consistency, and brew-time discipline. Many buyers upgrade hardware and keep chaotic workflow habits, then conclude the grinder “did not make a difference.” Pair your grinder upgrade with stable brew ratios and incremental setting changes. That is how under-$200 equipment delivers genuinely better cups.</p>
     </section>
   </Fragment>
 
   <Fragment slot="buying-guide">
     <BuyingGuideSection>
-      <h2 id="buying-guide">Buying guide: how to choose a burr grinder under 200</h2>
+      <h2 id="buying-guide">Buying guide: how to choose the right burr coffee grinder under 200</h2>
 
-      <h3>1) Match grinder type to your brew style</h3>
-      <p>If you mostly brew drip, pour over, or French press, prioritize consistent medium/coarse performance and easy cleanup over advanced espresso controls. If espresso is part of your routine, focus on adjustment precision first. A grinder that cannot make small repeatable fine-range changes will create frustrating shot variance even if it looks great on paper.</p>
+      <h3>1) Start with brew method, not marketing labels</h3>
+      <p>Before comparing specs, define your real routine. If you brew drip, pour over, or French press most days, prioritize consistency in medium and coarse ranges plus easy cleanup. If you make espresso regularly, adjustment precision matters more than hopper size or timer extras. Matching grinder design to brew style prevents most buyer regret in this category.</p>
 
-      <h3>2) Understand stepped vs stepless adjustment</h3>
-      <p>Stepped systems are easier for beginners because they provide fixed positions you can return to quickly. Stepless systems allow more granular control but demand more patience. Under $200, some stepped designs can still handle espresso well, but generic wide-step models are usually better for filter coffee than true dial-in work.</p>
+      <h3>2) Understand adjustment systems before you buy</h3>
+      <p>Stepped systems are easier to repeat and friendlier for new users, but large step spacing can limit espresso tuning. Stepless systems offer finer control but add complexity. Under $200, the best value often comes from grinders that keep workflow intuitive while still giving enough fine-range resolution to avoid major shot swings.</p>
 
-      <h3>3) Retention and static are quality-of-life multipliers</h3>
-      <p>Retention means old grounds remain inside the grinder and contaminate the next dose. Static means grounds cling to surfaces and create mess. Both can quietly ruin daily usability. If two grinders look similar on paper, choose the one with better retention/static behavior because it will feel better every single morning.</p>
+      <h3>3) Evaluate retention and static as daily quality factors</h3>
+      <p>Retention (old grounds trapped inside) and static (grounds spraying or clinging) directly affect cup freshness and kitchen friction. A grinder with excellent spec-sheet numbers but frustrating grounds handling can feel worse over time than a slightly less technical model with cleaner behavior. Prioritize machines you can keep tidy without a ritual.</p>
 
-      <h3>4) Pick the right budget tier on purpose</h3>
-      <p>Under-$100 buys can still be excellent for filter coffee, especially for first upgrades. The $100 to $149 range usually delivers better all-around flexibility. The $150 to $200 range is where espresso-focused value starts getting serious. Define your brew goals first, then choose the tier that supports those goals without overbuying features you will not use.</p>
+      <h3>4) Choose a budget tier with intent</h3>
+      <p>In this segment, there are three practical tiers. Around $100 is strong for filter-first upgrades. Around $150 adds better all-around flexibility. Near $200 is where espresso-capable control improves meaningfully. Decide which tier aligns with your next 12 months of brewing, not just this weekend’s impulse purchase.</p>
 
-      <h3>5) Plan for cleaning and maintenance from day one</h3>
-      <p>A quick weekly brush plus a deeper burr clean every month keeps flavor cleaner and reduces grind drift. If you are unsure where to start, use this <a href="/posts/how-to-clean-burr-coffee-grinder.html">burr grinder cleaning guide</a>. Good maintenance habits extend burr performance and reduce the chance that your grinder feels "worse" after a few months.</p>
+      <h3>5) Build a repeatable maintenance cadence</h3>
+      <p>Weekly brushing and monthly deeper cleaning preserve grind consistency and flavor clarity. If you need a routine, use this <a href="/posts/how-to-clean-burr-coffee-grinder.html">burr grinder cleaning guide</a>. Most “my grinder got worse” complaints come from retention buildup and neglected burr care rather than sudden hardware failure.</p>
 
-      <h3>6) Build a complete workflow, not just a grinder purchase</h3>
-      <p>A grinder upgrade works best when paired with consistent brew ratios and realistic recipe adjustments. If your cups are still inconsistent after buying a better grinder, review this <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> and this <a href="/posts/burr-grinder-settings-for-espresso.html">espresso grind setting guide</a>. Better coffee usually comes from system tuning, not one isolated product decision.</p>
-
-      <h3>7) Set expectations for noise, speed, and mess</h3>
-      <p>Many buyers focus on grind quality but underestimate workflow fatigue. Louder motors, static-heavy chutes, or awkward dose transfer can make a grinder feel worse over time even if cup quality is good. If you brew before work, a grinder that is slightly less precise but easier to run daily can produce better real-world results because you stay consistent.</p>
-      <p>Treat your first two weeks as calibration, not judgment. Use one coffee, log your settings, and make small changes instead of big jumps. This quickly reveals whether your grinder supports stable repeatable cups. A practical under-$200 grinder should help you improve with routine, not force you into constant re-dialing.</p>
+      <h3>6) Use linked guides to improve results faster</h3>
+      <p>A better grinder matters, but your recipe consistency matters just as much. Pair your purchase with this <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> and this <a href="/posts/burr-grinder-settings-for-espresso.html">burr grinder settings guide for espresso</a>. Dialing workflow and dose discipline usually create bigger quality jumps than chasing one more feature tier.</p>
     </BuyingGuideSection>
   </Fragment>
 
@@ -303,10 +455,8 @@ const products = getResolvedProducts('best-burr-coffee-grinder-under-200');
       <h2 id="related-guides">Related guides</h2>
       <ul>
         <li><a href="/posts/best-burr-grinder-for-espresso.html">Best Burr Grinder for Espresso</a></li>
-        <li><a href="/posts/best-coffee-grinder-for-pour-over.html">Best Coffee Grinder for Pour Over</a></li>
         <li><a href="/posts/best-coffee-grinder-for-french-press.html">Best Coffee Grinder for French Press</a></li>
-        <li><a href="/posts/best-manual-coffee-grinder-under-100.html">Best Manual Coffee Grinder Under $100</a></li>
-        <li><a href="/posts/best-single-serve-coffee-maker-with-grinder.html">Best Single-Serve Coffee Maker with Grinder</a></li>
+        <li><a href="/posts/best-hand-grinder-for-espresso-under-100.html">Best Hand Grinder for Espresso Under $100</a></li>
         <li><a href="/posts/how-to-clean-burr-coffee-grinder.html">How to Clean a Burr Coffee Grinder</a></li>
       </ul>
     </section>

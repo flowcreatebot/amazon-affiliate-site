@@ -2,10 +2,13 @@
 interface Props {
   title: string;
   href: string;
+  class?: string;
+  hidden?: boolean;
 }
-const { title, href } = Astro.props;
+const { title, href, class: extraClass, hidden } = Astro.props;
+const classes = ['card', extraClass].filter(Boolean).join(' ');
 ---
-<article class="card">
+<article class={classes} style={hidden ? 'display:none' : ''}>
   <h3><a href={href}>{title}</a></h3>
   <slot />
 </article>

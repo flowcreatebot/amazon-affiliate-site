@@ -4,15 +4,32 @@ interface Props {
   subtitle: string;
   ctaText?: string;
   ctaHref?: string;
+  image?: string;
+  imageAlt?: string;
 }
-const { title, subtitle, ctaText, ctaHref } = Astro.props;
+const { title, subtitle, ctaText, ctaHref, image, imageAlt } = Astro.props;
 ---
-<section class="hero">
-  <h1 class="hero__title">{title}</h1>
-  <p class="hero__subtitle">{subtitle}</p>
-  {ctaText && ctaHref && (
-    <a class="cta-button --primary" href={ctaHref}>
-      {ctaText} <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
-    </a>
+<section class={`hero ${image ? 'hero--with-image' : ''}`}>
+  <div class="hero__content">
+    <h1 class="hero__title">{title}</h1>
+    <p class="hero__subtitle">{subtitle}</p>
+    {ctaText && ctaHref && (
+      <a class="cta-button --primary" href={ctaHref}>
+        {ctaText} <span class="cta-button__arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    )}
+  </div>
+  {image && (
+    <div class="hero__image-wrap">
+      <img
+        class="hero__image"
+        src={image}
+        alt={imageAlt || ''}
+        width="896"
+        height="512"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
   )}
 </section>
