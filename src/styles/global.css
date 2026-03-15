@@ -627,13 +627,6 @@ tbody tr:hover td:last-child { background: var(--surface-elevated); }
   border-radius: var(--radius);
   background: var(--surface-latte);
 }
-@media (min-width: 960px) {
-  .hero-media {
-    width: min(var(--max-page), calc(100vw - 2rem));
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
-}
 .hero-media figcaption {
   color: var(--brand-600);
   font-size: 0.92rem;

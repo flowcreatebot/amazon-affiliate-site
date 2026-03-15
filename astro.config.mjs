@@ -11,4 +11,9 @@ export default defineConfig({
   },
   trailingSlash: 'never',
   integrations: [preact()],
+  vite: {
+    server: {
+      allowedHosts: ['srv1417038.taile587dd.ts.net'],
+    },
+  },
 });
