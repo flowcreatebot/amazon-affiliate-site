@@ -77,23 +77,23 @@ const products: ResolvedProduct[] = [
     },
   },
   {
-    id: 'turin-sk40',
-    name: 'Turin SK40 Single Dose Grinder',
-    brand: 'Turin',
-    asin: 'B0DR41V3CN',
-    image: 'PLACEHOLDER_IMG:B0DR41V3CN',
-    imageAlt: 'Turin SK40 single-dose coffee grinder with tilted base and dosing cup',
+    id: 'miicoffee-d40-plus',
+    name: 'MiiCoffee D40+ Single Dose Grinder',
+    brand: 'MiiCoffee',
+    asin: 'B0CGBZQ2LY',
+    image: 'PLACEHOLDER_IMG:B0CGBZQ2LY',
+    imageAlt: 'MiiCoffee D40 Plus single-dose coffee grinder with angled body and dosing cup',
     category: 'grinders',
-    rating: 4.4,
+    rating: 4.2,
     badge: { label: 'Best for Espresso Under $200', variant: 'espresso' },
-    price: '$199.00',
-    bestFor: 'Stepless espresso dialing without spending more',
+    price: 'Check price',
+    bestFor: 'Entry-level espresso dialing with a single-dose workflow',
     specs: {
       burrType: '40mm stainless steel conical burrs',
-      brewRange: 'Espresso-first, but usable for filter',
+      brewRange: 'Espresso to filter coffee',
       capacity: 'Single-dose workflow',
-      adjustmentStyle: 'Stepless collar',
-      cleanup: 'Moderate, with low-retention design',
+      adjustmentStyle: 'Stepless adjustment',
+      cleanup: 'Low-retention design with blow-out funnel',
       priceBand: '$$$',
       espressoCapable: 'Yes',
     },
@@ -161,7 +161,7 @@ const products: ResolvedProduct[] = [
     picks: [
       { category: 'Budget', tagline: 'Best value for everyday drip and pour over', icon: 'dollar', color: '#059669', features: ['Easy timer-based workflow', 'Consistent filter grind', 'Simple weekly cleanup', 'Usually lands near $100'], topPick: 'OXO Brew Conical Burr Grinder', price: '$', subtitle: 'The easy first upgrade', asin: 'B07CSKGLMM' },
       { category: 'Overall', tagline: 'Best one-grinder household pick', icon: 'target', color: '#2C1810', features: ['Good from espresso to press', 'Predictable setting changes', 'Strong repair reputation', 'Worth stretching the budget'], topPick: 'Baratza Encore ESP', price: '$$$', subtitle: 'The safest smart buy', asin: 'B0BW272XCV' },
-      { category: 'Espresso', tagline: 'Best under-200 option for shot tuning', icon: 'volume-x', color: '#7A5B4A', features: ['Stepless adjustment', 'Single-dose workflow', 'Lower retention path', 'Built for dialing shots'], topPick: 'Turin SK40', price: '$$$', subtitle: 'Better control for espresso lovers', asin: 'B0DR41V3CN' },
+      { category: 'Espresso', tagline: 'Best under-200 option for shot tuning', icon: 'volume-x', color: '#7A5B4A', features: ['Stepless adjustment', 'Single-dose workflow', 'Low-retention path', 'Built for dialing shots'], topPick: 'MiiCoffee D40+', price: '$$$', subtitle: 'Better control for espresso lovers', asin: 'B0CGBZQ2LY' },
       { category: 'Manual', tagline: 'Best grind quality per dollar', icon: 'hand', color: '#8B6F47', features: ['Serious grind quality', 'Travel friendly', 'No motor noise', 'Wide usable range'], topPick: 'KINGrinder K6', price: '$$', subtitle: 'Manual, but seriously good', asin: 'B09WH9JKY1' },
     ],
     footer: 'coffeegearpicks.com · 2026 burr grinder picks',
@@ -177,7 +177,7 @@ const products: ResolvedProduct[] = [
   ]}
   faqItems={[
     { q: 'What is the best burr coffee grinder under 200 for most people?', a: 'For most people, the Baratza Encore ESP is the easiest recommendation because it handles filter coffee well and gives you enough fine control to start making real espresso.' },
-    { q: 'Can you get a good espresso grinder for under $200?', a: 'Yes, but you need to choose carefully. Grinders like the Encore ESP, Fellow Opus, Turin SK40, and KINGrinder K6 make more sense for espresso than broad-step filter-first grinders.' },
+    { q: 'Can you get a good espresso grinder for under $200?', a: 'Yes, but you need to choose carefully. Grinders like the Encore ESP, Fellow Opus, MiiCoffee D40+, and KINGrinder K6 make more sense for espresso than broad-step filter-first grinders.' },
     { q: 'Is a manual grinder better than an electric one at this price?', a: 'Sometimes, yes. A good manual grinder can give you cleaner, more precise grinding for the money, but it is slower and less convenient when you are making multiple cups.' },
     { q: 'How often should you clean a burr grinder?', a: 'Give it a quick brush-out every week and a deeper clean every month or so. Old grounds build up fast, and stale coffee oils can make your next cup taste flat.' },
   ]}
@@ -193,7 +193,7 @@ const products: ResolvedProduct[] = [
   </Fragment>
 
   <Fragment slot="quick-answer">
-    <p><strong>Quick answer:</strong> Buy the Baratza Encore ESP if you want one grinder that can handle almost everything. Buy the OXO Brew if you want the cheapest good upgrade from a blade grinder. Buy the Turin SK40 if espresso is your main game. Buy the KINGrinder K6 if you want the best grind quality per dollar and do not mind using your arm a little.</p>
+    <p><strong>Quick answer:</strong> Buy the Baratza Encore ESP if you want one grinder that can handle almost everything. Buy the OXO Brew if you want the cheapest good upgrade from a blade grinder. Buy the MiiCoffee D40+ if espresso is your main game. Buy the KINGrinder K6 if you want the best grind quality per dollar and do not mind using your arm a little.</p>
   </Fragment>
 
   <Fragment slot="comparison-table">
@@ -328,7 +328,7 @@ const products: ResolvedProduct[] = [
       />
       <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
 
-      <h3>4) Turin SK40 — Best for Espresso Under $200</h3>
+      <h3>4) MiiCoffee D40+ — Best for Espresso Under $200</h3>
       <ProductCard
         title={products[3].name}
         image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
@@ -338,13 +338,13 @@ const products: ResolvedProduct[] = [
         ctaUrl={amazonUrl(products[3].asin)}
       />
       <p><strong>Best for:</strong> Espresso-first buyers who care more about dialing shots than filling a big hopper and walking away.</p>
-      <p>This is the pick for people who are tired of hearing “good enough for espresso” from grinders that clearly are not. Turin SK40 gives you stepless adjustment, which means you can make tiny grind changes instead of hopping between big preset steps and hoping one of them lands in the sweet spot. For espresso, that is a big deal.</p>
-      <p>The single-dose setup also keeps things fresher and cleaner if you like changing beans often. You put in the exact dose you need, grind it, and move on. That workflow is slower than hopper grinding, but it gives you more control and usually less stale coffee hanging around inside the machine.</p>
-      <p>It is not the best pick for households that just want fast drip coffee at 6 a.m. It is more involved. But if your idea of a good morning includes chasing thick crema and a shot that pours like warm honey instead of thin tea, this is the strongest espresso-focused option under $200.</p>
+      <p>This is the pick for people who are tired of hearing “good enough for espresso” from grinders that clearly are not. MiiCoffee D40+ gives you stepless adjustment, which means you can make tiny grind changes instead of hopping between big preset steps and hoping one of them lands in the sweet spot. For espresso, that is a big deal.</p>
+      <p>The single-dose setup also keeps things fresher and cleaner if you like changing beans often. You drop in the dose you need, grind it, then blow out the last little bit hanging around inside. That workflow is slower than hopper grinding, but it gives you more control and usually less stale coffee sneaking into the next shot.</p>
+      <p>It is not the best pick for households that just want fast drip coffee at 6 a.m. It is more involved. But if your idea of a good morning includes chasing thick crema and a shot that pours like warm honey instead of thin tea, this is one of the smartest espresso-first buys you can still find under this cap.</p>
       <ProsCons
         pros={[
           'Stepless adjustment makes espresso dialing much easier.',
-          'Single-dose workflow helps keep retention lower.',
+          'Single-dose workflow and blow-out funnel help keep retention lower.',
           'Strong value for espresso-first buyers on a budget.',
         ]}
         cons={[

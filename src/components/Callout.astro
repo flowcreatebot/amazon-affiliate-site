@@ -1,0 +1,80 @@
+---
+interface Props {
+  variant: 'tip' | 'warning' | 'note';
+  title?: string;
+}
+
+const { variant, title } = Astro.props;
+
+const variantConfig: Record<string, { color: string; bg: string; icon: string; defaultTitle: string }> = {
+  tip: {
+    color: 'var(--success)',
+    bg: 'var(--success-bg)',
+    icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>',
+    defaultTitle: 'Tip',
+  },
+  warning: {
+    color: 'var(--warning)',
+    bg: 'var(--warning-bg)',
+    icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>',
+    defaultTitle: 'Warning',
+  },
+  note: {
+    color: 'var(--info)',
+    bg: 'var(--info-bg)',
+    icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>',
+    defaultTitle: 'Note',
+  },
+};
+
+const cfg = variantConfig[variant];
+const displayTitle = title ?? cfg.defaultTitle;
+---
+
+<aside class="callout" style={`--callout-color: ${cfg.color}; --callout-bg: ${cfg.bg}`}>
+  <p class="callout__title">
+    <span class="callout__icon" set:html={cfg.icon} />
+    {displayTitle}
+  </p>
+  <div class="callout__body">
+    <slot />
+  </div>
+</aside>
+
+<style>
+  .callout {
+    background: var(--callout-bg);
+    border-left: 4px solid var(--callout-color);
+    border-radius: var(--radius-sm);
+    padding: var(--sp-4) var(--sp-5);
+    margin: var(--sp-6) 0;
+  }
+
+  .callout__title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--callout-color);
+    margin: 0 0 var(--sp-2);
+  }
+
+  .callout__icon {
+    display: flex;
+    flex-shrink: 0;
+    color: var(--callout-color);
+  }
+
+  .callout__body {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--brand-700);
+  }
+  .callout__body :global(p) {
+    margin: 0;
+  }
+  .callout__body :global(p + p) {
+    margin-top: var(--sp-2);
+  }
+</style>

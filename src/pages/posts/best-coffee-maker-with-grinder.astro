@@ -5,7 +5,7 @@ import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsCons from '../../components/ProsCons.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
-import HeroSteps from '../../components/HeroSteps.astro';
+import PickOne from '../../components/PickOne.astro';
 import { getResolvedProducts, amazonUrl } from '../../data/products';
 
 const asinImageMap: Record<string, string> = {
@@ -252,17 +252,16 @@ const products = getResolvedProducts('best-coffee-maker-with-grinder').map((prod
   <Fragment slot="extra-sections">
     <section>
       <h2 id="workflow-fit">Which workflow fits you?</h2>
-      <HeroSteps
+      <PickOne
         title="Pick the right grind-and-brew workflow"
         subtitle="The best machine depends less on specs and more on how your morning actually runs"
-        steps={[
-          { label: 'Full-pot households', icon: 'coffee', actions: ['Need 10-12 cup capacity', 'Want a timer the night before', 'Care about easy basket cleanup', 'Do not need espresso tricks'], time: 'Daily' },
-          { label: 'Solo drinkers', icon: 'target', actions: ['Usually brew one mug', 'Want less waste', 'Need smaller footprint', 'Care about quick bean-to-cup flow'], time: 'Daily' },
-          { label: 'Flavor-focused users', icon: 'check', actions: ['Prefer burr grinders', 'Notice muddy cups fast', 'Will clean grinder parts more often', 'Want more consistency'], time: 'Every brew' },
-          { label: 'Mixed-preference homes', icon: 'list', actions: ['Need hot and iced options', 'Want multiple cup sizes', 'Need more flexibility', 'Can tolerate more setup'], time: 'Varies' },
+        options={[
+          { label: 'Full-pot households', icon: 'coffee', points: ['Need 10-12 cup capacity', 'Want a timer the night before', 'Care about easy basket cleanup', 'Do not need espresso tricks'], badge: 'Daily' },
+          { label: 'Solo drinkers', icon: 'target', points: ['Usually brew one mug', 'Want less waste', 'Need smaller footprint', 'Care about quick bean-to-cup flow'], badge: 'Daily' },
+          { label: 'Flavor-focused users', icon: 'check', points: ['Prefer burr grinders', 'Notice muddy cups fast', 'Will clean grinder parts more often', 'Want more consistency'], badge: 'Every brew' },
+          { label: 'Mixed-preference homes', icon: 'list', points: ['Need hot and iced options', 'Want multiple cup sizes', 'Need more flexibility', 'Can tolerate more setup'], badge: 'Varies' },
         ]}
         outcome="A machine that matches your routine feels better every single morning."
-        footer="coffeegearpicks.com · coffee workflow guide · 2026"
       />
       <p>If your house drinks full pots, start there. Do not overbuy a fancy hybrid machine just because it can make ten kinds of coffee. If you mostly brew one mug, a single-serve model will usually feel faster, cleaner, and less wasteful.</p>
       <p>If flavor matters most, prioritize a burr grinder. That is the part that changes the cup most clearly. If budget matters most, accept the trade-off and buy a solid blade model instead of pretending you will care about tiny flavor differences every morning.</p>

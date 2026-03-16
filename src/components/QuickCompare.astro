@@ -1,0 +1,100 @@
+---
+import CtaButton from './CtaButton.astro';
+import { amazonUrl } from '../data/products';
+
+interface CompareItem {
+  name: string;
+  bestFor: string;
+  desc: string;
+  asin?: string;
+}
+
+interface Props {
+  title?: string;
+  items: CompareItem[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<div class="quick-compare">
+  {title && <h3 class="quick-compare__title">{title}</h3>}
+  <div class="quick-compare__grid">
+    {items.map((item) => (
+      <div class="quick-compare__card">
+        <span class="quick-compare__badge">{item.bestFor}</span>
+        <h4 class="quick-compare__name">{item.name}</h4>
+        <p class="quick-compare__desc">{item.desc}</p>
+        {item.asin && (
+          <div class="quick-compare__cta">
+            <CtaButton href={amazonUrl(item.asin)} size="sm" external>Check price</CtaButton>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .quick-compare {
+    background: var(--surface-latte);
+    border-radius: var(--radius);
+    padding: var(--sp-6);
+    margin: var(--sp-6) 0;
+  }
+
+  .quick-compare__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--brand-900);
+    margin: 0 0 var(--sp-4);
+  }
+
+  .quick-compare__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--sp-4);
+  }
+
+  .quick-compare__card {
+    background: var(--surface-white);
+    border: 1px solid var(--brand-200);
+    border-radius: var(--radius);
+    padding: var(--sp-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+
+  .quick-compare__badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--secondary);
+    background: var(--info-bg);
+    border-radius: var(--radius-pill);
+    padding: 0.2rem 0.6rem;
+  }
+
+  .quick-compare__name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--brand-900);
+    margin: 0;
+  }
+
+  .quick-compare__desc {
+    font-size: 0.9rem;
+    color: var(--brand-600);
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+  }
+
+  .quick-compare__cta {
+    margin-top: var(--sp-2);
+  }
+</style>

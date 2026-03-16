@@ -2,8 +2,9 @@
 import HowToGuide from '../../layouts/page-types/HowToGuide.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import CtaButton from '../../components/CtaButton.astro';
-import HeroSteps from '../../components/HeroSteps.astro';
+import PickOne from '../../components/PickOne.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import WhatYoullNeed from '../../components/WhatYoullNeed.astro';
 import { amazonUrl } from '../../data/products';
 
 const description = 'Find the best AeroPress grind size with an easy medium-fine starting point, a quick adjustment chart, and simple fixes for sour, bitter, or weak cups.';
@@ -96,17 +97,18 @@ const description = 'Find the best AeroPress grind size with an easy medium-fine
   </Fragment>
 
   <Fragment slot="what-youll-need">
-    <h2 id="what-you-need">What you'll need</h2>
-    <p>You do not need a fancy setup, but a few pieces make dialing AeroPress way easier. The brewer matters, sure. The grinder matters even more. A blade grinder chops beans into random dust and boulders, and that gives you a cup that tastes sour and bitter at the same time. It is like toast that is burnt on one side and pale on the other.</p>
-    <p>If you want a clean baseline, the <strong>AeroPress Original Coffee Press</strong> is the obvious starting point. For grinding, a basic burr grinder is the real upgrade. The <strong>Baratza Encore</strong> is still a strong pick if you want an easy electric grinder, the <strong>OXO Brew Conical Burr Coffee Grinder</strong> is a friendlier budget move, and a manual grinder like the <strong>TIMEMORE Chestnut C2</strong> or <strong>1Zpresso J</strong> makes a lot of sense if you brew one cup at a time and want tighter control.</p>
-    <ul>
-      <li><strong>AeroPress Original:</strong> best if you want the classic brewer most recipes are built around. <CtaButton href={amazonUrl('B0047BIWSK')} external>Check price</CtaButton></li>
-      <li><strong>Baratza Encore:</strong> best if you want an easy electric burr grinder with plenty of room to experiment. <CtaButton href={amazonUrl('B007F183LK')} external>Check price</CtaButton></li>
-      <li><strong>OXO Brew Conical Burr Coffee Grinder:</strong> best if you want something simple and less intimidating. <CtaButton href={amazonUrl('B07CSKGLMM')} external>Check price</CtaButton></li>
-      <li><strong>TIMEMORE Chestnut C2:</strong> best if you want a travel-friendly manual grinder. <CtaButton href={amazonUrl('B0833SDN8M')} external>Check price</CtaButton></li>
-      <li><strong>1Zpresso J:</strong> best if you want a hand grinder with a more precise feel. <CtaButton href={amazonUrl('B0C2YYBLC1')} external>Check price</CtaButton></li>
-    </ul>
-    <p>A scale and timer help too. They are not there to make coffee feel serious. They are there so you can keep the other stuff the same while you figure out the grind. If your dose, water, and steep time keep changing, you are not dialing in. You are just rolling dice with hot water.</p>
+    <WhatYoullNeed items={[
+      { name: 'AeroPress Original', desc: 'The classic brewer most recipes are built around', asin: 'B0047BIWSK' },
+      { name: 'Baratza Encore', desc: 'Easy electric burr grinder with plenty of room to experiment', asin: 'B007F183LK' },
+      { name: 'OXO Brew Conical Burr Coffee Grinder', desc: 'Simple and less intimidating budget option', asin: 'B07CSKGLMM' },
+      { name: 'TIMEMORE Chestnut C2', desc: 'Travel-friendly manual grinder', asin: 'B0833SDN8M' },
+      { name: '1Zpresso J', desc: 'Hand grinder with a more precise feel', asin: 'B0C2YYBLC1' },
+    ]}>
+      <Fragment slot="intro">
+        <p>You do not need a fancy setup, but a few pieces make dialing AeroPress way easier. The brewer matters, sure. The grinder matters even more. A blade grinder chops beans into random dust and boulders, and that gives you a cup that tastes sour and bitter at the same time. It is like toast that is burnt on one side and pale on the other.</p>
+      </Fragment>
+      <p>A scale and timer help too. They are not there to make coffee feel serious. They are there so you can keep the other stuff the same while you figure out the grind. If your dose, water, and steep time keep changing, you are not dialing in. You are just rolling dice with hot water.</p>
+    </WhatYoullNeed>
   </Fragment>
 
   <Fragment slot="steps">
@@ -132,13 +134,13 @@ const description = 'Find the best AeroPress grind size with an easy medium-fine
     <p>If the coffee tastes harsh, muddy, or dries your mouth out like oversteeped black tea, back the grind off a little. Too fine a grind can pull out too much bitterness and also make the press feel heavier than it should.</p>
     <p>This is especially common when people chase “stronger” coffee by grinding finer and finer. Strength is not the same thing as balance. You want a cup that tastes sweet and full, not one that punches you in the tongue and then leaves ash behind.</p>
 
-    <HeroSteps
+    <PickOne
       title="The tiny adjustment loop that saves most AeroPress brews"
       subtitle="This is the part people skip when they get frustrated and blame the beans"
-      steps={[
-        { label: 'Cup tastes sour', icon: 'droplets', actions: ['Go slightly finer', 'Keep recipe the same', 'Brew again once'], time: '~1 brew' },
-        { label: 'Cup tastes bitter', icon: 'wind', actions: ['Go slightly coarser', 'Do not change dose too', 'Press gently again'], time: '~1 brew' },
-        { label: 'Cup tastes close', icon: 'check', actions: ['Leave the grinder there', 'Write it down', 'Only tweak for new beans'], time: '~30 sec' },
+      options={[
+        { label: 'Cup tastes sour', icon: 'droplets', points: ['Go slightly finer', 'Keep recipe the same', 'Brew again once'], badge: '~1 brew' },
+        { label: 'Cup tastes bitter', icon: 'wind', points: ['Go slightly coarser', 'Do not change dose too', 'Press gently again'], badge: '~1 brew' },
+        { label: 'Cup tastes close', icon: 'check', points: ['Leave the grinder there', 'Write it down', 'Only tweak for new beans'], badge: '~30 sec' },
       ]}
       outcome="Most AeroPress problems get easier once you stop changing everything at the same time."
     />

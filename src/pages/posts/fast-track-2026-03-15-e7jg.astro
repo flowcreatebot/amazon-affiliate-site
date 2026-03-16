@@ -5,7 +5,7 @@ import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
 import ProsCons from '../../components/ProsCons.astro';
 import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
-import HeroSteps from '../../components/HeroSteps.astro';
+import PickOne from '../../components/PickOne.astro';
 import { amazonUrl } from '../../data/products';
 
 const products = [
@@ -150,6 +150,11 @@ const products = [
     { q: 'What if I want stronger coffee than AeroPress makes?', a: 'Go with the Bialetti Moka Express. It does not brew like AeroPress, but it makes a bolder, more concentrated cup that stands up better to milk and sugar.' },
     { q: 'Is French press a good AeroPress replacement?', a: 'Yes, especially if your main complaint is that AeroPress feels too light, too small, or too tidy in the cup. French press gives you more body and usually handles bigger batches more comfortably.' },
   ]}
+  contentImage={{
+    src: '/assets/content-aeropress-alternative.webp',
+    alt: 'A lineup of manual coffee brewers including a press brewer, ceramic immersion dripper, travel press, and moka pot on a warm linen counter with coffee beans.',
+    caption: 'Different brew styles solve different AeroPress pain points, from richer body to cleaner cups and better travel fit.',
+  }}
 >
   <Fragment slot="lead">
     <p class="lead">
@@ -499,13 +504,13 @@ const products = [
         stay in the Delter or Twist Press lane. That is the simplest split.
       </p>
 
-      <HeroSteps
+      <PickOne
         title="Pick by complaint, not by hype"
         subtitle="The fastest way to land on the right brewer is to name the thing that annoys you most"
-        steps={[
-          { label: 'Cup too light', icon: 'coffee', actions: ['Go French press', 'Expect more body and oils', 'Accept messier cleanup'], time: '~4 min brew' },
-          { label: 'Too much plastic', icon: 'check', actions: ['Go Hario Switch', 'Enjoy ceramic brew path', 'Expect cleaner flavor'], time: '~3-4 min brew' },
-          { label: 'Need travel fit', icon: 'calendar', actions: ['Go ESPRO P0', 'Pack one sturdy brewer', 'Trade speed for insulation'], time: '~3-4 min brew' },
+        options={[
+          { label: 'Cup too light', icon: 'coffee', points: ['Go French press', 'Expect more body and oils', 'Accept messier cleanup'], badge: '~4 min brew' },
+          { label: 'Too much plastic', icon: 'check', points: ['Go Hario Switch', 'Enjoy ceramic brew path', 'Expect cleaner flavor'], badge: '~3-4 min brew' },
+          { label: 'Need travel fit', icon: 'calendar', points: ['Go ESPRO P0', 'Pack one sturdy brewer', 'Trade speed for insulation'], badge: '~3-4 min brew' },
         ]}
         outcome="Once the complaint is clear, the right brewer stops looking mysterious"
       />
