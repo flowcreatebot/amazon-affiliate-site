@@ -1,0 +1,206 @@
+---
+import HowToGuide from '../../layouts/page-types/HowToGuide.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
+import { amazonUrl } from '../../data/products';
+
+const tools = [
+  {
+    id: 'fellow-stagg-ekg',
+    name: 'Fellow Stagg EKG Electric Gooseneck Kettle',
+    brand: 'Fellow',
+    asin: 'B077JBQZPX',
+    image: 'https://m.media-amazon.com/images/I/51MfuBJO2BL._AC_SL500_.jpg',
+    imageAlt: 'Fellow Stagg EKG electric gooseneck kettle in matte black',
+    category: 'accessories',
+    rating: 4.6,
+    specs: {
+      type: 'Electric gooseneck kettle',
+      bestFor: 'Precise temperature control at home',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: '$$$',
+    bestFor: 'Set-and-hold brew temp control',
+    featured: true,
+  },
+  {
+    id: 'thermopro-tp19',
+    name: 'ThermoPro TP19 Instant Read Thermometer',
+    brand: 'ThermoPro',
+    asin: 'B07R18W3W1',
+    image: 'https://m.media-amazon.com/images/I/41aqHG2MK2L._AC_SL500_.jpg',
+    imageAlt: 'ThermoPro TP19 instant read digital thermometer',
+    category: 'accessories',
+    rating: 4.5,
+    specs: {
+      type: 'Instant-read thermometer',
+      bestFor: 'Checking water temp without buying a new kettle',
+    },
+    badge: { label: 'Best Budget', variant: 'budget' },
+    price: '$',
+    bestFor: 'Budget-friendly temperature checks',
+  },
+  {
+    id: 'jettle-travel-kettle',
+    name: 'Jettle Electric Travel Kettle',
+    brand: 'Jettle',
+    asin: 'B0BFTMM5PC',
+    image: 'https://m.media-amazon.com/images/I/41DBw+OXDgL._AC_SL500_.jpg',
+    imageAlt: 'Jettle portable electric travel kettle with temperature control',
+    category: 'accessories',
+    rating: 4.2,
+    specs: {
+      type: 'Portable electric kettle',
+      bestFor: 'Travel or office AeroPress setups',
+    },
+    badge: { label: 'Best Upgrade', variant: 'upgrade' },
+    price: '$$',
+    bestFor: 'Travel brewing and small spaces',
+  },
+];
+---
+
+<HowToGuide
+  slug="best-aeropress-brew-temp"
+  title="Best AeroPress Brew Temp (2026)"
+  description="Find the best AeroPress brew temp for dark, medium, and light roasts, plus an easy starting recipe and simple fixes for sour, bitter, or weak cups."
+  category="education"
+  datePublished="2026-03-15"
+  dateModified="2026-03-15"
+  ogImage={tools[0].image}
+  heroSteps={{
+    title: 'AeroPress Temperature Starting Points',
+    subtitle: 'Start a little cooler for dark roasts, a little hotter for light roasts, then fine-tune by taste',
+    steps: [
+      { label: 'Dark roast', icon: 'coffee', actions: ['Start at 175-185°F', 'That is 79-85°C', 'Keep steep time short'], time: '~2 min' },
+      { label: 'Medium roast', icon: 'target', actions: ['Start at 185-195°F', 'That is 85-91°C', 'Best place for most people to begin'], time: '~2 min' },
+      { label: 'Light roast', icon: 'zap', actions: ['Start at 195-205°F', 'That is 91-96°C', 'Give it more heat to wake up sweetness'], time: '~2-3 min' },
+    ],
+    outcome: 'Better balance in the cup, with less guessing and fewer sour or bitter surprises',
+    footer: 'coffeegearpicks.com · 2026 AeroPress guide',
+  }}
+  tocItems={[
+    { href: '#quick-answer', label: 'Quick answer' },
+    { href: '#what-youll-need', label: "What you'll need" },
+    { href: '#steps', label: 'How to dial in brew temp' },
+    { href: '#adjustment-ladder', label: 'Adjustment ladder' },
+    { href: '#common-mistakes', label: 'Common mistakes' },
+    { href: '#troubleshooting', label: 'Troubleshooting' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  products={tools}
+  faqItems={[
+    { q: 'What is the best AeroPress brew temp for most people?', a: 'For most brewers, 185 to 195°F, or 85 to 91°C, is the sweet spot. It is hot enough to pull plenty of flavor, but not so hot that medium roasts get sharp or bitter fast.' },
+    { q: 'Should light roast AeroPress coffee use hotter water?', a: 'Yes, usually. Light roasts are denser and harder to extract, which is just a fancy way of saying the water has to work harder to pull flavor out. Starting around 195 to 205°F, or 91 to 96°C, usually gives a sweeter and fuller cup.' },
+    { q: 'Can water that is too cool make AeroPress coffee sour?', a: 'Absolutely. If your water is too cool, it often leaves the cup tasting thin, lemony, or unfinished. Before you blame the beans, bump the water temp up by about 5°F, or 2 to 3°C, and try again.' },
+    { q: 'Do I need a temperature-control kettle for AeroPress?', a: 'No. It is nice, not necessary. A regular kettle plus a simple instant-read thermometer works fine. If you make AeroPress every day, though, a kettle with temp hold makes mornings much easier.' },
+  ]}
+  supplies={['AeroPress brewer', 'Fresh coffee beans', 'Burr grinder or pre-ground coffee', 'Kettle or hot water source', 'Scale', 'Timer']}
+  schemaTools={['AeroPress', 'Kettle', 'Thermometer', 'Scale', 'Timer']}
+  schemaSteps={[
+    { name: 'Pick a starting temperature by roast', text: 'Use 175 to 185 degrees Fahrenheit for dark roast, 185 to 195 for medium roast, and 195 to 205 for light roast.' },
+    { name: 'Brew one simple baseline cup', text: 'Use the same coffee dose, grind size, and steep time so temperature is the only thing you are changing.' },
+    { name: 'Taste the cup and adjust', text: 'Raise the temperature a little if the cup tastes sour or weak. Lower it a little if the cup tastes bitter, harsh, or hollow.' },
+  ]}
+  contentImage={{
+    src: '/assets/content-aeropress-brew-temp.webp',
+    alt: 'An AeroPress brewer beside a gooseneck kettle and digital thermometer with freshly brewed coffee and scattered beans in warm morning light.',
+    caption: 'A simple AeroPress setup with temperature-control tools makes it easier to dial in sweeter, more balanced cups.',
+  }}
+>
+  <Fragment slot="lead">
+    <p class="lead">The best AeroPress brew temp depends on your beans, but you do not need to turn it into a science project. Start cooler for dark roast, hotter for light roast, then nudge it up or down by taste until the cup feels sweet, round, and clear instead of sour like lemon water or harsh like over-steeped tea.</p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <h2 id="quick-answer">Quick answer</h2>
+    <p><strong>Start here:</strong> dark roast usually tastes best around <strong>175 to 185°F</strong> (<strong>79 to 85°C</strong>), medium roast around <strong>185 to 195°F</strong> (<strong>85 to 91°C</strong>), and light roast around <strong>195 to 205°F</strong> (<strong>91 to 96°C</strong>). If your cup tastes sour, flat, or oddly thin, go hotter. If it tastes bitter, sharp, or kind of woody, go cooler.</p>
+    <p>Think of temperature like a volume knob for flavor. Turn it up and the water pulls more out of the grounds. Turn it down and the cup gets softer and easier to drink. The trick is not chasing the hottest water possible. The trick is landing where your coffee tastes balanced.</p>
+    <p>For most people, the easiest starting recipe is <strong>15 grams of coffee, 240 grams of water, medium-fine grind, 90-second total brew time, and 190°F</strong> (<strong>88°C</strong>). Brew that first. Then change temperature before you mess with everything else. That keeps the result easy to read.</p>
+  </Fragment>
+
+  <Fragment slot="what-youll-need">
+    <h2 id="what-youll-need">What you'll need</h2>
+    <p>You do not need fancy gear to figure this out. An AeroPress, decent beans, a timer, and a way to check water temp are enough. If you already own a kettle, pair it with a simple thermometer and call it a day. If you brew AeroPress every morning, though, a temp-control kettle is one of those upgrades that quietly makes life easier.</p>
+    <p>The <strong>Fellow Stagg EKG</strong> is the easy luxury pick here because you can set the temperature and stop thinking about it. If you want the cheap route, the <strong>ThermoPro TP19</strong> does the job just fine. And if your AeroPress lives in a suitcase or office drawer, the <strong>Jettle travel kettle</strong> makes a lot more sense than dragging a full-size kettle around.</p>
+    <p>If you are also trying to tighten up the rest of your recipe, our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> helps you keep dose and water steady. If you are switching between AeroPress and immersion brewers, our <a href="/posts/aeropress-vs-french-press.html">AeroPress vs French press guide</a> shows why the cup changes so much. And if your grind is all over the place, that matters more than people think. A burr grinder makes dialing temperature much less frustrating, even if our <a href="/posts/burr-grinder-settings-for-espresso.html">espresso grind guide</a> is aimed at a different brew style.</p>
+  </Fragment>
+
+  <Fragment slot="steps">
+    <section>
+      <h2 id="steps">How to dial in the best AeroPress brew temp</h2>
+
+      <h3>1. Pick your roast-based starting point</h3>
+      <p>Start with roast level because it gives you the fastest honest answer. Dark roasts are more soluble, which is just a nerdy way of saying they give up flavor more easily. That is why they usually taste better with slightly cooler water. Light roasts are the opposite. They are tighter, denser, and usually need more heat to taste sweet instead of grassy or sour.</p>
+      <p>Here is the simple version:</p>
+      <ul>
+        <li><strong>Dark roast:</strong> 175 to 185°F (79 to 85°C)</li>
+        <li><strong>Medium roast:</strong> 185 to 195°F (85 to 91°C)</li>
+        <li><strong>Light roast:</strong> 195 to 205°F (91 to 96°C)</li>
+      </ul>
+      <p>If you have no idea where your beans sit, treat them like a medium roast and start at 190°F, or 88°C. That is the middle of the road. Not sexy. Very useful.</p>
+
+      <h3>2. Brew one boring baseline cup</h3>
+      <p>This part matters. Keep everything else the same so temperature is the only lever you are pulling. Use 15 grams of coffee, 240 grams of water, a medium-fine grind, 30 seconds of stirring and steeping, then press slowly over the next 30 to 45 seconds. Nothing fancy. Just consistent.</p>
+      <p>Why so plain? Because if you change grind size, brew time, and temperature all at once, you learn nothing. A sour cup could mean cooler water. It could mean the grind was too coarse. It could mean you rushed the steep. Keep the recipe boring first. Then the coffee tells you something useful.</p>
+
+      <h3>3. Taste the cup like a normal person</h3>
+      <p>You are not judging a competition table here. Just ask what the cup actually feels like. If it tastes sour like tart apple, thin like watered-down tea, or just weirdly empty in the middle, you probably need more heat. If it tastes rough, bitter, or dries your mouth out like cheap red wine, you probably need less heat.</p>
+      <p>The nice thing about AeroPress is how quickly it answers back. Small temperature moves show up fast, especially with medium and light roasts. That is why it is such a good brewer for learning what heat actually does.</p>
+
+      <h3>4. Adjust temperature before you touch grind</h3>
+      <p>If the cup is under-extracted — basically the water did not pull enough flavor out of the grounds — raise the temperature by <strong>5°F</strong>, or about <strong>2 to 3°C</strong>. If it feels over-extracted — too bitter, too dry, too much bite — lower it by the same amount.</p>
+      <p>Only after two temperature moves should you touch grind size or steep time. That order keeps the process clean. Temp first. Then grind. Then time. If you change grind too early, it gets muddy fast.</p>
+
+      <h3>5. Match temp to grind and steep time</h3>
+      <p>Here is where most people get tripped up: hotter water is not working alone. It teams up with grind size and contact time. A finer grind plus hotter water plus a long steep can hit your cup like a frying pan. Great if you want intensity. Rough if you went too far.</p>
+      <p>As a rule of thumb, use these pairings:</p>
+      <ul>
+        <li><strong>Hotter water + coarser grind:</strong> good for light roasts that taste shy</li>
+        <li><strong>Cooler water + finer grind:</strong> good for dark roasts that get bitter fast</li>
+        <li><strong>Medium heat + medium-fine grind:</strong> best place for everyday medium roasts</li>
+      </ul>
+      <p>If you want a cleaner, brighter cup, go a touch hotter and keep the steep a little shorter. If you want more body and softness, go a touch cooler and let the coffee sit a little longer. Not wildly longer. Just enough to round the edges.</p>
+
+      <h3>6. Use a simple starting recipe, then climb the ladder</h3>
+      <p>My favorite starting recipe for most beans is still the plain one: <strong>15g coffee, 240g water, 190°F or 88°C, medium-fine grind, 90 seconds total</strong>. It is forgiving. It gives you a clear reference point. And it does not send you down a rabbit hole at 7 in the morning.</p>
+      <p>From there, make one move at a time. If the cup is too sharp, cool the water a little. If it feels dull, heat it up. If the taste is close but not quite there, then start playing with grind. That is how you figure out what your beans actually want instead of randomly poking at the recipe.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="common-mistakes">
+    <section>
+      <h2 id="common-mistakes">Common mistakes</h2>
+      <ul>
+        <li><strong>Using boiling water for every roast:</strong> light roasts often love it, but dark roasts can turn smoky and bitter fast.</li>
+        <li><strong>Going too cool on light roast:</strong> this is the classic recipe for a cup that tastes sour, salty, or unfinished.</li>
+        <li><strong>Changing three things at once:</strong> if you tweak temp, grind, and brew time together, you cannot tell what fixed the cup.</li>
+        <li><strong>Ignoring your kettle swing:</strong> some kettles drop heat fast. A target temp means less if the water loses 10 degrees before it hits the brewer.</li>
+        <li><strong>Trusting roast labels too much:</strong> one roaster's medium can drink like another roaster's light. Taste still wins.</li>
+      </ul>
+      <p>Another sneaky mistake is chasing strength when the real problem is extraction. Strong coffee is not always better coffee. You can make a cup stronger by using more coffee, but if the water temp is off, the flavor can still feel hollow. Fix balance first. Then decide if you want the cup heavier.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="troubleshooting">
+    <section>
+      <h2 id="troubleshooting">Troubleshooting sour, bitter, and weak cups</h2>
+      <p>If your AeroPress recipe keeps missing, use this adjustment ladder instead of guessing.</p>
+
+      <HeroSteps
+        title="AeroPress Temperature Adjustment Ladder"
+        subtitle="Taste the cup, make one clean move, then brew again"
+        steps={[
+          { label: 'Sour or thin', icon: 'zap', actions: ['Raise water temp 5°F', 'That is about 2-3°C', 'Keep grind and time the same'], time: 'Next brew' },
+          { label: 'Bitter or harsh', icon: 'wind', actions: ['Lower water temp 5°F', 'Shorten steep if needed', 'Do not change dose yet'], time: 'Next brew' },
+          { label: 'Close, but not quite', icon: 'target', actions: ['Hold temp steady', 'Adjust grind one step', 'Then fine-tune steep time'], time: '1-2 brews' },
+        ]}
+        outcome="A cleaner path to the sweet spot without changing everything at once"
+      />
+
+      <p>If the cup tastes <strong>sour</strong>, raise the temperature first. If it still tastes sour after one small bump, then tighten the grind a little. If the cup tastes <strong>bitter</strong>, lower the temperature first. If it is still rough, back the steep time down a bit. If the cup tastes <strong>weak</strong> but not sour, you might just need a slightly stronger ratio. That is where our <a href="/posts/coffee-brewing-ratio-guide.html">brew ratio guide</a> helps more than another temp change.</p>
+      <p>And if you are wondering whether AeroPress is just not the flavor shape you want, that is a fair question. Some people prefer the heavier body of a press pot. Our <a href="/posts/aeropress-vs-french-press.html">AeroPress vs French press comparison</a> lays that out pretty clearly.</p>
+      <p>One last thing: fresh coffee changes faster than most people expect. A bag can taste lively and bright one week, then calmer and sweeter the next. So if your perfect setting drifts a little, that does not mean you suddenly forgot how to brew. It usually just means the coffee moved, and you need one small nudge to catch up.</p>
+      <p>If you are shopping for a better pouring setup, our <a href="/posts/best-gooseneck-kettle-for-pour-over.html">best gooseneck kettle guide</a> is the place to start. Better heat control does not magically make bad coffee great, but it does make repeatable coffee much easier.</p>
+    </section>
+  </Fragment>
+</HowToGuide>

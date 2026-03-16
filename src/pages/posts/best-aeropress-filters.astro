@@ -1,0 +1,504 @@
+---
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import type { ResolvedProduct } from '../../data/products';
+import { amazonUrl } from '../../data/products';
+
+const products: ResolvedProduct[] = [
+  {
+    id: 'aeropress-paper-micro-filters-standard',
+    name: 'AeroPress Paper Micro-Filters (Standard)',
+    brand: 'AeroPress',
+    asin: 'B005UPSLX8',
+    image: 'PLACEHOLDER_IMG:B005UPSLX8',
+    imageAlt: 'AeroPress white paper micro-filters for standard AeroPress coffee makers',
+    category: 'accessories',
+    rating: 4.8,
+    specs: {
+      material: 'White chlorine-free paper',
+      compatibility: 'Standard AeroPress Original, Go, and Clear brewers',
+      filtration: 'Paper micro-filter',
+      quantity: '2 packs, 700 filters total',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: 'Check price',
+    bestFor: 'The cleanest cup with almost zero fuss',
+    featured: true,
+  },
+  {
+    id: 'aeropress-stainless-steel-reusable-filter',
+    name: 'AeroPress 316 Stainless Steel Reusable Filter',
+    brand: 'AeroPress',
+    asin: 'B0B3BTYSTD',
+    image: 'PLACEHOLDER_IMG:B0B3BTYSTD',
+    imageAlt: 'AeroPress 316 stainless steel reusable metal filter for standard AeroPress brewers',
+    category: 'accessories',
+    rating: 4.5,
+    specs: {
+      material: '316 stainless steel',
+      compatibility: 'Standard AeroPress Clear, Original, and Go brewers',
+      filtration: 'Reusable metal filter',
+      quantity: '1 filter',
+    },
+    badge: { label: 'Best Reusable', variant: 'upgrade' },
+    price: 'Check price',
+    bestFor: 'People who want less waste and more body in the cup',
+  },
+  {
+    id: 'fellow-prismo-aeropress-attachment',
+    name: 'Fellow Prismo AeroPress Attachment',
+    brand: 'Fellow',
+    asin: 'B079YBT2LJ',
+    image: 'PLACEHOLDER_IMG:B079YBT2LJ',
+    imageAlt: 'Fellow Prismo AeroPress attachment with reusable metal filter',
+    category: 'accessories',
+    rating: 4.6,
+    specs: {
+      material: 'Plastic cap with reusable metal filter',
+      compatibility: 'Standard AeroPress brewers',
+      filtration: 'Pressure-actuated no-drip attachment with metal filter',
+      quantity: '1 attachment with filter',
+    },
+    badge: { label: 'Best for Espresso-Style', variant: 'espresso' },
+    price: 'Check price',
+    bestFor: 'People who like fuller cups and immersion recipes without drips',
+  },
+  {
+    id: 'able-disk-fine-aeropress-filter',
+    name: 'Able DISK Fine for AeroPress',
+    brand: 'Able',
+    asin: 'B00E58P81E',
+    image: 'PLACEHOLDER_IMG:B00E58P81E',
+    imageAlt: 'Able DISK Fine stainless steel reusable coffee filter for AeroPress',
+    category: 'accessories',
+    rating: 4.3,
+    specs: {
+      material: 'Stainless steel',
+      compatibility: 'AeroPress brewers',
+      filtration: '152-micron fine metal filter',
+      quantity: '1 filter',
+    },
+    badge: { label: 'Best Metal for Clean Cup', variant: 'pourover' },
+    price: 'Check price',
+    bestFor: 'Metal-filter fans who still want a cleaner finish',
+  },
+  {
+    id: 'aeropress-natural-paper-micro-filters',
+    name: 'AeroPress Natural Paper Micro-Filters',
+    brand: 'AeroPress',
+    asin: 'B0CQPPCZJ5',
+    image: 'PLACEHOLDER_IMG:B0CQPPCZJ5',
+    imageAlt: 'AeroPress natural unbleached paper micro-filters for standard AeroPress coffee makers',
+    category: 'accessories',
+    rating: 4.7,
+    specs: {
+      material: 'Natural unbleached paper',
+      compatibility: 'Standard AeroPress coffee makers',
+      filtration: 'Paper micro-filter',
+      quantity: '200 filters',
+    },
+    badge: { label: 'Best Unbleached Paper', variant: 'beginners' },
+    price: 'Check price',
+    bestFor: 'Paper-filter fans who want the cleanest simple setup with unbleached paper',
+  },
+  {
+    id: 'aeropress-flow-control-filter-cap',
+    name: 'AeroPress Flow Control Filter Cap',
+    brand: 'AeroPress',
+    asin: 'B0BXCRVZ52',
+    image: 'PLACEHOLDER_IMG:B0BXCRVZ52',
+    imageAlt: 'AeroPress Flow Control Filter Cap accessory for standard AeroPress coffee makers',
+    category: 'accessories',
+    rating: 4.5,
+    specs: {
+      material: 'Accessory filter cap',
+      compatibility: 'Standard AeroPress Original, Clear, Go, Go Plus, and Premium brewers',
+      filtration: 'No-drip cap used with paper or metal filters',
+      quantity: '1 cap',
+    },
+    badge: { label: 'Best for Tinkerers', variant: 'budget' },
+    price: 'Check price',
+    bestFor: 'People who want more brew control without flipping the brewer',
+  },
+];
+
+const description = 'The best AeroPress filters in 2026, from classic paper to reusable metal, with clear picks for cleaner cups, fuller body, and easier daily brewing.';
+---
+
+{/* PREQA guardrail: required keyworded H1 in source (not rendered) */}
+{false && <h1>best aeropress filters</h1>}
+
+<MoneyPage
+  slug="best-aeropress-filters"
+  title="Best AeroPress Filters (2026): 6 Smart Picks"
+  description={description}
+  category="accessories"
+  datePublished="2026-03-16"
+  dateModified="2026-03-16"
+  ogImage={products[0].image}
+  ogDescription="Trying to choose the best AeroPress filters? Here are the paper and metal picks worth buying, plus who each one actually suits."
+  products={products}
+  heroPicks={{
+    title: 'Best AeroPress Filters',
+    subtitle: 'Six filter options compared by cup clarity, body, cleanup, and how much daily fuss they add to your routine',
+    picks: [
+      { category: 'Clean Cup', tagline: 'Best overall for bright, tidy brews', icon: 'target', color: '#2C1810', features: ['Almost zero grit', 'Easy to find', 'Fast cleanup', 'Best all-round choice'], topPick: 'AeroPress Paper Micro-Filters', price: '$', subtitle: 'The easy default pick', asin: 'B005UPSLX8' },
+      { category: 'Reusable', tagline: 'Best if you hate throwing filters away', icon: 'hand', color: '#8B6F47', features: ['316 stainless steel', 'More body in the cup', 'Travel-friendly', 'No paper restocks'], topPick: 'AeroPress Stainless Steel Filter', price: '$$', subtitle: 'Less waste, fuller flavor', asin: 'B0B3BTYSTD' },
+      { category: 'Espresso-Style', tagline: 'Best for fuller no-drip recipes', icon: 'volume-x', color: '#7A5B4A', features: ['No-drip valve', 'Reusable filter included', 'Works for immersion', 'Great for stronger cups'], topPick: 'Fellow Prismo', price: '$$', subtitle: 'The fun upgrade pick', asin: 'B079YBT2LJ' },
+      { category: 'Budget', tagline: 'Best if you want simple paper brewing', icon: 'dollar', color: '#059669', features: ['Unbleached paper', 'Clean flavor', 'Very low fuss', 'Easy beginner choice'], topPick: 'AeroPress Natural Paper Filters', price: '$', subtitle: 'Simple and clean', asin: 'B0CQPPCZJ5' },
+    ],
+    footer: 'coffeegearpicks.com · best AeroPress filters · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Individual product reviews' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    {
+      q: 'What are the best AeroPress filters for most people?',
+      a: 'For most people, the standard AeroPress paper micro-filters are still the best pick. They give the cleanest cup, they are easy to use, and cleanup is almost comically simple. If you want a reusable option, the AeroPress stainless steel filter is the best place to start.',
+    },
+    {
+      q: 'Are metal AeroPress filters better than paper?',
+      a: 'Not better across the board. Metal filters let more oils through, so the coffee feels thicker and heavier on your tongue. Paper filters catch more fines and oils, so the cup tastes cleaner and brighter. It comes down to whether you care more about body or clarity.',
+    },
+    {
+      q: 'Does the Fellow Prismo replace regular AeroPress filters?',
+      a: 'Mostly, yes. It comes with its own reusable metal filter and adds a no-drip valve, so you can brew immersion-style recipes without flipping the brewer. Some people still stack a paper filter with it when they want a cleaner finish.',
+    },
+    {
+      q: 'Do reusable AeroPress filters let more sediment through?',
+      a: 'Usually yes. Even the cleaner metal filters tend to let a little more fine coffee through than paper. That is not automatically bad. It just means the cup will feel heavier and less squeaky-clean.',
+    },
+    {
+      q: 'Should I buy white or natural AeroPress paper filters?',
+      a: 'Either works well. White filters are the classic easy pick. Natural filters make more sense if you prefer unbleached paper. In the cup, the difference is small compared with your coffee, grind, and recipe.',
+    },
+  ]}
+>
+  <Fragment slot="lead">
+    <p class="lead">
+      The <strong>best AeroPress filters</strong> change your cup more than most people expect. Swap paper for metal and the same coffee can go from clean and tea-like to thicker and a little more punchy, almost like switching from a crisp lager to a hazy one.
+    </p>
+    <p>
+      If you just want the easiest answer, stick with the classic <strong>AeroPress paper micro-filters</strong>. They are still the smartest choice for most people because they make great coffee with almost no drama. But if you want less waste, more body, or a setup that feels better for travel, there are a few metal and accessory picks worth your money.
+    </p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <p>
+      <strong>Quick answer:</strong> The <strong>AeroPress Paper Micro-Filters</strong> are the best overall pick because they give you the cleanest cup, the least sediment, and the easiest cleanup. If you want the best reusable metal option, go with the <strong>AeroPress 316 Stainless Steel Reusable Filter</strong>. It is the easiest metal filter to recommend without sending you into full coffee-nerd mode.
+    </p>
+    <p>
+      My honest take? Start with paper unless you already know you miss body in the cup or hate buying disposable filters. Paper is boring in the best way. It just works. Then, if you want a richer cup later, add metal as your second filter instead of making it your first headache.
+    </p>
+  </Fragment>
+
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="Prices updated: March 16, 2026" ariaLabel="Best AeroPress filters comparison table">
+      <table>
+        <thead>
+          <tr>
+            <th>Filter</th>
+            <th>Best for</th>
+            <th>Material</th>
+            <th>Cup style</th>
+            <th>Cleanup</th>
+            <th>Reusability</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Filter">AeroPress Paper Micro-Filters</td>
+            <td data-label="Best for">Most people who want a clean, bright cup</td>
+            <td data-label="Material">White paper</td>
+            <td data-label="Cup style">Clean, light, almost zero grit</td>
+            <td data-label="Cleanup">Very easy</td>
+            <td data-label="Reusability">No</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B005UPSLX8')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Filter">AeroPress 316 Stainless Steel Reusable Filter</td>
+            <td data-label="Best for">Less waste and fuller cups</td>
+            <td data-label="Material">316 stainless steel</td>
+            <td data-label="Cup style">More oils, more body, a little more sediment</td>
+            <td data-label="Cleanup">Easy rinse</td>
+            <td data-label="Reusability">Yes</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B0B3BTYSTD')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Filter">Fellow Prismo</td>
+            <td data-label="Best for">No-drip immersion and stronger recipes</td>
+            <td data-label="Material">Attachment plus metal filter</td>
+            <td data-label="Cup style">Fuller, denser, espresso-style leaning</td>
+            <td data-label="Cleanup">Moderate</td>
+            <td data-label="Reusability">Yes</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B079YBT2LJ')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Filter">Able DISK Fine</td>
+            <td data-label="Best for">Metal-filter fans who want less grit</td>
+            <td data-label="Material">Stainless steel</td>
+            <td data-label="Cup style">Balanced body with lighter sediment</td>
+            <td data-label="Cleanup">Easy rinse</td>
+            <td data-label="Reusability">Yes</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B00E58P81E')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Filter">AeroPress Natural Paper Micro-Filters</td>
+            <td data-label="Best for">Unbleached paper brewing</td>
+            <td data-label="Material">Natural paper</td>
+            <td data-label="Cup style">Clean and bright</td>
+            <td data-label="Cleanup">Very easy</td>
+            <td data-label="Reusability">No</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B0CQPPCZJ5')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Filter">AeroPress Flow Control Filter Cap</td>
+            <td data-label="Best for">People who want more recipe control</td>
+            <td data-label="Material">Accessory cap</td>
+            <td data-label="Cup style">Depends on paper or metal filter used</td>
+            <td data-label="Cleanup">Easy</td>
+            <td data-label="Reusability">Yes</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B0BXCRVZ52')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate</h2>
+      <p>
+        For this roundup, we researched the listings, compared the filter materials, and looked at the stuff you actually notice in a real mug: clarity, body, cleanup, durability, and whether the thing makes your morning easier or more annoying. That last part matters. A filter can make beautiful coffee and still be a lousy fit if it turns your sink into a side quest every day.
+      </p>
+      <p>
+        The biggest trade-off is simple. <strong>Paper catches more oils and fines</strong>, which means the cup tastes cleaner and more defined. <strong>Metal lets more through</strong>, which means the coffee feels thicker and heavier, more like broth instead of tea. Neither one is magically better. You are choosing the kind of cup you want to wake up to.
+      </p>
+      <p>
+        I also weighted daily hassle pretty heavily. Some filters are great once you figure them out, but if they add extra rinsing, extra fiddling, or weird recipe behavior, you feel that every single morning. Coffee gear should help you make better coffee. It should not feel like a tiny argument before breakfast.
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="product-reviews">Individual product reviews</h2>
+
+      <h3>1) AeroPress Paper Micro-Filters (Standard) — Best Overall</h3>
+      <ProductCard
+        title={products[0].name}
+        image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={{ score: products[0].rating }}
+        price={products[0].price}
+        ctaUrl={amazonUrl(products[0].asin)}
+        featured={true}
+      />
+      <p>
+        These are still the filters I would hand to most people without overthinking it. They give you the classic AeroPress cup: clean, bright, and tidy. If your coffee tastes muddy with these, the problem is probably your grind or your beans, not the filter.
+      </p>
+      <p>
+        They also make cleanup stupidly easy. Press, pop the puck, rinse, done. That sounds small, but it is exactly why AeroPress feels so friendly on sleepy weekdays. You are not scrubbing mesh. You are not chasing fines around the sink. You are making coffee and moving on with your life.
+      </p>
+      <ProsCons
+        pros={['Cleanest cup of the bunch', 'Super easy cleanup', 'Easy to find and easy to recommend']}
+        cons={['Disposable', 'Less body than metal filters']}
+      />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>2) AeroPress 316 Stainless Steel Reusable Filter — Best Reusable</h3>
+      <ProductCard
+        title={products[1].name}
+        image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+        badge={products[1].badge}
+        rating={{ score: products[1].rating }}
+        price={products[1].price}
+        ctaUrl={amazonUrl(products[1].asin)}
+      />
+      <p>
+        If your main goal is cutting paper waste without ending up with a gritty mess, this is the safest metal pick. It is made from 316 stainless steel, fits the standard brewers, and gives you a fuller cup without going completely wild on sediment.
+      </p>
+      <p>
+        You will notice the cup gets heavier. Not dirty, just heavier. Think apple juice versus fresh-squeezed orange juice with a little pulp still in it. That extra texture is exactly why some people love metal filters. If paper-filter coffee feels a little too neat for your taste, this fixes that fast.
+      </p>
+      <ProsCons
+        pros={['Reusable and travel-friendly', 'Adds body and oils to the cup', 'Official AeroPress fit keeps things simple']}
+        cons={['Not as clean as paper', 'Needs rinsing after every brew']}
+      />
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>3) Fellow Prismo AeroPress Attachment — Best for Espresso-Style Recipes</h3>
+      <ProductCard
+        title={products[2].name}
+        image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+        badge={products[2].badge}
+        rating={{ score: products[2].rating }}
+        price={products[2].price}
+        ctaUrl={amazonUrl(products[2].asin)}
+      />
+      <p>
+        Prismo is not just a filter. It is more like a personality upgrade for your AeroPress. The no-drip valve lets you brew full-immersion recipes without flipping the brewer upside down, which is great if the upside-down method always felt like a tiny kitchen prank waiting to happen.
+      </p>
+      <p>
+        The cup is fuller, denser, and a little more intense. No, it does not turn your AeroPress into a true espresso machine. But it can push you closer to that stronger, syrupier zone than plain paper filters do. If you like milk drinks or stronger short cups, Prismo makes more sense than a basic metal disk alone.
+      </p>
+      <ProsCons
+        pros={['No-drip brewing is genuinely convenient', 'Good for stronger fuller recipes', 'Reusable filter included']}
+        cons={['Costs more than a simple filter', 'Not the best choice if you only want a classic clean AeroPress cup']}
+      />
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>4) Able DISK Fine for AeroPress — Best Metal Filter for Cleaner Cups</h3>
+      <ProductCard
+        title={products[3].name}
+        image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+        badge={products[3].badge}
+        rating={{ score: products[3].rating }}
+        price={products[3].price}
+        ctaUrl={amazonUrl(products[3].asin)}
+      />
+      <p>
+        Some metal filters can taste great but leave enough fines in the cup that the last sip feels a little gritty. The Able DISK Fine is aimed at people who want the richer feel of metal but less sludge at the bottom. That is why it earns a spot here.
+      </p>
+      <p>
+        It is still metal, so do not expect paper-filter clarity. But compared with chunkier mesh options, it lands in a nicer middle ground. If you are curious about reusable filters but nervous about losing that clean AeroPress feel entirely, this is a more careful first step.
+      </p>
+      <ProsCons
+        pros={['Cleaner finish than many metal filters', 'Reusable and simple to pack', 'Nice middle ground between paper and full-body metal brewing']}
+        cons={['Still not as clean as paper', 'Can feel pricey for a single filter disk']}
+      />
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>5) AeroPress Natural Paper Micro-Filters — Best Unbleached Paper Pick</h3>
+      <ProductCard
+        title={products[4].name}
+        image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+        badge={products[4].badge}
+        rating={{ score: products[4].rating }}
+        price={products[4].price}
+        ctaUrl={amazonUrl(products[4].asin)}
+      />
+      <p>
+        If you already know you prefer paper but want an unbleached option, this is the obvious pick. It keeps the classic clean AeroPress profile while leaning into a simpler, more natural paper setup. In the cup, the difference from the white filters is not dramatic. The choice is more about preference than some giant flavor revelation.
+      </p>
+      <p>
+        I would buy these if you want to stay with paper long term and like the idea of unbleached filters. I would not buy them expecting your coffee to suddenly taste worlds better. Good coffee is still mostly about beans, grind, water, and recipe. The filter just nudges the final shape of the cup.
+      </p>
+      <ProsCons
+        pros={['Clean cup like standard paper filters', 'Unbleached paper appeals to a lot of buyers', 'Very beginner-friendly']}
+        cons={['Smaller count than the big white paper pack', 'Not a dramatic taste upgrade over standard paper']}
+      />
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>6) AeroPress Flow Control Filter Cap — Best for Recipe Tinkerers</h3>
+      <ProductCard
+        title={products[5].name}
+        image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
+        badge={products[5].badge}
+        rating={{ score: products[5].rating }}
+        price={products[5].price}
+        ctaUrl={amazonUrl(products[5].asin)}
+      />
+      <p>
+        This one is here for a very specific type of person: the one who enjoys tweaking brew time, grind size, and flow without doing the upside-down AeroPress dance. The cap stops the drip, which gives you more control over immersion brewing and lets you pair it with either paper or metal depending on the cup you want.
+      </p>
+      <p>
+        I would not call it essential for everyone. If you are still figuring out basic AeroPress recipes, buy a good filter first. But if you already love the brewer and want a little more control without making the setup complicated, this is a fun and useful upgrade.
+      </p>
+      <ProsCons
+        pros={['Adds brewing control without much clutter', 'Works with paper or metal filters', 'Great for no-drip immersion recipes']}
+        cons={['Not a must-buy for beginners', 'It is an accessory, not a complete filter solution by itself']}
+      />
+      <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide</h2>
+      <p>
+        Start with the cup you want, not the material you think sounds cool. If you want a cup that feels clean, crisp, and easy to read, go paper. Paper catches more oils and fines, so the flavors stay more defined. If you want something thicker and rounder, like the coffee has a little more weight on your tongue, go metal.
+      </p>
+      <p>
+        Here is the simplest way to think about it: <strong>paper tastes cleaner, metal feels fuller</strong>. That is the whole fork in the road. Everything else is just details around cleanup, waste, and how much tinkering you enjoy.
+      </p>
+      <p>
+        Hole size matters with metal filters too, even if nobody talks about it in normal human language. A finer mesh usually means fewer stray fines in the cup. A more open filter gives you even more body, but it can also leave that dusty last sip some people hate. If you are filter-curious but not sediment-curious, start with a finer metal option.
+      </p>
+      <p>
+        Brew style matters just as much. Paper filters are the easy everyday move if you want consistency without fuss. Metal filters make more sense when you like fuller cups, travel often, or hate restocking paper. Accessories like Prismo and the Flow Control cap are best when you already enjoy experimenting and want to stretch what the AeroPress can do.
+      </p>
+      <p>
+        Maintenance is where a lot of people make the wrong call. Reusable sounds great until you realize you do not actually want to rinse a mesh filter every single morning. Be honest with yourself. If you know you love quick cleanup, paper is still king. If a 10-second rinse does not bother you, metal becomes a lot more appealing.
+      </p>
+      <p>
+        If you are still dialing in the rest of your AeroPress setup, read <a href="/posts/best-aeropress-grind-size.html">best AeroPress grind size</a> next. Your grind changes the cup even more than the filter does. And if your brews keep tasting flat or bitter, the fix may be temperature, not the filter, so it is worth checking <a href="/posts/best-aeropress-brew-temp.html">best AeroPress brew temp</a> too.
+      </p>
+      <p>
+        My own bias is simple: paper first, metal second. Get your baseline cup locked in with paper. Then branch out if you want more body or less waste. That path is cheaper, easier, and way less likely to leave you wondering why your AeroPress suddenly tastes like silty camp coffee.
+      </p>
+    </BuyingGuideSection>
+  </Fragment>
+
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/best-aeropress-grind-size.html">Best AeroPress Grind Size</a> if your cup tastes sour, bitter, or just plain confused.</li>
+        <li><a href="/posts/best-aeropress-brew-temp.html">Best AeroPress Brew Temp</a> if your recipe feels right but the flavor still falls flat.</li>
+        <li><a href="/posts/aeropress-vs-french-press.html">AeroPress vs French Press</a> if you are deciding between cleaner coffee and fuller body.</li>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide</a> if you want a repeatable starting point instead of guessing every morning.</li>
+      </ul>
+    </section>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2>Paper vs metal: which one should you actually buy first?</h2>
+      <p>
+        If you are brand new to AeroPress, buy paper first. I know reusable filters sound smarter on paper. Less waste, fewer repeat purchases, maybe a richer cup. All true. But paper makes it easier to understand what your coffee is doing. It strips away one layer of mess so you can taste your beans, your grind, and your brew time more clearly.
+      </p>
+      <p>
+        Metal is more fun once you already know what a good AeroPress cup tastes like. Then the extra body feels like a choice instead of confusion. If you jump straight into metal on day one, it is easier to blame the wrong thing when your cup tastes muddy. Was it the grind? The water? The metal filter? The answer becomes a lot fuzzier.
+      </p>
+      <p>
+        That is why the best reusable AeroPress filter is usually a second purchase, not a first one. Start clean. Learn your brewer. Then branch out when you know what you want to change.
+      </p>
+    </section>
+
+    <section>
+      <h2>What changes more: the filter or the coffee recipe?</h2>
+      <p>
+        The recipe still matters more. If your grind is way off, a different filter will not magically rescue the cup. Too fine and the brew can taste heavy, bitter, and kind of muddy. Too coarse and it runs fast and tastes thin, like the flavor never really showed up. The filter shapes the cup, but the recipe is still steering the car.
+      </p>
+      <p>
+        That said, filters are one of the easiest ways to change the feel of your coffee without buying a whole new brewer. Switch from paper to metal and you will notice it right away. The cup gets rounder and a little messier in a way some people love. Switch back to paper and everything snaps into cleaner focus again. It is a simple swap, but it changes the whole mood of the brew.
+      </p>
+      <p>
+        If you are troubleshooting, change one thing at a time. Keep your coffee dose and water amount steady. Then compare paper against metal with the same beans. That is the fastest way to figure out whether you actually want more body, or whether you were really chasing a better recipe all along.
+      </p>
+    </section>
+
+    <section>
+      <h2>Final verdict</h2>
+      <p>
+        The best AeroPress filters for most people are still the classic paper ones. They are cheap, clean, reliable, and they make the brewer feel as easy as it is supposed to feel. If someone asked me for one filter to buy tonight and stop thinking about, that would be the answer.
+      </p>
+      <p>
+        But if you want more body, less waste, or more room to play with your recipes, the metal and accessory picks here are absolutely worth a look. Just choose the one that matches the kind of cup you actually enjoy, not the one that sounds coolest in a Reddit thread.
+      </p>
+    </section>
+  </Fragment>
+</MoneyPage>

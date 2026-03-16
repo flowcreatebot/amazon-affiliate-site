@@ -1,0 +1,600 @@
+---
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import PickOne from '../../components/PickOne.astro';
+import { amazonUrl } from '../../data/products';
+
+const products = [
+  {
+    id: 'delter-coffee-press',
+    name: 'Delter Coffee Press',
+    brand: 'Delter',
+    asin: 'B092HGTM12',
+    image: 'https://m.media-amazon.com/images/I/61Rszu+sqnL._AC_SL500_.jpg',
+    imageAlt: 'Delter Coffee Press smoked grey coffee brewer with plunger and chamber',
+    category: 'brewers',
+    rating: 4.3,
+    specs: {
+      type: 'Coffee press',
+      bestFor: 'The closest thing to an AeroPress feel with a different extraction style',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: 'Check price',
+    bestFor: 'Closest AeroPress-style replacement',
+    featured: true,
+  },
+  {
+    id: 'hario-v60-switch-ceramic',
+    name: 'Hario V60 Ceramic Immersion Dripper Switch',
+    brand: 'Hario',
+    asin: 'B0CK4J1G7V',
+    image: 'https://m.media-amazon.com/images/I/41-Q1iUbZ5L._AC_SL500_.jpg',
+    imageAlt: 'Hario V60 Ceramic Immersion Dripper Switch in white ceramic',
+    category: 'brewers',
+    rating: 4.6,
+    specs: {
+      type: 'Immersion dripper',
+      bestFor: 'Less plastic and cleaner cups',
+    },
+    badge: { label: 'Best Non-Plastic Pick', variant: 'pourover' },
+    price: 'Check price',
+    bestFor: 'Cleaner cups with ceramic brew path',
+  },
+  {
+    id: 'espro-p0-ultralight',
+    name: 'ESPRO P0 Ultralight Travel French Press',
+    brand: 'ESPRO',
+    asin: 'B011WTW37A',
+    image: 'https://m.media-amazon.com/images/I/61kpAfV+AjL._AC_SL500_.jpg',
+    imageAlt: 'ESPRO P0 Ultralight stainless steel travel French press',
+    category: 'brewers',
+    rating: 4.4,
+    specs: {
+      type: 'Travel French press',
+      bestFor: 'Packing light and brewing on the move',
+    },
+    badge: { label: 'Best for Travel', variant: 'beginners' },
+    price: 'Check price',
+    bestFor: 'Travel brewing with more body than AeroPress',
+  },
+  {
+    id: 'bodum-chambord-french-press',
+    name: 'Bodum Chambord French Press',
+    brand: 'Bodum',
+    asin: 'B00008XEWG',
+    image: 'https://m.media-amazon.com/images/I/61V-VGqgHqL._AC_SL500_.jpg',
+    imageAlt: 'Bodum Chambord French press coffee maker with glass carafe and metal frame',
+    category: 'brewers',
+    rating: 4.7,
+    specs: {
+      type: 'French press',
+      bestFor: 'Fuller body and bigger batches',
+    },
+    badge: { label: 'Best for Richer Cups', variant: 'upgrade' },
+    price: 'Check price',
+    bestFor: 'Full-bodied coffee and 2 to 3 cups at once',
+  },
+  {
+    id: 'bialetti-moka-express',
+    name: 'Bialetti Moka Express 3-Cup',
+    brand: 'Bialetti',
+    asin: 'B0000CF3Q6',
+    image: 'https://m.media-amazon.com/images/I/71nqjUMnlVL._AC_SL500_.jpg',
+    imageAlt: 'Bialetti Moka Express silver stovetop coffee maker',
+    category: 'brewers',
+    rating: 4.5,
+    specs: {
+      type: 'Stovetop coffee maker',
+      bestFor: 'Bold concentrated coffee',
+    },
+    badge: { label: 'Best for Bold Coffee', variant: 'espresso' },
+    price: 'Check price',
+    bestFor: 'Strong coffee for milk drinks and small cups',
+  },
+  {
+    id: 'twist-press-compact',
+    name: 'Barista & Co Twist Press 2.0',
+    brand: 'Barista & Co',
+    asin: 'B08ZCRKJVK',
+    image: 'https://m.media-amazon.com/images/I/513FpjEKInL._AC_SL500_.jpg',
+    imageAlt: 'Barista and Co Twist Press 2.0 compact coffee maker in black',
+    category: 'brewers',
+    rating: 4.1,
+    specs: {
+      type: 'Compact coffee press',
+      bestFor: 'People who want a direct AeroPress-style competitor',
+    },
+    badge: { label: 'Closest Competitor', variant: 'budget' },
+    price: 'Check price',
+    bestFor: 'A direct press-style alternative with a compact footprint',
+  },
+];
+---
+
+<MoneyPage
+  slug="fast-track-2026-03-15-e7jg"
+  title="Best AeroPress Alternative (2026): 6 Better Fits"
+  description="Looking for the best AeroPress alternative? These 6 brewers solve the biggest AeroPress complaints, from plastic fatigue to small batch size and thin cups."
+  category="brewers"
+  datePublished="2026-03-15"
+  dateModified="2026-03-15"
+  ogImage={products[0].image}
+  products={products}
+  heroPicks={{
+    title: 'Best AeroPress Alternative',
+    subtitle: '6 brewers compared by cup style, cleanup, travel fit, and how they actually feel to use before coffee kicks in',
+    picks: [
+      { category: 'Closest match', tagline: 'The nearest thing to the AeroPress rhythm', icon: 'target', color: '#2C1810', features: ['One-cup workflow', 'Low-agitation design', 'Compact counter footprint', 'Easy to understand fast'], topPick: 'Delter Coffee Press', price: '$$', subtitle: 'Best overall swap', asin: 'B092HGTM12' },
+      { category: 'Non-plastic', tagline: 'Cleaner cup with a ceramic feel', icon: 'hand', color: '#8B6F47', features: ['Ceramic brew path', 'Immersion plus release style', 'More pour-over clarity', 'Great for slower mornings'], topPick: 'Hario V60 Switch', price: '$$', subtitle: 'Best less-plastic pick', asin: 'B0CK4J1G7V' },
+      { category: 'Travel', tagline: 'Body and portability in one kit', icon: 'volume-x', color: '#7A5B4A', features: ['Vacuum-insulated body', 'Travel-friendly shape', 'French press texture', 'Easy to stash in a bag'], topPick: 'ESPRO P0 Ultralight', price: '$$', subtitle: 'Best for brewing away from home', asin: 'B011WTW37A' },
+      { category: 'Bold', tagline: 'When you want way more punch', icon: 'dollar', color: '#059669', features: ['Concentrated stovetop brew', 'Great with milk', 'No paper filters needed', 'Tiny footprint'], topPick: 'Bialetti Moka Express', price: '$', subtitle: 'Best for stronger coffee', asin: 'B0000CF3Q6' },
+    ],
+    footer: 'coffeegearpicks.com · AeroPress alternative picks · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Individual product reviews' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    { q: 'What is the best AeroPress alternative for most people?', a: 'For most people, the Delter Coffee Press is the best AeroPress alternative because it keeps the same compact, one-cup feel without being a straight copy. If you want a bigger change in cup style, the Bodum Chambord or Hario V60 Switch make more sense.' },
+    { q: 'What should I buy if I want less plastic than AeroPress?', a: 'The Hario V60 Ceramic Immersion Dripper Switch is the easiest answer if less plastic matters to you. It gives you a ceramic brew path, cleaner cups, and a slower, calmer workflow than AeroPress.' },
+    { q: 'Which AeroPress alternative is best for travel?', a: 'The ESPRO P0 Ultralight is the strongest travel pick in this lineup because it is built for brewing on the move and keeps coffee hot longer than a basic travel mug setup.' },
+    { q: 'What if I want stronger coffee than AeroPress makes?', a: 'Go with the Bialetti Moka Express. It does not brew like AeroPress, but it makes a bolder, more concentrated cup that stands up better to milk and sugar.' },
+    { q: 'Is French press a good AeroPress replacement?', a: 'Yes, especially if your main complaint is that AeroPress feels too light, too small, or too tidy in the cup. French press gives you more body and usually handles bigger batches more comfortably.' },
+  ]}
+  contentImage={{
+    src: '/assets/content-aeropress-alternative.webp',
+    alt: 'A lineup of manual coffee brewers including a press brewer, ceramic immersion dripper, travel press, and moka pot on a warm linen counter with coffee beans.',
+    caption: 'Different brew styles solve different AeroPress pain points, from richer body to cleaner cups and better travel fit.',
+  }}
+>
+  <Fragment slot="lead">
+    <p class="lead">
+      The <strong>best AeroPress alternative</strong> depends on what is bugging you about the AeroPress in the first place.
+      Too much plastic? Tiny batch size? Cup feels a little too clean and a little too polite? Fair. This guide is for
+      that moment.
+    </p>
+    <p>
+      Here is the short version: if you want something that still feels compact and clever, buy the <strong>Delter Coffee
+      Press</strong>. If you want a fuller, heavier mug, go <strong>French press</strong>. If you want cleaner flavor with
+      less plastic in the brew path, the <strong>Hario V60 Switch</strong> is the smarter move. And if you are really just
+      chasing more punch, skip the copycats and buy a <strong>Moka pot</strong>.
+    </p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <section>
+      <h2 id="quick-answer">Quick answer</h2>
+      <p>
+        <strong>The best AeroPress alternative for most people is the Delter Coffee Press.</strong> It keeps the same
+        small-footprint, single-cup vibe, but it nudges the workflow in its own direction instead of feeling like a cheap
+        knockoff. If that sounds too similar and you want a bigger change, the smarter picks are the <strong>Hario V60
+        Switch</strong> for cleaner ceramic brewing, the <strong>Bodum Chambord</strong> for richer cups, or the
+        <strong>ESPRO P0</strong> if your brewer lives in a backpack.
+      </p>
+      <p>
+        Think of it like this. AeroPress is the fast little hatchback. These alternatives fix different complaints. One
+        gives you more comfort. One gives you more cargo room. One gives you more speed. The right answer is the brewer
+        that solves <em>your</em> annoyance, not the one that looks most familiar in photos.
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="Prices updated: March 15, 2026" ariaLabel="Best AeroPress alternative comparison table">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Best for</th>
+            <th>Cup style</th>
+            <th>Batch size</th>
+            <th>Cleanup</th>
+            <th>Travel fit</th>
+            <th>Price</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Product">Delter Coffee Press</td>
+            <td data-label="Best for"><span class="best-for-badge --overall">Best Overall</span></td>
+            <td data-label="Cup style">Clean, focused, and closer to filter coffee than French press</td>
+            <td data-label="Batch size">Best for one mug</td>
+            <td data-label="Cleanup">Easy</td>
+            <td data-label="Travel fit">Very good</td>
+            <td data-label="Price">See Amazon</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B092HGTM12')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Product">Hario V60 Switch</td>
+            <td data-label="Best for"><span class="best-for-badge --pourover">Non-plastic pick</span></td>
+            <td data-label="Cup style">Clean and bright, with more room to tweak recipes</td>
+            <td data-label="Batch size">One to two cups</td>
+            <td data-label="Cleanup">Easy</td>
+            <td data-label="Travel fit">Good at home, fair on the go</td>
+            <td data-label="Price">See Amazon</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B0CK4J1G7V')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Product">ESPRO P0 Ultralight</td>
+            <td data-label="Best for"><span class="best-for-badge --beginners">Travel</span></td>
+            <td data-label="Cup style">Richer than AeroPress, smoother than many cheap travel presses</td>
+            <td data-label="Batch size">Single serving</td>
+            <td data-label="Cleanup">Moderate</td>
+            <td data-label="Travel fit">Excellent</td>
+            <td data-label="Price">See Amazon</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B011WTW37A')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Product">Bodum Chambord French Press</td>
+            <td data-label="Best for"><span class="best-for-badge --upgrade">Richer cups</span></td>
+            <td data-label="Cup style">Heavy, round, and oily in a good way</td>
+            <td data-label="Batch size">Two to three cups</td>
+            <td data-label="Cleanup">Messier</td>
+            <td data-label="Travel fit">Best at home</td>
+            <td data-label="Price">See Amazon</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B00008XEWG')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Product">Bialetti Moka Express 3-Cup</td>
+            <td data-label="Best for"><span class="best-for-badge --espresso">Bold coffee</span></td>
+            <td data-label="Cup style">Strong, concentrated, and punchy</td>
+            <td data-label="Batch size">Small concentrated servings</td>
+            <td data-label="Cleanup">Moderate</td>
+            <td data-label="Travel fit">Good if you have a stove</td>
+            <td data-label="Price">See Amazon</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B0000CF3Q6')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Product">Barista &amp; Co Twist Press 2.0</td>
+            <td data-label="Best for"><span class="best-for-badge --budget">Closest competitor</span></td>
+            <td data-label="Cup style">Press-style coffee with a compact feel</td>
+            <td data-label="Batch size">One mug</td>
+            <td data-label="Cleanup">Easy</td>
+            <td data-label="Travel fit">Very good</td>
+            <td data-label="Price">See Amazon</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B08ZCRKJVK')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate AeroPress alternatives</h2>
+      <p>
+        We looked at these brewers the same way most people actually use them: half awake, short on time, and just trying
+        to make a cup that tastes worth the effort. So we compared each pick on four practical things. First, how the cup
+        tastes. Second, how annoying the cleanup is. Third, whether it makes sense for travel or small kitchens. Fourth,
+        whether it solves a real AeroPress complaint instead of just pretending to.
+      </p>
+      <p>
+        We did <strong>not</strong> write this like a lab report, because that is not how people buy coffee gear. We
+        researched product listings, compared brewer formats, and leaned hard on daily-life fit. A brewer can look clever
+        on paper and still be a pain in real life. That matters.
+      </p>
+      <p>
+        We also gave extra weight to use-case clarity. If I cannot explain in one plain sentence why a brewer belongs in
+        this list, it does not belong here. “Best for richer cups.” “Best for travel.” “Best non-plastic pick.” That is
+        the level of honesty you need when you are trying to spend money once and get it right.
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="product-reviews">Individual product reviews</h2>
+
+      <h3>1) Delter Coffee Press — Best overall</h3>
+      <ProductCard
+        title={products[0].name}
+        image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={{ score: products[0].rating }}
+        price={products[0].price}
+        ctaUrl={amazonUrl(products[0].asin)}
+      />
+      <p>
+        If you like the basic AeroPress idea but want something that feels a little different in the cup, this is the one I
+        would point to first. The Delter keeps that compact, one-mug workflow, so it never feels huge or fussy on the
+        counter. It still feels like a weekday brewer. That matters.
+      </p>
+      <p>
+        The big appeal here is that it is not trying to be a French press or a pour-over cosplay act. It stays in its own
+        lane. The result is a cleaner cup than a press pot, with a workflow that still feels friendly if you already know
+        your way around an AeroPress. If you want the closest emotional replacement, this is it.
+      </p>
+      <ProsCons
+        pros={[
+          'Closest overall fit if you like AeroPress-sized brewing',
+          'Compact footprint and straightforward workflow',
+          'Clean cup profile without feeling too thin',
+        ]}
+        cons={[
+          'Not a dramatic change if you wanted something totally different',
+          'Still a single-cup kind of brewer',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>2) Hario V60 Ceramic Immersion Dripper Switch — Best non-plastic pick</h3>
+      <ProductCard
+        title={products[1].name}
+        image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+        badge={products[1].badge}
+        rating={{ score: products[1].rating }}
+        price={products[1].price}
+        ctaUrl={amazonUrl(products[1].asin)}
+      />
+      <p>
+        If your issue with AeroPress is mostly about materials, the Hario Switch is the cleanest answer. The ceramic brew
+        path feels more substantial, more countertop-friendly, and honestly just nicer to use if plastic has started to bug
+        you. It also opens the door to cleaner, brighter cups.
+      </p>
+      <p>
+        This brewer makes more sense for people who enjoy the brewing ritual a bit. It is not hard, but it is calmer and a
+        little more deliberate. Think less “press and go,” more “pour, steep, release.” If that sounds relaxing instead of
+        annoying, you will probably love it.
+      </p>
+      <ProsCons
+        pros={[
+          'Ceramic build feels less plasticky and more premium',
+          'Cleaner cups than French press',
+          'Flexible enough for immersion or dripper-style brewing',
+        ]}
+        cons={[
+          'Less travel-friendly than AeroPress',
+          'Best results come with a little more patience',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>3) ESPRO P0 Ultralight Travel French Press — Best for travel</h3>
+      <ProductCard
+        title={products[2].name}
+        image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+        badge={products[2].badge}
+        rating={{ score: products[2].rating }}
+        price={products[2].price}
+        ctaUrl={amazonUrl(products[2].asin)}
+      />
+      <p>
+        A lot of “travel coffee makers” are just sad little compromise machines. The ESPRO P0 is better than that. It is a
+        vacuum-insulated travel French press, which means it is built for movement first, not just pretending to be. If
+        your brewer lives in a carry-on, camping bin, or office drawer, this one makes a lot of sense.
+      </p>
+      <p>
+        The cup is fuller than AeroPress, and the cleanup is not as quick, but the tradeoff is worth it if portability is
+        your main filter. This is the alternative I would grab if I wanted one brewer that could take a few knocks and keep
+        coffee hot longer too.
+      </p>
+      <ProsCons
+        pros={[
+          'Actually built for travel, not just marketed that way',
+          'Insulated body keeps coffee hotter longer',
+          'Gives you more body than AeroPress',
+        ]}
+        cons={[
+          'Cleanup is not as fast as ejecting an AeroPress puck',
+          'Cup is richer, which not everyone wants on the road',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>4) Bodum Chambord French Press — Best for richer cups</h3>
+      <ProductCard
+        title={products[3].name}
+        image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+        badge={products[3].badge}
+        rating={{ score: products[3].rating }}
+        price={products[3].price}
+        ctaUrl={amazonUrl(products[3].asin)}
+      />
+      <p>
+        This is the brewer to buy when your complaint is simple: AeroPress tastes a little too clean and a little too neat.
+        French press goes the other way. It lets more oils and tiny particles into the cup, so the coffee feels heavier on
+        your tongue, more like warm broth than filtered tea.
+      </p>
+      <p>
+        The Bodum Chambord is the classic version of that idea. Glass beaker, stainless steel frame, familiar look, and a
+        batch size that feels much more generous than AeroPress. The downside is obvious. Cleanup is messier. Wet grounds
+        are just part of the deal. But if your reward is a richer mug and less plastic in the brew path, a lot of people
+        will happily take that trade.
+      </p>
+      <ProsCons
+        pros={[
+          'Full, cozy cup with more body than AeroPress',
+          'Better for brewing a couple of cups at once',
+          'Classic glass-and-steel feel on the counter',
+        ]}
+        cons={[
+          'Messier cleanup than AeroPress or Delter',
+          'More sediment in the cup if your grind is sloppy',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>5) Bialetti Moka Express 3-Cup — Best for stronger coffee</h3>
+      <ProductCard
+        title={products[4].name}
+        image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+        badge={products[4].badge}
+        rating={{ score: products[4].rating }}
+        price={products[4].price}
+        ctaUrl={amazonUrl(products[4].asin)}
+      />
+      <p>
+        Sometimes the truth is that you do not want an AeroPress replacement. You want coffee with more kick. In that case,
+        Moka pot is the smarter detour. The Bialetti Moka Express makes a small, concentrated brew that hits harder and
+        plays better with milk than a typical AeroPress mug.
+      </p>
+      <p>
+        It is not as tidy. It is not as beginner-proof. But if your dream cup leans bold, syrupy, and a little dramatic,
+        it makes way more sense than buying another compact press brewer and hoping the flavor somehow changes. Different
+        tool. Different result. Good.
+      </p>
+      <ProsCons
+        pros={[
+          'Much bolder cup than AeroPress',
+          'Excellent for milk drinks and small strong servings',
+          'Tiny footprint and no paper filters needed',
+        ]}
+        cons={[
+          'Needs stovetop heat, so it is less flexible for office use',
+          'Less forgiving if you want simple sleepy-morning brewing',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>6) Barista &amp; Co Twist Press 2.0 — Closest direct competitor</h3>
+      <ProductCard
+        title={products[5].name}
+        image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
+        badge={products[5].badge}
+        rating={{ score: products[5].rating }}
+        price={products[5].price}
+        ctaUrl={amazonUrl(products[5].asin)}
+      />
+      <p>
+        The Twist Press 2.0 is the page's most literal AeroPress-style rival. Compact shape. Single-cup focus. Same kind
+        of “I want a clever small brewer” energy. If you are not trying to reinvent your whole routine, just swap in a new
+        version of the idea, it deserves a look.
+      </p>
+      <p>
+        I still rank it behind the Delter because the Delter has a clearer identity. But if you are the sort of buyer who
+        likes direct competitors stacked side by side, the Twist Press is a fair pick. It belongs in the conversation.
+      </p>
+      <ProsCons
+        pros={[
+          'Compact and easy to understand',
+          'Feels familiar if you already like one-cup press brewing',
+          'Strong fit for small kitchens and desk setups',
+        ]}
+        cons={[
+          'Does not solve batch-size complaints',
+          'Less of a flavor jump than French press or Moka pot',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2>Which kind of AeroPress alternative should you actually buy?</h2>
+      <p>
+        This gets easier when you stop thinking in product names and start thinking in complaints. If your complaint is
+        <strong>plastic fatigue</strong>, buy the Hario Switch. If your complaint is <strong>the cup feels too thin</strong>,
+        buy the Bodum Chambord. If your complaint is <strong>I need something tougher for travel</strong>, buy the ESPRO P0.
+        If your complaint is <strong>I want stronger coffee, not just different coffee</strong>, buy the Bialetti.
+      </p>
+      <p>
+        And if your complaint is basically “I still like the AeroPress idea, I just want a different version of it,” then
+        stay in the Delter or Twist Press lane. That is the simplest split.
+      </p>
+
+      <PickOne
+        title="Pick by complaint, not by hype"
+        subtitle="The fastest way to land on the right brewer is to name the thing that annoys you most"
+        options={[
+          { label: 'Cup too light', icon: 'coffee', points: ['Go French press', 'Expect more body and oils', 'Accept messier cleanup'], badge: '~4 min brew' },
+          { label: 'Too much plastic', icon: 'check', points: ['Go Hario Switch', 'Enjoy ceramic brew path', 'Expect cleaner flavor'], badge: '~3-4 min brew' },
+          { label: 'Need travel fit', icon: 'calendar', points: ['Go ESPRO P0', 'Pack one sturdy brewer', 'Trade speed for insulation'], badge: '~3-4 min brew' },
+        ]}
+        outcome="Once the complaint is clear, the right brewer stops looking mysterious"
+      />
+
+      <p>
+        This is also where internal setup links matter. If you move toward cleaner brewers like the Switch, a good kettle
+        becomes more useful. Our <a href="/posts/best-gooseneck-kettle-for-pour-over.html">best gooseneck kettle for
+        pour-over</a> guide helps there. If you are leaning toward clarity instead of body, our
+        <a href="/posts/best-pour-over-coffee-maker.html">best pour-over coffee maker</a> roundup is the next page I would
+        read. And if your cup keeps changing from day to day, the problem might be your recipe, not your brewer. Start with
+        our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> before you blame the gear.
+      </p>
+      <p>
+        One more thing people miss: the grinder still matters more than the brewer once you get past the basics. A muddy,
+        uneven grind can make a great brewer taste confused, like one sip is bright and the next tastes like wet cardboard.
+        So if every option on this page sounds only half-right, do not assume the answer is another brewer. Sometimes the
+        real fix is tightening up the rest of the chain so the brewer you already own can actually shine.
+      </p>
+      <p>
+        That is why I would rather steer someone toward the right category than oversell one shiny product. Coffee gear is
+        full of clever objects. What most people need is not another object. They need the one that makes their morning cup
+        easier, tastier, or less annoying. When you judge these brewers through that lens, the decision gets much clearer.
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide</h2>
+      <p>
+        <strong>Start with cup texture.</strong> This is the biggest fork in the road. Do you want something clean and neat,
+        closer to drip coffee? Or do you want a cup with more weight, more oils, more of that thick cozy feel? If you miss
+        body, French press or Moka pot will make sense faster than any AeroPress-style competitor.
+      </p>
+      <p>
+        <strong>Be honest about batch size.</strong> A lot of people say they want an AeroPress alternative, but what they
+        really mean is “I am tired of brewing one mug at a time.” If that is you, stop looking at tiny one-cup gadgets and
+        buy a French press. It solves the actual problem instead of dancing around it.
+      </p>
+      <p>
+        <strong>Think about cleanup when you are tired.</strong> This sounds small until it is not. AeroPress is famous for
+        easy cleanup because it really is easy. Anything that replaces it will feel that comparison. If wet grounds and
+        extra rinsing already sound annoying, stay away from French press and lean toward Delter or Twist Press instead.
+      </p>
+      <p>
+        <strong>Do not treat travel and home use like the same job.</strong> A brewer that feels perfect on your kitchen
+        counter can feel clumsy in a hotel sink. If you brew away from home a lot, portability is not a bonus feature. It
+        is the whole game. That is why the ESPRO P0 earns its slot here.
+      </p>
+      <p>
+        <strong>Less plastic is a real reason to switch.</strong> You do not need to apologize for caring about how a brewer
+        feels in your hand or what materials sit in the brew path. If the AeroPress plastic build has started to bother you,
+        do not overthink it. Move to something ceramic, glass, or steel and enjoy the upgrade.
+      </p>
+      <p>
+        <strong>Use one change at a time.</strong> If you buy a new brewer, keep the rest of your setup steady for a week.
+        Same beans. Same water. Same basic ratio. That way you can actually taste what the brewer changed. Otherwise it is
+        just noise, and you end up blaming the wrong thing.
+      </p>
+      <p>
+        If you are still on the fence between pressure-style brewers and immersion brewers, our
+        <a href="/posts/aeropress-vs-french-press.html">AeroPress vs French Press</a> comparison is the cleanest next
+        read. It lays out the cup difference in plain English, which is what most people need before they click buy.
+      </p>
+
+      <h3>Related guides</h3>
+      <p>
+        <CtaButton href="/posts/aeropress-vs-french-press.html" variant="secondary">AeroPress vs French Press</CtaButton>
+        <CtaButton href="/posts/best-pour-over-coffee-maker.html" variant="secondary">Best Pour-Over Coffee Maker</CtaButton>
+        <CtaButton href="/posts/best-gooseneck-kettle-for-pour-over.html" variant="secondary">Best Gooseneck Kettle</CtaButton>
+        <CtaButton href="/posts/coffee-brewing-ratio-guide.html" variant="secondary">Coffee Brewing Ratio Guide</CtaButton>
+      </p>
+    </BuyingGuideSection>
+  </Fragment>
+
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/aeropress-vs-french-press.html">AeroPress vs French Press</a> if you want the fastest side-by-side verdict.</li>
+        <li><a href="/posts/best-pour-over-coffee-maker.html">Best Pour-Over Coffee Maker</a> if cleaner cups matter more than convenience.</li>
+        <li><a href="/posts/best-gooseneck-kettle-for-pour-over.html">Best Gooseneck Kettle for Pour-Over</a> if you are moving toward a slower manual setup.</li>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide</a> if your recipes feel inconsistent no matter which brewer you use.</li>
+      </ul>
+    </section>
+  </Fragment>
+</MoneyPage>

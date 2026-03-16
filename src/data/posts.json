@@ -19,12 +19,12 @@
   },
   {
     "slug": "burr-grinder-settings-for-espresso",
-    "title": "Burr Grinder Settings for Espresso (2026): Dial-In Guide",
-    "description": "Use this practical burr grinder settings for espresso guide to find a baseline, adjust by taste, fix shot issues quickly, and dial in repeatable results in 2026.",
+    "title": "Best Coffee Grind Size for Espresso (2026): Dial-In Guide",
+    "description": "Find the best coffee grind size for espresso with a simple burr grinder workflow, fast shot fixes, and easy dial-in steps that save beans.",
     "pageType": "howto",
-    "category": "espresso",
-    "datePublished": "2026-03-10",
-    "dateModified": "2026-03-10"
+    "category": "grinders",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-16"
   },
   {
     "slug": "best-burr-coffee-grinder-under-200",
@@ -187,5 +187,32 @@
     "category": "education",
     "datePublished": "2026-03-05",
     "dateModified": "2026-03-06"
+  },
+  {
+    "slug": "best-aeropress-brew-temp",
+    "title": "Best AeroPress Brew Temp (2026)",
+    "description": "Find the best AeroPress brew temp for dark, medium, and light roasts, plus an easy starting recipe and simple fixes for sour, bitter, or weak cups.",
+    "pageType": "howto",
+    "category": "brewers",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-15"
+  },
+  {
+    "slug": "fast-track-2026-03-15-e7jg",
+    "title": "Best AeroPress Alternative (2026): 6 Better Fits",
+    "description": "Looking for the best AeroPress alternative? These 6 brewers solve the biggest AeroPress complaints, from plastic fatigue to small batch size and thin cups.",
+    "pageType": "money",
+    "category": "education",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-15"
+  },
+  {
+    "slug": "best-aeropress-grind-size",
+    "title": "Best AeroPress Grind Size (2026)",
+    "description": "Find the best AeroPress grind size with an easy medium-fine starting point, a quick adjustment chart, and simple fixes for sour, bitter, or weak cups.",
+    "pageType": "howto",
+    "category": "grinders",
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-15"
   }
 ]
