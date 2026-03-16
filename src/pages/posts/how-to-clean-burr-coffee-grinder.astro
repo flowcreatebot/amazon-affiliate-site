@@ -1,256 +1,265 @@
 ---
 import HowToGuide from '../../layouts/page-types/HowToGuide.astro';
-import ProductCard from '../../components/ProductCard.astro';
-import CtaButton from '../../components/CtaButton.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';
-import ProsCons from '../../components/ProsCons.astro';
-import QuickPicks from '../../components/QuickPicks.astro';
-import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
 
-const tools = [
+const products = [
   {
-    name: 'OXO Brew Conical Burr Grinder',
-    asin: 'B07CSKGLMM',
-    bestFor: 'Most Accessible Cleaning Workflow',
-    badge: 'beginners' as const,
-    price: '$',
-    rating: 4.3,
-    image: 'https://m.media-amazon.com/images/I/71DeUg8G7kS._AC_SL500_.jpg',
-    imageAlt: 'OXO Brew Conical Burr Grinder with grounds bin',
-  },
-  {
-    name: 'Fellow Opus Conical Burr Grinder',
-    asin: 'B0BV96VPSR',
-    bestFor: 'Best Compact Upgrade',
-    badge: 'upgrade' as const,
-    price: '$$',
-    rating: 4.4,
-    image: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg',
-    imageAlt: 'Fellow Opus conical burr coffee grinder',
-  },
-  {
+    id: 'baratza-encore-esp',
     name: 'Baratza Encore ESP',
+    brand: 'Baratza',
     asin: 'B0BW272XCV',
-    bestFor: 'Best for Espresso + Filter Homes',
-    badge: 'overall' as const,
-    price: '$$',
-    rating: 4.6,
     image: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg',
-    imageAlt: 'Baratza Encore ESP burr grinder on white background',
+    imageAlt: 'Baratza Encore ESP burr grinder in black',
+    category: 'grinders',
+    rating: 4.6,
+    specs: {
+      burrType: 'Conical burr',
+      brewRange: 'Espresso to filter coffee',
+      capacity: '8 oz hopper',
+      adjustmentStyle: 'Stepped with espresso zone',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' as const },
+    price: '$$',
+    bestFor: 'Homes that switch between espresso and filter coffee',
+    featured: true,
+  },
+  {
+    id: 'oxo-brew-conical-burr-grinder',
+    name: 'OXO Brew Conical Burr Coffee Grinder',
+    brand: 'OXO',
+    asin: 'B07CSKGLMM',
+    image: 'https://m.media-amazon.com/images/I/71DeUg8G7kS._AC_SL500_.jpg',
+    imageAlt: 'OXO Brew conical burr coffee grinder in silver',
+    category: 'grinders',
+    rating: 4.3,
+    specs: {
+      burrType: 'Conical burr',
+      brewRange: 'Espresso to French press',
+      capacity: '12 oz hopper',
+      adjustmentStyle: 'Stepped grind selector',
+    },
+    badge: { label: 'Best for Beginners', variant: 'beginners' as const },
+    price: '$',
+    bestFor: 'Simple cleaning and easy daily use',
+  },
+  {
+    id: 'fellow-opus',
+    name: 'Fellow Opus Conical Burr Grinder',
+    brand: 'Fellow',
+    asin: 'B0BV96VPSR',
+    image: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg',
+    imageAlt: 'Fellow Opus conical burr coffee grinder in matte black',
+    category: 'grinders',
+    rating: 4.4,
+    specs: {
+      burrType: '40 mm conical burr',
+      brewRange: 'Espresso to cold brew',
+      capacity: '3.5 oz load bin',
+      adjustmentStyle: 'Stepped plus inner fine adjust',
+    },
+    badge: { label: 'Best Upgrade', variant: 'upgrade' as const },
+    price: '$$',
+    bestFor: 'Small counters and mixed brew styles',
   },
 ];
 
-const amazonUrl = (asin: string) => `https://www.amazon.com/dp/${asin}/ref=nosim?tag=coffee-site-20`;
+const description = 'Learn how to clean burr coffee grinder parts with a simple daily, weekly, and monthly routine that cuts stale flavor, retention, and messy grounds.';
 ---
 
 <HowToGuide
   slug="how-to-clean-burr-coffee-grinder"
   title="How to Clean Burr Coffee Grinder (2026)"
-  description="Learn how to clean burr coffee grinder parts with a fast daily, weekly, and monthly routine that reduces stale flavor, retention, and static mess at home."
+  description={description}
   category="maintenance"
-  datePublished="2026-03-10"
-  dateModified="2026-03-11"
-  ogImage={tools[0].image}
+  datePublished="2026-03-15"
+  dateModified="2026-03-15"
+  ogImage={products[0].image}
   heroSteps={{
-    title: "Burr Grinder Cleaning Routine",
-    subtitle: "Three cadences that keep grind consistent and flavor clean",
+    title: 'A Simple Burr Grinder Cleaning Routine',
+    subtitle: 'Three small habits that keep old grounds, stale oils, and weird off-flavors out of your cup',
     steps: [
-      { label: 'Daily', icon: 'zap', actions: ['Brush chute and exit', 'Wipe hopper lip oils', 'Run empty 1–2 sec'], time: '~2 min' },
-      { label: 'Weekly', icon: 'wind', actions: ['Remove hopper', 'Dry-brush upper burrs', 'Blow out chute corners', 'Check grind reference'], time: '~5 min' },
-      { label: 'Monthly', icon: 'wrench', actions: ['Full burr disassembly', 'Brush chamber and threads', 'Reassemble carefully', 'Run sacrificial dose'], time: '~15 min' },
+      { label: 'Daily', icon: 'zap', actions: ['Brush the chute exit', 'Wipe oily hopper edges', 'Run the grinder empty for 1–2 seconds'], time: '~2 min' },
+      { label: 'Weekly', icon: 'wind', actions: ['Empty leftover beans', 'Brush the upper burr area', 'Blow out packed fines', 'Check your usual grind setting'], time: '~5 min' },
+      { label: 'Monthly', icon: 'wrench', actions: ['Open the burr chamber', 'Brush threads and corners', 'Reassemble carefully', 'Run one throwaway dose'], time: '~15 min' },
     ],
-    outcome: "Cleaner flavor, less retention, and more predictable extractions every brew",
-    footer: "coffeegearlab.com · 2026 maintenance guide",
+    outcome: 'Cleaner flavor, steadier grind output, and fewer mornings wasted wondering why your coffee suddenly tastes off.',
+    footer: 'coffeegearlab.com · burr grinder cleaning guide · 2026',
   }}
   tocItems={[
     { href: '#quick-answer', label: 'Quick answer' },
     { href: '#what-you-need', label: "What you'll need" },
-    { href: '#steps', label: 'Numbered cleaning steps' },
-    { href: '#mistakes', label: 'Common mistakes to avoid' },
+    { href: '#steps', label: 'Step-by-step cleaning routine' },
+    { href: '#common-mistakes', label: 'Common mistakes' },
     { href: '#troubleshooting', label: 'Troubleshooting' },
-    { href: '#upgrade-picks', label: 'Easy-clean grinder picks' },
+    { href: '#easy-clean-picks', label: 'Easy-clean grinder picks' },
     { href: '#faq', label: 'Frequently asked questions' },
   ]}
+  products={products}
   faqItems={[
-    { q: 'How often should I clean my burr grinder?', a: 'Use a quick brush routine after each brew day, run a weekly hopper-and-chute cleanup, and do a deeper burr-chamber clean every 4 to 6 weeks. If you brew dark roasts daily, increase frequency.' },
-    { q: 'Can I use rice to clean a burr coffee grinder?', a: 'No. Rice can stress burr sets and motors, and it does not replace a proper brush-and-disassemble routine. Use grinder-specific methods from your manufacturer and finish with a dry brush cleanup.' },
-    { q: 'Why does retention get worse in humid weather?', a: 'Humidity changes static behavior and helps fine particles cling inside the chute. More frequent brushing and small purge doses usually keep output steadier.' },
-    { q: 'Do I need to recalibrate after deep cleaning?', a: 'If your grinder has a zero point or calibration collar and your previous settings stop matching, recalibration helps restore repeatable brew references.' },
+    { q: 'How often should I clean my burr grinder?', a: 'A quick brush after brew days, a more thorough weekly cleanup, and a deeper chamber clean every 4 to 6 weeks works well for most home brewers. If you use oily dark roasts every day, clean a little more often.' },
+    { q: 'Can I use rice to clean a burr coffee grinder?', a: 'No. Rice can stress the burrs and motor, and it does not replace a real brush-and-clean routine. Stick with the method your grinder maker recommends and use dry tools only.' },
+    { q: 'Why does coffee taste better after cleaning the grinder?', a: 'Because you are getting rid of old grounds and stale coffee oils. Those leftovers can taste papery, bitter, and flat, and they sneak into every fresh dose until you clean them out.' },
+    { q: 'Do I need to change my grind setting after deep cleaning?', a: 'Sometimes, yes. Once old fines are gone, the grinder may run a little faster at the same setting. Usually the fix is small: one click or a tiny nudge.' },
   ]}
   schemaSteps={[
-    { name: 'Quick daily cleanup', text: 'After brewing, run the grinder empty briefly, brush chute and catch cup, and wipe oil from the hopper rim.' },
-    { name: 'Weekly maintenance pass', text: 'Empty beans, remove hopper if possible, dry-brush upper burr area, clean anti-static path, and recheck your normal grind setting.' },
-    { name: 'Monthly deep clean', text: 'Disassemble per manufacturer instructions, brush burr chamber and threads, reassemble carefully, and run a small purge dose before brewing.' },
+    { name: 'Do a quick daily cleanup', text: 'After brewing, run the grinder empty briefly, brush the chute exit, and wipe oily residue from the hopper and catch cup area.' },
+    { name: 'Do a weekly brush-out', text: 'Empty the beans, remove the hopper if your model allows it, and brush the upper burr area and chute corners with dry tools.' },
+    { name: 'Do a monthly deep clean', text: 'Open the burr chamber following the grinder manual, remove packed fines from the chamber and threads, then reassemble and run one throwaway dose.' },
   ]}
-  supplies={['Soft grinder brush', 'Microfiber cloth', 'Dry hand blower']}
-  schemaTools={['Burr coffee grinder', 'Small container for retained grounds']}
+  supplies={['Soft grinder brush', 'Microfiber cloth', 'Hand blower or bulb blower', 'Small bowl for stray grounds']}
+  schemaTools={products.map((product) => product.name)}
   contentImage={{
     src: '/assets/content-burr-grinder-cleaning.webp',
-    alt: 'A burr coffee grinder opened for cleaning with a brush, coffee beans, and tools on a warm linen surface',
-    caption: 'A simple burr grinder cleaning setup helps reduce retention and keep flavor consistent between brews.',
+    alt: 'An opened burr coffee grinder with a cleaning brush, loose beans, and a cloth on a warm cream surface',
+    caption: 'A five-minute cleanup goes a long way when old grounds start making fresh coffee taste tired.',
   }}
 >
   <Fragment slot="lead">
-    <p class="lead">If your cups suddenly taste flat, bitter, or dusty, your grinder is usually the bottleneck. This guide shows how to clean burr coffee grinder parts fast without damaging alignment, so you get cleaner flavor and steadier extractions.</p>
+    <p class="lead">If your coffee suddenly tastes dull, bitter, or a little like cardboard, your grinder is often the culprit. Old grounds hide in the chute and burr chamber, stale oils cling to the hopper, and all of that gets mixed right back into your fresh beans. The good news? A burr grinder is usually easy to clean once you stop overthinking it.</p>
   </Fragment>
 
   <Fragment slot="quick-answer">
     <h2 id="quick-answer">Quick answer</h2>
-    <p><strong>Quick answer:</strong> Brush and wipe after each brew day, clean hopper and burr access points weekly, and deep-clean the burr chamber every 4 to 6 weeks. This reduces stale oil buildup, static cling, and grind retention that can wreck cup clarity.</p>
-    <p>Think of grinder cleaning as flavor insurance: the goal is not cosmetic perfection, it is repeatable extraction. With a consistent routine, your recipes behave more predictably, your grind adjustments get smaller, and you waste fewer beans chasing problems caused by old residue.</p>
+    <p><strong>Clean it in layers.</strong> Do a tiny daily brush-out, a better weekly clean, and a deeper monthly chamber cleanup. That rhythm keeps old coffee from piling up and makes your grinder act like itself again.</p>
+    <p>Think of it like washing a frying pan before yesterday's grease hardens. Leave coffee oils sitting too long and they turn nasty fast. Once that happens, even great beans can taste flat and muddy.</p>
   </Fragment>
 
   <Fragment slot="what-youll-need">
-    <h2 id="what-you-need">What you'll need before you start</h2>
-    <p>You can do 90% of grinder maintenance with simple tools: a soft brush, dry cloth, and a hand blower. If your grinder has a removable burr carrier, keep a small tray nearby for screws and alignment parts. Always unplug electric grinders before opening anything. Keep a flashlight nearby too; it helps you spot fines packed in chute corners that are easy to miss under kitchen lighting.</p>
-    <p>For households where espresso and pour over share one grinder, cleanup cadence matters even more. Retained fines from espresso settings can muddy filter brews, while old filter residue can flatten espresso sweetness. If you rotate brew methods often, run a tiny purge dose after major grind changes.</p>
+    <h2 id="what-you-need">What you'll need</h2>
+    <p>You do not need a toolbox that looks like a bike shop. Most of the time, a soft brush, a dry cloth, and a hand blower are enough. A small bowl helps too, mostly because loose grounds somehow end up everywhere the second you open the grinder.</p>
+    <p>Before you start, unplug electric grinders. Dry tools only. No water in the burr chamber. No wet wipes in tiny corners. Wet coffee dust turns into brown paste, and that is exactly the kind of mess you are trying to avoid.</p>
+    <p>If you bounce between espresso and filter coffee, cleaning matters even more. Espresso fines are tiny and clingy, almost like cocoa powder, while coarser filter grounds behave more like coarse sand. When both pile up together, your next brew can taste confused and messy.</p>
 
-    <ComparisonTable timestamp="March 10, 2026" ariaLabel="Grinders with straightforward cleaning access">
+    <ComparisonTable timestamp="Prices updated: March 15, 2026" ariaLabel="Grinders with straightforward cleaning access">
       <table>
         <thead>
           <tr>
-            <th>Product</th>
+            <th>Grinder</th>
             <th>Best for</th>
-            <th>Price band</th>
-            <th>Rating</th>
-            <th>Action</th>
+            <th>Cleaning feel</th>
+            <th>Why it helps</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          {tools.map((tool) => (
-            <tr>
-              <td data-label="Product">{tool.name}</td>
-              <td data-label="Best for">{tool.bestFor}</td>
-              <td data-label="Price band">{tool.price}</td>
-              <td data-label="Rating">{tool.rating}</td>
-              <td data-label="Action"><CtaButton href={amazonUrl(tool.asin)} size="sm" external>Check Price</CtaButton></td>
-            </tr>
-          ))}
+          <tr>
+            <td data-label="Grinder">Baratza Encore ESP</td>
+            <td data-label="Best for">Espresso + filter homes</td>
+            <td data-label="Cleaning feel">Straightforward and familiar</td>
+            <td data-label="Why it helps">Easy access for regular brush-outs, and a big user base means it is simple to figure out if something feels off after reassembly.</td>
+            <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Grinder">OXO Brew Conical Burr Coffee Grinder</td>
+            <td data-label="Best for">First grinder upgrade</td>
+            <td data-label="Cleaning feel">Beginner-friendly</td>
+            <td data-label="Why it helps">Simple controls and a roomy layout make it less intimidating when you are doing your first real cleanup.</td>
+            <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B07CSKGLMM/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Grinder">Fellow Opus Conical Burr Grinder</td>
+            <td data-label="Best for">Small counters</td>
+            <td data-label="Cleaning feel">Compact but manageable</td>
+            <td data-label="Why it helps">Good pick if you want a smaller footprint without giving up the ability to keep the grind path tidy.</td>
+            <td data-label="Link"><CtaButton href="https://www.amazon.com/dp/B0BV96VPSR/ref=nosim?tag=coffee-site-20" size="sm" external>Check Price</CtaButton></td>
+          </tr>
         </tbody>
       </table>
     </ComparisonTable>
   </Fragment>
 
   <Fragment slot="steps">
-    <h2 id="steps">Numbered steps: daily, weekly, monthly</h2>
+    <h2 id="steps">Step-by-step: how to clean a burr grinder without making a bigger mess</h2>
 
-    <h3>Step 1: Daily two-minute reset after brewing</h3>
-    <p>When your brew session is done, run the grinder empty for one to two seconds to clear loose grounds. Pull out the catch cup, brush any compacted fines from the chute exit, and wipe the hopper lip where coffee oils build up. This tiny habit keeps old residue from contaminating your next cup.</p>
-    <p>If you're dialing espresso, this step also improves repeatability. Residual fines from the previous shot can make the next one pull slower or taste harsher. A quick brush pass prevents that drift.</p>
-    <p>Daily cleanup is mostly about oil control. Coffee oils oxidize quickly, especially if you brew dark roasts or keep beans in the hopper all week. Once oils oxidize, they can add papery or bitter notes even when your recipe is right. Wiping hopper surfaces and brushing the chute daily keeps those stale compounds from re-entering the next dose.</p>
-    <p>It also protects your workflow speed. A grinder with heavy day-to-day buildup starts throwing inconsistent dose output, forcing you to compensate with extra purges. Two minutes now usually saves far more time later because you avoid big weekend cleanups and random dial-in resets.</p>
+    <h3>1. Start with the two-minute daily reset</h3>
+    <p>When you finish brewing, run the grinder empty for a second or two. Pull out the grounds bin. Brush the chute exit. Wipe the hopper lip where coffee oils like to stick. That is it.</p>
+    <p>This tiny habit does more than people think. Old grounds sitting in the exit path act like yesterday's leftovers in the microwave. They keep hanging around, drying out, and making the next batch taste worse than it should. If you brew daily, this is the part that keeps the funk from building up in the first place.</p>
+    <p>You will usually notice the benefit in the cup before you notice it in the grinder. Coffee tastes cleaner. The finish feels less dusty. Shots stop jumping around quite as much. It is boring maintenance, sure, but boring maintenance is often what makes coffee taste good all week instead of only on the day you deep-clean everything.</p>
 
-    <h3>Step 2: Weekly maintenance for retention and static</h3>
-    <p>Once a week, empty remaining beans and remove the hopper if your model supports it. Dry-brush the upper burr area and adjustment collar, then clear the chute path with a blower. Focus on corners where fines cake up. Reinstall parts carefully and check that your usual grind reference still lands where expected.</p>
-    <p>For more dial-in consistency after maintenance, pair this process with our <a href="/posts/burr-grinder-settings-for-espresso.html">burr grinder settings for espresso workflow</a>. If you mostly brew filter coffee, this cleanup method also pairs well with our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> so flavor changes are easier to troubleshoot.</p>
-    <p>Weekly cleaning is where most retention gains happen. Grounds often accumulate around anti-static tabs, chute elbows, and burr-carrier threads. These pockets slowly release old coffee into fresh doses, which causes uneven flavor and confusing extraction behavior. A weekly brush + blower routine clears those pockets before they become compacted.</p>
-    <p>Take a quick photo of your grind dial before disassembly if your collar has no hard detents. That visual reference makes reassembly faster and reduces the chance of misalignment. If your grind setting shifts anyway, re-dial in with a small test brew and adjust one step at a time instead of jumping multiple clicks.</p>
-    <p>For shared households, create a simple maintenance card near your grinder: daily brush, Sunday deep brush, monthly teardown date. Consistency is more important than perfection. A predictable routine beats occasional intense cleaning marathons.</p>
+    <h3>2. Empty the beans before you do anything smarter</h3>
+    <p>For a real clean, start by emptying the hopper. If there are only a few beans left, grind them through. If it is full, pour them into a bowl or airtight jar. Do not try to work around a hopper full of beans unless you enjoy coffee pinging all over your counter.</p>
+    <p>This is also a good moment to smell the hopper itself. Fresh coffee smells sweet, nutty, maybe a little chocolatey. A dirty hopper smells stale and oily, almost like an old diner pot that sat too long on the burner. If it smells off, your coffee will probably taste off too.</p>
 
-    <h3>Step 3: Monthly deep clean without damaging burr alignment</h3>
-    <p>Every four to six weeks, do a deeper teardown according to your grinder manual. Unplug the unit, remove hopper and top burr assembly, and brush chamber walls, threads, and chute inlets thoroughly. Avoid water in the burr chamber; moisture plus fine grounds creates paste and can increase corrosion risk.</p>
-    <p>After reassembly, run a sacrificial dose and discard it. Then brew a test cup and adjust grind as needed. If the grinder feels hard to stabilize after deep cleaning, you may be fighting retention-heavy hardware rather than technique. In that case, compare options in our <a href="/posts/best-burr-coffee-grinder-under-200.html">best burr grinders under $200</a> roundup.</p>
-    <p>During monthly teardown, inspect burr edges for visible damage and check whether threads are collecting caked fines. You are not trying to sharpen burrs or modify alignment; you are only removing debris that interferes with predictable output. If your model includes shims or calibration rings, keep parts in order and avoid forcing anything during reassembly.</p>
-    <p>After the grinder is back together, expect one to two test brews before your flavor profile fully stabilizes. Minor shifts are normal because burr positioning and retained fines changed during cleaning. Make small grind adjustments, keep brew ratio constant, and avoid changing water temperature at the same time so your diagnosis stays clean.</p>
-    <p>If you regularly switch between espresso and pour over on one grinder, monthly maintenance can also reduce cross-contamination of fines between ranges. That means less muddy pour over and fewer surprise channeling issues when returning to espresso settings.</p>
+    <h3>3. Open the top and brush the upper burr area</h3>
+    <p>Most home burr grinders let you remove the hopper or top burr carrier pretty easily. Once it is open, use a soft brush and work slowly. You are not scrubbing a frying pan here. You are lifting out dry coffee dust from the burr edges, chamber walls, and little corners where fines like to pack themselves in.</p>
+    <p>Those fines are the sneakiest part of the mess. They are light, clingy, and stubborn, almost like cinnamon powder. Leave them sitting there and they slowly mix old flavor into every new dose. That is where you get cups that taste weirdly bitter even when your beans and recipe should be fine.</p>
+    <p>If your grinder has marks or numbers on the dial, take a quick photo before you remove anything complicated. It saves you from second-guessing yourself later. Not because the grinder is fragile, but because your future self will appreciate not having to remember whether that ring was supposed to sit one notch left or right.</p>
+
+    <h3>4. Blow out the chute and the annoying hidden corners</h3>
+    <p>After brushing, use a hand blower to puff out the chute and the corners around the burr chamber. A blower is better than your lungs here. Blowing by mouth adds moisture, and moisture turns coffee dust into sticky sludge. Nobody wants that.</p>
+    <p>Focus on the places your brush cannot quite reach: chute elbows, threads, static tabs, and the lip around the burr carrier. These are the spots that trap old grounds and drip them back into fresh coffee later. If your grinder has been acting inconsistent, this is usually where the nonsense is hiding.</p>
+    <p>If you want to see whether you actually got it clean, tap the grinder gently over a sink or trash can after you blow it out. If a sad little pile of old grounds still falls out, keep going. The first clean is often the grossest one because you finally see how much was hanging around in there.</p>
+
+    <h3>5. Wipe surfaces, then put everything back together carefully</h3>
+    <p>Once the dry grounds are gone, wipe the hopper, lid, and outside surfaces with a dry or barely damp cloth, depending on what your grinder maker allows. The goal is to remove oils and dust from the easy-to-reach parts, not to soak anything.</p>
+    <p>When you reassemble, go slow. Make sure the burr carrier sits properly, the hopper locks in the way it should, and nothing feels forced. If something needs muscle, stop. Coffee gear rarely responds well to brute force.</p>
+    <p>After everything is back in place, run a small throwaway dose. Just a little. This clears out the last stale bits and lets the grinder settle before your next real brew. It also keeps your first cup from tasting like the dusty end of the cleaning job.</p>
+
+    <h3>6. Expect one small grind tweak after a deep clean</h3>
+    <p>This catches a lot of people. After you clean the grinder well, your usual setting may behave a little differently. That does not mean you ruined anything. It usually means the old packed fines are gone, so the grind path is flowing more honestly now.</p>
+    <p>If espresso shots start running a touch fast, go a little finer. If pour over suddenly feels slower than usual, back off a hair. Keep everything else the same so you can tell what changed. Our <a href="/posts/burr-grinder-settings-for-espresso.html">burr grinder settings for espresso guide</a> helps if your shots feel off, and our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> makes it easier to spot whether the problem is your grinder or the rest of the recipe.</p>
+
+    <HeroSteps
+      title="The easy cleaning rhythm to remember"
+      subtitle="If you hate maintenance, this is the version that keeps things under control without taking over your weekend"
+      steps={[
+        { label: 'After brewing', icon: 'zap', actions: ['Run empty briefly', 'Brush the exit', 'Dump loose grounds'], time: '~2 min' },
+        { label: 'Once a week', icon: 'calendar', actions: ['Empty beans', 'Open the top', 'Brush burr area', 'Blow out corners'], time: '~5 min' },
+        { label: 'Once a month', icon: 'wrench', actions: ['Deep clean chamber', 'Wipe oils away', 'Reassemble slowly'], time: '~15 min' },
+      ]}
+      outcome="A grinder that tastes cleaner and acts more predictable without turning coffee into another chore."
+      footer="coffeegearlab.com · grinder cleaning rhythm · 2026"
+    />
+
+    <h3>7. Know when cleaning is enough and when the grinder itself is the problem</h3>
+    <p>Sometimes the issue is not dirt. Sometimes the grinder just retains a lot of coffee or makes cleanup harder than it should. If you feel like you are constantly fishing old grounds out of awkward little tunnels, the design may be fighting you.</p>
+    <p>That is when it makes sense to look at better options instead of babysitting a grinder you already resent. Our <a href="/posts/best-burr-coffee-grinder-under-200.html">best burr coffee grinder under $200</a> roundup is a smart place to start if you want a cleaner daily workflow without spending silly money.</p>
   </Fragment>
 
   <Fragment slot="common-mistakes">
-    <h2 id="mistakes">Common mistakes that make grinders dirtier faster</h2>
-    <ul>
-      <li><strong>Using water inside the burr chamber:</strong> it traps fines and raises rust risk over time.</li>
-      <li><strong>Skipping cleanup for oily dark roasts:</strong> oil films go rancid quickly and flatten flavor.</li>
-      <li><strong>Changing dose, grind, and ratio all at once:</strong> you can't tell what caused the cup to shift.</li>
-      <li><strong>Forgetting calibration checks:</strong> some models need a quick zero-point verification after deep cleaning.</li>
-    </ul>
-    <p>Another frequent mistake is over-correcting when flavor changes after maintenance. A cleaner grinder can produce faster flow at the same dial position because fewer old fines remain in the path. That does not mean the grinder is broken. It usually means your previous setting included hidden resistance from residue.</p>
-    <p>It also helps to track your brew results in a simple log for two weeks after adopting a cleaning routine. Record dose, grind mark, brew time, and a quick taste note. Patterns become obvious fast, and troubleshooting becomes objective instead of guesswork.</p>
+    <h2 id="common-mistakes">Common mistakes</h2>
+
+    <h3>Using water where it does not belong</h3>
+    <p>Water and coffee dust make a muddy paste that sticks to everything. Inside the burr chamber, that is a headache. Keep the actual grinding parts dry unless your maker says otherwise.</p>
+
+    <h3>Ignoring oily dark-roast buildup</h3>
+    <p>Dark roasts leave more oily residue behind. If you love smoky, shiny beans, great, but you need to clean more often. Otherwise the grinder starts smelling old fast, and the cup follows.</p>
+
+    <h3>Taking the whole thing apart without a plan</h3>
+    <p>Do not scatter tiny parts across the counter and hope for the best. Work in order. Put screws and little pieces in a bowl. Take a quick photo if you need a reference. Future-you will be less annoyed.</p>
+
+    <h3>Changing the whole brew recipe right after cleaning</h3>
+    <p>If the grinder behaves differently after a deep clean, change one thing first. Usually that means a small grind adjustment. If you also change dose, ratio, and brew time together, you are just guessing with extra steps.</p>
   </Fragment>
 
   <Fragment slot="troubleshooting">
     <h2 id="troubleshooting">Troubleshooting after cleaning</h2>
-    <ul>
-      <li><strong>Shots suddenly run fast:</strong> old fines were adding resistance. Grind slightly finer and pull 1-2 calibration shots before judging flavor.</li>
-      <li><strong>Filter coffee tastes hollow:</strong> check burr carrier seating and dial alignment, then return to your baseline ratio from our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a>.</li>
-      <li><strong>Static mess got worse:</strong> brush anti-static tabs more thoroughly during weekly cleaning and reduce bean hopper dwell time.</li>
-      <li><strong>Grind range feels shifted:</strong> verify zero-point per manual, then compare target ranges with our <a href="/posts/burr-grinder-settings-for-espresso.html">burr grinder settings guide</a>.</li>
-    </ul>
+    <p><strong>The coffee still tastes stale:</strong> check the hopper, lid, grounds bin, and chute again. One hidden patch of old oily residue can keep polluting fresh coffee.</p>
+    <p><strong>Espresso shots run faster than before:</strong> that is normal after packed fines are cleared out. Go a little finer and pull another shot before you panic.</p>
+    <p><strong>Static mess got worse:</strong> make sure you actually cleared the chute corners and anti-static path. Dry winter air can make everything clingier too, so you may need slightly more frequent brush-outs.</p>
+    <p><strong>The grinder sounds strange after reassembly:</strong> stop and reopen it. Something may not be seated correctly. Do not force it and hope the noise goes away.</p>
+    <p><strong>Filter coffee still tastes muddy:</strong> use a stable recipe and compare again. If you need a reset point, our <a href="/posts/best-coffee-grinder-for-pour-over.html">best coffee grinder for pour over</a> guide shows what cleaner filter-focused grinders tend to do better.</p>
   </Fragment>
 
   <Fragment slot="extra-sections">
-    <BuyingGuideSection>
-      <h2 id="upgrade-picks">Easy-clean grinder picks if maintenance is a constant pain</h2>
-      <p>If cleaning your current grinder feels like disassembling a puzzle every week, a lower-retention design can save time. The picks below are researched options with accessible burr areas and straightforward daily workflows. Each card links to the current Amazon listing with a verified ASIN format.</p>
-
-      <QuickPicks>
-        <ProductCard
-          title={tools[2].name}
-          image={{ src: tools[2].image, alt: tools[2].imageAlt, width: 500, height: 500 }}
-          badge={{ label: 'Best Overall', variant: tools[2].badge }}
-          rating={{ score: tools[2].rating }}
-          price={tools[2].price}
-          ctaUrl={amazonUrl(tools[2].asin)}
-          featured={true}
-        />
-        <ProductCard
-          title={tools[0].name}
-          image={{ src: tools[0].image, alt: tools[0].imageAlt, width: 500, height: 500 }}
-          badge={{ label: 'Best for Beginners', variant: tools[0].badge }}
-          rating={{ score: tools[0].rating }}
-          price={tools[0].price}
-          ctaUrl={amazonUrl(tools[0].asin)}
-        />
-        <ProductCard
-          title={tools[1].name}
-          image={{ src: tools[1].image, alt: tools[1].imageAlt, width: 500, height: 500 }}
-          badge={{ label: 'Best Upgrade', variant: tools[1].badge }}
-          rating={{ score: tools[1].rating }}
-          price={tools[1].price}
-          ctaUrl={amazonUrl(tools[1].asin)}
-        />
-      </QuickPicks>
+    <section>
+      <h2 id="easy-clean-picks">Easy-clean grinder picks if your current one is driving you nuts</h2>
+      <p>Honestly, some grinders are just nicer to live with. If cleaning your current one feels like extracting splinters with chopsticks, a better layout can save you time and a lot of low-level irritation.</p>
+      <p>The three picks below all use verified ASINs and cover different types of homes: a flexible all-rounder, an easy starter option, and a smaller upgrade pick for tighter counters.</p>
 
       <h3>Baratza Encore ESP</h3>
-      <ProsCons
-        pros={[
-          'Straightforward hopper removal and brush access',
-          'Works for both espresso and filter workflows',
-          'Large support community for setup and maintenance',
-        ]}
-        cons={[
-          'Not the quietest grinder in compact kitchens',
-          'May still need purge grams when jumping brew methods',
-        ]}
-      />
-      <p><CtaButton href={amazonUrl(tools[2].asin)} external>Check Encore ESP Price on Amazon</CtaButton></p>
+      <p>This is the one I would point most people toward if they want one grinder for espresso and regular brewed coffee. It is not flashy, but it is approachable. The daily routine stays simple, and that matters more than fancy marketing when you are half awake at 7 a.m.</p>
+      <p><CtaButton href="https://www.amazon.com/dp/B0BW272XCV/ref=nosim?tag=coffee-site-20" external>Check Encore ESP Price on Amazon</CtaButton></p>
 
-      <h3>OXO Brew Conical Burr Grinder</h3>
-      <ProsCons
-        pros={[
-          'Simple controls and accessible catch-cup workflow',
-          'Good value for households focused on filter coffee',
-          'Consistent enough for V60 and batch brew routines',
-        ]}
-        cons={[
-          'Less grind-range precision than higher-end options',
-          'Static can increase in very dry climates',
-        ]}
-      />
-      <p><CtaButton href={amazonUrl(tools[0].asin)} external>Check OXO Brew Price on Amazon</CtaButton></p>
+      <h3>OXO Brew Conical Burr Coffee Grinder</h3>
+      <p>If you are moving up from a cheap blade grinder and want something that does not feel intimidating, the OXO makes sense. It is easier to figure out, easier to brush out, and easier to keep from turning into a dusty little coffee cave.</p>
+      <p><CtaButton href="https://www.amazon.com/dp/B07CSKGLMM/ref=nosim?tag=coffee-site-20" external>Check OXO Brew Price on Amazon</CtaButton></p>
 
-      <h3>Fellow Opus</h3>
-      <ProsCons
-        pros={[
-          'Compact footprint with modern retention controls',
-          'Good crossover option for mixed brew styles',
-          'Easy to integrate into small-home coffee bars',
-        ]}
-        cons={[
-          'Dial interpretation takes a short learning period',
-          'Fine-setting workflow can feel slower for beginners',
-        ]}
-      />
-      <p><CtaButton href={amazonUrl(tools[1].asin)} external>Check Fellow Opus Price on Amazon</CtaButton></p>
-    </BuyingGuideSection>
+      <h3>Fellow Opus Conical Burr Grinder</h3>
+      <p>The Opus is a better fit if space matters and you still want solid range. It is more compact, looks cleaner on the counter, and works well for people who bounce between espresso and other brew styles without wanting a huge machine hogging the kitchen.</p>
+      <p><CtaButton href="https://www.amazon.com/dp/B0BV96VPSR/ref=nosim?tag=coffee-site-20" external>Check Fellow Opus Price on Amazon</CtaButton></p>
+    </section>
   </Fragment>
 </HowToGuide>

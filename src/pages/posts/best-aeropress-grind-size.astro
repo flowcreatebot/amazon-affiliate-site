@@ -1,0 +1,181 @@
+---
+import HowToGuide from '../../layouts/page-types/HowToGuide.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import { amazonUrl } from '../../data/products';
+
+const description = 'Find the best AeroPress grind size with an easy medium-fine starting point, a quick adjustment chart, and simple fixes for sour, bitter, or weak cups.';
+---
+
+<HowToGuide
+  slug="best-aeropress-grind-size"
+  title="Best AeroPress Grind Size (2026)"
+  description={description}
+  category="brewers"
+  datePublished="2026-03-15"
+  dateModified="2026-03-15"
+  heroSteps={{
+    title: 'A simple AeroPress grind routine that actually works',
+    subtitle: 'Start medium-fine, taste the cup, then nudge one step at a time instead of changing five things at once',
+    steps: [
+      { label: 'Start here', icon: 'target', actions: ['Grind medium-fine', 'Think table salt, not powder', 'Use a medium roast first'], time: '~1 min' },
+      { label: 'Brew one cup', icon: 'coffee', actions: ['Keep dose and water steady', 'Steep about 1 to 2 minutes', 'Press with gentle resistance'], time: '~2 min' },
+      { label: 'Adjust by taste', icon: 'wrench', actions: ['Sour? go a little finer', 'Bitter? go a little coarser', 'Change one thing only'], time: '~30 sec' },
+    ],
+    outcome: 'You get a cleaner, sweeter AeroPress cup without guessing every morning.',
+    footer: 'coffeegearpicks.com · AeroPress grind size guide · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-answer', label: 'Quick answer' },
+    { href: '#what-you-need', label: "What you'll need" },
+    { href: '#steps', label: 'Step-by-step method' },
+    { href: '#mistakes', label: 'Common mistakes' },
+    { href: '#troubleshooting', label: 'Troubleshooting' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    { q: 'What is the best AeroPress grind size for most people?', a: 'For most people, medium-fine is the sweet spot. Think table salt or slightly finer than drip coffee. It gives you enough contact for sweetness without turning the cup muddy or making the press feel like a gym exercise.' },
+    { q: 'Should AeroPress grind be finer than pour over?', a: 'Usually yes. AeroPress often works best a little finer than a typical pour-over grind because the brew time is shorter and the coffee needs a bit more help giving up flavor fast.' },
+    { q: 'Why does my AeroPress taste sour even when I follow a recipe?', a: 'Most of the time the grind is too coarse, the water did not pull enough flavor out, or the brew was too short. Go a touch finer first before changing everything else.' },
+    { q: 'Can I use pre-ground coffee in an AeroPress?', a: 'You can, but it is harder to dial in. Pre-ground coffee is usually too broad a compromise, so one bag can taste fine one day and flat the next. A burr grinder makes AeroPress much easier to trust.' },
+  ]}
+  schemaSteps={[
+    { name: 'Start with a medium-fine grind', text: 'Grind the coffee around medium-fine, about the texture of table salt, so the AeroPress can extract enough flavor without overdoing bitterness.' },
+    { name: 'Brew a baseline cup', text: 'Keep your coffee dose, water amount, and brew time steady so you can judge what the grind is doing before you change anything else.' },
+    { name: 'Adjust by taste', text: 'If the cup tastes sour or weak, grind a little finer. If it tastes bitter or presses too hard, grind a little coarser.' },
+  ]}
+  supplies={['AeroPress brewer', 'Burr grinder', 'Coffee scale', 'Kettle', 'Timer']}
+  schemaTools={['AeroPress Original Coffee Press', 'Baratza Encore Conical Burr Grinder', 'OXO Brew Conical Burr Coffee Grinder', 'TIMEMORE Chestnut C2 Manual Coffee Grinder']}
+>
+  <Fragment slot="lead">
+    <p class="lead">The best AeroPress grind size for most people is <strong>medium-fine</strong> — a little finer than regular drip, but nowhere near espresso powder. Think table salt, not flour. Start there, brew one cup, then make tiny moves based on taste.</p>
+    <p>If your AeroPress coffee tastes sour, hollow, or weirdly thin, the grind is usually the first thing to fix. The good news is that AeroPress is forgiving. You do not need a lab coat and a spreadsheet. You just need a solid starting point and a simple way to adjust without chasing your tail.</p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <h2 id="quick-answer">Quick answer</h2>
+    <p><strong>Start at medium-fine.</strong> If you can picture table salt, you are in the right neighborhood. Go a little finer when the cup tastes sharp and underdone. Go a little coarser when it tastes bitter, dusty, or the plunge feels way too stiff.</p>
+    <p>AeroPress sits in that nice middle lane between filter coffee and espresso. It wants more surface area than a chunky French press grind, but it does not need the baby-powder fineness that would make the press crawl. Get close, taste the cup, and let the coffee tell you the rest.</p>
+
+    <h3>Quick grind cheat sheet</h3>
+    <ComparisonTable timestamp="Prices updated: March 15, 2026" ariaLabel="AeroPress grind size cheat sheet">
+      <table>
+        <thead>
+          <tr>
+            <th>If your cup tastes like...</th>
+            <th>What it usually means</th>
+            <th>What to do next</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="If your cup tastes like...">Sharp, lemony, a little hollow</td>
+            <td data-label="What it usually means">Grind is too coarse</td>
+            <td data-label="What to do next">Go slightly finer</td>
+          </tr>
+          <tr>
+            <td data-label="If your cup tastes like...">Flat, bitter, or muddy</td>
+            <td data-label="What it usually means">Grind is too fine</td>
+            <td data-label="What to do next">Go slightly coarser</td>
+          </tr>
+          <tr>
+            <td data-label="If your cup tastes like...">Sweet, balanced, easy to finish</td>
+            <td data-label="What it usually means">You are close</td>
+            <td data-label="What to do next">Leave it alone</td>
+          </tr>
+          <tr>
+            <td data-label="If your cup tastes like...">Weak but not sour</td>
+            <td data-label="What it usually means">Could be dose or ratio, not just grind</td>
+            <td data-label="What to do next">Check your recipe before moving the grinder again</td>
+          </tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="what-youll-need">
+    <h2 id="what-you-need">What you'll need</h2>
+    <p>You do not need a fancy setup, but a few pieces make dialing AeroPress way easier. The brewer matters, sure. The grinder matters even more. A blade grinder chops beans into random dust and boulders, and that gives you a cup that tastes sour and bitter at the same time. It is like toast that is burnt on one side and pale on the other.</p>
+    <p>If you want a clean baseline, the <strong>AeroPress Original Coffee Press</strong> is the obvious starting point. For grinding, a basic burr grinder is the real upgrade. The <strong>Baratza Encore</strong> is still a strong pick if you want an easy electric grinder, the <strong>OXO Brew Conical Burr Coffee Grinder</strong> is a friendlier budget move, and a manual grinder like the <strong>TIMEMORE Chestnut C2</strong> or <strong>1Zpresso J</strong> makes a lot of sense if you brew one cup at a time and want tighter control.</p>
+    <ul>
+      <li><strong>AeroPress Original:</strong> best if you want the classic brewer most recipes are built around. <CtaButton href={amazonUrl('B0047BIWSK')} external>Check price</CtaButton></li>
+      <li><strong>Baratza Encore:</strong> best if you want an easy electric burr grinder with plenty of room to experiment. <CtaButton href={amazonUrl('B007F183LK')} external>Check price</CtaButton></li>
+      <li><strong>OXO Brew Conical Burr Coffee Grinder:</strong> best if you want something simple and less intimidating. <CtaButton href={amazonUrl('B07CSKGLMM')} external>Check price</CtaButton></li>
+      <li><strong>TIMEMORE Chestnut C2:</strong> best if you want a travel-friendly manual grinder. <CtaButton href={amazonUrl('B0833SDN8M')} external>Check price</CtaButton></li>
+      <li><strong>1Zpresso J:</strong> best if you want a hand grinder with a more precise feel. <CtaButton href={amazonUrl('B0C2YYBLC1')} external>Check price</CtaButton></li>
+    </ul>
+    <p>A scale and timer help too. They are not there to make coffee feel serious. They are there so you can keep the other stuff the same while you figure out the grind. If your dose, water, and steep time keep changing, you are not dialing in. You are just rolling dice with hot water.</p>
+  </Fragment>
+
+  <Fragment slot="steps">
+    <h2 id="steps">Step-by-step method</h2>
+
+    <h3>1. Start with a forgiving recipe</h3>
+    <p>Use a medium roast first if you can. It is the easiest place to learn what your grinder is doing. Go with a simple baseline: about 14 to 17 grams of coffee, 200 to 240 grams of water, and around 1 to 2 minutes of steep time before you press. Keep everything else steady. That part matters.</p>
+    <p>If you need help holding the recipe still, our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> gives you an easy starting point. A ratio sounds technical, but it just means how much coffee you use compared with water. Once that is steady, your grind changes actually mean something.</p>
+
+    <h3>2. Grind medium-fine and look at it before you brew</h3>
+    <p>This sounds almost too basic, but do it anyway. Look at the grounds. For AeroPress, you usually want something that looks a lot like table salt. Not chunky like cracked pepper. Not fluffy and powdery like cinnamon. Somewhere in the middle.</p>
+    <p>If you are using a hand grinder, the grind should still feel crisp between your fingers, not dusty. If you are using an electric burr grinder, you want a setting that sits a little finer than your normal pour-over range. Not universal click numbers — those change by grinder — just that general zone.</p>
+
+    <h3>3. Brew one cup and pay attention to the press</h3>
+    <p>Taste matters most, but the plunge tells you a lot too. A gentle, smooth press usually means you are close. If the plunger fights you like a stuck drawer, the grind may be too fine. If it drops way too fast and the cup tastes thin, you are probably too coarse.</p>
+    <p>This is why AeroPress is so nice for learning. The feedback is fast. You do not have to wait through a whole pot to know something is off. One cup tells the story pretty quickly.</p>
+
+    <h3>4. Fix sour cups by going a little finer</h3>
+    <p>Sour is the classic sign that the water did not pull enough flavor out of the coffee. Extraction — basically how much flavor the water grabs from the grounds — is the whole game here. If the cup tastes sharp, lemony, grassy, or just unfinished, make the grind a little finer next round.</p>
+    <p>Do not jump three notches at once. Small move. One step. Brew again. AeroPress reacts quickly, and big swings can take you straight from sour to bitter before you learn anything useful.</p>
+
+    <h3>5. Fix bitter cups by going a little coarser</h3>
+    <p>If the coffee tastes harsh, muddy, or dries your mouth out like oversteeped black tea, back the grind off a little. Too fine a grind can pull out too much bitterness and also make the press feel heavier than it should.</p>
+    <p>This is especially common when people chase “stronger” coffee by grinding finer and finer. Strength is not the same thing as balance. You want a cup that tastes sweet and full, not one that punches you in the tongue and then leaves ash behind.</p>
+
+    <HeroSteps
+      title="The tiny adjustment loop that saves most AeroPress brews"
+      subtitle="This is the part people skip when they get frustrated and blame the beans"
+      steps={[
+        { label: 'Cup tastes sour', icon: 'droplets', actions: ['Go slightly finer', 'Keep recipe the same', 'Brew again once'], time: '~1 brew' },
+        { label: 'Cup tastes bitter', icon: 'wind', actions: ['Go slightly coarser', 'Do not change dose too', 'Press gently again'], time: '~1 brew' },
+        { label: 'Cup tastes close', icon: 'check', actions: ['Leave the grinder there', 'Write it down', 'Only tweak for new beans'], time: '~30 sec' },
+      ]}
+      outcome="Most AeroPress problems get easier once you stop changing everything at the same time."
+    />
+
+    <h3>6. Know when the grinder is the real problem</h3>
+    <p>If your cup flips from sour to bitter even after tiny changes, your grinder may be throwing too many fines and chunks together. That is where a burr grinder makes a real difference. It gives you a narrower spread, so the cup behaves more predictably. Our <a href="/posts/best-coffee-grinder-for-pour-over.html">best coffee grinder for pour over</a> roundup is still useful here because the same grind consistency that helps pour over also makes AeroPress easier to dial.</p>
+    <p>And if you are deciding between brew styles, our <a href="/posts/aeropress-vs-french-press.html">AeroPress vs French Press guide</a> shows why AeroPress is usually the cleaner, easier option when you want quick one-cup brewing.</p>
+  </Fragment>
+
+  <Fragment slot="common-mistakes">
+    <h2 id="mistakes">Common mistakes</h2>
+
+    <h3>Grinding too fine because you want more strength</h3>
+    <p>This is the big one. People hear that AeroPress can make concentrated coffee, then they slide toward espresso-fine grounds. Bad move. The press gets sluggish, the cup gets muddy, and the whole thing tastes more bitter than bold.</p>
+
+    <h3>Grinding too coarse because you are scared of bitterness</h3>
+    <p>The opposite problem is just as common. Go too coarse and the cup tastes hollow, almost like coffee-flavored water. You get aroma up front, then the flavor falls through the floor.</p>
+
+    <h3>Changing dose, water, and grind all at once</h3>
+    <p>Pick one knob and turn one knob. That is it. If you change the grind, the recipe, and the steep time in the same breath, you will not know what fixed the cup.</p>
+
+    <h3>Using old or uneven coffee and blaming the recipe</h3>
+    <p>Sometimes the grind is fine and the beans are the issue. Stale coffee tastes flat no matter how carefully you brew it. And if your grinder is dirty, that stale, papery flavor can creep into fresh beans too. If that sounds familiar, our <a href="/posts/how-to-clean-burr-coffee-grinder.html">burr grinder cleaning guide</a> is worth a quick read.</p>
+  </Fragment>
+
+  <Fragment slot="troubleshooting">
+    <h2 id="troubleshooting">Troubleshooting</h2>
+    <p><strong>Sour and thin:</strong> go a little finer first. If that still does not fix it, let the coffee steep a bit longer before pressing.</p>
+    <p><strong>Bitter and heavy:</strong> go a little coarser. Also check whether your water was too hot or your steep ran longer than you thought.</p>
+    <p><strong>Weak but not terrible:</strong> your grind may be close already. Check your coffee-to-water ratio before you start cranking the grinder around.</p>
+    <p><strong>Plunger is brutally hard to press:</strong> the grind is probably too fine, or you packed the bed too densely. Back off a notch and press more gently.</p>
+    <p><strong>Cup tastes muddy:</strong> the grind may be too fine, or your grinder may be producing too many dusty fines. That is where a better burr grinder really earns its keep.</p>
+
+    <BuyingGuideSection>
+      <h2>Final take</h2>
+      <p>Honestly, the best AeroPress grind size is not some magic number. It is a small zone. Start medium-fine, taste the cup, and make tiny moves. That is the whole trick.</p>
+      <p>Once you hit that sweet spot, AeroPress gets really easy to love. The cup turns sweet, clean, and balanced. Not fussy. Not muddy. Just good coffee with very little drama.</p>
+    </BuyingGuideSection>
+  </Fragment>
+</HowToGuide>
