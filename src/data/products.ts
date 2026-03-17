@@ -8,6 +8,7 @@ export interface Product {
   asin: string;
   image: string;
   imageAlt: string;
+  secondaryImages?: { src: string; alt: string }[];
   category: string;
   rating: number;
   specs: Record<string, string>;
