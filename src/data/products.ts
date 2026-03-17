@@ -58,6 +58,24 @@ export function getResolvedProducts(slug: string): ResolvedProduct[] {
   });
 }
 
+// ASIN → Product lookup for centralised image resolution
+const productsByAsin = new Map<string, Product>();
+for (const p of Object.values(products)) {
+  if (p.asin) productsByAsin.set(p.asin, p);
+}
+
+export function getProductImages(asin: string): {
+  image: { src: string; alt: string; width: number; height: number };
+  secondaryImages?: { src: string; alt: string }[];
+} | null {
+  const p = productsByAsin.get(asin);
+  if (!p || !p.image) return null;
+  return {
+    image: { src: p.image, alt: p.imageAlt, width: 500, height: 500 },
+    secondaryImages: p.secondaryImages,
+  };
+}
+
 export function amazonUrl(asin: string): string {
   return `https://www.amazon.com/dp/${asin}/ref=nosim?tag=${AMAZON_TAG}`;
 }

@@ -2,9 +2,11 @@
 import BestForBadge from './BestForBadge.astro';
 import StarRating from './StarRating.astro';
 import CtaButton from './CtaButton.astro';
+import { getProductImages } from '../data/products';
 
 interface Props {
   title: string;
+  asin?: string;
   image?: { src: string; alt: string; width?: number; height?: number };
   secondaryImages?: { src: string; alt: string }[];
   badge?: { label: string; variant: 'overall' | 'budget' | 'espresso' | 'pourover' | 'beginners' | 'upgrade' };
@@ -15,7 +17,13 @@ interface Props {
   featured?: boolean;
   noImage?: boolean;
 }
-const { title, image, secondaryImages, badge, rating, price, ctaUrl, ctaText = 'Check Price on Amazon', featured = false, noImage = false } = Astro.props;
+const { title, asin, image: imageProp, secondaryImages: secondaryProp, badge, rating, price, ctaUrl, ctaText = 'Check Price on Amazon', featured = false, noImage = false } = Astro.props;
+
+// Centralised image resolution: ASIN lookup takes priority over props
+const resolved = asin ? getProductImages(asin) : null;
+const image = resolved?.image ?? imageProp;
+const secondaryImages = resolved?.secondaryImages ?? secondaryProp;
+
 const cardClasses = `product-card${featured ? ' --featured' : ''}${noImage ? ' product-card--no-image' : ''}`;
 const hasGallery = secondaryImages && secondaryImages.length > 0;
 ---

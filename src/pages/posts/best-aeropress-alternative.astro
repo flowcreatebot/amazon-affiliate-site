@@ -16,11 +16,6 @@ const products = [
     asin: 'B092HGTM12',
     image: 'https://m.media-amazon.com/images/I/61Rszu+sqnL._AC_SL500_.jpg',
     imageAlt: 'Delter Coffee Press smoked grey coffee brewer with plunger and chamber',
-    secondaryImages: [
-      { src: 'https://m.media-amazon.com/images/I/51keyAvqRcL._AC_SL500_.jpg', alt: 'Delter Coffee Press parts and included metal filter' },
-      { src: 'https://m.media-amazon.com/images/I/61Q8kHyZlWL._AC_SL500_.jpg', alt: 'Delter Coffee Press brewing into a coffee cup' },
-      { src: 'https://m.media-amazon.com/images/I/61e2K28TTWL._AC_SL500_.jpg', alt: 'Delter Coffee Press plunger and chamber detail' },
-    ],
     category: 'brewers',
     rating: 4.3,
     specs: {
@@ -39,11 +34,6 @@ const products = [
     asin: 'B0CK4J1G7V',
     image: 'https://m.media-amazon.com/images/I/41-Q1iUbZ5L._AC_SL500_.jpg',
     imageAlt: 'Hario V60 Ceramic Immersion Dripper Switch in white ceramic',
-    secondaryImages: [
-      { src: 'https://m.media-amazon.com/images/I/51Pfa40OOrL._AC_SL500_.jpg', alt: 'Hario V60 Switch dripper from above showing ceramic cone' },
-      { src: 'https://m.media-amazon.com/images/I/61OWM80hJeL._AC_SL500_.jpg', alt: 'Hario V60 Switch with switch mechanism visible' },
-      { src: 'https://m.media-amazon.com/images/I/61wtCHnFLjL._AC_SL500_.jpg', alt: 'Hario V60 Switch brewing coffee into server' },
-    ],
     category: 'brewers',
     rating: 4.6,
     specs: {
@@ -61,11 +51,6 @@ const products = [
     asin: 'B011WTW37A',
     image: 'https://m.media-amazon.com/images/I/61kpAfV+AjL._AC_SL500_.jpg',
     imageAlt: 'ESPRO P0 Ultralight stainless steel travel French press',
-    secondaryImages: [
-      { src: 'https://m.media-amazon.com/images/I/71MvHWKVyrL._AC_SL500_.jpg', alt: 'ESPRO P0 Ultralight opened showing double micro-filter' },
-      { src: 'https://m.media-amazon.com/images/I/71+dJc9MbfL._AC_SL500_.jpg', alt: 'ESPRO P0 Ultralight held in hand showing travel size' },
-      { src: 'https://m.media-amazon.com/images/I/61cQzj7t3uL._AC_SL500_.jpg', alt: 'ESPRO P0 Ultralight with lid off showing interior' },
-    ],
     category: 'brewers',
     rating: 4.4,
     specs: {
@@ -83,11 +68,6 @@ const products = [
     asin: 'B00008XEWG',
     image: 'https://m.media-amazon.com/images/I/61V-VGqgHqL._AC_SL500_.jpg',
     imageAlt: 'Bodum Chambord French press coffee maker with glass carafe and metal frame',
-    secondaryImages: [
-      { src: 'https://m.media-amazon.com/images/I/51MHUx3O7UL._AC_SL500_.jpg', alt: 'Bodum Chambord French press plunger and filter assembly' },
-      { src: 'https://m.media-amazon.com/images/I/51cZXUwoDtL._AC_SL500_.jpg', alt: 'Bodum Chambord pouring coffee into a mug' },
-      { src: 'https://m.media-amazon.com/images/I/51u64rG1SNL._AC_SL500_.jpg', alt: 'Bodum Chambord French press from above showing lid' },
-    ],
     category: 'brewers',
     rating: 4.7,
     specs: {
@@ -105,11 +85,6 @@ const products = [
     asin: 'B0000CF3Q6',
     image: 'https://m.media-amazon.com/images/I/71nqjUMnlVL._AC_SL500_.jpg',
     imageAlt: 'Bialetti Moka Express silver stovetop coffee maker',
-    secondaryImages: [
-      { src: 'https://m.media-amazon.com/images/I/51-IaIdtUhL._AC_SL500_.jpg', alt: 'Bialetti Moka Express disassembled showing three parts' },
-      { src: 'https://m.media-amazon.com/images/I/61-2uaC-YZL._AC_SL500_.jpg', alt: 'Bialetti Moka Express on stovetop brewing' },
-      { src: 'https://m.media-amazon.com/images/I/61Lj6DeOU6L._AC_SL500_.jpg', alt: 'Bialetti Moka Express size comparison with coffee cup' },
-    ],
     category: 'brewers',
     rating: 4.5,
     specs: {
@@ -324,8 +299,8 @@ const products = [
       <h3>1) Delter Coffee Press — Best overall</h3>
       <ProductCard
         title={products[0].name}
+        asin={products[0].asin}
         image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
-        secondaryImages={products[0].secondaryImages}
         badge={products[0].badge}
         rating={{ score: products[0].rating }}
         price={products[0].price}
@@ -357,8 +332,8 @@ const products = [
       <h3>2) Hario V60 Ceramic Immersion Dripper Switch — Best non-plastic pick</h3>
       <ProductCard
         title={products[1].name}
+        asin={products[1].asin}
         image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
-        secondaryImages={products[1].secondaryImages}
         badge={products[1].badge}
         rating={{ score: products[1].rating }}
         price={products[1].price}
@@ -390,8 +365,8 @@ const products = [
       <h3>3) ESPRO P0 Ultralight Travel French Press — Best for travel</h3>
       <ProductCard
         title={products[2].name}
+        asin={products[2].asin}
         image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
-        secondaryImages={products[2].secondaryImages}
         badge={products[2].badge}
         rating={{ score: products[2].rating }}
         price={products[2].price}
@@ -423,8 +398,8 @@ const products = [
       <h3>4) Bodum Chambord French Press — Best for richer cups</h3>
       <ProductCard
         title={products[3].name}
+        asin={products[3].asin}
         image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
-        secondaryImages={products[3].secondaryImages}
         badge={products[3].badge}
         rating={{ score: products[3].rating }}
         price={products[3].price}
@@ -457,8 +432,8 @@ const products = [
       <h3>5) Bialetti Moka Express 3-Cup — Best for stronger coffee</h3>
       <ProductCard
         title={products[4].name}
+        asin={products[4].asin}
         image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
-        secondaryImages={products[4].secondaryImages}
         badge={products[4].badge}
         rating={{ score: products[4].rating }}
         price={products[4].price}
@@ -490,8 +465,8 @@ const products = [
       <h3>6) Barista &amp; Co Twist Press 2.0 — Closest direct competitor</h3>
       <ProductCard
         title={products[5].name}
+        asin={products[5].asin}
         image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
-        secondaryImages={products[5].secondaryImages}
         badge={products[5].badge}
         rating={{ score: products[5].rating }}
         price={products[5].price}

@@ -722,7 +722,21 @@
     "imageAlt": "Greater Goods digital coffee scale with timer",
     "category": "scales",
     "rating": 4.4,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/91bGMyr-tLL._AC_SL500_.jpg",
+        "alt": "Greater Goods Digital Coffee Scale alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81kmiBnMB-L._AC_SL500_.jpg",
+        "alt": "Greater Goods Digital Coffee Scale alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81n8FeTRc7L._AC_SL500_.jpg",
+        "alt": "Greater Goods Digital Coffee Scale alternate view 3"
+      }
+    ]
   },
   "acaia-pearl-s": {
     "name": "Acaia Pearl S",
@@ -938,7 +952,21 @@
       "heatUp": "~25 sec",
       "milkSystem": "None",
       "waterTank": "20.3 oz"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/31o-XzHRhTL._AC_SL500_.jpg",
+        "alt": "Nespresso Essenza Mini alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/41OAXQv2M+L._AC_SL500_.jpg",
+        "alt": "Nespresso Essenza Mini alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/317JMeHMpgL._AC_SL500_.jpg",
+        "alt": "Nespresso Essenza Mini alternate view 3"
+      }
+    ]
   },
   "delonghi-ecp3420": {
     "name": "De'Longhi ECP3420",
@@ -1480,7 +1508,21 @@
     "imageAlt": "BLACK+DECKER Thermal CM2035B drip coffee maker",
     "category": "drip-coffee-makers",
     "rating": 4.2,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71Qf-8xbWEL._AC_SL500_.jpg",
+        "alt": "BLACK+DECKER Thermal CM2035B alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81YpIHQYhzL._AC_SL500_.jpg",
+        "alt": "BLACK+DECKER Thermal CM2035B alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81pkpK604pL._AC_SL500_.jpg",
+        "alt": "BLACK+DECKER Thermal CM2035B alternate view 3"
+      }
+    ]
   },
   "mueller-12-cup-drip": {
     "name": "Mueller 12-Cup Drip",
@@ -1514,7 +1556,21 @@
     "imageAlt": "KRUPS Simply Brew 5-cup drip coffee maker",
     "category": "drip-coffee-makers",
     "rating": 4.1,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81Rb1dOgQRL._AC_SL500_.jpg",
+        "alt": "KRUPS Simply Brew 5-Cup alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81JKi66AWoL._AC_SL500_.jpg",
+        "alt": "KRUPS Simply Brew 5-Cup alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71nHnOy0J+L._AC_SL500_.jpg",
+        "alt": "KRUPS Simply Brew 5-Cup alternate view 3"
+      }
+    ]
   },
   "cafe-specialty-grind-and-brew": {
     "name": "Café Specialty Grind & Brew",
@@ -1567,6 +1623,496 @@
       {
         "src": "https://m.media-amazon.com/images/I/81BK2ISK-JL._AC_SL500_.jpg",
         "alt": "Ninja Luxe Café 3-in-1 alternate view 3"
+      }
+    ]
+  },
+  "delter-coffee-press": {
+    "name": "Delter Coffee Press",
+    "brand": "Delter",
+    "asin": "B092HGTM12",
+    "image": "https://m.media-amazon.com/images/I/61Rszu+sqnL._AC_SL500_.jpg",
+    "imageAlt": "Delter Coffee Press smoked grey coffee brewer with plunger and chamber",
+    "category": "accessories",
+    "rating": 4,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61Q8kHyZlWL._AC_SL500_.jpg",
+        "alt": "Delter Coffee Press alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51keyAvqRcL._AC_SL500_.jpg",
+        "alt": "Delter Coffee Press alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81vD6-2ytwL._AC_SL500_.jpg",
+        "alt": "Delter Coffee Press alternate view 3"
+      }
+    ]
+  },
+  "espro-p0-ultralight-travel-french-press": {
+    "name": "ESPRO P0 Ultralight Travel French Press",
+    "brand": "ESPRO",
+    "asin": "B011WTW37A",
+    "image": "https://m.media-amazon.com/images/I/61kpAfV+AjL._AC_SL500_.jpg",
+    "imageAlt": "ESPRO P0 Ultralight stainless steel travel French press",
+    "category": "accessories",
+    "rating": 4,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/51j1DYsPrFL._AC_SL500_.jpg",
+        "alt": "ESPRO P0 Ultralight Travel French Press alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71iowcesqoL._AC_SL500_.jpg",
+        "alt": "ESPRO P0 Ultralight Travel French Press alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51yvqW0-hGL._AC_SL500_.jpg",
+        "alt": "ESPRO P0 Ultralight Travel French Press alternate view 3"
+      }
+    ]
+  },
+  "bodum-chambord-french-press": {
+    "name": "Bodum Chambord French Press",
+    "brand": "Bodum",
+    "asin": "B00008XEWG",
+    "image": "https://m.media-amazon.com/images/I/61V-VGqgHqL._AC_SL500_.jpg",
+    "imageAlt": "Bodum Chambord French press coffee maker with glass carafe and metal frame",
+    "category": "accessories",
+    "rating": 4,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71OV52hELYL._AC_SL500_.jpg",
+        "alt": "Bodum Chambord French Press alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61Kp-0avC7L._AC_SL500_.jpg",
+        "alt": "Bodum Chambord French Press alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61tCsY690sL._AC_SL500_.jpg",
+        "alt": "Bodum Chambord French Press alternate view 3"
+      }
+    ]
+  },
+  "bialetti-moka-express-3-cup": {
+    "name": "Bialetti Moka Express 3-Cup",
+    "brand": "Bialetti",
+    "asin": "B0000CF3Q6",
+    "image": "https://m.media-amazon.com/images/I/71nqjUMnlVL._AC_SL500_.jpg",
+    "imageAlt": "Bialetti Moka Express silver stovetop coffee maker",
+    "category": "accessories",
+    "rating": 4,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/51uIgI4AJVL._AC_SL500_.jpg",
+        "alt": "Bialetti Moka Express 3-Cup alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81T4Hf3HS1L._AC_SL500_.jpg",
+        "alt": "Bialetti Moka Express 3-Cup alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71LK9TQHclL._AC_SL500_.jpg",
+        "alt": "Bialetti Moka Express 3-Cup alternate view 3"
+      }
+    ]
+  },
+  "barista-co-twist-press-2-0": {
+    "name": "Barista & Co Twist Press 2.0",
+    "brand": "Barista & Co",
+    "asin": "B08ZCRKJVK",
+    "image": "https://m.media-amazon.com/images/I/513FpjEKInL._AC_SL500_.jpg",
+    "imageAlt": "Barista and Co Twist Press 2.0 compact coffee maker in black",
+    "category": "brewers",
+    "rating": 4.1,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/31SImb+n90L._AC_SL500_.jpg",
+        "alt": "Barista & Co Twist Press 2.0 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/410oboMtcDL._AC_SL500_.jpg",
+        "alt": "Barista & Co Twist Press 2.0 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51XR6opASeL._AC_SL500_.jpg",
+        "alt": "Barista & Co Twist Press 2.0 alternate view 3"
+      }
+    ]
+  },
+  "thermopro-tp19-instant-read-thermometer": {
+    "name": "ThermoPro TP19 Instant Read Thermometer",
+    "brand": "ThermoPro",
+    "asin": "B07R18W3W1",
+    "image": "https://m.media-amazon.com/images/I/718EIE-imiL._AC_SL500_.jpg",
+    "imageAlt": "ThermoPro TP19 instant read digital thermometer",
+    "category": "accessories",
+    "rating": 4.5,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81rit+S0guL._AC_SL500_.jpg",
+        "alt": "ThermoPro TP19 Instant Read Thermometer alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61LxH4QSgUL._AC_SL500_.jpg",
+        "alt": "ThermoPro TP19 Instant Read Thermometer alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/717K99iKB8L._AC_SL500_.jpg",
+        "alt": "ThermoPro TP19 Instant Read Thermometer alternate view 3"
+      }
+    ]
+  },
+  "jettle-electric-travel-kettle": {
+    "name": "Jettle Electric Travel Kettle",
+    "brand": "Jettle",
+    "asin": "B0BFTMM5PC",
+    "image": "https://m.media-amazon.com/images/I/41DBw+OXDgL._AC_SL500_.jpg",
+    "imageAlt": "Jettle portable electric travel kettle with temperature control",
+    "category": "accessories",
+    "rating": 4.2,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71GYEAMz12L._AC_SL500_.jpg",
+        "alt": "Jettle Electric Travel Kettle alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/615qCiaSGZL._AC_SL500_.jpg",
+        "alt": "Jettle Electric Travel Kettle alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81GyyWghbRL._AC_SL500_.jpg",
+        "alt": "Jettle Electric Travel Kettle alternate view 3"
+      }
+    ]
+  },
+  "aeropress-paper-micro-filters-standard": {
+    "name": "AeroPress Paper Micro-Filters (Standard)",
+    "brand": "AeroPress",
+    "asin": "B005UPSLX8",
+    "image": "https://m.media-amazon.com/images/I/719Eo75xBJL._AC_SL500_.jpg",
+    "imageAlt": "AeroPress white paper micro-filters for standard AeroPress coffee makers",
+    "category": "accessories",
+    "rating": 4.8,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/51EWAl9AyjL._AC_SL500_.jpg",
+        "alt": "AeroPress Paper Micro-Filters (Standard) alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71-ZT7PeiiL._AC_SL500_.jpg",
+        "alt": "AeroPress Paper Micro-Filters (Standard) alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51+MRYTK5RL._AC_SL500_.jpg",
+        "alt": "AeroPress Paper Micro-Filters (Standard) alternate view 3"
+      }
+    ]
+  },
+  "aeropress-316-stainless-steel-reusable-filter": {
+    "name": "AeroPress 316 Stainless Steel Reusable Filter",
+    "brand": "AeroPress",
+    "asin": "B0B3BTYSTD",
+    "image": "https://m.media-amazon.com/images/I/61p7idkiv6L._AC_SL500_.jpg",
+    "imageAlt": "AeroPress 316 stainless steel reusable metal filter for standard AeroPress brewers",
+    "category": "accessories",
+    "rating": 4.5,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71w+ZqeM0yL._AC_SL500_.jpg",
+        "alt": "AeroPress 316 Stainless Steel Reusable Filter alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/712uaQJvOgL._AC_SL500_.jpg",
+        "alt": "AeroPress 316 Stainless Steel Reusable Filter alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71JQTLSpWKL._AC_SL500_.jpg",
+        "alt": "AeroPress 316 Stainless Steel Reusable Filter alternate view 3"
+      }
+    ]
+  },
+  "fellow-prismo-aeropress-attachment": {
+    "name": "Fellow Prismo AeroPress Attachment",
+    "brand": "Fellow",
+    "asin": "B079YBT2LJ",
+    "image": "https://m.media-amazon.com/images/I/81spRscQcAL._AC_SL500_.jpg",
+    "imageAlt": "Fellow Prismo AeroPress attachment with reusable metal filter",
+    "category": "accessories",
+    "rating": 4.6,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71ni6Wjl4tL._AC_SL500_.jpg",
+        "alt": "Fellow Prismo AeroPress Attachment alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71pJ9byXGLL._AC_SL500_.jpg",
+        "alt": "Fellow Prismo AeroPress Attachment alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71MdVbm3FHL._AC_SL500_.jpg",
+        "alt": "Fellow Prismo AeroPress Attachment alternate view 3"
+      }
+    ]
+  },
+  "able-disk-fine-for-aeropress": {
+    "name": "Able DISK Fine for AeroPress",
+    "brand": "Able",
+    "asin": "B00E58P81E",
+    "image": "https://m.media-amazon.com/images/I/71UMiE1X3lL._AC_SL500_.jpg",
+    "imageAlt": "Able DISK Fine stainless steel reusable coffee filter for AeroPress",
+    "category": "accessories",
+    "rating": 4.3,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71yteLg6hEL._AC_SL500_.jpg",
+        "alt": "Able DISK Fine for AeroPress alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81KqwmgXoaL._AC_SL500_.jpg",
+        "alt": "Able DISK Fine for AeroPress alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81qqN4s6fIL._AC_SL500_.jpg",
+        "alt": "Able DISK Fine for AeroPress alternate view 3"
+      }
+    ]
+  },
+  "aeropress-natural-paper-micro-filters": {
+    "name": "AeroPress Natural Paper Micro-Filters",
+    "brand": "AeroPress",
+    "asin": "B0CQPPCZJ5",
+    "image": "",
+    "imageAlt": "AeroPress natural unbleached paper micro-filters for standard AeroPress coffee makers",
+    "category": "accessories",
+    "rating": 4.7,
+    "specs": {}
+  },
+  "aeropress-flow-control-filter-cap": {
+    "name": "AeroPress Flow Control Filter Cap",
+    "brand": "AeroPress",
+    "asin": "B0BXCRVZ52",
+    "image": "https://m.media-amazon.com/images/I/61uTKI9CbQL._AC_SL500_.jpg",
+    "imageAlt": "AeroPress Flow Control Filter Cap accessory for standard AeroPress coffee makers",
+    "category": "accessories",
+    "rating": 4.5,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71unRlPswjL._AC_SL500_.jpg",
+        "alt": "AeroPress Flow Control Filter Cap alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61iKwEkqVsL._AC_SL500_.jpg",
+        "alt": "AeroPress Flow Control Filter Cap alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/715bVqaxu8L._AC_SL500_.jpg",
+        "alt": "AeroPress Flow Control Filter Cap alternate view 3"
+      }
+    ]
+  },
+  "aeropress-original": {
+    "name": "AeroPress Original",
+    "brand": "",
+    "asin": "B0047BIWSK",
+    "image": "https://m.media-amazon.com/images/I/61u3sW4Vx4L._AC_SL500_.jpg",
+    "imageAlt": "AeroPress Original",
+    "category": "accessories",
+    "rating": 4,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71WiJNoMfFL._AC_SL500_.jpg",
+        "alt": "AeroPress Original alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61-JZXPLLUL._AC_SL500_.jpg",
+        "alt": "AeroPress Original alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61wEHXb3kIL._AC_SL500_.jpg",
+        "alt": "AeroPress Original alternate view 3"
+      }
+    ]
+  },
+  "baratza-encore": {
+    "name": "Baratza Encore",
+    "brand": "",
+    "asin": "B007F183LK",
+    "image": "https://m.media-amazon.com/images/I/61TrvcVsXEL._AC_SL500_.jpg",
+    "imageAlt": "Baratza Encore",
+    "category": "accessories",
+    "rating": 4,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81IqSuy4ZoL._AC_SL500_.jpg",
+        "alt": "Baratza Encore alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71cByQodnkL._AC_SL500_.jpg",
+        "alt": "Baratza Encore alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/819xTUCpzLL._AC_SL500_.jpg",
+        "alt": "Baratza Encore alternate view 3"
+      }
+    ]
+  },
+  "1zpresso-j": {
+    "name": "1Zpresso J",
+    "brand": "",
+    "asin": "B0C2YYBLC1",
+    "image": "https://m.media-amazon.com/images/I/51jjHC8ZFbL._AC_SL500_.jpg",
+    "imageAlt": "1Zpresso J",
+    "category": "accessories",
+    "rating": 4,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61nX1BXUgmL._AC_SL500_.jpg",
+        "alt": "1Zpresso J alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/5157nvGP-BL._AC_SL500_.jpg",
+        "alt": "1Zpresso J alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51Go0fJOc0L._AC_SL500_.jpg",
+        "alt": "1Zpresso J alternate view 3"
+      }
+    ]
+  },
+  "miicoffee-d40-single-dose-grinder": {
+    "name": "MiiCoffee D40+ Single Dose Grinder",
+    "brand": "MiiCoffee",
+    "asin": "B0CGBZQ2LY",
+    "image": "https://m.media-amazon.com/images/I/61cQ7XqGjbL._AC_SL500_.jpg",
+    "imageAlt": "MiiCoffee D40 Plus single-dose coffee grinder with angled body and dosing cup",
+    "category": "grinders",
+    "rating": 4.2,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/714BDRoXa1L._AC_SL500_.jpg",
+        "alt": "MiiCoffee D40+ Single Dose Grinder alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81O0dqWaAyL._AC_SL500_.jpg",
+        "alt": "MiiCoffee D40+ Single Dose Grinder alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/7166AXJHqwL._AC_SL500_.jpg",
+        "alt": "MiiCoffee D40+ Single Dose Grinder alternate view 3"
+      }
+    ]
+  },
+  "normcore-v2-hand-coffee-grinder": {
+    "name": "Normcore V2 Hand Coffee Grinder",
+    "brand": "Normcore",
+    "asin": "B0963PNMTV",
+    "image": "https://m.media-amazon.com/images/I/61hkY5DFH7S._AC_SL500_.jpg",
+    "imageAlt": "Normcore V2 hand grinder with ergonomic body and steel burr set",
+    "category": "grinders",
+    "rating": 4.4,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71tIXe3gAlL._AC_SL500_.jpg",
+        "alt": "Normcore V2 Hand Coffee Grinder alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61mHMDbfBBL._AC_SL500_.jpg",
+        "alt": "Normcore V2 Hand Coffee Grinder alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71miTO4tsrL._AC_SL500_.jpg",
+        "alt": "Normcore V2 Hand Coffee Grinder alternate view 3"
+      }
+    ]
+  },
+  "kingrinder-p2-manual-coffee-grinder": {
+    "name": "KINGrinder P2 Manual Coffee Grinder",
+    "brand": "KINGrinder",
+    "asin": "B0CMPSFHV8",
+    "image": "https://m.media-amazon.com/images/I/610LyHlf6jL._AC_SL500_.jpg",
+    "imageAlt": "KINGrinder P2 budget manual burr coffee grinder",
+    "category": "grinders",
+    "rating": 4.3,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61qQepjBjCL._AC_SL500_.jpg",
+        "alt": "KINGrinder P2 Manual Coffee Grinder alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71+4+iVA6UL._AC_SL500_.jpg",
+        "alt": "KINGrinder P2 Manual Coffee Grinder alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71XX4KjFsfL._AC_SL500_.jpg",
+        "alt": "KINGrinder P2 Manual Coffee Grinder alternate view 3"
+      }
+    ]
+  },
+  "hario-mini-slim-plus-manual-grinder": {
+    "name": "Hario Mini-Slim Plus Manual Grinder",
+    "brand": "Hario",
+    "asin": "B01GPMH590",
+    "image": "https://m.media-amazon.com/images/I/51pKonSmxFL._AC_SL500_.jpg",
+    "imageAlt": "Hario Mini-Slim Plus lightweight travel hand coffee grinder",
+    "category": "grinders",
+    "rating": 4.2,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71XRzbQ9BTL._AC_SL500_.jpg",
+        "alt": "Hario Mini-Slim Plus Manual Grinder alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71A5iFA2ZyL._AC_SL500_.jpg",
+        "alt": "Hario Mini-Slim Plus Manual Grinder alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61YDpLSo0cL._AC_SL500_.jpg",
+        "alt": "Hario Mini-Slim Plus Manual Grinder alternate view 3"
+      }
+    ]
+  },
+  "porlex-mini-ii-manual-grinder": {
+    "name": "Porlex Mini II Manual Grinder",
+    "brand": "Porlex",
+    "asin": "B082L26FLX",
+    "image": "https://m.media-amazon.com/images/I/51RZJ+D9QKL._AC_SL500_.jpg",
+    "imageAlt": "Porlex Mini II stainless steel compact hand coffee grinder",
+    "category": "grinders",
+    "rating": 4.1,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/51lOXku5-7L._AC_SL500_.jpg",
+        "alt": "Porlex Mini II Manual Grinder alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71MeF-wwgCL._AC_SL500_.jpg",
+        "alt": "Porlex Mini II Manual Grinder alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51nvVtTdLfL._AC_SL500_.jpg",
+        "alt": "Porlex Mini II Manual Grinder alternate view 3"
       }
     ]
   }
