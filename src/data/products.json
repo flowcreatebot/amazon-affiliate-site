@@ -12,7 +12,21 @@
       "brewRange": "Pour over to espresso",
       "capacity": "8 oz hopper",
       "adjustmentStyle": "Stepped with espresso zone"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71UNr+sZrRL._AC_SL500_.jpg",
+        "alt": "Baratza Encore ESP alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81VJkhGj7BL._AC_SL500_.jpg",
+        "alt": "Baratza Encore ESP alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71egygLBmTL._AC_SL500_.jpg",
+        "alt": "Baratza Encore ESP alternate view 3"
+      }
+    ]
   },
   "oxo-brew-conical-burr-grinder": {
     "name": "OXO Brew Conical Burr Grinder",
@@ -27,7 +41,21 @@
       "brewRange": "Drip, pour over, French press",
       "capacity": "12 oz hopper",
       "adjustmentStyle": "Stepped + micro positions"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71T1c57afQL._AC_SL500_.jpg",
+        "alt": "OXO Brew Conical Burr Grinder alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81sxKrOcZKL._AC_SL500_.jpg",
+        "alt": "OXO Brew Conical Burr Grinder alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71CAICoZnqL._AC_SL500_.jpg",
+        "alt": "OXO Brew Conical Burr Grinder alternate view 3"
+      }
+    ]
   },
   "fellow-opus": {
     "name": "Fellow Opus",
@@ -42,7 +70,21 @@
       "brewRange": "Filter to espresso",
       "capacity": "3.5 oz dosing lid",
       "adjustmentStyle": "Stepped + inner micro adjust"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81TtzPhWEqL._AC_SL500_.jpg",
+        "alt": "Fellow Opus alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71k476uzDhL._AC_SL500_.jpg",
+        "alt": "Fellow Opus alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/610nTlQ-84L._AC_SL500_.jpg",
+        "alt": "Fellow Opus alternate view 3"
+      }
+    ]
   },
   "turin-sk40": {
     "name": "Turin SK40",
@@ -57,7 +99,21 @@
       "brewRange": "Espresso-focused",
       "capacity": "Single-dose workflow",
       "adjustmentStyle": "Stepless collar"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/31bRhdX6xxL._AC_SL500_.jpg",
+        "alt": "Turin SK40 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/31i-hHk2T8L._AC_SL500_.jpg",
+        "alt": "Turin SK40 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/617nOEu-S5L._AC_SL500_.jpg",
+        "alt": "Turin SK40 alternate view 3"
+      }
+    ]
   },
   "capresso-infinity-plus": {
     "name": "Capresso Infinity Plus",
@@ -72,7 +128,21 @@
       "brewRange": "Drip and batch coffee",
       "capacity": "8.8 oz hopper",
       "adjustmentStyle": "Stepped dial + timer"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71+0rlnEPmL._AC_SL500_.jpg",
+        "alt": "Capresso Infinity Plus alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71DtuVAEbGL._AC_SL500_.jpg",
+        "alt": "Capresso Infinity Plus alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61EGtKqV87L._AC_SL500_.jpg",
+        "alt": "Capresso Infinity Plus alternate view 3"
+      }
+    ]
   },
   "kingrinder-k6": {
     "name": "KINGrinder K6",
@@ -87,7 +157,21 @@
       "brewRange": "Pour over to espresso",
       "capacity": "30-35 g dose",
       "adjustmentStyle": "External click dial"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61rYYl4HTqL._AC_SL500_.jpg",
+        "alt": "KINGrinder K6 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71AslfbzGdL._AC_SL500_.jpg",
+        "alt": "KINGrinder K6 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61WM-7N6q+L._AC_SL500_.jpg",
+        "alt": "KINGrinder K6 alternate view 3"
+      }
+    ]
   },
   "df64-gen-2": {
     "name": "DF64 Gen 2",
@@ -102,7 +186,17 @@
       "adjustment": "Stepless",
       "retention": "Low with bellows",
       "espressoLevel": "Prosumer"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61OkYMPqzLL._AC_SL500_.jpg",
+        "alt": "DF64 Gen 2 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61rtlNcK8WL._AC_SL500_.jpg",
+        "alt": "DF64 Gen 2 alternate view 2"
+      }
+    ]
   },
   "baratza-sette-270": {
     "name": "Baratza Sette 270",
@@ -117,7 +211,21 @@
       "adjustment": "Macro + micro stepped",
       "retention": "Medium",
       "espressoLevel": "Strong"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/51WJhColUlL._AC_SL500_.jpg",
+        "alt": "Baratza Sette 270 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71nTEuBFRHL._AC_SL500_.jpg",
+        "alt": "Baratza Sette 270 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/716MVtq1zXL._AC_SL500_.jpg",
+        "alt": "Baratza Sette 270 alternate view 3"
+      }
+    ]
   },
   "eureka-mignon-specialita": {
     "name": "Eureka Mignon Specialita",
@@ -132,7 +240,21 @@
       "adjustment": "Stepless",
       "retention": "Medium",
       "espressoLevel": "Prosumer"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61A0Gwgs-jL._AC_SL500_.jpg",
+        "alt": "Eureka Mignon Specialita alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/712Vnw9CT6L._AC_SL500_.jpg",
+        "alt": "Eureka Mignon Specialita alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61QZ9CtZcmL._AC_SL500_.jpg",
+        "alt": "Eureka Mignon Specialita alternate view 3"
+      }
+    ]
   },
   "1zpresso-j-ultra": {
     "name": "1Zpresso J-Ultra",
@@ -147,7 +269,21 @@
       "adjustment": "Micro-stepped",
       "retention": "Very low",
       "espressoLevel": "Strong"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71tNXSZfMIL._AC_SL500_.jpg",
+        "alt": "1Zpresso J-Ultra alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81d0Q+1dRaL._AC_SL500_.jpg",
+        "alt": "1Zpresso J-Ultra alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81hhe3sp86L._AC_SL500_.jpg",
+        "alt": "1Zpresso J-Ultra alternate view 3"
+      }
+    ]
   },
   "1zpresso-q-air": {
     "name": "1Zpresso Q Air",
@@ -157,7 +293,21 @@
     "imageAlt": "1Zpresso Q Air manual coffee grinder",
     "category": "grinders",
     "rating": 4.6,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61NQzJF8MXL._AC_SL500_.jpg",
+        "alt": "1Zpresso Q Air alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51NpiJgALUL._AC_SL500_.jpg",
+        "alt": "1Zpresso Q Air alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/515lxRCW9OL._AC_SL500_.jpg",
+        "alt": "1Zpresso Q Air alternate view 3"
+      }
+    ]
   },
   "timemore-chestnut-c2": {
     "name": "TIMEMORE Chestnut C2",
@@ -167,7 +317,21 @@
     "imageAlt": "TIMEMORE Chestnut C2 manual burr coffee grinder",
     "category": "grinders",
     "rating": 4.5,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61eLP1iyNvL._AC_SL500_.jpg",
+        "alt": "TIMEMORE Chestnut C2 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71e99qYqbRL._AC_SL500_.jpg",
+        "alt": "TIMEMORE Chestnut C2 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71KBOp9q-7L._AC_SL500_.jpg",
+        "alt": "TIMEMORE Chestnut C2 alternate view 3"
+      }
+    ]
   },
   "bodum-bistro-burr-grinder": {
     "name": "Bodum Bistro Burr Grinder",
@@ -177,7 +341,21 @@
     "imageAlt": "Bodum Bistro Burr Grinder",
     "category": "grinders",
     "rating": 3.9,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/714ZaufwxaL._AC_SL500_.jpg",
+        "alt": "Bodum Bistro Burr Grinder alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71QDu6Q9S2L._AC_SL500_.jpg",
+        "alt": "Bodum Bistro Burr Grinder alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61WygFcscuL._AC_SL500_.jpg",
+        "alt": "Bodum Bistro Burr Grinder alternate view 3"
+      }
+    ]
   },
   "fellow-ode-gen-2": {
     "name": "Fellow Ode Gen 2",
@@ -187,7 +365,21 @@
     "imageAlt": "Fellow Ode Gen 2 flat burr coffee grinder",
     "category": "grinders",
     "rating": 4.7,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71GflmK04yL._AC_SL500_.jpg",
+        "alt": "Fellow Ode Gen 2 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81-MJMoTJnL._AC_SL500_.jpg",
+        "alt": "Fellow Ode Gen 2 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61ijsHQYUUL._AC_SL500_.jpg",
+        "alt": "Fellow Ode Gen 2 alternate view 3"
+      }
+    ]
   },
   "1zpresso-k-ultra": {
     "name": "1Zpresso K-Ultra",
@@ -197,7 +389,21 @@
     "imageAlt": "1Zpresso K-Ultra manual coffee grinder",
     "category": "grinders",
     "rating": 4.7,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71VzkVNmy2L._AC_SL500_.jpg",
+        "alt": "1Zpresso K-Ultra alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71q4-kkp7DL._AC_SL500_.jpg",
+        "alt": "1Zpresso K-Ultra alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71i9a+6PTnL._AC_SL500_.jpg",
+        "alt": "1Zpresso K-Ultra alternate view 3"
+      }
+    ]
   },
   "kingrinder-k6-espresso": {
     "name": "KINGrinder K6",
@@ -207,7 +413,21 @@
     "imageAlt": "KINGrinder K6 manual espresso grinder",
     "category": "grinders",
     "rating": 4.7,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71iKMOyZ8HL._AC_SL500_.jpg",
+        "alt": "KINGrinder K6 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81U3dImNpeL._AC_SL500_.jpg",
+        "alt": "KINGrinder K6 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71sPgIVvxJL._AC_SL500_.jpg",
+        "alt": "KINGrinder K6 alternate view 3"
+      }
+    ]
   },
   "hario-smart-g-pro": {
     "name": "Hario Smart G Pro",
@@ -217,118 +437,258 @@
     "imageAlt": "Hario Smart G Pro manual coffee grinder",
     "category": "grinders",
     "rating": 4.3,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/6165e62RNhL._AC_SL500_.jpg",
+        "alt": "Hario Smart G Pro alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61JnBy2Sb3L._AC_SL500_.jpg",
+        "alt": "Hario Smart G Pro alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61518xgww3L._AC_SL500_.jpg",
+        "alt": "Hario Smart G Pro alternate view 3"
+      }
+    ]
   },
   "javapresse-manual-coffee-grinder": {
     "name": "JavaPresse Manual Coffee Grinder",
     "brand": "JavaPresse",
     "asin": "B013R3Q7B2",
-    "image": "https://m.media-amazon.com/images/I/71-9Q-pmKyL._AC_SL500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/71qrBYgxuxL._AC_SL500_.jpg",
     "imageAlt": "JavaPresse Manual Coffee Grinder",
     "category": "grinders",
     "rating": 4.1,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71-9Q-pmKyL._AC_SL500_.jpg",
+        "alt": "JavaPresse Manual Coffee Grinder alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71Rdx3jyv6L._AC_SL500_.jpg",
+        "alt": "JavaPresse Manual Coffee Grinder alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81LkVFrBUnL._AC_SL500_.jpg",
+        "alt": "JavaPresse Manual Coffee Grinder alternate view 3"
+      }
+    ]
   },
   "cuisinart-ss-gb1": {
     "name": "Cuisinart SS-GB1",
     "brand": "Cuisinart",
     "asin": "B08MGYR9SX",
-    "image": "https://m.media-amazon.com/images/I/6142zGUha8L._AC_SL500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/71kAp4A-eRL._AC_SL500_.jpg",
     "imageAlt": "",
     "category": "grind-and-brew",
     "rating": 4.3,
     "specs": {
       "grinderType": "Built-in grinder",
       "compatMode": "Beans + K-Cup"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81penbKxH+L._AC_SL500_.jpg",
+        "alt": "Cuisinart SS-GB1 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71M8L5iULIL._AC_SL500_.jpg",
+        "alt": "Cuisinart SS-GB1 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81rJdFrazDL._AC_SL500_.jpg",
+        "alt": "Cuisinart SS-GB1 alternate view 3"
+      }
+    ]
   },
   "cuisinart-grind-brew-single-serve": {
     "name": "Cuisinart Grind & Brew Single-Serve",
     "brand": "Cuisinart",
     "asin": "B09HDFLF2X",
-    "image": "https://m.media-amazon.com/images/I/81JBgtxSN2L._AC_SL500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/51XrJtJe0DL._AC_SL500_.jpg",
     "imageAlt": "Cuisinart Grind and Brew Single-Serve coffee maker",
     "category": "grind-and-brew",
     "rating": 4.4,
     "specs": {
       "grinderType": "Conical burr",
       "compatMode": "Beans + K-Cup"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81mtuiJWmiL._AC_SL500_.jpg",
+        "alt": "Cuisinart Grind & Brew Single-Serve alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81VMYenkNQL._AC_SL500_.jpg",
+        "alt": "Cuisinart Grind & Brew Single-Serve alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81JBgtxSN2L._AC_SL500_.jpg",
+        "alt": "Cuisinart Grind & Brew Single-Serve alternate view 3"
+      }
+    ]
   },
   "gevi-4-in-1": {
     "name": "Gevi 4-in-1",
     "brand": "Gevi",
     "asin": "B0GM41GYZH",
-    "image": "https://m.media-amazon.com/images/I/81AcFMU5JnL._AC_SL500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/61mzvPYOS6L._AC_SL500_.jpg",
     "imageAlt": "Gevi 4-in-1 single serve coffee maker",
     "category": "single-serve",
     "rating": 4.2,
     "specs": {
       "grinderType": "No grinder",
       "compatMode": "Ground + K-Cup"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81w6HbOpRXL._AC_SL500_.jpg",
+        "alt": "Gevi 4-in-1 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81AcFMU5JnL._AC_SL500_.jpg",
+        "alt": "Gevi 4-in-1 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81AsSmrgSML._AC_SL500_.jpg",
+        "alt": "Gevi 4-in-1 alternate view 3"
+      }
+    ]
   },
   "black-decker-mill-and-brew": {
     "name": "BLACK+DECKER Mill & Brew",
     "brand": "BLACK+DECKER",
     "asin": "B00LU2I46E",
-    "image": "https://m.media-amazon.com/images/I/81S5wjMo77L._AC_SL500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/812Hb1XRaaL._AC_SL500_.jpg",
     "imageAlt": "BLACK+DECKER Mill and Brew coffee maker",
     "category": "grind-and-brew",
     "rating": 4.3,
     "specs": {
       "grinderType": "Blade",
       "compatMode": "Beans + Ground"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/8166m7aiJqL._AC_SL500_.jpg",
+        "alt": "BLACK+DECKER Mill & Brew alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/818o8HIx0+L._AC_SL500_.jpg",
+        "alt": "BLACK+DECKER Mill & Brew alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81ILDCwzodL._AC_SL500_.jpg",
+        "alt": "BLACK+DECKER Mill & Brew alternate view 3"
+      }
+    ]
   },
   "chefman-instacoffee-max": {
     "name": "Chefman InstaCoffee Max",
     "brand": "Chefman",
     "asin": "B09NRYX5K7",
-    "image": "https://m.media-amazon.com/images/I/61S2JDQYneL._AC_SL500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/71B6QCSlqvL._AC_SL500_.jpg",
     "imageAlt": "Chefman InstaCoffee Max single serve coffee maker",
     "category": "single-serve",
-    "rating": 4.0,
+    "rating": 4,
     "specs": {
       "grinderType": "No grinder",
       "compatMode": "Ground + K-Cup"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61btIOhHa1L._AC_SL500_.jpg",
+        "alt": "Chefman InstaCoffee Max alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61S2JDQYneL._AC_SL500_.jpg",
+        "alt": "Chefman InstaCoffee Max alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61zTDMhwRYL._AC_SL500_.jpg",
+        "alt": "Chefman InstaCoffee Max alternate view 3"
+      }
+    ]
   },
   "breville-grind-control": {
     "name": "Breville Grind Control",
     "brand": "Breville",
     "asin": "B00VGGVQCI",
-    "image": "https://m.media-amazon.com/images/I/81VQ7ZIVVpL._AC_SL500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/615cLyCGSML._AC_SL500_.jpg",
     "imageAlt": "Breville BDC650BSS coffee maker with built in grinder",
     "category": "grind-and-brew",
     "rating": 4.6,
     "specs": {
       "grinderType": "Burr",
       "compatMode": "Beans + Ground"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/710azuu2aiL._AC_SL500_.jpg",
+        "alt": "Breville Grind Control alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71XV-8yTYWL._AC_SL500_.jpg",
+        "alt": "Breville Grind Control alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81PpwXCNqqL._AC_SL500_.jpg",
+        "alt": "Breville Grind Control alternate view 3"
+      }
+    ]
   },
   "delonghi-truebrew": {
     "name": "De'Longhi TrueBrew",
     "brand": "De'Longhi",
     "asin": "B0F3ZSVPPG",
-    "image": "https://m.media-amazon.com/images/I/81G6GrcwPfL._AC_SL500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/71TmmbVpIyL._AC_SL500_.jpg",
     "imageAlt": "De'Longhi TrueBrew bean to cup coffee maker",
     "category": "grind-and-brew",
     "rating": 4.4,
     "specs": {
       "grinderType": "Conical burr",
       "compatMode": "Beans + Ground"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81pKG24SaDL._AC_SL500_.jpg",
+        "alt": "De'Longhi TrueBrew alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81G6GrcwPfL._AC_SL500_.jpg",
+        "alt": "De'Longhi TrueBrew alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81y7+7-8HUL._AC_SL500_.jpg",
+        "alt": "De'Longhi TrueBrew alternate view 3"
+      }
+    ]
   },
   "timemore-black-mirror-nano": {
     "name": "TIMEMORE Black Mirror Nano",
     "brand": "TIMEMORE",
     "asin": "B09KLG247F",
-    "image": "https://m.media-amazon.com/images/I/61zKmzN7rpL._AC_SL500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/41PsLbkZizL._AC_SL500_.jpg",
     "imageAlt": "TIMEMORE Black Mirror Nano coffee scale",
     "category": "scales",
     "rating": 4.6,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61CSraX6EVL._AC_SL500_.jpg",
+        "alt": "TIMEMORE Black Mirror Nano alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51e8VQOZe5L._AC_SL500_.jpg",
+        "alt": "TIMEMORE Black Mirror Nano alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51OXKVlK3eL._AC_SL500_.jpg",
+        "alt": "TIMEMORE Black Mirror Nano alternate view 3"
+      }
+    ]
   },
   "hario-v60-drip-scale": {
     "name": "Hario V60 Drip Scale",
@@ -338,7 +698,21 @@
     "imageAlt": "Hario V60 Drip Scale for pour over coffee",
     "category": "scales",
     "rating": 4.5,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/51UoPENTT8L._AC_SL500_.jpg",
+        "alt": "Hario V60 Drip Scale alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61zMFrzOC1L._AC_SL500_.jpg",
+        "alt": "Hario V60 Drip Scale alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61eL+s1avJL._AC_SL500_.jpg",
+        "alt": "Hario V60 Drip Scale alternate view 3"
+      }
+    ]
   },
   "greater-goods-digital-coffee-scale": {
     "name": "Greater Goods Digital Coffee Scale",
@@ -364,11 +738,25 @@
     "name": "KitchenTour Coffee Scale",
     "brand": "KitchenTour",
     "asin": "B083PX1VHG",
-    "image": "https://m.media-amazon.com/images/I/61N+1FoMdML._AC_SL500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/51FQfICIOjS._AC_SL500_.jpg",
     "imageAlt": "KitchenTour compact espresso coffee scale",
     "category": "scales",
     "rating": 4.3,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/51roQQKVZQL._AC_SL500_.jpg",
+        "alt": "KitchenTour Coffee Scale alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/6165rI5j5TL._AC_SL500_.jpg",
+        "alt": "KitchenTour Coffee Scale alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61AwFZ7X87L._AC_SL500_.jpg",
+        "alt": "KitchenTour Coffee Scale alternate view 3"
+      }
+    ]
   },
   "maestri-house-rechargeable-coffee-scale": {
     "name": "Maestri House Rechargeable Coffee Scale",
@@ -395,14 +783,28 @@
       "heatUp": "~45 sec",
       "milkSystem": "Steam wand",
       "waterTank": "33.8 oz"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/719hLnndyAL._AC_SL500_.jpg",
+        "alt": "De'Longhi Stilosa alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71sTGnqtgxL._AC_SL500_.jpg",
+        "alt": "De'Longhi Stilosa alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/7140Ybuw8nL._AC_SL500_.jpg",
+        "alt": "De'Longhi Stilosa alternate view 3"
+      }
+    ]
   },
   "mr-coffee-cafe-barista": {
-    "name": "Mr. Coffee Caf\u00e9 Barista",
+    "name": "Mr. Coffee Café Barista",
     "brand": "Mr. Coffee",
     "asin": "B007K9OIMU",
     "image": "https://m.media-amazon.com/images/I/71p2h853rfL._AC_SL500_.jpg",
-    "imageAlt": "Mr. Coffee Caf\u00e9 Barista espresso machine",
+    "imageAlt": "Mr. Coffee Café Barista espresso machine",
     "category": "espresso-machines",
     "rating": 4.1,
     "specs": {
@@ -412,7 +814,21 @@
       "heatUp": "~60 sec",
       "milkSystem": "Auto frother",
       "waterTank": "55 oz"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/813QtrY7IhL._AC_SL500_.jpg",
+        "alt": "Mr. Coffee Café Barista alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/91+ojXRlEZL._AC_SL500_.jpg",
+        "alt": "Mr. Coffee Café Barista alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71-VjVPjGfL._AC_SL500_.jpg",
+        "alt": "Mr. Coffee Café Barista alternate view 3"
+      }
+    ]
   },
   "casabrews-3700-essential": {
     "name": "CASABREWS 3700 Essential",
@@ -429,7 +845,21 @@
       "heatUp": "~40 sec",
       "milkSystem": "Steam wand",
       "waterTank": "49 oz"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/614XWzkYWlL._AC_SL500_.jpg",
+        "alt": "CASABREWS 3700 Essential alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/712fiHTT-0L._AC_SL500_.jpg",
+        "alt": "CASABREWS 3700 Essential alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71dVksCUj5L._AC_SL500_.jpg",
+        "alt": "CASABREWS 3700 Essential alternate view 3"
+      }
+    ]
   },
   "gevi-compact-20-bar": {
     "name": "Gevi Compact 20 Bar",
@@ -438,7 +868,7 @@
     "image": "https://m.media-amazon.com/images/I/71pmvUI3cZL._AC_SL500_.jpg",
     "imageAlt": "Gevi Compact 20 Bar espresso machine",
     "category": "espresso-machines",
-    "rating": 4.0,
+    "rating": 4,
     "specs": {
       "machineType": "Semi-auto",
       "pumpPressure": "20 bar",
@@ -446,13 +876,27 @@
       "heatUp": "~35 sec",
       "milkSystem": "Steam wand",
       "waterTank": "42 oz"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71-EyxZKIDL._AC_SL500_.jpg",
+        "alt": "Gevi Compact 20 Bar alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81HnXfTLw5L._AC_SL500_.jpg",
+        "alt": "Gevi Compact 20 Bar alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71BRLmMmnCL._AC_SL500_.jpg",
+        "alt": "Gevi Compact 20 Bar alternate view 3"
+      }
+    ]
   },
   "flair-neo-flex": {
     "name": "Flair Neo Flex",
     "brand": "Flair",
     "asin": "B0C91668G1",
-    "image": "https://m.media-amazon.com/images/I/61MqQwolqRL._AC_SL500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/61lMpWioWzL._AC_SL500_.jpg",
     "imageAlt": "Flair Neo Flex manual espresso maker",
     "category": "espresso-machines",
     "rating": 4.5,
@@ -463,7 +907,21 @@
       "heatUp": "~90 sec prep",
       "milkSystem": "None",
       "waterTank": "Manual brew chamber"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71zxIH1MsnL._AC_SL500_.jpg",
+        "alt": "Flair Neo Flex alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71M3fypebPL._AC_SL500_.jpg",
+        "alt": "Flair Neo Flex alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71k+UN9R-AL._AC_SL500_.jpg",
+        "alt": "Flair Neo Flex alternate view 3"
+      }
+    ]
   },
   "nespresso-essenza-mini": {
     "name": "Nespresso Essenza Mini",
@@ -497,7 +955,21 @@
       "heatUp": "~45 sec",
       "milkSystem": "Steam wand",
       "waterTank": "37 oz"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71AjJSTH6RL._AC_SL500_.jpg",
+        "alt": "De'Longhi ECP3420 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71Tc73LAQOL._AC_SL500_.jpg",
+        "alt": "De'Longhi ECP3420 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71mpdvDBMqL._AC_SL500_.jpg",
+        "alt": "De'Longhi ECP3420 alternate view 3"
+      }
+    ]
   },
   "fellow-stagg-ekg": {
     "name": "Fellow Stagg EKG Electric Kettle",
@@ -510,7 +982,21 @@
     "specs": {
       "type": "Electric (variable temp + hold)",
       "capacity": "0.9L"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71pYa4KONLL._AC_SL500_.jpg",
+        "alt": "Fellow Stagg EKG Electric Kettle alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81b43r0us-L._AC_SL500_.jpg",
+        "alt": "Fellow Stagg EKG Electric Kettle alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61fjV-PMXbL._AC_SL500_.jpg",
+        "alt": "Fellow Stagg EKG Electric Kettle alternate view 3"
+      }
+    ]
   },
   "bonavita-1l-variable-temp-kettle": {
     "name": "Bonavita 1.0L Variable Temperature Kettle",
@@ -523,7 +1009,21 @@
     "specs": {
       "type": "Electric (variable temp)",
       "capacity": "1.0L"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61wS7jVFq0L._AC_SL500_.jpg",
+        "alt": "Bonavita 1.0L Variable Temperature Kettle alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/715ICDYGFQL._AC_SL500_.jpg",
+        "alt": "Bonavita 1.0L Variable Temperature Kettle alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51fkO3YlL8L._AC_SL500_.jpg",
+        "alt": "Bonavita 1.0L Variable Temperature Kettle alternate view 3"
+      }
+    ]
   },
   "hario-v60-buono-stovetop-kettle": {
     "name": "Hario V60 Buono Stovetop Kettle",
@@ -536,7 +1036,21 @@
     "specs": {
       "type": "Stovetop",
       "capacity": "1.2L"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/6129iMX2OHL._AC_SL500_.jpg",
+        "alt": "Hario V60 Buono Stovetop Kettle alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/41kxugRohjL._AC_SL500_.jpg",
+        "alt": "Hario V60 Buono Stovetop Kettle alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/615GI9lwcGL._AC_SL500_.jpg",
+        "alt": "Hario V60 Buono Stovetop Kettle alternate view 3"
+      }
+    ]
   },
   "cosori-electric-gooseneck-kettle": {
     "name": "COSORI Electric Gooseneck Kettle",
@@ -549,7 +1063,21 @@
     "specs": {
       "type": "Electric (preset modes)",
       "capacity": "0.8L"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71ZS3AyhjtL._AC_SL500_.jpg",
+        "alt": "COSORI Electric Gooseneck Kettle alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61XELREwYFL._AC_SL500_.jpg",
+        "alt": "COSORI Electric Gooseneck Kettle alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71h5+WYLt0L._AC_SL500_.jpg",
+        "alt": "COSORI Electric Gooseneck Kettle alternate view 3"
+      }
+    ]
   },
   "fellow-stagg-stovetop-kettle": {
     "name": "Fellow Stagg Stovetop Pour-Over Kettle",
@@ -562,7 +1090,21 @@
     "specs": {
       "type": "Stovetop",
       "capacity": "1.0L"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71aeP7SAtbL._AC_SL500_.jpg",
+        "alt": "Fellow Stagg Stovetop Pour-Over Kettle alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/711vclVe5EL._AC_SL500_.jpg",
+        "alt": "Fellow Stagg Stovetop Pour-Over Kettle alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61HybJylAoL._AC_SL500_.jpg",
+        "alt": "Fellow Stagg Stovetop Pour-Over Kettle alternate view 3"
+      }
+    ]
   },
   "cuisinart-dgb-550bkp1": {
     "name": "Cuisinart DGB-550BKP1",
@@ -592,7 +1134,21 @@
       "brewModes": "Beans + Pre-ground",
       "batchSize": "12-cup batch, no true single-cup",
       "programmable": "Yes"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71OL5L6VmdL._AC_SL500_.jpg",
+        "alt": "Cuisinart DGB-400 Automatic Grind & Brew alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/718-AXbWUoL._AC_SL500_.jpg",
+        "alt": "Cuisinart DGB-400 Automatic Grind & Brew alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71BJ8qkgC8L._AC_SL500_.jpg",
+        "alt": "Cuisinart DGB-400 Automatic Grind & Brew alternate view 3"
+      }
+    ]
   },
   "gevi-10-cup-grind-and-brew": {
     "name": "Gevi 10-Cup Grind & Brew",
@@ -601,13 +1157,27 @@
     "image": "https://m.media-amazon.com/images/I/71YiOLN0YpL._AC_SL500_.jpg",
     "imageAlt": "Gevi 10-Cup Grind and Brew coffee maker",
     "category": "grind-and-brew",
-    "rating": 4.0,
+    "rating": 4,
     "specs": {
       "grinderType": "Built-in grinder",
       "brewModes": "Beans + Pre-ground",
       "batchSize": "10-cup batch, no true single-cup",
       "programmable": "Yes"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81Ef4hIRzfL._AC_SL500_.jpg",
+        "alt": "Gevi 10-Cup Grind & Brew alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81CKqRo8olL._AC_SL500_.jpg",
+        "alt": "Gevi 10-Cup Grind & Brew alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/819XcuU8hVL._AC_SL500_.jpg",
+        "alt": "Gevi 10-Cup Grind & Brew alternate view 3"
+      }
+    ]
   },
   "cuisinart-dgb-30": {
     "name": "Cuisinart Grind & Brew Single-Serve (DGB-30)",
@@ -622,7 +1192,21 @@
       "brewModes": "Beans + Pre-ground",
       "batchSize": "Single-serve only (multi cup sizes)",
       "programmable": "Yes"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81LEHffWszL._AC_SL500_.jpg",
+        "alt": "Cuisinart Grind & Brew Single-Serve (DGB-30) alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81mVhWhyEzL._AC_SL500_.jpg",
+        "alt": "Cuisinart Grind & Brew Single-Serve (DGB-30) alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71rLq6wtyIL._AC_SL500_.jpg",
+        "alt": "Cuisinart Grind & Brew Single-Serve (DGB-30) alternate view 3"
+      }
+    ]
   },
   "ninja-ce251": {
     "name": "Ninja CE251",
@@ -632,7 +1216,21 @@
     "imageAlt": "Ninja CE251 programmable drip coffee maker",
     "category": "drip-coffee-makers",
     "rating": 4.5,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71+GaTmCQbL._AC_SL500_.jpg",
+        "alt": "Ninja CE251 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81Bo0sGaAxL._AC_SL500_.jpg",
+        "alt": "Ninja CE251 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81PCsuscnRL._AC_SL500_.jpg",
+        "alt": "Ninja CE251 alternate view 3"
+      }
+    ]
   },
   "hario-v60-ceramic-02": {
     "name": "Hario V60 Ceramic Coffee Dripper 02",
@@ -642,7 +1240,21 @@
     "imageAlt": "Hario V60 Ceramic Coffee Dripper 02",
     "category": "pour-over-makers",
     "rating": 4.7,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/51arnj0xKCL._AC_SL500_.jpg",
+        "alt": "Hario V60 Ceramic Coffee Dripper 02 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71da1hvh6GL._AC_SL500_.jpg",
+        "alt": "Hario V60 Ceramic Coffee Dripper 02 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71dzgpw2bEL._AC_SL500_.jpg",
+        "alt": "Hario V60 Ceramic Coffee Dripper 02 alternate view 3"
+      }
+    ]
   },
   "chemex-classic-6-cup": {
     "name": "Chemex Classic Series, 6-Cup",
@@ -652,7 +1264,21 @@
     "imageAlt": "Chemex Classic Series 6-Cup pour over coffee maker",
     "category": "pour-over-makers",
     "rating": 4.7,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71IVVKHmu2L._AC_SL500_.jpg",
+        "alt": "Chemex Classic Series, 6-Cup alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71NFNUdOPBL._AC_SL500_.jpg",
+        "alt": "Chemex Classic Series, 6-Cup alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/7133IEB5hQL._AC_SL500_.jpg",
+        "alt": "Chemex Classic Series, 6-Cup alternate view 3"
+      }
+    ]
   },
   "melitta-pour-over-set": {
     "name": "Melitta Pour-Over Brewer with Glass Carafe Set",
@@ -662,7 +1288,21 @@
     "imageAlt": "Melitta Pour-Over Brewer with Glass Carafe Set",
     "category": "pour-over-makers",
     "rating": 4.6,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61vI05NhZ+L._AC_SL500_.jpg",
+        "alt": "Melitta Pour-Over Brewer with Glass Carafe Set alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81AXhZfC14L._AC_SL500_.jpg",
+        "alt": "Melitta Pour-Over Brewer with Glass Carafe Set alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81wXrfoFhuL._AC_SL500_.jpg",
+        "alt": "Melitta Pour-Over Brewer with Glass Carafe Set alternate view 3"
+      }
+    ]
   },
   "hario-v60-switch": {
     "name": "Hario V60 Switch Ceramic Immersion Dripper",
@@ -672,17 +1312,45 @@
     "imageAlt": "Hario V60 Switch Ceramic Immersion Dripper",
     "category": "pour-over-makers",
     "rating": 4.6,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61OWM80hJeL._AC_SL500_.jpg",
+        "alt": "Hario V60 Switch Ceramic Immersion Dripper alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61wtCHnFLjL._AC_SL500_.jpg",
+        "alt": "Hario V60 Switch Ceramic Immersion Dripper alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51Pfa40OOrL._AC_SL500_.jpg",
+        "alt": "Hario V60 Switch Ceramic Immersion Dripper alternate view 3"
+      }
+    ]
   },
   "hario-v60-ceramic-01": {
     "name": "Hario V60 Ceramic Coffee Dripper 01",
     "brand": "Hario",
     "asin": "B000P4D5F8",
-    "image": "https://m.media-amazon.com/images/I/51kbH15026L._AC_SL500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/51cCw+yG9BL._AC_SL500_.jpg",
     "imageAlt": "Hario V60 Ceramic Coffee Dripper 01",
     "category": "pour-over-makers",
     "rating": 4.6,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/51kbH15026L._AC_SL500_.jpg",
+        "alt": "Hario V60 Ceramic Coffee Dripper 01 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71EJLxe9iWL._AC_SL500_.jpg",
+        "alt": "Hario V60 Ceramic Coffee Dripper 01 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71dzgpw2bEL._AC_SL500_.jpg",
+        "alt": "Hario V60 Ceramic Coffee Dripper 01 alternate view 3"
+      }
+    ]
   },
   "hario-v60-ceramic-02-red": {
     "name": "Hario V60 Ceramic Coffee Dripper 02 (Red)",
@@ -692,7 +1360,21 @@
     "imageAlt": "Hario V60 Ceramic Coffee Dripper 02 Red",
     "category": "pour-over-makers",
     "rating": 4.6,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/51StfFx9tbL._AC_SL500_.jpg",
+        "alt": "Hario V60 Ceramic Coffee Dripper 02 (Red) alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71da1hvh6GL._AC_SL500_.jpg",
+        "alt": "Hario V60 Ceramic Coffee Dripper 02 (Red) alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71lF1wJikgL._AC_SL500_.jpg",
+        "alt": "Hario V60 Ceramic Coffee Dripper 02 (Red) alternate view 3"
+      }
+    ]
   },
   "cuisinart-dcc-3200p1": {
     "name": "Cuisinart DCC-3200P1 Perfectemp",
@@ -702,7 +1384,21 @@
     "imageAlt": "Cuisinart DCC-3200P1 Perfectemp drip coffee maker",
     "category": "drip-coffee-makers",
     "rating": 4.4,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/8141JO8WxIL._AC_SL500_.jpg",
+        "alt": "Cuisinart DCC-3200P1 Perfectemp alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/716Up3jA5fL._AC_SL500_.jpg",
+        "alt": "Cuisinart DCC-3200P1 Perfectemp alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81lSMRIwWKL._AC_SL500_.jpg",
+        "alt": "Cuisinart DCC-3200P1 Perfectemp alternate view 3"
+      }
+    ]
   },
   "black-decker-cm1160b": {
     "name": "BLACK+DECKER CM1160B 12-Cup Digital",
@@ -712,7 +1408,21 @@
     "imageAlt": "BLACK+DECKER CM1160B 12-cup digital drip coffee maker",
     "category": "drip-coffee-makers",
     "rating": 4.3,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61UN248J2zL._AC_SL500_.jpg",
+        "alt": "BLACK+DECKER CM1160B 12-Cup Digital alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61V48RpnaJL._AC_SL500_.jpg",
+        "alt": "BLACK+DECKER CM1160B 12-Cup Digital alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71Q8AQVckRL._AC_SL500_.jpg",
+        "alt": "BLACK+DECKER CM1160B 12-Cup Digital alternate view 3"
+      }
+    ]
   },
   "hamilton-beach-2-way-49980a": {
     "name": "Hamilton Beach 2-Way 49980A",
@@ -722,7 +1432,21 @@
     "imageAlt": "Hamilton Beach 2-Way 49980A drip coffee maker",
     "category": "drip-coffee-makers",
     "rating": 4.2,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81TaNeBWYoL._AC_SL500_.jpg",
+        "alt": "Hamilton Beach 2-Way 49980A alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81FD7x66mtL._AC_SL500_.jpg",
+        "alt": "Hamilton Beach 2-Way 49980A alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81nVcxsj23L._AC_SL500_.jpg",
+        "alt": "Hamilton Beach 2-Way 49980A alternate view 3"
+      }
+    ]
   },
   "mr-coffee-12-cup-programmable": {
     "name": "Mr. Coffee 12-Cup Programmable",
@@ -732,7 +1456,21 @@
     "imageAlt": "Mr. Coffee 12-cup programmable drip coffee maker",
     "category": "drip-coffee-makers",
     "rating": 4.1,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61j-IVPa3ES._AC_SL500_.jpg",
+        "alt": "Mr. Coffee 12-Cup Programmable alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61YdJuLa9ES._AC_SL500_.jpg",
+        "alt": "Mr. Coffee 12-Cup Programmable alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61a4PBsMBIS._AC_SL500_.jpg",
+        "alt": "Mr. Coffee 12-Cup Programmable alternate view 3"
+      }
+    ]
   },
   "black-decker-thermal-cm2035b": {
     "name": "BLACK+DECKER Thermal CM2035B",
@@ -751,8 +1489,22 @@
     "image": "https://m.media-amazon.com/images/I/81IgKYQl+DL._AC_SL500_.jpg",
     "imageAlt": "Mueller 12-cup drip coffee maker",
     "category": "drip-coffee-makers",
-    "rating": 4.0,
-    "specs": {}
+    "rating": 4,
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81PEQqi62aL._AC_SL500_.jpg",
+        "alt": "Mueller 12-Cup Drip alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81RXfwAYDyL._AC_SL500_.jpg",
+        "alt": "Mueller 12-Cup Drip alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81u1hZYlcYL._AC_SL500_.jpg",
+        "alt": "Mueller 12-Cup Drip alternate view 3"
+      }
+    ]
   },
   "krups-simply-brew-5-cup": {
     "name": "KRUPS Simply Brew 5-Cup",
@@ -765,20 +1517,34 @@
     "specs": {}
   },
   "cafe-specialty-grind-and-brew": {
-    "name": "Caf\u00e9 Specialty Grind & Brew",
-    "brand": "Caf\u00e9",
+    "name": "Café Specialty Grind & Brew",
+    "brand": "Café",
     "asin": "B0CG2P2J88",
     "image": "https://m.media-amazon.com/images/I/71yP-ZoqQWL._AC_SL500_.jpg",
-    "imageAlt": "Caf\u00e9 Specialty grind and brew coffee maker",
+    "imageAlt": "Café Specialty grind and brew coffee maker",
     "category": "grind-and-brew",
     "rating": 4.5,
     "specs": {
       "grinderType": "Burr",
       "brewModes": "Single-serve + thermal carafe"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/41USAf8PriL._AC_SL500_.jpg",
+        "alt": "Café Specialty Grind & Brew alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71W1u+Q0DrL._AC_SL500_.jpg",
+        "alt": "Café Specialty Grind & Brew alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/513CD5fVicL._AC_SL500_.jpg",
+        "alt": "Café Specialty Grind & Brew alternate view 3"
+      }
+    ]
   },
   "ninja-luxe-cafe-3-in-1": {
-    "name": "Ninja Luxe Caf\u00e9 3-in-1",
+    "name": "Ninja Luxe Café 3-in-1",
     "brand": "Ninja",
     "asin": "B0D45PK5V4",
     "image": "https://m.media-amazon.com/images/I/61D9GtphxuL._AC_SL500_.jpg",
@@ -788,6 +1554,20 @@
     "specs": {
       "grinderType": "Integrated burr",
       "brewModes": "Espresso + drip + cold brew"
-    }
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71pJOHF-3vL._AC_SL500_.jpg",
+        "alt": "Ninja Luxe Café 3-in-1 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81VXYkU89RL._AC_SL500_.jpg",
+        "alt": "Ninja Luxe Café 3-in-1 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81BK2ISK-JL._AC_SL500_.jpg",
+        "alt": "Ninja Luxe Café 3-in-1 alternate view 3"
+      }
+    ]
   }
 }
