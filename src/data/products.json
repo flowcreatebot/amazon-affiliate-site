@@ -1894,11 +1894,25 @@
     "name": "AeroPress Natural Paper Micro-Filters",
     "brand": "AeroPress",
     "asin": "B0CQPPCZJ5",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/71YnFCNRydL._AC_SL500_.jpg",
     "imageAlt": "AeroPress natural unbleached paper micro-filters for standard AeroPress coffee makers",
     "category": "accessories",
     "rating": 4.7,
-    "specs": {}
+    "specs": {},
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61PfKkrxT9L._AC_SL500_.jpg",
+        "alt": "AeroPress Natural Paper Micro-Filters alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71-ZT7PeiiL._AC_SL500_.jpg",
+        "alt": "AeroPress Natural Paper Micro-Filters alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61EWnmEBkJL._AC_SL500_.jpg",
+        "alt": "AeroPress Natural Paper Micro-Filters alternate view 3"
+      }
+    ]
   },
   "aeropress-flow-control-filter-cap": {
     "name": "AeroPress Flow Control Filter Cap",
