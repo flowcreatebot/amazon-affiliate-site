@@ -1,0 +1,284 @@
+---
+import HowToGuide from '../../layouts/page-types/HowToGuide.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import WhatYoullNeed from '../../components/WhatYoullNeed.astro';
+import Callout from '../../components/Callout.astro';
+
+const products = [
+  {
+    id: 'aeropress-go',
+    name: 'AeroPress Go Portable Coffee Maker',
+    brand: 'AeroPress',
+    asin: 'B07YVL8SF3',
+    image: 'https://m.media-amazon.com/images/I/61rCqssRqsL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Go portable coffee maker with mug and scoop',
+    category: 'brewers',
+    rating: 4.7,
+    specs: {
+      type: 'Portable manual coffee maker',
+      bestFor: 'Travel brewing and compact daily setups',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' as const },
+    price: '$$',
+    bestFor: 'The actual brewer this recipe is built around',
+    featured: true,
+  },
+  {
+    id: 'timemore-chestnut-c2',
+    name: 'TIMEMORE Chestnut C2 Manual Coffee Grinder',
+    brand: 'TIMEMORE',
+    asin: 'B0833SDN8M',
+    image: 'https://m.media-amazon.com/images/I/61Y8BsO8kYL._AC_SL500_.jpg',
+    imageAlt: 'TIMEMORE Chestnut C2 manual coffee grinder in matte black',
+    category: 'grinders',
+    rating: 4.6,
+    specs: {
+      type: 'Manual burr grinder',
+      bestFor: 'Travel-friendly grinding with better consistency than a blade grinder',
+    },
+    badge: { label: 'Best for Travel', variant: 'beginners' as const },
+    price: '$$',
+    bestFor: 'Portable grinding that keeps the cup from tasting muddy',
+  },
+  {
+    id: 'miicoffee-nano-scale',
+    name: 'MiiCoffee Nano Coffee Scale with Timer',
+    brand: 'MiiCoffee',
+    asin: 'B0CGMHTWM2',
+    image: 'https://m.media-amazon.com/images/I/81ZIKmA054L._AC_SL500_.jpg',
+    imageAlt: 'MiiCoffee Nano coffee scale with timer and silicone mat',
+    category: 'accessories',
+    rating: 4.4,
+    specs: {
+      type: 'Compact coffee scale with timer',
+      bestFor: 'Keeping your AeroPress Go recipe repeatable',
+    },
+    badge: { label: 'Best Budget', variant: 'budget' as const },
+    price: '$',
+    bestFor: 'Consistent ratio without taking up much bag space',
+  },
+  {
+    id: 'aeropress-flow-control-cap',
+    name: 'AeroPress Flow Control Filter Cap',
+    brand: 'AeroPress',
+    asin: 'B0BXCRVZ52',
+    image: 'https://m.media-amazon.com/images/I/61uTKI9CbQL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Flow Control Filter Cap in black',
+    category: 'accessories',
+    rating: 4.5,
+    specs: {
+      type: 'No-drip filter cap accessory',
+      bestFor: 'Stronger bypass-style AeroPress Go recipes',
+    },
+    badge: { label: 'Best Upgrade', variant: 'upgrade' as const },
+    price: '$',
+    bestFor: 'More control for concentrated brews',
+  },
+];
+
+const description = 'The best AeroPress Go recipe for most people is a simple 15g to 240g brew. Here is the exact ratio, grind, temp, timing, and easy fixes.';
+---
+
+<HowToGuide
+  slug="best-aeropress-go-recipe"
+  title="Best AeroPress Go Recipe (2026)"
+  description={description}
+  category="education"
+  datePublished="2026-03-18"
+  dateModified="2026-03-18"
+  ogImage={products[0].image}
+  heroSteps={{
+    title: 'A simple AeroPress Go recipe that travels well',
+    subtitle: 'One easy everyday brew, one stronger bypass option, and a clean way to fix sour, bitter, or weak cups',
+    steps: [
+      { label: 'Measure', icon: 'list', actions: ['15g coffee', '240g water', 'Medium-fine grind', '185 to 195°F water'], time: '~1 min' },
+      { label: 'Brew', icon: 'coffee', actions: ['Add 50g water', 'Swirl or stir gently', 'Top up to 240g', 'Steep about 90 sec total'], time: '~1.5 min' },
+      { label: 'Press', icon: 'target', actions: ['Press slowly', 'Stop at the hiss', 'Taste first', 'Adjust one thing at a time'], time: '~30 sec' },
+    ],
+    outcome: 'A cup that tastes sweet, balanced, and clear instead of thin like tea water or harsh like over-steeped diner coffee.',
+    footer: 'coffeegearpicks.com · AeroPress Go recipe guide · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-answer', label: 'Quick answer' },
+    { href: '#what-you-need', label: "What you'll need" },
+    { href: '#steps', label: 'Step-by-step recipe' },
+    { href: '#common-mistakes', label: 'Common mistakes' },
+    { href: '#troubleshooting', label: 'Troubleshooting table' },
+    { href: '#stronger-recipe', label: 'Stronger bypass recipe' },
+    { href: '#related-guides', label: 'Related guides' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  products={products}
+  faqItems={[
+    { q: 'What is the best AeroPress Go recipe for most people?', a: 'Start with 15 grams of coffee, 240 grams of water, a medium-fine grind, and about 90 seconds total brew time. It is easy to repeat, tastes balanced with most medium roasts, and does not ask much from the brewer.' },
+    { q: 'Should the AeroPress Go recipe be different from a regular AeroPress recipe?', a: 'Not wildly different. The main thing is the smaller cup and tighter travel-friendly workflow. Ratios, temperature, and grind logic stay pretty similar, but most people end up preferring slightly smaller, cleaner recipes on the Go.' },
+    { q: 'What grind size works best for AeroPress Go?', a: 'Medium-fine is the safest starting point. Think table salt, not powder. Too coarse and the cup tastes thin and sour. Too fine and the plunge gets annoyingly hard and the coffee can turn bitter.' },
+    { q: 'Can you make stronger coffee with AeroPress Go?', a: 'Yes. Brew a smaller concentrate first, then add bypass water after pressing. That gives you more body without forcing a super-fine grind that makes the press miserable.' },
+  ]}
+  supplies={['AeroPress Go', 'Fresh coffee beans', 'Hot water', 'Coffee grinder', 'Scale', 'Timer', 'Filter paper or Flow Control cap']}
+  schemaTools={products.map((product) => product.name)}
+  schemaSteps={[
+    { name: 'Measure coffee and water', text: 'Use 15 grams of coffee and 240 grams of water. Grind the coffee medium-fine, about like table salt.' },
+    { name: 'Bloom and finish the pour', text: 'Add 50 grams of water first, swirl gently, wait about 10 seconds, then pour the rest of the water up to 240 grams.' },
+    { name: 'Steep and press', text: 'Steep until about 90 seconds total brew time, then press slowly and stop when you hear the hiss.' },
+    { name: 'Taste and adjust', text: 'If the cup tastes sour, grind a little finer or raise the water temperature. If it tastes bitter, grind a little coarser or shorten the steep.' },
+  ]}
+>
+  <Fragment slot="lead">
+    <p class="lead">The best AeroPress Go recipe is the one you can actually repeat half asleep in a hotel room, at your desk, or on a campsite table that wobbles every time you touch it. For most people, that means a simple 15-gram brew with medium-fine grounds, hot but not boiling water, and a slow press that lands somewhere between clean pour over and a tiny French press in a really good mood.</p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <h2 id="quick-answer">Quick answer</h2>
+    <p><strong>Start here:</strong> use <strong>15g coffee</strong>, <strong>240g water</strong>, a <strong>medium-fine grind</strong>, and water around <strong>185 to 195°F</strong> or <strong>85 to 91°C</strong>. Add a small first pour, give it a quick swirl, top it up, steep for about <strong>90 seconds total</strong>, then press slowly. That is the easiest AeroPress Go recipe to get right day after day.</p>
+    <p>If you want the short version, think of it like this: not espresso-concentrated, not diner-coffee thin, just right in the middle. Sweet enough to taste the beans, full enough to feel satisfying, and forgiving enough that one sloppy morning does not ruin the cup.</p>
+
+    <ComparisonTable timestamp="Prices updated: March 18, 2026" ariaLabel="AeroPress Go recipe quick fix table">
+      <table>
+        <thead>
+          <tr>
+            <th>Taste in the cup</th>
+            <th>What it usually means</th>
+            <th>First fix</th>
+            <th>Second fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Taste in the cup">Sour or thin</td>
+            <td data-label="What it usually means">Not enough extraction, meaning the water did not pull enough flavor out</td>
+            <td data-label="First fix">Grind a little finer</td>
+            <td data-label="Second fix">Raise water temp by about 5°F</td>
+          </tr>
+          <tr>
+            <td data-label="Taste in the cup">Bitter or rough</td>
+            <td data-label="What it usually means">Too much extraction or too much contact time</td>
+            <td data-label="First fix">Grind a little coarser</td>
+            <td data-label="Second fix">Shorten the steep by 10 to 15 seconds</td>
+          </tr>
+          <tr>
+            <td data-label="Taste in the cup">Weak but not sour</td>
+            <td data-label="What it usually means">Ratio is too light for your taste</td>
+            <td data-label="First fix">Use 16g coffee</td>
+            <td data-label="Second fix">Try the bypass recipe below</td>
+          </tr>
+          <tr>
+            <td data-label="Taste in the cup">Hard to press</td>
+            <td data-label="What it usually means">Grind is too fine or the bed is packed tight</td>
+            <td data-label="First fix">Go a touch coarser</td>
+            <td data-label="Second fix">Stir less aggressively</td>
+          </tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="what-youll-need">
+    <WhatYoullNeed
+      items={[
+        { name: 'AeroPress Go Portable Coffee Maker', desc: 'The brewer, mug, scoop, and stirrer in one compact kit. Good for hotel rooms, office drawers, and actual travel.', asin: 'B07YVL8SF3' },
+        { name: 'TIMEMORE Chestnut C2 Manual Coffee Grinder', desc: 'A solid travel grinder that gives you a cleaner, more even grind than a blade grinder.', asin: 'B0833SDN8M' },
+        { name: 'MiiCoffee Nano Coffee Scale with Timer', desc: 'Tiny enough to pack, useful enough to stop your ratio from drifting all over the place.', asin: 'B0CGMHTWM2' },
+        { name: 'AeroPress Paper Micro-Filters', desc: 'The simple default if you like a cleaner cup with less sediment.', asin: 'B005UPSLX8' },
+      ]}
+    >
+      <Fragment slot="intro">
+        <p>You do not need much. That is the whole charm of the AeroPress Go. The basic setup is the brewer, fresh coffee, hot water, and some rough idea of how much of each you are using. But a few small upgrades make the recipe much easier to repeat.</p>
+      </Fragment>
+      <p>A burr grinder matters more than most people want to hear. Burr just means the coffee gets crushed more evenly instead of smashed into random dust and chunks. That matters because uneven grounds make the cup taste split in two — part sour, part bitter, with not much sweetness in the middle. If you need help there, our <a href="/posts/best-aeropress-grind-size.html">best AeroPress grind size guide</a> makes that part simple.</p>
+      <p>A small scale helps too. Not because you need to become a coffee robot, but because eyeballing 15 grams of beans is a good way to accidentally swing between "wow, that is weak" and "why is this hitting like mud." If your ratios keep drifting, our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> is the next page to read.</p>
+      <Callout variant="tip" title="Travel tip">
+        <p>If you are brewing in hotel rooms or offices, pre-fold a few paper filters into the AeroPress Go filter holder. It saves time, keeps the routine tidy, and makes the whole thing feel less like unpacking camping gear just to get caffeine.</p>
+      </Callout>
+    </WhatYoullNeed>
+  </Fragment>
+
+  <Fragment slot="steps">
+    <section>
+      <h2 id="steps">Step-by-step: the best AeroPress Go recipe for most people</h2>
+
+      <h3>1. Start with 15 grams of coffee and grind it medium-fine</h3>
+      <p>This is the sweet spot for an easy everyday cup. Fifteen grams is enough to give the brew some body without making it feel heavy or syrupy. For grind size, think table salt. Not powder like flour. Not chunky like sea salt. Right in the middle.</p>
+      <p>If your grinder runs wildly inconsistent, the AeroPress Go will still make drinkable coffee, but the cup will bounce around more than it should. One sip tastes bright. The next tastes flat. That is usually the grind talking, not the brewer.</p>
+
+      <h3>2. Use water around 185 to 195°F and set up in the standard position</h3>
+      <p>That is about 85 to 91°C. You do not need to hit the exact number with sniper precision. You just want water hot enough to pull flavor well, but not so hot that medium roasts turn sharp and papery. If you are brewing darker beans, stay near the lower end. If you are using lighter beans, lean hotter. Our <a href="/posts/best-aeropress-brew-temp.html">best AeroPress brew temp guide</a> breaks that down by roast.</p>
+      <p>Put a paper filter in the cap, rinse it if you want, then set the AeroPress Go over its cup in the standard position. I prefer standard here because it is simpler on the road. Less flipping. Less drama. Fewer chances to wear your coffee.</p>
+
+      <h3>3. Bloom with 50 grams of water, then top up to 240 grams</h3>
+      <p>Pour in about 50 grams first and make sure all the grounds get wet. Wait around 10 seconds. This little first pour wakes the coffee up and helps it brew more evenly. Then pour the rest of the water until you hit 240 grams total.</p>
+      <p>If you do not use a scale, fill just enough to saturate the grounds first, then top up close to the top of the chamber. It is less exact, obviously, but still workable. The scale just keeps your mornings from turning into guesswork.</p>
+
+      <h3>4. Swirl or stir gently, then steep until about 90 seconds total</h3>
+      <p>You do not need to attack it. One or two gentle stirs or a small swirl is enough. Over-stirring can pack fines down and make the plunge feel like pushing a car uphill. Let it steep until you hit around 90 seconds total brew time, including the pour.</p>
+      <p>This is where the AeroPress Go shines. The whole brew is fast. Not rushed. Just efficient. It gives you that "okay, I can do this before work" feeling instead of demanding a full morning ritual with a scale, kettle, dripper, and a counter that suddenly looks like a science fair.</p>
+
+      <h3>5. Press slowly and stop when you hear the hiss</h3>
+      <p>Press with steady, gentle pressure. Not a body-weight shove. Not a dramatic lean. Just smooth and slow. When you hear the hiss at the end, stop. That last push often drags extra bitterness out of the bed and it is rarely worth it.</p>
+      <p>The finished cup should taste clean and balanced. Think soft fruit, caramel, nuts, or cocoa depending on the beans. If it tastes like lemon water, it needs more extraction. If it tastes rough and woody, back it off a little.</p>
+
+      <h3>6. Taste first, then change one thing</h3>
+      <p>This matters more than people think. If the cup is sour, grind a little finer first. If it is bitter, go a touch coarser or steep a little less. If it is just weaker than you want, add more coffee before you start mangling everything else.</p>
+      <p>Keep the changes small. One notch. One temperature move. One short time tweak. Coffee gets confusing fast when you change three things at once and then try to guess which one actually helped.</p>
+
+      <HeroSteps
+        title="The easy AeroPress Go adjustment ladder"
+        subtitle="Keep everything else steady so the cup gives you a useful answer instead of mixed signals"
+        steps={[
+          { label: 'Cup tastes sour', icon: 'zap', actions: ['Grind a bit finer', 'Or raise temp 5°F', 'Keep the ratio the same'], time: 'Next brew' },
+          { label: 'Cup tastes bitter', icon: 'wind', actions: ['Grind a bit coarser', 'Or steep 10 sec less', 'Stop pressing at the hiss'], time: 'Next brew' },
+          { label: 'Cup tastes weak', icon: 'coffee', actions: ['Use 16g coffee', 'Or try bypass style', 'Do not over-stir'], time: '1 to 2 brews' },
+        ]}
+        outcome="A cleaner path to your favorite cup without turning breakfast into troubleshooting homework."
+      />
+    </section>
+  </Fragment>
+
+  <Fragment slot="common-mistakes">
+    <section>
+      <h2 id="common-mistakes">Common mistakes</h2>
+
+      <h3>Grinding too fine because you want stronger coffee</h3>
+      <p>This is the classic trap. Finer does not always mean better. Sometimes it just means a hard plunge and a cup that tastes like someone steeped coffee and aspirin together. If you want more strength, add a little more coffee or use the stronger recipe below.</p>
+
+      <h3>Using boiling water with darker beans</h3>
+      <p>Boiling water can flatten the nice chocolatey, nutty stuff in darker roasts and leave you with a bitter edge. Keep the water a bit lower and the cup usually gets sweeter fast.</p>
+
+      <h3>Stirring like you are whisking pancake batter</h3>
+      <p>AeroPress Go does not need violence. Gentle movement is enough. Too much stirring can muddy the cup and make the press needlessly tough.</p>
+
+      <h3>Guessing the ratio every single morning</h3>
+      <p>You can get away with eyeballing for a while, but the recipe will drift. Some days it still works. Some days it tastes like hot brown shrug. A small scale saves a lot of bad cups for not much money.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="troubleshooting">
+    <section>
+      <h2 id="troubleshooting">Troubleshooting: what to adjust first</h2>
+      <p>If your AeroPress Go recipe feels close but not quite there, use this order: <strong>grind first, then water temp, then steep time</strong>. That order keeps things readable. Extraction just means how much flavor the water pulls from the coffee. Too little and the cup tastes sour or thin. Too much and it tastes bitter, dry, or kind of hollow.</p>
+      <p><strong>Sour cup:</strong> go a little finer or a little hotter. <strong>Bitter cup:</strong> go a little coarser or shorten the steep. <strong>Weak cup:</strong> increase dose before you start pushing the grind too fine. If you want more detail on paper versus metal filters and how that changes body, our <a href="/posts/best-aeropress-filters.html">best AeroPress filters guide</a> helps a lot.</p>
+      <p>One more thing: bean freshness changes the brew faster than people expect. A coffee that tasted juicy and bright three days ago can calm down and taste softer a week later. So if your favorite setting shifts a little, that does not mean you forgot how to brew. The coffee moved. You just need to catch up.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2 id="stronger-recipe">Want a stronger cup? Use this AeroPress Go bypass recipe</h2>
+      <p>If the standard recipe tastes a little too light for you, do not immediately grind finer until the plunger turns into a gym exercise. A bypass recipe is the smarter move. That just means you brew a small concentrate first, then dilute it after pressing until the cup lands where you want it.</p>
+      <p>Start with <strong>18g coffee</strong>, use about <strong>120g water</strong> in the brewer, steep for roughly <strong>75 to 90 seconds</strong>, then press slowly. After that, add another <strong>60 to 90g hot water</strong> to taste. The result usually has more body and punch without getting muddy.</p>
+      <p>This is where the <strong>AeroPress Flow Control Filter Cap</strong> earns its keep. It gives you a little more freedom with immersion-style brews and stronger recipes, especially when you do not want early drip-through thinning the concentrate before you are ready.</p>
+    </section>
+
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/best-aeropress-grind-size.html">Best AeroPress grind size</a></li>
+        <li><a href="/posts/best-aeropress-brew-temp.html">Best AeroPress brew temp</a></li>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee brewing ratio guide</a></li>
+        <li><a href="/posts/best-aeropress-filters.html">Best AeroPress filters</a></li>
+      </ul>
+      <p>If you are building a whole travel setup, those four pages cover the stuff that changes the cup the most. Grind. Water temp. Ratio. Filter choice. Get those right and the AeroPress Go feels wonderfully low-fuss.</p>
+    </section>
+  </Fragment>
+</HowToGuide>

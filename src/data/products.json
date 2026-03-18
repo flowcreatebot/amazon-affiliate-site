@@ -2129,5 +2129,191 @@
         "alt": "Porlex Mini II Manual Grinder alternate view 3"
       }
     ]
+  },
+  "miicoffee-nano-coffee-scale": {
+    "name": "MiiCoffee Nano Coffee Scale with Timer",
+    "brand": "MiiCoffee",
+    "asin": "B0CGMHTWM2",
+    "image": "https://m.media-amazon.com/images/I/81ZIKmA054L._AC_SL500_.jpg",
+    "imageAlt": "MiiCoffee Nano Coffee Scale with Timer compact espresso scale",
+    "category": "accessories",
+    "rating": 4.5,
+    "specs": {
+      "fit": "Most espresso drip trays and brew bars",
+      "whatItFixes": "Shot timing and yield guesswork",
+      "maintenance": "Wipe dry and recharge by USB-C",
+      "priceBand": "$",
+      "material": "Silicone cover over compact digital scale body",
+      "features": "Auto tare, auto timer, touch controls"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/712ipZwChCL._AC_SL500_.jpg",
+        "alt": "MiiCoffee Nano Coffee Scale with Timer alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71DWo-08UPL._AC_SL500_.jpg",
+        "alt": "MiiCoffee Nano Coffee Scale with Timer alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81bwMm-qvhL._AC_SL500_.jpg",
+        "alt": "MiiCoffee Nano Coffee Scale with Timer alternate view 3"
+      }
+    ]
+  },
+  "normcore-58-5mm-coffee-tamper-v4": {
+    "name": "Normcore 58.5mm Coffee Tamper V4",
+    "brand": "Normcore",
+    "asin": "B09BTLP4P1",
+    "image": "https://m.media-amazon.com/images/I/71b+hJkivGL._AC_SL500_.jpg",
+    "imageAlt": "Normcore 58.5mm Coffee Tamper V4 spring-loaded espresso tamper",
+    "category": "accessories",
+    "rating": 4.6,
+    "specs": {
+      "fit": "58mm baskets using a 58.5mm precision tamper fit",
+      "whatItFixes": "Crooked or inconsistent tamping",
+      "maintenance": "Brush clean and wipe the base after use",
+      "priceBand": "$$",
+      "material": "304 stainless steel flat base with anodized aluminum handle",
+      "features": "Spring-loaded with 15lb, 25lb, and 30lb replacement springs"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61G+1pIIxHL._AC_SL500_.jpg",
+        "alt": "Normcore 58.5mm Coffee Tamper V4 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51toIdOo3nL._AC_SL500_.jpg",
+        "alt": "Normcore 58.5mm Coffee Tamper V4 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/612eCt4UTvL._AC_SL500_.jpg",
+        "alt": "Normcore 58.5mm Coffee Tamper V4 alternate view 3"
+      }
+    ]
+  },
+  "normcore-wdt-distribution-tool-v2": {
+    "name": "Normcore WDT Distribution Tool V2",
+    "brand": "Normcore",
+    "asin": "B09V1B152R",
+    "image": "https://m.media-amazon.com/images/I/61vgj2sF6wL._AC_SL500_.jpg",
+    "imageAlt": "Normcore WDT Distribution Tool V2 espresso stirrer with fine needles",
+    "category": "accessories",
+    "rating": 4.5,
+    "specs": {
+      "fit": "Works across basket sizes",
+      "whatItFixes": "Clumps and uneven puck prep",
+      "maintenance": "Rinse or brush needles carefully",
+      "priceBand": "$",
+      "material": "Anodized aluminum handle with 0.3mm spring wires",
+      "features": "9-prong WDT layout for declumping grounds"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/51xhSDXGe3L._AC_SL500_.jpg",
+        "alt": "Normcore WDT Distribution Tool V2 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61wOHXA1mVL._AC_SL500_.jpg",
+        "alt": "Normcore WDT Distribution Tool V2 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/6188QkLAYNL._AC_SL500_.jpg",
+        "alt": "Normcore WDT Distribution Tool V2 alternate view 3"
+      }
+    ]
+  },
+  "normcore-58mm-magnetic-dosing-funnel-v2": {
+    "name": "Normcore 58mm Magnetic Dosing Funnel V2",
+    "brand": "Normcore",
+    "asin": "B0BXSPKQ1F",
+    "image": "https://m.media-amazon.com/images/I/71QDb7amivL._AC_SL500_.jpg",
+    "imageAlt": "Normcore 58mm Magnetic Dosing Funnel V2 espresso dosing ring",
+    "category": "accessories",
+    "rating": 4.5,
+    "specs": {
+      "fit": "58mm portafilters",
+      "whatItFixes": "Mess during dosing and WDT",
+      "maintenance": "Quick wipe or rinse after prep",
+      "priceBand": "$",
+      "material": "Anodized aluminum dosing ring with neodymium magnets",
+      "features": "Magnetic fit designed for 58mm portafilters"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81+PpoMYi9L._AC_SL500_.jpg",
+        "alt": "Normcore 58mm Magnetic Dosing Funnel V2 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81kAdVwWZsL._AC_SL500_.jpg",
+        "alt": "Normcore 58mm Magnetic Dosing Funnel V2 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71wf-mXPVeL._AC_SL500_.jpg",
+        "alt": "Normcore 58mm Magnetic Dosing Funnel V2 alternate view 3"
+      }
+    ]
+  },
+  "breville-knock-box-mini": {
+    "name": "Breville Knock Box Mini",
+    "brand": "Breville",
+    "asin": "B00ISQ6ZKC",
+    "image": "https://m.media-amazon.com/images/I/61zt2HtidUL._AC_SL500_.jpg",
+    "imageAlt": "Breville Knock Box Mini stainless steel espresso knock box",
+    "category": "accessories",
+    "rating": 4.6,
+    "specs": {
+      "fit": "Most home espresso stations with a small footprint",
+      "whatItFixes": "Messy puck disposal",
+      "maintenance": "Removable knock bar makes rinsing easy",
+      "priceBand": "$",
+      "material": "Stainless steel vessel with removable knock bar and anti-slip grip",
+      "features": "Compact 4 x 4 x 4.5 inch style footprint for home use"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71mucvHa+dL._AC_SL500_.jpg",
+        "alt": "Breville Knock Box Mini alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61IT4yCWYrL._AC_SL500_.jpg",
+        "alt": "Breville Knock Box Mini alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61E2TEZgRsL._AC_SL500_.jpg",
+        "alt": "Breville Knock Box Mini alternate view 3"
+      }
+    ]
+  },
+  "ikape-58-5mm-espresso-puck-screen": {
+    "name": "IKAPE 58.5mm Espresso Puck Screen",
+    "brand": "IKAPE",
+    "asin": "B0CTK9DFPF",
+    "image": "https://m.media-amazon.com/images/I/81t1xjhOc5L._AC_SL500_.jpg",
+    "imageAlt": "IKAPE 58.5mm Espresso Puck Screen ultra-thin metal filter",
+    "category": "accessories",
+    "rating": 4.4,
+    "specs": {
+      "fit": "58mm baskets using a 58.5mm puck screen",
+      "whatItFixes": "Cleaner shower screen and tidier puck surface",
+      "maintenance": "Rinse after each shot",
+      "priceBand": "$",
+      "material": "0.2mm food-grade stainless steel puck screen",
+      "features": "Reusable ultra-thin screen for espresso prep"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/8100UZrzehL._AC_SL500_.jpg",
+        "alt": "IKAPE 58.5mm Espresso Puck Screen alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71oV08YT6TL._AC_SL500_.jpg",
+        "alt": "IKAPE 58.5mm Espresso Puck Screen alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/8192rIIZ-7L._AC_SL500_.jpg",
+        "alt": "IKAPE 58.5mm Espresso Puck Screen alternate view 3"
+      }
+    ]
   }
 }
