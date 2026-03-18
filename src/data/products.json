@@ -2342,5 +2342,34 @@
         "alt": "AeroPress Go Portable Coffee Maker alternate view 3"
       }
     ]
+  },
+  "hexnub-compact-aeropress-organizer-stand": {
+    "name": "HEXNUB Compact AeroPress Organizer Stand",
+    "brand": "HEXNUB",
+    "asin": "B082RFY9FN",
+    "image": "https://m.media-amazon.com/images/I/715Yf3dgthL._AC_SL500_.jpg",
+    "imageAlt": "HEXNUB compact bamboo AeroPress organizer stand with storage slots and mats",
+    "category": "accessories",
+    "rating": 4.4,
+    "specs": {
+      "type": "Bamboo organizer stand",
+      "compatibility": "AeroPress Original and Clear setups, not AeroPress Go or XL",
+      "filter": "Storage accessory, not a brewing filter",
+      "bestUse": "Keeping filters, stirrer, and brewer parts in one place"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71v4N4lXwxL._AC_SL500_.jpg",
+        "alt": "HEXNUB Compact AeroPress Organizer Stand alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71WRTkivXML._AC_SL500_.jpg",
+        "alt": "HEXNUB Compact AeroPress Organizer Stand alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71GcafomhwL._AC_SL500_.jpg",
+        "alt": "HEXNUB Compact AeroPress Organizer Stand alternate view 3"
+      }
+    ]
   }
 }

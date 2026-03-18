@@ -198,4 +198,10 @@
     <ns0:changefreq>weekly</ns0:changefreq>
     <ns0:priority>0.8</ns0:priority>
   </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://coffeegearpicks.com/posts/best-aeropress-attachments.html</ns0:loc>
+    <ns0:lastmod>2026-03-18</ns0:lastmod>
+    <ns0:changefreq>weekly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
 </ns0:urlset>
