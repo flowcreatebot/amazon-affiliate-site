@@ -2315,5 +2315,32 @@
         "alt": "IKAPE 58.5mm Espresso Puck Screen alternate view 3"
       }
     ]
+  },
+  "aeropress-go": {
+    "name": "AeroPress Go Portable Coffee Maker",
+    "brand": "AeroPress",
+    "asin": "B07YVL8SF3",
+    "image": "https://m.media-amazon.com/images/I/61rCqssRqsL._AC_SL500_.jpg",
+    "imageAlt": "AeroPress Go portable coffee maker with mug and scoop",
+    "category": "brewers",
+    "rating": 4.7,
+    "specs": {
+      "type": "Portable manual coffee maker",
+      "bestFor": "Travel brewing and compact daily setups"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71v6g1IOZTL._AC_SL500_.jpg",
+        "alt": "AeroPress Go Portable Coffee Maker alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/615DJ-YyNPL._AC_SL500_.jpg",
+        "alt": "AeroPress Go Portable Coffee Maker alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61dxNrfteXL._AC_SL500_.jpg",
+        "alt": "AeroPress Go Portable Coffee Maker alternate view 3"
+      }
+    ]
   }
 }
