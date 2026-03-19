@@ -2371,5 +2371,34 @@
         "alt": "HEXNUB Compact AeroPress Organizer Stand alternate view 3"
       }
     ]
+  },
+  "aeropress-original-z2gs": {
+    "name": "AeroPress Original Coffee Press",
+    "brand": "AeroPress",
+    "asin": "B000GXZ2GS",
+    "image": "https://m.media-amazon.com/images/I/61u3sW4Vx4L._AC_SL500_.jpg",
+    "imageAlt": "AeroPress Original coffee press with chamber, plunger, and paper filters",
+    "category": "brewers",
+    "rating": 4.7,
+    "specs": {
+      "brewStyle": "Manual immersion plus pressure",
+      "portability": "Home, office, and travel friendly",
+      "filterType": "Paper micro-filters",
+      "bestUse": "Fast single cups"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71WiJNoMfFL._AC_SL500_.jpg",
+        "alt": "AeroPress Original Coffee Press alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61-JZXPLLUL._AC_SL500_.jpg",
+        "alt": "AeroPress Original Coffee Press alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61wEHXb3kIL._AC_SL500_.jpg",
+        "alt": "AeroPress Original Coffee Press alternate view 3"
+      }
+    ]
   }
 }
