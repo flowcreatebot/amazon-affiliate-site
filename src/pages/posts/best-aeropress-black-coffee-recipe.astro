@@ -1,0 +1,292 @@
+---
+import HowToGuide from '../../layouts/page-types/HowToGuide.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import WhatYoullNeed from '../../components/WhatYoullNeed.astro';
+import Callout from '../../components/Callout.astro';
+import type { ResolvedProduct } from '../../data/products';
+
+const products: ResolvedProduct[] = [
+  {
+    id: 'aeropress-original',
+    name: 'AeroPress Original Coffee Maker',
+    brand: 'AeroPress',
+    asin: 'B000GXZ2GS',
+    image: 'https://m.media-amazon.com/images/I/61u3sW4Vx4L._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Original coffee maker with chamber, plunger, and filter cap',
+    category: 'brewers',
+    rating: 4.7,
+    specs: {
+      type: 'Manual immersion coffee maker',
+      bestFor: 'Simple black coffee with a clean cup and fast cleanup',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: '$$',
+    bestFor: 'The easiest brewer for this everyday black coffee recipe',
+    featured: true,
+  },
+  {
+    id: 'timemore-chestnut-c2',
+    name: 'TIMEMORE Chestnut C2 Manual Coffee Grinder',
+    brand: 'TIMEMORE',
+    asin: 'B0833SDN8M',
+    image: 'https://m.media-amazon.com/images/I/61Y8BsO8kYL._AC_SL500_.jpg',
+    imageAlt: 'TIMEMORE Chestnut C2 manual coffee grinder in matte black',
+    category: 'grinders',
+    rating: 4.6,
+    specs: {
+      type: 'Manual burr grinder',
+      bestFor: 'Getting a cleaner, more even grind than a blade grinder',
+    },
+    badge: { label: 'Best for Consistency', variant: 'beginners' },
+    price: '$$',
+    bestFor: 'Stopping sour-and-bitter mixed cups before they start',
+  },
+  {
+    id: 'miicoffee-nano-scale',
+    name: 'MiiCoffee Nano Coffee Scale with Timer',
+    brand: 'MiiCoffee',
+    asin: 'B0CGMHTWM2',
+    image: 'https://m.media-amazon.com/images/I/81ZIKmA054L._AC_SL500_.jpg',
+    imageAlt: 'MiiCoffee Nano coffee scale with timer and silicone mat',
+    category: 'accessories',
+    rating: 4.4,
+    specs: {
+      type: 'Compact coffee scale with timer',
+      bestFor: 'Keeping your AeroPress black coffee recipe repeatable',
+    },
+    badge: { label: 'Best Budget', variant: 'budget' },
+    price: '$',
+    bestFor: 'Locking in the same ratio every morning',
+  },
+  {
+    id: 'fellow-stagg-ekg',
+    name: 'Fellow Stagg EKG Electric Gooseneck Kettle',
+    brand: 'Fellow',
+    asin: 'B077JBQZPX',
+    image: 'https://m.media-amazon.com/images/I/51MfuBJO2BL._AC_SL500_.jpg',
+    imageAlt: 'Fellow Stagg EKG electric gooseneck kettle in matte black',
+    category: 'accessories',
+    rating: 4.7,
+    specs: {
+      type: 'Electric gooseneck kettle',
+      bestFor: 'Holding steady brew temperatures for repeatable black coffee',
+    },
+    badge: { label: 'Best Upgrade', variant: 'upgrade' },
+    price: '$$$',
+    bestFor: 'Making temperature changes feel easy instead of random',
+  },
+];
+
+const description = 'Learn the best AeroPress black coffee recipe with exact ratio, grind size, water temp, steep time, and easy fixes for sour, bitter, or weak cups.';
+---
+
+<HowToGuide
+  slug="best-aeropress-black-coffee-recipe"
+  title="Best AeroPress Black Coffee Recipe (2026)"
+  description={description}
+  category="education"
+  datePublished="2026-03-19"
+  dateModified="2026-03-19"
+  ogImage={products[0].image}
+  heroSteps={{
+    title: 'A black coffee AeroPress recipe you can repeat without drama',
+    subtitle: 'One balanced everyday brew, one stronger long-black style option, and a simple way to fix sour, bitter, or weak cups',
+    steps: [
+      { label: 'Measure', icon: 'list', actions: ['15g coffee', '240g water', 'Medium-fine grind', '185 to 195°F water'], time: '~1 min' },
+      { label: 'Brew', icon: 'coffee', actions: ['Bloom with 40 to 50g', 'Top up to 240g', 'Steep about 90 sec total', 'Swirl gently'], time: '~1.5 min' },
+      { label: 'Press', icon: 'target', actions: ['Press slowly', 'Stop at the hiss', 'Taste black first', 'Adjust one thing'], time: '~30 sec' },
+    ],
+    outcome: 'A cup that tastes smooth, clear, and properly strong instead of sharp like lemon water or rough like over-steeped diner coffee.',
+    footer: 'coffeegearpicks.com · AeroPress black coffee recipe · 2026',
+  }}
+  contentImage={{
+    src: '/assets/content-aeropress-black-coffee-recipe.webp',
+    alt: 'AeroPress brewer with a black coffee mug, hand grinder, and coffee scale on a warm cream linen surface',
+    caption: 'A simple AeroPress black coffee setup focused on repeatable daily brewing.',
+  }}
+  tocItems={[
+    { href: '#quick-answer', label: 'Quick answer' },
+    { href: '#what-you-need', label: "What you'll need" },
+    { href: '#steps', label: 'Step-by-step recipe' },
+    { href: '#common-mistakes', label: 'Common mistakes' },
+    { href: '#troubleshooting', label: 'Troubleshooting' },
+    { href: '#long-black-style', label: 'Long-black style variation' },
+    { href: '#related-guides', label: 'Related guides' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  products={products}
+  faqItems={[
+    { q: 'What is the best AeroPress black coffee recipe for most people?', a: 'Start with 15 grams of coffee, 240 grams of water, a medium-fine grind, and about 90 seconds total brew time. That gives most people the easiest path to a balanced black cup with enough body to feel satisfying.' },
+    { q: 'What grind size works best for AeroPress black coffee?', a: 'Medium-fine is the safest starting point. Think table salt. Too coarse and the coffee tastes thin and sour. Too fine and the press gets hard while the cup can turn bitter and muddy.' },
+    { q: 'Should I use boiling water for AeroPress black coffee?', a: 'Usually no. Water around 185 to 195°F works better for most black coffee recipes because it pulls good sweetness without getting harsh fast. Lighter roasts can handle the hotter end. Darker roasts usually taste better lower.' },
+    { q: 'How do I make AeroPress black coffee stronger without making it bitter?', a: 'Use a bypass recipe. Brew a smaller concentrate first, then add hot water after pressing until the cup tastes right. That gives you more body and strength without forcing the grind so fine that the cup gets rough.' },
+  ]}
+  supplies={['AeroPress Original', 'Fresh coffee beans', 'Hot water', 'Burr grinder', 'Scale', 'Timer', 'Paper filters']}
+  schemaTools={products.map((product) => product.name)}
+  schemaSteps={[
+    { name: 'Measure coffee and water', text: 'Use 15 grams of coffee and 240 grams of water. Grind the coffee medium-fine, about like table salt.' },
+    { name: 'Bloom and finish the pour', text: 'Add 40 to 50 grams of water first, swirl gently, wait about 10 seconds, then pour the rest of the water up to 240 grams total.' },
+    { name: 'Steep and press', text: 'Steep until about 90 seconds total brew time, then press slowly and stop when you hear the hiss.' },
+    { name: 'Taste and adjust', text: 'If the cup tastes sour, grind a little finer or raise the water temperature. If it tastes bitter, grind a little coarser or shorten the steep.' },
+  ]}
+>
+  <Fragment slot="lead">
+    <p class="lead">The best AeroPress black coffee recipe is not the flashiest one. It is the one that gives you a cup you actually want to finish without adding milk, sugar, or excuses. For most people, that means a medium-fine grind, hot but not screaming-hot water, and a short brew that tastes smooth and sweet instead of sharp, muddy, or weirdly hollow.</p>
+    <p>If you drink your coffee black, little mistakes show up fast. There is nowhere for bitterness to hide. No milk to soften a rough edge. That is why AeroPress works so well here. It is quick, forgiving, and easy to nudge in the right direction once you know what each change actually does.</p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <h2 id="quick-answer">Quick answer</h2>
+    <p><strong>Start here:</strong> use <strong>15g coffee</strong>, <strong>240g water</strong>, a <strong>medium-fine grind</strong>, and water around <strong>185 to 195°F</strong> or <strong>85 to 91°C</strong>. Bloom with about <strong>40 to 50g</strong> of water, top up to <strong>240g total</strong>, steep for about <strong>90 seconds total</strong>, then press slowly and stop at the hiss. That is the best AeroPress black coffee recipe for most people because it lands right in the sweet spot: clear, smooth, and strong enough to feel like coffee instead of tea water.</p>
+    <p>If you want a mental shortcut, think of the goal like this: bright enough to taste lively, round enough to feel comforting, and clean enough that each sip still tastes good once it cools a little. That is the cup you are chasing.</p>
+
+    <ComparisonTable timestamp="Prices updated: March 19, 2026" ariaLabel="AeroPress black coffee recipe quick fix table">
+      <table>
+        <thead>
+          <tr>
+            <th>Taste in the cup</th>
+            <th>What it usually means</th>
+            <th>First fix</th>
+            <th>Second fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Taste in the cup">Sour or thin</td>
+            <td data-label="What it usually means">Not enough extraction, which just means the water did not pull enough flavor from the coffee</td>
+            <td data-label="First fix">Grind a little finer</td>
+            <td data-label="Second fix">Raise water temp by about 5°F</td>
+          </tr>
+          <tr>
+            <td data-label="Taste in the cup">Bitter or rough</td>
+            <td data-label="What it usually means">Too much extraction or too much contact time</td>
+            <td data-label="First fix">Grind a little coarser</td>
+            <td data-label="Second fix">Shorten the steep by 10 to 15 seconds</td>
+          </tr>
+          <tr>
+            <td data-label="Taste in the cup">Weak but not sour</td>
+            <td data-label="What it usually means">Your ratio is too light for your taste</td>
+            <td data-label="First fix">Use 16g coffee</td>
+            <td data-label="Second fix">Try the long-black style recipe below</td>
+          </tr>
+          <tr>
+            <td data-label="Taste in the cup">Hard to press</td>
+            <td data-label="What it usually means">The grind is too fine or you stirred too aggressively</td>
+            <td data-label="First fix">Go a touch coarser</td>
+            <td data-label="Second fix">Swirl instead of heavy stirring</td>
+          </tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="what-youll-need">
+    <WhatYoullNeed
+      items={[
+        { name: 'AeroPress Original Coffee Maker', desc: 'The brewer itself. Fast, compact, and especially good when you want black coffee with less grit and less cleanup hassle.', asin: 'B000GXZ2GS' },
+        { name: 'TIMEMORE Chestnut C2 Manual Coffee Grinder', desc: 'A burr grinder that makes grind size look less like gravel mixed with dust and more like something the brewer can actually work with.', asin: 'B0833SDN8M' },
+        { name: 'MiiCoffee Nano Coffee Scale with Timer', desc: 'Small, simple, and useful if your cups keep changing from day to day for no obvious reason.', asin: 'B0CGMHTWM2' },
+        { name: 'AeroPress Paper Micro-Filters', desc: 'The easiest way to get a cleaner black cup with less sludge at the bottom.', asin: 'B005UPSLX8' },
+      ]}
+    >
+      <Fragment slot="intro">
+        <p>You do not need a giant coffee lab for this. The AeroPress is part of the appeal because it keeps the gear list short. But if you care about black coffee tasting sweet and balanced instead of random, a few pieces matter more than others.</p>
+      </Fragment>
+      <p>The grinder matters first. If your grounds come out uneven, the cup often tastes split in half. One sip is sharp and underdone. The next is bitter and heavy. That is why a burr grinder is such a big upgrade. Burr just means the coffee gets ground more evenly, which makes the brew easier to dial in. If that part still feels fuzzy, our <a href="/posts/best-aeropress-grind-size.html">best AeroPress grind size guide</a> shows what the sweet spot looks like.</p>
+      <p>A scale is the next thing I would add. Not because you need to become precious about numbers, but because black coffee is brutally honest. When the ratio drifts, the cup tells on you. Our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> explains why a small measurement change can make such a big difference.</p>
+      <Callout variant="tip" title="Keep it simple">
+        <p>If you are new to black coffee, stick with paper filters first. They usually give you a cleaner, lighter-feeling cup, which makes it easier to taste whether your grind, time, or temperature needs work. If you want more body later, then experiment.</p>
+      </Callout>
+    </WhatYoullNeed>
+  </Fragment>
+
+  <Fragment slot="steps">
+    <section>
+      <h2 id="steps">Step-by-step: the best AeroPress black coffee recipe for most people</h2>
+
+      <h3>1. Start with 15 grams of coffee and grind it medium-fine</h3>
+      <p>Fifteen grams is a really comfortable starting point for black coffee in an AeroPress. It gives you enough strength to feel satisfying without turning the cup heavy or syrupy. For grind size, aim for something close to table salt. Finer than drip coffee. Coarser than espresso. Right in that middle lane where the brewer can pull good sweetness without making the press feel like a workout.</p>
+      <p>If you have been making black coffee that tastes sour and bitter at the same time, the grind is often the first culprit. That ugly split personality usually means the grounds are too uneven or just too coarse for the brew time you are using.</p>
+
+      <h3>2. Heat your water to 185 to 195°F and set up in the standard position</h3>
+      <p>That is about 85 to 91°C. You do not need lab-level precision. You just want the water hot enough to pull flavor cleanly, but not so hot that the cup turns harsh. If your beans are darker and taste roasty fast, stay closer to 185°F. If they are lighter and taste a little stubborn, move toward 195°F. Our <a href="/posts/best-aeropress-brew-time.html">best AeroPress brew time guide</a> pairs nicely with that because time and temperature work together more than people think.</p>
+      <p>I like the standard position for this recipe because it keeps the whole thing easy. Less flipping. Less mess. Less chance of wearing half the brew because you rushed a hand movement before caffeine kicked in.</p>
+
+      <h3>3. Bloom with 40 to 50 grams of water, then pour up to 240 grams total</h3>
+      <p>Pour a small first splash and make sure all the grounds get wet. Wait about 10 seconds. That first pour helps the coffee wake up and brew more evenly. Then pour the rest of the water until you hit 240 grams total.</p>
+      <p>You do not need to stir like you are beating eggs. A gentle swirl is usually enough. AeroPress rewards calm. When you get too aggressive, fines pack together, the plunge gets harder, and the cup can start tasting muddier than it needs to.</p>
+
+      <h3>4. Steep until about 90 seconds total brew time</h3>
+      <p>That includes your pour. Ninety seconds is a very friendly starting point for black coffee because it is long enough to get sweetness and body, but short enough to avoid dragging too much bitterness out of the grounds. If your coffee tastes thin or lemony, give it a touch more help with grind or temperature first before stretching the time a lot.</p>
+      <p>This is one of the reasons AeroPress feels so good on busy mornings. The brew is quick, but it does not feel rushed. It gives you a proper cup in the time some brewers spend just dripping through the first half of the water.</p>
+
+      <h3>5. Press slowly and stop when you hear the hiss</h3>
+      <p>Slow and steady wins here. Think smooth pressure, not dramatic force. When you hear the hiss at the end, stop. That last squeeze often pulls out the rougher flavors you do not really want, especially if you are drinking the cup black.</p>
+      <p>Your result should taste clean, sweet, and pretty open. Depending on the beans, you might notice cocoa, toasted nuts, soft fruit, or that nice brown-sugar kind of sweetness that makes black coffee feel cozy instead of punishing.</p>
+
+      <h3>6. Taste the cup black before changing anything</h3>
+      <p>This sounds obvious, but a lot of people take one sip, panic, and start changing three things at once. Do not do that. Taste it. Ask what is actually wrong. Too sour? Too bitter? Too light? Hard to press? One clear problem means one clear next move.</p>
+      <p>If you keep everything else steady and change one thing at a time, the cup starts talking in a way that makes sense. If you change grind, dose, time, and temp all at once, you are basically arguing with a moving target.</p>
+
+      <HeroSteps
+        title="The easy fix ladder for black AeroPress coffee"
+        subtitle="Change one thing at a time so each cup gives you a useful answer"
+        steps={[
+          { label: 'Sour cup', icon: 'zap', actions: ['Grind a bit finer', 'Or raise temp 5°F', 'Keep the ratio the same'], time: 'Next brew' },
+          { label: 'Bitter cup', icon: 'wind', actions: ['Grind a bit coarser', 'Or steep 10 sec less', 'Stop at the hiss'], time: 'Next brew' },
+          { label: 'Weak cup', icon: 'coffee', actions: ['Use 16g coffee', 'Or brew concentrate + bypass', 'Do not over-stir'], time: '1 to 2 brews' },
+        ]}
+        outcome="A cleaner path to your favorite black cup without turning breakfast into troubleshooting homework."
+      />
+    </section>
+  </Fragment>
+
+  <Fragment slot="common-mistakes">
+    <section>
+      <h2 id="common-mistakes">Common mistakes</h2>
+
+      <h3>Grinding too fine because you want more strength</h3>
+      <p>This is the trap. People want a bolder cup, so they crank the grind finer and finer until the plunge turns ugly and the coffee tastes rough. Strength and bitterness are not the same thing. If you want more punch, add a little more coffee or use a concentrate-and-bypass recipe instead.</p>
+
+      <h3>Using water straight off a hard boil for every bean</h3>
+      <p>Some coffees can handle it. Some absolutely cannot. Medium and darker roasts often taste sweeter with slightly cooler water. If your black coffee keeps getting a dry, ashy edge, try dropping the temperature before you blame the beans.</p>
+
+      <h3>Guessing the ratio every morning</h3>
+      <p>You can get away with eyeballing for a while, but black coffee is honest enough that the guesswork catches up with you. One day it works. The next day it tastes like hot brown disappointment. A tiny scale fixes a lot of that.</p>
+
+      <h3>Ignoring filter choice</h3>
+      <p>Paper filters usually give you a cleaner cup. Metal options can add body, but they also let more fines and oils through. Neither is morally superior. They just taste different. If your cup feels muddy, the filter may be part of the story. Our <a href="/posts/best-aeropress-filters.html">best AeroPress filters guide</a> covers that in plain English.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="troubleshooting">
+    <section>
+      <h2 id="troubleshooting">Troubleshooting: what to adjust first</h2>
+      <p>If your AeroPress black coffee recipe feels close but not quite there, use this order: <strong>grind first, then water temp, then steep time</strong>. That order keeps things readable. Extraction just means how much flavor the water pulls from the coffee. Too little and the cup tastes sour, thin, or weirdly empty. Too much and it starts tasting bitter, dry, or woody.</p>
+      <p><strong>Sour cup:</strong> go a little finer or a little hotter. <strong>Bitter cup:</strong> go a little coarser or shorten the steep. <strong>Weak cup:</strong> add more coffee before forcing the grind super fine. <strong>Hard plunge:</strong> back the grind off a touch and stir less. Tiny changes work better than huge ones.</p>
+      <p>Also keep your beans in mind. Coffee changes as it ages. A setting that tasted juicy and lively last week can taste flatter later, even if you did everything else the same. That does not mean the recipe broke. It just means the coffee moved and you need to follow it a little.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2 id="long-black-style">Want a stronger cup? Try this long-black style AeroPress recipe</h2>
+      <p>If the everyday recipe tastes too light, do not jump straight to a painfully fine grind. Brew a stronger concentrate first, then add water after pressing. This is the easiest way to get more body and intensity while keeping the cup smooth enough to enjoy black.</p>
+      <p>Start with <strong>18g coffee</strong> and about <strong>120g water</strong> in the brewer. Keep the grind medium-fine, maybe just a hair finer than your everyday setting. Steep for roughly <strong>75 to 90 seconds</strong>, then press slowly. After that, add <strong>60 to 100g hot water</strong> to taste. If you like your black coffee with a little more punch but still want it clean, this is usually the move.</p>
+      <p>It lands somewhere between a regular black cup and a homemade long black. More concentration up front. More control at the end. Less risk of turning the whole brew harsh just because you chased strength the wrong way.</p>
+    </section>
+
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/best-aeropress-brew-time.html">Best AeroPress brew time</a></li>
+        <li><a href="/posts/best-aeropress-grind-size.html">Best AeroPress grind size</a></li>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee brewing ratio guide</a></li>
+        <li><a href="/posts/best-aeropress-filters.html">Best AeroPress filters</a></li>
+        <li><a href="/posts/best-aeropress-go-recipe.html">Best AeroPress Go recipe</a></li>
+      </ul>
+      <p>If you want to keep dialing this in, those guides cover the parts that change the cup the most: grind, time, ratio, and filter choice. Get those right and black AeroPress coffee stops feeling random fast.</p>
+    </section>
+  </Fragment>
+</HowToGuide>
