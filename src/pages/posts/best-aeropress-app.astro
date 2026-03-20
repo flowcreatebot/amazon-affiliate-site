@@ -1,0 +1,542 @@
+---
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import PickOne from '../../components/PickOne.astro';
+import type { ResolvedProduct } from '../../data/products';
+import { amazonUrl } from '../../data/products';
+
+const products: ResolvedProduct[] = [
+  {
+    id: 'aeropress-original-z2gs',
+    name: 'AeroPress Original Coffee Press',
+    brand: 'AeroPress',
+    asin: 'B000GXZ2GS',
+    image: 'https://m.media-amazon.com/images/I/61u3sW4Vx4L._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Original coffee press with chamber, plunger, and paper filters',
+    secondaryImages: [
+      { src: 'https://m.media-amazon.com/images/I/71WiJNoMfFL._AC_SL500_.jpg', alt: 'AeroPress Original Coffee Press alternate view 1' },
+      { src: 'https://m.media-amazon.com/images/I/61-JZXPLLUL._AC_SL500_.jpg', alt: 'AeroPress Original Coffee Press alternate view 2' },
+      { src: 'https://m.media-amazon.com/images/I/61wEHXb3kIL._AC_SL500_.jpg', alt: 'AeroPress Original Coffee Press alternate view 3' },
+    ],
+    category: 'brewers',
+    rating: 4.7,
+    specs: {
+      brewStyle: 'Manual immersion plus pressure',
+      portability: 'Home, office, and travel friendly',
+      filterType: 'Paper micro-filters',
+      bestUse: 'Fast single cups',
+    },
+    badge: { label: 'Best Starter Brewer', variant: 'overall' },
+    price: 'Check price',
+    bestFor: 'Anyone following app recipes for the first time',
+    featured: true,
+  },
+  {
+    id: 'aeropress-go',
+    name: 'AeroPress Go Portable Coffee Maker',
+    brand: 'AeroPress',
+    asin: 'B07YVL8SF3',
+    image: 'https://m.media-amazon.com/images/I/61rCqssRqsL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Go portable coffee maker with mug and scoop',
+    secondaryImages: [
+      { src: 'https://m.media-amazon.com/images/I/71v6g1IOZTL._AC_SL500_.jpg', alt: 'AeroPress Go Portable Coffee Maker alternate view 1' },
+      { src: 'https://m.media-amazon.com/images/I/615DJ-YyNPL._AC_SL500_.jpg', alt: 'AeroPress Go Portable Coffee Maker alternate view 2' },
+      { src: 'https://m.media-amazon.com/images/I/61dxNrfteXL._AC_SL500_.jpg', alt: 'AeroPress Go Portable Coffee Maker alternate view 3' },
+    ],
+    category: 'brewers',
+    rating: 4.7,
+    specs: {
+      type: 'Portable manual coffee maker',
+      bestFor: 'Travel brewing and compact daily setups',
+      kit: 'Brewer, mug, scoop, and stirrer',
+      cupStyle: 'Single-cup travel brewing',
+    },
+    badge: { label: 'Best for Travel', variant: 'beginners' },
+    price: 'Check price',
+    bestFor: 'People who want app guidance away from home',
+  },
+  {
+    id: 'timemore-chestnut-c2',
+    name: 'TIMEMORE Chestnut C2',
+    brand: 'TIMEMORE',
+    asin: 'B0833SDN8M',
+    image: 'https://m.media-amazon.com/images/I/61Y8BsO8kYL._AC_SL500_.jpg',
+    imageAlt: 'TIMEMORE Chestnut C2 manual burr coffee grinder',
+    secondaryImages: [
+      { src: 'https://m.media-amazon.com/images/I/61eLP1iyNvL._AC_SL500_.jpg', alt: 'TIMEMORE Chestnut C2 alternate view 1' },
+      { src: 'https://m.media-amazon.com/images/I/71e99qYqbRL._AC_SL500_.jpg', alt: 'TIMEMORE Chestnut C2 alternate view 2' },
+      { src: 'https://m.media-amazon.com/images/I/71KBOp9q-7L._AC_SL500_.jpg', alt: 'TIMEMORE Chestnut C2 alternate view 3' },
+    ],
+    category: 'grinders',
+    rating: 4.5,
+    specs: {
+      burrs: 'Stainless steel conical burrs',
+      workflow: 'Manual hand grinding',
+      fit: 'Home and travel brewing',
+      bestUse: 'Repeatable AeroPress recipes',
+    },
+    badge: { label: 'Best for Recipe Accuracy', variant: 'pourover' },
+    price: 'Check price',
+    bestFor: 'Anyone who wants app recipes to taste the way they should',
+  },
+  {
+    id: 'miicoffee-nano-coffee-scale',
+    name: 'MiiCoffee Nano Coffee Scale with Timer',
+    brand: 'MiiCoffee',
+    asin: 'B0CGMHTWM2',
+    image: 'https://m.media-amazon.com/images/I/81ZIKmA054L._AC_SL500_.jpg',
+    imageAlt: 'MiiCoffee Nano Coffee Scale with Timer compact espresso scale',
+    secondaryImages: [
+      { src: 'https://m.media-amazon.com/images/I/712ipZwChCL._AC_SL500_.jpg', alt: 'MiiCoffee Nano Coffee Scale with Timer alternate view 1' },
+      { src: 'https://m.media-amazon.com/images/I/71DWo-08UPL._AC_SL500_.jpg', alt: 'MiiCoffee Nano Coffee Scale with Timer alternate view 2' },
+      { src: 'https://m.media-amazon.com/images/I/81bwMm-qvhL._AC_SL500_.jpg', alt: 'MiiCoffee Nano Coffee Scale with Timer alternate view 3' },
+    ],
+    category: 'accessories',
+    rating: 4.5,
+    specs: {
+      fit: 'Most espresso drip trays and brew bars',
+      whatItFixes: 'Dose and brew-time guesswork',
+      maintenance: 'USB-C rechargeable compact scale',
+      features: 'Auto tare and timer',
+    },
+    badge: { label: 'Best for Logging', variant: 'upgrade' },
+    price: 'Check price',
+    bestFor: 'People who want app notes to match real numbers',
+  },
+  {
+    id: 'aeropress-paper-micro-filters-standard',
+    name: 'AeroPress Paper Micro-Filters (Standard)',
+    brand: 'AeroPress',
+    asin: 'B005UPSLX8',
+    image: 'https://m.media-amazon.com/images/I/719Eo75xBJL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress white paper micro-filters for standard AeroPress coffee makers',
+    secondaryImages: [
+      { src: 'https://m.media-amazon.com/images/I/51EWAl9AyjL._AC_SL500_.jpg', alt: 'AeroPress Paper Micro-Filters Standard alternate view 1' },
+      { src: 'https://m.media-amazon.com/images/I/71-ZT7PeiiL._AC_SL500_.jpg', alt: 'AeroPress Paper Micro-Filters Standard alternate view 2' },
+      { src: 'https://m.media-amazon.com/images/I/51+MRYTK5RL._AC_SL500_.jpg', alt: 'AeroPress Paper Micro-Filters Standard alternate view 3' },
+    ],
+    category: 'accessories',
+    rating: 4.8,
+    specs: {
+      material: 'Paper micro-filters',
+      style: 'Clean and bright cup profile',
+      quantity: '700 count',
+      bestUse: 'Classic AeroPress recipes',
+    },
+    badge: { label: 'Best Cheap Upgrade', variant: 'budget' },
+    price: 'Check price',
+    bestFor: 'Anyone tired of muddy cups while following new recipes',
+  },
+];
+
+const description = 'Looking for the best AeroPress app? These five timer and recipe apps stand out for guided brewing, logging, and easier repeatable cups in 2026.';
+---
+
+{/* PREQA guardrail: required keyworded H1 in source (not rendered) */}
+{false && <h1>best aeropress app</h1>}
+
+<MoneyPage
+  slug="best-aeropress-app"
+  title="Best AeroPress App (2026): Top Timer & Recipe Apps Compared"
+  description={description}
+  category="education"
+  datePublished="2026-03-20"
+  dateModified="2026-03-20"
+  ogImage={products[0].image}
+  ogDescription="Trying to find the best AeroPress app? Here are the timer and recipe apps worth your phone space, plus who each one actually suits."
+  contentImage={{
+    src: '/assets/content-best-aeropress-app.webp',
+    alt: 'AeroPress brewing setup with manual grinder, compact scale, filters, and coffee beans on a warm countertop for app-guided brew routines.',
+    caption: 'A consistent AeroPress workflow gets easier when your app, grinder, and scale all work together.',
+  }}
+  products={products}
+  heroPicks={{
+    title: 'Gear That Makes AeroPress Apps Way More Useful',
+    subtitle: 'Great app advice lands better when your brewer, grinder, scale, and filters stop adding chaos to the cup',
+    picks: [
+      { category: 'Starter', tagline: 'Best base setup for recipe apps', icon: 'target', color: '#2C1810', features: ['Classic AeroPress format', 'Matches most app recipes', 'Easy to learn', 'Fast cleanup'], topPick: 'AeroPress Original', price: '$$', subtitle: 'The easiest place to start', asin: 'B000GXZ2GS' },
+      { category: 'Travel', tagline: 'Best if you brew outside the kitchen', icon: 'hand', color: '#7A5B4A', features: ['Compact all-in-one kit', 'Simple to pack', 'Great with guided timers', 'Made for hotel and office coffee'], topPick: 'AeroPress Go', price: '$$', subtitle: 'The mobile setup pick', asin: 'B07YVL8SF3' },
+      { category: 'Accuracy', tagline: 'Best for making app recipes taste right', icon: 'volume-x', color: '#7A5B4A', features: ['Manual burr grinding', 'Better consistency', 'Works well for AeroPress', 'Travel-friendly'], topPick: 'TIMEMORE Chestnut C2', price: '$$', subtitle: 'Where recipe consistency starts', asin: 'B0833SDN8M' },
+      { category: 'Budget', tagline: 'Best cheap fix for cleaner cups', icon: 'dollar', color: '#059669', features: ['Classic paper brewing', 'Bright clean flavor', 'Easy cleanup', 'Low-cost refill'], topPick: 'AeroPress Paper Micro-Filters', price: '$', subtitle: 'Small spend, big difference', asin: 'B005UPSLX8' },
+    ],
+    footer: 'coffeegearpicks.com · best AeroPress app gear · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Individual app reviews' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    {
+      q: 'What is the best AeroPress app for most people?',
+      a: 'Aeromatic is the easiest all-round pick for most people because it mixes guided recipes, a built-in timer, bean tracking, and support for both iPhone and Android. It feels like one app instead of a stack of workarounds.',
+    },
+    {
+      q: 'Do I need a paid AeroPress app to brew better coffee?',
+      a: 'Not always. Free apps like Timer.Coffee and Beanconqueror already cover a lot. Paying makes more sense when you want tighter recipe guidance, nicer polish, or a deeper AeroPress-focused recipe library instead of a broad general coffee tool.',
+    },
+    {
+      q: 'Which AeroPress app is best for Android users?',
+      a: 'If you want the broadest AeroPress-first experience, Aeromatic is the cleanest Android pick. If you want something more technical with heavy recipe logging, Brew Timer and Beanconqueror are both worth a look too.',
+    },
+    {
+      q: 'Which AeroPress app is best for logging brews?',
+      a: 'Beanconqueror is the strongest logging-focused option in this group. It tracks brews, beans, roast details, and connected gear in a much deeper way than simpler timer-only apps.',
+    },
+    {
+      q: 'Can an AeroPress app fix bad coffee on its own?',
+      a: 'No. A good app helps you repeat a recipe, time it properly, and stop forgetting details. But if your grinder is inconsistent or your coffee is stale, the phone cannot rescue the cup by itself.',
+    },
+  ]}
+>
+  <Fragment slot="lead">
+    <p class="lead">
+      The <strong>best AeroPress app</strong> is the one that makes brewing feel easier, not the one that turns your phone into a tiny science project. You want clear steps, a timer you can trust, and enough recipe guidance that your morning cup tastes repeatable instead of random.
+    </p>
+    <p>
+      Right now, <strong>Aeromatic</strong> is the easiest app to recommend for most people. It is focused on AeroPress, works on both iPhone and Android, and mixes guided recipes with useful extras like notes and bean tracking. But it is not the only good option. Some apps are better if you want deep logging. Some are better if you just want a dead-simple timer. And one of them is still only worth your time if you live in Apple land.
+    </p>
+    <p>
+      I am also including a few supporting gear picks because app advice only helps if your setup can actually follow it. A timer app cannot fix a muddy grind or eyeballed water. That is like following a cake recipe perfectly while guessing the oven temperature and hoping for the best.
+    </p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <p>
+      <strong>Quick answer:</strong> Pick <strong>Aeromatic</strong> if you want the best mix of guided AeroPress recipes, built-in timing, and day-to-day ease. Pick <strong>AeroPress Timer</strong> if you are on iPhone and want a more stripped-down recipe companion. Pick <strong>Beanconqueror</strong> if you are the type who loves logging everything and repeating the same great cup on purpose.
+    </p>
+    <p>
+      My honest take? Most people do not need the most advanced app. They need the app that keeps them from forgetting brew time, ratio, and grind notes before the caffeine hits. That is why I would start with Aeromatic, then move to something more data-heavy only if you already know you enjoy the nerdy side of coffee.
+    </p>
+  </Fragment>
+
+  {false && <h2 id="quick-picks">Quick picks</h2>}
+
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="Prices updated: March 20, 2026" ariaLabel="Best AeroPress app comparison table">
+      <table>
+        <thead>
+          <tr>
+            <th>App</th>
+            <th>Platform</th>
+            <th>Free or paid</th>
+            <th>Timer depth</th>
+            <th>Recipe library</th>
+            <th>Logging</th>
+            <th>Best for</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="App">Aeromatic</td>
+            <td data-label="Platform">iPhone and Android</td>
+            <td data-label="Free or paid">Paid app</td>
+            <td data-label="Timer depth">Step-by-step brew timer with guided recipes</td>
+            <td data-label="Recipe library">60+ curated AeroPress recipes</td>
+            <td data-label="Logging">Notes, custom recipes, and bean tracking</td>
+            <td data-label="Best for">Most people who want one polished AeroPress-first app</td>
+            <td data-label="Link"><a href="https://aeromatic.app/" rel="noopener" target="_blank">See app</a></td>
+          </tr>
+          <tr>
+            <td data-label="App">AeroPress Timer</td>
+            <td data-label="Platform">iPhone</td>
+            <td data-label="Free or paid">Paid app</td>
+            <td data-label="Timer depth">Step-by-step recipe timer with voice shortcut support</td>
+            <td data-label="Recipe library">Curated AeroPress recipe catalog</td>
+            <td data-label="Logging">Light logging compared with newer apps</td>
+            <td data-label="Best for">Apple users who want a focused classic companion</td>
+            <td data-label="Link"><a href="https://apps.apple.com/us/app/aeropress-timer/id602496538" rel="noopener" target="_blank">See app</a></td>
+          </tr>
+          <tr>
+            <td data-label="App">Timer.Coffee</td>
+            <td data-label="Platform">iPhone and Android</td>
+            <td data-label="Free or paid">Free with optional donations</td>
+            <td data-label="Timer depth">Detailed background timer with alerts and lock-screen support on iPhone</td>
+            <td data-label="Recipe library">40+ brew methods including AeroPress</td>
+            <td data-label="Logging">Brew diary, bean tracking, and custom recipes</td>
+            <td data-label="Best for">People who brew more than just AeroPress</td>
+            <td data-label="Link"><a href="https://apps.apple.com/us/app/timer-coffee/id6449322787" rel="noopener" target="_blank">See app</a></td>
+          </tr>
+          <tr>
+            <td data-label="App">Beanconqueror</td>
+            <td data-label="Platform">iPhone, iPad, and Android</td>
+            <td data-label="Free or paid">Free and open source</td>
+            <td data-label="Timer depth">Deep brew tracking tied to methods and gear</td>
+            <td data-label="Recipe library">Multiple brew methods with customizable prep profiles</td>
+            <td data-label="Logging">Heavy bean, brew, roast, and gear logging</td>
+            <td data-label="Best for">Data nerds and repeatability obsessives</td>
+            <td data-label="Link"><a href="https://apps.apple.com/us/app/beanconqueror/id1445297158" rel="noopener" target="_blank">See app</a></td>
+          </tr>
+          <tr>
+            <td data-label="App">Brew Timer</td>
+            <td data-label="Platform">Android</td>
+            <td data-label="Free or paid">Free with ads and in-app purchases</td>
+            <td data-label="Timer depth">Custom recipe timer with pour-rate tracking and audio help</td>
+            <td data-label="Recipe library">Premade and user-created coffee recipes including AeroPress</td>
+            <td data-label="Logging">Notes, ratings, and brew history</td>
+            <td data-label="Best for">Android users who want flexible recipe control</td>
+            <td data-label="Link"><a href="https://play.google.com/store/apps/details?id=com.apptivity.brewtimer&hl=en" rel="noopener" target="_blank">See app</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate</h2>
+      <p>
+        For this roundup, I compared what each app actually promises in its official site or store listing, then judged it the way a normal AeroPress owner would. Does it guide the brew clearly? Does it keep your place when you are half awake? Can it help you repeat a great cup tomorrow, not just today? That matters a lot more than a giant pile of menu options you will never touch.
+      </p>
+      <p>
+        I weighted five things most heavily: how clear the brew timer feels, how useful the recipe library is, how easy it is to save notes, whether the app is locked to one platform, and whether it stays focused on real coffee workflow instead of feeling like a cluttered hobby spreadsheet. A good coffee app should feel like a helpful friend at the counter. A bad one feels like doing homework before breakfast.
+      </p>
+      <p>
+        I also gave extra credit to apps that support repeatability. That just means helping you make the same good cup twice instead of getting lucky once. If the app helps you track beans, ratio, grind, and brew notes in a way you will actually use, that is a real advantage.
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="product-reviews">Individual app reviews</h2>
+
+      <h3>1) Aeromatic — Best Overall</h3>
+      <p>
+        Aeromatic is the cleanest answer for most people because it stays centered on AeroPress instead of trying to be every coffee app for every brewer on earth. The official site and App Store listing both lean on the same core strengths: 60+ curated recipes, step-by-step instructions, a built-in stopwatch, custom recipes, notes, and bean tracking. That is a strong mix. It gives beginners enough hand-holding without feeling childish, and it gives enthusiasts enough room to tinker without turning the whole thing into a spreadsheet.
+      </p>
+      <p>
+        What I like most is the balance. Some apps are good timers but weak teachers. Some are great databases but feel cold and annoying in the middle of a brew. Aeromatic lands in the middle in a good way. If you are still figuring out what kind of AeroPress cup you like, this one gives you enough structure that you are not guessing every morning.
+      </p>
+      <ProsCons
+        pros={[
+          'AeroPress-first design instead of generic coffee clutter',
+          '60+ curated recipes is a genuinely useful starting point',
+          'Available on both iPhone and Android',
+        ]}
+        cons={[
+          'Paid app, so it is not the cheapest entry point',
+          'If you only want a bare timer, this may feel like more app than you need',
+        ]}
+      />
+      <p>
+        If you are new to AeroPress, pair it with the <strong>AeroPress Original Coffee Press</strong> so the recipes line up with the classic brewer most developers assume.
+      </p>
+      <p><CtaButton href={amazonUrl('B000GXZ2GS')} external size="sm">Check Price on Amazon</CtaButton></p>
+
+      <h3>2) AeroPress Timer — Best for iPhone Simplicity</h3>
+      <p>
+        AeroPress Timer has been around a long time, and you can feel that in both the good and bad ways. The good part is focus. It is built around curated recipes and step-by-step brewing, and the App Store listing even calls out Siri Shortcuts so you can jump into favorite recipes faster. That is handy if you want a phone tool that behaves more like a kitchen timer than a social platform.
+      </p>
+      <p>
+        The downside is that it is iPhone-only and feels lighter on logging than newer apps. If your dream setup is saving beans, notes, and brew history in one tidy place, Aeromatic or Beanconqueror makes more sense. But if you want something narrower and calmer, AeroPress Timer still has a case. It is the app I would point to for the person who wants a clean little companion, not a coffee command center.
+      </p>
+      <ProsCons
+        pros={[
+          'Focused on step-by-step AeroPress brewing',
+          'Good pick for people who want less clutter',
+          'Siri Shortcuts support is a nice quality-of-life touch',
+        ]}
+        cons={[
+          'iPhone only',
+          'Not the deepest logging option here',
+          'Less flexible if you brew with lots of other methods too',
+        ]}
+      />
+      <p>
+        This app makes even more sense when you use a consistent grinder. The <strong>TIMEMORE Chestnut C2</strong> is still a strong value pick if you want recipe timing and grind adjustments to actually mean something in the cup.
+      </p>
+      <p><CtaButton href={amazonUrl('B0833SDN8M')} external size="sm">Check Price on Amazon</CtaButton></p>
+
+      <h3>3) Timer.Coffee — Best Free All-Rounder</h3>
+      <p>
+        Timer.Coffee is the app for people who like the idea of one brewing home for everything, not just AeroPress. Its App Store listing calls out 40+ brewing methods, adjustable coffee-and-water calculations, custom grind settings, a brew diary, bean tracking, recipe sharing, and background brewing. That is a big feature set for something that is free and open source.
+      </p>
+      <p>
+        The catch is focus. Because it covers so many brewing methods, it does not feel as AeroPress-specific as Aeromatic. That is not automatically bad. In fact, if you bounce between AeroPress, V60, French Press, and Clever, Timer.Coffee may be the smarter app long term. But if you want the strongest AeroPress-first recipe experience, it is a little more like a Swiss Army knife than a perfectly sharpened chef's knife.
+      </p>
+      <ProsCons
+        pros={[
+          'Free and open source is hard to argue with',
+          'Great if you brew with several methods, not just AeroPress',
+          'Strong blend of timer, calculator, diary, and bean tracking',
+        ]}
+        cons={[
+          'Less AeroPress-specific personality than Aeromatic',
+          'Feature-rich interface may feel busier to total beginners',
+        ]}
+      />
+      <p>
+        If you want Timer.Coffee to help you actually repeat recipes, add a small scale. The <strong>MiiCoffee Nano Coffee Scale with Timer</strong> gives you real numbers instead of sleepy guesswork.
+      </p>
+      <p><CtaButton href={amazonUrl('B0CGMHTWM2')} external size="sm">Check Price on Amazon</CtaButton></p>
+
+      <h3>4) Beanconqueror — Best for Data Tracking</h3>
+      <p>
+        Beanconqueror is what happens when a coffee logbook goes to the gym. The App Store listing talks about tracking brews, beans, roasts, custom water, and even connected scales and pressure devices. It also supports AeroPress among many brew methods and is available beyond just iPhone, which matters if you do not want your coffee habits trapped on one device family.
+      </p>
+      <p>
+        This is not the app I would hand to somebody who just bought an AeroPress last week. It is the app I would hand to the person who already has favorite beans, notices tiny changes, and enjoys keeping records because the records help them brew better. If that sounds like you, Beanconqueror is excellent. If that sounds exhausting, skip it and be happy.
+      </p>
+      <ProsCons
+        pros={[
+          'Excellent logging depth for beans, brews, and gear',
+          'Free and open source',
+          'Useful if repeatability matters more than simplicity',
+        ]}
+        cons={[
+          'Overkill for casual users',
+          'More setup than lighter recipe-timer apps',
+        ]}
+      />
+      <p>
+        Beanconqueror shines when your brew setup stays stable. The <strong>AeroPress Paper Micro-Filters</strong> help keep the cup cleaner and the variables a little easier to read when you are logging changes.
+      </p>
+      <p><CtaButton href={amazonUrl('B005UPSLX8')} external size="sm">Check Price on Amazon</CtaButton></p>
+
+      <h3>5) Brew Timer — Best for Android Tinkerers</h3>
+      <p>
+        Brew Timer feels built for the Android user who likes flexibility. The Google Play description calls out custom recipes, premade professional recipes, thousands of user-created brews across multiple methods, audio assistance, brew logging, ratings, notes, and even pour-rate tracking. That is a lot of control packed into one app.
+      </p>
+      <p>
+        The strength here is customization. If you like adjusting recipes, cloning them fast, and building a workflow that fits your exact habits, Brew Timer looks appealing. The weakness is the same thing. More knobs means more chances to disappear into tweaking when you could have just made coffee. So I would recommend this one for the Android coffee nerd, not the person begging for less decision fatigue before work.
+      </p>
+      <ProsCons
+        pros={[
+          'Strong recipe customization and tracking features',
+          'Good fit for Android power users',
+          'Audio help and pour-rate tools are nice touches',
+        ]}
+        cons={[
+          'Android only',
+          'Can feel busier than simpler timer apps',
+          'Best features make more sense once you already know your preferences',
+        ]}
+      />
+      <p>
+        If Brew Timer is going to live in your backpack, the <strong>AeroPress Go</strong> is the most natural brewer pairing. It keeps the whole app-guided routine compact and easy to repeat on the road.
+      </p>
+      <p><CtaButton href={amazonUrl('B07YVL8SF3')} external size="sm">Check Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide</h2>
+      <p>
+        Start with your actual brewing personality, not the app with the most features. If you mostly want a friendly guide that tells you what to do and when to do it, buy the app that stays simple. If you love comparing beans, logging ratios, and chasing the same sweet cup over and over, then the more advanced tracking apps suddenly make sense.
+      </p>
+      <p>
+        The first fork in the road is <strong>AeroPress-first versus all-methods</strong>. AeroPress-first apps like Aeromatic and AeroPress Timer feel tighter because they are built around one brewer. General brewing apps like Timer.Coffee and Beanconqueror are broader. That is great if you also brew pour-over or espresso. It is less great if you want fewer menus and faster mornings.
+      </p>
+      <p>
+        The second fork is <strong>timer versus logbook</strong>. A timer app helps in the moment. A logbook app helps over time. One keeps this cup on track. The other helps tomorrow's cup taste like the good one you made last Sunday. If you know you never revisit notes, do not pay extra for a giant logging system you will ignore.
+      </p>
+      <p>
+        Platform lock matters too. If you are on Android, do not fall in love with an iPhone-only app just because coffee forums keep recommending it. And if you switch between phone and tablet a lot, broader device support is worth more than it sounds. Coffee apps are tiny daily habits. Tiny daily annoyances add up fast.
+      </p>
+      <p>
+        Also, be honest about how much your setup is helping or hurting you. If your grind jumps all over the place, app recipes will feel inconsistent no matter how polished the interface is. That is why guides like <a href="/posts/best-aeropress-grind-size.html">best AeroPress grind size</a> and <a href="/posts/best-aeropress-brew-time.html">best AeroPress brew time</a> matter just as much as the app itself. The phone helps you repeat the method. The gear still shapes the cup.
+      </p>
+      <p>
+        My simple recommendation: start with Aeromatic if you want the least regret. Move to Beanconqueror only if you already know you enjoy detailed logging. And if free matters most, Timer.Coffee is the smartest place to start before you spend a cent.
+      </p>
+    </BuyingGuideSection>
+  </Fragment>
+
+  {false && <h2 id="faq">Frequently asked questions</h2>}
+
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/best-aeropress-filters.html">Best AeroPress Filters</a> if your cup tastes muddy and you want a cleaner finish.</li>
+        <li><a href="/posts/best-aeropress-brew-time.html">Best AeroPress Brew Time</a> if your timer app is only half the puzzle.</li>
+        <li><a href="/posts/best-aeropress-grind-size.html">Best AeroPress Grind Size</a> if recipes keep tasting different from one day to the next.</li>
+        <li><a href="/posts/best-aeropress-black-coffee-recipe.html">Best AeroPress Black Coffee Recipe</a> if you want a simple cup that shows what your app settings are really doing.</li>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide</a> if you want a dead-simple starting point for dose and water.</li>
+      </ul>
+    </section>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2>Best app by use case</h2>
+      <p>
+        Most readers are not actually asking for the single best app in a vacuum. They are asking, “Which one fits the way I make coffee?” That is a much better question.
+      </p>
+      <PickOne
+        title="Pick the app that matches your brewing style"
+        subtitle="These apps are good for different reasons, so choose the one that fits your real routine"
+        options={[
+          { label: 'Beginner', icon: 'check', points: ['Choose Aeromatic', 'Clear guided recipes', 'Strong AeroPress focus'], badge: 'Least confusing start' },
+          { label: 'Apple Minimalist', icon: 'timer', points: ['Choose AeroPress Timer', 'Simple step-by-step flow', 'Good if you hate clutter'], badge: 'Best iPhone-only pick' },
+          { label: 'Multi-Brewer', icon: 'coffee', points: ['Choose Timer.Coffee', 'AeroPress plus 40+ methods', 'Good diary and bean tools'], badge: 'Best free all-rounder' },
+          { label: 'Data Nerd', icon: 'list', points: ['Choose Beanconqueror', 'Deep brew and bean logging', 'Great for repeatability'], badge: 'Best for tracking everything' },
+        ]}
+        outcome="Pick the app you will actually keep opening. Consistency beats complexity every morning."
+      />
+    </section>
+
+    <section>
+      <h2>What an app can and cannot fix</h2>
+      <p>
+        An app can absolutely make your brewing more consistent. It can keep your timing honest, remind you of ratios, save the recipe that finally worked, and stop you from re-learning the same lesson every other week. That is real value.
+      </p>
+      <p>
+        But an app cannot fix stale beans, a sloppy grind, or a brewer full of old oils. If your coffee tastes dull, bitter, or weirdly flat no matter what the phone says, the problem may be somewhere else in the chain. That is why I think app advice works best when paired with a grinder you trust and a scale that stops the guessing.
+      </p>
+      <p>
+        Put another way: the app is the coach, not the athlete. Helpful coach, yes. Miracle worker, no.
+      </p>
+    </section>
+
+    <section>
+      <h2>Supporting gear that makes these apps much easier to use</h2>
+      <p>
+        If you are going to follow timed recipes seriously, a few cheap gear upgrades make a bigger difference than people expect. A scale means your saved notes match real dose numbers. Fresh filters make recipe changes easier to taste. And a grinder that produces a more even grind means the “same recipe” actually behaves like the same recipe.
+      </p>
+      <p>
+        Honestly, this is why app recommendations sometimes disappoint people. They download a great timer app, keep eyeballing coffee, and wonder why every cup still tastes different. The app did its job. The rest of the setup did not.
+      </p>
+
+      <h3>Supporting gear worth pairing with an AeroPress app</h3>
+      <ProductCard
+        title={products[3].name}
+        asin={products[3].asin}
+        image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+        secondaryImages={products[3].secondaryImages}
+        badge={products[3].badge}
+        rating={{ score: products[3].rating }}
+        price={products[3].price}
+        ctaUrl={amazonUrl(products[3].asin)}
+      />
+      <p>
+        A scale is the fastest way to stop app-guided brewing from turning into vague theater. When the recipe says 15 grams of coffee and 250 grams of water, you can actually do that instead of approximating with sleepy confidence.
+      </p>
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
+    </section>
+
+    <section>
+      <h2>Final verdict</h2>
+      <p>
+        <strong>Aeromatic</strong> is still the best AeroPress app for most people because it stays focused on the brewer, offers a strong recipe library, and works across both major phone camps. It feels useful without feeling fussy. That is a harder balance to strike than it sounds.
+      </p>
+      <p>
+        If you are on iPhone and want something narrower, <strong>AeroPress Timer</strong> still makes sense. If you want the best free path, go <strong>Timer.Coffee</strong>. And if your idea of fun is charting beans, brews, and gear like a coffee detective, <strong>Beanconqueror</strong> is the one.
+      </p>
+      <p>
+        Just do not expect the app alone to do all the work. The best results happen when the phone, the recipe, and the gear are all pulling in the same direction.
+      </p>
+    </section>
+  </Fragment>
+</MoneyPage>
