@@ -8,20 +8,7 @@ import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
 import PickOne from '../../components/PickOne.astro';
 import { getResolvedProducts, amazonUrl } from '../../data/products';
 
-const asinImageMap: Record<string, string> = {
-  B00VGGVQCI: 'https://m.media-amazon.com/images/I/615cLyCGSML._AC_SL500_.jpg',
-  B00LU2I46E: 'https://m.media-amazon.com/images/I/812Hb1XRaaL._AC_SL500_.jpg',
-  B000VTP45Q: 'https://m.media-amazon.com/images/I/61uCuYr7U0L._AC_SL500_.jpg',
-  B0CG2P2J88: 'https://m.media-amazon.com/images/I/71yP-ZoqQWL._AC_SL500_.jpg',
-  B0FNXPWVD8: 'https://m.media-amazon.com/images/I/71qt+fcN0aL._AC_SL500_.jpg',
-  B0F3ZSVPPG: 'https://m.media-amazon.com/images/I/71TmmbVpIyL._AC_SL500_.jpg',
-  B0D45PK5V4: 'https://m.media-amazon.com/images/I/61D9GtphxuL._AC_SL500_.jpg',
-};
-
-const products = getResolvedProducts('best-coffee-maker-with-grinder').map((product) => ({
-  ...product,
-  image: asinImageMap[product.asin] ?? `PLACEHOLDER_IMG:${product.asin}`,
-}));
+const products = getResolvedProducts('best-coffee-maker-with-grinder');
 ---
 
 <MoneyPage
@@ -30,7 +17,7 @@ const products = getResolvedProducts('best-coffee-maker-with-grinder').map((prod
   description="Find the best coffee maker with grinder in 2026 with 7 researched picks for full pots, single cups, and better-tasting mornings without extra clutter."
   category="brewers"
   datePublished="2026-03-08"
-  dateModified="2026-03-15"
+  dateModified="2026-03-17"
   ogImage={products[0]?.image}
   products={products}
   heroPicks={{
@@ -124,6 +111,7 @@ const products = getResolvedProducts('best-coffee-maker-with-grinder').map((prod
       <h3>1) Breville Grind Control — Best overall</h3>
       <ProductCard
         title={products[0].name}
+        asin={products[0].asin}
         image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
         badge={products[0].badge}
         rating={{ score: products[0].rating }}
@@ -142,6 +130,7 @@ const products = getResolvedProducts('best-coffee-maker-with-grinder').map((prod
       <h3>2) BLACK+DECKER 12-Cup Mill &amp; Brew — Best budget</h3>
       <ProductCard
         title={products[1].name}
+        asin={products[1].asin}
         image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
         badge={products[1].badge}
         rating={{ score: products[1].rating }}
@@ -160,6 +149,7 @@ const products = getResolvedProducts('best-coffee-maker-with-grinder').map((prod
       <h3>3) Cuisinart DGB-550BKP1 — Best low-fuss daily pick</h3>
       <ProductCard
         title={products[2].name}
+        asin={products[2].asin}
         image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
         badge={products[2].badge}
         rating={{ score: products[2].rating }}
@@ -178,6 +168,7 @@ const products = getResolvedProducts('best-coffee-maker-with-grinder').map((prod
       <h3>4) Café Specialty Grind &amp; Brew — Best premium drip upgrade</h3>
       <ProductCard
         title={products[3].name}
+        asin={products[3].asin}
         image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
         badge={products[3].badge}
         rating={{ score: products[3].rating }}
@@ -196,6 +187,7 @@ const products = getResolvedProducts('best-coffee-maker-with-grinder').map((prod
       <h3>5) Cuisinart Grind &amp; Brew Single-Serve — Best for one-cup mornings</h3>
       <ProductCard
         title={products[4].name}
+        asin={products[4].asin}
         image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
         badge={products[4].badge}
         rating={{ score: products[4].rating }}
@@ -214,6 +206,7 @@ const products = getResolvedProducts('best-coffee-maker-with-grinder').map((prod
       <h3>6) De'Longhi TrueBrew — Best for drink variety</h3>
       <ProductCard
         title={products[5].name}
+        asin={products[5].asin}
         image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
         badge={products[5].badge}
         rating={{ score: products[5].rating }}
@@ -232,6 +225,7 @@ const products = getResolvedProducts('best-coffee-maker-with-grinder').map((prod
       <h3>7) Ninja Luxe Café 3-in-1 — Best hybrid for espresso and drip homes</h3>
       <ProductCard
         title={products[6].name}
+        asin={products[6].asin}
         image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }}
         badge={products[6].badge}
         rating={{ score: products[6].rating }}
@@ -268,7 +262,10 @@ const products = getResolvedProducts('best-coffee-maker-with-grinder').map((prod
       <p>And if your home is full of people who all want different things, that is when a flexible machine like TrueBrew or the Ninja hybrid starts to make more sense. More options are only worth it when you will actually use them.</p>
       <p>There is also the noise question, and it is more important than people admit. Some of these machines make a sharp, crunchy racket while grinding, especially the cheaper blade models. If you live in a small apartment or brew before everybody else wakes up, that can turn a perfectly good machine into something you start resenting. Burr machines are not silent, but many sound lower and less chaotic. Still loud. Just less like dropping silverware into a blender.</p>
       <p>Think about how much control you actually want. Some people love tweaking strength, cup size, and grind settings until the cup tastes just right. Other people want to press a button and get coffee that tastes good enough every single morning. Neither approach is wrong. The mistake is buying a machine built for a tinkerer when you are really just trying to survive your 6:45 a.m. alarm.</p>
+      <p>Another thing people miss is heat retention in the carafe. A hot cup at 7 a.m. is nice. A hot second cup at 8:15 matters too. Thermal carafes usually hold up better without cooking the coffee on a hot plate. Hot plates keep things warm, but leave coffee sitting there long enough and the flavor starts tasting flat and a little burnt, like toast left in the toaster thirty seconds too long.</p>
+      <p>You should also think about how often you switch beans. If you like one dependable medium roast and drink it every day, almost any decent grind-and-brew machine can fit that habit. If you bounce between decaf, dark roast, and lighter beans, convenience starts to get trickier. Some machines make it easy to swap in pre-ground coffee. Others really want you to commit to whatever is already in the hopper. That sounds minor until you are half awake and realize your only option is full-caf at 9 p.m.</p>
       <p>Counter space matters too. A machine can look compact in product photos, then feel huge once you need room to open the lid, pull out the carafe, and refill the water tank without smacking your cabinets. If your kitchen is tight, measure the height under your upper cabinets before you buy. That boring little step saves a lot of annoyance later.</p>
+      <p>And be honest about how picky you are about coffee texture. Blade-based machines can still make a pleasant, strong cup. But if you notice when one sip feels smooth and the next tastes a little muddy, you are probably the kind of person who should spend more for a burr grinder. That is the fork in the road. Convenience-first buyers can save money. Flavor-focused buyers should not pretend they will be happy with a rougher grind just because the price looks good.</p>
     </section>
   </Fragment>
 

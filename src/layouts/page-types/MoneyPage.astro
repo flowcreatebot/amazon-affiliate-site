@@ -111,6 +111,7 @@ const jsonLd = moneyPageGraph({
     {products.slice(0, 3).map((p, i) => (
       <ProductCard
         title={p.name}
+        asin={p.asin}
         image={{ src: p.image, alt: p.imageAlt, width: 500, height: 500 }}
         badge={p.badge}
         rating={{ score: p.rating }}
@@ -134,7 +135,7 @@ const jsonLd = moneyPageGraph({
       <img
         src={contentImage.src}
         alt={contentImage.alt}
-        width="1792"
+        width="1536"
         height="1024"
         loading="lazy"
         decoding="async"

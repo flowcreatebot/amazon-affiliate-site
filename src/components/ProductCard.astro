@@ -2,10 +2,13 @@
 import BestForBadge from './BestForBadge.astro';
 import StarRating from './StarRating.astro';
 import CtaButton from './CtaButton.astro';
+import { getProductImages } from '../data/products';
 
 interface Props {
   title: string;
+  asin?: string;
   image?: { src: string; alt: string; width?: number; height?: number };
+  secondaryImages?: { src: string; alt: string }[];
   badge?: { label: string; variant: 'overall' | 'budget' | 'espresso' | 'pourover' | 'beginners' | 'upgrade' };
   rating?: { score: number; outOf?: number };
   price?: string;
@@ -14,11 +17,34 @@ interface Props {
   featured?: boolean;
   noImage?: boolean;
 }
-const { title, image, badge, rating, price, ctaUrl, ctaText = 'Check Price on Amazon', featured = false, noImage = false } = Astro.props;
+const { title, asin, image: imageProp, secondaryImages: secondaryProp, badge, rating, price, ctaUrl, ctaText = 'Check Price on Amazon', featured = false, noImage = false } = Astro.props;
+
+// Centralised image resolution: ASIN lookup takes priority over props
+const resolved = asin ? getProductImages(asin) : null;
+const image = resolved?.image ?? imageProp;
+const secondaryImages = resolved?.secondaryImages ?? secondaryProp;
+
 const cardClasses = `product-card${featured ? ' --featured' : ''}${noImage ? ' product-card--no-image' : ''}`;
+const hasGallery = secondaryImages && secondaryImages.length > 0;
 ---
 <article class={cardClasses}>
-  {image && <img src={image.src} alt={image.alt} width={image.width ?? 500} height={image.height ?? 500} loading="lazy" />}
+  {image && (
+    <div class="product-card__gallery">
+      <img class="product-card__main-img" src={image.src} alt={image.alt} width={image.width ?? 500} height={image.height ?? 500} loading="lazy" />
+      {hasGallery && (
+        <div class="product-card__thumbs">
+          <button class="product-card__thumb --active" data-src={image.src} data-alt={image.alt}>
+            <img src={image.src} alt={image.alt} width="60" height="60" loading="lazy" />
+          </button>
+          {secondaryImages.map((img) => (
+            <button class="product-card__thumb" data-src={img.src} data-alt={img.alt}>
+              <img src={img.src} alt={img.alt} width="60" height="60" loading="lazy" />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  )}
   <div class="product-card__body">
     {badge && <BestForBadge label={badge.label} variant={badge.variant} />}
     <h3 class="product-card__title">{title}</h3>
@@ -27,3 +53,19 @@ const cardClasses = `product-card${featured ? ' --featured' : ''}${noImage ? ' p
     {ctaUrl && <CtaButton href={ctaUrl} variant="primary" size="sm" external>{ctaText}</CtaButton>}
   </div>
 </article>
+
+<script>
+  document.querySelectorAll('.product-card__thumbs').forEach((strip) => {
+    strip.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.product-card__thumb');
+      if (!btn) return;
+      const gallery = btn.closest('.product-card__gallery');
+      const mainImg = gallery?.querySelector('.product-card__main-img') as HTMLImageElement;
+      if (!mainImg) return;
+      mainImg.src = (btn as HTMLElement).dataset.src!;
+      mainImg.alt = (btn as HTMLElement).dataset.alt!;
+      strip.querySelectorAll('.product-card__thumb').forEach((t) => t.classList.remove('--active'));
+      btn.classList.add('--active');
+    });
+  });
+</script>

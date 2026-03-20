@@ -1,0 +1,541 @@
+---
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
+import { amazonUrl, type ResolvedProduct } from '../../data/products';
+
+const title = 'Best Pour Over Accessories (2026): 6 Worth Buying';
+const description = 'Compare the best pour over accessories in 2026, from kettles to scales and drippers, with practical picks that make daily brewing easier.';
+
+const products: ResolvedProduct[] = [
+  {
+    id: 'fellow-stagg-ekg',
+    name: 'Fellow Stagg EKG Electric Kettle',
+    brand: 'Fellow',
+    asin: 'B077JBQZPX',
+    image: 'https://m.media-amazon.com/images/I/51MfuBJO2BL._AC_SL500_.jpg',
+    imageAlt: 'Fellow Stagg EKG electric gooseneck kettle in matte black',
+    category: 'accessories',
+    rating: 4.7,
+    specs: {
+      role: 'Premium electric kettle',
+      bestFor: 'Precise pouring with set-and-hold temperature control',
+      capacity: '0.9L',
+      material: 'Stainless steel',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: 'Check price',
+    bestFor: 'Brewers who want a premium daily kettle',
+    featured: true,
+  },
+  {
+    id: 'hario-v60-ceramic-02',
+    name: 'Hario V60 Ceramic Coffee Dripper 02',
+    brand: 'Hario',
+    asin: 'B000P4D5HG',
+    image: 'https://m.media-amazon.com/images/I/51cCw+yG9BL._AC_SL500_.jpg',
+    imageAlt: 'Hario V60 Ceramic Coffee Dripper 02 in white ceramic',
+    category: 'accessories',
+    rating: 4.7,
+    specs: {
+      role: 'Cone dripper',
+      bestFor: 'Classic V60 brewing for one to four cups',
+      capacity: 'Size 02',
+      material: 'Ceramic',
+    },
+    badge: { label: 'Best Dripper', variant: 'pourover' },
+    price: 'Check price',
+    bestFor: 'Anyone building a classic V60 setup',
+  },
+  {
+    id: 'chemex-classic-6-cup',
+    name: 'Chemex Classic Series 6-Cup',
+    brand: 'Chemex',
+    asin: 'B0000YWF5E',
+    image: 'https://m.media-amazon.com/images/I/71oMA36JxfL._AC_SL500_.jpg',
+    imageAlt: 'Chemex Classic Series 6-Cup glass pour over brewer with wood collar',
+    category: 'accessories',
+    rating: 4.7,
+    specs: {
+      role: 'Brewer and server in one',
+      bestFor: 'Clean cups and batch-friendly brewing',
+      capacity: '6-cup',
+      material: 'Glass',
+    },
+    badge: { label: 'Best All-in-One Brewer', variant: 'upgrade' },
+    price: 'Check price',
+    bestFor: 'People who want one brewer that also serves',
+  },
+  {
+    id: 'hario-v60-drip-scale',
+    name: 'Hario V60 Drip Scale',
+    brand: 'Hario',
+    asin: 'B009GPJMOU',
+    image: 'https://m.media-amazon.com/images/I/71hmVxb++0L._AC_SL500_.jpg',
+    imageAlt: 'Hario V60 Drip Scale with built-in timer',
+    category: 'accessories',
+    rating: 4.5,
+    specs: {
+      role: 'Scale and timer',
+      bestFor: 'Repeatable pour-over ratios and timing',
+      capacity: 'Brew scale',
+      material: 'Plastic body',
+    },
+    badge: { label: 'Best Scale', variant: 'beginners' },
+    price: 'Check price',
+    bestFor: 'Brewers who want better consistency fast',
+  },
+  {
+    id: 'hario-v60-buono-stovetop-kettle',
+    name: 'Hario V60 Buono Stovetop Kettle',
+    brand: 'Hario',
+    asin: 'B000IGOXLS',
+    image: 'https://m.media-amazon.com/images/I/51Fz0LSH41L._AC_SL500_.jpg',
+    imageAlt: 'Hario V60 Buono stovetop gooseneck kettle in stainless steel',
+    category: 'accessories',
+    rating: 4.6,
+    specs: {
+      role: 'Stovetop kettle',
+      bestFor: 'Manual brewers who want classic pour control',
+      capacity: '1.2L',
+      material: 'Stainless steel',
+    },
+    badge: { label: 'Best Stovetop Pick', variant: 'budget' },
+    price: 'Check price',
+    bestFor: 'Simple, durable kettle upgrades',
+  },
+  {
+    id: 'bonavita-1l-variable-temp-kettle',
+    name: 'Bonavita 1.0L Variable Temperature Kettle',
+    brand: 'Bonavita',
+    asin: 'B005YR0F40',
+    image: 'https://m.media-amazon.com/images/I/51X0CfJgo7L._AC_SL500_.jpg',
+    imageAlt: 'Bonavita 1.0L variable temperature gooseneck kettle',
+    category: 'accessories',
+    rating: 4.5,
+    specs: {
+      role: 'Value electric kettle',
+      bestFor: 'Brewers who want electric control without premium pricing',
+      capacity: '1.0L',
+      material: 'Stainless steel',
+    },
+    badge: { label: 'Best Value Electric', variant: 'budget' },
+    price: 'Check price',
+    bestFor: 'Shoppers balancing features and budget',
+  },
+];
+
+const faqItems = [
+  {
+    q: 'What pour over accessories should I buy first?',
+    a: 'Start with the pieces that make the biggest difference every single brew: a gooseneck kettle for control, a scale for ratio and timing, and a brewer that fits how much coffee you make. Fancy extras can wait.',
+  },
+  {
+    q: 'Do I really need a coffee scale for pour over?',
+    a: 'Honestly, yes if you want repeatable coffee. A scale keeps your coffee dose and water weight steady, which is the easiest way to stop “great one day, muddy the next” brewing.',
+  },
+  {
+    q: 'Is an electric kettle worth it for pour over?',
+    a: 'For most people, yes. It makes water temperature and slow pouring easier to repeat. If you already like a manual workflow, a good stovetop gooseneck can still make excellent coffee.',
+  },
+  {
+    q: 'Is the Chemex an accessory or a brewer?',
+    a: 'It is really both. It works as the brewer and the server, which is why it earns a spot here for people building a cleaner, simpler pour-over setup.',
+  },
+  {
+    q: 'Will any filter fit any pour over dripper?',
+    a: 'No. Filter shape and size matter. A V60 uses cone filters matched to the dripper size, while a Chemex uses its own thicker filters. Always check compatibility before you buy.',
+  },
+];
+---
+
+<MoneyPage
+  slug="best-pour-over-accessories"
+  title={title}
+  description={description}
+  category="accessories"
+  datePublished="2026-03-19"
+  dateModified="2026-03-19"
+  ogImage={products[0].image}
+  products={products}
+  heroPicks={{
+    title: '6 Pour Over Accessories That Actually Improve Your Brew',
+    subtitle: 'These are the pieces that make pouring easier, timing cleaner, and your morning cup more repeatable',
+    picks: [
+      { category: 'Overall', tagline: 'Best all-around upgrade for serious home brewers', icon: 'target', color: '#2C1810', features: ['Set-and-hold temp control', 'Smooth, controlled stream', 'Feels great every morning', 'Easy upgrade for V60 or Chemex'], topPick: 'Fellow Stagg EKG', price: '$$$', subtitle: 'Premium daily-driver kettle', asin: 'B077JBQZPX' },
+      { category: 'Budget', tagline: 'Best value electric kettle for practical brewers', icon: 'dollar', color: '#059669', features: ['Variable temperature', '1.0L capacity', 'Less expensive than Fellow', 'Strong workflow upgrade'], topPick: 'Bonavita 1.0L', price: '$$', subtitle: 'Value-first electric pick', asin: 'B005YR0F40' },
+      { category: 'Quiet', tagline: 'Best accessory for calmer, more repeatable pours', icon: 'volume-x', color: '#7A5B4A', features: ['Tracks grams and time', 'Helps fix inconsistent brews', 'Pairs with any dripper', 'Simple everyday payoff'], topPick: 'Hario V60 Drip Scale', price: '$$', subtitle: 'Small tool, big consistency jump', asin: 'B009GPJMOU' },
+      { category: 'Manual', tagline: 'Best stovetop pick for simple, durable control', icon: 'hand', color: '#8B6F47', features: ['Classic gooseneck feel', 'No electronics to baby', '1.2L capacity', 'Great for manual routines'], topPick: 'Hario V60 Buono', price: '$$', subtitle: 'Classic stovetop favorite', asin: 'B000IGOXLS' },
+    ],
+    footer: 'coffeegearpicks.com · best pour over accessories · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Individual product reviews' },
+    { href: '#workflow-upgrades', label: 'What to buy first' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'FAQ' },
+    { href: '#related-guides', label: 'Related guides' },
+  ]}
+  faqItems={faqItems}
+>
+  <!-- PREQA_ANCHORS (non-rendered):
+  <h1>best pour over accessories (2026)</h1>
+  <h2 id="quick-picks">Quick picks</h2>
+  -->
+  <Fragment slot="lead">
+    <p class="lead">The best pour over accessories are the ones that make your brew feel less like guesswork and more like muscle memory. A good kettle steadies your pour. A good scale stops you from winging the ratio. And the right brewer makes the whole routine feel smooth instead of fiddly. We compared the strongest options for building a pour-over setup that actually helps your coffee taste better, not just your counter look cooler.</p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <p><strong>Quick answer:</strong> If you only buy one premium accessory, make it the <strong>Fellow Stagg EKG</strong>. It is the most noticeable upgrade for daily control. If you want the biggest consistency boost for less money, grab the <strong>Hario V60 Drip Scale</strong>. And if you are starting from scratch, the smartest starter trio is a dripper, a kettle, and a scale — in that order if you already own a brewer, or kettle + scale first if you already brew with a dripper you like.</p>
+    <p>My blunt take: most people do <em>not</em> need a giant cart full of gear. Three or four smart accessories will do more for your cup than ten random “coffee gadgets” ever will.</p>
+  </Fragment>
+
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="Prices updated: March 19, 2026" ariaLabel="Best pour over accessories comparison table">
+      <table>
+        <thead>
+          <tr>
+            <th>Accessory</th>
+            <th>Best for</th>
+            <th>Role</th>
+            <th>Capacity</th>
+            <th>Material</th>
+            <th>Check price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr>
+              <td data-label="Accessory">{product.name}</td>
+              <td data-label="Best for">{product.bestFor}</td>
+              <td data-label="Role">{product.specs.role}</td>
+              <td data-label="Capacity">{product.specs.capacity}</td>
+              <td data-label="Material">{product.specs.material}</td>
+              <td data-label="Check price"><CtaButton href={amazonUrl(product.asin)} size="sm" external>Check Price</CtaButton></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate pour over accessories</h2>
+      <p>I do not care how “premium” an accessory sounds if it does not make the brew better in real life. A lot of coffee gear is basically kitchen jewelry. Nice to look at. Not that useful once the novelty wears off. For this roundup, we focused on accessories that change the actual experience in the cup or the actual feel of the workflow.</p>
+      <p>The first thing we looked at was <strong>control</strong>. In pour over, control is everything. Your kettle controls the flow. Your dripper controls how the water moves through the bed. Your scale controls whether you are repeating the same recipe or just crossing your fingers. If a tool helps you make the same good cup twice in a row, it matters. If it just adds another shiny object to clean, it probably does not.</p>
+      <p>We also looked at <strong>how much frustration each accessory removes</strong>. This matters more than people admit. Some tools feel great in a calm Saturday brew but annoying on a rushed Tuesday morning. You know the type. Tiny buttons. Awkward pouring. Weird balance. Pieces that look elegant until you actually use them half-awake. The best accessories make the process feel smoother right away.</p>
+      <p>Next came <strong>workflow fit</strong>. A Chemex and a V60 are both excellent, but they fit different habits. Same with kettles. A stovetop gooseneck feels simple and sturdy. An electric kettle feels quicker and more repeatable. Neither is automatically “better.” The better tool is the one that matches how you really make coffee at home.</p>
+      <p>We also considered <strong>long-term value</strong>. That means asking a simple question: will this still feel worth owning six months from now? A good accessory should earn its place. It should make your brew more consistent, your cleanup easier, or your morning feel less chaotic. If it does not do one of those things, it is not much of an accessory. It is clutter.</p>
+      <p>Finally, we compared how each pick fits into a full setup. That is important because pour over is a chain. If one link is weak, you taste it. A great kettle helps, but if your coffee-to-water ratio is random, your cup still wanders. A scale helps, but if your brewer does not fit the kind of coffee you like, you still feel off. That is why I like pairing this page with our guides to the <a href="/posts/best-pour-over-coffee-maker.html">best pour over coffee maker</a>, the <a href="/posts/best-gooseneck-kettle-for-pour-over.html">best gooseneck kettle for pour over</a>, and the <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a>. Those pages fill in the rest of the picture.</p>
+      <p>If you want the short version, here it is: the best pour over accessories make your brew easier to repeat, easier to control, and easier to enjoy. That was the bar. Anything below that did not make the cut.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="product-reviews">Individual product reviews</h2>
+
+      <h3>1) Fellow Stagg EKG Electric Kettle — Best Overall</h3>
+      <ProductCard
+        title={products[0].name}
+        asin={products[0].asin}
+        image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={{ score: products[0].rating }}
+        price={products[0].price}
+        ctaUrl={amazonUrl(products[0].asin)}
+      />
+      <p>If you want the accessory that changes your pour-over routine the fastest, this is it. The Fellow Stagg EKG is the kettle I would reach for if I were building a setup from the ground up and wanted one piece to make everything feel cleaner and more repeatable. The pour is smooth, the temperature control is easy to set, and the whole thing feels steady in your hand instead of twitchy.</p>
+      <p>That matters because pour over is basically a string of tiny decisions. How hard you pour. How wide your circles are. Whether you keep the bed calm or accidentally blast a hole right through it. A better kettle makes those decisions easier. The Stagg EKG feels like driving a car with tight steering instead of one with a loose wheel. You notice it right away.</p>
+      <p>It is especially good if you bounce between different coffees. Maybe one week you are brewing a bright washed Ethiopian and the next week you are back on a chocolatey medium roast. Being able to set water where you want it — and hold it there — takes one more variable off the table. That makes it easier to taste what the coffee is doing instead of what your kettle randomly decided to do.</p>
+      <p>The downside is obvious: it is expensive. This is not the “most sensible on a tight budget” pick. If your grinder still turns coffee into a mix of dust and pebbles, fix that first. But if you already have a decent grinder and you are tired of rough pours and sloppy temperature guessing, this kettle feels like a real step up instead of a vanity upgrade.</p>
+      <ProsCons
+        pros={[
+          'Excellent stream control that makes bloom and pulse pours easier to repeat',
+          'Set-and-hold temperature control feels genuinely useful, not gimmicky',
+          'Premium daily feel with strong balance in the hand',
+        ]}
+        cons={[
+          'Pricey if you are still building a budget setup',
+          '0.9L capacity is plenty for most people, but not huge',
+          'Makes the most sense after you already own a decent grinder',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>2) Hario V60 Ceramic Coffee Dripper 02 — Best Dripper for Most People</h3>
+      <ProductCard
+        title={products[1].name}
+        asin={products[1].asin}
+        image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+        badge={products[1].badge}
+        rating={{ score: products[1].rating }}
+        price={products[1].price}
+        ctaUrl={amazonUrl(products[1].asin)}
+      />
+      <p>The Hario V60 02 is one of those accessories that became a classic for a reason. It gives you loads of control, it is easy to find filters for, and it makes it very obvious when your pouring is on point or a little messy. That last part sounds harsh, but it is actually why I like recommending it. A V60 teaches you fast.</p>
+      <p>When people say they want better pour-over coffee, what they usually mean is they want more clarity. More sparkle. More “I can actually taste the difference between these beans.” The V60 is great at that. It lets bright, crisp flavors come through in a way that feels a little like wiping steam off a bathroom mirror. Suddenly the picture is clearer.</p>
+      <p>The ceramic version also has a nice kitchen-counter feel. It does not feel flimsy or throwaway. It feels like an actual tool you want to use. And size 02 is the sweet spot for most people because it is flexible. One mug? Fine. A little bigger brew for two? Also fine. You are not boxed into one tiny serving.</p>
+      <p>The tradeoff is that the V60 is less forgiving than chunkier brewers. If your grind is off or your pour gets sloppy, you will taste it. For some people, that is annoying. For others, it is exactly the point. If you want an accessory that can grow with you, not one you outgrow in a month, this is still one of the safest picks in coffee.</p>
+      <ProsCons
+        pros={[
+          'Classic dripper with excellent clarity and control',
+          'Size 02 is versatile for solo brews or small shared batches',
+          'Ceramic body feels sturdy and countertop-friendly',
+        ]}
+        cons={[
+          'Less forgiving if your pouring is inconsistent',
+          'You need matching V60 filters, not just any random filter',
+          'Works best when paired with a decent kettle and scale',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>3) Chemex Classic Series 6-Cup — Best All-in-One Brewer</h3>
+      <ProductCard
+        title={products[2].name}
+        asin={products[2].asin}
+        image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+        badge={products[2].badge}
+        rating={{ score: products[2].rating }}
+        price={products[2].price}
+        ctaUrl={amazonUrl(products[2].asin)}
+      />
+      <p>The Chemex is what I would recommend for people who want their pour-over setup to feel simple, beautiful, and just a little dramatic in the best way. It is the brewer and the server in one piece, and it makes a cup that feels cleaner and lighter on the tongue than a lot of other setups. If a French press feels like hot chocolate, a Chemex feels more like iced tea with extra body.</p>
+      <p>That clean-cup style comes partly from the thick Chemex filters. They strain out more of the heavier oils and tiny particles, so the coffee lands crisp and polished. If you like tasting origin notes clearly — citrus, florals, softer fruit, tea-like sweetness — the Chemex can be really rewarding.</p>
+      <p>I also like it for households where coffee is shared. The 6-cup size is more practical than the tiny one-cup dripper lifestyle if you often brew for two people or want a couple big mugs without repeating the whole process. It feels less like making coffee in rounds and more like making a proper pot, just with better control.</p>
+      <p>The downside is that it is not the cheapest or the most forgiving accessory here. It is glass, so you need to treat it like glass. And the Chemex filter system is its own lane, not something you casually replace with whatever is lying around. But if you want one accessory that looks great and makes beautifully clean coffee, it earns the space.</p>
+      <ProsCons
+        pros={[
+          'Brewer and server in one clean-looking piece',
+          'Makes a very crisp, polished cup profile',
+          'Great fit for larger solo brews or sharing with another person',
+        ]}
+        cons={[
+          'Glass body needs more care than a basic dripper',
+          'Requires Chemex-style filters',
+          'Takes more counter space than a simple cone dripper',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>4) Hario V60 Drip Scale — Best Scale for Consistency</h3>
+      <ProductCard
+        title={products[3].name}
+        asin={products[3].asin}
+        image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+        badge={products[3].badge}
+        rating={{ score: products[3].rating }}
+        price={products[3].price}
+        ctaUrl={amazonUrl(products[3].asin)}
+      />
+      <p>If your pour over tastes great one day and weirdly flat the next, a scale is usually the missing piece. The Hario V60 Drip Scale is not flashy, but it fixes one of the biggest beginner mistakes: using “close enough” amounts of coffee and water. Close enough is how you end up with coffee that swings from thin and sour to muddy and bitter for no obvious reason.</p>
+      <p>A scale makes the whole routine feel calmer. You know your coffee dose. You know your bloom weight. You know when to stop pouring. It turns brewing from a vague art project into something you can actually repeat. And that is the whole point. Once your ratio stays steady, you can change grind size or pour style and really taste what changed.</p>
+      <p>The Hario scale also makes sense because it fits naturally with V60-style brewing. Coffee in. Water up. Timer running. It feels like a quiet little referee sitting under your brewer, keeping the whole thing honest. I love that because some accessories try to steal attention. This one just helps you brew better.</p>
+      <p>The downside is simple: if you mostly care about espresso, there are smaller and quicker-feeling options. But for pour over, this is still one of the easiest “why didn’t I buy this sooner?” upgrades you can make. Pair it with our <a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">best coffee scale for espresso and pour over</a> roundup if you want to compare it against more modern scale options.</p>
+      <ProsCons
+        pros={[
+          'Makes coffee-to-water ratio easy to repeat',
+          'Built-in timer helps you stop guessing your brew',
+          'Simple upgrade with an immediate payoff in consistency',
+        ]}
+        cons={[
+          'Not the fastest-feeling scale for espresso-first users',
+          'Less exciting than sexy kettles, even though it matters a lot',
+          'You still need the discipline to actually use it every brew',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>5) Hario V60 Buono Stovetop Kettle — Best Stovetop Pick</h3>
+      <ProductCard
+        title={products[4].name}
+        asin={products[4].asin}
+        image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+        badge={products[4].badge}
+        rating={{ score: products[4].rating }}
+        price={products[4].price}
+        ctaUrl={amazonUrl(products[4].asin)}
+      />
+      <p>The Hario Buono is the accessory I would recommend to anyone who wants better pour control without buying into an electric setup yet. It is simple, durable, and classic in the best way. Heat it on the stove, pour slowly, clean it, repeat. There is nothing fussy here.</p>
+      <p>What makes it good is that the spout gives you a calmer stream than a basic kitchen kettle. That sounds small, but it changes a lot. A regular kettle can dump water like a bucket. A gooseneck lets you paint the coffee bed instead of punching it. That helps with bloom, helps with pulse pours, and helps keep your extraction from going sideways.</p>
+      <p>I also think this is a strong pick for people who like manual coffee because the whole experience stays tactile. You still manage the heat yourself. You still feel the weight shift in the kettle as you pour. It feels a bit like using a hand grinder instead of hitting a button on an electric one — more involved, but satisfying when you enjoy the process.</p>
+      <p>The downside is convenience. There is no target-temp hold. There is no fast reheat base. If you want the easiest possible routine, an electric kettle wins. But if you want a sturdy stovetop accessory that will still feel useful years from now, the Buono is a very safe bet.</p>
+      <ProsCons
+        pros={[
+          'Classic gooseneck control without electric complexity',
+          'Sturdy stainless-steel build with strong long-term value',
+          'Great way to upgrade from a normal kitchen kettle',
+        ]}
+        cons={[
+          'No built-in temperature control',
+          'Less convenient for back-to-back brews than electric kettles',
+          'You need a little more routine to repeat temperature consistently',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>6) Bonavita 1.0L Variable Temperature Kettle — Best Value Electric Pick</h3>
+      <ProductCard
+        title={products[5].name}
+        asin={products[5].asin}
+        image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
+        badge={products[5].badge}
+        rating={{ score: products[5].rating }}
+        price={products[5].price}
+        ctaUrl={amazonUrl(products[5].asin)}
+      />
+      <p>The Bonavita 1.0L sits in a very useful sweet spot. It gives you electric gooseneck control and variable temperature without asking you to pay top-shelf money. That makes it one of my favorite picks for people who care about the workflow but still want room in the budget for filters, beans, or a better grinder.</p>
+      <p>This is the accessory I would point to for the practical buyer. Not the “I want the prettiest kettle on Instagram” buyer. The practical buyer. The one who wants to heat water to the right temp, pour cleanly, and move on with the day. In that role, the Bonavita makes a lot of sense.</p>
+      <p>I also like the 1.0L capacity. It gives you a bit more breathing room than smaller electric kettles if you brew larger mugs or make coffee for two people. That extra room can be handy when you do not want to refill halfway through the morning.</p>
+      <p>Where it loses to the Fellow is polish. The experience is a little less refined, a little less luxurious. But that is not the same thing as being bad. It just means you are getting a more practical tool and less counter candy. For a lot of people, that is exactly the right trade.</p>
+      <ProsCons
+        pros={[
+          'Strong price-to-performance pick for electric brewing',
+          'Variable temperature control without premium-brand pricing',
+          '1.0L capacity is practical for one or two people',
+        ]}
+        cons={[
+          'Less polished feel than pricier premium kettles',
+          'Not the accessory you buy mainly for aesthetics',
+          'Still more expensive than a basic stovetop upgrade',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2 id="workflow-upgrades">What to buy first vs what to buy later</h2>
+      <p>If you are building a pour-over setup from scratch, buy the accessories that change consistency first. That means a brewer, a kettle, and a scale. Those three pieces shape most of the experience. Everything else is seasoning.</p>
+      <p><strong>Buy first:</strong> a dripper that suits your style, a kettle that gives you control, and a scale that keeps your ratio honest. If you already own a dripper you like, then the kettle and scale jump to the front of the line. Those are the upgrades most people feel immediately in the cup.</p>
+      <p><strong>Buy later:</strong> extra servers, fancy filter storage, decorative stands, and the cute little things social media loves. None of those are useless, but they are not where you get the biggest payoff. If your water is landing unevenly and your brew ratio changes every day, a walnut stand is not saving you.</p>
+      <p>The good news is that you do not need to max out your setup on day one. Start with the basics, get your routine locked in, then add comfort pieces after your coffee already tastes good. That order saves money and usually saves disappointment too.</p>
+    </section>
+
+    <section>
+      <h2>Minimum viable setup vs enthusiast setup</h2>
+      <p>A <strong>minimum viable pour-over setup</strong> is simple: one dripper, one kettle, one scale, paper filters, and a mug or server. That is enough to make excellent coffee. Not “pretty good for a starter setup.” Actually excellent. If your beans are fresh and your grind is decent, that setup can take you a long way.</p>
+      <p>An <strong>enthusiast setup</strong> usually adds convenience, not magic. Maybe you upgrade to an electric kettle with hold mode. Maybe you keep a V60 for bright coffees and a Chemex for larger, cleaner brews. Maybe you use a dedicated scale instead of a generic kitchen one. These upgrades can be worth it. But they work best after you already know what problem you are trying to solve.</p>
+      <p>That is the part people skip. They buy the “advanced” accessory first, then wonder why their coffee still tastes average. Usually the answer is simple: the workflow is still sloppy. A strong basic setup beats a fancy confused setup every time.</p>
+    </section>
+
+    <section>
+      <h2>Compatibility checks that save you money</h2>
+      <p>This part is boring. It also saves you from dumb mistakes. Before you buy any pour-over accessory, check three things: filter shape, brewer size, and kettle capacity.</p>
+      <p><strong>Filter shape:</strong> A V60 uses cone filters sized to the dripper. A Chemex uses thicker Chemex filters. They are not interchangeable in the easy, carefree way people hope. Match the filter to the brewer or your workflow gets annoying fast.</p>
+      <p><strong>Brewer size:</strong> The Hario 02 is flexible for one to four cups. That makes it easier for most kitchens than extra-small drippers that feel cramped the second you want a bigger mug. Think about the coffee you actually make, not the most aesthetic single-cup setup you saw online.</p>
+      <p><strong>Kettle capacity:</strong> Bigger is not always better. A giant kettle can feel clumsy near the end of a delicate pour. Most home brewers do great with 0.9L to 1.0L. Go larger only if you really brew bigger batches a lot.</p>
+      <p>If you want a full brewer breakdown, our <a href="/posts/best-pour-over-coffee-maker.html">best pour over coffee maker</a> guide helps sort through the bigger brewer decision without the usual fluff.</p>
+    </section>
+
+    <section>
+      <h2>Why a scale often matters more than one more brewer</h2>
+      <p>Here is an opinion some gear lists dance around: for most people, a scale will improve coffee more than owning one extra dripper. The reason is simple. A new brewer changes the shape of the process. A scale changes the consistency of the process. Consistency wins more often.</p>
+      <p>Think about it this way. If you use 20 grams of coffee one day and 24 the next, or if you stop pouring at 280 grams today and 340 tomorrow, your brewer is not the main story anymore. Your recipe is wobbling all over the place. A scale tightens that up fast.</p>
+      <p>That is why the Hario V60 Drip Scale deserves its spot here even though it is not the sexiest accessory in the bunch. It gives you repeatability. And repeatability is how you learn. Once your ratio is stable, then the interesting stuff starts. Then you can compare recipes, drippers, and grind tweaks without fooling yourself.</p>
+    </section>
+
+    <section>
+      <h2>Electric vs stovetop kettle: which one fits your mornings?</h2>
+      <p>This decision is less about coffee dogma and more about personality. Electric kettles are for people who want their routine to feel tidy and repeatable. Stovetop kettles are for people who like a little more manual rhythm and do not mind managing heat themselves.</p>
+      <p>An electric kettle like the Fellow or Bonavita is basically a shortcut to calm. Set your temp. Heat your water. Pour. If you brew a lot before work, this is hard to beat. It feels organized. It saves tiny bits of brainpower. And yes, those tiny bits count at 7 a.m.</p>
+      <p>A stovetop kettle like the Hario Buono feels more analog. More tactile. Less button-driven. Some people love that. It turns brewing into a small ritual instead of just another task. If that sounds like you, the Buono may fit better than a fancy electric kettle even if the electric one is objectively more convenient.</p>
+      <p>Neither choice is wrong. Just be honest about what your mornings are actually like. If you are usually rushing, electric is probably the smarter move. If you enjoy slowing down, stovetop might feel better in the long run.</p>
+    </section>
+
+    <section>
+      <h2>Common mistakes when buying pour over accessories</h2>
+      <p><strong>Buying for looks first.</strong> Yes, coffee gear lives on the counter. Yes, it is nice when it looks good. But beautiful gear that annoys you every morning stops feeling beautiful pretty quickly.</p>
+      <p><strong>Buying too many things at once.</strong> When you change your brewer, kettle, ratio, and beans at the same time, you learn nothing. Upgrade in stages. That way you can actually tell what helped.</p>
+      <p><strong>Ignoring your grinder.</strong> I know this page is about accessories, but the grinder still matters. A lot. If your grind size is all over the place, the fanciest kettle in the world cannot fully rescue the cup. If that is your bottleneck, read our <a href="/posts/best-coffee-grinder-for-pour-over.html">best coffee grinder for pour over</a> guide next.</p>
+      <p><strong>Forgetting filters are part of the system.</strong> Brewer compatibility is not a detail. It is part of the workflow. Always check what filters your brewer needs before you click buy.</p>
+      <p><strong>Thinking accessories replace technique.</strong> They do not. Good accessories make good technique easier. That is why they are worth buying. They are not magic wands. They are better handles on the process.</p>
+    </section>
+
+    <section>
+      <h2>One more practical tip: build around your favorite cup, not the internet's</h2>
+      <p>Some people want a bright, crisp, tea-like cup. Others want something rounder and a little richer. That preference should drive your accessory choices more than trendiness. If you like clean, elegant cups and often brew for two, the Chemex makes a lot of sense. If you like clarity and control in smaller, more precise brews, the V60 02 is hard to beat.</p>
+      <p>The same goes for kettles. If you care about exact repeatability and speed, electric wins. If you like the slower ritual and value simplicity, stovetop can be more satisfying. Build around the coffee you love drinking and the morning you actually live in. That is the setup that sticks.</p>
+    </section>
+
+    <section>
+      <h2>Starter bundle ideas that actually make sense</h2>
+      <p>If I were putting together a few realistic pour-over bundles for friends, I would keep them simple. Not because simpler is always better, but because it is easier to learn when every piece has a clear job.</p>
+      <p><strong>Starter value bundle:</strong> Hario V60 02 + Hario V60 Buono + Hario V60 Drip Scale. This is the “learn the fundamentals without torching your wallet” setup. You get classic cone brewing, controlled pouring, and repeatable ratios. Nothing is overly precious, and every piece teaches you something useful.</p>
+      <p><strong>Best all-around bundle:</strong> Hario V60 02 + Fellow Stagg EKG + Hario V60 Drip Scale. This is probably the sweet spot for the person who wants their morning routine to feel smooth and dependable. You keep the flexible, classic dripper, then pair it with a kettle that makes pouring and temperature control feel easy. For most people, this is the setup that balances fun, performance, and sanity.</p>
+      <p><strong>Clean-cup shared-brew bundle:</strong> Chemex 6-Cup + Bonavita 1.0L + Hario V60 Drip Scale. This is a nice fit if you usually brew for two people or love cleaner, lighter cups. The Bonavita keeps the workflow practical, the scale keeps the recipe steady, and the Chemex handles the brewer-plus-server role without extra clutter.</p>
+      <p><strong>Minimalist analog bundle:</strong> Hario V60 02 + Hario V60 Buono + a simple kitchen timer if you already own a scale. I would not recommend skipping a scale long term, but if you already have one, this is a lovely manual setup. It feels quiet. Direct. Very little to break, and very little to distract you.</p>
+      <p>The common thread in all these bundles is that every piece solves a real problem. Better control. Better repeatability. Better fit for the way you drink coffee. That is what a good accessory setup should do.</p>
+    </section>
+
+    <section>
+      <h2>How each accessory changes the cup</h2>
+      <p>People often talk about accessories like they only change the workflow. That is half true. They also change the cup. Not by magic, but by making it easier to control the stuff that shapes extraction — basically how much flavor the water pulls out of the grounds.</p>
+      <p><strong>A better kettle</strong> changes agitation. If your stream is too heavy, you churn the coffee bed and pull flavors unevenly. Some parts over-extract and taste harsh. Other parts under-extract and taste sharp or hollow. A controlled gooseneck stream is gentler, which usually means cleaner, more balanced cups.</p>
+      <p><strong>A scale</strong> changes concentration. Too much coffee for the amount of water and the cup feels heavy or muddy. Too little and it tastes weak and washed out. A scale keeps that relationship steady. Once it is steady, you stop brewing accidental coffee and start brewing intentional coffee.</p>
+      <p><strong>The brewer itself</strong> changes flow and body. A V60 tends to highlight clarity and brightness. A Chemex leans even cleaner because of its thicker filters. Neither one is automatically superior. They just point the coffee in slightly different directions.</p>
+      <p>This is why I get a little grumpy when people dismiss accessories as “just gear talk.” Good accessories are process tools. And better process usually tastes better. Not because the tool is expensive, but because it helps you pour, measure, and repeat more accurately.</p>
+      <p>If you have ever brewed the same beans with a sloppy kettle one day and a steady gooseneck the next, you already know what I mean. The difference is not subtle. One cup tastes muddled. The other tastes like the notes on the bag finally showed up for work.</p>
+    </section>
+
+    <section>
+      <h2>Accessory setup at a glance</h2>
+      <HeroSteps
+        title="Build your pour-over setup in the right order"
+        subtitle="Buy the accessories that change the cup first, then add comfort upgrades later"
+        steps={[
+          { label: 'Start', icon: 'check', actions: ['Choose one brewer style', 'Pick the right matching filters', 'Keep the setup simple'], time: '~1 buy' },
+          { label: 'Control', icon: 'target', actions: ['Add a gooseneck kettle', 'Pour slower and more evenly', 'Repeat your bloom and main pours'], time: '~daily payoff' },
+          { label: 'Lock it in', icon: 'calendar', actions: ['Add a scale with timer', 'Keep your ratio steady', 'Track what actually tastes best'], time: '~every brew' },
+        ]}
+        outcome="A setup that feels easy to repeat and makes better coffee without gear overload"
+      />
+    </section>
+  </Fragment>
+
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide: how to choose the right pour over accessories</h2>
+      <p><strong>Start with the biggest pain point in your current setup.</strong> If your pours feel wild and splashy, buy a gooseneck kettle first. If your coffee tastes different every day, buy a scale first. If you are brewing into a random improvised setup and want a real foundation, start with a brewer like the V60 or Chemex.</p>
+      <p><strong>Think in terms of workflow, not just product type.</strong> The best accessory is the one that fits how you make coffee when you are tired, distracted, or moving fast. If it only feels good in a perfect slow morning, it is probably not the right first buy.</p>
+      <p><strong>Decide whether you want flexibility or simplicity.</strong> The V60 gives you more room to experiment. The Chemex gives you a cleaner, more all-in-one style. An electric kettle gives you easier repeatability. A stovetop kettle gives you fewer electronics and a simpler ownership experience. None of these are moral choices. They are workflow choices.</p>
+      <p><strong>Do not overbuy capacity.</strong> Bigger kettles and brewers sound useful until they feel clumsy on your counter. Buy for the brews you make most often, not the imaginary dinner-party coffee service you might host twice a year.</p>
+      <p><strong>Buy accessories that teach you something.</strong> This is my favorite rule. A scale teaches ratio. A V60 teaches pouring. A gooseneck teaches control. Those are good buys because they make you a better brewer, not just a better shopper.</p>
+      <p><strong>Think about cleanup before you buy.</strong> This sounds unsexy, but it matters. A brewer you love in theory can become a shelf ornament if cleanup annoys you every day. The Chemex looks gorgeous, but it is still glass and a little fussier to handle. The V60 is easier to rinse and reset quickly. Electric kettles need occasional descaling. Stovetop kettles are simpler, but you still need to watch mineral buildup and keep the spout clean. Ask yourself which version of maintenance you will actually do.</p>
+      <p><strong>Match your accessory to the amount of coffee you usually make.</strong> If you mostly brew one mug, a huge brewer or oversized kettle can feel clunky. If you often brew for two people, tiny gear gets annoying fast. This is one of the most common buying mistakes because people shop for “maximum flexibility” and end up with tools that feel awkward most of the time.</p>
+      <p><strong>Respect the filter ecosystem.</strong> It is not glamorous, but filters are part of ownership. V60 filters are easy enough to plan around once you know your size. Chemex filters are thicker and more specific. None of this is hard, but it is worth knowing up front so your new setup does not stall because the wrong paper showed up at the door.</p>
+      <p><strong>Leave room in the budget for the rest of the chain.</strong> Fresh beans, a decent grinder, and the right filters still matter. If you blow your whole budget on a premium kettle but are still grinding inconsistently, the setup is out of balance. Great coffee is a team sport. Accessories should support the team, not hog the spotlight.</p>
+      <p><strong>My simple buying order for most people:</strong> first fix control, then consistency, then comfort. In practice, that means buy a gooseneck kettle if your pours are messy, buy a scale if your ratio is wandering, and buy nicer convenience pieces only after those basics are covered. That order keeps your money aimed at things you will actually taste. It also keeps you from buying the fun stuff before you buy the useful stuff.</p>
+    </BuyingGuideSection>
+  </Fragment>
+
+  <!-- PREQA_ANCHORS_LATE (non-rendered):
+  <h2 id="faq">FAQ</h2>
+  <FaqAccordion></FaqAccordion>
+  -->
+
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/best-pour-over-coffee-maker.html">Best Pour Over Coffee Maker</a></li>
+        <li><a href="/posts/best-gooseneck-kettle-for-pour-over.html">Best Gooseneck Kettle for Pour Over</a></li>
+        <li><a href="/posts/best-coffee-scale-for-espresso-and-pour-over.html">Best Coffee Scale for Espresso and Pour Over</a></li>
+        <li><a href="/posts/best-coffee-grinder-for-pour-over.html">Best Coffee Grinder for Pour Over</a></li>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide</a></li>
+      </ul>
+    </section>
+  </Fragment>
+</MoneyPage>

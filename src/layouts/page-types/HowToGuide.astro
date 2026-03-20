@@ -123,6 +123,7 @@ const jsonLd = howToPageGraph({
       {products.map((p, i) => (
         <ProductCard
           title={p.name}
+          asin={p.asin}
           image={{ src: p.image, alt: p.imageAlt, width: 500, height: 500 }}
           badge={p.badge}
           rating={{ score: p.rating }}

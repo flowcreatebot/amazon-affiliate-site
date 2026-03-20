@@ -1,0 +1,332 @@
+---
+import HowToGuide from '../../layouts/page-types/HowToGuide.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import Checklist from '../../components/Checklist.astro';
+import Callout from '../../components/Callout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import type { ResolvedProduct } from '../../data/products';
+
+const products: ResolvedProduct[] = [
+  {
+    id: 'aeropress-original',
+    name: 'AeroPress Original Coffee Press',
+    brand: 'AeroPress',
+    asin: 'B000GXZ2GS',
+    image: 'https://m.media-amazon.com/images/I/61u3sW4Vx4L._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Original coffee press with chamber, plunger, and paper filters',
+    category: 'brewers',
+    rating: 4.7,
+    specs: {
+      brewStyle: 'Manual immersion plus pressure',
+      portability: 'Home, office, and travel friendly',
+      filterType: 'Paper micro-filters',
+      bestUse: 'Fast single cups',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: '$',
+    bestFor: 'The default AeroPress timing method most people should start with',
+    featured: true,
+  },
+  {
+    id: 'aeropress-go',
+    name: 'AeroPress Go',
+    brand: 'AeroPress',
+    asin: 'B07YVL8SF3',
+    image: 'https://m.media-amazon.com/images/I/61rCqssRqsL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Go portable coffee maker with cup and travel accessories',
+    category: 'brewers',
+    rating: 4.7,
+    specs: {
+      brewStyle: 'Portable immersion plus pressure',
+      portability: 'Travel, hiking, camping, office',
+      filterType: 'Paper micro-filters',
+      bestUse: 'Compact travel brewing',
+    },
+    badge: { label: 'Best for Travel', variant: 'beginners' },
+    price: '$',
+    bestFor: 'Travel brews where speed matters more than fuss',
+  },
+  {
+    id: 'aeropress-paper-filters',
+    name: 'AeroPress Paper Micro-Filters (700 Count)',
+    brand: 'AeroPress',
+    asin: 'B005UPSLX8',
+    image: 'https://m.media-amazon.com/images/I/719Eo75xBJL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress white paper micro-filters for standard size AeroPress brewers',
+    category: 'accessories',
+    rating: 4.8,
+    specs: {
+      filterType: 'White chlorine-free paper',
+      count: '700 filters',
+      fit: 'Fits standard size AeroPress brewers',
+      bestUse: 'Cleaner cups with less grit',
+    },
+    badge: { label: 'Best Budget Upgrade', variant: 'budget' },
+    price: '$',
+    bestFor: 'Cleaner cups and easy daily brewing',
+  },
+  {
+    id: 'timemore-chestnut-c2',
+    name: 'TIMEMORE Chestnut C2 Manual Coffee Grinder',
+    brand: 'TIMEMORE',
+    asin: 'B0833SDN8M',
+    image: 'https://m.media-amazon.com/images/I/61Y8BsO8kYL._AC_SL500_.jpg',
+    imageAlt: 'TIMEMORE Chestnut C2 manual coffee grinder in black with folding handle',
+    category: 'grinders',
+    rating: 4.6,
+    specs: {
+      burrType: 'CNC stainless steel conical burr',
+      capacity: '25 g',
+      adjustmentStyle: 'Internal adjustable setting',
+      bestUse: 'Consistent AeroPress grind size',
+    },
+    badge: { label: 'Best Grind Upgrade', variant: 'upgrade' },
+    price: '$',
+    bestFor: 'Getting your timing to taste the same day after day',
+  },
+  {
+    id: 'miicoffee-nano-scale',
+    name: 'MiiCoffee Nano Coffee Scale with Timer',
+    brand: 'MiiCoffee',
+    asin: 'B0CGMHTWM2',
+    image: 'https://m.media-amazon.com/images/I/81ZIKmA054L._AC_SL500_.jpg',
+    imageAlt: 'MiiCoffee Nano coffee scale with timer and black silicone cover',
+    category: 'accessories',
+    rating: 4.5,
+    specs: {
+      function: 'Scale plus timer',
+      control: 'Touch sensor',
+      extra: 'Auto tare and auto timer',
+      bestUse: 'Repeatable brew timing',
+    },
+    badge: { label: 'Best for Precision', variant: 'pourover' },
+    price: '$',
+    bestFor: 'Locking in the same brew time without guesswork',
+  },
+];
+
+const description = 'Find the best AeroPress brew time for balanced coffee, with a simple timing chart, step-by-step recipe, and easy fixes for sour or bitter cups.';
+---
+
+<HowToGuide
+  slug="best-aeropress-brew-time"
+  title="Best AeroPress Brew Time (2026): Timing Chart"
+  description={description}
+  category="education"
+  datePublished="2026-03-19"
+  dateModified="2026-03-19"
+  ogImage={products[0].image}
+  heroSteps={{
+    title: 'The easiest AeroPress timing flow to remember',
+    subtitle: 'If you want a sweet, balanced cup without staring at a stopwatch like it owes you money, start here',
+    steps: [
+      { label: 'Bloom', icon: 'droplets', actions: ['Add coffee', 'Pour a small splash of water', 'Stir once to wet everything'], time: '0:00-0:15' },
+      { label: 'Steep', icon: 'timer', actions: ['Fill to recipe water', 'Cap and wait', 'Let the grounds settle'], time: '0:15-1:15' },
+      { label: 'Press', icon: 'check', actions: ['Plunge slowly', 'Stop at the hiss', 'Dilute if needed'], time: '1:15-1:45' },
+    ],
+    outcome: 'A cup that tastes sweet, clear, and full instead of sharp, muddy, or weirdly hollow.',
+    footer: 'coffeegearpicks.com · AeroPress brew time guide · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-answer', label: 'Quick answer' },
+    { href: '#what-you-need', label: "What you'll need" },
+    { href: '#steps', label: 'Step-by-step recipe' },
+    { href: '#common-mistakes', label: 'Common mistakes' },
+    { href: '#troubleshooting', label: 'Troubleshooting by taste' },
+    { href: '#related-guides', label: 'Related guides' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  products={products}
+  faqItems={[
+    { q: 'What is the best AeroPress brew time for most people?', a: 'For most people, about 1 minute of steep time plus a 20 to 30 second press is the sweet spot. That gives you enough contact time for a full, flavorful cup without pushing into bitterness.' },
+    { q: 'Does a finer grind mean a shorter AeroPress brew time?', a: 'Usually, yes. A finer grind gives up flavor faster, so you can often shorten the steep a little. If you keep it steeping too long, the cup can get heavy and bitter.' },
+    { q: 'How long should I press an AeroPress?', a: 'Aim for a slow, steady press of about 20 to 30 seconds. If you are forcing it hard, the grind is probably too fine. If it drops with almost no resistance, it is probably too coarse.' },
+    { q: 'Is the inverted AeroPress method better for timing control?', a: 'It can be, mostly because it stops early drip-through and gives you a little more control over steep time. That said, the standard method still makes excellent coffee when your grind and timing are matched well.' },
+  ]}
+  schemaSteps={[
+    { name: 'Wet the coffee bed', text: 'Add coffee to the AeroPress, pour a small amount of hot water, and stir briefly so all the grounds are evenly wet.' },
+    { name: 'Steep for about one minute', text: 'Add the rest of the water, cap the brewer, and let the coffee steep for roughly 60 seconds for a balanced everyday cup.' },
+    { name: 'Press slowly and taste', text: 'Press gently for 20 to 30 seconds, then taste. Shorten the steep if the cup is bitter or lengthen it slightly if it tastes sour and thin.' },
+  ]}
+  supplies={['AeroPress brewer', 'Fresh coffee beans', 'Hot water', 'Paper filter', 'Mug']}
+  schemaTools={products.map((product) => product.name)}
+>
+  <!-- preqa-h1: <h1>Best AeroPress Brew Time (2026): Timing Chart</h1> -->
+  <Fragment slot="lead">
+    <p class="lead">If your AeroPress coffee tastes bright one day, flat the next, and weirdly bitter the day after that, brew time is usually the thing slipping around on you. The good news is that AeroPress timing is not complicated. You just need one solid starting point, then a few easy tweaks based on what lands in the cup.</p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <h2 id="quick-answer">Quick answer</h2>
+    <p><strong>Start with a 60-second steep and a 20 to 30 second press.</strong> For most medium-roast coffees, that is the sweet spot. It is long enough to pull good sweetness and body, but not so long that the cup turns muddy or harsh.</p>
+    <p>If your grind is a little finer, you can shave the steep down closer to 45 seconds. If it is coarser, stretch closer to 75 or 90 seconds. Think of it like pasta: small pieces cook fast, bigger pieces need a little more time, and if you leave everything in too long, the texture gets sloppy.</p>
+
+    <ComparisonTable timestamp="Prices updated: March 19, 2026" ariaLabel="AeroPress brew time chart by recipe style">
+      <table>
+        <thead>
+          <tr>
+            <th>Recipe style</th>
+            <th>Grind feel</th>
+            <th>Steep time</th>
+            <th>Press time</th>
+            <th>Cup profile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Recipe style">Default everyday cup</td>
+            <td data-label="Grind feel">Medium-fine, like table salt</td>
+            <td data-label="Steep time">~60 sec</td>
+            <td data-label="Press time">20-30 sec</td>
+            <td data-label="Cup profile">Sweet, balanced, clean</td>
+          </tr>
+          <tr>
+            <td data-label="Recipe style">Stronger bypass brew</td>
+            <td data-label="Grind feel">Fine, a little tighter than table salt</td>
+            <td data-label="Steep time">~45 sec</td>
+            <td data-label="Press time">20-25 sec</td>
+            <td data-label="Cup profile">Punchier, syrupy, easy to dilute</td>
+          </tr>
+          <tr>
+            <td data-label="Recipe style">Lighter, cleaner cup</td>
+            <td data-label="Grind feel">Medium, like fine sand</td>
+            <td data-label="Steep time">~75 sec</td>
+            <td data-label="Press time">25-30 sec</td>
+            <td data-label="Cup profile">Gentler body, softer finish</td>
+          </tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
+
+    <Callout variant="tip" title="The fastest fix">
+      <p>If the cup is sour and thin, give it a little more time. If it tastes bitter and heavy, shorten the steep before you change five other things and confuse yourself.</p>
+    </Callout>
+  </Fragment>
+
+  <Fragment slot="what-youll-need">
+    <h2 id="what-you-need">What you'll need</h2>
+    <p>You can make great AeroPress coffee with very little gear. That is part of the charm. Still, timing gets a lot easier when your setup is not fighting you. A steady grinder and a simple scale make the whole thing feel less like guesswork and more like a repeatable morning habit.</p>
+
+    <Checklist
+      title="The basic setup"
+      items={[
+        'An AeroPress brewer and paper filter',
+        'Fresh coffee ground medium-fine',
+        'Hot water just off the boil',
+        'A timer or coffee scale with timer',
+        'A mug plus a spoon or stirrer',
+      ]}
+    />
+
+    <p>If you are just starting, the <strong>AeroPress Original</strong> is the easy pick. It gives you the standard recipe everyone references, so troubleshooting stays simple. If you want something more packable, the <strong>AeroPress Go</strong> makes more sense. It is the one I would grab for hotel rooms, train rides, or that weird rental kitchen with exactly one spoon and no kettle worth trusting.</p>
+    <p>The cheapest upgrade here is honestly the most useful: extra <strong>AeroPress paper filters</strong>. Fresh filters keep cleanup easy and the cup cleaner. After that, a better grinder matters more than people expect. If your grind jumps from powder to pebbles, your brew time will feel random because the extraction — basically how much flavor the water pulls out of the grounds — is random too.</p>
+    <p>If you want more control, the <strong>TIMEMORE Chestnut C2</strong> and <strong>MiiCoffee Nano Scale</strong> make a good pair. One helps you land the same grind again. The other helps you stop brewing by feel alone, which is fun right up until you make three different cups from the same beans and have no idea why.</p>
+  </Fragment>
+
+  <Fragment slot="steps">
+    <h2 id="steps">Step-by-step: the best AeroPress brew time for a balanced cup</h2>
+
+    <h3>1. Start with the default recipe, not the fanciest one on the internet</h3>
+    <p>Use 15 grams of coffee and about 240 grams of water. Grind medium-fine, about like table salt. Put in the filter, rinse it if you want, add the coffee, and get your timer ready. This is your starting point. Nothing flashy. That is the whole point.</p>
+    <p>A lot of AeroPress frustration comes from jumping straight into weird championship recipes before you have a baseline. Start simple first. Once you know what a normal, balanced cup tastes like, every tweak makes more sense.</p>
+
+    <h3>2. Bloom briefly, then fill the rest of the water</h3>
+    <p>At <strong>0:00</strong>, pour in just enough water to wet all the grounds and give it one quick stir. You do not need a dramatic bloom here like a pour over. AeroPress is much more forgiving. The goal is just to make sure no dry pockets are hiding in the bed.</p>
+    <p>By <strong>0:15</strong>, pour the rest of your water in. Stir again if needed, then cap the brewer. If you use the standard method, a little drip-through is normal. Do not panic over a few drops. That is not ruining your brew. It is just AeroPress being AeroPress.</p>
+
+    <h3>3. Steep for about 60 seconds for the safest starting point</h3>
+    <p>This is the main answer most people are looking for: let it sit until roughly <strong>1:15 on the timer</strong>, which gives you about <strong>60 seconds of real steep time</strong> after the pour. That tends to land in the sweet spot for medium roasts and everyday drinking.</p>
+    <p>Why this works so well? Because it gives the coffee enough time to taste sweet and full, but not so much time that the finish gets rough. If you have ever let an AeroPress sit forever and then wondered why it tasted like over-steeped tea with a coffee accent, this is the fix.</p>
+
+    <h3>4. Press slowly for 20 to 30 seconds</h3>
+    <p>Start pressing around <strong>1:15</strong> and finish around <strong>1:35 to 1:45</strong>. Slow and steady is what you want. If you have to lean your whole body into it, the grind is probably too fine. If the plunger drops like it is falling through air, the grind is probably too coarse.</p>
+    <p>The right press feels smooth, with a little resistance but no wrestling match. Think more like pushing down on a French toast sponge than crushing a can. Gentle pressure usually gives you the cleaner cup.</p>
+
+    <h3>5. Use a bypass brew when you want a stronger cup without extra bitterness</h3>
+    <p>If you like a punchier mug, use a stronger concentrate and dilute after. That means a finer grind, less water in the chamber, and a shorter steep of around <strong>45 seconds</strong> before the press. Then add hot water to the cup after brewing.</p>
+    <p>This trick gives you extra strength without forcing the coffee to sit too long. It is one of the easiest ways to get more body while keeping the flavor lively. If your regular AeroPress cups feel a little washed out, try this before you assume the beans are the problem.</p>
+
+    <h3>6. Stretch the brew slightly for coarser grinds or cooler water</h3>
+    <p>If your grind is a bit coarser or your water is not especially hot, let the steep run closer to <strong>75 to 90 seconds</strong>. Coarser grounds need more time. Cooler water extracts more slowly too. Same idea, same cup logic.</p>
+    <p>This is where a lot of people get tripped up. They copy a 45-second recipe from someone grinding much finer than they are, then wonder why their coffee tastes like lemony dishwater. Timing only makes sense when it matches the grind.</p>
+
+    <h3>7. Taste the cup and adjust one thing only</h3>
+    <p>If the coffee tastes sour, thin, or a little sharp, add 10 to 15 seconds next round or grind a touch finer. If it tastes bitter, woody, or heavy, cut 10 to 15 seconds or go a little coarser. One change at a time. That is how you actually figure things out.</p>
+    <p>If you want a cleaner reset point, our <a href="/posts/best-aeropress-grind-size.html">AeroPress grind size guide</a> and <a href="/posts/best-aeropress-brew-temp.html">AeroPress brew temperature guide</a> help you match timing to the rest of the recipe instead of guessing blind.</p>
+  </Fragment>
+
+  <Fragment slot="common-mistakes">
+    <h2 id="common-mistakes">Common mistakes</h2>
+
+    <h3>Steeping forever because longer feels safer</h3>
+    <p>It sounds logical, but it usually backfires. Leave the grounds in too long and the cup gets muddy, bitter, and dull. More time is not always more flavor. Sometimes it is just more mess.</p>
+
+    <h3>Pressing way too hard</h3>
+    <p>A hard press does not magically make better coffee. It usually means the grind is too fine, and forcing it can push harsher flavors into the cup. Let the grind do the work. Your forearm does not need to be the recipe.</p>
+
+    <h3>Using a wildly uneven grind</h3>
+    <p>When one part of the coffee is powder and another part looks like beach gravel, timing gets messy fast. The tiny bits over-extract. The chunky bits under-extract. The cup tastes confused. A better grinder fixes more timing problems than most people expect.</p>
+
+    <h3>Changing time, grind, and water all at once</h3>
+    <p>This is the classic spiral. You change everything, make one okay cup, then have no idea what actually helped. Keep the other stuff the same so your timing changes mean something.</p>
+  </Fragment>
+
+  <Fragment slot="troubleshooting">
+    <h2 id="troubleshooting">Troubleshooting by taste</h2>
+    <p><strong>Sour, lemony, or thin:</strong> brew a little longer, or grind a bit finer. This usually means the coffee did not have enough contact time to fully open up.</p>
+    <p><strong>Bitter, dry, or heavy:</strong> shorten the steep, or grind a little coarser. If the finish feels like over-brewed black tea, that is your clue.</p>
+    <p><strong>Watery but not sour:</strong> try the stronger bypass method instead of just letting the coffee sit longer. That usually gives you more body without dragging bitterness along for the ride.</p>
+    <p><strong>Good flavor but inconsistent cups:</strong> your timer or grind is probably drifting. A simple scale with a timer makes this much easier. If you brew on the go, the <a href="/posts/best-aeropress-go-recipe.html">best AeroPress Go recipe guide</a> is a better match than trying to force a home recipe into a travel setup.</p>
+    <p><strong>Too much grit or a slightly papery finish:</strong> check your filter and your rinse routine. Our <a href="/posts/best-aeropress-filters.html">AeroPress filters guide</a> helps if you are deciding between paper and other options, and the <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> is handy if strength still feels off even when the timing is right.</p>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <p>If you want to go deeper, these guides fill in the other half of the AeroPress puzzle. Brew time matters, but it works best when grind, water, and filter choice are all pulling in the same direction.</p>
+      <ul>
+        <li><a href="/posts/best-aeropress-go-recipe.html">Best AeroPress Go Recipe</a></li>
+        <li><a href="/posts/best-aeropress-brew-temp.html">Best AeroPress Brew Temperature</a></li>
+        <li><a href="/posts/best-aeropress-grind-size.html">Best AeroPress Grind Size</a></li>
+        <li><a href="/posts/best-aeropress-filters.html">Best AeroPress Filters</a></li>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide</a></li>
+      </ul>
+
+      <h2>Gear that makes AeroPress timing easier</h2>
+      <p>Honestly, you do not need a shopping spree. If I were helping a friend build a better AeroPress setup, I would keep it simple: the regular AeroPress, extra paper filters, a grinder that does not make a chaotic mess, and a small scale so the timer stops being a rough guess.</p>
+
+      <ProductCard
+        title={products[0].name}
+        asin={products[0].asin}
+        image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={{ score: products[0].rating }}
+        price={products[0].price}
+        ctaUrl="https://www.amazon.com/dp/B000GXZ2GS/ref=nosim?tag=coffee-site-20"
+      />
+      <ProductCard
+        title={products[3].name}
+        asin={products[3].asin}
+        image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+        badge={products[3].badge}
+        rating={{ score: products[3].rating }}
+        price={products[3].price}
+        ctaUrl="https://www.amazon.com/dp/B0833SDN8M/ref=nosim?tag=coffee-site-20"
+      />
+      <ProductCard
+        title={products[4].name}
+        asin={products[4].asin}
+        image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+        badge={products[4].badge}
+        rating={{ score: products[4].rating }}
+        price={products[4].price}
+        ctaUrl="https://www.amazon.com/dp/B0CGMHTWM2/ref=nosim?tag=coffee-site-20"
+      />
+
+      <p><CtaButton href="https://www.amazon.com/dp/B000GXZ2GS/ref=nosim?tag=coffee-site-20" external>Check AeroPress Original Price</CtaButton></p>
+      <p><CtaButton href="https://www.amazon.com/dp/B0833SDN8M/ref=nosim?tag=coffee-site-20" external>Check TIMEMORE Chestnut C2 Price</CtaButton></p>
+      <p><CtaButton href="https://www.amazon.com/dp/B0CGMHTWM2/ref=nosim?tag=coffee-site-20" external>Check MiiCoffee Nano Scale Price</CtaButton></p>
+    </section>
+  </Fragment>
+</HowToGuide>

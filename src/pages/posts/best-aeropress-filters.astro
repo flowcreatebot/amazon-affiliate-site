@@ -14,7 +14,7 @@ const products: ResolvedProduct[] = [
     name: 'AeroPress Paper Micro-Filters (Standard)',
     brand: 'AeroPress',
     asin: 'B005UPSLX8',
-    image: 'PLACEHOLDER_IMG:B005UPSLX8',
+    image: 'https://m.media-amazon.com/images/I/719Eo75xBJL._AC_SL500_.jpg',
     imageAlt: 'AeroPress white paper micro-filters for standard AeroPress coffee makers',
     category: 'accessories',
     rating: 4.8,
@@ -34,7 +34,7 @@ const products: ResolvedProduct[] = [
     name: 'AeroPress 316 Stainless Steel Reusable Filter',
     brand: 'AeroPress',
     asin: 'B0B3BTYSTD',
-    image: 'PLACEHOLDER_IMG:B0B3BTYSTD',
+    image: 'https://m.media-amazon.com/images/I/61p7idkiv6L._AC_SL500_.jpg',
     imageAlt: 'AeroPress 316 stainless steel reusable metal filter for standard AeroPress brewers',
     category: 'accessories',
     rating: 4.5,
@@ -53,7 +53,7 @@ const products: ResolvedProduct[] = [
     name: 'Fellow Prismo AeroPress Attachment',
     brand: 'Fellow',
     asin: 'B079YBT2LJ',
-    image: 'PLACEHOLDER_IMG:B079YBT2LJ',
+    image: 'https://m.media-amazon.com/images/I/81spRscQcAL._AC_SL500_.jpg',
     imageAlt: 'Fellow Prismo AeroPress attachment with reusable metal filter',
     category: 'accessories',
     rating: 4.6,
@@ -72,7 +72,7 @@ const products: ResolvedProduct[] = [
     name: 'Able DISK Fine for AeroPress',
     brand: 'Able',
     asin: 'B00E58P81E',
-    image: 'PLACEHOLDER_IMG:B00E58P81E',
+    image: 'https://m.media-amazon.com/images/I/71UMiE1X3lL._AC_SL500_.jpg',
     imageAlt: 'Able DISK Fine stainless steel reusable coffee filter for AeroPress',
     category: 'accessories',
     rating: 4.3,
@@ -91,7 +91,7 @@ const products: ResolvedProduct[] = [
     name: 'AeroPress Natural Paper Micro-Filters',
     brand: 'AeroPress',
     asin: 'B0CQPPCZJ5',
-    image: 'PLACEHOLDER_IMG:B0CQPPCZJ5',
+    image: 'https://m.media-amazon.com/images/I/71YnFCNRydL._AC_SL500_.jpg',
     imageAlt: 'AeroPress natural unbleached paper micro-filters for standard AeroPress coffee makers',
     category: 'accessories',
     rating: 4.7,
@@ -110,7 +110,7 @@ const products: ResolvedProduct[] = [
     name: 'AeroPress Flow Control Filter Cap',
     brand: 'AeroPress',
     asin: 'B0BXCRVZ52',
-    image: 'PLACEHOLDER_IMG:B0BXCRVZ52',
+    image: 'https://m.media-amazon.com/images/I/61uTKI9CbQL._AC_SL500_.jpg',
     imageAlt: 'AeroPress Flow Control Filter Cap accessory for standard AeroPress coffee makers',
     category: 'accessories',
     rating: 4.5,
@@ -147,7 +147,7 @@ const description = 'The best AeroPress filters in 2026, from classic paper to r
     subtitle: 'Six filter options compared by cup clarity, body, cleanup, and how much daily fuss they add to your routine',
     picks: [
       { category: 'Clean Cup', tagline: 'Best overall for bright, tidy brews', icon: 'target', color: '#2C1810', features: ['Almost zero grit', 'Easy to find', 'Fast cleanup', 'Best all-round choice'], topPick: 'AeroPress Paper Micro-Filters', price: '$', subtitle: 'The easy default pick', asin: 'B005UPSLX8' },
-      { category: 'Reusable', tagline: 'Best if you hate throwing filters away', icon: 'hand', color: '#8B6F47', features: ['316 stainless steel', 'More body in the cup', 'Travel-friendly', 'No paper restocks'], topPick: 'AeroPress Stainless Steel Filter', price: '$$', subtitle: 'Less waste, fuller flavor', asin: 'B0B3BTYSTD' },
+      { category: 'Reusable', tagline: 'Best if you hate throwing filters away', icon: 'hand', color: '#7A5B4A', features: ['316 stainless steel', 'More body in the cup', 'Travel-friendly', 'No paper restocks'], topPick: 'AeroPress Stainless Steel Filter', price: '$$', subtitle: 'Less waste, fuller flavor', asin: 'B0B3BTYSTD' },
       { category: 'Espresso-Style', tagline: 'Best for fuller no-drip recipes', icon: 'volume-x', color: '#7A5B4A', features: ['No-drip valve', 'Reusable filter included', 'Works for immersion', 'Great for stronger cups'], topPick: 'Fellow Prismo', price: '$$', subtitle: 'The fun upgrade pick', asin: 'B079YBT2LJ' },
       { category: 'Budget', tagline: 'Best if you want simple paper brewing', icon: 'dollar', color: '#059669', features: ['Unbleached paper', 'Clean flavor', 'Very low fuss', 'Easy beginner choice'], topPick: 'AeroPress Natural Paper Filters', price: '$', subtitle: 'Simple and clean', asin: 'B0CQPPCZJ5' },
     ],
@@ -183,6 +183,11 @@ const description = 'The best AeroPress filters in 2026, from classic paper to r
       a: 'Either works well. White filters are the classic easy pick. Natural filters make more sense if you prefer unbleached paper. In the cup, the difference is small compared with your coffee, grind, and recipe.',
     },
   ]}
+  contentImage={{
+    src: '/assets/content-aeropress-filters.webp',
+    alt: 'An AeroPress brewer beside stacked paper filters and a stainless steel reusable filter on a warm linen surface with scattered coffee beans and a small brewed cup.',
+    caption: 'Paper and metal AeroPress filters create different cup textures, from clean clarity to fuller body.',
+  }}
 >
   <Fragment slot="lead">
     <p class="lead">
@@ -299,6 +304,7 @@ const description = 'The best AeroPress filters in 2026, from classic paper to r
       <h3>1) AeroPress Paper Micro-Filters (Standard) — Best Overall</h3>
       <ProductCard
         title={products[0].name}
+        asin={products[0].asin}
         image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
         badge={products[0].badge}
         rating={{ score: products[0].rating }}
@@ -321,6 +327,7 @@ const description = 'The best AeroPress filters in 2026, from classic paper to r
       <h3>2) AeroPress 316 Stainless Steel Reusable Filter — Best Reusable</h3>
       <ProductCard
         title={products[1].name}
+        asin={products[1].asin}
         image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
         badge={products[1].badge}
         rating={{ score: products[1].rating }}
@@ -342,6 +349,7 @@ const description = 'The best AeroPress filters in 2026, from classic paper to r
       <h3>3) Fellow Prismo AeroPress Attachment — Best for Espresso-Style Recipes</h3>
       <ProductCard
         title={products[2].name}
+        asin={products[2].asin}
         image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
         badge={products[2].badge}
         rating={{ score: products[2].rating }}
@@ -363,6 +371,7 @@ const description = 'The best AeroPress filters in 2026, from classic paper to r
       <h3>4) Able DISK Fine for AeroPress — Best Metal Filter for Cleaner Cups</h3>
       <ProductCard
         title={products[3].name}
+        asin={products[3].asin}
         image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
         badge={products[3].badge}
         rating={{ score: products[3].rating }}
@@ -384,6 +393,7 @@ const description = 'The best AeroPress filters in 2026, from classic paper to r
       <h3>5) AeroPress Natural Paper Micro-Filters — Best Unbleached Paper Pick</h3>
       <ProductCard
         title={products[4].name}
+        asin={products[4].asin}
         image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
         badge={products[4].badge}
         rating={{ score: products[4].rating }}
@@ -405,6 +415,7 @@ const description = 'The best AeroPress filters in 2026, from classic paper to r
       <h3>6) AeroPress Flow Control Filter Cap — Best for Recipe Tinkerers</h3>
       <ProductCard
         title={products[5].name}
+        asin={products[5].asin}
         image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
         badge={products[5].badge}
         rating={{ score: products[5].rating }}
