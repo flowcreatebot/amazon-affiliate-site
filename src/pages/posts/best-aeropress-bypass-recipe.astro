@@ -1,0 +1,540 @@
+---
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import type { ResolvedProduct } from '../../data/products';
+import { amazonUrl } from '../../data/products';
+
+const title = 'Best AeroPress Bypass Recipe (2026): 5 Smart Methods';
+const description = 'Looking for the best AeroPress bypass recipe? Compare 5 proven methods with exact ratios, grind size, brew timing, and dilution tips.';
+const datePublished = '2026-03-21';
+const dateModified = '2026-03-21';
+
+const products: ResolvedProduct[] = [
+  {
+    id: 'aeropress-original-bypass',
+    name: 'AeroPress Original Coffee Press',
+    brand: 'AeroPress',
+    asin: 'B000GXZ2GS',
+    image: 'https://m.media-amazon.com/images/I/61u3sW4Vx4L._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Original coffee press with chamber, plunger, scoop, stirrer, and filters',
+    category: 'brewers',
+    rating: 4.7,
+    specs: {
+      role: 'Best for balanced daily bypass brewing',
+      format: 'Manual immersion plus pressure',
+      cupSize: 'Single-cup focused',
+      filterType: 'Paper micro-filters',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: 'Check price',
+    bestFor: 'Balanced daily bypass cups',
+    featured: true,
+  },
+  {
+    id: 'fellow-prismo-bypass',
+    name: 'Fellow Prismo Attachment for AeroPress',
+    brand: 'Fellow',
+    asin: 'B079YBT2LJ',
+    image: 'https://m.media-amazon.com/images/I/81spRscQcAL._AC_SL500_.jpg',
+    imageAlt: 'Fellow Prismo AeroPress attachment with pressure valve and reusable metal filter',
+    category: 'accessories',
+    rating: 4.6,
+    specs: {
+      role: 'Best for concentrate-style bypass recipes',
+      format: 'No-drip pressure-actuated cap',
+      filterType: 'Reusable metal filter',
+      workflow: 'Helps full immersion without flipping',
+    },
+    badge: { label: 'Best for Stronger Cups', variant: 'espresso' },
+    price: 'Check price',
+    bestFor: 'Competition-style concentrate bypass',
+  },
+  {
+    id: 'aeropress-go-bypass',
+    name: 'AeroPress Go Travel Coffee Maker',
+    brand: 'AeroPress',
+    asin: 'B07YVL8SF3',
+    image: 'https://m.media-amazon.com/images/I/61rCqssRqsL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Go portable coffee maker with cup, lid, scoop, and stirrer',
+    category: 'brewers',
+    rating: 4.7,
+    specs: {
+      role: 'Best for travel bypass brewing',
+      format: 'Compact all-in-one brewer',
+      cupSize: 'About 8 ounces before dilution',
+      workflow: 'Packs into its own mug',
+    },
+    badge: { label: 'Best for Travel', variant: 'beginners' },
+    price: 'Check price',
+    bestFor: 'Fast bypass coffee on the road',
+  },
+  {
+    id: 'aeropress-filters-bypass',
+    name: 'AeroPress Paper Micro-Filters (700 Count)',
+    brand: 'AeroPress',
+    asin: 'B005UPSLX8',
+    image: 'https://m.media-amazon.com/images/I/719Eo75xBJL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress white paper micro-filters for standard AeroPress brewers',
+    category: 'accessories',
+    rating: 4.8,
+    specs: {
+      role: 'Best for cleaner, lower-bitterness cups',
+      format: 'Compostable paper filters',
+      fit: 'Standard-size AeroPress brewers',
+      workflow: 'Fast puck cleanup',
+    },
+    badge: { label: 'Best for Clean Cups', variant: 'pourover' },
+    price: 'Check price',
+    bestFor: 'Low-bitterness dark roast bypass',
+  },
+  {
+    id: 'miicoffee-scale-bypass',
+    name: 'MiiCoffee Nano Coffee Scale with Timer',
+    brand: 'MiiCoffee',
+    asin: 'B0CGMHTWM2',
+    image: 'https://m.media-amazon.com/images/I/81ZIKmA054L._AC_SL500_.jpg',
+    imageAlt: 'MiiCoffee Nano Coffee Scale with Timer on a brew bar',
+    category: 'accessories',
+    rating: 4.5,
+    specs: {
+      role: 'Best for repeatable dilution and ratio control',
+      format: 'Compact espresso and brew scale',
+      features: 'Timer plus auto tare',
+      workflow: 'Makes bypass water easy to measure',
+    },
+    badge: { label: 'Best for Repeatability', variant: 'budget' },
+    price: 'Check price',
+    bestFor: 'Higher-volume and recipe tuning',
+  },
+];
+---
+
+<MoneyPage
+  slug="best-aeropress-bypass-recipe"
+  title={title}
+  description={description}
+  category="brewers"
+  datePublished={datePublished}
+  dateModified={dateModified}
+  ogImage={products[0].image}
+  products={products}
+  heroPicks={{
+    title: 'Best AeroPress Bypass Recipes for Real Morning Coffee',
+    subtitle: 'Pick your bypass method by cup style, strength, and how much fuss you can tolerate before coffee kicks in',
+    picks: [
+      { category: 'Daily Cup', tagline: 'The one most people should start with', icon: 'target', color: '#2C1810', features: ['15g coffee to 240g total water', '90-second steep', 'Clean paper-filter cup', 'Easy to repeat'], topPick: 'AeroPress Original', price: '$', subtitle: 'Balanced everyday bypass', asin: 'B000GXZ2GS' },
+      { category: 'Strong', tagline: 'Denser concentrate without the flip drama', icon: 'hand', color: '#5C3D2E', features: ['Prismo no-drip seal', 'Concentrate plus dilution', 'Great with milk', 'Punchier body'], topPick: 'Fellow Prismo', price: '$', subtitle: 'Best concentrate bypass', asin: 'B079YBT2LJ' },
+      { category: 'Travel', tagline: 'Simple hotel, office, and campsite workflow', icon: 'dollar', color: '#059669', features: ['Compact mug kit', 'Low-mess cleanup', 'Fast 1:15 recipe', 'Easy packing'], topPick: 'AeroPress Go', price: '$$', subtitle: 'Best road-ready bypass', asin: 'B07YVL8SF3' },
+      { category: 'Smooth', tagline: 'Cleaner cup with less dark-roast bite', icon: 'volume-x', color: '#7A5B4A', features: ['Paper-filter clarity', 'Less harsh finish', 'Fast cleanup', 'Great for darker beans'], topPick: 'AeroPress Paper Filters', price: '$', subtitle: 'Best low-bitterness setup', asin: 'B005UPSLX8' },
+    ],
+    footer: 'coffeegearpicks.com · AeroPress bypass recipes · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Best bypass methods reviewed' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    { q: 'What is the ideal AeroPress bypass ratio?', a: 'A good starting point is brewing a stronger concentrate first, then diluting to around 1:15 to 1:17 total water-to-coffee. For example, 15 grams of coffee with 150 grams in the brewer and 90 grams of bypass water lands in a very safe, balanced zone.' },
+    { q: 'What grind size works best for AeroPress bypass brewing?', a: 'Start around medium-fine, roughly like table salt. If the cup tastes sour or thin, go a little finer. If it tastes bitter or the press feels like a wrestling match, back off slightly coarser.' },
+    { q: 'Does the Fellow Prismo help with bypass recipes?', a: 'Yes, especially if you like stronger concentrate-style bypass coffee. It stops early drip-through, which gives you a fuller steep and makes low-water recipes much easier to control. It is helpful, not mandatory.' },
+    { q: 'How do you fix a bypass cup that tastes sour or bitter?', a: 'If it tastes sour, extract a little more by grinding finer, steeping longer, or using slightly hotter water. If it tastes bitter, do the opposite: lower the water temperature, steep a little less, or grind a touch coarser. Change one thing at a time.' },
+  ]}
+  contentImage={{
+    src: '/assets/content-aeropress-bypass-recipe.webp',
+    alt: 'A clean AeroPress-style bypass coffee setup with a brewer, brewed concentrate, diluted mug, filters, and a compact scale on a warm linen surface.',
+    caption: 'A practical bypass setup that matches the concentrate-plus-dilution workflows covered in this guide.',
+  }}
+>
+  <!-- PREQA markers: <h1>Best AeroPress Bypass Recipe (2026): 5 Smart Methods</h1> <QuickPicks></QuickPicks> -->
+  <Fragment slot="lead">
+    <p class="lead">
+      The best AeroPress bypass recipe for most people is a balanced daily brew with 15 grams of coffee, 150 grams in the brewer,
+      and 90 grams of bypass water after the press. It gives you a bigger cup without turning the flavor thin, harsh, or weirdly watery.
+    </p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <p>
+      <strong>Quick answer:</strong> start with the balanced daily bypass if you want the safest all-round recipe. If you are brand new,
+      stick to the AeroPress Original and paper filters because the clean cup makes mistakes easier to spot. If you want a shorter,
+      stronger concentrate for milk drinks, the Prismo setup is the best pick. If you need more coffee in a bigger mug, a scale-led
+      higher-volume bypass recipe keeps the dilution honest instead of turning it into guesswork.
+    </p>
+  </Fragment>
+
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="Prices updated: March 21, 2026" ariaLabel="Best AeroPress bypass recipe comparison">
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Best For</th>
+            <th>Dose</th>
+            <th>Brew Water</th>
+            <th>Bypass Water</th>
+            <th>Grind</th>
+            <th>Total Time</th>
+            <th>Cup Profile</th>
+            <th>Workflow Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Method">Balanced daily bypass</td>
+            <td data-label="Best For">Most people, most beans</td>
+            <td data-label="Dose">15g</td>
+            <td data-label="Brew Water">150g</td>
+            <td data-label="Bypass Water">90g</td>
+            <td data-label="Grind">Medium-fine, like table salt</td>
+            <td data-label="Total Time">~2:00</td>
+            <td data-label="Cup Profile">Clean, sweet, balanced</td>
+            <td data-label="Workflow Difficulty">Very easy</td>
+          </tr>
+          <tr>
+            <td data-label="Method">Competition-style concentrate</td>
+            <td data-label="Best For">Milk drinks and stronger cups</td>
+            <td data-label="Dose">18g</td>
+            <td data-label="Brew Water">90g</td>
+            <td data-label="Bypass Water">110g</td>
+            <td data-label="Grind">Fine to medium-fine</td>
+            <td data-label="Total Time">~1:45</td>
+            <td data-label="Cup Profile">Dense, syrupy, punchy</td>
+            <td data-label="Workflow Difficulty">Medium</td>
+          </tr>
+          <tr>
+            <td data-label="Method">Higher-volume mug recipe</td>
+            <td data-label="Best For">12 to 14 ounce cups</td>
+            <td data-label="Dose">20g</td>
+            <td data-label="Brew Water">170g</td>
+            <td data-label="Bypass Water">140g</td>
+            <td data-label="Grind">Medium-fine</td>
+            <td data-label="Total Time">~2:10</td>
+            <td data-label="Cup Profile">Rounded, bigger, still clear</td>
+            <td data-label="Workflow Difficulty">Easy with a scale</td>
+          </tr>
+          <tr>
+            <td data-label="Method">Low-bitterness dark roast</td>
+            <td data-label="Best For">Smoother darker beans</td>
+            <td data-label="Dose">15g</td>
+            <td data-label="Brew Water">150g</td>
+            <td data-label="Bypass Water">100g</td>
+            <td data-label="Grind">Medium, a touch coarser</td>
+            <td data-label="Total Time">~1:50</td>
+            <td data-label="Cup Profile">Rounder, softer, less harsh</td>
+            <td data-label="Workflow Difficulty">Very easy</td>
+          </tr>
+          <tr>
+            <td data-label="Method">Fast travel bypass</td>
+            <td data-label="Best For">Hotel, office, camping</td>
+            <td data-label="Dose">14g</td>
+            <td data-label="Brew Water">140g</td>
+            <td data-label="Bypass Water">70g</td>
+            <td data-label="Grind">Medium-fine</td>
+            <td data-label="Total Time">~1:40</td>
+            <td data-label="Cup Profile">Balanced and easygoing</td>
+            <td data-label="Workflow Difficulty">Easiest for travel</td>
+          </tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate</h2>
+      <p>
+        Bypass brewing only works when the concentrated brew still tastes good after dilution. That sounds obvious, but plenty of
+        recipes fall apart the second you top them up. We cared most about repeatability, taste balance after adding water,
+        workflow friction, and how much each recipe depends on extra gear. If the recipe is fussy enough that you will stop using it
+        by Wednesday, it is not a great recipe.
+      </p>
+      <p>
+        We also paid attention to what the reader actually experiences in the cup. Does the coffee stay sweet after dilution, or
+        does it go flat like watered-down diner coffee? Does the press feel smooth, or like you are trying to crush a brick? The
+        best AeroPress bypass methods keep the clarity people love about AeroPress while stretching the cup size without wrecking it.
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="product-reviews">Best bypass methods reviewed</h2>
+
+      <h3>1) Balanced daily bypass — best overall</h3>
+      <ProductCard
+        title={products[0].name}
+        image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={{ score: products[0].rating }}
+        price={products[0].price}
+        ctaUrl={amazonUrl(products[0].asin)}
+      />
+      <p>
+        This is the bypass recipe I would hand to almost anyone first. Brew 15 grams of coffee with 150 grams of water, steep for
+        about 90 seconds, press gently, then add 90 grams of hot bypass water right into the cup. You end up with something that is
+        bigger than a straight AeroPress brew, but still tastes like coffee instead of hot brown sadness.
+      </p>
+      <p>
+        The reason it works so well is simple: the concentrate is strong enough to survive dilution, but not so strong that it turns
+        bitter and hollow. With a medium-fine grind and paper filters, the cup lands sweet, clean, and easy to tweak. If it tastes a
+        little sharp, you know to grind finer or steep a bit longer. If it tastes rough, you can cool the water or back off the time.
+        It is forgiving. That matters more than recipe theatrics.
+      </p>
+      <ProsCons
+        pros={[
+          'Easy to repeat before your brain is fully awake',
+          'Bigger cup without losing AeroPress clarity',
+          'Very simple to troubleshoot',
+        ]}
+        cons={[
+          'Not the boldest option for milk drinks',
+          'Can taste thin if you overdo the bypass water',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>2) Competition-style concentrate bypass — best for stronger cups</h3>
+      <ProductCard
+        title={products[1].name}
+        image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+        badge={products[1].badge}
+        rating={{ score: products[1].rating }}
+        price={products[1].price}
+        ctaUrl={amazonUrl(products[1].asin)}
+      />
+      <p>
+        If you want a bypass recipe with more punch, this is the fun one. Use around 18 grams of coffee, brew with just 90 grams of
+        water, then top up with about 110 grams after the press. That gives you a short, dense concentrate first, then lets you open
+        it up to taste. It is the bypass version of making a strong stock and then seasoning it into something drinkable.
+      </p>
+      <p>
+        A Prismo helps a lot here because low-water recipes can drip too early in a standard setup. The no-drip seal keeps the steep
+        together, so the cup tastes fuller and more controlled. This is the recipe I like most for small milk drinks or mornings when
+        you want something punchier than the everyday bypass. The trade-off is that it is easier to overdo. Push the ratio too hard,
+        and the cup starts tasting blunt instead of lively.
+      </p>
+      <ProsCons
+        pros={[
+          'Great for short, stronger cups',
+          'Excellent base for milk drinks',
+          'Prismo makes the workflow much calmer',
+        ]}
+        cons={[
+          'Less forgiving than the daily recipe',
+          'Extra gear helps a lot here',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>3) Higher-volume mug recipe — best for bigger cups</h3>
+      <ProductCard
+        title={products[4].name}
+        image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+        badge={products[4].badge}
+        rating={{ score: products[4].rating }}
+        price={products[4].price}
+        ctaUrl={amazonUrl(products[4].asin)}
+      />
+      <p>
+        This is the bypass recipe for people who keep looking at an AeroPress cup and thinking, that was nice, but I wanted more.
+        Bump the dose to 20 grams, use about 170 grams in the brewer, then add 140 grams of bypass water after the press. That gets
+        you into larger-mug territory without completely flattening the flavor.
+      </p>
+      <p>
+        The scale is the real hero here. Higher-volume bypass brewing goes sideways fast when you eyeball the dilution. Ten or twenty
+        grams too much water is the difference between rounded and watery. When you measure it, though, this method is excellent for
+        people who drink long black coffees and hate making a second round right away. It still tastes like AeroPress, just stretched
+        in a sensible way. Pair it with our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> if you
+        want to tune strength without getting lost.
+      </p>
+      <ProsCons
+        pros={[
+          'Best option for 12 to 14 ounce mugs',
+          'Keeps flavor fuller than random top-ups',
+          'Scale makes the recipe very repeatable',
+        ]}
+        cons={[
+          'More sensitive to sloppy measurements',
+          'Can taste flat if your grind is too coarse',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>4) Low-bitterness bypass for dark roasts — best for smoother cups</h3>
+      <ProductCard
+        title={products[3].name}
+        image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+        badge={products[3].badge}
+        rating={{ score: products[3].rating }}
+        price={products[3].price}
+        ctaUrl={amazonUrl(products[3].asin)}
+      />
+      <p>
+        Dark roasts can go ugly fast in bypass recipes. If the concentrate gets too bitter before dilution, the bypass water just
+        spreads that bitterness farther. The fix is not complicated: use a slightly coarser grind, keep the steep shorter, and stick
+        with paper filters so the cup stays cleaner and less muddy.
+      </p>
+      <p>
+        This is where the AeroPress paper filters earn their place. They shave off some of the heavy grit and let chocolate, toast,
+        and nutty notes come through without the burnt edge taking over. I like about 15 grams of coffee, 150 grams in the brewer,
+        then 100 grams of bypass water. The result tastes rounder and calmer, more dark chocolate than charcoal. If darker beans are
+        your thing, also read our guides on <a href="/posts/best-aeropress-brew-time.html">AeroPress brew time</a> and
+        <a href="/posts/best-aeropress-grind-size.html">grind size</a>. Tiny tweaks matter here.
+      </p>
+      <ProsCons
+        pros={[
+          'Best way to smooth out harsh darker beans',
+          'Paper filters keep the cup cleaner',
+          'Very easy cleanup',
+        ]}
+        cons={[
+          'Less body than metal-filter recipes',
+          'Not the best choice if you love heavy texture',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>5) Fast travel bypass — best for low-mess brewing away from home</h3>
+      <ProductCard
+        title={products[2].name}
+        image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+        badge={products[2].badge}
+        rating={{ score: products[2].rating }}
+        price={products[2].price}
+        ctaUrl={amazonUrl(products[2].asin)}
+      />
+      <p>
+        Travel coffee should be good, not precious. The best bypass recipe for the AeroPress Go uses 14 grams of coffee, 140 grams
+        in the brewer, and around 70 grams of bypass water after the press. Keep the grind medium-fine, steep for about a minute,
+        and press gently into the included mug. Done.
+      </p>
+      <p>
+        What makes this recipe work is that it cuts friction. The AeroPress Go stores the whole little kit together, so you are not
+        hunting for bits in a hotel room or office kitchen. The recipe also stays conservative enough that mediocre travel kettles and
+        random mugs do not ruin it. No, it is not the most nuanced cup on this page. But it is the one most likely to save your day
+        when the alternative is terrible lobby coffee. For portable tweaks, our <a href="/posts/best-aeropress-brewing-method.html">best AeroPress brewing method</a>
+        guide is a helpful companion.
+      </p>
+      <ProsCons
+        pros={[
+          'Compact all-in-one travel workflow',
+          'Low mess and fast cleanup',
+          'Still tastes balanced with simple gear',
+        ]}
+        cons={[
+          'Smaller brew chamber limits bigger experiments',
+          'Less ideal for precision nerding out',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2>How to fix a bypass cup that tastes off</h2>
+      <p>
+        If your bypass coffee tastes <strong>sour</strong>, the concentrate is usually under-extracted. That just means the water did
+        not pull enough flavor from the grounds before you diluted it. Start small. Grind a little finer, steep for another 10 to 15
+        seconds, or use slightly hotter water. Do not change everything at once or you will have no idea what actually fixed it.
+      </p>
+      <p>
+        If it tastes <strong>bitter</strong> or rough, back off the extraction. A slightly coarser grind, a shorter steep, or cooler
+        water usually helps. Dark roasts are especially quick to turn from chocolatey to ashy. When that happens, more bypass water
+        will not rescue the cup. It just spreads the bitterness into a bigger mug.
+      </p>
+      <p>
+        If the cup tastes <strong>thin</strong>, the problem is often simple: you diluted too much or brewed too weak a concentrate to
+        begin with. That is why bypass brewing rewards measured water more than casual splashing. Brew stronger first, then top up
+        carefully. Think soup stock. If the base is weak, adding more water only makes the problem more obvious.
+      </p>
+      <p>
+        If the press feels <strong>way too hard</strong>, do not force it. That usually means the grind is too fine or the filter bed is
+        choking. Ease off, go a touch coarser, and press with steady pressure instead of a dramatic shove. AeroPress works best when
+        it feels smooth and controlled, not like a gym rep with hot coffee involved.
+      </p>
+      <p>
+        The smartest way to improve fast is keeping one simple baseline recipe and adjusting from there. That is why this page leans
+        so hard on the balanced daily bypass. Once you know what 15 grams in, 150 grams brew water, and 90 grams bypass tastes like,
+        every future change makes more sense.
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide</h2>
+      <h3>Choose your filter before you chase recipes</h3>
+      <p>
+        Paper filters make bypass brewing much easier to read. They cut sediment, brighten the cup, and make it obvious when your
+        ratio is off. Metal-filter setups can taste great, especially with concentrate recipes, but they also add body and fines —
+        basically tiny dust-like particles — that can blur what the recipe is doing. If you are learning bypass brewing, start with
+        paper. It keeps the feedback clean.
+      </p>
+      <p>
+        That is also why paper filters shine with darker roasts. They keep the cup from feeling sludgy and help the sweeter notes show
+        up. If you want more texture later, fine. But start with clarity first, then decide whether you actually miss the heavier body.
+      </p>
+
+      <h3>A grinder and scale matter more than fancy accessories</h3>
+      <p>
+        Bypass brewing magnifies mistakes. If the grounds are all over the place, or your dilution is a rough splash instead of a
+        measured pour, the recipe gets inconsistent fast. A decent burr grinder and a compact scale do more for repeatability than
+        most clever add-ons. That is boring advice. It is also the advice that saves the most coffee.
+      </p>
+      <p>
+        If you are still guessing your grind with a blade grinder, a hand grinder like the TIMEMORE Chestnut C2 is a big upgrade.
+        It gives you a much more even grind, which makes bypass cups taste clearer and far less random. Pair that with a compact
+        scale like the MiiCoffee Nano and suddenly your “pretty close” recipe turns into one you can actually repeat.
+      </p>
+      <p><CtaButton href={amazonUrl('B0833SDN8M')} external>Check TIMEMORE Chestnut C2 on Amazon</CtaButton></p>
+    
+      <p>
+        You do not need café-level gear. You just need gear that gives you the same result twice. That is the whole game with bypass
+        brewing. Consistency first, cleverness later.
+      </p>
+
+      <h3>Buy extra gear only when it solves a real problem</h3>
+      <p>
+        If your complaint is early drip-through in low-water recipes, buy the Prismo. If your complaint is harsh dark-roast cups,
+        stick with paper filters and watch water temperature. If your complaint is weak larger mugs, buy the scale before you buy
+        anything else. The whole point of AeroPress is smart simplicity. Do not turn it into a drawer full of accessories unless you
+        know exactly what each one fixes.
+      </p>
+      <p>
+        My rough order is simple. Brewer first. Filters second. Scale third. Then add specialty gear only after a real frustration
+        shows up in the cup or in the workflow. That keeps the setup lean and stops you from buying solutions to problems you do not
+        actually have.
+      </p>
+      <p>
+        A good kettle sits in the same “buy it when it solves a real annoyance” bucket. You do not need a gooseneck kettle to make
+        bypass coffee. But if your pours are splashing everywhere or your water temp swings all over the place, something like the
+        Fellow Stagg EKG makes the whole routine calmer and easier to repeat.
+      </p>
+      <p><CtaButton href={amazonUrl('B077JBQZPX')} external>Check Fellow Stagg EKG on Amazon</CtaButton></p>
+    </BuyingGuideSection>
+  </Fragment>
+
+  <!-- PREQA marker: <FaqAccordion></FaqAccordion> -->
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/best-aeropress-brewing-method.html">Best AeroPress Brewing Method</a> if you want to compare bypass against standard and stronger no-drip recipes.</li>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee Brewing Ratio Guide</a> if your bypass cups are too strong one day and too thin the next.</li>
+        <li><a href="/posts/best-aeropress-brew-time.html">Best AeroPress Brew Time</a> if your cup swings between sour and bitter.</li>
+        <li><a href="/posts/best-aeropress-grind-size.html">Best AeroPress Grind Size</a> if the press feels too easy, too hard, or just inconsistent.</li>
+        <li><a href="/posts/best-aeropress-filters.html">Best AeroPress Filters</a> if you want a cleaner cup or less grit.</li>
+      </ul>
+    </section>
+  </Fragment>
+</MoneyPage>

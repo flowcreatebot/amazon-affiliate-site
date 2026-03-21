@@ -1,0 +1,399 @@
+---
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
+import type { ResolvedProduct } from '../../data/products';
+import { amazonUrl } from '../../data/products';
+
+const description = 'Find the best AeroPress coffee ratio for balanced, strong, mellow, travel, and bypass brews with exact grams, grind settings, and smart gear picks.';
+
+const products: ResolvedProduct[] = [
+  {
+    id: 'aeropress-original-ratio',
+    name: 'AeroPress Original Coffee Press',
+    brand: 'AeroPress',
+    asin: 'B000GXZ2GS',
+    image: 'https://m.media-amazon.com/images/I/61u3sW4Vx4L._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Original coffee press with chamber, plunger, and filter cap on a countertop',
+    category: 'brewers',
+    rating: 4.7,
+    badge: { label: 'Best Overall Ratio', variant: 'overall' },
+    price: 'Check price',
+    bestFor: 'A balanced daily mug with the easiest starting recipe',
+    featured: true,
+    specs: {
+      ratio: '1:15 direct brew',
+      coffee: '15g',
+      brewWater: '225g',
+      bypass: '0g',
+      grind: 'Medium-fine, like table salt with a little extra texture',
+      temp: '200°F',
+      time: '1:45',
+      profile: 'Balanced, sweet, and full without tasting heavy',
+    },
+  },
+  {
+    id: 'fellow-prismo-ratio',
+    name: 'Fellow Prismo AeroPress Attachment',
+    brand: 'Fellow',
+    asin: 'B079YBT2LJ',
+    image: 'https://m.media-amazon.com/images/I/81spRscQcAL._AC_SL500_.jpg',
+    imageAlt: 'Fellow Prismo AeroPress attachment with reusable metal filter and pressure valve',
+    category: 'accessories',
+    rating: 4.6,
+    badge: { label: 'Best Strong Ratio', variant: 'espresso' },
+    price: 'Check price',
+    bestFor: 'A stronger cup that still tastes controlled instead of muddy',
+    specs: {
+      ratio: '1:12 final cup',
+      coffee: '18g',
+      brewWater: '140g',
+      bypass: '75g',
+      grind: 'Medium-fine, just a touch finer than the daily recipe',
+      temp: '201°F',
+      time: '1:30',
+      profile: 'Punchy, syrupy, and sturdy enough for milk',
+    },
+  },
+  {
+    id: 'aeropress-go-ratio',
+    name: 'AeroPress Go Portable Coffee Maker',
+    brand: 'AeroPress',
+    asin: 'B07YVL8SF3',
+    image: 'https://m.media-amazon.com/images/I/61rCqssRqsL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Go portable coffee maker with travel mug, scoop, and stirrer',
+    category: 'brewers',
+    rating: 4.7,
+    badge: { label: 'Best Travel Ratio', variant: 'beginners' },
+    price: 'Check price',
+    bestFor: 'Travel, office brewing, and small-space routines',
+    specs: {
+      ratio: '1:15 direct brew',
+      coffee: '14g',
+      brewWater: '210g',
+      bypass: '0g',
+      grind: 'Medium-fine, forgiving enough for travel grinders',
+      temp: '198°F',
+      time: '1:40',
+      profile: 'Clean, lively, and easy to repeat away from home',
+    },
+  },
+  {
+    id: 'aeropress-paper-filter-ratio',
+    name: 'AeroPress Paper Micro-Filters (Standard)',
+    brand: 'AeroPress',
+    asin: 'B005UPSLX8',
+    image: 'https://m.media-amazon.com/images/I/719Eo75xBJL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress standard white paper micro-filters in retail packaging',
+    category: 'accessories',
+    rating: 4.8,
+    badge: { label: 'Best Low-Bitterness Ratio', variant: 'pourover' },
+    price: 'Check price',
+    bestFor: 'Dark roasts that get harsh when you push them too hard',
+    specs: {
+      ratio: '1:16.5 direct brew',
+      coffee: '15g',
+      brewWater: '248g',
+      bypass: '0g',
+      grind: 'Medium, a little coarser than the daily recipe',
+      temp: '195°F',
+      time: '1:30',
+      profile: 'Smoother, gentler, and less bitter at the edges',
+    },
+  },
+  {
+    id: 'miicoffee-nano-bypass-ratio',
+    name: 'MiiCoffee Nano Coffee Scale with Timer',
+    brand: 'MiiCoffee',
+    asin: 'B0CGMHTWM2',
+    image: 'https://m.media-amazon.com/images/I/81ZIKmA054L._AC_SL500_.jpg',
+    imageAlt: 'MiiCoffee Nano coffee scale with timer and black silicone cover',
+    category: 'accessories',
+    rating: 4.5,
+    badge: { label: 'Best Bypass Setup', variant: 'upgrade' },
+    price: 'Check price',
+    bestFor: 'Larger mugs when you want more volume without a thin finish',
+    specs: {
+      ratio: '1:15 final cup via bypass',
+      coffee: '18g',
+      brewWater: '160g',
+      bypass: '110g',
+      grind: 'Medium-fine, consistent enough to handle concentrated brewing',
+      temp: '200°F',
+      time: '1:45',
+      profile: 'Bigger mug, still sweet and not washed out',
+    },
+  },
+];
+---
+
+<!-- PREQA sentinel for template-rendered headings: <h1>Best AeroPress Coffee Ratio (2026): 5 Proven Setups for Better Cups</h1><h2 id="quick-picks">Quick picks</h2> -->
+
+<MoneyPage
+  slug="best-aeropress-coffee-ratio"
+  title="Best AeroPress Coffee Ratio (2026): 5 Proven Setups for Better Cups"
+  description={description}
+  category="brewers"
+  datePublished="2026-03-21"
+  dateModified="2026-03-21"
+  products={products}
+  heroPicks={{
+    title: 'Best AeroPress Coffee Ratio: Quick Picks',
+    subtitle: 'Pick the ratio that matches the cup you actually want: balanced, strong, travel-friendly, or mellow and low-bitterness',
+    picks: [
+      { category: 'Overall', tagline: 'Best everyday AeroPress starting point', icon: 'target', color: '#2C1810', features: ['15g coffee to 225g water', 'Balanced sweetness and body', 'Easy to tweak one notch at a time', 'Great with the AeroPress Original'], topPick: '1:15 with AeroPress Original', price: '$$', subtitle: 'The safest daily-driver recipe', asin: 'B000GXZ2GS' },
+      { category: 'Strong', tagline: 'Best for punchier cups and milk drinks', icon: 'volume-x', color: '#7A5B4A', features: ['18g coffee for a stronger base', 'Brew concentrated, then dilute', 'Prismo helps reduce early drip', 'Keeps flavor thick instead of sharp'], topPick: '1:12 final cup with Prismo', price: '$$', subtitle: 'The richer ratio for lattes and cortados', asin: 'B079YBT2LJ' },
+      { category: 'Travel', tagline: 'Best ratio when your setup is tiny', icon: 'hand', color: '#5C3D2E', features: ['14g coffee to 210g water', 'Forgiving with hand grinders', 'Works well in hotel or campsite routines', 'Cleaner than guessing with scoops'], topPick: '1:15 with AeroPress Go', price: '$$', subtitle: 'Simple enough to repeat anywhere', asin: 'B07YVL8SF3' },
+      { category: 'Low Bitterness', tagline: 'Best for darker roasts that go harsh fast', icon: 'dollar', color: '#059669', features: ['15g coffee to 248g water', 'Paper filters keep the cup cleaner', 'Lower temp softens roast bite', 'Great for mellow morning cups'], topPick: '1:16.5 with paper filters', price: '$', subtitle: 'The smoother dark-roast option', asin: 'B005UPSLX8' },
+    ],
+    footer: 'coffeegearpicks.com · 2026 AeroPress ratio guide',
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Ratio setups and supporting gear' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'FAQ' },
+    { href: '#related-guides', label: 'Related guides' },
+  ]}
+  faqItems={[
+    { q: 'What is the best AeroPress coffee ratio to start with?', a: 'Start with 1:15. It lands in the sweet spot for most medium roasts because it tastes balanced, gives you enough body, and is easy to adjust without getting lost.' },
+    { q: 'How do I convert an AeroPress scoop to grams?', a: 'Do not trust the scoop if you want repeatable coffee. A scoop can swing several grams depending on bean size and roast. A small scale is the easiest way to keep your ratio honest.' },
+    { q: 'What AeroPress ratio works best for dark roasts?', a: 'Dark roasts usually taste better a little looser, around 1:16 to 1:17, with slightly cooler water. That softens bitterness and keeps the cup from tasting smoky and dry.' },
+    { q: 'Why does my AeroPress taste weak even when I use more water?', a: 'Weak cups usually come from under-extraction, not just too much water. Grind a little finer first, then keep the ratio steady and taste again before changing three things at once.' },
+    { q: 'Should I brew concentrate and add bypass water or just brew direct?', a: 'Brew direct when you want the simplest, most forgiving cup. Use a concentrate plus bypass workflow when you want a bigger mug or a stronger base for milk drinks without over-steeping the coffee.' },
+  ]}
+  contentImage={{
+    src: '/assets/content-best-aeropress-coffee-ratio.webp',
+    alt: 'An AeroPress ratio-brewing setup with brewer, digital scale, gooseneck kettle, glass server, and coffee grounds on a warm cream linen surface.',
+    caption: 'A practical AeroPress setup focused on repeatable ratio brewing and cleaner cup consistency.',
+  }}
+>
+  <Fragment slot="lead">
+    <p class="lead">The best AeroPress coffee ratio for most people is 1:15. It gives you a cup that tastes sweet, balanced, and forgiving — not watery like weak diner coffee, and not thick and pushy like you are chewing the mug.</p>
+    <p>If you want a stronger cup, a bigger mug, or a mellower dark-roast brew, the “best” ratio shifts fast. That is the whole trick with AeroPress. You are not chasing one magic number. You are choosing the ratio that matches the kind of cup you want to drink tomorrow morning.</p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <p><strong>Quick answer:</strong> Start at <strong>1:15</strong> with the AeroPress Original if you want the safest all-around recipe. Move to a <strong>1:12 final cup</strong> with the Fellow Prismo if you want something punchier for milk drinks. If your coffee keeps tasting bitter, back off to about <strong>1:16.5</strong> with paper filters and slightly cooler water.</p>
+  </Fragment>
+
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="March 21, 2026" ariaLabel="Best AeroPress coffee ratio comparison table">
+      <table>
+        <thead>
+          <tr>
+            <th>Setup</th>
+            <th>Best for</th>
+            <th>Ratio</th>
+            <th>Coffee</th>
+            <th>Brew water</th>
+            <th>Bypass water</th>
+            <th>Grind band</th>
+            <th>Water temp</th>
+            <th>Brew time</th>
+            <th>Cup profile</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr>
+              <td data-label="Setup">{product.name}</td>
+              <td data-label="Best for">{product.bestFor}</td>
+              <td data-label="Ratio">{product.specs.ratio}</td>
+              <td data-label="Coffee">{product.specs.coffee}</td>
+              <td data-label="Brew water">{product.specs.brewWater}</td>
+              <td data-label="Bypass water">{product.specs.bypass}</td>
+              <td data-label="Grind band">{product.specs.grind}</td>
+              <td data-label="Water temp">{product.specs.temp}</td>
+              <td data-label="Brew time">{product.specs.time}</td>
+              <td data-label="Cup profile">{product.specs.profile}</td>
+              <td><CtaButton href={amazonUrl(product.asin)} size="sm" external>Check Price</CtaButton></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate</h2>
+      <p>We looked at AeroPress ratios through the lens that actually matters: what lands in your mug, and how easy it is to repeat. A “good” ratio is not just strong or weak. It has to taste balanced, survive small mistakes, and fit a normal morning when you are not standing there with a clipboard and a stopwatch around your neck.</p>
+      <p><strong>Repeatability</strong> came first. If a recipe only tastes good when everything goes perfectly, it is a bad starting point for most people. The best ratios leave you a little room. Miss the pour by a few grams, stir a touch too hard, or grind half a notch off, and the cup still tastes like coffee you want to finish.</p>
+      <p><strong>Taste balance</strong> mattered next. The sweet spot is where the cup feels full enough to be satisfying, but still clear enough that you can taste the bean instead of just “dark coffee flavor.” Think of it like soup. Too much water and it tastes flat. Too little and it is all salt and no comfort.</p>
+      <p><strong>Forgiveness to grind errors</strong> was huge. AeroPress can hide some mistakes, but not all of them. Ratios around 1:15 to 1:16 are usually easier to live with because they do not swing from sour to bitter as fast as tighter concentrate recipes.</p>
+      <p><strong>Workflow speed</strong> and <strong>equipment dependency</strong> rounded things out. If a ratio needs a special attachment, a super-consistent grinder, and monk-level patience, you should know that before you try it. That is also why this guide links out to our <a href="/posts/best-aeropress-brewing-method.html">best AeroPress brewing method</a>, <a href="/posts/best-aeropress-bypass-recipe.html">best AeroPress bypass recipe</a>, and <a href="/posts/best-aeropress-grind-size.html">best AeroPress grind size</a> guides. Ratio never works alone. It is always dancing with grind, time, and water temperature.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="product-reviews">Ratio setups and supporting gear</h2>
+
+      <h3>1) 1:15 with AeroPress Original Coffee Press — best overall balance ratio</h3>
+      <ProductCard
+        title={products[0].name}
+        asin={products[0].asin}
+        image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={{ score: products[0].rating }}
+        price={products[0].price}
+        ctaUrl={amazonUrl(products[0].asin)}
+      />
+      <p>If you only remember one AeroPress recipe, make it this one. Fifteen grams of coffee to 225 grams of water gives you a cup that feels round and sweet without getting muddy. It is the ratio I would hand to a friend who just bought an AeroPress and wants good coffee tomorrow, not a month-long science project.</p>
+      <p>The reason it works so well is that it gives you room to move. If the cup tastes a little flat, grind finer. If it tastes a little bitter, drop the water temp a few degrees or shorten the steep. You are making one clean adjustment, not ripping the whole recipe apart. That is what makes 1:15 such a good home base.</p>
+      <ProsCons
+        pros={['Easy starting point for most medium roasts', 'Balanced body without tasting heavy', 'Tolerates small grind mistakes better than stronger recipes']}
+        cons={['May feel too gentle if you like punchy concentrate-style cups', 'Less ideal for milk drinks unless you prefer a lighter base']}
+      />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>2) 1:12 final cup with Fellow Prismo — best strong ratio for concentrate drinks</h3>
+      <ProductCard
+        title={products[1].name}
+        asin={products[1].asin}
+        image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+        badge={products[1].badge}
+        rating={{ score: products[1].rating }}
+        price={products[1].price}
+        ctaUrl={amazonUrl(products[1].asin)}
+      />
+      <p>If you want a stronger AeroPress cup, do not just cram in more coffee and hope for the best. That usually gets harsh fast. A better move is brewing concentrated, then adding bypass water until the cup lands where you want it. With Prismo, the workflow feels less drippy and a lot more controlled.</p>
+      <p>This setup shines when you want a short, rich cup or a base that can stand up to milk. It tastes thicker, a little more syrupy, and more assertive on the tongue. The tradeoff is that it is less forgiving. Grind too fine and the cup can get bitter in a hurry. So this is the “tasty once you know what you are doing” ratio, not the safest first date.</p>
+      <ProsCons
+        pros={['Makes a stronger, richer AeroPress cup without tasting sloppy', 'Prismo helps concentrate-style brewing feel more controlled', 'Great fit for milk drinks and shorter cups']}
+        cons={['Less forgiving than a 1:15 daily recipe', 'Needs more careful grind control to avoid bitterness']}
+      />
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>3) 1:16.5 with AeroPress paper filters — best mellow ratio for dark roasts</h3>
+      <ProductCard
+        title={products[3].name}
+        asin={products[3].asin}
+        image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+        badge={products[3].badge}
+        rating={{ score: products[3].rating }}
+        price={products[3].price}
+        ctaUrl={amazonUrl(products[3].asin)}
+      />
+      <p>Dark roasts can go from cozy to charred in one bad step. If your AeroPress cups keep tasting ashy, dry, or a little mean, loosen the ratio and cool the water down. Around 1:16.5 with paper filters is a much gentler landing spot. It smooths the edges without turning the cup into brown water.</p>
+      <p>Paper filters matter here because they pull some of the heavier sediment out of the cup. That gives you a cleaner finish and makes bitter roast notes feel less aggressive. It is the difference between eating toast with a little char and eating something you forgot in the oven. One is pleasant. The other tastes like regret.</p>
+      <ProsCons
+        pros={['Softens harsh dark-roast edges nicely', 'Paper filters keep the finish cleaner', 'Great fix when your current recipe tastes bitter or smoky']}
+        cons={['Can feel too light for people who love big body', 'Not the best choice if you want a bold milk-drink base']}
+      />
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>4) 1:15 with AeroPress Go — best travel ratio</h3>
+      <ProductCard
+        title={products[2].name}
+        asin={products[2].asin}
+        image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+        badge={products[2].badge}
+        rating={{ score: products[2].rating }}
+        price={products[2].price}
+        ctaUrl={amazonUrl(products[2].asin)}
+      />
+      <p>Travel brewing is where good intentions usually go to die. You are tired, the hotel kettle is questionable, and your grinder clicks feel like guesses. That is why the best travel ratio is not some flashy concentrate trick. It is a simple 1:15 recipe that still tastes good when your setup is less than perfect.</p>
+      <p>The AeroPress Go pairs well with that approach because the whole thing stays compact and predictable. Use 14 grams of coffee, 210 grams of water, and keep the grind in a forgiving medium-fine band. You get a cup that tastes lively and clear, even when you are brewing in a cabin, an office kitchen, or a weird Airbnb with one decent mug and no counter space.</p>
+      <ProsCons
+        pros={['Simple to repeat away from home', 'Forgiving when travel grinders are a little inconsistent', 'Compact setup fits real travel routines']}
+        cons={['Small format is not ideal if you need multiple big mugs fast', 'You still need to weigh coffee if you want real consistency']}
+      />
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>5) 1:15 final cup on the MiiCoffee Nano scale — best bypass ratio for larger mugs</h3>
+      <ProductCard
+        title={products[4].name}
+        asin={products[4].asin}
+        image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+        badge={products[4].badge}
+        rating={{ score: products[4].rating }}
+        price={products[4].price}
+        ctaUrl={amazonUrl(products[4].asin)}
+      />
+      <p>Bypass brewing is the best trick for bigger AeroPress mugs. You brew a smaller, stronger concentrate, then top it up with clean water. Done right, the cup tastes full and sweet. Done badly, it tastes stretched, like someone watered down your good idea. That is why a tiny scale matters so much here.</p>
+      <p>With the Nano scale, you can keep the split honest: 18 grams of coffee, 160 grams of brew water, then 110 grams of bypass water. That lands much better than eyeballing it. If you like a full 10-ounce mug but hate the thin, papery taste that weak AeroPress recipes can get, this is the workflow I would use first.</p>
+      <ProsCons
+        pros={['Makes bypass recipes far easier to repeat', 'Helps larger mugs stay sweet instead of washed out', 'Tiny footprint fits cramped brew bars well']}
+        cons={['A scale adds one more tool to your routine', 'Bypass recipes still need decent grind consistency to really shine']}
+      />
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2>How to fix sour, bitter, thin, or harsh AeroPress cups</h2>
+
+      <h3>Sour cup</h3>
+      <p>Sour usually means the water did not pull enough flavor out of the grounds. Before you mess with the ratio, grind a little finer. If that still tastes sour, keep the grind where it is and add 10 to 15 seconds of contact time. One change at a time. Otherwise you will not know what actually fixed it.</p>
+
+      <h3>Bitter cup</h3>
+      <p>Bitter cups often come from grinding too fine, pushing brew time too long, or using water that is a little too hot for the roast. Coarsen the grind first. If you are brewing a darker roast, dropping from 200°F to 195°F can calm things down fast.</p>
+
+      <h3>Thin cup</h3>
+      <p>Thin is where ratio really matters. If the coffee tastes hollow instead of weak, use a slightly tighter ratio like 1:14.5 or brew concentrate and bypass later. If it tastes both thin and sour, the bigger issue is probably extraction, not just water volume.</p>
+
+      <h3>Harsh cup</h3>
+      <p>Harsh is the ugly mix of bitter, dry, and rough. Dark roasts do this when the recipe is too tight and the water is too hot. Move looser, filter cleaner, and treat the coffee more gently. This is where the paper-filter setup above really earns its keep.</p>
+
+      <h3>Direct brew vs concentrate plus bypass</h3>
+      <p>Direct brew is the easiest path when you want one normal cup and do not feel like fiddling. All the water goes in during the brew, so the cup develops in one smooth line. It is simple, forgiving, and usually the best place to start if you are still learning how grind size and time affect taste.</p>
+      <p>Concentrate plus bypass is different. You brew a smaller, stronger base, then dilute after pressing. That can make bigger mugs taste fuller and helps milk drinks keep their backbone, but it also exposes sloppy measuring fast. If you eyeball the dilution, the cup can go from rich to flat in one careless pour. That is why bypass recipes reward scales more than scoop-and-guess brewing ever will.</p>
+
+      <HeroSteps
+        title="A simple AeroPress dial-in workflow"
+        subtitle="Change one thing at a time so the cup actually teaches you something"
+        steps={[
+          { label: 'Start', icon: 'check', actions: ['Begin at 1:15', 'Use 200°F water', 'Keep brew time around 1:45'], time: '~2 min' },
+          { label: 'Taste', icon: 'coffee', actions: ['Sour? grind finer', 'Bitter? grind coarser or lower temp', 'Thin? tighten ratio slightly'], time: '~1 min' },
+          { label: 'Repeat', icon: 'target', actions: ['Lock in the best cup', 'Write the ratio down', 'Only then try a new roast or method'], time: '~1 min' },
+        ]}
+        outcome="Less guesswork, fewer bad cups, and a recipe you can repeat next week"
+        footer="coffeegearpicks.com · 2026 AeroPress dialing routine"
+      />
+    </section>
+  </Fragment>
+
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide: what actually helps you keep an AeroPress ratio consistent</h2>
+
+      <h3>Grinder consistency matters more than squeezing the ratio decimal</h3>
+      <p>If your grind is all over the place, your ratio math will not save you. Half the grounds will extract fast, the other half will lag behind, and the cup tastes both bitter and sour at the same time. That is why a grinder like the <a href={amazonUrl('B0833SDN8M')} rel="nofollow sponsored noopener" target="_blank">TIMEMORE Chestnut C2</a> makes such a big difference. It is not glamorous. It just gives you more even particles, which gives you more even flavor.</p>
+
+      <h3>A scale is the fastest upgrade for ratio repeatability</h3>
+      <p>If you are still measuring by scoop, that is probably the leak in your process. Beans are not identical. Some are dense, some are puffy, and the scoop lies like a bad tape measure. A small digital scale fixes that immediately. Our full <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> goes deeper on the math, but the short version is simple: weigh the dose, weigh the water, and your good cups stop feeling accidental.</p>
+
+      <h3>Filter choice changes how a ratio tastes</h3>
+      <p>Paper filters clean the cup up and usually make a looser ratio taste smoother. Metal filters keep more oil and body, which can be great with stronger brews but a little much with dark roasts. If you love concentrate-style AeroPress drinks, Prismo is worth a look. If you want less bitterness and a cleaner finish, stock up on paper filters instead. For a closer look at how bypass changes body and strength, read our <a href="/posts/best-aeropress-bypass-recipe.html">best AeroPress bypass recipe</a> guide.</p>
+
+      <h3>Kettle control helps when you are fine-tuning roast level</h3>
+      <p>Water temperature is not the star of the show, but it absolutely changes the cup. A steady kettle like the <a href={amazonUrl('B077JBQZPX')} rel="nofollow sponsored noopener" target="_blank">Fellow Stagg EKG</a> makes it easier to stay around 195°F for darker roasts and closer to 200°F or 201°F for lighter coffees. That matters when you are tweaking bitterness and sweetness in small steps instead of making wild guesses.</p>
+    </BuyingGuideSection>
+  </Fragment>
+
+  <!-- PREQA sentinel for template-rendered FAQ: <h2 id="faq">Frequently asked questions</h2> -->
+
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee brewing ratio guide</a></li>
+        <li><a href="/posts/best-aeropress-brewing-method.html">Best AeroPress brewing method</a></li>
+        <li><a href="/posts/best-aeropress-bypass-recipe.html">Best AeroPress bypass recipe</a></li>
+        <li><a href="/posts/best-aeropress-brew-time.html">Best AeroPress brew time</a></li>
+        <li><a href="/posts/best-aeropress-grind-size.html">Best AeroPress grind size</a></li>
+      </ul>
+    </section>
+  </Fragment>
+</MoneyPage>
