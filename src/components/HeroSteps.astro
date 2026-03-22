@@ -2,9 +2,8 @@
 interface Step {
   label: string;
   icon: string;
-  actions?: string[];
-  description?: string;
-  time?: string;
+  actions: string[];
+  time: string;
 }
 interface Props {
   title: string;
@@ -49,14 +48,10 @@ const icons: Record<string, string> = {
           <span class="hero-step-card__label">{step.label}</span>
         </div>
         <div class="hero-step-card__body">
-          {step.actions ? (
-            <ul class="hero-step-card__actions">
-              {step.actions.map((a) => <li>{a}</li>)}
-            </ul>
-          ) : step.description ? (
-            <p class="hero-step-card__desc">{step.description}</p>
-          ) : null}
-          {step.time && <span class="hero-step-card__time">{step.time}</span>}
+          <ul class="hero-step-card__actions">
+            {step.actions.map((a) => <li>{a}</li>)}
+          </ul>
+          <span class="hero-step-card__time">{step.time}</span>
         </div>
       </div>
     ))}

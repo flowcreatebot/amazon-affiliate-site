@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /content/
+Disallow: /research/
+Disallow: /metrics/
+
+Sitemap: https://coffeegearpicks.com/sitemap-index.xml
