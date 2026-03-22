@@ -1,25 +1,19 @@
 ---
-/**
- * ProsCons — balanced two-column analysis of any topic.
- * Use for weighing up approaches, technologies, strategies, or decisions.
- */
 interface Props {
   pros: string[];
   cons: string[];
-  prosTitle?: string;
-  consTitle?: string;
 }
-const { pros, cons, prosTitle = 'Advantages', consTitle = 'Disadvantages' } = Astro.props;
+const { pros, cons } = Astro.props;
 ---
 <div class="pros-cons">
   <div class="pros-cons__col --pros">
-    <h3>{prosTitle}</h3>
+    <h4>Pros</h4>
     <ul>
       {pros.map(item => <li>&check; {item}</li>)}
     </ul>
   </div>
   <div class="pros-cons__col --cons">
-    <h3>{consTitle}</h3>
+    <h4>Cons</h4>
     <ul>
       {cons.map(item => <li>&cross; {item}</li>)}
     </ul>
