@@ -204,7 +204,12 @@
     <ns0:changefreq>weekly</ns0:changefreq>
     <ns0:priority>0.8</ns0:priority>
   </ns0:url>
-<ns0:url><ns0:loc>https://coffeegearpicks.com/posts/best-espresso-machine-accessories.html</ns0:loc><ns0:lastmod>2026-03-18</ns0:lastmod><ns0:changefreq>weekly</ns0:changefreq><ns0:priority>0.8</ns0:priority></ns0:url>
+  <ns0:url>
+    <ns0:loc>https://coffeegearpicks.com/posts/best-espresso-machine-accessories.html</ns0:loc>
+    <ns0:lastmod>2026-03-18</ns0:lastmod>
+    <ns0:changefreq>weekly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
   <ns0:url>
     <ns0:loc>https://coffeegearpicks.com/posts/best-pour-over-accessories.html</ns0:loc>
     <ns0:lastmod>2026-03-19</ns0:lastmod>
@@ -235,7 +240,12 @@
     <ns0:changefreq>weekly</ns0:changefreq>
     <ns0:priority>0.8</ns0:priority>
   </ns0:url>
-<ns0:url><ns0:loc>https://coffeegearpicks.com/posts/best-aeropress-brewing-method.html</ns0:loc><ns0:lastmod>2026-03-20</ns0:lastmod><ns0:changefreq>weekly</ns0:changefreq><ns0:priority>0.8</ns0:priority></ns0:url>
+  <ns0:url>
+    <ns0:loc>https://coffeegearpicks.com/posts/best-aeropress-brewing-method.html</ns0:loc>
+    <ns0:lastmod>2026-03-20</ns0:lastmod>
+    <ns0:changefreq>weekly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
   <ns0:url>
     <ns0:loc>https://coffeegearpicks.com/posts/best-aeropress-bypass-recipe.html</ns0:loc>
     <ns0:lastmod>2026-03-21</ns0:lastmod>
@@ -266,4 +276,28 @@
     <ns0:changefreq>weekly</ns0:changefreq>
     <ns0:priority>0.8</ns0:priority>
   </ns0:url>
-<ns0:url><ns0:loc>https://coffeegearpicks.com/posts/best-aeropress-coffee-recipe.html</ns0:loc><ns0:lastmod>2026-03-21</ns0:lastmod><ns0:changefreq>weekly</ns0:changefreq><ns0:priority>0.8</ns0:priority></ns0:url><ns0:url><ns0:loc>https://coffeegearpicks.com/posts/best-aeropress-for-backpacking.html</ns0:loc><ns0:lastmod>2026-03-22</ns0:lastmod><ns0:changefreq>weekly</ns0:changefreq><ns0:priority>0.8</ns0:priority></ns0:url><ns0:url><ns0:loc>https://coffeegearpicks.com/posts/best-aeropress-grind.html</ns0:loc><ns0:lastmod>2026-03-22</ns0:lastmod><ns0:changefreq>weekly</ns0:changefreq><ns0:priority>0.8</ns0:priority></ns0:url></ns0:urlset>
+  <ns0:url>
+    <ns0:loc>https://coffeegearpicks.com/posts/best-aeropress-coffee-recipe.html</ns0:loc>
+    <ns0:lastmod>2026-03-21</ns0:lastmod>
+    <ns0:changefreq>weekly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://coffeegearpicks.com/posts/best-aeropress-for-backpacking.html</ns0:loc>
+    <ns0:lastmod>2026-03-22</ns0:lastmod>
+    <ns0:changefreq>weekly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://coffeegearpicks.com/posts/best-aeropress-grind.html</ns0:loc>
+    <ns0:lastmod>2026-03-22</ns0:lastmod>
+    <ns0:changefreq>weekly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://coffeegearpicks.com/posts/best-aeropress-coffee-india.html</ns0:loc>
+    <ns0:lastmod>2026-03-22</ns0:lastmod>
+    <ns0:changefreq>weekly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+  </ns0:url>
+</ns0:urlset>

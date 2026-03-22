@@ -2458,5 +2458,245 @@
         "alt": "STANLEY Adventure All-in-One Boil + Brew French Press alternate view 3"
       }
     ]
+  },
+  "blue-tokai-vienna-roast": {
+    "name": "Blue Tokai Vienna Roast Whole Bean",
+    "brand": "Blue Tokai",
+    "asin": "B07968H6QZ",
+    "image": "https://m.media-amazon.com/images/I/81F28mKVMML._AC_SL500_.jpg",
+    "imageAlt": "Blue Tokai Vienna Roast whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.8,
+    "specs": {
+      "roast": "Dark",
+      "origin": "India",
+      "flavor": "Chocolate, spice, fuller body",
+      "aeropressStyle": "Standard or inverted for richer cups",
+      "valueTier": "$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81N1dLoyJfL._AC_SL500_.jpg",
+        "alt": "Blue Tokai Vienna Roast Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71a0xc6GPQL._AC_SL500_.jpg",
+        "alt": "Blue Tokai Vienna Roast Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81YH2PvMWLL._AC_SL500_.jpg",
+        "alt": "Blue Tokai Vienna Roast Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "lavazza-super-crema": {
+    "name": "Lavazza Super Crema Whole Bean",
+    "brand": "Lavazza",
+    "asin": "B000SDKDM4",
+    "image": "https://m.media-amazon.com/images/I/61dSjp-nZvL._AC_SL500_.jpg",
+    "imageAlt": "Lavazza Super Crema whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.7,
+    "specs": {
+      "roast": "Medium espresso roast",
+      "origin": "Blend",
+      "flavor": "Hazelnut, brown sugar, creamy texture",
+      "aeropressStyle": "Short concentrated brews or milk drinks",
+      "valueTier": "$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71+n-Ma5o-L._AC_SL500_.jpg",
+        "alt": "Lavazza Super Crema Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71TWRy-qNCL._AC_SL500_.jpg",
+        "alt": "Lavazza Super Crema Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71AtjZqhPrL._AC_SL500_.jpg",
+        "alt": "Lavazza Super Crema Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "illy-classico": {
+    "name": "illy Classico Whole Bean",
+    "brand": "illy",
+    "asin": "B00112IMUQ",
+    "image": "https://m.media-amazon.com/images/I/61fHk4+LpeL._AC_SL500_.jpg",
+    "imageAlt": "illy Classico medium roast whole bean coffee can",
+    "category": "brewers",
+    "rating": 4.7,
+    "specs": {
+      "roast": "Medium",
+      "origin": "Arabica blend",
+      "flavor": "Caramel, orange blossom, gentle sweetness",
+      "aeropressStyle": "Clean everyday cups",
+      "valueTier": "$$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61q-8epIA9L._AC_SL500_.jpg",
+        "alt": "illy Classico Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71HwEkaMipL._AC_SL500_.jpg",
+        "alt": "illy Classico Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/811jSrqUbqL._AC_SL500_.jpg",
+        "alt": "illy Classico Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "araku-ember": {
+    "name": "Araku Ember Single-Origin Whole Bean",
+    "brand": "Araku",
+    "asin": "B0GC81NQMB",
+    "image": "https://m.media-amazon.com/images/I/61FZQ9suU8L._AC_SL500_.jpg",
+    "imageAlt": "Araku Ember single-origin whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.6,
+    "specs": {
+      "roast": "Light-medium",
+      "origin": "Single-origin India",
+      "flavor": "Lively fruit, cocoa, cleaner finish",
+      "aeropressStyle": "Bypass recipes and brighter cups",
+      "valueTier": "$$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61LaK5YGFwL._AC_SL500_.jpg",
+        "alt": "Araku Ember Single-Origin Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61LwcM2DXVL._AC_SL500_.jpg",
+        "alt": "Araku Ember Single-Origin Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/512DDK3oRoL._AC_SL500_.jpg",
+        "alt": "Araku Ember Single-Origin Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "mayorga-cafe-cubano": {
+    "name": "Mayorga Café Cubano Whole Bean",
+    "brand": "Mayorga",
+    "asin": "B00HSRNHHG",
+    "image": "https://m.media-amazon.com/images/I/61hiCHhNU1L._AC_SL500_.jpg",
+    "imageAlt": "Mayorga Cafe Cubano dark roast whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.5,
+    "specs": {
+      "roast": "Dark",
+      "origin": "Arabica blend",
+      "flavor": "Bold, smooth, low-acid, cocoa-heavy",
+      "aeropressStyle": "Concentrates for milk or iced drinks",
+      "valueTier": "$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61tdLLS-yDL._AC_SL500_.jpg",
+        "alt": "Mayorga Café Cubano Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71EyefXRdyL._AC_SL500_.jpg",
+        "alt": "Mayorga Café Cubano Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81EZPs94f9L._AC_SL500_.jpg",
+        "alt": "Mayorga Café Cubano Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "stumptown-hair-bender": {
+    "name": "Stumptown Hair Bender Whole Bean",
+    "brand": "Stumptown",
+    "asin": "B008J4WEBM",
+    "image": "https://m.media-amazon.com/images/I/61Di1iiIzML._AC_SL500_.jpg",
+    "imageAlt": "Stumptown Hair Bender whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.6,
+    "specs": {
+      "roast": "Medium",
+      "origin": "Blend",
+      "flavor": "Citrus, dark chocolate, syrupy sweetness",
+      "aeropressStyle": "Classic daily AeroPress cups",
+      "valueTier": "$$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/7197+vThDlL._AC_SL500_.jpg",
+        "alt": "Stumptown Hair Bender Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71wzbsR8geL._AC_SL500_.jpg",
+        "alt": "Stumptown Hair Bender Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61-fFkOisoL._AC_SL500_.jpg",
+        "alt": "Stumptown Hair Bender Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "kicking-horse-three-sisters": {
+    "name": "Kicking Horse Three Sisters Whole Bean",
+    "brand": "Kicking Horse",
+    "asin": "B00KC0LLFQ",
+    "image": "https://m.media-amazon.com/images/I/617dvT9v8RL._AC_SL500_.jpg",
+    "imageAlt": "Kicking Horse Three Sisters medium roast whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.4,
+    "specs": {
+      "roast": "Medium",
+      "origin": "Blend",
+      "flavor": "Round body, cocoa, toasted sweetness",
+      "aeropressStyle": "Straight black coffee with easy balance",
+      "valueTier": "$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81Tb++fs+cL._AC_SL500_.jpg",
+        "alt": "Kicking Horse Three Sisters Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71j9EVleRLL._AC_SL500_.jpg",
+        "alt": "Kicking Horse Three Sisters Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81v7ehPUyIL._AC_SL500_.jpg",
+        "alt": "Kicking Horse Three Sisters Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "peets-big-bang": {
+    "name": "Peet’s Big Bang Whole Bean",
+    "brand": "Peet’s",
+    "asin": "B086ZFPJZB",
+    "image": "https://m.media-amazon.com/images/I/71e420X0BaL._AC_SL500_.jpg",
+    "imageAlt": "Peets Big Bang medium roast whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.4,
+    "specs": {
+      "roast": "Medium",
+      "origin": "Blend",
+      "flavor": "Citrus, sweet fruit, rounded body",
+      "aeropressStyle": "Quick black cups with a brighter edge",
+      "valueTier": "$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/712L-TM1XYL._AC_SL500_.jpg",
+        "alt": "Peet’s Big Bang Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61lV52I5P8L._AC_SL500_.jpg",
+        "alt": "Peet’s Big Bang Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71GkSjKvotL._AC_SL500_.jpg",
+        "alt": "Peet’s Big Bang Whole Bean alternate view 3"
+      }
+    ]
   }
 }

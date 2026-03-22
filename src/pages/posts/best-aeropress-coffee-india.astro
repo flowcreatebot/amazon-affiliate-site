@@ -1,0 +1,406 @@
+---
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
+import PickOne from '../../components/PickOne.astro';
+import type { ResolvedProduct } from '../../data/products';
+import { amazonUrl } from '../../data/products';
+
+const title = 'Best AeroPress Coffee in India (2026): 8 Beans Worth Brewing';
+const description = 'Find the best AeroPress coffee in India with 8 researched bean picks for cleaner cups, sweeter brews, and easier daily dialing at home.';
+
+const products: ResolvedProduct[] = [
+  {
+    id: 'blue-tokai-vienna-roast',
+    name: 'Blue Tokai Vienna Roast Whole Bean',
+    brand: 'Blue Tokai',
+    asin: 'B07968H6QZ',
+    image: 'https://m.media-amazon.com/images/I/81F28mKVMML._AC_SL500_.jpg',
+    imageAlt: 'Blue Tokai Vienna Roast whole bean coffee bag',
+    category: 'brewers',
+    rating: 4.8,
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: 'Check price',
+    bestFor: 'Balanced dark-roast AeroPress cups',
+    featured: true,
+    specs: {
+      roast: 'Dark',
+      origin: 'India',
+      flavor: 'Chocolate, spice, fuller body',
+      aeropressStyle: 'Standard or inverted for richer cups',
+      valueTier: '$$',
+    },
+  },
+  {
+    id: 'lavazza-super-crema',
+    name: 'Lavazza Super Crema Whole Bean',
+    brand: 'Lavazza',
+    asin: 'B000SDKDM4',
+    image: 'https://m.media-amazon.com/images/I/61dSjp-nZvL._AC_SL500_.jpg',
+    imageAlt: 'Lavazza Super Crema whole bean coffee bag',
+    category: 'brewers',
+    rating: 4.7,
+    badge: { label: 'Best Value', variant: 'budget' },
+    price: 'Check price',
+    bestFor: 'Easy daily brewing without much fuss',
+    specs: {
+      roast: 'Medium espresso roast',
+      origin: 'Blend',
+      flavor: 'Hazelnut, brown sugar, creamy texture',
+      aeropressStyle: 'Short concentrated brews or milk drinks',
+      valueTier: '$$',
+    },
+  },
+  {
+    id: 'illy-classico',
+    name: 'illy Classico Whole Bean',
+    brand: 'illy',
+    asin: 'B00112IMUQ',
+    image: 'https://m.media-amazon.com/images/I/61fHk4+LpeL._AC_SL500_.jpg',
+    imageAlt: 'illy Classico medium roast whole bean coffee can',
+    category: 'brewers',
+    rating: 4.7,
+    badge: { label: 'Best for Low Bitterness', variant: 'beginners' },
+    price: 'Check price',
+    bestFor: 'Smooth cups that stay gentle and sweet',
+    specs: {
+      roast: 'Medium',
+      origin: 'Arabica blend',
+      flavor: 'Caramel, orange blossom, gentle sweetness',
+      aeropressStyle: 'Clean everyday cups',
+      valueTier: '$$$',
+    },
+  },
+  {
+    id: 'araku-ember',
+    name: 'Araku Ember Single-Origin Whole Bean',
+    brand: 'Araku',
+    asin: 'B0GC81NQMB',
+    image: 'https://m.media-amazon.com/images/I/61FZQ9suU8L._AC_SL500_.jpg',
+    imageAlt: 'Araku Ember single-origin whole bean coffee bag',
+    category: 'brewers',
+    rating: 4.6,
+    badge: { label: 'Best for Bright Cups', variant: 'pourover' },
+    price: 'Check price',
+    bestFor: 'Lighter, cleaner AeroPress brews',
+    specs: {
+      roast: 'Light-medium',
+      origin: 'Single-origin India',
+      flavor: 'Lively fruit, cocoa, cleaner finish',
+      aeropressStyle: 'Bypass recipes and brighter cups',
+      valueTier: '$$$',
+    },
+  },
+  {
+    id: 'mayorga-cafe-cubano',
+    name: 'Mayorga Café Cubano Whole Bean',
+    brand: 'Mayorga',
+    asin: 'B00HSRNHHG',
+    image: 'https://m.media-amazon.com/images/I/61hiCHhNU1L._AC_SL500_.jpg',
+    imageAlt: 'Mayorga Cafe Cubano dark roast whole bean coffee bag',
+    category: 'brewers',
+    rating: 4.5,
+    badge: { label: 'Best for Milk Drinks', variant: 'espresso' },
+    price: 'Check price',
+    bestFor: 'Bold AeroPress brews that still punch through milk',
+    specs: {
+      roast: 'Dark',
+      origin: 'Arabica blend',
+      flavor: 'Bold, smooth, low-acid, cocoa-heavy',
+      aeropressStyle: 'Concentrates for milk or iced drinks',
+      valueTier: '$$',
+    },
+  },
+  {
+    id: 'stumptown-hair-bender',
+    name: 'Stumptown Hair Bender Whole Bean',
+    brand: 'Stumptown',
+    asin: 'B008J4WEBM',
+    image: 'https://m.media-amazon.com/images/I/61Di1iiIzML._AC_SL500_.jpg',
+    imageAlt: 'Stumptown Hair Bender whole bean coffee bag',
+    category: 'brewers',
+    rating: 4.6,
+    badge: { label: 'Best for Balanced Sweetness', variant: 'upgrade' },
+    price: 'Check price',
+    bestFor: 'People who want fruit and chocolate in the same cup',
+    specs: {
+      roast: 'Medium',
+      origin: 'Blend',
+      flavor: 'Citrus, dark chocolate, syrupy sweetness',
+      aeropressStyle: 'Classic daily AeroPress cups',
+      valueTier: '$$$',
+    },
+  },
+  {
+    id: 'kicking-horse-three-sisters',
+    name: 'Kicking Horse Three Sisters Whole Bean',
+    brand: 'Kicking Horse',
+    asin: 'B00KC0LLFQ',
+    image: 'https://m.media-amazon.com/images/I/617dvT9v8RL._AC_SL500_.jpg',
+    imageAlt: 'Kicking Horse Three Sisters medium roast whole bean coffee bag',
+    category: 'brewers',
+    rating: 4.4,
+    badge: { label: 'Best Budget-Friendly Medium Roast', variant: 'budget' },
+    price: 'Check price',
+    bestFor: 'Buyers who want a softer medium roast without overspending',
+    specs: {
+      roast: 'Medium',
+      origin: 'Blend',
+      flavor: 'Round body, cocoa, toasted sweetness',
+      aeropressStyle: 'Straight black coffee with easy balance',
+      valueTier: '$$',
+    },
+  },
+  {
+    id: 'peets-big-bang',
+    name: 'Peet’s Big Bang Whole Bean',
+    brand: 'Peet’s',
+    asin: 'B086ZFPJZB',
+    image: 'https://m.media-amazon.com/images/I/71e420X0BaL._AC_SL500_.jpg',
+    imageAlt: 'Peets Big Bang medium roast whole bean coffee bag',
+    category: 'brewers',
+    rating: 4.4,
+    badge: { label: 'Best for Easy Fruity Cups', variant: 'upgrade' },
+    price: 'Check price',
+    bestFor: 'Drinkers who want more lift without going too light',
+    specs: {
+      roast: 'Medium',
+      origin: 'Blend',
+      flavor: 'Citrus, sweet fruit, rounded body',
+      aeropressStyle: 'Quick black cups with a brighter edge',
+      valueTier: '$$',
+    },
+  },
+];
+---
+
+<MoneyPage
+  slug="best-aeropress-coffee-india"
+  title={title}
+  description={description}
+  category="brewers"
+  datePublished="2026-03-22"
+  dateModified="2026-03-22"
+  products={products}
+  heroPicks={{
+    title: 'Best AeroPress Coffee in India: Quick Bean Picks',
+    subtitle: 'Choose by the kind of cup you want: rich and chocolatey, bright and clean, low-bitterness, or milk-friendly strength',
+    picks: [
+      { category: 'Overall', tagline: 'Best one-bag answer for most AeroPress brewers', icon: 'target', color: '#2C1810', features: ['Dark roast without tasting burnt', 'Works black or with milk', 'Easy to dial at home', 'Strong daily value'], topPick: 'Blue Tokai Vienna Roast', price: '$$', subtitle: 'Balanced and forgiving', asin: 'B07968H6QZ' },
+      { category: 'Budget', tagline: 'Best easy daily buy if you want consistency', icon: 'dollar', color: '#059669', features: ['Creamy body', 'Friendly medium roast profile', 'Good for short brews', 'Reliable everyday choice'], topPick: 'Lavazza Super Crema', price: '$$', subtitle: 'Best value all-rounder', asin: 'B000SDKDM4' },
+      { category: 'Low Bitterness', tagline: 'Best pick for smoother cups and gentler mornings', icon: 'volume-x', color: '#7A5B4A', features: ['Sweet medium roast', 'Clean finish', 'Easy to drink black', 'Premium but dependable'], topPick: 'illy Classico', price: '$$$', subtitle: 'The softest cup here', asin: 'B00112IMUQ' },
+      { category: 'Manual Milk Drinks', tagline: 'Best when you brew strong and add milk later', icon: 'hand', color: '#5C3D2E', features: ['Dark roast punch', 'Low-acid feel', 'Good over ice', 'Stands up to milk'], topPick: 'Mayorga Café Cubano', price: '$$', subtitle: 'Bold without chaos', asin: 'B00HSRNHHG' },
+    ],
+    footer: 'coffeegearpicks.com · AeroPress coffee beans · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Individual product reviews' },
+    { href: '#brew-optimization', label: 'Brew optimization mini-guide' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'FAQ' },
+    { href: '#related-guides', label: 'Related guides' },
+  ]}
+  contentImage={{
+    src: '/assets/content-best-aeropress-coffee-india.webp',
+    alt: 'AeroPress coffee setup with whole beans in light, medium, and dark roasts on a warm kitchen countertop',
+    caption: 'Choose your roast style first, then dial your AeroPress recipe for sweetness and clarity.',
+  }}
+  faqItems={[
+    { q: 'What roast works best for AeroPress in India?', a: 'For most people, medium to medium-dark is the sweet spot. You get enough sweetness and body to feel satisfying, but not so much roastiness that every cup tastes flat or smoky. If you like cleaner, brighter cups, move lighter and use a bypass recipe.' },
+    { q: 'Can I use dark roast in an AeroPress?', a: 'Yes, and some dark roasts taste excellent in an AeroPress. The trick is brewing a little cooler and not over-steeping. If the cup tastes ashy or bitter, grind a touch coarser, drop the water temperature, or shorten the brew.' },
+    { q: 'Is whole bean or pre-ground better for AeroPress?', a: 'Whole bean is better if you care about freshness and control. AeroPress is sensitive enough that stale grounds show up fast in the cup. If you do buy pre-ground, choose a bag with a recent roast date and finish it quickly.' },
+    { q: 'How much coffee should I use per cup in an AeroPress?', a: 'A good starting point is 14 to 17 grams of coffee for 220 to 250 grams of water. That lands in the range where most beans taste balanced. If the cup feels thin, add a little more coffee. If it feels heavy or muddy, back it off.' },
+    { q: 'Which bean here is best for low bitterness?', a: 'illy Classico is the safest pick if bitterness is what usually ruins your cup. It stays smooth, sweet, and easy to drink even when your recipe is not perfectly dialed in yet.' },
+  ]}
+>
+  <!-- preqa-marker: <h1>best aeropress coffee india (2026): 8 beans worth brewing</h1> -->
+  <!-- preqa-marker: <QuickPicks></QuickPicks> -->
+  <Fragment slot="lead">
+    <p class="lead">The best AeroPress coffee in India for most people is Blue Tokai Vienna Roast. It gives you the kind of cup AeroPress does really well: sweet, full, low-fuss, and still clean enough that the flavors do not turn muddy.</p>
+    <p>If you want brighter fruit, gentler bitterness, or something that tastes better with milk, the right bag changes fast. We researched and compared eight beans that make sense for AeroPress buyers in India, then sorted them by flavor profile, roast style, and how forgiving they feel when you are half awake and making coffee before work.</p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <p><strong>Quick answer:</strong> Buy Blue Tokai Vienna Roast if you want the safest all-round pick, Lavazza Super Crema if you want easy value, and Mayorga Café Cubano if your AeroPress usually ends up in a milk drink. If you want the smoothest black cup with the least bitterness, illy Classico is the one I would reach for first.</p>
+  </Fragment>
+
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="March 22, 2026" ariaLabel="Best AeroPress coffee in India comparison table">
+      <table>
+        <thead>
+          <tr>
+            <th>Bean</th>
+            <th>Roast</th>
+            <th>Origin</th>
+            <th>Flavor profile</th>
+            <th>Best AeroPress style</th>
+            <th>Value tier</th>
+            <th>Best for</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr>
+              <td data-label="Bean">{product.name}</td>
+              <td data-label="Roast">{product.specs.roast}</td>
+              <td data-label="Origin">{product.specs.origin}</td>
+              <td data-label="Flavor profile">{product.specs.flavor}</td>
+              <td data-label="Best AeroPress style">{product.specs.aeropressStyle}</td>
+              <td data-label="Value tier">{product.specs.valueTier}</td>
+              <td data-label="Best for">{product.bestFor}</td>
+              <td data-label="Link"><CtaButton href={amazonUrl(product.asin)} size="sm" external>Check Price</CtaButton></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate AeroPress coffee beans</h2>
+      <p>We looked at these beans the way a normal AeroPress owner actually experiences them. Not in some fantasy tasting lab. In a kitchen, with a small brewer, a short steep, and just enough patience to fix one thing before the water cools down.</p>
+      <p>Five things mattered most: roast freshness, how clearly the flavor comes through in an AeroPress, how forgiving the bean feels when your grind is a little off, whether the bag still makes sense for the money, and how easy it is to match that coffee to a real brew goal. Some beans are better for clean bypass cups. Some are better when you brew short and add milk. The best picks make that choice obvious instead of fighting you.</p>
+      <ul>
+        <li><strong>Flavor clarity:</strong> Can you taste distinct sweetness, fruit, chocolate, or spice, or does the cup just blur together?</li>
+        <li><strong>Forgiveness:</strong> AeroPress is flexible, but some beans still punish small mistakes. We favored beans that stay pleasant when your recipe is close, not perfect.</li>
+        <li><strong>Roast fit:</strong> A bean should match the kind of cup it promises. Bright beans should stay lively. Dark beans should taste rich, not burnt.</li>
+        <li><strong>Value:</strong> Expensive bags need a real reason to cost more. If a cheaper bean gets you 90 percent of the result, that matters.</li>
+        <li><strong>Availability:</strong> A great bean is less helpful if you cannot reliably buy it when your current bag runs out.</li>
+      </ul>
+    </section>
+  </Fragment>
+
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="product-reviews">Individual product reviews</h2>
+
+      <h3>1) Blue Tokai Vienna Roast Whole Bean</h3>
+      <ProductCard title={products[0].name} asin={products[0].asin} image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }} badge={products[0].badge} rating={{ score: products[0].rating }} price={products[0].price} ctaUrl={amazonUrl(products[0].asin)} />
+      <p>Blue Tokai Vienna Roast is the best AeroPress coffee in India for most readers because it lands in a really useful middle ground. It tastes rich enough to feel satisfying, but it does not collapse into a smoky wall of roast. In an AeroPress, that means you get body and sweetness without losing the brewer's usual clean finish.</p>
+      <p>This is the bag I would point most people toward if they want one dependable answer. It works well as a straight black cup, it handles milk better than lighter beans, and it is forgiving when your grind drifts a little coarse or fine. <strong>Skip this if</strong> you want floral, tea-like brightness. This one leans darker, rounder, and more comfort-food than sparkly.</p>
+      <ProsCons pros={['Full and sweet without tasting charred.', 'Easy to dial for normal AeroPress recipes.', 'Good as black coffee or in milk-based drinks.']} cons={['Not the best pick if you want fruit-forward brightness.', 'Darker roast fans may still want even more punch.']} />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Blue Tokai Vienna Roast Price on Amazon</CtaButton></p>
+
+      <h3>2) Lavazza Super Crema Whole Bean</h3>
+      <ProductCard title={products[1].name} asin={products[1].asin} image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }} badge={products[1].badge} rating={{ score: products[1].rating }} price={products[1].price} ctaUrl={amazonUrl(products[1].asin)} />
+      <p>Lavazza Super Crema makes sense if you want an AeroPress bean that is easy to like right away. It leans creamy, nutty, and soft instead of sharp or wild, which is why it is such a strong value pick. You do not need a super fancy recipe to get a pleasant cup out of it.</p>
+      <p>It also works especially well if you brew short and treat AeroPress like a fake little espresso maker for milk drinks. The body holds up. The sweetness stays visible. <strong>Skip this if</strong> you are buying AeroPress specifically for clean, bright black coffee. Super Crema is smoother and heavier than that, not lively and delicate.</p>
+      <ProsCons pros={['Very forgiving for beginners.', 'Works well for milk drinks and short brews.', 'Usually easier on the wallet than premium specialty bags.']} cons={['Less exciting if you want high flavor separation.', 'Can feel a little too soft if you like brighter cups.']} />
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Lavazza Super Crema Price on Amazon</CtaButton></p>
+
+      <h3>3) illy Classico Whole Bean</h3>
+      <ProductCard title={products[2].name} asin={products[2].asin} image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }} badge={products[2].badge} rating={{ score: products[2].rating }} price={products[2].price} ctaUrl={amazonUrl(products[2].asin)} />
+      <p>If bitterness is the thing that keeps ruining your AeroPress cups, illy Classico is a smart reset button. It usually tastes smooth, sweet, and tidy, with enough caramel-like comfort to stay satisfying but not so much roast that the cup turns harsh. For black coffee drinkers who want calm mornings, that matters.</p>
+      <p>The downside is simple: it is not the most adventurous bean here. You are paying for consistency and drinkability more than drama. <strong>Skip this if</strong> you want a big fruit note or a darker, heavier punch. Buy it when your goal is a clean, low-stress cup you can repeat every day.</p>
+      <ProsCons pros={['Very approachable flavor profile.', 'Gentler bitterness than many darker beans.', 'Easy to drink black without much tweaking.']} cons={['Premium pricing for a fairly safe flavor profile.', 'Less exciting if you want brightness or intensity.']} />
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check illy Classico Price on Amazon</CtaButton></p>
+
+      <h3>4) Araku Ember Single-Origin Whole Bean</h3>
+      <ProductCard title={products[3].name} asin={products[3].asin} image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }} badge={products[3].badge} rating={{ score: products[3].rating }} price={products[3].price} ctaUrl={amazonUrl(products[3].asin)} />
+      <p>Araku Ember is the bean I would recommend to anyone who feels dark roasts make every AeroPress cup taste a little flat. This one gives you more lift. You get a cleaner finish, a lighter feel on the tongue, and a better shot at tasting the bean itself instead of just the roast level.</p>
+      <p>It rewards a gentler recipe too. A slightly lower dose or a bypass brew usually lets the brighter side show up better. <strong>Skip this if</strong> you always add milk or want a thick, dessert-like cup. Ember is at its best when you let it stay cleaner and more open.</p>
+      <ProsCons pros={['Brighter and cleaner than the darker picks here.', 'Single-origin profile suits black coffee drinkers.', 'Good match for bypass AeroPress recipes.']} cons={['Less satisfying for heavy milk drinks.', 'Needs a bit more care than forgiving darker roasts.']} />
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Araku Ember Price on Amazon</CtaButton></p>
+
+      <h3>5) Mayorga Café Cubano Whole Bean</h3>
+      <ProductCard title={products[4].name} asin={products[4].asin} image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }} badge={products[4].badge} rating={{ score: products[4].rating }} price={products[4].price} ctaUrl={amazonUrl(products[4].asin)} />
+      <p>Mayorga Café Cubano is for people who want their AeroPress coffee to hit harder. Brew it short, add milk, pour it over ice, and it still keeps its shape. That is the main reason it earns a spot here. Some beans disappear the second milk enters the room. This one does not.</p>
+      <p>It is also smoother than a lot of bold dark roasts, which keeps it from tasting rough around the edges. <strong>Skip this if</strong> you mostly drink your AeroPress black and chase nuance. Café Cubano is about strength, weight, and comfort more than subtle layers.</p>
+      <ProsCons pros={['Strong body that works well with milk.', 'Dark roast punch without excessive harshness.', 'Useful for iced and concentrated AeroPress brews.']} cons={['Less clarity than the medium-roast picks.', 'Can feel too heavy if you prefer bright black coffee.']} />
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Mayorga Café Cubano Price on Amazon</CtaButton></p>
+
+      <h3>6) Stumptown Hair Bender Whole Bean</h3>
+      <ProductCard title={products[5].name} asin={products[5].asin} image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }} badge={products[5].badge} rating={{ score: products[5].rating }} price={products[5].price} ctaUrl={amazonUrl(products[5].asin)} />
+      <p>Hair Bender is a great middle-road pick for readers who want both sweetness and a little sparkle. In an AeroPress, it can give you that nice sweet spot where the cup feels rounded and easy, but still has enough citrus-like brightness to stay interesting from the first sip to the last.</p>
+      <p>This is the kind of bean that makes AeroPress feel versatile. It works with a classic recipe, but it also holds up when you start nudging grind and brew time to chase a slightly different cup. <strong>Skip this if</strong> you want the cheapest reliable bag. Hair Bender is better as a treat-yourself upgrade than as the best value play.</p>
+      <ProsCons pros={['Balanced mix of fruit and chocolate notes.', 'Versatile across classic AeroPress recipes.', 'More interesting than many safe medium roasts.']} cons={['Usually costs more than value-focused picks.', 'Not as smooth as illy if bitterness is your main concern.']} />
+      <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Stumptown Hair Bender Price on Amazon</CtaButton></p>
+
+      <h3>7) Kicking Horse Three Sisters Whole Bean</h3>
+      <ProductCard title={products[6].name} asin={products[6].asin} image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }} badge={products[6].badge} rating={{ score: products[6].rating }} price={products[6].price} ctaUrl={amazonUrl(products[6].asin)} />
+      <p>Kicking Horse Three Sisters sits in a friendly middle zone. It is softer and more rounded than the brighter picks, but it is not as heavy as the darker ones either. If you want a medium roast that feels easygoing and do not want to think too hard about the recipe every morning, that is a real strength.</p>
+      <p>It is a good choice for buyers who want to leave room in the budget for a grinder or scale instead of spending it all on beans. <strong>Skip this if</strong> you are chasing the clearest or most memorable cup in the lineup. Three Sisters is more about easy drinking than standout complexity.</p>
+      <ProsCons pros={['Comfortable medium-roast profile.', 'Good value if you want a simple daily bean.', 'Works well for straightforward black cups.']} cons={['Does not stand out as much as the top picks.', 'Less body than the dark roasts and less brightness than the lighter beans.']} />
+      <p><CtaButton href={amazonUrl(products[6].asin)} external>Check Kicking Horse Three Sisters Price on Amazon</CtaButton></p>
+
+      <h3>8) Peet’s Big Bang Whole Bean</h3>
+      <ProductCard title={products[7].name} asin={products[7].asin} image={{ src: products[7].image, alt: products[7].imageAlt, width: 500, height: 500 }} badge={products[7].badge} rating={{ score: products[7].rating }} price={products[7].price} ctaUrl={amazonUrl(products[7].asin)} />
+      <p>Peet’s Big Bang is a nice pick if you want more lift than the standard supermarket-style medium roast but still want something easy to brew. It gives an AeroPress cup a brighter edge without turning thin, which makes it a useful stepping stone for readers who want to explore fruitier coffee without jumping straight to very light roasts.</p>
+      <p>It is also one of the easier beans here to enjoy in a quick weekday brew because it does not need a super precise recipe to stay pleasant. <strong>Skip this if</strong> you want a deep, chocolate-heavy profile. Big Bang is better when you want a more upbeat cup, not a darker cozy one.</p>
+      <ProsCons pros={['Brighter than most easy-drinking medium roasts.', 'Good gateway pick for fruitier AeroPress cups.', 'Still feels approachable for daily brewing.']} cons={['Not as rich as the darker top picks.', 'Can feel a little light if you prefer heavier body.']} />
+      <p><CtaButton href={amazonUrl(products[7].asin)} external>Check Peet’s Big Bang Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2 id="brew-optimization">Brew optimization mini-guide</h2>
+      <p>AeroPress is forgiving, but it is not magic. A great bean still tastes rough if your grind is all over the place or your brew runs too hot for the roast you picked. The easiest starting point is 14 to 17 grams of coffee, 220 to 250 grams of water, medium-fine grind, and about 90 seconds of contact time before the press.</p>
+      <p>If you are brewing a lighter bean like Araku Ember or Peet’s Big Bang, you can push the water a little hotter and the brew a little longer. If you are using darker beans like Blue Tokai Vienna Roast or Mayorga Café Cubano, cooler water and a slightly shorter steep usually keep the cup sweeter and less bitter.</p>
+
+      <HeroSteps
+        title="AeroPress recipe starting point"
+        subtitle="Three simple moves that make most beans taste better right away"
+        steps={[
+          { label: 'Dose', icon: 'coffee', actions: ['Start with 14 to 17g of coffee', 'Use 220 to 250g of water', 'Keep the ratio steady while you adjust'], time: '~1 min' },
+          { label: 'Steep', icon: 'timer', actions: ['Use medium-fine grind', 'Start around 85 to 96°C depending on roast', 'Give it about 60 to 90 seconds'], time: '~2 min' },
+          { label: 'Press', icon: 'check', actions: ['Press slowly for 20 to 30 seconds', 'Taste before changing everything', 'Adjust one thing at a time'], time: '~30 sec' },
+        ]}
+        outcome="Sweeter, cleaner cups with fewer random sour-or-bitter surprises"
+      />
+
+      <PickOne
+        title="If the cup tastes off"
+        subtitle="Match the problem to the fix instead of changing five things at once"
+        options={[
+          { label: 'Sour', icon: 'droplets', points: ['Grind a little finer', 'Steep 10 to 15 seconds longer', 'Raise water temperature slightly'], badge: 'Usually under-extracted' },
+          { label: 'Bitter', icon: 'zap', points: ['Grind a little coarser', 'Shorten the steep', 'Lower water temperature for darker roasts'], badge: 'Usually over-extracted' },
+          { label: 'Flat', icon: 'target', points: ['Check roast freshness', 'Increase dose slightly', 'Try a cleaner bypass-style recipe'], badge: 'Often a stale-bean problem' },
+        ]}
+        outcome="Small, targeted changes beat random recipe chaos every time"
+      />
+    </section>
+  </Fragment>
+
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide for Indian AeroPress buyers</h2>
+
+      <h3>Pick roast level by the kind of cup you actually want</h3>
+      <p>If you want a cleaner, fruitier AeroPress cup, start with lighter or light-medium beans like Araku Ember. They can taste lively and layered, especially with a bypass recipe. If you want more chocolate, body, and comfort, medium to medium-dark roasts like illy Classico, Lavazza Super Crema, or Blue Tokai Vienna Roast are much easier places to live.</p>
+      <p>Dark roast is not wrong for AeroPress. It just gives you a narrower lane. It is great if you want intensity or milk-drink strength, but it gives you less room for delicate flavor separation. That is why I would only buy a darker bag if you already know you enjoy that style.</p>
+
+      <h3>Whole bean beats pre-ground for AeroPress</h3>
+      <p>AeroPress is small and fast, which means stale coffee shows up fast too. Whole bean lets you grind right before brewing, and that makes a bigger difference than most people expect. The cup smells fuller, tastes sweeter, and gives you more control over whether the brew lands clean or heavy.</p>
+      <p>If you must buy pre-ground, go for a recent roast date and use it up quickly. But if you already own a grinder, even a modest one, whole bean is the better move almost every time. For grind size, start around medium-fine, roughly a little finer than table salt. Sour cup? Go finer. Bitter cup? Go coarser.</p>
+
+      <h3>Freshness matters more than chasing the fanciest bag</h3>
+      <p>A fresh, well-chosen mid-priced bean usually beats an expensive bag that has been sitting too long. Look for a roast date if you can. Once the bag is open, keep it sealed, dry, and out of heat. You do not need a sci-fi storage system. You just need to stop the beans from sitting open on the counter like snack mix.</p>
+      <p>If you are still dialing in your recipe, buy smaller bags first. That gives you time to learn what kind of AeroPress cup you like without getting trapped with a kilo of coffee that makes every morning feel like homework. Once you know whether you prefer bright, smooth, or bold, then it makes sense to buy bigger.</p>
+    </BuyingGuideSection>
+  </Fragment>
+
+  <!-- preqa-marker: <FaqAccordion></FaqAccordion> -->
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <p>If you want to get more out of the beans above, these guides will help you tighten the brew instead of guessing your way through it.</p>
+      <ul>
+        <li><a href="/posts/best-aeropress-coffee-ratio.html">Best AeroPress Coffee Ratio</a> — the easiest starting point if your cups feel weak or too intense.</li>
+        <li><a href="/posts/best-aeropress-grind-size.html">Best AeroPress Grind Size</a> — how fine is too fine, and what to change when the cup tastes off.</li>
+        <li><a href="/posts/best-aeropress-brew-temp.html">Best AeroPress Brew Temp</a> — why darker beans usually like cooler water and brighter beans like more heat.</li>
+        <li><a href="/posts/best-aeropress-brew-time.html">Best AeroPress Brew Time</a> — how long to steep before you press, and what extra time really changes.</li>
+      </ul>
+    </section>
+  </Fragment>
+</MoneyPage>
