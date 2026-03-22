@@ -1,19 +1,19 @@
 {
-  "name": "shared-blog",
+  "name": "smoggy-shepherd",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "build:site": "node scripts/build-site.mjs",
-    "pick": "bash scripts/pipeline-pick.sh",
-    "route": "bash scripts/pipeline-router.sh",
-    "deploy": "bash scripts/deliver.sh"
+    "astro": "astro",
+    "preqa": "node scripts/preqa-guardrail.mjs",
+    "pick": "node scripts/pipeline-pick.mjs",
+    "route": "node scripts/pipeline-router.mjs",
+    "build:rag": "node scripts/build-rag-index.mjs"
   },
   "dependencies": {
     "@astrojs/preact": "^4.1.3",
-    "@astrojs/sitemap": "^3.3.0",
     "astro": "^5.17.1",
     "preact": "^10.29.0"
   }
