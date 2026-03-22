@@ -1,0 +1,21 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+}
+const { src, alt, caption, width = 800, height = 450 } = Astro.props;
+---
+<figure class="image-figure">
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading="lazy"
+    decoding="async"
+  />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

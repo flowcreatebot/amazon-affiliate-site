@@ -1,0 +1,14 @@
+---
+/**
+ * PullQuote — a large, styled editorial quote that breaks up long text.
+ * Different from QuoteBlock which includes attribution (testimonial-style).
+ * PullQuote is for highlighting a key sentence from the article itself.
+ */
+interface Props {
+  align?: 'center' | 'left';
+}
+const { align = 'center' } = Astro.props;
+---
+<aside class={`pull-quote --${align}`}>
+  <slot />
+</aside>

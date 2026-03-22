@@ -1,8 +1,0 @@
-node_modules
-dist
-.astro
-src/data/site.ts
-src/data/products.json
-src/data/page-products.json
-src/styles/_site-vars.css
-astro.config.mjs

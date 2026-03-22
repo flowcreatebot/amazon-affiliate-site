@@ -2698,5 +2698,121 @@
         "alt": "Peet’s Big Bang Whole Bean alternate view 3"
       }
     ]
+  },
+  "aesir-filters-aeropress-reddit": {
+    "name": "Aesir Filters",
+    "brand": "Aesir",
+    "asin": "B072M5HG4Q",
+    "image": "https://m.media-amazon.com/images/I/71UlGcthNaL._AC_SL500_.jpg",
+    "imageAlt": "Aesir premium paper filters for AeroPress coffee makers",
+    "category": "accessories",
+    "rating": 4.6,
+    "specs": {
+      "type": "Premium paper",
+      "compatibility": "AeroPress brewers",
+      "cupProfile": "Very clean with more clarity than standard paper",
+      "pack": "Premium paper filters"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61uA4IQGvrL._AC_SL500_.jpg",
+        "alt": "Aesir Filters alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71A1nq-cZgL._AC_SL500_.jpg",
+        "alt": "Aesir Filters alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81ud0P766oL._AC_SL500_.jpg",
+        "alt": "Aesir Filters alternate view 3"
+      }
+    ]
+  },
+  "able-disk-fine-standard-set-reddit": {
+    "name": "Able DISK Fine + Standard Set",
+    "brand": "Able",
+    "asin": "B00L1R4FR0",
+    "image": "https://m.media-amazon.com/images/I/81eI5swr3RL._AC_SL500_.jpg",
+    "imageAlt": "Able DISK Fine and Standard stainless steel reusable filters for AeroPress brewers",
+    "category": "accessories",
+    "rating": 4.5,
+    "specs": {
+      "type": "Metal filter set",
+      "compatibility": "AeroPress brewers and AeroPress Carafe",
+      "cupProfile": "Lets you choose cleaner fine mesh or fuller standard mesh",
+      "pack": "Two reusable filters"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81vR8soWUwL._AC_SL500_.jpg",
+        "alt": "Able DISK Fine + Standard Set alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81hawDW1MCL._AC_SL500_.jpg",
+        "alt": "Able DISK Fine + Standard Set alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81DHXJ-JKiL._AC_SL500_.jpg",
+        "alt": "Able DISK Fine + Standard Set alternate view 3"
+      }
+    ]
+  },
+  "coffeesock-aeropress-filters-reddit": {
+    "name": "CoffeeSock AeroPress Cloth Filters",
+    "brand": "CoffeeSock",
+    "asin": "B017KR9YG6",
+    "image": "https://m.media-amazon.com/images/I/71g1dRxrcDL._AC_SL500_.jpg",
+    "imageAlt": "CoffeeSock reusable organic cotton cloth filters for AeroPress brewers",
+    "category": "accessories",
+    "rating": 4.4,
+    "specs": {
+      "type": "Cloth",
+      "compatibility": "AeroPress brewers",
+      "cupProfile": "Rounder than paper, cleaner than most metal",
+      "pack": "3 cloth filters"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/41xd6P4QuZL._AC_SL500_.jpg",
+        "alt": "CoffeeSock AeroPress Cloth Filters alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/310sn0tybqL._AC_SL500_.jpg",
+        "alt": "CoffeeSock AeroPress Cloth Filters alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/6104gCJYEEL._AC_SL500_.jpg",
+        "alt": "CoffeeSock AeroPress Cloth Filters alternate view 3"
+      }
+    ]
+  },
+  "2pour-aeropress-paper-filters-reddit": {
+    "name": "2POUR Unbleached AeroPress-Compatible Paper Filters",
+    "brand": "2POUR",
+    "asin": "B078QPKDNP",
+    "image": "https://m.media-amazon.com/images/I/61EQI3YqotL._AC_SL500_.jpg",
+    "imageAlt": "2POUR unbleached paper filters compatible with AeroPress coffee makers",
+    "category": "accessories",
+    "rating": 4.4,
+    "specs": {
+      "type": "Unbleached paper",
+      "compatibility": "AeroPress and AeroPress Go style brewers",
+      "cupProfile": "Clean and light with a simple natural-paper feel",
+      "pack": "350 paper filters"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61TEogm3XoL._AC_SL500_.jpg",
+        "alt": "2POUR Unbleached AeroPress-Compatible Paper Filters alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61gdAM95EtL._AC_SL500_.jpg",
+        "alt": "2POUR Unbleached AeroPress-Compatible Paper Filters alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71IMWxyyDDL._AC_SL500_.jpg",
+        "alt": "2POUR Unbleached AeroPress-Compatible Paper Filters alternate view 3"
+      }
+    ]
   }
 }

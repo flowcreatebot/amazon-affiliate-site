@@ -5,9 +5,6 @@ export const SITE = {
   gaId: 'G-3Q4RL7QGN4',
 };
 
-export const AMAZON_TAG = 'coffee-site-20';
-export const DISCLOSURE_TEXT = 'Coffee Gear Lab may earn a commission from qualifying purchases made through links on this page. This does not change the price you pay.';
-
 export const NAV_LINKS = [
   {
     "label": "Home",
@@ -31,10 +28,18 @@ export const NAV_LINKS = [
   }
 ];
 
-export const publisher = {
+export const AUTHOR = {
+  name: 'Coffee Gear Lab',
   '@type': 'Organization' as const,
-  name: SITE.name,
 };
+
+export const publisher = AUTHOR;
+
+export const GOOGLE_FONTS_URL = '';
+
+export const AMAZON_TAG = 'coffee-site-20';
+
+export const DISCLOSURE_TEXT = 'Coffee Gear Lab may earn a commission from qualifying purchases made through links on this page. This does not change the price you pay.';
 
 export function blogPosting(opts: {
   headline: string;
@@ -50,8 +55,8 @@ export function blogPosting(opts: {
     description: opts.description,
     datePublished: opts.datePublished,
     dateModified: opts.dateModified,
-    author: publisher,
-    publisher,
+    author: AUTHOR,
+    publisher: AUTHOR,
     mainEntityOfPage: `${SITE.url}/posts/${opts.slug}.html`,
     ...(opts.image ? { image: opts.image } : {}),
   };

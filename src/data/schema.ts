@@ -1,5 +1,5 @@
 // JSON-LD schema builder helpers for page-type templates
-// Reuses blogPosting() and publisher from site.ts
+// Reuses blogPosting() and publisher from site.ts (generated at build time)
 
 import { SITE, blogPosting, publisher } from './site';
 import type { ResolvedProduct } from './products';
@@ -8,6 +8,8 @@ interface FaqItem {
   q: string;
   a: string;
 }
+
+// --- Generic builders (used by multiple page types) ---
 
 export function buildFaqSchema(items: FaqItem[]) {
   return {
@@ -89,7 +91,38 @@ export function buildProductSchema(
   return schema;
 }
 
-/** Build the full @graph array for a money page */
+// --- Blog page type graph builders ---
+
+/** Standard article with optional FAQ */
+export function articleWithFaqGraph(opts: {
+  title: string;
+  description: string;
+  slug: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+  faqItems?: FaqItem[];
+}) {
+  const graph: any[] = [
+    blogPosting({
+      headline: opts.title,
+      description: opts.description,
+      slug: opts.slug,
+      datePublished: opts.datePublished,
+      dateModified: opts.dateModified,
+      image: opts.image,
+    }),
+  ];
+  if (opts.faqItems && opts.faqItems.length > 0) {
+    graph.push(buildFaqSchema(opts.faqItems));
+  }
+  graph.push(publisher);
+  return { '@context': 'https://schema.org', '@graph': graph };
+}
+
+// --- Affiliate page type graph builders ---
+
+/** Money/roundup page */
 export function moneyPageGraph(opts: {
   title: string;
   description: string;
@@ -118,7 +151,7 @@ export function moneyPageGraph(opts: {
   };
 }
 
-/** Build the full @graph array for a VS comparison page */
+/** VS comparison page */
 export function vsPageGraph(opts: {
   title: string;
   description: string;
@@ -145,7 +178,7 @@ export function vsPageGraph(opts: {
   };
 }
 
-/** Build the full @graph array for a how-to guide page */
+/** How-to guide page */
 export function howToPageGraph(opts: {
   title: string;
   description: string;
@@ -184,7 +217,7 @@ export function howToPageGraph(opts: {
   };
 }
 
-/** Build the full @graph array for a single review page */
+/** Single review page */
 export function reviewPageGraph(opts: {
   title: string;
   description: string;
@@ -214,7 +247,7 @@ export function reviewPageGraph(opts: {
   };
 }
 
-/** Build the full @graph array for a buying guide page */
+/** Buying guide page */
 export function buyingGuidePageGraph(opts: {
   title: string;
   description: string;
@@ -241,7 +274,7 @@ export function buyingGuidePageGraph(opts: {
   };
 }
 
-/** Build the full JSON-LD for a hub/category page */
+/** Hub/category page */
 export function hubPageGraph(opts: {
   title: string;
   description: string;
@@ -259,4 +292,58 @@ export function hubPageGraph(opts: {
       publisher,
     ],
   };
+}
+
+// --- Backward-compatible exports for blog page types ---
+// These accept siteUrl/authorName params but ignore them (site.ts handles it)
+
+interface LegacySchemaOpts {
+  title: string;
+  description: string;
+  slug: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+  siteUrl: string;
+  authorName: string;
+}
+
+export function blogPostingSchema(opts: LegacySchemaOpts) {
+  return {
+    '@context': 'https://schema.org',
+    ...blogPosting({
+      headline: opts.title,
+      description: opts.description,
+      slug: opts.slug,
+      datePublished: opts.datePublished,
+      dateModified: opts.dateModified,
+      image: opts.image,
+    }),
+  };
+}
+
+export function faqPageSchema(faqItems: FaqItem[]) {
+  if (!faqItems || faqItems.length === 0) return null;
+  return {
+    '@context': 'https://schema.org',
+    ...buildFaqSchema(faqItems),
+  };
+}
+
+export function articleWithFaqSchema(opts: LegacySchemaOpts & { faqItems?: FaqItem[] }) {
+  return articleWithFaqGraph(opts);
+}
+
+export function howToSchema(opts: LegacySchemaOpts & {
+  howToName: string;
+  howToDescription: string;
+  steps: { name: string; text: string }[];
+  supplies?: string[];
+  tools?: string[];
+}) {
+  return howToPageGraph({
+    ...opts,
+    howToSteps: opts.steps,
+    faqItems: [],
+  });
 }

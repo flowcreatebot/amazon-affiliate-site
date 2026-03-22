@@ -1,0 +1,26 @@
+---
+interface Props {
+  events: Array<{
+    date: string;
+    title: string;
+    description: string;
+  }>;
+  title?: string;
+}
+const { events, title } = Astro.props;
+---
+<div class="timeline">
+  {title && <h3 class="timeline__title">{title}</h3>}
+  <div class="timeline__track">
+    {events.map((event, i) => (
+      <div class="timeline__event">
+        <div class="timeline__marker"></div>
+        <div class="timeline__content">
+          <span class="timeline__date">{event.date}</span>
+          <h4 class="timeline__event-title">{event.title}</h4>
+          <p class="timeline__description">{event.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

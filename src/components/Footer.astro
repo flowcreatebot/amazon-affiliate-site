@@ -1,6 +1,9 @@
 ---
 import { SITE } from '../data/site';
+const year = new Date().getFullYear();
 ---
 <footer>
-  <div class="container">&copy; 2026 {SITE.name}</div>
+  <div class="container">
+    <p>&copy; {year} {SITE.name}. All rights reserved.</p>
+  </div>
 </footer>

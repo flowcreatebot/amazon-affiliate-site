@@ -1,0 +1,13 @@
+---
+interface Props {
+  image: { src: string; alt: string };
+  category: string;
+}
+const { image, category } = Astro.props;
+---
+<div class="hero-article">
+  <img class="hero-article__img" src={image.src} alt={image.alt} width="960" height="420" loading="eager" fetchpriority="high" decoding="async" />
+  <div class="hero-article__overlay">
+    <span class="hero-article__category">{category}</span>
+  </div>
+</div>

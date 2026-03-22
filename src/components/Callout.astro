@@ -1,6 +1,6 @@
 ---
 interface Props {
-  variant: 'tip' | 'warning' | 'note';
+  variant: 'tip' | 'warning' | 'note' | 'info';
   title?: string;
 }
 
@@ -24,6 +24,12 @@ const variantConfig: Record<string, { color: string; bg: string; icon: string; d
     bg: 'var(--info-bg)',
     icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>',
     defaultTitle: 'Note',
+  },
+  info: {
+    color: 'var(--info)',
+    bg: 'var(--info-bg)',
+    icon: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>',
+    defaultTitle: 'Info',
   },
 };
 

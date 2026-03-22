@@ -1,0 +1,21 @@
+---
+interface Props {
+  terms: Array<{
+    term: string;
+    definition: string;
+  }>;
+  title?: string;
+}
+const { terms, title } = Astro.props;
+---
+<div class="definition-list">
+  {title && <h3 class="definition-list__title">{title}</h3>}
+  <dl>
+    {terms.map(item => (
+      <>
+        <dt>{item.term}</dt>
+        <dd>{item.definition}</dd>
+      </>
+    ))}
+  </dl>
+</div>
