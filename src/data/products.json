@@ -2400,5 +2400,419 @@
         "alt": "AeroPress Original Coffee Press alternate view 3"
       }
     ]
+  },
+  "gsi-ultralight-java-drip-backpacking": {
+    "name": "GSI Outdoors Ultralight Java Drip",
+    "brand": "GSI Outdoors",
+    "asin": "B001LF3ICU",
+    "image": "https://m.media-amazon.com/images/I/71TqNlUO0KL._AC_SL500_.jpg",
+    "imageAlt": "GSI Outdoors Ultralight Java Drip reusable backpacking coffee dripper clipped over a mug",
+    "category": "brewers",
+    "rating": 4.4,
+    "specs": {
+      "packedWeight": "0.4 oz dripper",
+      "capacity": "Single mug at a time",
+      "brewStyle": "Pour-over dripper",
+      "filterType": "Reusable mesh",
+      "cleanupTime": "Moderate",
+      "tradeoff": "Almost weightless, but fussier and messier than an AeroPress"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/814jJbKhbzL._AC_SL500_.jpg",
+        "alt": "GSI Outdoors Ultralight Java Drip alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71IrALw+v3L._AC_SL500_.jpg",
+        "alt": "GSI Outdoors Ultralight Java Drip alternate view 2"
+      }
+    ]
+  },
+  "stanley-boil-brew-backpacking": {
+    "name": "STANLEY Adventure All-in-One Boil + Brew French Press",
+    "brand": "STANLEY",
+    "asin": "B08CGJBSSW",
+    "image": "https://m.media-amazon.com/images/I/71uEZeGmOFL._AC_SL500_.jpg",
+    "imageAlt": "Stanley Adventure All-in-One Boil and Brew French press camp pot in stainless steel",
+    "category": "brewers",
+    "rating": 4.6,
+    "specs": {
+      "packedWeight": "Heavy for backpacking, better for camp-heavy trips",
+      "capacity": "32 oz pot",
+      "brewStyle": "Boil-and-brew French press pot",
+      "filterType": "Built-in mesh press",
+      "cleanupTime": "Moderate to slow",
+      "tradeoff": "Brilliant one-pot camp tool, but not a thru-hike choice"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71mebWaWIVL._AC_SL500_.jpg",
+        "alt": "STANLEY Adventure All-in-One Boil + Brew French Press alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71MOdNvbN+L._AC_SL500_.jpg",
+        "alt": "STANLEY Adventure All-in-One Boil + Brew French Press alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/710aFwlxSaL._AC_SL500_.jpg",
+        "alt": "STANLEY Adventure All-in-One Boil + Brew French Press alternate view 3"
+      }
+    ]
+  },
+  "blue-tokai-vienna-roast": {
+    "name": "Blue Tokai Vienna Roast Whole Bean",
+    "brand": "Blue Tokai",
+    "asin": "B07968H6QZ",
+    "image": "https://m.media-amazon.com/images/I/81F28mKVMML._AC_SL500_.jpg",
+    "imageAlt": "Blue Tokai Vienna Roast whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.8,
+    "specs": {
+      "roast": "Dark",
+      "origin": "India",
+      "flavor": "Chocolate, spice, fuller body",
+      "aeropressStyle": "Standard or inverted for richer cups",
+      "valueTier": "$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81N1dLoyJfL._AC_SL500_.jpg",
+        "alt": "Blue Tokai Vienna Roast Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71a0xc6GPQL._AC_SL500_.jpg",
+        "alt": "Blue Tokai Vienna Roast Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81YH2PvMWLL._AC_SL500_.jpg",
+        "alt": "Blue Tokai Vienna Roast Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "lavazza-super-crema": {
+    "name": "Lavazza Super Crema Whole Bean",
+    "brand": "Lavazza",
+    "asin": "B000SDKDM4",
+    "image": "https://m.media-amazon.com/images/I/61dSjp-nZvL._AC_SL500_.jpg",
+    "imageAlt": "Lavazza Super Crema whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.7,
+    "specs": {
+      "roast": "Medium espresso roast",
+      "origin": "Blend",
+      "flavor": "Hazelnut, brown sugar, creamy texture",
+      "aeropressStyle": "Short concentrated brews or milk drinks",
+      "valueTier": "$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71+n-Ma5o-L._AC_SL500_.jpg",
+        "alt": "Lavazza Super Crema Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71TWRy-qNCL._AC_SL500_.jpg",
+        "alt": "Lavazza Super Crema Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71AtjZqhPrL._AC_SL500_.jpg",
+        "alt": "Lavazza Super Crema Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "illy-classico": {
+    "name": "illy Classico Whole Bean",
+    "brand": "illy",
+    "asin": "B00112IMUQ",
+    "image": "https://m.media-amazon.com/images/I/61fHk4+LpeL._AC_SL500_.jpg",
+    "imageAlt": "illy Classico medium roast whole bean coffee can",
+    "category": "brewers",
+    "rating": 4.7,
+    "specs": {
+      "roast": "Medium",
+      "origin": "Arabica blend",
+      "flavor": "Caramel, orange blossom, gentle sweetness",
+      "aeropressStyle": "Clean everyday cups",
+      "valueTier": "$$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61q-8epIA9L._AC_SL500_.jpg",
+        "alt": "illy Classico Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71HwEkaMipL._AC_SL500_.jpg",
+        "alt": "illy Classico Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/811jSrqUbqL._AC_SL500_.jpg",
+        "alt": "illy Classico Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "araku-ember": {
+    "name": "Araku Ember Single-Origin Whole Bean",
+    "brand": "Araku",
+    "asin": "B0GC81NQMB",
+    "image": "https://m.media-amazon.com/images/I/61FZQ9suU8L._AC_SL500_.jpg",
+    "imageAlt": "Araku Ember single-origin whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.6,
+    "specs": {
+      "roast": "Light-medium",
+      "origin": "Single-origin India",
+      "flavor": "Lively fruit, cocoa, cleaner finish",
+      "aeropressStyle": "Bypass recipes and brighter cups",
+      "valueTier": "$$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61LaK5YGFwL._AC_SL500_.jpg",
+        "alt": "Araku Ember Single-Origin Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61LwcM2DXVL._AC_SL500_.jpg",
+        "alt": "Araku Ember Single-Origin Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/512DDK3oRoL._AC_SL500_.jpg",
+        "alt": "Araku Ember Single-Origin Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "mayorga-cafe-cubano": {
+    "name": "Mayorga Café Cubano Whole Bean",
+    "brand": "Mayorga",
+    "asin": "B00HSRNHHG",
+    "image": "https://m.media-amazon.com/images/I/61hiCHhNU1L._AC_SL500_.jpg",
+    "imageAlt": "Mayorga Cafe Cubano dark roast whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.5,
+    "specs": {
+      "roast": "Dark",
+      "origin": "Arabica blend",
+      "flavor": "Bold, smooth, low-acid, cocoa-heavy",
+      "aeropressStyle": "Concentrates for milk or iced drinks",
+      "valueTier": "$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61tdLLS-yDL._AC_SL500_.jpg",
+        "alt": "Mayorga Café Cubano Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71EyefXRdyL._AC_SL500_.jpg",
+        "alt": "Mayorga Café Cubano Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81EZPs94f9L._AC_SL500_.jpg",
+        "alt": "Mayorga Café Cubano Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "stumptown-hair-bender": {
+    "name": "Stumptown Hair Bender Whole Bean",
+    "brand": "Stumptown",
+    "asin": "B008J4WEBM",
+    "image": "https://m.media-amazon.com/images/I/61Di1iiIzML._AC_SL500_.jpg",
+    "imageAlt": "Stumptown Hair Bender whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.6,
+    "specs": {
+      "roast": "Medium",
+      "origin": "Blend",
+      "flavor": "Citrus, dark chocolate, syrupy sweetness",
+      "aeropressStyle": "Classic daily AeroPress cups",
+      "valueTier": "$$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/7197+vThDlL._AC_SL500_.jpg",
+        "alt": "Stumptown Hair Bender Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71wzbsR8geL._AC_SL500_.jpg",
+        "alt": "Stumptown Hair Bender Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61-fFkOisoL._AC_SL500_.jpg",
+        "alt": "Stumptown Hair Bender Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "kicking-horse-three-sisters": {
+    "name": "Kicking Horse Three Sisters Whole Bean",
+    "brand": "Kicking Horse",
+    "asin": "B00KC0LLFQ",
+    "image": "https://m.media-amazon.com/images/I/617dvT9v8RL._AC_SL500_.jpg",
+    "imageAlt": "Kicking Horse Three Sisters medium roast whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.4,
+    "specs": {
+      "roast": "Medium",
+      "origin": "Blend",
+      "flavor": "Round body, cocoa, toasted sweetness",
+      "aeropressStyle": "Straight black coffee with easy balance",
+      "valueTier": "$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81Tb++fs+cL._AC_SL500_.jpg",
+        "alt": "Kicking Horse Three Sisters Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71j9EVleRLL._AC_SL500_.jpg",
+        "alt": "Kicking Horse Three Sisters Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81v7ehPUyIL._AC_SL500_.jpg",
+        "alt": "Kicking Horse Three Sisters Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "peets-big-bang": {
+    "name": "Peet’s Big Bang Whole Bean",
+    "brand": "Peet’s",
+    "asin": "B086ZFPJZB",
+    "image": "https://m.media-amazon.com/images/I/71e420X0BaL._AC_SL500_.jpg",
+    "imageAlt": "Peets Big Bang medium roast whole bean coffee bag",
+    "category": "brewers",
+    "rating": 4.4,
+    "specs": {
+      "roast": "Medium",
+      "origin": "Blend",
+      "flavor": "Citrus, sweet fruit, rounded body",
+      "aeropressStyle": "Quick black cups with a brighter edge",
+      "valueTier": "$$"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/712L-TM1XYL._AC_SL500_.jpg",
+        "alt": "Peet’s Big Bang Whole Bean alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61lV52I5P8L._AC_SL500_.jpg",
+        "alt": "Peet’s Big Bang Whole Bean alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71GkSjKvotL._AC_SL500_.jpg",
+        "alt": "Peet’s Big Bang Whole Bean alternate view 3"
+      }
+    ]
+  },
+  "aesir-filters-aeropress-reddit": {
+    "name": "Aesir Filters",
+    "brand": "Aesir",
+    "asin": "B072M5HG4Q",
+    "image": "https://m.media-amazon.com/images/I/71UlGcthNaL._AC_SL500_.jpg",
+    "imageAlt": "Aesir premium paper filters for AeroPress coffee makers",
+    "category": "accessories",
+    "rating": 4.6,
+    "specs": {
+      "type": "Premium paper",
+      "compatibility": "AeroPress brewers",
+      "cupProfile": "Very clean with more clarity than standard paper",
+      "pack": "Premium paper filters"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61uA4IQGvrL._AC_SL500_.jpg",
+        "alt": "Aesir Filters alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71A1nq-cZgL._AC_SL500_.jpg",
+        "alt": "Aesir Filters alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81ud0P766oL._AC_SL500_.jpg",
+        "alt": "Aesir Filters alternate view 3"
+      }
+    ]
+  },
+  "able-disk-fine-standard-set-reddit": {
+    "name": "Able DISK Fine + Standard Set",
+    "brand": "Able",
+    "asin": "B00L1R4FR0",
+    "image": "https://m.media-amazon.com/images/I/81eI5swr3RL._AC_SL500_.jpg",
+    "imageAlt": "Able DISK Fine and Standard stainless steel reusable filters for AeroPress brewers",
+    "category": "accessories",
+    "rating": 4.5,
+    "specs": {
+      "type": "Metal filter set",
+      "compatibility": "AeroPress brewers and AeroPress Carafe",
+      "cupProfile": "Lets you choose cleaner fine mesh or fuller standard mesh",
+      "pack": "Two reusable filters"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81vR8soWUwL._AC_SL500_.jpg",
+        "alt": "Able DISK Fine + Standard Set alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81hawDW1MCL._AC_SL500_.jpg",
+        "alt": "Able DISK Fine + Standard Set alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81DHXJ-JKiL._AC_SL500_.jpg",
+        "alt": "Able DISK Fine + Standard Set alternate view 3"
+      }
+    ]
+  },
+  "coffeesock-aeropress-filters-reddit": {
+    "name": "CoffeeSock AeroPress Cloth Filters",
+    "brand": "CoffeeSock",
+    "asin": "B017KR9YG6",
+    "image": "https://m.media-amazon.com/images/I/71g1dRxrcDL._AC_SL500_.jpg",
+    "imageAlt": "CoffeeSock reusable organic cotton cloth filters for AeroPress brewers",
+    "category": "accessories",
+    "rating": 4.4,
+    "specs": {
+      "type": "Cloth",
+      "compatibility": "AeroPress brewers",
+      "cupProfile": "Rounder than paper, cleaner than most metal",
+      "pack": "3 cloth filters"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/41xd6P4QuZL._AC_SL500_.jpg",
+        "alt": "CoffeeSock AeroPress Cloth Filters alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/310sn0tybqL._AC_SL500_.jpg",
+        "alt": "CoffeeSock AeroPress Cloth Filters alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/6104gCJYEEL._AC_SL500_.jpg",
+        "alt": "CoffeeSock AeroPress Cloth Filters alternate view 3"
+      }
+    ]
+  },
+  "2pour-aeropress-paper-filters-reddit": {
+    "name": "2POUR Unbleached AeroPress-Compatible Paper Filters",
+    "brand": "2POUR",
+    "asin": "B078QPKDNP",
+    "image": "https://m.media-amazon.com/images/I/61EQI3YqotL._AC_SL500_.jpg",
+    "imageAlt": "2POUR unbleached paper filters compatible with AeroPress coffee makers",
+    "category": "accessories",
+    "rating": 4.4,
+    "specs": {
+      "type": "Unbleached paper",
+      "compatibility": "AeroPress and AeroPress Go style brewers",
+      "cupProfile": "Clean and light with a simple natural-paper feel",
+      "pack": "350 paper filters"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61TEogm3XoL._AC_SL500_.jpg",
+        "alt": "2POUR Unbleached AeroPress-Compatible Paper Filters alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61gdAM95EtL._AC_SL500_.jpg",
+        "alt": "2POUR Unbleached AeroPress-Compatible Paper Filters alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71IMWxyyDDL._AC_SL500_.jpg",
+        "alt": "2POUR Unbleached AeroPress-Compatible Paper Filters alternate view 3"
+      }
+    ]
   }
 }

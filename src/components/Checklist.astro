@@ -1,10 +1,11 @@
 ---
 interface Props {
   title?: string;
-  items: string[];
+  items: (string | { text: string })[];
 }
 
 const { title, items } = Astro.props;
+const getText = (item: string | { text: string }) => typeof item === 'string' ? item : item.text;
 ---
 
 <div class="checklist">
@@ -15,7 +16,7 @@ const { title, items } = Astro.props;
         <svg class="checklist__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20 6 9 17l-5-5"/>
         </svg>
-        <span>{item}</span>
+        <span>{getText(item)}</span>
       </li>
     ))}
   </ul>

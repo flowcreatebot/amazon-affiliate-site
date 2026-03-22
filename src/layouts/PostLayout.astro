@@ -21,7 +21,7 @@ interface Props {
 
 const {
   breadcrumbs,
-  showDisclosure = true,
+  showDisclosure = !!DISCLOSURE_TEXT,
   disclosureText,
   ...baseProps
 } = Astro.props;

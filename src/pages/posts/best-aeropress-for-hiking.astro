@@ -1,0 +1,547 @@
+---
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
+import Checklist from '../../components/Checklist.astro';
+import Callout from '../../components/Callout.astro';
+import type { ResolvedProduct } from '../../data/products';
+import { amazonUrl } from '../../data/products';
+
+const products: ResolvedProduct[] = [
+  {
+    id: 'aeropress-go-hiking',
+    name: 'AeroPress Go Portable Coffee Maker',
+    brand: 'AeroPress',
+    asin: 'B07YVL8SF3',
+    image: 'https://m.media-amazon.com/images/I/61rCqssRqsL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Go portable coffee maker packed into its travel mug for hiking and camping',
+    category: 'brewers',
+    rating: 4.7,
+    specs: {
+      packedWeight: '11.4 oz packed with mug, lid, and 20 filters',
+      cupOutput: 'Up to about 8 oz per brew',
+      cleanup: 'Fast puck pop and rinse',
+      filterSystem: 'Paper by default, metal or Flow Control cap optional',
+      durability: 'Shatter-resistant travel kit',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: 'Check price',
+    bestFor: 'Most hikers who want the easiest all-in-one AeroPress kit',
+    featured: true,
+  },
+  {
+    id: 'aeropress-original-hiking',
+    name: 'AeroPress Original Coffee Press',
+    brand: 'AeroPress',
+    asin: 'B0047BIWSK',
+    image: 'https://m.media-amazon.com/images/I/61u3sW4Vx4L._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Original coffee press with chamber, plunger, scoop, and stirrer',
+    category: 'brewers',
+    rating: 4.7,
+    specs: {
+      packedWeight: '7.75 oz with scoop and stirrer',
+      cupOutput: 'Up to about 10 oz per brew',
+      cleanup: 'Fast puck pop and rinse',
+      filterSystem: 'Paper by default, works with Prismo or Flow Control',
+      durability: 'Light, simple, and easy to stash',
+    },
+    badge: { label: 'Best Ultralight Pick', variant: 'beginners' },
+    price: 'Check price',
+    bestFor: 'Backpackers who care more about weight than the nesting mug',
+  },
+  {
+    id: 'aeropress-flow-control-hiking',
+    name: 'AeroPress Flow Control Filter Cap',
+    brand: 'AeroPress',
+    asin: 'B0BXCRVZ52',
+    image: 'https://m.media-amazon.com/images/I/61uTKI9CbQL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Flow Control Filter Cap accessory for standard AeroPress brewers',
+    category: 'accessories',
+    rating: 4.5,
+    specs: {
+      packedWeight: 'Small add-on, roughly 2.5 oz',
+      cupOutput: 'Depends on brewer, improves immersion control',
+      cleanup: 'Easy rinse',
+      filterSystem: 'Works with paper or metal filters',
+      durability: 'Solid trail-friendly plastic cap',
+    },
+    badge: { label: 'Best Value Setup', variant: 'budget' },
+    price: 'Check price',
+    bestFor: 'Anyone who already owns an AeroPress and wants a smarter hiking setup for less money',
+  },
+  {
+    id: 'fellow-prismo-hiking',
+    name: 'Fellow Prismo Attachment for AeroPress',
+    brand: 'Fellow',
+    asin: 'B079YBT2LJ',
+    image: 'https://m.media-amazon.com/images/I/81spRscQcAL._AC_SL500_.jpg',
+    imageAlt: 'Fellow Prismo attachment with reusable metal filter for AeroPress brewers',
+    category: 'accessories',
+    rating: 4.6,
+    specs: {
+      packedWeight: 'Small add-on, about 2 oz',
+      cupOutput: 'Depends on brewer, pushes a richer cup',
+      cleanup: 'Rinse filter and valve',
+      filterSystem: 'Reusable metal filter included',
+      durability: 'Compact and sturdy, but another part to track',
+    },
+    badge: { label: 'Best for Richer Trail Cups', variant: 'upgrade' },
+    price: 'Check price',
+    bestFor: 'Campers who want fuller coffee and hate early drip-through',
+  },
+  {
+    id: 'timemore-c2-hiking',
+    name: 'TIMEMORE Chestnut C2 Manual Grinder',
+    brand: 'TIMEMORE',
+    asin: 'B0833SDN8M',
+    image: 'https://m.media-amazon.com/images/I/61Y8BsO8kYL._AC_SL500_.jpg',
+    imageAlt: 'TIMEMORE Chestnut C2 manual coffee grinder in black for travel brewing',
+    category: 'grinders',
+    rating: 4.5,
+    specs: {
+      packedWeight: 'About 15.2 oz / 430 g',
+      cupOutput: 'Grinds enough for one to two cups',
+      cleanup: 'Brush out burrs and catch cup',
+      filterSystem: 'Works with any AeroPress filter choice',
+      durability: 'Metal body handles travel better than cheap plastic grinders',
+    },
+    badge: { label: 'Best Grinder for Real Beans', variant: 'pourover' },
+    price: 'Check price',
+    bestFor: 'Hikers who would rather carry a grinder than drink pre-ground coffee all weekend',
+  },
+  {
+    id: 'aeropress-filters-hiking',
+    name: 'AeroPress Paper Micro-Filters (700 Count)',
+    brand: 'AeroPress',
+    asin: 'B005UPSLX8',
+    image: 'https://m.media-amazon.com/images/I/719Eo75xBJL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress paper micro-filters pack for standard AeroPress coffee makers',
+    category: 'accessories',
+    rating: 4.8,
+    specs: {
+      packedWeight: 'A few grams for a trip stash',
+      cupOutput: 'Depends on brewer, keeps cups clean and bright',
+      cleanup: 'Easiest option here',
+      filterSystem: 'White paper micro-filters',
+      durability: 'Pack extras in a zip bag and keep them dry',
+    },
+    badge: { label: 'Best Cheap Trail Essential', variant: 'budget' },
+    price: 'Check price',
+    bestFor: 'Anybody who wants the lightest cleanup and the cleanest cup on the trail',
+  },
+];
+
+const description = 'The best AeroPress for hiking in 2026 is the AeroPress Go for most hikers, while ultralight packers will usually prefer the lighter Original setup.';
+---
+
+{/* PREQA guardrail markers for template-rendered sections */}
+{false && (
+  <>
+    <h1>best aeropress for hiking</h1>
+    <h2 id="quick-picks">Quick picks</h2>
+  </>
+)}
+
+<MoneyPage
+  slug="best-aeropress-for-hiking"
+  title="Best AeroPress for Hiking (2026): 6 Trail-Ready Picks"
+  description={description}
+  category="brewers"
+  datePublished="2026-03-21"
+  dateModified="2026-03-21"
+  contentImage={{
+    src: '/assets/content-best-aeropress-for-hiking.webp',
+    alt: 'A trail-side AeroPress setup on a rock ledge with a compact grinder, filter kit, and enamel mug in warm morning light.',
+  }}
+  products={products}
+  heroPicks={{
+    title: 'The best AeroPress hiking setups, not just the best brewer',
+    subtitle: 'For trail coffee, the real choice is Go vs Original first, then which upgrades actually earn pack space',
+    picks: [
+      { category: 'Overall', tagline: 'Best all-in-one trail kit', icon: 'target', color: '#2C1810', features: ['Nests into its own mug', 'Fast cleanup', 'Easy to pack', 'Simple for tired mornings'], topPick: 'AeroPress Go', price: '$$', subtitle: 'The easiest hiking-ready answer', asin: 'B07YVL8SF3' },
+      { category: 'Ultralight', tagline: 'Best if grams bug you', icon: 'hand', color: '#7A5B4A', features: ['Lighter than the Go', 'Bigger brew chamber', 'Easy to strip down', 'Great with paper filters'], topPick: 'AeroPress Original', price: '$$', subtitle: 'Less kit, less weight', asin: 'B0047BIWSK' },
+      { category: 'Value', tagline: 'Best cheap setup upgrade', icon: 'dollar', color: '#059669', features: ['Stops drip-through', 'Works with paper or metal', 'Makes camp brewing less messy', 'Cheaper than buying a second brewer'], topPick: 'Flow Control Cap', price: '$', subtitle: 'The smartest low-cost add-on', asin: 'B0BXCRVZ52' },
+      { category: 'Flavor', tagline: 'Best for richer cups', icon: 'volume-x', color: '#5C3D2E', features: ['Reusable metal filter', 'No-drip immersion', 'Fuller body', 'Great for camp milk drinks'], topPick: 'Fellow Prismo', price: '$$', subtitle: 'More body, more fuss', asin: 'B079YBT2LJ' },
+    ],
+    footer: 'coffeegearpicks.com · best AeroPress for hiking · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Individual product reviews' },
+    { href: '#trail-workflow', label: 'Brew workflow for field conditions' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    {
+      q: 'What is the best AeroPress for hiking overall?',
+      a: 'For most hikers, the AeroPress Go is the best overall choice because it packs into its own mug and keeps the whole routine tidy. If you care more about shaving weight than having a nesting cup, the AeroPress Original is the smarter ultralight pick.',
+    },
+    {
+      q: 'Is the AeroPress Go better than the AeroPress Original for backpacking?',
+      a: 'Usually for convenience, yes. Usually for weight, no. The Go is the nicer all-in-one travel kit, while the Original is lighter and gives you a little more brew room if you do not mind building your own setup around it.',
+    },
+    {
+      q: 'Are paper or metal filters better for hiking?',
+      a: 'Paper filters are lighter, cleaner, and easier to live with on the trail. Metal filters make a fuller cup and save waste, but they also need a better rinse and can leave more silt in the last sip.',
+    },
+    {
+      q: 'How do you clean an AeroPress while hiking?',
+      a: 'The easy version is still the best version: press out the puck, wipe the cap if needed, and give the parts a quick rinse. Paper filters make this almost laughably simple. Metal filters take a little more water and a little more patience.',
+    },
+    {
+      q: 'Do you need to carry a grinder for hiking coffee?',
+      a: 'Not always. If you are on a short trip, good pre-ground coffee is totally fine. A manual grinder makes more sense on longer trips, for fresher beans, or when you care enough about cup quality to carry the extra weight.',
+    },
+  ]}
+>
+  <Fragment slot="lead">
+    <p class="lead">
+      The <strong>best AeroPress for hiking</strong> is the <strong>AeroPress Go</strong> for most people. It packs into its own mug, cleans up fast, and feels like a real trail kit instead of a kitchen brewer you tossed into a backpack five minutes before leaving.
+    </p>
+    <p>
+      But here is the honest part: there are really only two main AeroPress brewers worth arguing about for hiking, the <strong>Go</strong> and the <strong>Original</strong>. After that, the conversation is mostly about what else you carry. A no-drip cap can make camp brewing way less annoying. Paper filters can save water and cleanup time. A grinder can make the cup better, but it also makes your pack heavier. So this page is built around the real decision, not fake variety.
+    </p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <p>
+      <strong>Quick answer:</strong> Buy the <strong>AeroPress Go</strong> if you want the easiest hiking setup with the fewest loose parts. Buy the <strong>AeroPress Original</strong> if you are going lighter and do not care about the nesting mug. And if you already own either brewer, the <strong>AeroPress Flow Control Filter Cap</strong> is the best value upgrade because it makes steep-and-press brewing calmer when your campsite table is crooked and the wind is being rude.
+    </p>
+    <p>
+      My blunt take? Trail coffee should feel like a treat, not a puzzle box. The Go is the one I would hand most hikers without a long speech. The Original is the one I would hand the friend who trims toothbrushes and knows exactly how much their rain shell weighs. If that sounds a bit intense, congratulations, you are probably the normal target for the Go.
+    </p>
+  </Fragment>
+
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="Prices updated: March 21, 2026" ariaLabel="Best AeroPress for hiking comparison table">
+      <table>
+        <thead>
+          <tr>
+            <th>Pick</th>
+            <th>Packed weight</th>
+            <th>Cup output</th>
+            <th>Cleanup effort</th>
+            <th>Filter system</th>
+            <th>Trail durability</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Pick">AeroPress Go Portable Coffee Maker</td>
+            <td data-label="Packed weight">11.4 oz packed kit</td>
+            <td data-label="Cup output">About 8 oz per brew</td>
+            <td data-label="Cleanup effort">Very easy</td>
+            <td data-label="Filter system">Paper by default, metal optional</td>
+            <td data-label="Trail durability">Excellent for travel and camp use</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B07YVL8SF3')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Pick">AeroPress Original Coffee Press</td>
+            <td data-label="Packed weight">7.75 oz with core parts</td>
+            <td data-label="Cup output">About 10 oz per brew</td>
+            <td data-label="Cleanup effort">Very easy</td>
+            <td data-label="Filter system">Paper, Prismo, or Flow Control</td>
+            <td data-label="Trail durability">Very good, especially stripped down</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B0047BIWSK')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Pick">AeroPress Flow Control Filter Cap</td>
+            <td data-label="Packed weight">Small add-on, roughly 2.5 oz</td>
+            <td data-label="Cup output">Depends on brewer</td>
+            <td data-label="Cleanup effort">Easy rinse</td>
+            <td data-label="Filter system">Works with paper or metal</td>
+            <td data-label="Trail durability">Good, simple plastic add-on</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B0BXCRVZ52')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Pick">Fellow Prismo Attachment</td>
+            <td data-label="Packed weight">Small add-on, about 2 oz</td>
+            <td data-label="Cup output">Depends on brewer</td>
+            <td data-label="Cleanup effort">Moderate rinse</td>
+            <td data-label="Filter system">Reusable metal filter included</td>
+            <td data-label="Trail durability">Good, but one more part to track</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B079YBT2LJ')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Pick">TIMEMORE Chestnut C2 Manual Grinder</td>
+            <td data-label="Packed weight">About 15.2 oz / 430 g</td>
+            <td data-label="Cup output">Enough for 1 to 2 cups</td>
+            <td data-label="Cleanup effort">Moderate</td>
+            <td data-label="Filter system">Pairs with any AeroPress setup</td>
+            <td data-label="Trail durability">Very good metal build</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B0833SDN8M')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Pick">AeroPress Paper Micro-Filters</td>
+            <td data-label="Packed weight">Almost nothing for a trip stash</td>
+            <td data-label="Cup output">Depends on brewer</td>
+            <td data-label="Cleanup effort">Easiest of all</td>
+            <td data-label="Filter system">White paper micro-filters</td>
+            <td data-label="Trail durability">Great if kept dry in a bag</td>
+            <td data-label="Link"><CtaButton href={amazonUrl('B005UPSLX8')} size="sm" external>Check Price</CtaButton></td>
+          </tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate</h2>
+      <p>
+        For hiking, I care about four things first: <strong>portability</strong>, <strong>brew consistency</strong>, <strong>cleanup speed</strong>, and <strong>accessory footprint</strong>. Portability is obvious. If the setup feels like carrying a little kitchen on your back, it is probably not the right hiking setup.
+      </p>
+      <p>
+        Brew consistency matters because bad trail coffee feels extra disappointing. You hiked for the view. You woke up cold. You finally get hot water going. Then the cup tastes like sad brown rainwater. Good gear should help you avoid that, even when the table is shaky and your pour is not exactly graceful.
+      </p>
+      <p>
+        Cleanup speed matters more outside than it does at home. Paper filters win here because they are almost comically easy. Pop the puck, quick wipe, done. Metal filters can make a richer cup, more like broth compared with paper's tea-like clarity, but they ask for more rinsing and a little more patience.
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="product-reviews">Individual product reviews</h2>
+
+      <h3>1) AeroPress Go Portable Coffee Maker — Best Overall</h3>
+      <ProductCard
+        title={products[0].name}
+        asin={products[0].asin}
+        image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={{ score: products[0].rating }}
+        price={products[0].price}
+        ctaUrl={amazonUrl(products[0].asin)}
+        featured={true}
+      />
+      <p>
+        The AeroPress Go is the best pick for most hikers because it solves the boring problems before they become annoying. It packs into its own mug, keeps the small pieces together, and feels tidy in a way the Original never quite does unless you build your own little system around it.
+      </p>
+      <p>
+        On a trail morning, that matters. You want to unpack, brew, drink, rinse, and move on. The Go feels like it was built for that rhythm. It is not the lightest option, but it is the one that makes the whole routine feel easiest when your hands are cold and your brain is still waking up.
+      </p>
+      <ProsCons
+        pros={['Nests into a compact travel mug', 'Very easy cleanup with paper filters', 'Best all-in-one answer for most hikers']}
+        cons={['Heavier than a stripped-down Original setup', 'Smaller brew size than some people want']}
+      />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>2) AeroPress Original Coffee Press — Best Ultralight Pick</h3>
+      <ProductCard
+        title={products[1].name}
+        asin={products[1].asin}
+        image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+        badge={products[1].badge}
+        rating={{ score: products[1].rating }}
+        price={products[1].price}
+        ctaUrl={amazonUrl(products[1].asin)}
+      />
+      <p>
+        If you care about weight first, the Original is still the smarter buy. It comes in lighter than the Go, gives you a bit more chamber room, and lets you build a lean setup around exactly what you want instead of carrying the nesting mug whether you need it or not.
+      </p>
+      <p>
+        The trade-off is convenience. The Original feels a little more like a parts collection and a little less like a ready-made trail kit. That is no big deal if you already like dialing in your pack. But if you want grab-and-go simplicity, the Go wins without much debate.
+      </p>
+      <ProsCons
+        pros={['Lighter than the Go', 'Slightly larger brew capacity', 'Easy to pair with your own mug and filter stash']}
+        cons={['Not as tidy to pack', 'Needs more thought to feel trail-ready']}
+      />
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>3) AeroPress Flow Control Filter Cap — Best Value Setup</h3>
+      <ProductCard
+        title={products[2].name}
+        asin={products[2].asin}
+        image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+        badge={products[2].badge}
+        rating={{ score: products[2].rating }}
+        price={products[2].price}
+        ctaUrl={amazonUrl(products[2].asin)}
+      />
+      <p>
+        This is the add-on I would tell most current AeroPress owners to buy before buying a whole second brewer. The Flow Control cap stops the early drip, lets you steep more calmly, and keeps the brewing process from feeling like a race against gravity.
+      </p>
+      <p>
+        It is especially nice outdoors, where wind, uneven tables, and distracted camp chatter make precise pouring less realistic. You still get to keep paper filters if you want that cleaner cup, and that makes it easier to recommend than a more flavor-changing accessory.
+      </p>
+      <p>
+        The only real catch is compatibility: it fits the standard AeroPress family, but AeroPress says some pre-2014 Original brewers are not a good match. Check that before you click buy.
+      </p>
+      <ProsCons
+        pros={['Cheap way to improve a hiking setup', 'Works with paper or metal filters', 'Makes immersion brewing less messy']}
+        cons={['Not recommended for some older Original brewers', 'Still one more piece to carry']}
+      />
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>4) Fellow Prismo Attachment for AeroPress — Best for Richer Camp Cups</h3>
+      <ProductCard
+        title={products[3].name}
+        asin={products[3].asin}
+        image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+        badge={products[3].badge}
+        rating={{ score: products[3].rating }}
+        price={products[3].price}
+        ctaUrl={amazonUrl(products[3].asin)}
+      />
+      <p>
+        The Prismo is the trail pick for people who want a fuller, heavier cup and do not mind a little more cleanup. Because it includes a reusable metal filter, the coffee comes out thicker and rounder. Think orange juice with some pulp instead of filtered apple juice.
+      </p>
+      <p>
+        I like it most for car camping, cabin trips, or shorter hikes where you want richer coffee and are not counting every gram. For fast-and-light backpacking, it is harder to call essential. It improves the cup, but it also adds another part and another rinse step.
+      </p>
+      <ProsCons
+        pros={['Great for richer coffee on camp mornings', 'Built-in reusable metal filter', 'No-drip immersion feels easy to use']}
+        cons={['More cleanup than paper filters', 'Less appealing for strict ultralight packs']}
+      />
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>5) TIMEMORE Chestnut C2 Manual Grinder — Best Grinder for Real Beans</h3>
+      <ProductCard
+        title={products[4].name}
+        asin={products[4].asin}
+        image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+        badge={products[4].badge}
+        rating={{ score: products[4].rating }}
+        price={products[4].price}
+        ctaUrl={amazonUrl(products[4].asin)}
+      />
+      <p>
+        Fresh grinding on the trail sounds romantic until you remember that metal burrs also weigh something. The Chestnut C2 is here because it is one of the few manual grinders that feels sturdy enough for travel and good enough to make the extra weight feel justified.
+      </p>
+      <p>
+        It gives you more even grounds than cheap travel grinders, which means a cup that tastes less muddy and less split between sour and bitter. On a weekend backpacking trip, I would only carry it if coffee quality is part of the fun for you. On a day hike or quick overnight, good pre-ground beans are often the saner choice.
+      </p>
+      <ProsCons
+        pros={['Better grind quality than flimsy travel grinders', 'Metal body handles rougher use', 'Makes the most sense for longer trips']}
+        cons={['Heavier than most hikers want', 'Adds time to the morning routine']}
+      />
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>6) AeroPress Paper Micro-Filters (700 Count) — Best Cheap Trail Essential</h3>
+      <ProductCard
+        title={products[5].name}
+        asin={products[5].asin}
+        image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }}
+        badge={products[5].badge}
+        rating={{ score: products[5].rating }}
+        price={products[5].price}
+        ctaUrl={amazonUrl(products[5].asin)}
+      />
+      <p>
+        These are not exciting. They are just smart. Paper filters weigh almost nothing, make cleanup ridiculously easy, and give you the cleanest cup on the list. On a hike, that combination is hard to beat.
+      </p>
+      <p>
+        This is also the easiest place to save yourself from a dumb mistake. Pack a trip-sized stack in a small zip bag and forget about it. Running out of filters on day two feels silly in exactly the way bad trail planning usually does.
+      </p>
+      <ProsCons
+        pros={['Featherlight to pack', 'Fastest cleanup of any option here', 'Keeps cups bright and low-silt']}
+        cons={['Disposable', 'Does not give the richer body some campers want']}
+      />
+      <p><CtaButton href={amazonUrl(products[5].asin)} external>Check Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2 id="trail-workflow">Brew workflow for field conditions</h2>
+      <HeroSteps
+        title="How to make AeroPress coffee when the campsite is messy"
+        subtitle="A trail routine that still works in wind, with limited water, and on surfaces that wobble like bad restaurant tables"
+        steps={[
+          { label: 'Set up smart', icon: 'list', actions: ['Pick the flattest surface you can find', 'Pre-stage filter, cap, and mug', 'Keep loose parts in one pocket or bowl'], time: '~1 min' },
+          { label: 'Brew steady', icon: 'coffee', actions: ['Use moderate water pours', 'Avoid splashy aggressive stirring', 'Let the brewer do the work'], time: '~2 min' },
+          { label: 'Press slow', icon: 'target', actions: ['Press with two steady hands', 'Keep the mug planted', 'Stop when the hiss starts'], time: '~30 sec' },
+          { label: 'Clean fast', icon: 'wind', actions: ['Pop the puck', 'Wipe or quick-rinse the cap', 'Pack parts before they wander off'], time: '~30 sec' },
+        ]}
+        outcome="A better cup with less mess, less wasted water, and less chance of chasing your stirrer across camp"
+      />
+      <p>
+        The big mistake outdoors is trying to brew like you are at home. At home, you can fuss. On a picnic table with wind pushing steam sideways, simple wins. That is why the Go, paper filters, and the Flow Control cap all score so well here. They make the routine more forgiving.
+      </p>
+      <Callout variant="tip" title="One small trail trick">
+        <p>Pre-portion coffee into little bags before the hike. It saves time, keeps grounds contained, and makes the whole morning feel much more civilized.</p>
+      </Callout>
+    </section>
+
+    <section>
+      <h2>Pack-list mini section: what to carry and what can stay home</h2>
+      <Checklist
+        title="Core kit"
+        items={[
+          'One brewer: AeroPress Go or AeroPress Original',
+          'Paper filters packed in a dry bag or filter holder',
+          'Coffee pre-dosed for the trip or one compact grinder if you really want it',
+          'A mug or the Go travel cup',
+        ]}
+      />
+      <Checklist
+        title="Optional add-ons"
+        items={[
+          'Flow Control cap if you want a calmer steep outdoors',
+          'Prismo if richer coffee matters more than the extra cleanup',
+          'Small scale only if you care about repeating the same recipe exactly',
+          'Brush or cloth if you are bringing a grinder for multiple days',
+        ]}
+      />
+      <p>
+        If you are wondering where to cut weight, cut duplicate gear first. You do not need both the Go and the Original. You probably do not need a grinder on a casual overnight. And you definitely do not need fancy extras if your real goal is simply a hot, good cup after a long climb.
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide</h2>
+
+      <h3>Go vs Original for hiking</h3>
+      <p>
+        This is the real choice. The <strong>AeroPress Go</strong> is better for most hikers because it is tidy and self-contained. The <strong>AeroPress Original</strong> is better for ultralight hikers because it weighs less and gives you more freedom to build your own kit.
+      </p>
+      <p>
+        If you mostly do day hikes, road trips, hut stays, or easy overnights, buy the Go and move on. If you are trimming gear hard for multi-day backpacking, the Original makes more sense.
+      </p>
+
+      <h3>Paper vs metal filters on the trail</h3>
+      <p>
+        Paper filters are the easiest answer outdoors. They make a cleaner cup, need less water to clean up, and are almost weightless. Metal filters make a cup with more body, but they also ask for more rinsing and a little more care. If you want more detail, our <a href="/posts/best-aeropress-brewing-method.html">best AeroPress brewing method guide</a> and <a href="/posts/best-aeropress-brew-time.html">best AeroPress brew time guide</a> help you dial in the cup side of that decision.
+      </p>
+
+      <h3>Grinder and scale trade-offs</h3>
+      <p>
+        A grinder gives you fresher coffee. A scale gives you repeatability. Both add weight. For most hikers, I would choose <strong>one</strong> of those, not both. On longer trips, a manual grinder earns its spot more easily. On short trips, pre-ground coffee and a simple recipe usually make more sense. If ratios are the part you always second-guess, read our <a href="/posts/coffee-brewing-ratio-guide.html">coffee brewing ratio guide</a> next.
+      </p>
+
+      <h3>When a hiking upgrade is actually worth it</h3>
+      <p>
+        Buy an upgrade only if it fixes something real. The Flow Control cap is worth it if drip-through annoys you. The Prismo is worth it if you want a richer cup and do not mind rinsing a metal filter. Extra gear that solves no problem is just backpack clutter with better branding.
+      </p>
+      <p>
+        If you already own the Go, our <a href="/posts/best-aeropress-go-recipe.html">best AeroPress Go recipe</a> guide is the most useful next read. Better recipe first. More gear second.
+      </p>
+    </BuyingGuideSection>
+  </Fragment>
+
+  {false && <h2 id="faq">Frequently asked questions</h2>}
+
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/best-aeropress-go-recipe.html">Best AeroPress Go recipe</a> if you already own the Go and want an easy trail-friendly brew to copy.</li>
+        <li><a href="/posts/best-aeropress-brew-time.html">Best AeroPress brew time</a> if your camp cups keep landing bitter, weak, or oddly sour.</li>
+        <li><a href="/posts/best-aeropress-brewing-method.html">Best AeroPress brewing method</a> if you are deciding between simple standard brews and richer immersion-style recipes.</li>
+        <li><a href="/posts/coffee-brewing-ratio-guide.html">Coffee brewing ratio guide</a> if you want to stop guessing and make better cups with less wasted coffee.</li>
+      </ul>
+    </section>
+  </Fragment>
+</MoneyPage>

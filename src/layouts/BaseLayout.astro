@@ -17,6 +17,8 @@ interface Props {
   robots?: string;
 }
 
+import { SITE } from '../data/site';
+
 const {
   title,
   description,
@@ -28,17 +30,19 @@ const {
   ogImage,
   robots = 'index,follow,max-image-preview:large',
 } = Astro.props;
+
+const displayTitle = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`;
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{title}</title>
+  <title>{displayTitle}</title>
   <meta name="description" content={description} />
   <meta name="robots" content={robots} />
   <link rel="canonical" href={canonical} />
-  <meta property="og:title" content={ogTitle ?? title} />
+  <meta property="og:title" content={ogTitle ?? displayTitle} />
   <meta property="og:description" content={ogDescription ?? description} />
   <meta property="og:type" content={ogType} />
   <meta property="og:url" content={ogUrl ?? canonical} />

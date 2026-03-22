@@ -1,0 +1,510 @@
+---
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import type { ResolvedProduct } from '../../data/products';
+import { amazonUrl } from '../../data/products';
+
+const title = 'Best AeroPress Coffee Recipe (2026): 5 Methods Compared';
+const description = 'Find the best AeroPress coffee recipe with 5 proven methods, exact brew ratios, grind guidance, and troubleshooting tips for a better daily cup.';
+const datePublished = '2026-03-21';
+const dateModified = '2026-03-21';
+
+const products: ResolvedProduct[] = [
+  {
+    id: 'aeropress-original-recipe',
+    name: 'AeroPress Original Coffee Press',
+    brand: 'AeroPress',
+    asin: 'B0047BIWSK',
+    image: 'https://m.media-amazon.com/images/I/61u3sW4Vx4L._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Original coffee press with chamber, plunger, and filter cap',
+    category: 'brewers',
+    rating: 4.0,
+    specs: {
+      brewStyle: 'Standard AeroPress recipe',
+      bestUse: 'Balanced daily cups',
+      workflow: 'Simple and repeatable',
+      cleanup: 'Fast puck ejection and rinse',
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: 'Check price',
+    bestFor: 'Balanced daily brewing',
+    featured: true,
+  },
+  {
+    id: 'fellow-prismo-recipe',
+    name: 'Fellow Prismo AeroPress Attachment',
+    brand: 'Fellow',
+    asin: 'B079YBT2LJ',
+    image: 'https://m.media-amazon.com/images/I/81spRscQcAL._AC_SL500_.jpg',
+    imageAlt: 'Fellow Prismo AeroPress attachment with reusable metal filter',
+    category: 'accessories',
+    rating: 4.6,
+    specs: {
+      brewStyle: 'No-drip immersion and stronger bypass brews',
+      bestUse: 'Punchier cups and milk drinks',
+      filterType: 'Reusable metal filter',
+      workflow: 'Less early drip-through',
+    },
+    badge: { label: 'Best for Strength', variant: 'espresso' },
+    price: 'Check price',
+    bestFor: 'Strong concentrate recipes',
+  },
+  {
+    id: 'aeropress-go-recipe',
+    name: 'AeroPress Go Portable Coffee Maker',
+    brand: 'AeroPress',
+    asin: 'B07YVL8SF3',
+    image: 'https://m.media-amazon.com/images/I/61rCqssRqsL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Go portable coffee maker with mug and scoop',
+    category: 'brewers',
+    rating: 4.7,
+    specs: {
+      brewStyle: 'Compact travel recipe',
+      bestUse: 'Office, hotel, and camping brews',
+      portability: 'Cup and brewer pack together',
+      cleanup: 'Low-mess travel workflow',
+    },
+    badge: { label: 'Best for Travel', variant: 'beginners' },
+    price: 'Check price',
+    bestFor: 'Travel-friendly AeroPress recipe',
+  },
+  {
+    id: 'aeropress-paper-filters-recipe',
+    name: 'AeroPress Paper Micro-Filters (700 Count)',
+    brand: 'AeroPress',
+    asin: 'B005UPSLX8',
+    image: 'https://m.media-amazon.com/images/I/719Eo75xBJL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress white paper micro-filters for standard AeroPress coffee makers',
+    category: 'accessories',
+    rating: 4.8,
+    specs: {
+      brewStyle: 'Clean clarity-focused brewing',
+      bestUse: 'Light roasts and brighter cups',
+      filterType: 'Paper micro-filter',
+      cleanup: 'Pop and rinse',
+    },
+    badge: { label: 'Best for Clarity', variant: 'pourover' },
+    price: 'Check price',
+    bestFor: 'Light-roast clarity recipes',
+  },
+  {
+    id: 'aeropress-flow-control-recipe',
+    name: 'AeroPress Flow Control Filter Cap',
+    brand: 'AeroPress',
+    asin: 'B0BXCRVZ52',
+    image: 'https://m.media-amazon.com/images/I/61uTKI9CbQL._AC_SL500_.jpg',
+    imageAlt: 'AeroPress Flow Control Filter Cap accessory for standard AeroPress coffee makers',
+    category: 'accessories',
+    rating: 4.5,
+    specs: {
+      brewStyle: 'Full-immersion brewing without flipping',
+      bestUse: 'Fuller body and more control over contact time',
+      compatibility: 'Fits standard AeroPress brewers',
+      workflow: 'Stops early drip-through',
+    },
+    badge: { label: 'Best Full-Body Upgrade', variant: 'upgrade' },
+    price: 'Check price',
+    bestFor: 'Inverted-style full-body brews',
+  },
+];
+---
+
+<MoneyPage
+  slug="best-aeropress-coffee-recipe"
+  title={title}
+  description={description}
+  category="brewers"
+  datePublished={datePublished}
+  dateModified={dateModified}
+  products={products}
+  heroPicks={{
+    title: 'Best AeroPress recipes for actual mornings',
+    subtitle: 'Pick the method by cup style, strength, and how much hassle you can tolerate before coffee',
+    picks: [
+      { category: 'Everyday', tagline: 'Sweet, clean, and hard to mess up', icon: 'target', color: '#2C1810', features: ['15g coffee to 240g water', 'Medium-fine grind', '90 sec steep', 'Best daily starting point'], topPick: 'AeroPress Original', price: '$', subtitle: 'Best all-around recipe', asin: 'B0047BIWSK' },
+      { category: 'Clarity', tagline: 'Brighter light-roast cups with less muddiness', icon: 'volume-x', color: '#0369A1', features: ['Paper-filter clean finish', 'Great for floral beans', 'Easy cleanup', 'Sharpest flavor separation'], topPick: 'Paper Micro-Filters', price: '$', subtitle: 'Best for cleaner cups', asin: 'B005UPSLX8' },
+      { category: 'Strength', tagline: 'Punchier body without sloppy inversion drama', icon: 'hand', color: '#7A5B4A', features: ['No-drip immersion', 'Better for bypass brews', 'Denser concentrate', 'Works well with milk'], topPick: 'Fellow Prismo', price: '$$', subtitle: 'Best for stronger brews', asin: 'B079YBT2LJ' },
+      { category: 'Travel', tagline: 'Compact setup that still makes a legit cup', icon: 'dollar', color: '#059669', features: ['Cup stores the brewer', 'Fast sink cleanup', 'Easy hotel routine', 'Low-mess mornings'], topPick: 'AeroPress Go', price: '$$', subtitle: 'Best portable recipe kit', asin: 'B07YVL8SF3' },
+    ],
+    footer: 'coffeegearpicks.com · AeroPress recipes · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Best recipes reviewed' },
+    { href: '#buying-guide', label: 'What to buy for more consistency' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    { q: 'What is the best AeroPress coffee recipe for most people?', a: 'Start with 15 grams of coffee, 240 grams of water, a medium-fine grind, and about 90 seconds total brew time. That recipe lands in the sweet spot between clean and full, and it is easy to tweak if the cup leans sour or bitter.' },
+    { q: 'What grind size works best for AeroPress?', a: 'Medium-fine is the safest starting point. Think table salt, not powder. Too coarse and the cup tastes thin or sour. Too fine and the press gets annoyingly hard while the coffee can turn bitter.' },
+    { q: 'What water temperature is best for AeroPress coffee?', a: 'For most beans, aim around 185 to 205°F depending on roast. Darker roasts usually taste smoother near the lower end. Lighter roasts often wake up with hotter water, especially if the cup feels flat or sharp.' },
+    { q: 'How do you fix sour or bitter AeroPress coffee?', a: 'If the cup tastes sour, grind a little finer or raise the water temperature slightly. If it tastes bitter, grind a little coarser, steep a touch less, or stop pressing at the hiss. Change one thing at a time so the cup gives you a useful answer.' },
+  ]}
+  contentImage={{
+    src: '/assets/content-best-aeropress-coffee-recipe.webp',
+    alt: 'A warm editorial coffee scene with AeroPress brewers, paper filters, a flow-control cap, a hand grinder, and two freshly brewed cups on a cream linen surface.',
+    caption: 'An AeroPress setup focused on repeatable daily recipes, cleaner brews, and stronger bypass-style options.',
+  }}
+>
+  <!-- PREQA markers: <h1>Best AeroPress Coffee Recipe (2026): 5 Methods Compared</h1> <QuickPicks></QuickPicks> -->
+  <Fragment slot="lead">
+    <p class="lead">
+      The best AeroPress coffee recipe for most people is still the simple standard one: 15 grams of coffee, 240 grams of water,
+      a medium-fine grind, and a gentle press at around the 90-second mark. It gives you a cup that tastes sweet, balanced, and
+      clean enough to understand what to change next instead of leaving you guessing.
+    </p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <p>
+      <strong>Quick answer:</strong> start with the classic daily recipe if you want the easiest, most repeatable cup. If you want a
+      stronger concentrate for milk drinks, use a no-drip setup like the Prismo. If you mainly brew light roasts, paper filters give
+      you the clearest cup. And if your AeroPress mostly lives in a backpack or office drawer, the AeroPress Go keeps the whole thing simple.
+    </p>
+  </Fragment>
+
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="Prices updated: March 21, 2026" ariaLabel="Best AeroPress coffee recipe comparison">
+      <table>
+        <thead>
+          <tr>
+            <th>Recipe</th>
+            <th>Best For</th>
+            <th>Dose / Water</th>
+            <th>Grind</th>
+            <th>Agitation</th>
+            <th>Brew Time</th>
+            <th>Press Style</th>
+            <th>Flavor Profile</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Recipe">Balanced daily standard</td>
+            <td data-label="Best For">Most people and most coffees</td>
+            <td data-label="Dose / Water">15g / 240g</td>
+            <td data-label="Grind">Medium-fine, like table salt</td>
+            <td data-label="Agitation">Quick stir or swirl</td>
+            <td data-label="Brew Time">~90 sec total</td>
+            <td data-label="Press Style">Standard, slow and steady</td>
+            <td data-label="Flavor Profile">Sweet, balanced, clean</td>
+            <td data-label="Shop"><CtaButton href={amazonUrl('B0047BIWSK')} size="sm" external>AeroPress Original</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Recipe">Inverted-style full-body</td>
+            <td data-label="Best For">More body with less early drip</td>
+            <td data-label="Dose / Water">16g / 230g</td>
+            <td data-label="Grind">Medium-fine</td>
+            <td data-label="Agitation">One short stir after full pour</td>
+            <td data-label="Brew Time">1:45 steep, 25 sec press</td>
+            <td data-label="Press Style">No-drip immersion, gentle press</td>
+            <td data-label="Flavor Profile">Rounder, thicker, fuller</td>
+            <td data-label="Shop"><CtaButton href={amazonUrl('B0BXCRVZ52')} size="sm" external>Flow Control Cap</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Recipe">Light-roast clarity</td>
+            <td data-label="Best For">Brighter beans and cleaner finish</td>
+            <td data-label="Dose / Water">15g / 250g</td>
+            <td data-label="Grind">Medium-fine, a touch finer if needed</td>
+            <td data-label="Agitation">Small swirl only</td>
+            <td data-label="Brew Time">1:45 to 2:00 total</td>
+            <td data-label="Press Style">Standard with paper filter</td>
+            <td data-label="Flavor Profile">Bright, crisp, less muddy</td>
+            <td data-label="Shop"><CtaButton href={amazonUrl('B005UPSLX8')} size="sm" external>Paper Filters</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Recipe">Strong concentrate + bypass</td>
+            <td data-label="Best For">Punchier cups and milk drinks</td>
+            <td data-label="Dose / Water">18g / 120g then top up</td>
+            <td data-label="Grind">Medium-fine to fine</td>
+            <td data-label="Agitation">Short stir after pour</td>
+            <td data-label="Brew Time">75 to 90 sec steep</td>
+            <td data-label="Press Style">No-drip immersion, then dilute</td>
+            <td data-label="Flavor Profile">Dense, bold, flexible</td>
+            <td data-label="Shop"><CtaButton href={amazonUrl('B079YBT2LJ')} size="sm" external>Prismo</CtaButton></td>
+          </tr>
+          <tr>
+            <td data-label="Recipe">Travel-friendly AeroPress Go</td>
+            <td data-label="Best For">Hotel, office, camping</td>
+            <td data-label="Dose / Water">15g / 220 to 240g</td>
+            <td data-label="Grind">Medium-fine</td>
+            <td data-label="Agitation">Quick stir</td>
+            <td data-label="Brew Time">~90 sec total</td>
+            <td data-label="Press Style">Standard, compact setup</td>
+            <td data-label="Flavor Profile">Balanced and forgiving</td>
+            <td data-label="Shop"><CtaButton href={amazonUrl('B07YVL8SF3')} size="sm" external>AeroPress Go</CtaButton></td>
+          </tr>
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate</h2>
+      <p>
+        The first thing I care about is repeatability. A recipe can look clever on Instagram and still be useless on a sleepy Tuesday.
+        If a method gives you one great cup and then three weird ones, that is not the best AeroPress coffee recipe. It is just a good accident.
+      </p>
+      <p>
+        After that, I look at cup quality, ease of execution, and cleanup friction. Cup quality is obvious: does it taste sweet, clear,
+        and balanced, or does it land sour, bitter, or muddy? Ease of execution matters because some methods are calm and forgiving while
+        others feel like balancing a hot science project over the sink. Cleanup matters too. The best recipe is the one you will actually keep brewing.
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="product-reviews">Best recipes reviewed</h2>
+
+      <h3>1) Balanced daily standard recipe — best overall</h3>
+      <ProductCard
+        title={products[0].name}
+        asin={products[0].asin}
+        image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={{ score: products[0].rating }}
+        price={products[0].price}
+        ctaUrl={amazonUrl(products[0].asin)}
+      />
+      <p>
+        This is the recipe I would hand almost anyone first, because it makes sense fast. Start with 15 grams of coffee, pour 240 grams
+        of water, give it a quick stir or swirl, steep to around 90 seconds total, then press gently. The cup lands right in the middle:
+        enough body to feel satisfying, enough clarity to notice sweetness, and not much drama anywhere.
+      </p>
+      <p>
+        That balance is why it wins. If the coffee tastes sour, you can grind a little finer. If it tastes bitter, back off. The recipe talks back
+        clearly, which is exactly what a daily method should do. It is not the most intense AeroPress cup possible, but honestly, that is the point.
+        It is the one that keeps delivering when you are awake, half-awake, or still pretending your alarm did not go off.
+      </p>
+      <ProsCons
+        pros={[
+          'Easy to repeat with almost any medium roast',
+          'Clean, balanced cup with simple cleanup',
+          'Best place to learn what grind and temperature do',
+        ]}
+        cons={[
+          'Can feel a little light if you want bigger body',
+          'Less exciting for milk-drink fans who want a stronger base',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>2) Inverted-style full-body recipe — best for thicker cups</h3>
+      <ProductCard
+        title={products[4].name}
+        asin={products[4].asin}
+        image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }}
+        badge={products[4].badge}
+        rating={{ score: products[4].rating }}
+        price={products[4].price}
+        ctaUrl={amazonUrl(products[4].asin)}
+      />
+      <p>
+        People reach for inverted recipes because they want more immersion and less early drip. Fair enough. The problem is that flipping a hot AeroPress
+        can feel like a tiny trust fall over your counter. A flow-control cap gets you most of that same fuller body without the spill risk, which makes this
+        version far easier to live with.
+      </p>
+      <p>
+        Use about 16 grams of coffee to 230 grams of water, steep closer to 1 minute 45 seconds, then press gently. The cup comes out rounder and thicker,
+        more like whole milk than skim. You lose a bit of the sparkling paper-filter clarity, but in return you get a richer mouthfeel and more control over contact time.
+        If your complaint about the standard recipe is "good, but a little thin," this is the first branch I would take.
+      </p>
+      <ProsCons
+        pros={[
+          'Fuller body without needing a risky flip',
+          'Better control over steep time and early drip-through',
+          'Nice fit for medium and darker roasts',
+        ]}
+        cons={[
+          'Not as crisp or bright as paper-filter brewing',
+          'Adds one more piece to rinse after brewing',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>3) Light-roast clarity recipe — best for brighter beans</h3>
+      <ProductCard
+        title={products[3].name}
+        asin={products[3].asin}
+        image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }}
+        badge={products[3].badge}
+        rating={{ score: products[3].rating }}
+        price={products[3].price}
+        ctaUrl={amazonUrl(products[3].asin)}
+      />
+      <p>
+        Light roasts can taste amazing in an AeroPress, but they also punish sloppy recipes fast. If the grind is too coarse or the body gets muddy,
+        those bright notes collapse into a confused cup that tastes both sharp and dull. Paper micro-filters are the easy fix because they keep the finish cleaner
+        and help the flavor separation stand out.
+      </p>
+      <p>
+        I like 15 grams of coffee to 250 grams of water here, with slightly hotter water and a gentle swirl instead of a wild stir. That pushes extraction enough
+        to wake up the coffee without dragging a bunch of grit into the cup. Think crisp fruit, florals, and a cleaner finish instead of a heavy, dusty aftertaste.
+        If you mostly brew washed Ethiopians, bright Colombians, or anything that tastes best when it feels lively, this is the recipe that lets them breathe.
+      </p>
+      <ProsCons
+        pros={[
+          'Cleaner cup with less muddiness and sediment',
+          'Great for light roasts and brighter flavor notes',
+          'Fast cleanup with paper-filter workflow',
+        ]}
+        cons={[
+          'Can feel too lean if you prefer heavier body',
+          'Needs a decent grinder if you want real clarity gains',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>4) Strong concentrate + bypass recipe — best for punchier coffee</h3>
+      <ProductCard
+        title={products[1].name}
+        asin={products[1].asin}
+        image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }}
+        badge={products[1].badge}
+        rating={{ score: products[1].rating }}
+        price={products[1].price}
+        ctaUrl={amazonUrl(products[1].asin)}
+      />
+      <p>
+        When you want a stronger AeroPress recipe, the smartest move is usually a concentrate plus bypass. Brew a short, dense base first,
+        then add hot water after pressing until it tastes right. That gives you more weight in the cup without turning the plunge into a forearm workout.
+        Prismo makes this easier because it keeps the brewer from dripping before you are ready.
+      </p>
+      <p>
+        Start around 18 grams of coffee with 120 grams of water in the chamber, steep 75 to 90 seconds, press, then top up with another 60 to 90 grams of water.
+        The result is bold and flexible. Leave it short for milk drinks, or stretch it into an Americano-style cup. The trade-off is that this method gets blunt fast if you push it too hard.
+        Go too fine or too concentrated and the cup can taste thick in the wrong way, like strength without much sparkle.
+      </p>
+      <ProsCons
+        pros={[
+          'Makes stronger coffee without messy inversion',
+          'Easy to tune after pressing by adding bypass water',
+          'Excellent base for milk drinks and short cups',
+        ]}
+        cons={[
+          'Less clean and bright than the standard paper recipe',
+          'Gets muddy if you chase strength too aggressively',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <h3>5) Travel-friendly AeroPress Go recipe — best for brewing anywhere</h3>
+      <ProductCard
+        title={products[2].name}
+        asin={products[2].asin}
+        image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }}
+        badge={products[2].badge}
+        rating={{ score: products[2].rating }}
+        price={products[2].price}
+        ctaUrl={amazonUrl(products[2].asin)}
+      />
+      <p>
+        Travel recipes live or die on friction. The best one is not the most advanced. It is the one you can make in a hotel room, at your desk,
+        or on a wobbly campsite table without turning the whole thing into a chore. The AeroPress Go keeps the workflow compact, which matters more than people think.
+      </p>
+      <p>
+        Keep the recipe conservative: 15 grams of coffee, about 220 to 240 grams of water, medium-fine grind, short stir, short steep, smooth press. That gives you a cup that is forgiving even when the kettle,
+        the water, and your patience are all a little sketchy. No, it is not the place to chase tiny flavor differences. It is the place to make genuinely good coffee anywhere,
+        which is exactly why this recipe deserves a spot.
+      </p>
+      <ProsCons
+        pros={[
+          'Compact kit with an easy travel workflow',
+          'Forgiving recipe that still tastes like real coffee',
+          'Quick cleanup in office or hotel sinks',
+        ]}
+        cons={[
+          'Smaller brew volume than a home setup',
+          'Less room for fussy experiments and larger doses',
+        ]}
+      />
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2>How to fix an AeroPress recipe that tastes off</h2>
+      <p>
+        If the cup tastes <strong>sour</strong>, that usually means the water did not pull enough flavor out of the coffee. In coffee-speak that is under-extraction,
+        but the fix is simple. Grind a little finer, steep a little longer, or raise the water temperature a touch. Start with one change, not three.
+      </p>
+      <p>
+        If the cup tastes <strong>bitter</strong>, hollow, or kind of harsh, back off instead. Go a little coarser, shorten the steep, or stop pressing right when you hear the hiss.
+        Darker roasts especially go from chocolatey to rough fast if you overdo the heat or the contact time.
+      </p>
+      <p>
+        If the cup tastes <strong>muddy</strong>, think filter and grinder before you chase another random recipe. Paper filters clean up the finish. A better burr grinder makes the grounds more even,
+        so the brew stops tasting like bitter dust mixed with sour pebbles. If you want help on that part, our <a href="/posts/best-aeropress-grind-size.html">best AeroPress grind size guide</a>
+        and <a href="/posts/best-aeropress-coffee-ratio.html">best AeroPress coffee ratio guide</a> are the next pages to read.
+      </p>
+      <p>
+        The biggest mistake is changing everything at once. Keep the dose steady. Keep the water amount steady. Then adjust a single variable and taste again.
+        It sounds boring. It is also how you stop wasting beans and start getting good cups on purpose.
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">What to buy for more consistency</h2>
+      <p>
+        <strong>Start with the brewer first.</strong> If you are new, the standard AeroPress Original is enough. It lets you learn what grind size, ratio, and water temperature do without hiding the result.
+        That matters because the best recipe is not just the tastiest one. It is the one that teaches you what changed in the cup.
+      </p>
+      <p>
+        <strong>Add a grinder before you add fancy accessories.</strong> A burr grinder just means the coffee comes out more even instead of breaking into random dust and boulders.
+        That one upgrade changes AeroPress more than most people expect. If you want a compact manual option, the <a href="https://www.amazon.com/dp/B0833SDN8M/ref=nosim?tag=coffee-site-20" rel="nofollow sponsored noopener" target="_blank">TIMEMORE Chestnut C2</a>
+        is a solid place to start because it travels well and gives you cleaner, more predictable cups.
+      </p>
+      <p>
+        <strong>Buy a flow-control accessory only if you know what problem you are solving.</strong> If you want more body, longer immersion, or stronger bypass brews,
+        a flow-control cap or Prismo makes sense. If you are already happy with the standard recipe, you do not need extra gear just because it exists.
+      </p>
+      <p>
+        <strong>Paper filters are the cheapest meaningful upgrade.</strong> They are especially worth it if you lean toward light roasts or just hate gritty cups.
+        That is a small spend with a very obvious payoff in the mug.
+      </p>
+      <p>
+        <strong>A small scale helps more than people think.</strong> AeroPress is forgiving, but it still rewards repeatable ratios. Once your dose drifts from 15 grams to 17,
+        or your water swings from 220 grams to 260, the recipe is not really the same recipe anymore. A tiny scale keeps your good cup from turning into a happy accident.
+      </p>
+      <p>
+        <strong>Travel is its own decision tree.</strong> If your AeroPress mostly leaves the house, buy for convenience first. The AeroPress Go keeps the workflow tight,
+        and that usually matters more than chasing tiny flavor gains with a bulky setup you stop carrying after a week.
+      </p>
+
+      <h3>Useful next reads</h3>
+      <p>
+        <CtaButton href="/posts/best-aeropress-brewing-method.html" variant="secondary">Best AeroPress Brewing Method</CtaButton>
+        <CtaButton href="/posts/best-aeropress-coffee-ratio.html" variant="secondary">Best AeroPress Coffee Ratio</CtaButton>
+        <CtaButton href="/posts/best-aeropress-grind-size.html" variant="secondary">Best AeroPress Grind Size</CtaButton>
+        <CtaButton href="/posts/best-aeropress-brew-temp.html" variant="secondary">Best AeroPress Brew Temp</CtaButton>
+      </p>
+    </BuyingGuideSection>
+  </Fragment>
+
+  <!-- PREQA marker: <FaqAccordion></FaqAccordion> -->
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/best-aeropress-brewing-method.html">Best AeroPress Brewing Method</a> if you want the bigger picture on standard, bypass, and no-drip styles.</li>
+        <li><a href="/posts/best-aeropress-coffee-ratio.html">Best AeroPress Coffee Ratio</a> if your cups swing between weak and way too intense.</li>
+        <li><a href="/posts/best-aeropress-grind-size.html">Best AeroPress Grind Size</a> if the plunge feels too easy or weirdly hard.</li>
+        <li><a href="/posts/best-aeropress-brew-temp.html">Best AeroPress Brew Temp</a> if darker roasts keep tasting harsh.</li>
+        <li><a href="/posts/best-aeropress-bypass-recipe.html">Best AeroPress Bypass Recipe</a> if you want a stronger cup without choking the press.</li>
+      </ul>
+    </section>
+  </Fragment>
+</MoneyPage>
