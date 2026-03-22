@@ -2400,5 +2400,63 @@
         "alt": "AeroPress Original Coffee Press alternate view 3"
       }
     ]
+  },
+  "gsi-ultralight-java-drip-backpacking": {
+    "name": "GSI Outdoors Ultralight Java Drip",
+    "brand": "GSI Outdoors",
+    "asin": "B001LF3ICU",
+    "image": "https://m.media-amazon.com/images/I/71TqNlUO0KL._AC_SL500_.jpg",
+    "imageAlt": "GSI Outdoors Ultralight Java Drip reusable backpacking coffee dripper clipped over a mug",
+    "category": "brewers",
+    "rating": 4.4,
+    "specs": {
+      "packedWeight": "0.4 oz dripper",
+      "capacity": "Single mug at a time",
+      "brewStyle": "Pour-over dripper",
+      "filterType": "Reusable mesh",
+      "cleanupTime": "Moderate",
+      "tradeoff": "Almost weightless, but fussier and messier than an AeroPress"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/814jJbKhbzL._AC_SL500_.jpg",
+        "alt": "GSI Outdoors Ultralight Java Drip alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71IrALw+v3L._AC_SL500_.jpg",
+        "alt": "GSI Outdoors Ultralight Java Drip alternate view 2"
+      }
+    ]
+  },
+  "stanley-boil-brew-backpacking": {
+    "name": "STANLEY Adventure All-in-One Boil + Brew French Press",
+    "brand": "STANLEY",
+    "asin": "B08CGJBSSW",
+    "image": "https://m.media-amazon.com/images/I/71uEZeGmOFL._AC_SL500_.jpg",
+    "imageAlt": "Stanley Adventure All-in-One Boil and Brew French press camp pot in stainless steel",
+    "category": "brewers",
+    "rating": 4.6,
+    "specs": {
+      "packedWeight": "Heavy for backpacking, better for camp-heavy trips",
+      "capacity": "32 oz pot",
+      "brewStyle": "Boil-and-brew French press pot",
+      "filterType": "Built-in mesh press",
+      "cleanupTime": "Moderate to slow",
+      "tradeoff": "Brilliant one-pot camp tool, but not a thru-hike choice"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71mebWaWIVL._AC_SL500_.jpg",
+        "alt": "STANLEY Adventure All-in-One Boil + Brew French Press alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71MOdNvbN+L._AC_SL500_.jpg",
+        "alt": "STANLEY Adventure All-in-One Boil + Brew French Press alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/710aFwlxSaL._AC_SL500_.jpg",
+        "alt": "STANLEY Adventure All-in-One Boil + Brew French Press alternate view 3"
+      }
+    ]
   }
 }
