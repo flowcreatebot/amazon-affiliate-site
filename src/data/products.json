@@ -2814,5 +2814,167 @@
         "alt": "2POUR Unbleached AeroPress-Compatible Paper Filters alternate view 3"
       }
     ]
+  },
+  "delter-coffee-press-reddit": {
+    "name": "Delter Coffee Press",
+    "brand": "Delter",
+    "asin": "B07MYV1RDG",
+    "image": "https://m.media-amazon.com/images/I/71hLL0fA0UL._AC_SL500_.jpg",
+    "imageAlt": "Delter Coffee Press manual coffee brewer with plunger and clear chamber",
+    "category": "brewers",
+    "rating": 4,
+    "specs": {
+      "type": "Manual press brewer",
+      "bestFor": "The closest AeroPress-style swap without buying another AeroPress clone"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/51DkxzOeWBL._AC_SL500_.jpg",
+        "alt": "Delter Coffee Press alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/51xPpdKuktL._AC_SL500_.jpg",
+        "alt": "Delter Coffee Press alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71TLGP9jsaL._AC_SL500_.jpg",
+        "alt": "Delter Coffee Press alternate view 3"
+      }
+    ]
+  },
+  "oxo-brew-rapid-brewer": {
+    "name": "OXO Brew Rapid Brewer",
+    "brand": "OXO",
+    "asin": "B0DC8JYJQX",
+    "image": "https://m.media-amazon.com/images/I/71HDIo5cvkL._AC_SL500_.jpg",
+    "imageAlt": "OXO Brew Rapid Brewer portable coffee maker for concentrated coffee",
+    "category": "brewers",
+    "rating": 4.4,
+    "specs": {
+      "type": "Portable concentrate brewer",
+      "bestFor": "Fast travel brewing and stronger small servings"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71vIHoSpOGL._AC_SL500_.jpg",
+        "alt": "OXO Brew Rapid Brewer alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81QwLzE3XYL._AC_SL500_.jpg",
+        "alt": "OXO Brew Rapid Brewer alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/814QyO1J57L._AC_SL500_.jpg",
+        "alt": "OXO Brew Rapid Brewer alternate view 3"
+      }
+    ]
+  },
+  "hario-switch-immersion-dripper-02": {
+    "name": "Hario Switch Immersion Dripper 02",
+    "brand": "Hario",
+    "asin": "B07NS2SV3W",
+    "image": "https://m.media-amazon.com/images/I/5123Q04y0+L._AC_SL500_.jpg",
+    "imageAlt": "Hario Switch Immersion Dripper size 02 with glass dripper and switch base",
+    "category": "brewers",
+    "rating": 4.6,
+    "specs": {
+      "type": "Immersion and pour-over hybrid",
+      "bestFor": "Clean cups with more control and less plastic feel"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61KgqdqFBaL._AC_SL500_.jpg",
+        "alt": "Hario Switch Immersion Dripper 02 alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61EZE9IqrmL._AC_SL500_.jpg",
+        "alt": "Hario Switch Immersion Dripper 02 alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61Cs1m2OqyL._AC_SL500_.jpg",
+        "alt": "Hario Switch Immersion Dripper 02 alternate view 3"
+      }
+    ]
+  },
+  "clever-coffee-dripper-large": {
+    "name": "Clever Coffee Dripper Large",
+    "brand": "Clever",
+    "asin": "B00EOM5RN0",
+    "image": "https://m.media-amazon.com/images/I/71BWRZxVcXL._AC_SL500_.jpg",
+    "imageAlt": "Clever Coffee Dripper large steep-and-release brewer in clear plastic",
+    "category": "brewers",
+    "rating": 4.7,
+    "specs": {
+      "type": "Steep-and-release dripper",
+      "bestFor": "Forgiving daily brewing with cleaner cups than French press"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/81iYuxIs04L._AC_SL500_.jpg",
+        "alt": "Clever Coffee Dripper Large alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/91-2gE4kxeL._AC_SL500_.jpg",
+        "alt": "Clever Coffee Dripper Large alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81ZR9hmOtML._AC_SL500_.jpg",
+        "alt": "Clever Coffee Dripper Large alternate view 3"
+      }
+    ]
+  },
+  "wacaco-nanopresso": {
+    "name": "WACACO Nanopresso",
+    "brand": "WACACO",
+    "asin": "B0797T2FYL",
+    "image": "https://m.media-amazon.com/images/I/614ZTGrcgvL._AC_SL500_.jpg",
+    "imageAlt": "WACACO Nanopresso portable espresso maker in black",
+    "category": "brewers",
+    "rating": 4.4,
+    "specs": {
+      "type": "Manual espresso-style brewer",
+      "bestFor": "Travel espresso-style coffee with more punch than AeroPress"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/71GroTep5nL._AC_SL500_.jpg",
+        "alt": "WACACO Nanopresso alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81S11AOEiWL._AC_SL500_.jpg",
+        "alt": "WACACO Nanopresso alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/81njC0S0+iL._AC_SL500_.jpg",
+        "alt": "WACACO Nanopresso alternate view 3"
+      }
+    ]
+  },
+  "bialetti-moka-express-reddit": {
+    "name": "Bialetti Moka Express Stovetop",
+    "brand": "Bialetti",
+    "asin": "B0001SJH2I",
+    "image": "https://m.media-amazon.com/images/I/61-2uaC-YZL._AC_SL500_.jpg",
+    "imageAlt": "Bialetti Moka Express stovetop coffee maker in silver aluminum",
+    "category": "brewers",
+    "rating": 4.6,
+    "specs": {
+      "type": "Stovetop pressure brewer",
+      "bestFor": "Strong concentrated coffee without a pump espresso machine"
+    },
+    "secondaryImages": [
+      {
+        "src": "https://m.media-amazon.com/images/I/61B+V4CwovL._AC_SL500_.jpg",
+        "alt": "Bialetti Moka Express Stovetop alternate view 1"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/71xK6eGgYvL._AC_SL500_.jpg",
+        "alt": "Bialetti Moka Express Stovetop alternate view 2"
+      },
+      {
+        "src": "https://m.media-amazon.com/images/I/61Rv+AAWpiL._AC_SL500_.jpg",
+        "alt": "Bialetti Moka Express Stovetop alternate view 3"
+      }
+    ]
   }
 }
