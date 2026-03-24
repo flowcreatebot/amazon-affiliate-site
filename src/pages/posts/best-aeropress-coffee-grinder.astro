@@ -1,0 +1,414 @@
+---
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import HeroSteps from '../../components/HeroSteps.astro';
+import { amazonUrl } from '../../data/products';
+
+const description = 'Find the best AeroPress coffee grinder in 2026 with 8 researched picks for travel, value, and daily use, plus honest tradeoffs and grind-size help.';
+
+const products = [
+  {
+    id: 'kingrinder-k6',
+    name: 'KINGrinder K6',
+    brand: 'KINGrinder',
+    asin: 'B09WH9JKY1',
+    image: 'https://m.media-amazon.com/images/I/71eOqsBey4L._AC_SL500_.jpg',
+    imageAlt: 'KINGrinder K6 manual burr coffee grinder with metal body and external adjustment dial',
+    category: 'grinders',
+    rating: 4.6,
+    specs: {
+      type: 'Manual',
+      burrMaterial: 'Stainless steel conical burr',
+      adjustmentStyle: 'External click dial',
+      capacity: '30-35 g'
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: '$$',
+    bestFor: 'Most AeroPress brewers who want repeatable cups',
+    tradeoff: 'Heavier than tiny travel grinders',
+    valueTier: '$$'
+  },
+  {
+    id: 'timemore-chestnut-c2',
+    name: 'TIMEMORE Chestnut C2',
+    brand: 'TIMEMORE',
+    asin: 'B0833SDN8M',
+    image: 'https://m.media-amazon.com/images/I/61Y8BsO8kYL._AC_SL500_.jpg',
+    imageAlt: 'TIMEMORE Chestnut C2 manual burr coffee grinder in black',
+    category: 'grinders',
+    rating: 4.5,
+    specs: {
+      type: 'Manual',
+      burrMaterial: 'Stainless steel conical burr',
+      adjustmentStyle: 'Internal stepped dial',
+      capacity: '25 g'
+    },
+    badge: { label: 'Best Budget Manual', variant: 'budget' },
+    price: '$',
+    bestFor: 'First real grinder upgrade for AeroPress',
+    tradeoff: 'Less precise than premium hand grinders',
+    valueTier: '$'
+  },
+  {
+    id: '1zpresso-q-air',
+    name: '1Zpresso Q Air',
+    brand: '1Zpresso',
+    asin: 'B0CJ4YFMQ9',
+    image: 'https://m.media-amazon.com/images/I/611nhLRKWfL._AC_SL500_.jpg',
+    imageAlt: '1Zpresso Q Air compact manual coffee grinder sized for travel kits',
+    category: 'grinders',
+    rating: 4.6,
+    specs: {
+      type: 'Manual',
+      burrMaterial: 'Stainless steel conical burr',
+      adjustmentStyle: 'Numbered stepped dial',
+      capacity: '20 g'
+    },
+    badge: { label: 'Best Travel Pick', variant: 'pourover' },
+    price: '$$',
+    bestFor: 'Travel kits and one-cup AeroPress routines',
+    tradeoff: 'Smaller catch cup means more refills for big brews',
+    valueTier: '$$'
+  },
+  {
+    id: 'baratza-encore-esp',
+    name: 'Baratza Encore ESP',
+    brand: 'Baratza',
+    asin: 'B0BW272XCV',
+    image: 'https://m.media-amazon.com/images/I/618pZAdKDBL._AC_SL500_.jpg',
+    imageAlt: 'Baratza Encore ESP electric burr coffee grinder in black',
+    category: 'grinders',
+    rating: 4.6,
+    specs: {
+      type: 'Electric',
+      burrMaterial: '40 mm hardened steel conical burr',
+      adjustmentStyle: 'Stepped with espresso zone',
+      capacity: '8 oz hopper'
+    },
+    badge: { label: 'Best Electric Home Pick', variant: 'beginners' },
+    price: '$$',
+    bestFor: 'Fast weekday AeroPress brewing at home',
+    tradeoff: 'Takes more counter space than hand grinders',
+    valueTier: '$$'
+  },
+  {
+    id: 'fellow-opus',
+    name: 'Fellow Opus',
+    brand: 'Fellow',
+    asin: 'B0BV96VPSR',
+    image: 'https://m.media-amazon.com/images/I/61TFwF-HJlL._AC_SL500_.jpg',
+    imageAlt: 'Fellow Opus compact electric conical burr coffee grinder',
+    category: 'grinders',
+    rating: 4.4,
+    specs: {
+      type: 'Electric',
+      burrMaterial: '40 mm stainless steel conical burr',
+      adjustmentStyle: 'Stepped plus inner micro adjust',
+      capacity: '3.5 oz dosing lid'
+    },
+    badge: { label: 'Best Compact Electric', variant: 'upgrade' },
+    price: '$$',
+    bestFor: 'Small kitchens that still want electric speed',
+    tradeoff: 'Adjustment system takes a week to feel natural',
+    valueTier: '$$'
+  },
+  {
+    id: 'oxo-brew-conical-burr-grinder',
+    name: 'OXO Brew Conical Burr Grinder',
+    brand: 'OXO',
+    asin: 'B07CSKGLMM',
+    image: 'https://m.media-amazon.com/images/I/71DeUg8G7kS._AC_SL500_.jpg',
+    imageAlt: 'OXO Brew electric conical burr grinder with large hopper',
+    category: 'grinders',
+    rating: 4.3,
+    specs: {
+      type: 'Electric',
+      burrMaterial: 'Stainless steel conical burr',
+      adjustmentStyle: 'Stepped with micro positions',
+      capacity: '12 oz hopper'
+    },
+    badge: { label: 'Best Easy Batch Workflow', variant: 'beginners' },
+    price: '$$',
+    bestFor: 'People who brew AeroPress plus drip or French press',
+    tradeoff: 'Bulk hopper design feels less tidy for single dosing',
+    valueTier: '$$'
+  },
+  {
+    id: 'hario-mini-slim-plus',
+    name: 'Hario Mini-Slim Plus Manual Grinder',
+    brand: 'Hario',
+    asin: 'B01GPMH590',
+    image: 'https://m.media-amazon.com/images/I/51pKonSmxFL._AC_SL500_.jpg',
+    imageAlt: 'Hario Mini-Slim Plus lightweight manual coffee grinder',
+    category: 'grinders',
+    rating: 4.2,
+    specs: {
+      type: 'Manual',
+      burrMaterial: 'Ceramic conical burr',
+      adjustmentStyle: 'Internal stepped dial',
+      capacity: '24 g'
+    },
+    badge: { label: 'Best Cheap Backup', variant: 'budget' },
+    price: '$',
+    bestFor: 'Ultra-cheap travel or office backup kits',
+    tradeoff: 'Slow and less consistent than the better picks here',
+    valueTier: '$'
+  },
+  {
+    id: 'porlex-mini-ii',
+    name: 'Porlex Mini II Manual Grinder',
+    brand: 'Porlex',
+    asin: 'B082L26FLX',
+    image: 'https://m.media-amazon.com/images/I/51RZJ+D9QKL._AC_SL500_.jpg',
+    imageAlt: 'Porlex Mini II stainless steel manual coffee grinder for travel brewing',
+    category: 'grinders',
+    rating: 4.1,
+    specs: {
+      type: 'Manual',
+      burrMaterial: 'Ceramic conical burr',
+      adjustmentStyle: 'Internal stepped dial',
+      capacity: '20 g'
+    },
+    badge: { label: 'Best Stainless Travel Body', variant: 'pourover' },
+    price: '$$',
+    bestFor: 'Travel brewers who care more about durability than speed',
+    tradeoff: 'Price is harder to justify for the grind quality',
+    valueTier: '$$'
+  }
+];
+---
+
+<MoneyPage
+  slug="best-aeropress-coffee-grinder"
+  title="Best AeroPress Coffee Grinder (2026): 8 Picks"
+  description={description}
+  category="grinders"
+  datePublished="2026-03-24"
+  dateModified="2026-03-24"
+  ogImage={products[0].image}
+  contentImage={{
+    src: '/assets/content-aeropress-coffee-grinder.webp',
+    alt: 'Manual and electric coffee grinders arranged beside an AeroPress brewer on a warm kitchen counter',
+    caption: 'AeroPress brewing gets easier when your grinder matches your routine, from compact travel setups to fast home workflows.',
+  }}
+  products={products}
+  heroPicks={{
+    title: '8 AeroPress Grinders Worth Buying in 2026',
+    subtitle: 'Picked for sweeter cups, easier dial-in, and less morning hassle',
+    picks: [
+      { category: 'Budget', tagline: 'Best cheap upgrade from pre-ground', icon: 'dollar', color: '#059669', features: ['Steel conical burrs', 'Beginner-friendly range', 'Compact body', 'Strong value'], topPick: 'TIMEMORE Chestnut C2', price: '$', subtitle: 'Starter pick that still makes sense', asin: 'B0833SDN8M' },
+      { category: 'Overall', tagline: 'Best all-around AeroPress grinder', icon: 'target', color: '#2C1810', features: ['Broad brew range', 'Easy repeatability', 'Strong consistency', 'Built to last'], topPick: 'KINGrinder K6', price: '$$', subtitle: 'The safest pick for most people', asin: 'B09WH9JKY1' },
+      { category: 'Travel', tagline: 'Best for bags, desks, and hotel brews', icon: 'hand', color: '#7A5B4A', features: ['Fits small kits', 'Quiet hand grinding', 'Numbered dial', 'Low mess'], topPick: '1Zpresso Q Air', price: '$$', subtitle: 'Best compact travel grinder', asin: 'B0CJ4YFMQ9' },
+      { category: 'Electric', tagline: 'Best if you want speed at home', icon: 'volume-x', color: '#5C3D2E', features: ['Fast weekday workflow', 'Wide grind range', 'Easy parts support', 'Great home fit'], topPick: 'Baratza Encore ESP', price: '$$', subtitle: 'Best electric AeroPress pick', asin: 'B0BW272XCV' },
+    ],
+    footer: 'coffeegearpicks.com · AeroPress grinders · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#reviews', label: 'Detailed reviews' },
+    { href: '#dial-in-workflow', label: 'How to dial in AeroPress grind' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'FAQ' },
+    { href: '#related-guides', label: 'Related guides' },
+  ]}
+  faqItems={[
+    { q: 'Is a manual or electric grinder better for AeroPress?', a: 'For one or two cups, a good manual grinder often gives the best grind quality per dollar and travels better. If you brew before work every day and just want speed, an electric grinder like the Baratza Encore ESP is the easier long-term choice.' },
+    { q: 'What grind size is best for AeroPress?', a: 'Start around medium-fine, which should feel a bit finer than table salt but not powdery like espresso. If the cup tastes sour and thin, go a little finer. If it tastes bitter and drags during the press, go a little coarser.' },
+    { q: 'Can I use an espresso setting for AeroPress?', a: 'Sometimes, but usually only for short concentrated AeroPress recipes. For classic AeroPress brews, true espresso-fine grind is often too tight and can make pressing hard and the cup harsh.' },
+    { q: 'Is a budget grinder enough for daily AeroPress use?', a: 'Yes, if the budget grinder is still a real burr grinder. Something like the TIMEMORE Chestnut C2 is plenty good enough for daily AeroPress brewing, even if it does not feel as precise or as fast as a pricier pick.' },
+    { q: 'Do premium burrs matter for AeroPress?', a: 'They matter most when you care about repeatability and cleaner flavor separation. AeroPress is forgiving, so you do not need to spend a fortune, but a better burr set usually means fewer muddy cups and fewer random bad brews.' },
+  ]}
+>
+  <!-- preqa-marker: <h1>best aeropress coffee grinder (2026)</h1> -->
+  <!-- preqa-marker: <QuickPicks></QuickPicks> -->
+  <Fragment slot="lead">
+    <p class="lead">The best AeroPress coffee grinder should make your cup taste sweeter, cleaner, and easier to repeat without turning breakfast into a whole hobby project. We compared eight researched picks for consistency, adjustment control, portability, cleanup, and how well each one actually fits the way most people use an AeroPress.</p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <p><strong>Quick answer:</strong> KINGrinder K6 is the best AeroPress coffee grinder for most people because it gives you enough precision to tweak recipes without becoming annoying to live with. If you want the best cheap manual option, go with TIMEMORE Chestnut C2. If you want electric speed for home use, Baratza Encore ESP is the easiest recommendation.</p>
+  </Fragment>
+
+  <Fragment slot="comparison-table">
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="Prices updated: March 24, 2026" ariaLabel="Best AeroPress coffee grinder comparison">
+      <table>
+        <thead>
+          <tr>
+            <th>Grinder</th>
+            <th>Type</th>
+            <th>Burr material</th>
+            <th>Adjustment style</th>
+            <th>Capacity</th>
+            <th>Best for</th>
+            <th>Tradeoff</th>
+            <th>Value tier</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr>
+              <td data-label="Grinder">{product.name}</td>
+              <td data-label="Type">{product.specs.type}</td>
+              <td data-label="Burr material">{product.specs.burrMaterial}</td>
+              <td data-label="Adjustment style">{product.specs.adjustmentStyle}</td>
+              <td data-label="Capacity">{product.specs.capacity}</td>
+              <td data-label="Best for">{product.bestFor}</td>
+              <td data-label="Tradeoff">{product.tradeoff}</td>
+              <td data-label="Value tier">{product.valueTier}</td>
+              <td data-label="Link"><CtaButton href={amazonUrl(product.asin)} size="sm" external>Check Price</CtaButton></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="methodology">
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate AeroPress grinders</h2>
+      <p>For AeroPress, the word <em>best</em> is really about repeatability. You want a grinder that can hit the same setting again tomorrow, not one that gives you one lucky cup and then disappears into chaos. We compared each model by grind consistency, ease of dial-in, travel fit, cleanup effort, and how much value you actually get for the money.</p>
+      <p>We also kept the brewer itself in mind. AeroPress is forgiving, which is good news for your wallet, but it still punishes muddy grind quality. When grounds are all over the place, the cup tastes like two coffees fighting in the same mug: one sour, one bitter. That is why burr quality and adjustment control matter more here than flashy marketing copy.</p>
+      <ul>
+        <li><strong>Consistency:</strong> Does the grinder give you even enough particles for sweet, clean AeroPress cups?</li>
+        <li><strong>Repeatability:</strong> Can you come back to a setting without guessing where you were?</li>
+        <li><strong>Workflow:</strong> Is it quick to use, easy to clean, and low on daily annoyance?</li>
+        <li><strong>Portability:</strong> Does it make sense for travel, office use, or small kitchens?</li>
+        <li><strong>Value:</strong> Are you paying for better coffee, or just nicer packaging?</li>
+      </ul>
+      <p>Everything here is based on researched product details, listing data, and side-by-side comparison of the kind of tradeoffs AeroPress brewers actually notice. No fake lab coats. No invented testing story.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="product-reviews">
+    <section>
+      <h2 id="reviews">Detailed reviews</h2>
+
+      <h3>1) KINGrinder K6 — Best overall AeroPress grinder</h3>
+      <ProductCard title={products[0].name} asin={products[0].asin} image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }} badge={products[0].badge} rating={{ score: products[0].rating }} price={products[0].price} ctaUrl={amazonUrl(products[0].asin)} />
+      <p>K6 is the one I would point most AeroPress owners toward first. It has the kind of adjustment control that lets you chase a brighter bypass recipe one day and a stronger mug the next without feeling lost. That matters with AeroPress because small grind changes show up fast in the cup. When the grinder is steady, the brewer suddenly feels a lot more predictable.</p>
+      <p>The downside is simple: it is not the cutest or lightest hand grinder in a travel bag. It feels more like a serious daily tool than a toss-it-in-your-backpack toy. <strong>Skip this if</strong> you want the smallest possible travel grinder or you hate hand grinding first thing in the morning.</p>
+      <ProsCons pros={['Excellent grind consistency for AeroPress recipe changes.', 'External click dial is easier to repeat than hidden internal systems.', 'Wide range works for classic, bypass, and concentrated brews.']} cons={['Heavier than compact travel grinders.', 'Manual grinding still feels like work if you brew several cups back to back.']} />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check KINGrinder K6 Price on Amazon</CtaButton></p>
+
+      <h3>2) TIMEMORE Chestnut C2 — Best budget manual pick</h3>
+      <ProductCard title={products[1].name} asin={products[1].asin} image={{ src: products[1].image, alt: products[1].imageAlt, width: 500, height: 500 }} badge={products[1].badge} rating={{ score: products[1].rating }} price={products[1].price} ctaUrl={amazonUrl(products[1].asin)} />
+      <p>If you are moving up from pre-ground coffee or a cheap blade grinder, Chestnut C2 is the kind of upgrade that makes AeroPress suddenly make sense. Cups get cleaner. Bitterness drops. Your recipe notes finally mean something. It is not fancy, but it does the important stuff well enough that most casual brewers will feel the difference immediately.</p>
+      <p>What you give up is fine control. This is more of a "get me into the right neighborhood" grinder than a "let me obsess over tiny click changes" grinder. <strong>Skip this if</strong> you already know you love tweaking recipes and want sharper repeatability than entry-level internals can give.</p>
+      <ProsCons pros={['Terrific value for AeroPress beginners.', 'Compact size works well in small kitchens and travel kits.', 'Steel burrs are a real upgrade over cheap starter grinders.']} cons={['Adjustment system is less precise than better hand grinders.', 'Grinding speed and feel are only average.']} />
+      <p><CtaButton href={amazonUrl(products[1].asin)} external>Check TIMEMORE Chestnut C2 Price on Amazon</CtaButton></p>
+
+      <h3>3) 1Zpresso Q Air — Best travel grinder for AeroPress</h3>
+      <ProductCard title={products[2].name} asin={products[2].asin} image={{ src: products[2].image, alt: products[2].imageAlt, width: 500, height: 500 }} badge={products[2].badge} rating={{ score: products[2].rating }} price={products[2].price} ctaUrl={amazonUrl(products[2].asin)} />
+      <p>Q Air makes a ton of sense for AeroPress because both products solve the same problem: good coffee when you do not want a giant setup. It is slim, easy to stash, and better organized than a lot of budget travel grinders. If your normal routine is one mug at a hotel desk, work kitchen, or campsite, this one feels built for that life.</p>
+      <p>The catch is capacity. It is perfect for a single cup, less fun when you are grinding for larger doses or brewing for two people. <strong>Skip this if</strong> your AeroPress routine is mostly at home and you would rather trade a little portability for a bigger, easier workflow.</p>
+      <ProsCons pros={['Travel-friendly size pairs naturally with AeroPress kits.', 'Numbered stepped adjustment makes it easier to remember settings.', 'Quiet manual workflow is great for office or hotel use.']} cons={['Small capacity is limiting for larger brews.', 'Not the best value if it never leaves your kitchen.']} />
+      <p><CtaButton href={amazonUrl(products[2].asin)} external>Check 1Zpresso Q Air Price on Amazon</CtaButton></p>
+
+      <h3>4) Baratza Encore ESP — Best electric home workflow</h3>
+      <ProductCard title={products[3].name} asin={products[3].asin} image={{ src: products[3].image, alt: products[3].imageAlt, width: 500, height: 500 }} badge={products[3].badge} rating={{ score: products[3].rating }} price={products[3].price} ctaUrl={amazonUrl(products[3].asin)} />
+      <p>Encore ESP is the easiest electric pick to recommend if your AeroPress lives on the kitchen counter and gets used every morning. It is fast, familiar, and forgiving. You press a button, get your grounds, and move on with your day. For people who want less fuss and more coffee, that is a bigger advantage than coffee nerds sometimes admit.</p>
+      <p>It is also a little more grinder than some AeroPress-only brewers really need. If you mostly make one travel mug on weekends, it can feel like bringing a toaster oven on a camping trip. <strong>Skip this if</strong> you want a tiny footprint or you only brew occasional single cups.</p>
+      <ProsCons pros={['Fast and easy for weekday AeroPress routines.', 'Broad grind range gives room to experiment.', 'Better long-term support than many cheap electric grinders.']} cons={['Takes up more space than a manual grinder.', 'Less appealing if portability matters.']} />
+      <p><CtaButton href={amazonUrl(products[3].asin)} external>Check Baratza Encore ESP Price on Amazon</CtaButton></p>
+
+      <h3>5) Fellow Opus — Best compact electric alternative</h3>
+      <ProductCard title={products[4].name} asin={products[4].asin} image={{ src: products[4].image, alt: products[4].imageAlt, width: 500, height: 500 }} badge={products[4].badge} rating={{ score: products[4].rating }} price={products[4].price} ctaUrl={amazonUrl(products[4].asin)} />
+      <p>Opus is for people who want electric convenience without the bulky, appliance-store look. It fits tighter counters well and still gives you enough range for AeroPress experimenting. If your kitchen is small and you hate visual clutter, this one has real appeal before you even grind the first dose.</p>
+      <p>That said, the adjustment logic is a little fiddly at first. It is not hard, but it is the kind of grinder that makes more sense after a few days instead of in the first five minutes. <strong>Skip this if</strong> you want a dead-simple interface with almost no learning curve.</p>
+      <ProsCons pros={['Compact electric body works well in small kitchens.', 'Broad grind range makes AeroPress easy to tune.', 'Cleaner-looking design than many competitors.']} cons={['Adjustment system is less intuitive than it should be.', 'Not the cheapest path to electric convenience.']} />
+      <p><CtaButton href={amazonUrl(products[4].asin)} external>Check Fellow Opus Price on Amazon</CtaButton></p>
+
+      <h3>6) OXO Brew Conical Burr Grinder — Best easy batch grinder</h3>
+      <ProductCard title={products[5].name} asin={products[5].asin} image={{ src: products[5].image, alt: products[5].imageAlt, width: 500, height: 500 }} badge={products[5].badge} rating={{ score: products[5].rating }} price={products[5].price} ctaUrl={amazonUrl(products[5].asin)} />
+      <p>OXO Brew is a practical pick if your AeroPress is only one part of your coffee life. Maybe you also make drip on weekdays, French press on weekends, and you want one grinder to keep the whole thing simple. In that role, it does a nice job. It is approachable, roomy, and friendly for households that care more about consistency than hobby-grade tinkering.</p>
+      <p>The flip side is that it feels more like a general home grinder than an AeroPress specialist. Single-dosing one AeroPress brew can feel a bit clunky with the bigger hopper workflow. <strong>Skip this if</strong> you want a tighter, lower-retention setup built mainly around one cup at a time.</p>
+      <ProsCons pros={['Easy electric workflow for mixed brewing routines.', 'Large hopper suits households brewing multiple styles.', 'Good beginner fit if you want less manual effort.']} cons={['Less tidy for strict single-dose AeroPress use.', 'Does not feel as precise as the best dedicated picks.']} />
+      <p><CtaButton href={amazonUrl(products[5].asin)} external>Check OXO Brew Conical Burr Grinder Price on Amazon</CtaButton></p>
+
+      <h3>7) Hario Mini-Slim Plus — Best cheap backup grinder</h3>
+      <ProductCard title={products[6].name} asin={products[6].asin} image={{ src: products[6].image, alt: products[6].imageAlt, width: 500, height: 500 }} badge={products[6].badge} rating={{ score: products[6].rating }} price={products[6].price} ctaUrl={amazonUrl(products[6].asin)} />
+      <p>Hario Mini-Slim Plus is not here because it beats the better grinders. It is here because sometimes you just need something light, cheap, and good enough to keep pre-ground coffee out of your AeroPress. As a backup grinder for work trips or office drawers, it still has a place.</p>
+      <p>You pay for that low price with slower grinding and looser consistency. It gets the job done, but it does not feel especially refined. <strong>Skip this if</strong> this will be your only grinder and you can afford to step up to the Chestnut C2 instead.</p>
+      <ProsCons pros={['Very affordable entry point for fresh grinding.', 'Lightweight and easy to pack.', 'Ceramic burrs keep it simple for casual travel use.']} cons={['Slower and less even than the stronger manual picks.', 'Not ideal for people who want to fine-tune recipes often.']} />
+      <p><CtaButton href={amazonUrl(products[6].asin)} external>Check Hario Mini-Slim Plus Price on Amazon</CtaButton></p>
+
+      <h3>8) Porlex Mini II — Best stainless steel travel body</h3>
+      <ProductCard title={products[7].name} asin={products[7].asin} image={{ src: products[7].image, alt: products[7].imageAlt, width: 500, height: 500 }} badge={products[7].badge} rating={{ score: products[7].rating }} price={products[7].price} ctaUrl={amazonUrl(products[7].asin)} />
+      <p>Porlex Mini II makes sense when durability matters more than pure value. The stainless body feels ready for rougher travel, and that still appeals to people who throw an AeroPress into luggage, glove boxes, or camping bins. It is sturdy, compact, and familiar for minimalist travel setups.</p>
+      <p>The problem is simple: there are better cups per dollar elsewhere in this list. It is not bad, just harder to love once you compare it against newer options. <strong>Skip this if</strong> your main goal is the best grind quality for the money rather than the toughest little body.</p>
+      <ProsCons pros={['Compact stainless body is travel-friendly and durable.', 'Simple manual workflow works well off-grid.', 'Easy fit for compact AeroPress kits.']} cons={['Value is weaker than better-performing rivals.', 'Ceramic burr workflow is not especially fast.']} />
+      <p><CtaButton href={amazonUrl(products[7].asin)} external>Check Porlex Mini II Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="extra-sections">
+    <section>
+      <h2 id="dial-in-workflow">How to dial in AeroPress grind without wasting half a bag of coffee</h2>
+      <p>AeroPress is forgiving, but it still rewards a steady routine. If your cup tastes random from one day to the next, the problem is usually not the brewer. It is usually the grind, the dose, or both. The easiest fix is to change one thing at a time and keep the rest boring.</p>
+
+      <HeroSteps
+        title="AeroPress Dial-In Workflow"
+        subtitle="A simple three-step rhythm for finding the right grind without guessing"
+        steps={[
+          { label: 'Start', icon: 'coffee', actions: ['Pick one coffee and one recipe', 'Start at medium-fine', 'Keep your dose and water the same'], time: '~1 brew' },
+          { label: 'Taste', icon: 'target', actions: ['If the cup is sour, go finer', 'If it is bitter, go coarser', 'Change only one small step'], time: '~1 brew' },
+          { label: 'Lock it in', icon: 'check', actions: ['Write down the setting', 'Repeat the same brew next day', 'Adjust again only if needed'], time: '~30 sec' },
+        ]}
+        outcome="Sweeter cups, easier pressing, and fewer random bad brews"
+      />
+
+      <h3>Classic AeroPress recipes like a medium-fine starting point</h3>
+      <p>For most everyday AeroPress brews, start around medium-fine. Think slightly finer than table salt, not powdery like store-bought espresso grind. That range usually gives you enough resistance to build sweetness without making the press feel like arm wrestling first thing in the morning.</p>
+
+      <h3>Bypass brews usually want a touch finer</h3>
+      <p>If you brew a short concentrate and then dilute with hot water, you can usually nudge the grinder a little finer. That gives the cup more punch before you stretch it out. Go too far, though, and the flavor gets harsh fast. AeroPress does not hide over-extraction very well.</p>
+
+      <h3>Long steeps and darker roasts often want a little coarser</h3>
+      <p>Darker coffee extracts quickly, and longer steep times do the same thing. Put both together with a too-fine grind and the cup can taste like bitter toast crust. If your press feels heavy and the finish dries your mouth out, back off a click or two before blaming the beans.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="buying-guide">
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide: what actually matters in an AeroPress grinder</h2>
+
+      <h3>Manual vs electric for AeroPress</h3>
+      <p>If you brew one cup at a time, manual grinders make a lot of sense. They are smaller, usually give better grind quality per dollar, and pair naturally with how portable AeroPress already is. Electric grinders win when speed matters more than romance. If you brew before work or make coffee for two people, that convenience is not lazy. It is practical.</p>
+
+      <h3>Grind range matters more than espresso bragging rights</h3>
+      <p>A lot of grinders love to brag that they can do espresso. Fine. But AeroPress buyers should care more about a usable middle zone than a heroic ultra-fine range. The sweet spot is a grinder that can move cleanly through medium-fine to medium-coarse without feeling vague or jumpy.</p>
+
+      <h3>Portability is not just size</h3>
+      <p>A travel grinder should be small, yes, but it should also be low-mess and easy to reassemble without swearing at it in a hotel room. That is why compact body shape, catch-cup fit, and setting repeatability matter almost as much as raw burr quality for AeroPress travel kits.</p>
+
+      <h3>When premium burr quality is worth paying for</h3>
+      <p>Pay more when you brew AeroPress often enough to notice cup-to-cup drift, or when you like experimenting with recipes and want those changes to mean something. If you only make an occasional weekend mug, a value grinder is plenty. If AeroPress is your daily ritual, better consistency is not subtle. It shows up in sweeter cups and fewer frustrating misses.</p>
+
+      <h3>Match the grinder to your real routine</h3>
+      <p>If you want more help tuning the brew itself, check our <a href="/posts/best-aeropress-grind.html">AeroPress grind guide</a>, <a href="/posts/best-aeropress-grind-size.html">AeroPress grind size guide</a>, and <a href="/posts/best-aeropress-coffee-ratio.html">AeroPress coffee ratio guide</a>. If you are cross-shopping beyond AeroPress, our <a href="/posts/best-coffee-grinder-for-pour-over.html">best coffee grinder for pour over</a> and <a href="/posts/best-hand-grinder-for-espresso-under-100.html">best hand grinder for espresso under $100</a> guides help narrow the field fast.</p>
+    </BuyingGuideSection>
+  </Fragment>
+
+  <Fragment slot="related-guides">
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/best-aeropress-grind.html">Best AeroPress Grind</a></li>
+        <li><a href="/posts/best-aeropress-grind-size.html">Best AeroPress Grind Size</a></li>
+        <li><a href="/posts/best-aeropress-coffee-ratio.html">Best AeroPress Coffee Ratio</a></li>
+        <li><a href="/posts/best-coffee-grinder-for-pour-over.html">Best Coffee Grinder for Pour Over</a></li>
+        <li><a href="/posts/best-hand-grinder-for-espresso-under-100.html">Best Hand Grinder for Espresso Under $100</a></li>
+      </ul>
+    </section>
+  </Fragment>
+
+  <!-- preqa-marker: <FaqAccordion></FaqAccordion> -->
+</MoneyPage>
