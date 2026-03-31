@@ -1,0 +1,12 @@
+{
+  "id": "money-page",
+  "label": "Money Page (Roundup)",
+  "description": "Product roundup with hero picks, comparison table, individual reviews, buying guide, FAQ",
+  "pageTypeKey": "money",
+  "layoutComponent": "MoneyPage.astro",
+  "starterFile": "starter.astro",
+  "wordRange": [1800, 2500],
+  "requiredSlots": ["lead", "quick-answer", "methodology", "product-reviews", "buying-guide"],
+  "optionalSlots": ["comparison-table", "related-guides", "extra-sections"],
+  "requiredProps": ["slug", "title", "description", "category", "datePublished", "dateModified", "heroPicks", "tocItems", "products", "faqItems"]
+}

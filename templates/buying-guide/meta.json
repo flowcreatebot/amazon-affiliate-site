@@ -1,0 +1,12 @@
+{
+  "id": "buying-guide",
+  "label": "Buying Guide",
+  "description": "Educational buying guide with types comparison, key factors, budget tiers, common mistakes, FAQ",
+  "pageTypeKey": "buying-guide",
+  "layoutComponent": "BuyingGuide.astro",
+  "starterFile": "starter.astro",
+  "wordRange": [1400, 1800],
+  "requiredSlots": ["lead", "types-comparison", "key-factors", "budget-tiers", "common-mistakes"],
+  "optionalSlots": ["featured-picks", "extra-sections"],
+  "requiredProps": ["slug", "title", "description", "category", "datePublished", "dateModified", "tocItems", "faqItems"]
+}

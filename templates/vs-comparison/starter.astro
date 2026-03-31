@@ -1,0 +1,152 @@
+---
+import VsComparison from '../../layouts/page-types/VsComparison.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import QuickCompare from '../../components/QuickCompare.astro';
+import type { ResolvedProduct } from '../../data/products';
+import { amazonUrl } from '../../data/products';
+---
+
+<VsComparison
+  slug="TODO_product-a-vs-product-b"
+  title="TODO_Product A vs Product B (2026): Which Should You Buy?"
+  description="TODO_Meta description 120-160 chars comparing both products"
+  category="TODO_category"
+  datePublished="TODO_2026-01-01"
+  dateModified="TODO_2026-01-01"
+  ogImage="TODO_https://m.media-amazon.com/images/I/XXXXXXXXXXX._AC_SL500_.jpg"
+  ogDescription="TODO_OG description override if different from description"
+  heroVersus={{
+    title: 'TODO_Product A vs Product B',
+    subtitle: 'TODO_One-line framing of the comparison',
+    left: {
+      name: 'TODO_Product A',
+      icon: 'coffee', // Available: timer, zap, wind, wrench, droplets, check, calendar, coffee, target, list
+      color: '#2C1810',
+      bestFor: 'TODO_Who Product A suits best',
+    },
+    right: {
+      name: 'TODO_Product B',
+      icon: 'zap',
+      color: '#7A5B4A',
+      bestFor: 'TODO_Who Product B suits best',
+    },
+    stats: [
+      // TODO: 3-5 comparison stats — winner is 'left', 'right', or 'tie'
+      { label: 'TODO_Criteria 1', value: 'TODO_Summary', winner: 'left' },
+      { label: 'TODO_Criteria 2', value: 'TODO_Summary', winner: 'right' },
+      { label: 'TODO_Criteria 3', value: 'TODO_Summary', winner: 'tie' },
+    ],
+    verdict: 'TODO_One-sentence verdict on who should buy which',
+    footer: 'TODO_sitename.com · comparison · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-verdict', label: 'Quick verdict' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#feature-comparisons', label: 'Feature-by-feature' },
+    { href: '#who-should-buy', label: 'Who should buy which' },
+    { href: '#supporting-gear', label: 'Supporting gear' },
+    { href: '#faq', label: 'FAQ' },
+  ]}
+  faqItems={[
+    // TODO: Minimum 3 FAQ items — { q, a } format
+    { q: 'TODO_Question 1?', a: 'TODO_Answer 1' },
+    { q: 'TODO_Question 2?', a: 'TODO_Answer 2' },
+    { q: 'TODO_Question 3?', a: 'TODO_Answer 3' },
+  ]}
+  {/* Optional: categoryPills — topic labels shown above the hero */}
+  categoryPills={['TODO_Supporting Page', 'TODO_Category Comparison']}
+  {/* Optional: contentImage — hero-style image rendered after extra-sections */}
+  {/* contentImage={{ src: '/assets/TODO_image.webp', alt: 'TODO_alt text', caption: 'TODO_caption' }} */}
+>
+  <Fragment slot="lead">
+    <!-- TODO: 1-2 paragraphs framing the comparison with both product names -->
+    <p class="lead">
+      TODO_Opening paragraph framing why someone would compare <strong>TODO_Product A</strong> and <strong>TODO_Product B</strong>.
+    </p>
+  </Fragment>
+
+  <Fragment slot="quick-verdict">
+    <!-- TODO: Verdict summary — who should buy which -->
+    <section>
+      <h2 id="quick-verdict">Quick verdict</h2>
+      <p>
+        <strong>TODO_Product A</strong> is the better choice if TODO_scenario.
+        <strong>TODO_Product B</strong> wins if TODO_scenario.
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="comparison-table">
+    <!-- TODO: Side-by-side comparison table — every <td> needs a data-label attribute -->
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="TODO_Prices updated: Month DD, 2026" ariaLabel="TODO_comparison table aria label">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>TODO_Product A</th>
+            <th>TODO_Product B</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Feature">TODO_Feature 1</td>
+            <td data-label="TODO_Product A">TODO_Value</td>
+            <td data-label="TODO_Product B">TODO_Value</td>
+          </tr>
+          <!-- TODO: Add more feature rows -->
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="feature-comparisons">
+    <!-- TODO: Minimum 3 feature-by-feature sections, each with an h2 or h3 -->
+    <section>
+      <h2 id="feature-comparisons">Feature-by-feature comparison</h2>
+
+      <h3>TODO_Feature area 1</h3>
+      <p>TODO_Compare both products on this feature.</p>
+
+      <h3>TODO_Feature area 2</h3>
+      <p>TODO_Compare both products on this feature.</p>
+
+      <h3>TODO_Feature area 3</h3>
+      <p>TODO_Compare both products on this feature.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="buyer-profiles">
+    <!-- TODO: "Buy this if..." sections for each product -->
+    <section>
+      <h2 id="who-should-buy">Who should buy which</h2>
+
+      <h3>Buy TODO_Product A if...</h3>
+      <ul>
+        <li>TODO_Buyer scenario 1</li>
+        <li>TODO_Buyer scenario 2</li>
+      </ul>
+
+      <h3>Buy TODO_Product B if...</h3>
+      <ul>
+        <li>TODO_Buyer scenario 1</li>
+        <li>TODO_Buyer scenario 2</li>
+      </ul>
+    </section>
+  </Fragment>
+
+  <Fragment slot="supporting-gear">
+    <!-- TODO: Related picks or internal links to roundups -->
+    <section>
+      <h2 id="supporting-gear">Supporting gear</h2>
+      <p>TODO_Accessories or complementary products worth considering.</p>
+      <ul>
+        <li><a href="/posts/TODO_slug.html">TODO_Related Guide</a> — TODO_why it's relevant.</li>
+      </ul>
+    </section>
+  </Fragment>
+
+  <!-- Extra sections: add any unique content sections here -->
+</VsComparison>

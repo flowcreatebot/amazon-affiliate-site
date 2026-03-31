@@ -1,0 +1,12 @@
+{
+  "id": "howto",
+  "label": "How-To Guide",
+  "description": "Procedural guide with hero steps, numbered steps, common mistakes, troubleshooting, FAQ",
+  "pageTypeKey": "howto",
+  "layoutComponent": "HowToGuide.astro",
+  "starterFile": "starter.astro",
+  "wordRange": [800, 1200],
+  "requiredSlots": ["lead", "quick-answer", "what-youll-need", "steps"],
+  "optionalSlots": ["common-mistakes", "troubleshooting", "extra-sections"],
+  "requiredProps": ["slug", "title", "description", "category", "datePublished", "dateModified", "heroSteps", "tocItems", "faqItems", "schemaSteps"]
+}

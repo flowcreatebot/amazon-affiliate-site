@@ -1,0 +1,12 @@
+{
+  "id": "hub-page",
+  "label": "Hub / Category Page",
+  "description": "Category landing page with subcategory card grid and introductory content",
+  "pageTypeKey": "hub",
+  "layoutComponent": "HubPage.astro",
+  "starterFile": "starter.astro",
+  "wordRange": [300, 500],
+  "requiredSlots": ["intro"],
+  "optionalSlots": ["extra-sections"],
+  "requiredProps": ["title", "description", "category"]
+}

@@ -1,0 +1,130 @@
+---
+import SingleReview from '../../layouts/page-types/SingleReview.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import type { ResolvedProduct } from '../../data/products';
+import { amazonUrl } from '../../data/products';
+
+// TODO: Define the single product being reviewed
+const product: ResolvedProduct = {
+  id: 'TODO_product-slug',
+  name: 'TODO_Product Name',
+  brand: 'TODO_Brand',
+  asin: 'TODO_B00XXXXXXX',
+  image: 'TODO_https://m.media-amazon.com/images/I/XXXXXXXXXXX._AC_SL500_.jpg',
+  imageAlt: 'TODO_Descriptive alt text for product image',
+  category: 'TODO_category',
+  rating: 4.5, // TODO: actual rating
+  specs: {
+    // TODO: add product-specific spec keys
+  },
+  badge: { label: 'TODO_Badge Label', variant: 'TODO_variant' },
+  price: '$$', // TODO: actual price tier or 'Check price'
+  bestFor: 'TODO_Who this product is best for',
+  featured: true,
+};
+---
+
+<SingleReview
+  slug="TODO_product-name-review"
+  title="TODO_Product Name Review (2026): Is It Worth It?"
+  description="TODO_Meta description 120-160 chars with product name"
+  category="TODO_category"
+  datePublished="TODO_2026-01-01"
+  dateModified="TODO_2026-01-01"
+  ogImage={product.image}
+  ogDescription="TODO_OG description override if needed"
+  product={product}
+  tocItems={[
+    { href: '#verdict', label: 'Verdict' },
+    { href: '#specs', label: 'Specifications' },
+    { href: '#performance', label: 'Performance' },
+    { href: '#alternatives', label: 'Alternatives' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  verdict={{
+    score: 4.5, // TODO: your rating out of 5
+    summary: 'TODO_One-sentence verdict summary.',
+    bestFor: 'TODO_Who this product is best suited for.',
+  }}
+  pros={[
+    // TODO: 3-5 pros
+    'TODO_Pro 1',
+    'TODO_Pro 2',
+    'TODO_Pro 3',
+  ]}
+  cons={[
+    // TODO: 2-4 cons
+    'TODO_Con 1',
+    'TODO_Con 2',
+  ]}
+  faqItems={[
+    // TODO: Minimum 4 FAQ items — { q, a } format
+    { q: 'TODO_Question 1?', a: 'TODO_Answer 1' },
+    { q: 'TODO_Question 2?', a: 'TODO_Answer 2' },
+    { q: 'TODO_Question 3?', a: 'TODO_Answer 3' },
+    { q: 'TODO_Question 4?', a: 'TODO_Answer 4' },
+  ]}
+>
+  <Fragment slot="lead">
+    <!-- TODO: 1-2 paragraphs introducing the product and why you're reviewing it -->
+    <p class="lead">
+      The <strong>TODO_Product Name</strong> TODO_opening hook about this product and what makes it interesting.
+    </p>
+    <p>TODO_Second paragraph with more context on who it's for and what you'll cover.</p>
+  </Fragment>
+
+  <Fragment slot="verdict-detail">
+    <!-- TODO: Extended verdict prose — expand on the score and summary -->
+    <section>
+      <h2 id="verdict">Verdict in detail</h2>
+      <p>TODO_Detailed verdict expanding on the score, what impressed you, and what didn't.</p>
+      <p>TODO_Who should buy this and who should look elsewhere.</p>
+      <p><CtaButton href={amazonUrl(product.asin)} external>Check Price on Amazon</CtaButton></p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="specs-table">
+    <!-- TODO: Specifications table with key product specs -->
+    <section>
+      <h2 id="specs">Specifications</h2>
+      <table>
+        <tbody>
+          <tr><td>TODO_Spec name</td><td>TODO_Spec value</td></tr>
+          <tr><td>TODO_Spec name</td><td>TODO_Spec value</td></tr>
+          <tr><td>TODO_Spec name</td><td>TODO_Spec value</td></tr>
+          <!-- TODO: Add all relevant specs -->
+        </tbody>
+      </table>
+    </section>
+  </Fragment>
+
+  <Fragment slot="performance">
+    <!-- TODO: Minimum 3 performance subsections — deep-dive on real-world use -->
+    <section>
+      <h2 id="performance">Performance</h2>
+
+      <h3>TODO_Performance area 1</h3>
+      <p>TODO_How the product performs in this area.</p>
+
+      <h3>TODO_Performance area 2</h3>
+      <p>TODO_How the product performs in this area.</p>
+
+      <h3>TODO_Performance area 3</h3>
+      <p>TODO_How the product performs in this area.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="alternatives">
+    <!-- TODO: 2-3 alternative products with links to their reviews or roundups -->
+    <section>
+      <h2 id="alternatives">Alternatives worth considering</h2>
+      <p>TODO_Brief intro to why someone might look elsewhere.</p>
+      <ul>
+        <li><strong>TODO_Alternative 1</strong> — TODO_why and when to pick this instead. <a href="/posts/TODO_slug.html">Read our review</a>.</li>
+        <li><strong>TODO_Alternative 2</strong> — TODO_why and when to pick this instead. <a href="/posts/TODO_slug.html">See our roundup</a>.</li>
+      </ul>
+    </section>
+  </Fragment>
+
+  <!-- Extra sections: add any unique content sections here -->
+</SingleReview>

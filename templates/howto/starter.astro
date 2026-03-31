@@ -1,0 +1,165 @@
+---
+import HowToGuide from '../../layouts/page-types/HowToGuide.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import Callout from '../../components/Callout.astro';
+import type { ResolvedProduct } from '../../data/products';
+import { amazonUrl } from '../../data/products';
+
+// Optional: Define products if this how-to involves tools/equipment
+// Remove if not needed — the template handles products being undefined
+const products: ResolvedProduct[] = [
+  // TODO: Add products if relevant, or delete this array entirely
+  {
+    id: 'TODO_product-slug',
+    name: 'TODO_Product Name',
+    brand: 'TODO_Brand',
+    asin: 'TODO_B00XXXXXXX',
+    image: 'TODO_https://m.media-amazon.com/images/I/XXXXXXXXXXX._AC_SL500_.jpg',
+    imageAlt: 'TODO_Descriptive alt text for product image',
+    category: 'TODO_category',
+    rating: 4.5, // TODO: actual rating
+    specs: {},
+    badge: { label: 'TODO_Badge', variant: 'TODO_variant' },
+    price: '$$',
+    bestFor: 'TODO_Who this product is best for',
+    featured: true,
+  },
+];
+---
+
+<HowToGuide
+  slug="TODO_how-to-do-something"
+  title="TODO_How to Do Something (2026): Step-by-Step Guide"
+  description="TODO_Meta description 120-160 chars with primary keyword"
+  category="TODO_category"
+  datePublished="TODO_2026-01-01"
+  dateModified="TODO_2026-01-01"
+  ogImage="TODO_https://example.com/og-image.jpg"
+  ogDescription="TODO_OG description override if needed"
+  products={products}
+  heroSteps={{
+    title: 'TODO_How to Do Something',
+    subtitle: 'TODO_A repeatable N-step process',
+    steps: [
+      // TODO: 3-5 high-level steps for the hero card
+      {
+        label: 'TODO_Step 1 Label',
+        icon: 'coffee', // Available: timer, zap, wind, wrench, droplets, check, calendar, coffee, target, list
+        actions: ['TODO_Action 1', 'TODO_Action 2'],
+        time: '~TODO_N min',
+      },
+      {
+        label: 'TODO_Step 2 Label',
+        icon: 'timer',
+        actions: ['TODO_Action 1', 'TODO_Action 2'],
+        time: '~TODO_N min',
+      },
+      {
+        label: 'TODO_Step 3 Label',
+        icon: 'check',
+        actions: ['TODO_Action 1'],
+        time: '~TODO_N min',
+      },
+    ],
+    outcome: 'TODO_What the reader achieves by following these steps',
+    footer: 'TODO_sitename.com · how-to · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-answer', label: 'Quick answer' },
+    { href: '#what-youll-need', label: "What you'll need" },
+    { href: '#steps', label: 'Step-by-step' },
+    { href: '#common-mistakes', label: 'Common mistakes' },
+    { href: '#troubleshooting', label: 'Troubleshooting' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    // TODO: Minimum 3 FAQ items — { q, a } format
+    { q: 'TODO_Question 1?', a: 'TODO_Answer 1' },
+    { q: 'TODO_Question 2?', a: 'TODO_Answer 2' },
+    { q: 'TODO_Question 3?', a: 'TODO_Answer 3' },
+  ]}
+  schemaSteps={[
+    // TODO: Step summaries for HowTo schema — separate from editorial content
+    { name: 'TODO_Step 1 name', text: 'TODO_Brief description of step 1' },
+    { name: 'TODO_Step 2 name', text: 'TODO_Brief description of step 2' },
+    { name: 'TODO_Step 3 name', text: 'TODO_Brief description of step 3' },
+  ]}
+  {/* Optional: supplies for HowTo schema */}
+  supplies={['TODO_Supply 1', 'TODO_Supply 2']}
+  {/* Optional: schemaTools — defaults to product names if products provided */}
+  {/* schemaTools={['TODO_Tool 1', 'TODO_Tool 2']} */}
+  {/* Optional: contentImage */}
+  {/* contentImage={{ src: '/assets/TODO_image.webp', alt: 'TODO_alt text', caption: 'TODO_caption' }} */}
+>
+  <Fragment slot="lead">
+    <!-- TODO: 1-2 paragraphs introducing the process -->
+    <p class="lead">
+      TODO_Opening paragraph explaining what this guide covers and why the reader needs it.
+    </p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <!-- TODO: TL;DR summary of the process -->
+    <section>
+      <h2 id="quick-answer">Quick answer</h2>
+      <p>TODO_Brief summary of the process in 2-3 sentences. What to do, what you need, and the expected outcome.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="what-youll-need">
+    <!-- TODO: Supplies, tools, and prerequisites -->
+    <section>
+      <h2 id="what-youll-need">What you'll need</h2>
+      <ul>
+        <li>TODO_Item/tool 1</li>
+        <li>TODO_Item/tool 2</li>
+        <li>TODO_Item/tool 3</li>
+      </ul>
+    </section>
+  </Fragment>
+
+  <Fragment slot="steps">
+    <!-- TODO: Numbered step-by-step instructions — detailed editorial content -->
+    <section>
+      <h2 id="steps">Step-by-step</h2>
+
+      <h3>Step 1: TODO_Step title</h3>
+      <p>TODO_Detailed instructions for this step.</p>
+
+      <h3>Step 2: TODO_Step title</h3>
+      <p>TODO_Detailed instructions for this step.</p>
+
+      <h3>Step 3: TODO_Step title</h3>
+      <p>TODO_Detailed instructions for this step.</p>
+
+      <!-- TODO: Add more steps as needed -->
+    </section>
+  </Fragment>
+
+  <Fragment slot="common-mistakes">
+    <!-- TODO: Common mistakes and how to avoid them -->
+    <section>
+      <h2 id="common-mistakes">Common mistakes</h2>
+      <ul>
+        <li><strong>TODO_Mistake 1</strong> — TODO_what goes wrong and how to avoid it.</li>
+        <li><strong>TODO_Mistake 2</strong> — TODO_what goes wrong and how to avoid it.</li>
+        <li><strong>TODO_Mistake 3</strong> — TODO_what goes wrong and how to avoid it.</li>
+      </ul>
+    </section>
+  </Fragment>
+
+  <Fragment slot="troubleshooting">
+    <!-- TODO: Problem-solution pairs for when things go wrong -->
+    <section>
+      <h2 id="troubleshooting">Troubleshooting</h2>
+
+      <h3>TODO_Problem 1</h3>
+      <p>TODO_What causes it and how to fix it.</p>
+
+      <h3>TODO_Problem 2</h3>
+      <p>TODO_What causes it and how to fix it.</p>
+    </section>
+  </Fragment>
+
+  <!-- Extra sections: add any unique content sections here -->
+</HowToGuide>

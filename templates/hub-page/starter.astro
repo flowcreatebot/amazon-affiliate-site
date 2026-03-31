@@ -1,0 +1,40 @@
+---
+import HubPage from '../../layouts/page-types/HubPage.astro';
+---
+
+<HubPage
+  title="TODO_Category Name — Guides, Reviews & Comparisons"
+  description="TODO_Meta description 120-160 chars for this category hub"
+  category="TODO_category-slug"
+  ogImage="TODO_https://example.com/og-image.jpg"
+  subcategories={[
+    // TODO: One entry per subcategory — links to roundups, guides, or sub-hubs
+    {
+      label: 'TODO_Subcategory 1',
+      slug: 'posts/TODO_roundup-slug',
+      description: 'TODO_One-line description of what this subcategory covers.',
+      count: 3, // Optional: number of guides in this subcategory
+    },
+    {
+      label: 'TODO_Subcategory 2',
+      slug: 'posts/TODO_roundup-slug',
+      description: 'TODO_One-line description of what this subcategory covers.',
+    },
+    {
+      label: 'TODO_Subcategory 3',
+      slug: 'posts/TODO_roundup-slug',
+      description: 'TODO_One-line description of what this subcategory covers.',
+    },
+    // TODO: Add more subcategories as needed
+  ]}
+>
+  <Fragment slot="intro">
+    <!-- TODO: Category introduction — 2-4 paragraphs, 300-500 words total for the whole page -->
+    <p>TODO_Opening paragraph introducing this category and what the reader will find here.</p>
+    <p>TODO_Second paragraph explaining how the guides are organized and what to read first.</p>
+  </Fragment>
+
+  <!-- Extra sections: add any unique content sections here -->
+  <!-- Note: HubPage uses BaseLayout (no PostLayout), so there is no affiliate disclosure.
+       Keep this page editorial and navigation-focused. -->
+</HubPage>

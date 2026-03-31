@@ -1,0 +1,12 @@
+{
+  "id": "single-review",
+  "label": "Single Review",
+  "description": "Individual product review with verdict box, pros/cons, specs table, performance deep-dive, FAQ",
+  "pageTypeKey": "review",
+  "layoutComponent": "SingleReview.astro",
+  "starterFile": "starter.astro",
+  "wordRange": [1800, 2200],
+  "requiredSlots": ["lead", "verdict-detail", "specs-table", "performance"],
+  "optionalSlots": ["alternatives", "extra-sections"],
+  "requiredProps": ["slug", "title", "description", "category", "datePublished", "dateModified", "product", "tocItems", "verdict", "pros", "cons", "faqItems"]
+}

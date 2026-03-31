@@ -1,0 +1,119 @@
+---
+import BuyingGuide from '../../layouts/page-types/BuyingGuide.astro';
+import CtaButton from '../../components/CtaButton.astro';
+---
+
+<BuyingGuide
+  slug="TODO_how-to-choose-category"
+  title="TODO_How to Choose the Best Category Name (2026 Buyer's Guide)"
+  description="TODO_Meta description 120-160 chars with primary keyword"
+  category="TODO_category"
+  datePublished="TODO_2026-01-01"
+  dateModified="TODO_2026-01-01"
+  ogImage="TODO_https://example.com/og-image.jpg"
+  ogDescription="TODO_OG description override if needed"
+  tocItems={[
+    { href: '#types', label: 'Types compared' },
+    { href: '#key-factors', label: 'Key factors' },
+    { href: '#budget-tiers', label: 'Budget tiers' },
+    { href: '#common-mistakes', label: 'Common mistakes' },
+    { href: '#featured-picks', label: 'Our picks' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    // TODO: Minimum 4 FAQ items — { q, a } format
+    { q: 'TODO_Question 1?', a: 'TODO_Answer 1' },
+    { q: 'TODO_Question 2?', a: 'TODO_Answer 2' },
+    { q: 'TODO_Question 3?', a: 'TODO_Answer 3' },
+    { q: 'TODO_Question 4?', a: 'TODO_Answer 4' },
+  ]}
+  {/* Optional: contentImage — hero-style image rendered after extra-sections */}
+  {/* contentImage={{ src: '/assets/TODO_image.webp', alt: 'TODO_alt text', caption: 'TODO_caption' }} */}
+>
+  <Fragment slot="lead">
+    <!-- TODO: 1-2 paragraphs introducing the buying decision -->
+    <p class="lead">
+      TODO_Opening paragraph framing the buying decision and why this guide exists.
+    </p>
+    <p>TODO_Second paragraph outlining what the reader will learn.</p>
+  </Fragment>
+
+  <Fragment slot="types-comparison">
+    <!-- TODO: Compare the main types/categories of this product -->
+    <section>
+      <h2 id="types">Types compared</h2>
+      <p>TODO_Intro to the different types available.</p>
+
+      <h3>TODO_Type A</h3>
+      <p>TODO_What it is, who it's for, key trade-offs.</p>
+
+      <h3>TODO_Type B</h3>
+      <p>TODO_What it is, who it's for, key trade-offs.</p>
+
+      <h3>TODO_Type C</h3>
+      <p>TODO_What it is, who it's for, key trade-offs.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="key-factors">
+    <!-- TODO: What to look for when buying — the criteria that matter -->
+    <section>
+      <h2 id="key-factors">Key factors to consider</h2>
+
+      <h3>TODO_Factor 1</h3>
+      <p>TODO_Why this matters and what to look for.</p>
+
+      <h3>TODO_Factor 2</h3>
+      <p>TODO_Why this matters and what to look for.</p>
+
+      <h3>TODO_Factor 3</h3>
+      <p>TODO_Why this matters and what to look for.</p>
+
+      <h3>TODO_Factor 4</h3>
+      <p>TODO_Why this matters and what to look for.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="budget-tiers">
+    <!-- TODO: Budget breakdown — what you get at each price level -->
+    <section>
+      <h2 id="budget-tiers">Budget tiers</h2>
+
+      <h3>Under $TODO_low — Entry level</h3>
+      <p>TODO_What to expect at this price point, key trade-offs.</p>
+
+      <h3>$TODO_mid range — Mid-range</h3>
+      <p>TODO_What to expect at this price point, sweet spot features.</p>
+
+      <h3>$TODO_high+ — Premium</h3>
+      <p>TODO_What to expect, when it's worth paying more.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="common-mistakes">
+    <!-- TODO: Mistakes buyers commonly make -->
+    <section>
+      <h2 id="common-mistakes">Common mistakes to avoid</h2>
+      <ul>
+        <li><strong>TODO_Mistake 1</strong> — TODO_why it's a problem and what to do instead.</li>
+        <li><strong>TODO_Mistake 2</strong> — TODO_why it's a problem and what to do instead.</li>
+        <li><strong>TODO_Mistake 3</strong> — TODO_why it's a problem and what to do instead.</li>
+      </ul>
+    </section>
+  </Fragment>
+
+  <Fragment slot="featured-picks">
+    <!-- TODO: Links to roundups and reviews — not full product cards, just editorial links -->
+    <section>
+      <h2 id="featured-picks">Our picks</h2>
+      <p>TODO_Brief intro connecting the buying guide to specific roundups.</p>
+      <ul>
+        <li><a href="/posts/TODO_roundup-slug.html">TODO_Roundup Title</a> — TODO_what it covers.</li>
+        <li><a href="/posts/TODO_roundup-slug.html">TODO_Roundup Title</a> — TODO_what it covers.</li>
+        <li><a href="/posts/TODO_review-slug.html">TODO_Review Title</a> — TODO_what it covers.</li>
+      </ul>
+    </section>
+  </Fragment>
+
+  <!-- Extra sections: add any unique content sections here -->
+</BuyingGuide>

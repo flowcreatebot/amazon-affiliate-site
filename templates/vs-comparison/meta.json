@@ -1,0 +1,12 @@
+{
+  "id": "vs-comparison",
+  "label": "VS Comparison",
+  "description": "Head-to-head product or method comparison with hero versus, feature breakdowns, buyer profiles, FAQ",
+  "pageTypeKey": "vs",
+  "layoutComponent": "VsComparison.astro",
+  "starterFile": "starter.astro",
+  "wordRange": [1200, 1600],
+  "requiredSlots": ["lead", "quick-verdict", "comparison-table", "feature-comparisons", "buyer-profiles"],
+  "optionalSlots": ["supporting-gear", "extra-sections"],
+  "requiredProps": ["slug", "title", "description", "category", "datePublished", "dateModified", "heroVersus", "tocItems", "faqItems"]
+}

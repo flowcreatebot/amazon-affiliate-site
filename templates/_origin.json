@@ -1,0 +1,32 @@
+{
+  "pack": "affiliate-product-review",
+  "version": "2026-03-25",
+  "copiedAt": "2026-03-25T05:20:24.081Z",
+  "fileHashes": {
+    "buying-guide/meta.json": "de94c9c9fa03df2d5b31725e29e8bebf415aa0d1ef5cfb117e96f445d485d5ac",
+    "buying-guide/qa-checks.md": "2a39af3e072d25b219c21584c66165cd566b16611efe31f686bcbe8a0bb7e342",
+    "buying-guide/starter.astro": "207767bc5695f23472b452365f79677e9d22d263395455740a15b8e2c2aad41e",
+    "buying-guide/style-guide.md": "f00a2c3e17e682467c79256f6ad30b2e2e0a1783c509318674949c9f92c44274",
+    "howto/meta.json": "60566d46b4ea15f8aba0c6b3bcc1029280c9dac23c114ca6b0a64e54e46e2bde",
+    "howto/qa-checks.md": "353ef9a8b2c1f978c74ad3439a192a9f0a5be9e1c6bb0d587bcdb8ab4ece0a5c",
+    "howto/starter.astro": "0952a0f134a3aee86747d951e46a6cba788c49bf15a54b2377adb546612ba6a6",
+    "howto/style-guide.md": "0d39aa3379fd511f439ea128e83ef986e00ce06efffbdb2fb557ac9194ed2e95",
+    "hub-page/meta.json": "5d9de88e9024b0d792f309cf3cd02de117f919939be5ea178880eaea2e8da712",
+    "hub-page/qa-checks.md": "351ad4240deb497ad4d52e577bd0f28b000e761e7299695063700f5593d2bd75",
+    "hub-page/starter.astro": "f5ea88d980319753fba2e0ab6a5d9fba3c229d296f869271c114a70a09d7ff65",
+    "hub-page/style-guide.md": "3c20f4c7355ea2a6da0c364c31d90010ad77fdda43ac94ff55ba765eaca37b46",
+    "money-page/meta.json": "db335ef5f602970daeb69e0d8257874ab6cd31538ba1b8cb182017694fc6762d",
+    "money-page/qa-checks.md": "fbd18daaaba9abb9947db4100cb457eb833409f4dece83325174927d17904c8c",
+    "money-page/starter.astro": "c611ef2fd66a10c4cdcf9d07f11db698b8b6355878796754b95fcee3b3a1bc1d",
+    "money-page/style-guide.md": "83a835b4f4b7ad27d7312b2a615326c003ee34809bb8672f3f0801eaa179027c",
+    "single-review/meta.json": "cafaf345b593cf8a797c840a463f164e1a9ce38872ff79a3339b1d6b83749f9b",
+    "single-review/qa-checks.md": "b25b5389e4f750abdbf32ad5f8d7f7f1bba6958a804e67bb4008abd9d7828919",
+    "single-review/starter.astro": "8c1bbf8be84a5a268adc1f6916cac127da3da5ad0206b5d422b24af62d0a741f",
+    "single-review/style-guide.md": "80ebec1f704a462af30c956b369aa688315bc45670f3e3066605fbab2ad2d6fc",
+    "vs-comparison/meta.json": "cab764bf4c9103b6427e080cdc6cc6a84c459536997f28f81b50007a8eb270c4",
+    "vs-comparison/qa-checks.md": "4c2b4b2400b87ee83755523e49e17a50b574f6e5194804eb77ea988b91264300",
+    "vs-comparison/starter.astro": "998dcb9b8e1c5237a2bcd6766bb56844aac8a6151e98c12a8fd1ea9cf00d9a65",
+    "vs-comparison/style-guide.md": "952fc2e2dfaca845024da72ca249ad96d204f1f34e022cf55c99f0808c329d7e"
+  },
+  "syncedAt": "2026-03-25T05:29:37.732Z"
+}

@@ -1,0 +1,185 @@
+---
+import MoneyPage from '../../layouts/page-types/MoneyPage.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import ProsCons from '../../components/ProsCons.astro';
+import BuyingGuideSection from '../../components/BuyingGuideSection.astro';
+import type { ResolvedProduct } from '../../data/products';
+import { amazonUrl } from '../../data/products';
+
+// TODO: Define all products inline — one object per product, same shape
+const products: ResolvedProduct[] = [
+  {
+    id: 'TODO_product-slug',
+    name: 'TODO_Product Name',
+    brand: 'TODO_Brand',
+    asin: 'TODO_B00XXXXXXX',
+    image: 'TODO_https://m.media-amazon.com/images/I/XXXXXXXXXXX._AC_SL500_.jpg',
+    imageAlt: 'TODO_Descriptive alt text for product image',
+    category: 'TODO_category',
+    rating: 4.5, // TODO: actual rating
+    specs: {
+      // TODO: add product-specific spec keys
+    },
+    badge: { label: 'Best Overall', variant: 'overall' },
+    price: '$$', // TODO: actual price tier or 'Check price'
+    bestFor: 'TODO_Who this product is best for',
+    featured: true,
+  },
+  // TODO: Add remaining products (aim for 5-8 total)
+];
+---
+
+<MoneyPage
+  slug="TODO_url-slug"
+  title="TODO_Page Title With Primary Keyword (2026): N Smart Picks"
+  description="TODO_Meta description 120-160 chars with primary keyword"
+  category="TODO_category"
+  datePublished="TODO_2026-01-01"
+  dateModified="TODO_2026-01-01"
+  ogImage={products[0].image}
+  ogDescription="TODO_OG description override if needed"
+  products={products}
+  heroPicks={{
+    title: 'TODO_Hero Picks Title',
+    subtitle: 'TODO_Ranked by criteria A, criteria B, criteria C, and criteria D',
+    picks: [
+      // TODO: 3-4 hero picks — all 9 fields required per pick
+      {
+        category: 'Overall',
+        tagline: 'TODO_Best overall tagline',
+        icon: 'target', // Available: timer, zap, wind, wrench, droplets, check, calendar, coffee, target, list
+        color: '#2C1810',
+        features: ['TODO_Feature 1', 'TODO_Feature 2', 'TODO_Feature 3', 'TODO_Feature 4'],
+        topPick: 'TODO_Product Name',
+        price: '$$',
+        subtitle: 'TODO_Short subtitle',
+        asin: 'TODO_B00XXXXXXX',
+      },
+      // TODO: Add 2-3 more picks
+    ],
+    footer: 'TODO_sitename.com · topic · 2026',
+  }}
+  tocItems={[
+    { href: '#quick-picks', label: 'Quick picks' },
+    { href: '#comparison-table', label: 'Comparison table' },
+    { href: '#how-we-evaluate', label: 'How we evaluate' },
+    { href: '#product-reviews', label: 'Individual product reviews' },
+    { href: '#buying-guide', label: 'Buying guide' },
+    { href: '#faq', label: 'Frequently asked questions' },
+  ]}
+  faqItems={[
+    // TODO: Minimum 4 FAQ items — { q, a } format
+    { q: 'TODO_Question 1?', a: 'TODO_Answer 1' },
+    { q: 'TODO_Question 2?', a: 'TODO_Answer 2' },
+    { q: 'TODO_Question 3?', a: 'TODO_Answer 3' },
+    { q: 'TODO_Question 4?', a: 'TODO_Answer 4' },
+  ]}
+  {/* Optional: contentImage — hero-style image rendered after extra-sections */}
+  {/* contentImage={{ src: '/assets/TODO_image.webp', alt: 'TODO_alt text', caption: 'TODO_caption' }} */}
+>
+  <Fragment slot="lead">
+    <!-- TODO: 1-2 paragraphs introducing the topic with primary keyword in bold -->
+    <p class="lead">
+      The <strong>TODO_primary keyword</strong> TODO_opening hook that sets up the roundup.
+    </p>
+    <p>TODO_Second paragraph expanding on the quick recommendation and what the guide covers.</p>
+  </Fragment>
+
+  <Fragment slot="quick-answer">
+    <!-- TODO: Quick answer summary — bold the top pick name -->
+    <p>
+      <strong>Quick answer:</strong> The <strong>TODO_Top Pick Name</strong> is the best overall pick because TODO_reason.
+      If you want TODO_alternative use case, go with the <strong>TODO_Runner-Up Name</strong>.
+    </p>
+  </Fragment>
+
+  <Fragment slot="comparison-table">
+    <!-- TODO: Comparison table — every <td> needs a data-label attribute matching its <th> -->
+    <h2 id="comparison-table">Comparison table</h2>
+    <ComparisonTable timestamp="TODO_Prices updated: Month DD, 2026" ariaLabel="TODO_comparison table aria label">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Best for</th>
+            <!-- TODO: Add columns relevant to this roundup -->
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((p) => (
+            <tr>
+              <td data-label="Product">{p.name}</td>
+              <td data-label="Best for">{p.bestFor}</td>
+              {/* TODO: Add matching data cells */}
+              <td data-label="Link"><CtaButton href={amazonUrl(p.asin)} size="sm" external>Check Price</CtaButton></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </ComparisonTable>
+  </Fragment>
+
+  <Fragment slot="methodology">
+    <!-- TODO: "How we evaluate" — explain criteria, no "tested" claims -->
+    <section>
+      <h2 id="how-we-evaluate">How we evaluate</h2>
+      <p>TODO_Explain the criteria used to compare products in this roundup.</p>
+      <p>TODO_Describe the key trade-offs readers should understand.</p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="product-reviews">
+    <!-- TODO: One review per product — h3, ProductCard, prose, ProsCons, CtaButton -->
+    <section>
+      <h2 id="product-reviews">Individual product reviews</h2>
+
+      <h3>1) {products[0].name} — TODO_Badge Label</h3>
+      <ProductCard
+        title={products[0].name}
+        asin={products[0].asin}
+        image={{ src: products[0].image, alt: products[0].imageAlt, width: 500, height: 500 }}
+        badge={products[0].badge}
+        rating={{ score: products[0].rating }}
+        price={products[0].price}
+        ctaUrl={amazonUrl(products[0].asin)}
+        featured={true}
+      />
+      <p>TODO_Review prose paragraph 1.</p>
+      <p>TODO_Review prose paragraph 2.</p>
+      <ProsCons
+        pros={['TODO_Pro 1', 'TODO_Pro 2', 'TODO_Pro 3']}
+        cons={['TODO_Con 1', 'TODO_Con 2']}
+      />
+      <p><CtaButton href={amazonUrl(products[0].asin)} external>Check Price on Amazon</CtaButton></p>
+
+      <!-- TODO: Repeat h3 + ProductCard + prose + ProsCons + CtaButton for each remaining product -->
+    </section>
+  </Fragment>
+
+  <Fragment slot="buying-guide">
+    <!-- TODO: Wrap in BuyingGuideSection — educational content, internal links to related guides -->
+    <BuyingGuideSection>
+      <h2 id="buying-guide">Buying guide</h2>
+      <p>TODO_Key factors to consider when buying.</p>
+      <p>TODO_Budget guidance and trade-offs.</p>
+      <p>TODO_Internal links to related guides: <a href="/posts/TODO_related-guide.html">TODO_Related Guide Title</a>.</p>
+    </BuyingGuideSection>
+  </Fragment>
+
+  <Fragment slot="related-guides">
+    <!-- TODO: 3+ internal links to other site pages -->
+    <section>
+      <h2 id="related-guides">Related guides</h2>
+      <ul>
+        <li><a href="/posts/TODO_slug.html">TODO_Guide Title</a> — TODO_one-line reason to read it.</li>
+        <li><a href="/posts/TODO_slug.html">TODO_Guide Title</a> — TODO_one-line reason to read it.</li>
+        <li><a href="/posts/TODO_slug.html">TODO_Guide Title</a> — TODO_one-line reason to read it.</li>
+      </ul>
+    </section>
+  </Fragment>
+
+  <!-- Extra sections: add any unique content sections here -->
+</MoneyPage>
